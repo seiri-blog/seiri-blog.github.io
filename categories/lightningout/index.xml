@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>LightningOut on Seiri&#39;s Blog</title>
+    <link>https://ryuseiri.github.io/categories/lightningout/</link>
+    <description>Recent content in LightningOut on Seiri&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>2023 Seiri All rights reserved</copyright>
+    <lastBuildDate>Mon, 02 Aug 2021 10:57:14 +0900</lastBuildDate><atom:link href="https://ryuseiri.github.io/categories/lightningout/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>LWCでのファイル一括ダウンロード方法</title>
+      <link>https://ryuseiri.github.io/posts/lwc-file-bulk-download/</link>
+      <pubDate>Mon, 02 Aug 2021 10:57:14 +0900</pubDate>
+      
+      <guid>https://ryuseiri.github.io/posts/lwc-file-bulk-download/</guid>
+      <description>目的 今回ClassicモードでVisualforceにLWCのでファイル一括ダウンロードする方法を共有します。 前提 jszip.jsを静的リソ</description>
+    </item>
+    
+    <item>
+      <title>【Salesforce】VFページにLWCを表示する方法</title>
+      <link>https://ryuseiri.github.io/posts/salesforce-vfpage-display-lwc/</link>
+      <pubDate>Wed, 28 Jul 2021 14:42:39 +0900</pubDate>
+      
+      <guid>https://ryuseiri.github.io/posts/salesforce-vfpage-display-lwc/</guid>
+      <description>目的 LWCををVFページに表示する方法を紹介します。 基本的な考え方はVFページにLightningOutという仕組みを利用して、LWCを表示</description>
+    </item>
+    
+  </channel>
+</rss>

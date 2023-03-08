@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Lightningコンポーネント on Seiri&#39;s Blog</title>
+    <link>https://ryuseiri.github.io/categories/lightning%E3%82%B3%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%8D%E3%83%B3%E3%83%88/</link>
+    <description>Recent content in Lightningコンポーネント on Seiri&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>2023 Seiri All rights reserved</copyright>
+    <lastBuildDate>Mon, 16 May 2022 14:11:39 +0900</lastBuildDate><atom:link href="https://ryuseiri.github.io/categories/lightning%E3%82%B3%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%8D%E3%83%B3%E3%83%88/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>【Salesforce】LWCでのPath共通コンポーネント</title>
+      <link>https://ryuseiri.github.io/posts/lwc-path-common-component/</link>
+      <pubDate>Mon, 16 May 2022 14:11:39 +0900</pubDate>
+      
+      <guid>https://ryuseiri.github.io/posts/lwc-path-common-component/</guid>
+      <description>目的 LWCでのPath共通コンポーネントを共有します。 ソース path &amp;lt;template&amp;gt; &amp;lt;div class=&amp;#34;slds-path&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;slds-grid slds-path__track&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;slds-grid slds-path__scroller-container&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;slds-path__scroller&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;slds-path__scroller_inner&amp;#34;&amp;gt; &amp;lt;ul class=&amp;#34;slds-path__nav&amp;#34; role=&amp;#34;listbox&amp;#34; aria-orientation=&amp;#34;horizontal&amp;#34;&amp;gt; &amp;lt;template for:each={pathItemList} for:item=&amp;#34;pathItem&amp;#34; for:index=&amp;#34;index&amp;#34;&amp;gt; {getIndex} &amp;lt;template if:true={pathIndexGeCurrentIndex}&amp;gt; &amp;lt;li key={pathItem} if:true={pathIndexEqCurrentIndex} class=&amp;#34;slds-path__item slds-is-current slds-is-active&amp;#34; role=&amp;#34;presentation&amp;#34;&amp;gt; &amp;lt;a aria-selected=&amp;#34;true&amp;#34; class=&amp;#34;slds-path__link&amp;#34; href=&amp;#34;javasctipt:void();&amp;#34; role=&amp;#34;option&amp;#34; tabindex=&amp;#34;-1&amp;#34;&amp;gt; &amp;lt;span class=&amp;#34;slds-path__stage&amp;#34;&amp;gt;</description>
+    </item>
+    
+    <item>
+      <title>【Salesforce】LWC CSV出力方法</title>
+      <link>https://ryuseiri.github.io/posts/salesforce-lwc-csv-output-method/</link>
+      <pubDate>Tue, 29 Mar 2022 16:38:42 +0900</pubDate>
+      
+      <guid>https://ryuseiri.github.io/posts/salesforce-lwc-csv-output-method/</guid>
+      <description>1.目的 今回LWCでのCSVファイルを出力方法を共有します。 2.実装例 exportDataToCSVInLWC &amp;lt;template&amp;gt; &amp;lt;lightning-card title=&amp;#34;Export Data as CSV in Lightning Web Components&amp;#34; icon-name=&amp;#34;custom:custom63&amp;#34;&amp;gt; &amp;lt;template if:true={data}&amp;gt; &amp;lt;div class=&amp;#34;slds-p-around_medium lgc-bg-inverse&amp;#34;&amp;gt; &amp;lt;p&amp;gt;Do you want download data as a CSV format, Click Here &amp;amp;nbsp; &amp;lt;lightning-button icon-name=&amp;#34;utility:download&amp;#34; label=&amp;#34;Download as CSV&amp;#34; title=&amp;#34;Download</description>
+    </item>
+    
+    <item>
+      <title>JSでのレスポンスクラスハンドラーの作成</title>
+      <link>https://ryuseiri.github.io/posts/response-class-handler-creating-on-js/</link>
+      <pubDate>Tue, 21 Dec 2021 18:30:15 +0900</pubDate>
+      
+      <guid>https://ryuseiri.github.io/posts/response-class-handler-creating-on-js/</guid>
+      <description>1.目的 レスポンスクラスハンドラーの作成方法を共有します。 2.ソース /** * リクエストの結果をハンドリングする. * @param {Promiss} promiss * @return reponse レスポンス =&amp;gt; {success: XXX, data:</description>
+    </item>
+    
+    <item>
+      <title>【Salesforce】LWC Toastメッセージ共通Util</title>
+      <link>https://ryuseiri.github.io/posts/salesforce-lwc-toast-message-common-util/</link>
+      <pubDate>Tue, 21 Dec 2021 18:27:36 +0900</pubDate>
+      
+      <guid>https://ryuseiri.github.io/posts/salesforce-lwc-toast-message-common-util/</guid>
+      <description>1.目的 LWCでのToastメッセージ共通Utilを共有します。 2.実装 import { ShowToastEvent } from &amp;#39;lightning/platformShowToastEvent&amp;#39;; /** * メッセージ表示 * @param {window} that * @param {string} title タイトール * @param {string} message メッ</description>
+    </item>
+    
+    <item>
+      <title>【Salesforce】Apex共通レスポンス基底クラス</title>
+      <link>https://ryuseiri.github.io/posts/salesforce-apex-common-response-superclass/</link>
+      <pubDate>Mon, 22 Nov 2021 17:18:13 +0900</pubDate>
+      
+      <guid>https://ryuseiri.github.io/posts/salesforce-apex-common-response-superclass/</guid>
+      <description>目的 LWCでApexクラスを呼出す基底クラスを作成する方法を紹介します。 LWCでApexクラスを呼出すときの返却値は主に正常系、警告系と異常</description>
+    </item>
+    
+    <item>
+      <title>LWCでの共通CSS</title>
+      <link>https://ryuseiri.github.io/posts/lwc-common-css/</link>
+      <pubDate>Mon, 26 Jul 2021 10:30:25 +0900</pubDate>
+      
+      <guid>https://ryuseiri.github.io/posts/lwc-common-css/</guid>
+      <description>目的 今回LWCでの共通スタイルシート(CSS)の方法を共有します。 ソース構成図 lwc ├─commonStyle └─commonStyleChil</description>
+    </item>
+    
+  </channel>
+</rss>

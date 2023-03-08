@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Router on Seiri&#39;s Blog</title>
+    <link>https://ryuseiri.github.io/categories/router/</link>
+    <description>Recent content in Router on Seiri&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>2023 Seiri All rights reserved</copyright>
+    <lastBuildDate>Fri, 16 Jul 2021 17:30:12 +0900</lastBuildDate><atom:link href="https://ryuseiri.github.io/categories/router/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>【Salesforce】LWC Router</title>
+      <link>https://ryuseiri.github.io/posts/salesforce-lwc-router/</link>
+      <pubDate>Fri, 16 Jul 2021 17:30:12 +0900</pubDate>
+      
+      <guid>https://ryuseiri.github.io/posts/salesforce-lwc-router/</guid>
+      <description>目的 今回自分で開発したSalesforce側使えるLWCでの画面遷移方法を紹介します。 構成図 lwc ├─router ├─myRouterConta</description>
+    </item>
+    
+  </channel>
+</rss>

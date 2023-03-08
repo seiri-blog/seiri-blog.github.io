@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>GPT3 on Seiri&#39;s Blog</title>
+    <link>https://ryuseiri.github.io/tags/gpt3/</link>
+    <description>Recent content in GPT3 on Seiri&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>2023 Seiri All rights reserved</copyright>
+    <lastBuildDate>Sat, 10 Dec 2022 10:47:15 +0900</lastBuildDate><atom:link href="https://ryuseiri.github.io/tags/gpt3/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>OpenAI 使い方</title>
+      <link>https://ryuseiri.github.io/posts/openai-how-to-use/</link>
+      <pubDate>Sat, 10 Dec 2022 10:47:15 +0900</pubDate>
+      
+      <guid>https://ryuseiri.github.io/posts/openai-how-to-use/</guid>
+      <description>ChatGPTとは ChatGPTは、OpenAIがトレーニングした大型の言語モデルです。これは、自然言語処理タスクのために使用でき、文章生成</description>
+    </item>
+    
+  </channel>
+</rss>

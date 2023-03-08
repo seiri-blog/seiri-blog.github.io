@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>AmazonWebServices on Seiri&#39;s Blog</title>
+    <link>https://ryuseiri.github.io/tags/amazonwebservices/</link>
+    <description>Recent content in AmazonWebServices on Seiri&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>2023 Seiri All rights reserved</copyright>
+    <lastBuildDate>Fri, 22 Jul 2022 16:55:01 +0900</lastBuildDate><atom:link href="https://ryuseiri.github.io/tags/amazonwebservices/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AWS AppSync</title>
+      <link>https://ryuseiri.github.io/posts/aws-appsync/</link>
+      <pubDate>Fri, 22 Jul 2022 16:55:01 +0900</pubDate>
+      
+      <guid>https://ryuseiri.github.io/posts/aws-appsync/</guid>
+      <description>AWS AppSync とは AWS AppSync は、Amazon DynamoDB、 AWS Lambda、および HTTP APIを含む複数のソースからのデータを組み合わせて、アプリケーション開</description>
+    </item>
+    
+    <item>
+      <title>Amazon SQS</title>
+      <link>https://ryuseiri.github.io/posts/amazon-sqs/</link>
+      <pubDate>Fri, 22 Jul 2022 16:52:20 +0900</pubDate>
+      
+      <guid>https://ryuseiri.github.io/posts/amazon-sqs/</guid>
+      <description>Amazon SQSとは Amazon Simple Queue Service (Amazon SQS) は、分散されたソフトウェアシステムとコンポーネントを統合および疎結合化できる、安全性、耐久性、可用性に優れたホストキ</description>
+    </item>
+    
+    <item>
+      <title>Amazon SNS</title>
+      <link>https://ryuseiri.github.io/posts/amazon-sns/</link>
+      <pubDate>Fri, 22 Jul 2022 16:44:49 +0900</pubDate>
+      
+      <guid>https://ryuseiri.github.io/posts/amazon-sns/</guid>
+      <description>Amazon SNS とは Amazon Simple Notification Service (Amazon SNS) は、配信者から受信者 (または生産者から消費者) へのメッセージ配信を提供するマネージドサービスです。発行者は、論理アクセス</description>
+    </item>
+    
+    <item>
+      <title>Amazon API Gateway</title>
+      <link>https://ryuseiri.github.io/posts/amazon-api-gateway/</link>
+      <pubDate>Fri, 22 Jul 2022 16:42:09 +0900</pubDate>
+      
+      <guid>https://ryuseiri.github.io/posts/amazon-api-gateway/</guid>
+      <description>Amazon API Gateway とは Amazon API Gateway は、あらゆる規模の REST、HTTP、および WebSocket API を作成、公開、維持、モニタリング、およびセキュア化するための AWS のサービスです</description>
+    </item>
+    
+    <item>
+      <title>Amazon VPC</title>
+      <link>https://ryuseiri.github.io/posts/amazon-vpc/</link>
+      <pubDate>Fri, 22 Jul 2022 16:35:58 +0900</pubDate>
+      
+      <guid>https://ryuseiri.github.io/posts/amazon-vpc/</guid>
+      <description>Amazon VPC とは Amazon Virtual Private Cloud (Amazon VPC) を使用すると、定義した仮想ネットワーク内で AWS リソースを起動できます。仮想ネットワークは、お客様自身のデータセンターで運用</description>
+    </item>
+    
+    <item>
+      <title>Amazon Aurora</title>
+      <link>https://ryuseiri.github.io/posts/amazon-aurora/</link>
+      <pubDate>Fri, 22 Jul 2022 15:02:28 +0900</pubDate>
+      
+      <guid>https://ryuseiri.github.io/posts/amazon-aurora/</guid>
+      <description>Amazon Aurora とは Amazon Aurora (Aurora) は完全マネージド型のリレーショナルデータベースエンジンで、MySQL および PostgreSQL と互換性があります。MySQL と PostgreSQL が、ハイエンドの</description>
+    </item>
+    
+    <item>
+      <title>AWS Lambda</title>
+      <link>https://ryuseiri.github.io/posts/aws-lambda/</link>
+      <pubDate>Fri, 22 Jul 2022 12:03:11 +0900</pubDate>
+      
+      <guid>https://ryuseiri.github.io/posts/aws-lambda/</guid>
+      <description>AWS Lambda とは Lambda はサーバーをプロビジョニングしたり管理しなくてもコードを実行できるコンピューティングサービスです。Lambda は可用性の高いコンピ</description>
+    </item>
+    
+    <item>
+      <title>Amazon S3</title>
+      <link>https://ryuseiri.github.io/posts/amazons-3/</link>
+      <pubDate>Fri, 22 Jul 2022 11:54:52 +0900</pubDate>
+      
+      <guid>https://ryuseiri.github.io/posts/amazons-3/</guid>
+      <description>Amazon S3 とは Amazon Simple Storage Service (Amazon S3) は、業界をリードするスケーラビリティ、データ可用性、セキュリティ、およびパフォーマンスを提供するオブジェクトストレージサ</description>
+    </item>
+    
+    <item>
+      <title>AWS DynamoDB</title>
+      <link>https://ryuseiri.github.io/posts/aws-dynamodb/</link>
+      <pubDate>Thu, 14 Jul 2022 16:33:15 +0900</pubDate>
+      
+      <guid>https://ryuseiri.github.io/posts/aws-dynamodb/</guid>
+      <description>Amazon DynamoDB とは Amazon DynamoDB デベロッパーガイド Amazon DynamoDB は、フルマネージドの NoSQL データベースサービスであり、高速で予測可能なパフォーマンスとシームレスな拡張性が特長</description>
+    </item>
+    
+  </channel>
+</rss>

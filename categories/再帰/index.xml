@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>再帰 on Seiri&#39;s Blog</title>
+    <link>https://ryuseiri.github.io/categories/%E5%86%8D%E5%B8%B0/</link>
+    <description>Recent content in 再帰 on Seiri&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>2023 Seiri All rights reserved</copyright>
+    <lastBuildDate>Wed, 21 Jul 2021 18:36:08 +0900</lastBuildDate><atom:link href="https://ryuseiri.github.io/categories/%E5%86%8D%E5%B8%B0/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>LWCでの再帰的なコンポーネント自分で作る</title>
+      <link>https://ryuseiri.github.io/posts/lwc-on-recursive-component-myself-with-make/</link>
+      <pubDate>Wed, 21 Jul 2021 18:36:08 +0900</pubDate>
+      
+      <guid>https://ryuseiri.github.io/posts/lwc-on-recursive-component-myself-with-make/</guid>
+      <description>1.目的 ReactやVueでのコンポネント必要に応じて、時々共通処理のため、再帰的なコンポネントを実装したことがありますが、今回LWCでの再</description>
+    </item>
+    
+  </channel>
+</rss>

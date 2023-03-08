@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>DateFormatter on Seiri&#39;s Blog</title>
+    <link>https://ryuseiri.github.io/tags/dateformatter/</link>
+    <description>Recent content in DateFormatter on Seiri&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>2023 Seiri All rights reserved</copyright>
+    <lastBuildDate>Fri, 24 Dec 2021 15:08:50 +0900</lastBuildDate><atom:link href="https://ryuseiri.github.io/tags/dateformatter/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>JSでの日付フォーマット</title>
+      <link>https://ryuseiri.github.io/posts/date-format-in-js/</link>
+      <pubDate>Fri, 24 Dec 2021 15:08:50 +0900</pubDate>
+      
+      <guid>https://ryuseiri.github.io/posts/date-format-in-js/</guid>
+      <description>実装 /** * 日付フォーマット * @param {Date} date date * @param {string} fmt format * @returns {string} StringDate */ export const dateFormat = (date, fmt = &amp;#39;YYYY/mm/dd&amp;#39;) =&amp;gt; { let ret; const opt = { &amp;#39;Y+&amp;#39;: date.getFullYear().toString(), // 年 &amp;#39;m+&amp;#39;: (date.getMonth() + 1).toString(), // 月 &amp;#39;d+&amp;#39;: date.getDate().toString(), // 日 &amp;#39;H+&amp;#39;: date.getHours().toString(), // 時 &amp;#39;M+&amp;#39;: date.getMinutes().toString(), // 分 &amp;#39;S+&amp;#39;: date.getSeconds().toString() // 秒 };</description>
+    </item>
+    
+  </channel>
+</rss>
