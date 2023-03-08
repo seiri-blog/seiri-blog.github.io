@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>fls on Seiri&#39;s Blog</title>
-    <link>https://seiri-blog-jp.github.io/categories/fls/</link>
+    <link>https://seiri-blog.github.io/categories/fls/</link>
     <description>Recent content in fls on Seiri&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>2023 Seiri All rights reserved</copyright>
-    <lastBuildDate>Mon, 11 Jul 2022 20:02:42 +0900</lastBuildDate><atom:link href="https://seiri-blog-jp.github.io/categories/fls/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 11 Jul 2022 20:02:42 +0900</lastBuildDate><atom:link href="https://seiri-blog.github.io/categories/fls/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>【Salesforce】FLS権限チェック</title>
-      <link>https://seiri-blog-jp.github.io/posts/salesforce-fls-authority-check/</link>
+      <link>https://seiri-blog.github.io/posts/salesforce-fls-authority-check/</link>
       <pubDate>Mon, 11 Jul 2022 20:02:42 +0900</pubDate>
       
-      <guid>https://seiri-blog-jp.github.io/posts/salesforce-fls-authority-check/</guid>
+      <guid>https://seiri-blog.github.io/posts/salesforce-fls-authority-check/</guid>
       <description>目的 CRUD および項目レベルセキュリティ (FLS) 権限チェックUtilを作成方法を共有します ソース public with sharing class FLSUtil { //環境の接頭辞 private static final String ENV_PREFIX = getPrefix(); //アンダーバ</description>
     </item>
     

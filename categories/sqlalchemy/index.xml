@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>sqlalchemy on Seiri&#39;s Blog</title>
-    <link>https://seiri-blog-jp.github.io/categories/sqlalchemy/</link>
+    <link>https://seiri-blog.github.io/categories/sqlalchemy/</link>
     <description>Recent content in sqlalchemy on Seiri&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>2023 Seiri All rights reserved</copyright>
-    <lastBuildDate>Thu, 23 Dec 2021 12:38:42 +0900</lastBuildDate><atom:link href="https://seiri-blog-jp.github.io/categories/sqlalchemy/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 23 Dec 2021 12:38:42 +0900</lastBuildDate><atom:link href="https://seiri-blog.github.io/categories/sqlalchemy/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>PythonでのDBSessionクラス</title>
-      <link>https://seiri-blog-jp.github.io/posts/python-dbsession-class/</link>
+      <link>https://seiri-blog.github.io/posts/python-dbsession-class/</link>
       <pubDate>Thu, 23 Dec 2021 12:38:42 +0900</pubDate>
       
-      <guid>https://seiri-blog-jp.github.io/posts/python-dbsession-class/</guid>
+      <guid>https://seiri-blog.github.io/posts/python-dbsession-class/</guid>
       <description>SQLAlchemyとは SQLAlchemyとは、Pythonの中では最もよく利用されているORMの一つです。 ORM以外にも以下の機能を持ち</description>
     </item>
     
