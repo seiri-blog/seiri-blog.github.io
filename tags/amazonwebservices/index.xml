@@ -2,44 +2,44 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>AmazonWebServices on Seiri&#39;s Blog</title>
-    <link>https://seiri-blog-jp.github.io/tags/amazonwebservices/</link>
+    <link>https://seiri-blog.github.io/tags/amazonwebservices/</link>
     <description>Recent content in AmazonWebServices on Seiri&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>2023 Seiri All rights reserved</copyright>
-    <lastBuildDate>Fri, 22 Jul 2022 16:42:09 +0900</lastBuildDate><atom:link href="https://seiri-blog-jp.github.io/tags/amazonwebservices/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 22 Jul 2022 16:42:09 +0900</lastBuildDate><atom:link href="https://seiri-blog.github.io/tags/amazonwebservices/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Amazon API Gateway</title>
-      <link>https://seiri-blog-jp.github.io/posts/amazon-api-gateway/</link>
+      <link>https://seiri-blog.github.io/posts/amazon-api-gateway/</link>
       <pubDate>Fri, 22 Jul 2022 16:42:09 +0900</pubDate>
       
-      <guid>https://seiri-blog-jp.github.io/posts/amazon-api-gateway/</guid>
+      <guid>https://seiri-blog.github.io/posts/amazon-api-gateway/</guid>
       <description>Amazon API Gateway とは Amazon API Gateway は、あらゆる規模の REST、HTTP、および WebSocket API を作成、公開、維持、モニタリング、およびセキュア化するための AWS のサービスです</description>
     </item>
     
     <item>
       <title>AWS Lambda</title>
-      <link>https://seiri-blog-jp.github.io/posts/aws-lambda/</link>
+      <link>https://seiri-blog.github.io/posts/aws-lambda/</link>
       <pubDate>Fri, 22 Jul 2022 12:03:11 +0900</pubDate>
       
-      <guid>https://seiri-blog-jp.github.io/posts/aws-lambda/</guid>
+      <guid>https://seiri-blog.github.io/posts/aws-lambda/</guid>
       <description>AWS Lambda とは Lambda はサーバーをプロビジョニングしたり管理しなくてもコードを実行できるコンピューティングサービスです。Lambda は可用性の高いコンピ</description>
     </item>
     
     <item>
       <title>Amazon S3</title>
-      <link>https://seiri-blog-jp.github.io/posts/amazons-s3/</link>
+      <link>https://seiri-blog.github.io/posts/amazons-s3/</link>
       <pubDate>Fri, 22 Jul 2022 11:54:52 +0900</pubDate>
       
-      <guid>https://seiri-blog-jp.github.io/posts/amazons-s3/</guid>
+      <guid>https://seiri-blog.github.io/posts/amazons-s3/</guid>
       <description>Amazon S3 とは Amazon Simple Storage Service (Amazon S3) は、業界をリードするスケーラビリティ、データ可用性、セキュリティ、およびパフォーマンスを提供するオブジェクトストレージサ</description>
     </item>
     
     <item>
       <title>AWS DynamoDB</title>
-      <link>https://seiri-blog-jp.github.io/posts/aws-dynamodb/</link>
+      <link>https://seiri-blog.github.io/posts/aws-dynamodb/</link>
       <pubDate>Thu, 14 Jul 2022 16:33:15 +0900</pubDate>
       
-      <guid>https://seiri-blog-jp.github.io/posts/aws-dynamodb/</guid>
+      <guid>https://seiri-blog.github.io/posts/aws-dynamodb/</guid>
       <description>Amazon DynamoDB とは Amazon DynamoDB デベロッパーガイド Amazon DynamoDB は、フルマネージドの NoSQL データベースサービスであり、高速で予測可能なパフォーマンスとシームレスな拡張性が特長</description>
     </item>
     
