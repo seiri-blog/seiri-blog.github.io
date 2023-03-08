@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Python on Seiri&#39;s Blog</title>
+    <link>https://ryuseiri.github.io/tags/python/</link>
+    <description>Recent content in Python on Seiri&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>2023 Seiri All rights reserved</copyright>
+    <lastBuildDate>Tue, 18 Jan 2022 19:21:37 +0900</lastBuildDate><atom:link href="https://ryuseiri.github.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Pythonで日本の新型コロナ患者情報取得</title>
+      <link>https://ryuseiri.github.io/posts/python-corona-patient-info-in-japanese/</link>
+      <pubDate>Tue, 18 Jan 2022 19:21:37 +0900</pubDate>
+      
+      <guid>https://ryuseiri.github.io/posts/python-corona-patient-info-in-japanese/</guid>
+      <description>#環境 Win10 Python 3.8.10 ・requests==2.25.1 ・pandas==1.3.1 #実装 import requests as rq import pandas as pd url = &amp;#39;https://covid19-japan-web-api.vercel.app/api/v1/positives?prefecture={0}&amp;#39; prefectures = [&amp;#39;北海道&amp;#39;,&amp;#</description>
+    </item>
+    
+    <item>
+      <title>PythonでのAWS Lambda 環境変数の取得</title>
+      <link>https://ryuseiri.github.io/posts/aws-lambda-environment-variable-acquisition-on-python/</link>
+      <pubDate>Mon, 27 Dec 2021 17:53:32 +0900</pubDate>
+      
+      <guid>https://ryuseiri.github.io/posts/aws-lambda-environment-variable-acquisition-on-python/</guid>
+      <description>準備 環境変数の設定 環境変数は、関数の未公開バージョンで定義します。バージョンを公開するとき、他のバージョン固有の設定とともに、そのバージョン</description>
+    </item>
+    
+    <item>
+      <title>PythonでのAWS Lambda 共通DynamoDB操作Util</title>
+      <link>https://ryuseiri.github.io/posts/aws-lambda-common-dynamodb-operation-util-in-python/</link>
+      <pubDate>Mon, 27 Dec 2021 17:33:59 +0900</pubDate>
+      
+      <guid>https://ryuseiri.github.io/posts/aws-lambda-common-dynamodb-operation-util-in-python/</guid>
+      <description>目的 PythonでのDBUtilの作成方法を共有します。 実装 import boto3 dynamodb = boto3.resource(&amp;#39;dynamodb&amp;#39;, endpoint_url=&amp;#34;XXXXXXX&amp;#34;) class DynamoDB: &amp;#34;&amp;#34;&amp;#34;DynamoDBの操作(CRUD)</description>
+    </item>
+    
+    <item>
+      <title>【AWS】LambdaでS3ファイルをtmpディレクトリに保存</title>
+      <link>https://ryuseiri.github.io/posts/aws-lambda-by-s3-file-tmp-directory-save/</link>
+      <pubDate>Mon, 27 Dec 2021 16:14:46 +0900</pubDate>
+      
+      <guid>https://ryuseiri.github.io/posts/aws-lambda-by-s3-file-tmp-directory-save/</guid>
+      <description>はじめに 各実行環境は、/tmp ディレクトリ内の 512 MB のディスク領域を提供します。ディレクトリのコンテンツは、実行環境が停止された際に維持され、</description>
+    </item>
+    
+    <item>
+      <title>PythonでStepFunctionを実行する方法(boto3)</title>
+      <link>https://ryuseiri.github.io/posts/python-execute-stepfunction/</link>
+      <pubDate>Mon, 27 Dec 2021 12:18:23 +0900</pubDate>
+      
+      <guid>https://ryuseiri.github.io/posts/python-execute-stepfunction/</guid>
+      <description>実装 # -*- coding: utf-8 -*- import boto3 stepfunctions_client = boto3.client(&amp;#39;stepfunctions&amp;#39;) def execute(state_machine_arn, input_message_body): &amp;#34;&amp;#34;&amp;#34;StepFunctionsを呼び出す関数 Args: state_machine_arn: 呼び出したいStepFunction</description>
+    </item>
+    
+    <item>
+      <title>pythonでのAWS Lambda キュー送信</title>
+      <link>https://ryuseiri.github.io/posts/aws-lambda-queue-send-in-python/</link>
+      <pubDate>Mon, 27 Dec 2021 12:15:01 +0900</pubDate>
+      
+      <guid>https://ryuseiri.github.io/posts/aws-lambda-queue-send-in-python/</guid>
+      <description>実装 # -*- coding: utf-8 -*- import boto3 sqs_client = boto3.client(&amp;#39;sqs&amp;#39;) def push_message(message_body): &amp;#34;&amp;#34;&amp;#34;SQSの特定キューにメッセージをPUSHする Args: message_body: PUSHするメッセージ Returns: sqsメッ</description>
+    </item>
+    
+    <item>
+      <title>PythonでのAWS Lambda 共通ログ出力Util</title>
+      <link>https://ryuseiri.github.io/posts/aws-lambda-common-logging-util-in-python/</link>
+      <pubDate>Mon, 27 Dec 2021 12:06:59 +0900</pubDate>
+      
+      <guid>https://ryuseiri.github.io/posts/aws-lambda-common-logging-util-in-python/</guid>
+      <description>実装 # -*- coding: utf-8 -*- import logging import sys from datetime import datetime from pytz import timezone def _customTime(*args): &amp;#34;&amp;#34;&amp;#34;ログ用の時間出力 Returns: 現在時間（Asia/Tokyo） &amp;#34;&amp;#34;&amp;#34; return datetime.now(timezone(&amp;#39;Asia/Tokyo&amp;#39;)).timetuple() LOG_LEVEL = &amp;#39;INFO&amp;#39; _logger = logging.getLogger(__name__)</description>
+    </item>
+    
+    <item>
+      <title>PythonでのAWS Lambda 共通認証Util</title>
+      <link>https://ryuseiri.github.io/posts/aws-lambda-common-authorization-util-in-python/</link>
+      <pubDate>Mon, 27 Dec 2021 11:54:25 +0900</pubDate>
+      
+      <guid>https://ryuseiri.github.io/posts/aws-lambda-common-authorization-util-in-python/</guid>
+      <description>実装 # -*- coding: utf-8 -*- import base64 import boto3 import json cognito_client = boto3.client(&amp;#39;cognito-idp&amp;#39;) cognito_identity_client = boto3.client(&amp;#39;cognito-identity&amp;#39;) USERPOOL_ID = &amp;#39;USERPOOL_ID&amp;#39; CLIENT_ID = &amp;#39;CLIENT_ID&amp;#39; IDENTITYPOOL_ID = &amp;#39;IDENTITYPOOL_ID&amp;#39; def authenticate(user_id, password): &amp;#34;&amp;#34;&amp;#34;指定されたユーザIDとパスワードで認証を実施する</description>
+    </item>
+    
+    <item>
+      <title>PythonでのAWS Lambda 共通レスポンスUtil</title>
+      <link>https://ryuseiri.github.io/posts/aws-lambda-common-response-util-in-python/</link>
+      <pubDate>Mon, 27 Dec 2021 11:22:36 +0900</pubDate>
+      
+      <guid>https://ryuseiri.github.io/posts/aws-lambda-common-response-util-in-python/</guid>
+      <description>目的 PythonでのLambda関数共通レスポンスUtilを作成方法を共有します。 実装 import decimal import json class DecimalEncoder(json.JSONEncoder): &amp;#34;&amp;#34;&amp;#34;DecimalEncoder クラス Decimal クラスを使用して保存された数値を</description>
+    </item>
+    
+    <item>
+      <title>Pythonでのデータ埋める方法</title>
+      <link>https://ryuseiri.github.io/posts/python-fill-data/</link>
+      <pubDate>Thu, 23 Dec 2021 12:51:07 +0900</pubDate>
+      
+      <guid>https://ryuseiri.github.io/posts/python-fill-data/</guid>
+      <description>実装例 def padding_formatter(item, padding, data_type): &amp;#34;&amp;#34;&amp;#34; 引数で指定された桁数までデータを埋める 埋める内容は以下の通り ・データ型[numeric: 数字] 先頭0埋め ・データ型[half</description>
+    </item>
+    
+    <item>
+      <title>PythonでのDBSessionクラス</title>
+      <link>https://ryuseiri.github.io/posts/python-dbsession-class/</link>
+      <pubDate>Thu, 23 Dec 2021 12:38:42 +0900</pubDate>
+      
+      <guid>https://ryuseiri.github.io/posts/python-dbsession-class/</guid>
+      <description>SQLAlchemyとは SQLAlchemyとは、Pythonの中では最もよく利用されているORMの一つです。 ORM以外にも以下の機能を持ち</description>
+    </item>
+    
+  </channel>
+</rss>

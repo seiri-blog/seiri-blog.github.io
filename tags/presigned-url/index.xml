@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>presigned-url on Seiri&#39;s Blog</title>
+    <link>https://ryuseiri.github.io/tags/presigned-url/</link>
+    <description>Recent content in presigned-url on Seiri&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>2023 Seiri All rights reserved</copyright>
+    <lastBuildDate>Mon, 22 Nov 2021 16:48:56 +0900</lastBuildDate><atom:link href="https://ryuseiri.github.io/tags/presigned-url/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ApexでAWS S3署名付きURL発行</title>
+      <link>https://ryuseiri.github.io/posts/apex-create-aws-s3-sign-with-url/</link>
+      <pubDate>Mon, 22 Nov 2021 16:48:56 +0900</pubDate>
+      
+      <guid>https://ryuseiri.github.io/posts/apex-create-aws-s3-sign-with-url/</guid>
+      <description>目的 ApexでS3署名付きURLを発行する方法を共用します。 ソース public class AwsS3Util { private static final String AMZ_ALGORITHM = &amp;#39;AWS4-HMAC-SHA256&amp;#39;; private static final String ACCESS_KEY = &amp;#39;アクセスキー&amp;#39;; private static final</description>
+    </item>
+    
+  </channel>
+</rss>

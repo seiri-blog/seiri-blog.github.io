@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>vpc on Seiri&#39;s Blog</title>
+    <link>https://ryuseiri.github.io/tags/vpc/</link>
+    <description>Recent content in vpc on Seiri&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>2023 Seiri All rights reserved</copyright>
+    <lastBuildDate>Fri, 22 Jul 2022 16:35:58 +0900</lastBuildDate><atom:link href="https://ryuseiri.github.io/tags/vpc/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Amazon VPC</title>
+      <link>https://ryuseiri.github.io/posts/amazon-vpc/</link>
+      <pubDate>Fri, 22 Jul 2022 16:35:58 +0900</pubDate>
+      
+      <guid>https://ryuseiri.github.io/posts/amazon-vpc/</guid>
+      <description>Amazon VPC とは Amazon Virtual Private Cloud (Amazon VPC) を使用すると、定義した仮想ネットワーク内で AWS リソースを起動できます。仮想ネットワークは、お客様自身のデータセンターで運用</description>
+    </item>
+    
+  </channel>
+</rss>
