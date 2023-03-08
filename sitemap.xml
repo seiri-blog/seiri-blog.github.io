@@ -170,40 +170,13 @@
     <loc>https://seiri-blog-jp.github.io/posts/openai-how-to-use/</loc>
     <lastmod>2022-12-10T10:47:15+09:00</lastmod>
   </url><url>
+    <loc>https://seiri-blog-jp.github.io/posts/amazon-api-gateway/</loc>
+    <lastmod>2022-07-22T16:42:09+09:00</lastmod>
+  </url><url>
     <loc>https://seiri-blog-jp.github.io/tags/amazonwebservices/</loc>
-    <lastmod>2022-07-22T16:55:01+09:00</lastmod>
+    <lastmod>2022-07-22T16:42:09+09:00</lastmod>
   </url><url>
     <loc>https://seiri-blog-jp.github.io/categories/amazonwebservices/</loc>
-    <lastmod>2022-07-22T16:55:01+09:00</lastmod>
-  </url><url>
-    <loc>https://seiri-blog-jp.github.io/tags/appsync/</loc>
-    <lastmod>2022-07-22T16:55:01+09:00</lastmod>
-  </url><url>
-    <loc>https://seiri-blog-jp.github.io/categories/appsync/</loc>
-    <lastmod>2022-07-22T16:55:01+09:00</lastmod>
-  </url><url>
-    <loc>https://seiri-blog-jp.github.io/posts/aws-appsync/</loc>
-    <lastmod>2022-07-22T16:55:01+09:00</lastmod>
-  </url><url>
-    <loc>https://seiri-blog-jp.github.io/posts/amazon-sqs/</loc>
-    <lastmod>2022-07-22T16:52:20+09:00</lastmod>
-  </url><url>
-    <loc>https://seiri-blog-jp.github.io/tags/sqs/</loc>
-    <lastmod>2022-07-22T16:52:20+09:00</lastmod>
-  </url><url>
-    <loc>https://seiri-blog-jp.github.io/categories/sqs/</loc>
-    <lastmod>2022-07-22T16:52:20+09:00</lastmod>
-  </url><url>
-    <loc>https://seiri-blog-jp.github.io/posts/amazon-sns/</loc>
-    <lastmod>2022-07-22T16:44:49+09:00</lastmod>
-  </url><url>
-    <loc>https://seiri-blog-jp.github.io/tags/sns/</loc>
-    <lastmod>2022-07-22T16:44:49+09:00</lastmod>
-  </url><url>
-    <loc>https://seiri-blog-jp.github.io/categories/sns/</loc>
-    <lastmod>2022-07-22T16:44:49+09:00</lastmod>
-  </url><url>
-    <loc>https://seiri-blog-jp.github.io/posts/amazon-api-gateway/</loc>
     <lastmod>2022-07-22T16:42:09+09:00</lastmod>
   </url><url>
     <loc>https://seiri-blog-jp.github.io/tags/api/</loc>
@@ -217,51 +190,6 @@
   </url><url>
     <loc>https://seiri-blog-jp.github.io/categories/apigateway/</loc>
     <lastmod>2022-07-22T16:42:09+09:00</lastmod>
-  </url><url>
-    <loc>https://seiri-blog-jp.github.io/posts/amazon-vpc/</loc>
-    <lastmod>2022-07-22T16:35:58+09:00</lastmod>
-  </url><url>
-    <loc>https://seiri-blog-jp.github.io/tags/vpc/</loc>
-    <lastmod>2022-07-22T16:35:58+09:00</lastmod>
-  </url><url>
-    <loc>https://seiri-blog-jp.github.io/categories/vpc/</loc>
-    <lastmod>2022-07-22T16:35:58+09:00</lastmod>
-  </url><url>
-    <loc>https://seiri-blog-jp.github.io/posts/amazon-aurora/</loc>
-    <lastmod>2022-07-22T15:02:28+09:00</lastmod>
-  </url><url>
-    <loc>https://seiri-blog-jp.github.io/tags/aurora/</loc>
-    <lastmod>2022-07-22T15:02:28+09:00</lastmod>
-  </url><url>
-    <loc>https://seiri-blog-jp.github.io/categories/aurora/</loc>
-    <lastmod>2022-07-22T15:02:28+09:00</lastmod>
-  </url><url>
-    <loc>https://seiri-blog-jp.github.io/tags/rds/</loc>
-    <lastmod>2022-07-22T15:02:28+09:00</lastmod>
-  </url><url>
-    <loc>https://seiri-blog-jp.github.io/categories/rds/</loc>
-    <lastmod>2022-07-22T15:02:28+09:00</lastmod>
-  </url><url>
-    <loc>https://seiri-blog-jp.github.io/posts/amazon-rds/</loc>
-    <lastmod>2022-07-22T14:59:21+09:00</lastmod>
-  </url><url>
-    <loc>https://seiri-blog-jp.github.io/tags/mysql/</loc>
-    <lastmod>2022-07-22T14:59:21+09:00</lastmod>
-  </url><url>
-    <loc>https://seiri-blog-jp.github.io/categories/mysql/</loc>
-    <lastmod>2022-07-22T14:59:21+09:00</lastmod>
-  </url><url>
-    <loc>https://seiri-blog-jp.github.io/tags/oracle/</loc>
-    <lastmod>2022-07-22T14:59:21+09:00</lastmod>
-  </url><url>
-    <loc>https://seiri-blog-jp.github.io/categories/oracle/</loc>
-    <lastmod>2022-07-22T14:59:21+09:00</lastmod>
-  </url><url>
-    <loc>https://seiri-blog-jp.github.io/tags/postgresql/</loc>
-    <lastmod>2022-07-22T14:59:21+09:00</lastmod>
-  </url><url>
-    <loc>https://seiri-blog-jp.github.io/categories/postgresql/</loc>
-    <lastmod>2022-07-22T14:59:21+09:00</lastmod>
   </url><url>
     <loc>https://seiri-blog-jp.github.io/posts/aws-lambda/</loc>
     <lastmod>2022-07-22T12:03:11+09:00</lastmod>
@@ -278,7 +206,7 @@
     <loc>https://seiri-blog-jp.github.io/categories/lambda-layers/</loc>
     <lastmod>2022-07-22T12:03:11+09:00</lastmod>
   </url><url>
-    <loc>https://seiri-blog-jp.github.io/posts/amazons-3/</loc>
+    <loc>https://seiri-blog-jp.github.io/posts/amazons-s3/</loc>
     <lastmod>2022-07-22T11:54:52+09:00</lastmod>
   </url><url>
     <loc>https://seiri-blog-jp.github.io/tags/amazons3/</loc>
@@ -799,5 +727,7 @@
   </url><url>
     <loc>https://seiri-blog-jp.github.io/categories/%E7%94%BB%E9%9D%A2%E9%81%B7%E7%A7%BB/</loc>
     <lastmod>2021-07-16T17:30:12+09:00</lastmod>
+  </url><url>
+    <loc>https://seiri-blog-jp.github.io/search/</loc>
   </url>
 </urlset>
