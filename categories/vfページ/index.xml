@@ -2,26 +2,26 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>VFページ on Seiri&#39;s Blog</title>
-    <link>https://ryuseiri.github.io/categories/vf%E3%83%9A%E3%83%BC%E3%82%B8/</link>
+    <link>https://seiri-blog-jp.github.io/categories/vf%E3%83%9A%E3%83%BC%E3%82%B8/</link>
     <description>Recent content in VFページ on Seiri&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>2023 Seiri All rights reserved</copyright>
-    <lastBuildDate>Thu, 29 Jul 2021 16:30:01 +0900</lastBuildDate><atom:link href="https://ryuseiri.github.io/categories/vf%E3%83%9A%E3%83%BC%E3%82%B8/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 29 Jul 2021 16:30:01 +0900</lastBuildDate><atom:link href="https://seiri-blog-jp.github.io/categories/vf%E3%83%9A%E3%83%BC%E3%82%B8/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>VFPageにLWCでのファイルUP方法</title>
-      <link>https://ryuseiri.github.io/posts/vfpage-lwc-on-file-up/</link>
+      <link>https://seiri-blog-jp.github.io/posts/vfpage-lwc-on-file-up/</link>
       <pubDate>Thu, 29 Jul 2021 16:30:01 +0900</pubDate>
       
-      <guid>https://ryuseiri.github.io/posts/vfpage-lwc-on-file-up/</guid>
+      <guid>https://seiri-blog-jp.github.io/posts/vfpage-lwc-on-file-up/</guid>
       <description>1.目的 Salesforce Lightningモード下にLWCでのファイルをアップロードするには&amp;lt;lightning-file-upload&amp;gt;コン</description>
     </item>
     
     <item>
       <title>【Salesforce】VFページにLWCを表示する方法</title>
-      <link>https://ryuseiri.github.io/posts/salesforce-vfpage-display-lwc/</link>
+      <link>https://seiri-blog-jp.github.io/posts/salesforce-vfpage-display-lwc/</link>
       <pubDate>Wed, 28 Jul 2021 14:42:39 +0900</pubDate>
       
-      <guid>https://ryuseiri.github.io/posts/salesforce-vfpage-display-lwc/</guid>
+      <guid>https://seiri-blog-jp.github.io/posts/salesforce-vfpage-display-lwc/</guid>
       <description>目的 LWCををVFページに表示する方法を紹介します。 基本的な考え方はVFページにLightningOutという仕組みを利用して、LWCを表示</description>
     </item>
     

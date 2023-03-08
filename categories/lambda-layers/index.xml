@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Lambda-Layers on Seiri&#39;s Blog</title>
-    <link>https://ryuseiri.github.io/categories/lambda-layers/</link>
+    <link>https://seiri-blog-jp.github.io/categories/lambda-layers/</link>
     <description>Recent content in Lambda-Layers on Seiri&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>2023 Seiri All rights reserved</copyright>
-    <lastBuildDate>Fri, 22 Jul 2022 12:03:11 +0900</lastBuildDate><atom:link href="https://ryuseiri.github.io/categories/lambda-layers/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 22 Jul 2022 12:03:11 +0900</lastBuildDate><atom:link href="https://seiri-blog-jp.github.io/categories/lambda-layers/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>AWS Lambda</title>
-      <link>https://ryuseiri.github.io/posts/aws-lambda/</link>
+      <link>https://seiri-blog-jp.github.io/posts/aws-lambda/</link>
       <pubDate>Fri, 22 Jul 2022 12:03:11 +0900</pubDate>
       
-      <guid>https://ryuseiri.github.io/posts/aws-lambda/</guid>
+      <guid>https://seiri-blog-jp.github.io/posts/aws-lambda/</guid>
       <description>AWS Lambda とは Lambda はサーバーをプロビジョニングしたり管理しなくてもコードを実行できるコンピューティングサービスです。Lambda は可用性の高いコンピ</description>
     </item>
     
