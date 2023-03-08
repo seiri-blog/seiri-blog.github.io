@@ -208,36 +208,9 @@
     <item>
       <title>AmazonWebServices</title>
       <link>https://seiri-blog-jp.github.io/tags/amazonwebservices/</link>
-      <pubDate>Fri, 22 Jul 2022 16:55:01 +0900</pubDate>
+      <pubDate>Fri, 22 Jul 2022 16:42:09 +0900</pubDate>
       
       <guid>https://seiri-blog-jp.github.io/tags/amazonwebservices/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>AppSync</title>
-      <link>https://seiri-blog-jp.github.io/tags/appsync/</link>
-      <pubDate>Fri, 22 Jul 2022 16:55:01 +0900</pubDate>
-      
-      <guid>https://seiri-blog-jp.github.io/tags/appsync/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>sqs</title>
-      <link>https://seiri-blog-jp.github.io/tags/sqs/</link>
-      <pubDate>Fri, 22 Jul 2022 16:52:20 +0900</pubDate>
-      
-      <guid>https://seiri-blog-jp.github.io/tags/sqs/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>SNS</title>
-      <link>https://seiri-blog-jp.github.io/tags/sns/</link>
-      <pubDate>Fri, 22 Jul 2022 16:44:49 +0900</pubDate>
-      
-      <guid>https://seiri-blog-jp.github.io/tags/sns/</guid>
       <description></description>
     </item>
     
@@ -256,60 +229,6 @@
       <pubDate>Fri, 22 Jul 2022 16:42:09 +0900</pubDate>
       
       <guid>https://seiri-blog-jp.github.io/tags/apigateway/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>vpc</title>
-      <link>https://seiri-blog-jp.github.io/tags/vpc/</link>
-      <pubDate>Fri, 22 Jul 2022 16:35:58 +0900</pubDate>
-      
-      <guid>https://seiri-blog-jp.github.io/tags/vpc/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Aurora</title>
-      <link>https://seiri-blog-jp.github.io/tags/aurora/</link>
-      <pubDate>Fri, 22 Jul 2022 15:02:28 +0900</pubDate>
-      
-      <guid>https://seiri-blog-jp.github.io/tags/aurora/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>RDS</title>
-      <link>https://seiri-blog-jp.github.io/tags/rds/</link>
-      <pubDate>Fri, 22 Jul 2022 15:02:28 +0900</pubDate>
-      
-      <guid>https://seiri-blog-jp.github.io/tags/rds/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>MySQL</title>
-      <link>https://seiri-blog-jp.github.io/tags/mysql/</link>
-      <pubDate>Fri, 22 Jul 2022 14:59:21 +0900</pubDate>
-      
-      <guid>https://seiri-blog-jp.github.io/tags/mysql/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>oracle</title>
-      <link>https://seiri-blog-jp.github.io/tags/oracle/</link>
-      <pubDate>Fri, 22 Jul 2022 14:59:21 +0900</pubDate>
-      
-      <guid>https://seiri-blog-jp.github.io/tags/oracle/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>PostgreSQL</title>
-      <link>https://seiri-blog-jp.github.io/tags/postgresql/</link>
-      <pubDate>Fri, 22 Jul 2022 14:59:21 +0900</pubDate>
-      
-      <guid>https://seiri-blog-jp.github.io/tags/postgresql/</guid>
       <description></description>
     </item>
     

@@ -17,66 +17,12 @@
     </item>
     
     <item>
-      <title>このサイトについて</title>
-      <link>https://seiri-blog-jp.github.io/about/</link>
-      <pubDate>Mon, 19 Dec 2022 18:34:03 +0900</pubDate>
-      
-      <guid>https://seiri-blog-jp.github.io/about/</guid>
-      <description>✔ 当サイトについて これは Hugo に基づいて開発されたオンラインの ブログサイトです。 サイトの URL：https://ryuseiri.github.</description>
-    </item>
-    
-    <item>
-      <title>AWS AppSync</title>
-      <link>https://seiri-blog-jp.github.io/posts/aws-appsync/</link>
-      <pubDate>Fri, 22 Jul 2022 16:55:01 +0900</pubDate>
-      
-      <guid>https://seiri-blog-jp.github.io/posts/aws-appsync/</guid>
-      <description>AWS AppSync とは AWS AppSync は、Amazon DynamoDB、 AWS Lambda、および HTTP APIを含む複数のソースからのデータを組み合わせて、アプリケーション開</description>
-    </item>
-    
-    <item>
-      <title>Amazon SQS</title>
-      <link>https://seiri-blog-jp.github.io/posts/amazon-sqs/</link>
-      <pubDate>Fri, 22 Jul 2022 16:52:20 +0900</pubDate>
-      
-      <guid>https://seiri-blog-jp.github.io/posts/amazon-sqs/</guid>
-      <description>Amazon SQSとは Amazon Simple Queue Service (Amazon SQS) は、分散されたソフトウェアシステムとコンポーネントを統合および疎結合化できる、安全性、耐久性、可用性に優れたホストキ</description>
-    </item>
-    
-    <item>
-      <title>Amazon SNS</title>
-      <link>https://seiri-blog-jp.github.io/posts/amazon-sns/</link>
-      <pubDate>Fri, 22 Jul 2022 16:44:49 +0900</pubDate>
-      
-      <guid>https://seiri-blog-jp.github.io/posts/amazon-sns/</guid>
-      <description>Amazon SNS とは Amazon Simple Notification Service (Amazon SNS) は、配信者から受信者 (または生産者から消費者) へのメッセージ配信を提供するマネージドサービスです。発行者は、論理アクセス</description>
-    </item>
-    
-    <item>
       <title>Amazon API Gateway</title>
       <link>https://seiri-blog-jp.github.io/posts/amazon-api-gateway/</link>
       <pubDate>Fri, 22 Jul 2022 16:42:09 +0900</pubDate>
       
       <guid>https://seiri-blog-jp.github.io/posts/amazon-api-gateway/</guid>
       <description>Amazon API Gateway とは Amazon API Gateway は、あらゆる規模の REST、HTTP、および WebSocket API を作成、公開、維持、モニタリング、およびセキュア化するための AWS のサービスです</description>
-    </item>
-    
-    <item>
-      <title>Amazon VPC</title>
-      <link>https://seiri-blog-jp.github.io/posts/amazon-vpc/</link>
-      <pubDate>Fri, 22 Jul 2022 16:35:58 +0900</pubDate>
-      
-      <guid>https://seiri-blog-jp.github.io/posts/amazon-vpc/</guid>
-      <description>Amazon VPC とは Amazon Virtual Private Cloud (Amazon VPC) を使用すると、定義した仮想ネットワーク内で AWS リソースを起動できます。仮想ネットワークは、お客様自身のデータセンターで運用</description>
-    </item>
-    
-    <item>
-      <title>Amazon Aurora</title>
-      <link>https://seiri-blog-jp.github.io/posts/amazon-aurora/</link>
-      <pubDate>Fri, 22 Jul 2022 15:02:28 +0900</pubDate>
-      
-      <guid>https://seiri-blog-jp.github.io/posts/amazon-aurora/</guid>
-      <description>Amazon Aurora とは Amazon Aurora (Aurora) は完全マネージド型のリレーショナルデータベースエンジンで、MySQL および PostgreSQL と互換性があります。MySQL と PostgreSQL が、ハイエンドの</description>
     </item>
     
     <item>

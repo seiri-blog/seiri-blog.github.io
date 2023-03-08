@@ -17,20 +17,11 @@
     </item>
     
     <item>
-      <title>このサイトについて</title>
-      <link>https://seiri-blog-jp.github.io/about/</link>
-      <pubDate>Mon, 19 Dec 2022 18:34:03 +0900</pubDate>
-      
-      <guid>https://seiri-blog-jp.github.io/about/</guid>
-      <description>✔ 当サイトについて これは Hugo に基づいて開発されたオンラインの ブログサイトです。 サイトの URL：https://ryuseiri.github.</description>
-    </item>
-    
-    <item>
       <title>Amazon S3</title>
-      <link>https://seiri-blog-jp.github.io/posts/amazons-3/</link>
+      <link>https://seiri-blog-jp.github.io/posts/amazons-s3/</link>
       <pubDate>Fri, 22 Jul 2022 11:54:52 +0900</pubDate>
       
-      <guid>https://seiri-blog-jp.github.io/posts/amazons-3/</guid>
+      <guid>https://seiri-blog-jp.github.io/posts/amazons-s3/</guid>
       <description>Amazon S3 とは Amazon Simple Storage Service (Amazon S3) は、業界をリードするスケーラビリティ、データ可用性、セキュリティ、およびパフォーマンスを提供するオブジェクトストレージサ</description>
     </item>
     
