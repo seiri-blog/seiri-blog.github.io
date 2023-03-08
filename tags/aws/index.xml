@@ -2,188 +2,188 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>AWS on Seiri&#39;s Blog</title>
-    <link>https://seiri-blog-jp.github.io/tags/aws/</link>
+    <link>https://seiri-blog.github.io/tags/aws/</link>
     <description>Recent content in AWS on Seiri&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>2023 Seiri All rights reserved</copyright>
-    <lastBuildDate>Mon, 19 Dec 2022 18:34:03 +0900</lastBuildDate><atom:link href="https://seiri-blog-jp.github.io/tags/aws/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 19 Dec 2022 18:34:03 +0900</lastBuildDate><atom:link href="https://seiri-blog.github.io/tags/aws/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>【AWS】S3 へファイル転送ツール</title>
-      <link>https://seiri-blog-jp.github.io/posts/aws-file-transfer-tool-to-s3/</link>
+      <link>https://seiri-blog.github.io/posts/aws-file-transfer-tool-to-s3/</link>
       <pubDate>Mon, 19 Dec 2022 18:34:03 +0900</pubDate>
       
-      <guid>https://seiri-blog-jp.github.io/posts/aws-file-transfer-tool-to-s3/</guid>
+      <guid>https://seiri-blog.github.io/posts/aws-file-transfer-tool-to-s3/</guid>
       <description>準備 まずCloudBerry Explorerをアクセス 自分のメールアドレスを入力してから Download ボタン押下する ツールをダウンロードする ツールをイン</description>
     </item>
     
     <item>
       <title>Amazon API Gateway</title>
-      <link>https://seiri-blog-jp.github.io/posts/amazon-api-gateway/</link>
+      <link>https://seiri-blog.github.io/posts/amazon-api-gateway/</link>
       <pubDate>Fri, 22 Jul 2022 16:42:09 +0900</pubDate>
       
-      <guid>https://seiri-blog-jp.github.io/posts/amazon-api-gateway/</guid>
+      <guid>https://seiri-blog.github.io/posts/amazon-api-gateway/</guid>
       <description>Amazon API Gateway とは Amazon API Gateway は、あらゆる規模の REST、HTTP、および WebSocket API を作成、公開、維持、モニタリング、およびセキュア化するための AWS のサービスです</description>
     </item>
     
     <item>
       <title>AWS Lambda</title>
-      <link>https://seiri-blog-jp.github.io/posts/aws-lambda/</link>
+      <link>https://seiri-blog.github.io/posts/aws-lambda/</link>
       <pubDate>Fri, 22 Jul 2022 12:03:11 +0900</pubDate>
       
-      <guid>https://seiri-blog-jp.github.io/posts/aws-lambda/</guid>
+      <guid>https://seiri-blog.github.io/posts/aws-lambda/</guid>
       <description>AWS Lambda とは Lambda はサーバーをプロビジョニングしたり管理しなくてもコードを実行できるコンピューティングサービスです。Lambda は可用性の高いコンピ</description>
     </item>
     
     <item>
       <title>Amazon S3</title>
-      <link>https://seiri-blog-jp.github.io/posts/amazons-s3/</link>
+      <link>https://seiri-blog.github.io/posts/amazons-s3/</link>
       <pubDate>Fri, 22 Jul 2022 11:54:52 +0900</pubDate>
       
-      <guid>https://seiri-blog-jp.github.io/posts/amazons-s3/</guid>
+      <guid>https://seiri-blog.github.io/posts/amazons-s3/</guid>
       <description>Amazon S3 とは Amazon Simple Storage Service (Amazon S3) は、業界をリードするスケーラビリティ、データ可用性、セキュリティ、およびパフォーマンスを提供するオブジェクトストレージサ</description>
     </item>
     
     <item>
       <title>AWS DynamoDB</title>
-      <link>https://seiri-blog-jp.github.io/posts/aws-dynamodb/</link>
+      <link>https://seiri-blog.github.io/posts/aws-dynamodb/</link>
       <pubDate>Thu, 14 Jul 2022 16:33:15 +0900</pubDate>
       
-      <guid>https://seiri-blog-jp.github.io/posts/aws-dynamodb/</guid>
+      <guid>https://seiri-blog.github.io/posts/aws-dynamodb/</guid>
       <description>Amazon DynamoDB とは Amazon DynamoDB デベロッパーガイド Amazon DynamoDB は、フルマネージドの NoSQL データベースサービスであり、高速で予測可能なパフォーマンスとシームレスな拡張性が特長</description>
     </item>
     
     <item>
       <title>Amplify &#43; Reactでアプリケーション作成</title>
-      <link>https://seiri-blog-jp.github.io/posts/application-creating-at-amplify-react/</link>
+      <link>https://seiri-blog.github.io/posts/application-creating-at-amplify-react/</link>
       <pubDate>Mon, 24 Jan 2022 18:11:28 +0900</pubDate>
       
-      <guid>https://seiri-blog-jp.github.io/posts/application-creating-at-amplify-react/</guid>
+      <guid>https://seiri-blog.github.io/posts/application-creating-at-amplify-react/</guid>
       <description>準備 下記コマンドを順番に実行し、Amplify-Reactでの環境を構築する 1.AmplifyCLIをインストール npm install -g @aws-amplify/cli 2.Amplify</description>
     </item>
     
     <item>
       <title>AmplifyでS3と連携する方法</title>
-      <link>https://seiri-blog-jp.github.io/posts/amplify-setup-s3-and-operation/</link>
+      <link>https://seiri-blog.github.io/posts/amplify-setup-s3-and-operation/</link>
       <pubDate>Fri, 21 Jan 2022 12:15:55 +0900</pubDate>
       
-      <guid>https://seiri-blog-jp.github.io/posts/amplify-setup-s3-and-operation/</guid>
+      <guid>https://seiri-blog.github.io/posts/amplify-setup-s3-and-operation/</guid>
       <description>準備 1.amplify add storageコマンドで、S3を追加する amplify add storage ? Please select from one of the below mentioned services (Use arrow keys) ❯ Content (Images, audio, video, etc.) NoSQL Database 2.amplify pushコマンドで作成したS3をAWSにデ</description>
     </item>
     
     <item>
       <title>AmplifyでGraphQLを呼出す方法</title>
-      <link>https://seiri-blog-jp.github.io/posts/amplify-call-graphql/</link>
+      <link>https://seiri-blog.github.io/posts/amplify-call-graphql/</link>
       <pubDate>Thu, 20 Jan 2022 19:58:17 +0900</pubDate>
       
-      <guid>https://seiri-blog-jp.github.io/posts/amplify-call-graphql/</guid>
+      <guid>https://seiri-blog.github.io/posts/amplify-call-graphql/</guid>
       <description>準備 1.amplify add apiコマンドで、GraphQL APIを追加する amplify add api ? Please select from one of the below mentioned services: &amp;gt; GraphQL ? Here is the GraphQL API that we will create. Select a setting to edit or continue: &amp;gt; Continue ? Choose a schema template: &amp;gt; Single object</description>
     </item>
     
     <item>
       <title>AmplifyでAPI Gatewayを呼出す方法</title>
-      <link>https://seiri-blog-jp.github.io/posts/amplify-call-gateway/</link>
+      <link>https://seiri-blog.github.io/posts/amplify-call-gateway/</link>
       <pubDate>Thu, 20 Jan 2022 19:05:44 +0900</pubDate>
       
-      <guid>https://seiri-blog-jp.github.io/posts/amplify-call-gateway/</guid>
+      <guid>https://seiri-blog.github.io/posts/amplify-call-gateway/</guid>
       <description>準備 1.amplify add apiコマンドで、Rest APIを追加する amplify add api ? Please select from one of the below mentioned services GraphQL ❯ REST 2.amplify pushコマンドで作成したRest APIをAWSにデプロ</description>
     </item>
     
     <item>
       <title>AmplifyでのAuthUtilを作成する</title>
-      <link>https://seiri-blog-jp.github.io/posts/create-authutil-on-amplify/</link>
+      <link>https://seiri-blog.github.io/posts/create-authutil-on-amplify/</link>
       <pubDate>Thu, 20 Jan 2022 16:31:14 +0900</pubDate>
       
-      <guid>https://seiri-blog-jp.github.io/posts/create-authutil-on-amplify/</guid>
+      <guid>https://seiri-blog.github.io/posts/create-authutil-on-amplify/</guid>
       <description>前提 1.amplify add authコマンドで認証サービスを作成する amplify add auth ? Do you want to use the default authentication and security configuration? Default configuration ? How do you want users to be able to sign in? Username ? Do you want to configure advanced settings? No, I am done. 2.amplify pus</description>
     </item>
     
     <item>
       <title>PythonでのAWS Lambda 環境変数の取得</title>
-      <link>https://seiri-blog-jp.github.io/posts/aws-lambda-environment-variable-acquisition-on-python/</link>
+      <link>https://seiri-blog.github.io/posts/aws-lambda-environment-variable-acquisition-on-python/</link>
       <pubDate>Mon, 27 Dec 2021 17:53:32 +0900</pubDate>
       
-      <guid>https://seiri-blog-jp.github.io/posts/aws-lambda-environment-variable-acquisition-on-python/</guid>
+      <guid>https://seiri-blog.github.io/posts/aws-lambda-environment-variable-acquisition-on-python/</guid>
       <description>準備 環境変数の設定 環境変数は、関数の未公開バージョンで定義します。バージョンを公開するとき、他のバージョン固有の設定とともに、そのバージョン</description>
     </item>
     
     <item>
       <title>PythonでのAWS Lambda 共通DynamoDB操作Util</title>
-      <link>https://seiri-blog-jp.github.io/posts/aws-lambda-common-dynamodb-operation-util-in-python/</link>
+      <link>https://seiri-blog.github.io/posts/aws-lambda-common-dynamodb-operation-util-in-python/</link>
       <pubDate>Mon, 27 Dec 2021 17:33:59 +0900</pubDate>
       
-      <guid>https://seiri-blog-jp.github.io/posts/aws-lambda-common-dynamodb-operation-util-in-python/</guid>
+      <guid>https://seiri-blog.github.io/posts/aws-lambda-common-dynamodb-operation-util-in-python/</guid>
       <description>目的 PythonでのDBUtilの作成方法を共有します。 実装 import boto3 dynamodb = boto3.resource(&amp;#39;dynamodb&amp;#39;, endpoint_url=&amp;#34;XXXXXXX&amp;#34;) class DynamoDB: &amp;#34;&amp;#34;&amp;#34;DynamoDBの操作(CRUD)</description>
     </item>
     
     <item>
       <title>AWS Lambda クォータ</title>
-      <link>https://seiri-blog-jp.github.io/posts/aws-lambda-quota/</link>
+      <link>https://seiri-blog.github.io/posts/aws-lambda-quota/</link>
       <pubDate>Mon, 27 Dec 2021 16:29:51 +0900</pubDate>
       
-      <guid>https://seiri-blog-jp.github.io/posts/aws-lambda-quota/</guid>
+      <guid>https://seiri-blog.github.io/posts/aws-lambda-quota/</guid>
       <description>コンピューティングとストレージ Lambda では、関数の実行と保存に使用できるコンピューティングおよびストレージリソースの量に対してクォータを設定します</description>
     </item>
     
     <item>
       <title>PythonでのAWS Lambda 共通ユーザ操作Util</title>
-      <link>https://seiri-blog-jp.github.io/posts/aws-lambda-common-user-operation-util-in-python/</link>
+      <link>https://seiri-blog.github.io/posts/aws-lambda-common-user-operation-util-in-python/</link>
       <pubDate>Mon, 27 Dec 2021 12:38:54 +0900</pubDate>
       
-      <guid>https://seiri-blog-jp.github.io/posts/aws-lambda-common-user-operation-util-in-python/</guid>
+      <guid>https://seiri-blog.github.io/posts/aws-lambda-common-user-operation-util-in-python/</guid>
       <description>目的 Python boto3 ラブライブを利用して、AWS Coginitでの操作Utitl作成方法を共有します。 実装 # -*- coding: utf-8 -*- import secrets import string import boto3 USERPOOL_ID = &amp;#39;USERPOOL_ID&amp;#39; client = boto3.client(&amp;#39;cognito-idp&amp;#39;) def show_user_list(): &amp;#34</description>
     </item>
     
     <item>
       <title>pythonでのAWS Lambda キュー送信</title>
-      <link>https://seiri-blog-jp.github.io/posts/aws-lambda-queue-send-in-python/</link>
+      <link>https://seiri-blog.github.io/posts/aws-lambda-queue-send-in-python/</link>
       <pubDate>Mon, 27 Dec 2021 12:15:01 +0900</pubDate>
       
-      <guid>https://seiri-blog-jp.github.io/posts/aws-lambda-queue-send-in-python/</guid>
+      <guid>https://seiri-blog.github.io/posts/aws-lambda-queue-send-in-python/</guid>
       <description>実装 # -*- coding: utf-8 -*- import boto3 sqs_client = boto3.client(&amp;#39;sqs&amp;#39;) def push_message(message_body): &amp;#34;&amp;#34;&amp;#34;SQSの特定キューにメッセージをPUSHする Args: message_body: PUSHするメッセージ Returns: sqsメッ</description>
     </item>
     
     <item>
       <title>PythonでのAWS Lambda 共通ログ出力Util</title>
-      <link>https://seiri-blog-jp.github.io/posts/aws-lambda-common-logging-util-in-python/</link>
+      <link>https://seiri-blog.github.io/posts/aws-lambda-common-logging-util-in-python/</link>
       <pubDate>Mon, 27 Dec 2021 12:06:59 +0900</pubDate>
       
-      <guid>https://seiri-blog-jp.github.io/posts/aws-lambda-common-logging-util-in-python/</guid>
+      <guid>https://seiri-blog.github.io/posts/aws-lambda-common-logging-util-in-python/</guid>
       <description>実装 # -*- coding: utf-8 -*- import logging import sys from datetime import datetime from pytz import timezone def _customTime(*args): &amp;#34;&amp;#34;&amp;#34;ログ用の時間出力 Returns: 現在時間（Asia/Tokyo） &amp;#34;&amp;#34;&amp;#34; return datetime.now(timezone(&amp;#39;Asia/Tokyo&amp;#39;)).timetuple() LOG_LEVEL = &amp;#39;INFO&amp;#39; _logger = logging.getLogger(__name__)</description>
     </item>
     
     <item>
       <title>PythonでのAWS Lambda 共通認証Util</title>
-      <link>https://seiri-blog-jp.github.io/posts/aws-lambda-common-authorization-util-in-python/</link>
+      <link>https://seiri-blog.github.io/posts/aws-lambda-common-authorization-util-in-python/</link>
       <pubDate>Mon, 27 Dec 2021 11:54:25 +0900</pubDate>
       
-      <guid>https://seiri-blog-jp.github.io/posts/aws-lambda-common-authorization-util-in-python/</guid>
+      <guid>https://seiri-blog.github.io/posts/aws-lambda-common-authorization-util-in-python/</guid>
       <description>実装 # -*- coding: utf-8 -*- import base64 import boto3 import json cognito_client = boto3.client(&amp;#39;cognito-idp&amp;#39;) cognito_identity_client = boto3.client(&amp;#39;cognito-identity&amp;#39;) USERPOOL_ID = &amp;#39;USERPOOL_ID&amp;#39; CLIENT_ID = &amp;#39;CLIENT_ID&amp;#39; IDENTITYPOOL_ID = &amp;#39;IDENTITYPOOL_ID&amp;#39; def authenticate(user_id, password): &amp;#34;&amp;#34;&amp;#34;指定されたユーザIDとパスワードで認証を実施する</description>
     </item>
     
     <item>
       <title>PythonでのAWS Lambda 共通レスポンスUtil</title>
-      <link>https://seiri-blog-jp.github.io/posts/aws-lambda-common-response-util-in-python/</link>
+      <link>https://seiri-blog.github.io/posts/aws-lambda-common-response-util-in-python/</link>
       <pubDate>Mon, 27 Dec 2021 11:22:36 +0900</pubDate>
       
-      <guid>https://seiri-blog-jp.github.io/posts/aws-lambda-common-response-util-in-python/</guid>
+      <guid>https://seiri-blog.github.io/posts/aws-lambda-common-response-util-in-python/</guid>
       <description>目的 PythonでのLambda関数共通レスポンスUtilを作成方法を共有します。 実装 import decimal import json class DecimalEncoder(json.JSONEncoder): &amp;#34;&amp;#34;&amp;#34;DecimalEncoder クラス Decimal クラスを使用して保存された数値を</description>
     </item>
     
     <item>
       <title>ApexでAWS S3署名付きURL発行</title>
-      <link>https://seiri-blog-jp.github.io/posts/apex-create-aws-s3-sign-with-url/</link>
+      <link>https://seiri-blog.github.io/posts/apex-create-aws-s3-sign-with-url/</link>
       <pubDate>Mon, 22 Nov 2021 16:48:56 +0900</pubDate>
       
-      <guid>https://seiri-blog-jp.github.io/posts/apex-create-aws-s3-sign-with-url/</guid>
+      <guid>https://seiri-blog.github.io/posts/apex-create-aws-s3-sign-with-url/</guid>
       <description>目的 ApexでS3署名付きURLを発行する方法を共用します。 ソース public class AwsS3Util { private static final String AMZ_ALGORITHM = &amp;#39;AWS4-HMAC-SHA256&amp;#39;; private static final String ACCESS_KEY = &amp;#39;アクセスキー&amp;#39;; private static final</description>
     </item>
     
     <item>
       <title>LWCでAWS S3と連携する方法</title>
-      <link>https://seiri-blog-jp.github.io/posts/lwc-by-aws-3-and-operation/</link>
+      <link>https://seiri-blog.github.io/posts/lwc-by-aws-3-and-operation/</link>
       <pubDate>Wed, 28 Jul 2021 13:02:56 +0900</pubDate>
       
-      <guid>https://seiri-blog-jp.github.io/posts/lwc-by-aws-3-and-operation/</guid>
+      <guid>https://seiri-blog.github.io/posts/lwc-by-aws-3-and-operation/</guid>
       <description>1.目的 今回LWC中にAWSのSDK for javascriptでS3と連携する方法を共有します。 2.前提 2.1.AWS S3バケットCross-Origin Resource</description>
     </item>
     

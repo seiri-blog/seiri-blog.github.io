@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>JSZip on Seiri&#39;s Blog</title>
-    <link>https://seiri-blog-jp.github.io/categories/jszip/</link>
+    <link>https://seiri-blog.github.io/categories/jszip/</link>
     <description>Recent content in JSZip on Seiri&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>2023 Seiri All rights reserved</copyright>
-    <lastBuildDate>Mon, 02 Aug 2021 10:57:14 +0900</lastBuildDate><atom:link href="https://seiri-blog-jp.github.io/categories/jszip/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 02 Aug 2021 10:57:14 +0900</lastBuildDate><atom:link href="https://seiri-blog.github.io/categories/jszip/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>LWCでのファイル一括ダウンロード方法</title>
-      <link>https://seiri-blog-jp.github.io/posts/lwc-file-bulk-download/</link>
+      <link>https://seiri-blog.github.io/posts/lwc-file-bulk-download/</link>
       <pubDate>Mon, 02 Aug 2021 10:57:14 +0900</pubDate>
       
-      <guid>https://seiri-blog-jp.github.io/posts/lwc-file-bulk-download/</guid>
+      <guid>https://seiri-blog.github.io/posts/lwc-file-bulk-download/</guid>
       <description>目的 今回ClassicモードでVisualforceにLWCのでファイル一括ダウンロードする方法を共有します。 前提 jszip.jsを静的リソ</description>
     </item>
     
