@@ -2,35 +2,35 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>gpt-3 on Seiri&#39;s Blog</title>
-    <link>https://ryuseiri.github.io/tags/gpt-3/</link>
+    <link>https://seiri-blog-jp.github.io/tags/gpt-3/</link>
     <description>Recent content in gpt-3 on Seiri&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>2023 Seiri All rights reserved</copyright>
-    <lastBuildDate>Mon, 12 Dec 2022 19:48:11 +0900</lastBuildDate><atom:link href="https://ryuseiri.github.io/tags/gpt-3/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 12 Dec 2022 19:48:11 +0900</lastBuildDate><atom:link href="https://seiri-blog-jp.github.io/tags/gpt-3/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>OpenAIに関する話</title>
-      <link>https://ryuseiri.github.io/posts/story-about-openai/</link>
+      <link>https://seiri-blog-jp.github.io/posts/story-about-openai/</link>
       <pubDate>Mon, 12 Dec 2022 19:48:11 +0900</pubDate>
       
-      <guid>https://ryuseiri.github.io/posts/story-about-openai/</guid>
+      <guid>https://seiri-blog-jp.github.io/posts/story-about-openai/</guid>
       <description>OpenAIとは OpenAI は人工知能の研究を行う非営利団体です。OpenAI は 2015 年にエリック・シュミット氏、イーサン・アシマー氏、ジョン・ピータース</description>
     </item>
     
     <item>
       <title>GPT3に関する話</title>
-      <link>https://ryuseiri.github.io/posts/story-about-gpt3/</link>
+      <link>https://seiri-blog-jp.github.io/posts/story-about-gpt3/</link>
       <pubDate>Mon, 12 Dec 2022 18:27:05 +0900</pubDate>
       
-      <guid>https://ryuseiri.github.io/posts/story-about-gpt3/</guid>
+      <guid>https://seiri-blog-jp.github.io/posts/story-about-gpt3/</guid>
       <description>GPTとは GPT は Generative Pretrained Transformer の略で、トランスフォーマーを使った言語モデルの一種です。GPT は大量の文章データを分析し、それらから文章を生成することが</description>
     </item>
     
     <item>
       <title>OpenAI 使い方</title>
-      <link>https://ryuseiri.github.io/posts/openai-how-to-use/</link>
+      <link>https://seiri-blog-jp.github.io/posts/openai-how-to-use/</link>
       <pubDate>Sat, 10 Dec 2022 10:47:15 +0900</pubDate>
       
-      <guid>https://ryuseiri.github.io/posts/openai-how-to-use/</guid>
+      <guid>https://seiri-blog-jp.github.io/posts/openai-how-to-use/</guid>
       <description>ChatGPTとは ChatGPTは、OpenAIがトレーニングした大型の言語モデルです。これは、自然言語処理タスクのために使用でき、文章生成</description>
     </item>
     

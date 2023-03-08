@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>cognito on Seiri&#39;s Blog</title>
-    <link>https://ryuseiri.github.io/categories/cognito/</link>
+    <link>https://seiri-blog-jp.github.io/categories/cognito/</link>
     <description>Recent content in cognito on Seiri&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>2023 Seiri All rights reserved</copyright>
-    <lastBuildDate>Mon, 27 Dec 2021 12:38:54 +0900</lastBuildDate><atom:link href="https://ryuseiri.github.io/categories/cognito/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 27 Dec 2021 12:38:54 +0900</lastBuildDate><atom:link href="https://seiri-blog-jp.github.io/categories/cognito/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>PythonでのAWS Lambda 共通ユーザ操作Util</title>
-      <link>https://ryuseiri.github.io/posts/aws-lambda-common-user-operation-util-in-python/</link>
+      <link>https://seiri-blog-jp.github.io/posts/aws-lambda-common-user-operation-util-in-python/</link>
       <pubDate>Mon, 27 Dec 2021 12:38:54 +0900</pubDate>
       
-      <guid>https://ryuseiri.github.io/posts/aws-lambda-common-user-operation-util-in-python/</guid>
+      <guid>https://seiri-blog-jp.github.io/posts/aws-lambda-common-user-operation-util-in-python/</guid>
       <description>目的 Python boto3 ラブライブを利用して、AWS Coginitでの操作Utitl作成方法を共有します。 実装 # -*- coding: utf-8 -*- import secrets import string import boto3 USERPOOL_ID = &amp;#39;USERPOOL_ID&amp;#39; client = boto3.client(&amp;#39;cognito-idp&amp;#39;) def show_user_list(): &amp;#34</description>
     </item>
     
