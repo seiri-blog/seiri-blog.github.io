@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>calendar on Seiri&#39;s Blog</title>
-    <link>https://seiri-blog.github.io/categories/calendar/</link>
+    <link>https://seiri-blog-jp.github.io/categories/calendar/</link>
     <description>Recent content in calendar on Seiri&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>2023 Seiri All rights reserved</copyright>
-    <lastBuildDate>Mon, 19 Jul 2021 17:29:18 +0900</lastBuildDate><atom:link href="https://seiri-blog.github.io/categories/calendar/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 19 Jul 2021 17:29:18 +0900</lastBuildDate><atom:link href="https://seiri-blog-jp.github.io/categories/calendar/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>LWC Calendarコンポーネント自分で作る</title>
-      <link>https://seiri-blog.github.io/posts/create-lwc-calendar-component-self/</link>
+      <link>https://seiri-blog-jp.github.io/posts/create-lwc-calendar-component-self/</link>
       <pubDate>Mon, 19 Jul 2021 17:29:18 +0900</pubDate>
       
-      <guid>https://seiri-blog.github.io/posts/create-lwc-calendar-component-self/</guid>
+      <guid>https://seiri-blog-jp.github.io/posts/create-lwc-calendar-component-self/</guid>
       <description>1.目的 LWCに既存のカレンダーコンポーネントでは&amp;lt;lighting-input type=&amp;quot;date&amp;quot;&amp;gt;&amp;l</description>
     </item>
     

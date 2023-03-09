@@ -2,152 +2,152 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>JavaScript on Seiri&#39;s Blog</title>
-    <link>https://seiri-blog.github.io/categories/javascript/</link>
+    <link>https://seiri-blog-jp.github.io/categories/javascript/</link>
     <description>Recent content in JavaScript on Seiri&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>2023 Seiri All rights reserved</copyright>
-    <lastBuildDate>Tue, 29 Mar 2022 16:38:42 +0900</lastBuildDate><atom:link href="https://seiri-blog.github.io/categories/javascript/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 29 Mar 2022 16:38:42 +0900</lastBuildDate><atom:link href="https://seiri-blog-jp.github.io/categories/javascript/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>【Salesforce】LWC CSV出力方法</title>
-      <link>https://seiri-blog.github.io/posts/salesforce-lwc-csv-output-method/</link>
+      <link>https://seiri-blog-jp.github.io/posts/salesforce-lwc-csv-output-method/</link>
       <pubDate>Tue, 29 Mar 2022 16:38:42 +0900</pubDate>
       
-      <guid>https://seiri-blog.github.io/posts/salesforce-lwc-csv-output-method/</guid>
+      <guid>https://seiri-blog-jp.github.io/posts/salesforce-lwc-csv-output-method/</guid>
       <description>1.目的 今回LWCでのCSVファイルを出力方法を共有します。 2.実装例 exportDataToCSVInLWC &amp;lt;template&amp;gt; &amp;lt;lightning-card title=&amp;#34;Export Data as CSV in Lightning Web Components&amp;#34; icon-name=&amp;#34;custom:custom63&amp;#34;&amp;gt; &amp;lt;template if:true={data}&amp;gt; &amp;lt;div class=&amp;#34;slds-p-around_medium lgc-bg-inverse&amp;#34;&amp;gt; &amp;lt;p&amp;gt;Do you want download data as a CSV format, Click Here &amp;amp;nbsp; &amp;lt;lightning-button icon-name=&amp;#34;utility:download&amp;#34; label=&amp;#34;Download as CSV&amp;#34; title=&amp;#34;Download</description>
     </item>
     
     <item>
       <title>AmplifyでS3と連携する方法</title>
-      <link>https://seiri-blog.github.io/posts/amplify-setup-s3-and-operation/</link>
+      <link>https://seiri-blog-jp.github.io/posts/amplify-setup-s3-and-operation/</link>
       <pubDate>Fri, 21 Jan 2022 12:15:55 +0900</pubDate>
       
-      <guid>https://seiri-blog.github.io/posts/amplify-setup-s3-and-operation/</guid>
+      <guid>https://seiri-blog-jp.github.io/posts/amplify-setup-s3-and-operation/</guid>
       <description>準備 1.amplify add storageコマンドで、S3を追加する amplify add storage ? Please select from one of the below mentioned services (Use arrow keys) ❯ Content (Images, audio, video, etc.) NoSQL Database 2.amplify pushコマンドで作成したS3をAWSにデ</description>
     </item>
     
     <item>
       <title>AmplifyでGraphQLを呼出す方法</title>
-      <link>https://seiri-blog.github.io/posts/amplify-call-graphql/</link>
+      <link>https://seiri-blog-jp.github.io/posts/amplify-call-graphql/</link>
       <pubDate>Thu, 20 Jan 2022 19:58:17 +0900</pubDate>
       
-      <guid>https://seiri-blog.github.io/posts/amplify-call-graphql/</guid>
+      <guid>https://seiri-blog-jp.github.io/posts/amplify-call-graphql/</guid>
       <description>準備 1.amplify add apiコマンドで、GraphQL APIを追加する amplify add api ? Please select from one of the below mentioned services: &amp;gt; GraphQL ? Here is the GraphQL API that we will create. Select a setting to edit or continue: &amp;gt; Continue ? Choose a schema template: &amp;gt; Single object</description>
     </item>
     
     <item>
       <title>AmplifyでAPI Gatewayを呼出す方法</title>
-      <link>https://seiri-blog.github.io/posts/amplify-call-gateway/</link>
+      <link>https://seiri-blog-jp.github.io/posts/amplify-call-gateway/</link>
       <pubDate>Thu, 20 Jan 2022 19:05:44 +0900</pubDate>
       
-      <guid>https://seiri-blog.github.io/posts/amplify-call-gateway/</guid>
+      <guid>https://seiri-blog-jp.github.io/posts/amplify-call-gateway/</guid>
       <description>準備 1.amplify add apiコマンドで、Rest APIを追加する amplify add api ? Please select from one of the below mentioned services GraphQL ❯ REST 2.amplify pushコマンドで作成したRest APIをAWSにデプロ</description>
     </item>
     
     <item>
       <title>AmplifyでのAuthUtilを作成する</title>
-      <link>https://seiri-blog.github.io/posts/create-authutil-on-amplify/</link>
+      <link>https://seiri-blog-jp.github.io/posts/create-authutil-on-amplify/</link>
       <pubDate>Thu, 20 Jan 2022 16:31:14 +0900</pubDate>
       
-      <guid>https://seiri-blog.github.io/posts/create-authutil-on-amplify/</guid>
+      <guid>https://seiri-blog-jp.github.io/posts/create-authutil-on-amplify/</guid>
       <description>前提 1.amplify add authコマンドで認証サービスを作成する amplify add auth ? Do you want to use the default authentication and security configuration? Default configuration ? How do you want users to be able to sign in? Username ? Do you want to configure advanced settings? No, I am done. 2.amplify pus</description>
     </item>
     
     <item>
       <title>JSでの日付フォーマット</title>
-      <link>https://seiri-blog.github.io/posts/date-format-in-js/</link>
+      <link>https://seiri-blog-jp.github.io/posts/date-format-in-js/</link>
       <pubDate>Fri, 24 Dec 2021 15:08:50 +0900</pubDate>
       
-      <guid>https://seiri-blog.github.io/posts/date-format-in-js/</guid>
+      <guid>https://seiri-blog-jp.github.io/posts/date-format-in-js/</guid>
       <description>実装 /** * 日付フォーマット * @param {Date} date date * @param {string} fmt format * @returns {string} StringDate */ export const dateFormat = (date, fmt = &amp;#39;YYYY/mm/dd&amp;#39;) =&amp;gt; { let ret; const opt = { &amp;#39;Y+&amp;#39;: date.getFullYear().toString(), // 年 &amp;#39;m+&amp;#39;: (date.getMonth() + 1).toString(), // 月 &amp;#39;d+&amp;#39;: date.getDate().toString(), // 日 &amp;#39;H+&amp;#39;: date.getHours().toString(), // 時 &amp;#39;M+&amp;#39;: date.getMinutes().toString(), // 分 &amp;#39;S+&amp;#39;: date.getSeconds().toString() // 秒 };</description>
     </item>
     
     <item>
       <title>JSでのURLパラメータ取得</title>
-      <link>https://seiri-blog.github.io/posts/js-get-url-parameter/</link>
+      <link>https://seiri-blog-jp.github.io/posts/js-get-url-parameter/</link>
       <pubDate>Fri, 24 Dec 2021 15:06:16 +0900</pubDate>
       
-      <guid>https://seiri-blog.github.io/posts/js-get-url-parameter/</guid>
+      <guid>https://seiri-blog-jp.github.io/posts/js-get-url-parameter/</guid>
       <description>実装例 /** * パラーメタの取得 * @param {string} name パラメータ名 * @param {string} url URL * @returns {string} 取得パラメータ */ export const getParam = (name, url) =&amp;gt; { if (!url) url = window.location.href; name = name.replace(/[\[\]]/g, &amp;#39;\\$&amp;amp;&amp;#39;); let regex = new RegExp(&amp;#39;[?&amp;amp;]&amp;#39; + name + &amp;#39;(=([^&amp;amp;#]*)|&amp;amp;|#|$)&amp;#39;), results = regex.exec(url); if (!results)</description>
     </item>
     
     <item>
       <title>JSでのファイルサイズ変換関数</title>
-      <link>https://seiri-blog.github.io/posts/js-file-size-convert/</link>
+      <link>https://seiri-blog-jp.github.io/posts/js-file-size-convert/</link>
       <pubDate>Fri, 24 Dec 2021 15:04:24 +0900</pubDate>
       
-      <guid>https://seiri-blog.github.io/posts/js-file-size-convert/</guid>
+      <guid>https://seiri-blog-jp.github.io/posts/js-file-size-convert/</guid>
       <description>実装 /** * ファイルサイズ変換 * @param {*} size バイト * @returns 変換後のサイズ */ export const fileSizeUnit = (size) =&amp;gt; { // 1 KB = 1024 Byte const kb = 1024 const mb = Math.pow(kb, 2) const gb = Math.pow(kb, 3) const tb = Math.pow(kb, 4) const pb = Math.pow(kb, 5) const round =</description>
     </item>
     
     <item>
       <title>JSでのイベントUtil作成</title>
-      <link>https://seiri-blog.github.io/posts/js-event-util/</link>
+      <link>https://seiri-blog-jp.github.io/posts/js-event-util/</link>
       <pubDate>Tue, 21 Dec 2021 19:07:59 +0900</pubDate>
       
-      <guid>https://seiri-blog.github.io/posts/js-event-util/</guid>
+      <guid>https://seiri-blog-jp.github.io/posts/js-event-util/</guid>
       <description>実装例 export class EventEmitter { constructor() { this.registry = {}; } on(name, listener) { this.registry[name] = this.registry[name] || []; this.registry[name].push(listener); return this; } once(name, listener) { const doOnce = function () { listener.apply(null, arguments); this.removeListener(name, doOnce); }.bind(this); this.on(name, doOnce); return this; } emit(name) { const args = Array.prototype.slice.call(arguments, 1); const listeners = this.registry[name]; let count = 0; if (listeners) { listeners.forEach((listener) =&amp;gt; { count += 1; listener.apply(null, args);</description>
     </item>
     
     <item>
       <title>JSでのストレージUtil作成</title>
-      <link>https://seiri-blog.github.io/posts/js-storage-util/</link>
+      <link>https://seiri-blog-jp.github.io/posts/js-storage-util/</link>
       <pubDate>Tue, 21 Dec 2021 18:33:46 +0900</pubDate>
       
-      <guid>https://seiri-blog.github.io/posts/js-storage-util/</guid>
+      <guid>https://seiri-blog-jp.github.io/posts/js-storage-util/</guid>
       <description>1.説明 セッションストレージとロカールストレージUtilの作成方法を共有します。 2.ソース /** * セッション */ export const session = { /** * セッションストレージ</description>
     </item>
     
     <item>
       <title>JSでのレスポンスクラスハンドラーの作成</title>
-      <link>https://seiri-blog.github.io/posts/response-class-handler-creating-on-js/</link>
+      <link>https://seiri-blog-jp.github.io/posts/response-class-handler-creating-on-js/</link>
       <pubDate>Tue, 21 Dec 2021 18:30:15 +0900</pubDate>
       
-      <guid>https://seiri-blog.github.io/posts/response-class-handler-creating-on-js/</guid>
+      <guid>https://seiri-blog-jp.github.io/posts/response-class-handler-creating-on-js/</guid>
       <description>1.目的 レスポンスクラスハンドラーの作成方法を共有します。 2.ソース /** * リクエストの結果をハンドリングする. * @param {Promiss} promiss * @return reponse レスポンス =&amp;gt; {success: XXX, data:</description>
     </item>
     
     <item>
       <title>【Salesforce】LWC 共通モーダル画面を作成</title>
-      <link>https://seiri-blog.github.io/posts/creation-salesforce-lwc-common-modal-screen/</link>
+      <link>https://seiri-blog-jp.github.io/posts/creation-salesforce-lwc-common-modal-screen/</link>
       <pubDate>Mon, 29 Nov 2021 19:36:52 +0900</pubDate>
       
-      <guid>https://seiri-blog.github.io/posts/creation-salesforce-lwc-common-modal-screen/</guid>
+      <guid>https://seiri-blog-jp.github.io/posts/creation-salesforce-lwc-common-modal-screen/</guid>
       <description>目的 LWCでの共通モーダル画面を作成する方法を共通します ソース modal .slds-modal__content.slds-p-around_medium{ text-align: center !important; } &amp;lt;template&amp;gt; &amp;lt;!--Use template if:true to display/hide popup based on isModalOpen value--&amp;gt; &amp;lt;template if:true={_isModalOpen}&amp;gt; &amp;lt;!-- Modal/Popup Box LWC starts here --&amp;gt; &amp;lt;section role=&amp;#34;dialog&amp;#34; tabindex=&amp;#34;-1&amp;#34; aria-labelledby=&amp;#34;modal-heading-01&amp;#34; aria-modal=&amp;#34;true&amp;#34; class=&amp;#34;slds-modal slds-fade-in-open&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;slds-modal__container&amp;#34;&amp;gt; &amp;lt;!-- Modal/Popup Box LWC</description>
     </item>
     
     <item>
       <title>ブラウザを判断する方法</title>
-      <link>https://seiri-blog.github.io/posts/js-judge-browser/</link>
+      <link>https://seiri-blog-jp.github.io/posts/js-judge-browser/</link>
       <pubDate>Mon, 22 Nov 2021 17:28:47 +0900</pubDate>
       
-      <guid>https://seiri-blog.github.io/posts/js-judge-browser/</guid>
+      <guid>https://seiri-blog-jp.github.io/posts/js-judge-browser/</guid>
       <description>目的 JavaScriptでブラウザを判断する方法を共有します。 実行方法 export const isIE11 = isIE11Test(navigator); export const isChrome = isChromeTest(navigator); export const isSafari = isSafariTest(navigator); export function isIE11Test(navigator) { return /Trident.*rv[ :]*11\./.test(navigator.userAgent); } export function isChromeTest(navigator) { return ( /Chrome/.test(navigator.userAgent) &amp;amp;&amp;amp; /Google Inc/.test(navigator.vendor) ); }</description>
     </item>
     
     <item>
       <title>JavaScriptで配列を比較する方法</title>
-      <link>https://seiri-blog.github.io/posts/js-by-array-diff/</link>
+      <link>https://seiri-blog-jp.github.io/posts/js-by-array-diff/</link>
       <pubDate>Mon, 22 Nov 2021 17:06:22 +0900</pubDate>
       
-      <guid>https://seiri-blog.github.io/posts/js-by-array-diff/</guid>
+      <guid>https://seiri-blog-jp.github.io/posts/js-by-array-diff/</guid>
       <description>実装例 /** * 配列の比較 * @param array1 配列1 * @param array2 配列2 * @returns 同じの場合：True、その他の場合：False */ export const arraysEqual = (array1, array2) =&amp;gt; { if (!array1 || !array2) { return false; } if (array1.length !== array2.length) { return</description>
     </item>
     
     <item>
       <title>JavaScriptでオブジェクトをコピーする方法</title>
-      <link>https://seiri-blog.github.io/posts/js-object-copy/</link>
+      <link>https://seiri-blog-jp.github.io/posts/js-object-copy/</link>
       <pubDate>Mon, 22 Nov 2021 17:05:15 +0900</pubDate>
       
-      <guid>https://seiri-blog.github.io/posts/js-object-copy/</guid>
+      <guid>https://seiri-blog-jp.github.io/posts/js-object-copy/</guid>
       <description>実行例 /** * オブジェクトをコピー * @param obj 対象オブジェクト * @return 新しいオブジェクト */ export const deepCopy = (obj) =&amp;gt; { if (Object(obj) !== obj) { return obj; } if (obj instanceof Set) { return new Set(obj); } if (obj instanceof Date) { return new Date(obj);</description>
     </item>
     
     <item>
       <title>唯一のIDを生成する方法</title>
-      <link>https://seiri-blog.github.io/posts/generating-unique-id/</link>
+      <link>https://seiri-blog-jp.github.io/posts/generating-unique-id/</link>
       <pubDate>Mon, 22 Nov 2021 17:02:25 +0900</pubDate>
       
-      <guid>https://seiri-blog.github.io/posts/generating-unique-id/</guid>
+      <guid>https://seiri-blog-jp.github.io/posts/generating-unique-id/</guid>
       <description>目的 JavaScriptで唯一のIDを生成する方法を共有します。 実装方法 export const guid = () =&amp;gt; { const s4 = () =&amp;gt; { return Math.floor((1 + Math.random()) * 0x10000) .toString(16) .substring(1); } return ( s4() + s4() + &amp;#39;-&amp;#39; + s4() + &amp;#39;-&amp;#39; +</description>
     </item>
     

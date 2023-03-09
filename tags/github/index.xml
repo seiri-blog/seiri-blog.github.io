@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>GitHub on Seiri&#39;s Blog</title>
-    <link>https://seiri-blog.github.io/tags/github/</link>
+    <link>https://seiri-blog-jp.github.io/tags/github/</link>
     <description>Recent content in GitHub on Seiri&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>2023 Seiri All rights reserved</copyright>
-    <lastBuildDate>Thu, 09 Feb 2023 10:19:33 +0900</lastBuildDate><atom:link href="https://seiri-blog.github.io/tags/github/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 09 Feb 2023 10:19:33 +0900</lastBuildDate><atom:link href="https://seiri-blog-jp.github.io/tags/github/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Github使いやすいコツ</title>
-      <link>https://seiri-blog.github.io/posts/how-easy-to-use-github/</link>
+      <link>https://seiri-blog-jp.github.io/posts/how-easy-to-use-github/</link>
       <pubDate>Thu, 09 Feb 2023 10:19:33 +0900</pubDate>
       
-      <guid>https://seiri-blog.github.io/posts/how-easy-to-use-github/</guid>
+      <guid>https://seiri-blog-jp.github.io/posts/how-easy-to-use-github/</guid>
       <description>参照記事 https://knowstechnic.blogspot.com/2023/02/github-advanced-operation.html Github とは GitHub は、ソフトウェア開発用のバージョン管理と協力サービスを提供する Web ベースのプラットフォームです。開発者はコードを保存し管理し</description>
     </item>
     
