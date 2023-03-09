@@ -2,620 +2,620 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Seiri&#39;s Blog</title>
-    <link>https://seiri-blog-jp.github.io/</link>
+    <link>https://seiri-blog.github.io/</link>
     <description>Recent content on Seiri&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>2023 Seiri All rights reserved</copyright>
-    <lastBuildDate>Thu, 09 Feb 2023 10:19:33 +0900</lastBuildDate><atom:link href="https://seiri-blog-jp.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 09 Feb 2023 10:19:33 +0900</lastBuildDate><atom:link href="https://seiri-blog.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Github使いやすいコツ</title>
-      <link>https://seiri-blog-jp.github.io/posts/how-easy-to-use-github/</link>
+      <link>https://seiri-blog.github.io/posts/how-easy-to-use-github/</link>
       <pubDate>Thu, 09 Feb 2023 10:19:33 +0900</pubDate>
       
-      <guid>https://seiri-blog-jp.github.io/posts/how-easy-to-use-github/</guid>
+      <guid>https://seiri-blog.github.io/posts/how-easy-to-use-github/</guid>
       <description>参照記事 https://knowstechnic.blogspot.com/2023/02/github-advanced-operation.html Github とは GitHub は、ソフトウェア開発用のバージョン管理と協力サービスを提供する Web ベースのプラットフォームです。開発者はコードを保存し管理し</description>
     </item>
     
     <item>
       <title>Markdown記法</title>
-      <link>https://seiri-blog-jp.github.io/posts/markdown-notation/</link>
+      <link>https://seiri-blog.github.io/posts/markdown-notation/</link>
       <pubDate>Fri, 13 Jan 2023 00:10:08 +0900</pubDate>
       
-      <guid>https://seiri-blog-jp.github.io/posts/markdown-notation/</guid>
+      <guid>https://seiri-blog.github.io/posts/markdown-notation/</guid>
       <description>Markdown記法 見出し 先頭に#をつけることによって見出しになります。見出しのレベルは#の数で表現します。 # 見出し1 ## 見出し2 ### 見出し3 ####</description>
     </item>
     
     <item>
       <title>【HTML/CSS】ul liの点を表示・非表示する方法</title>
-      <link>https://seiri-blog-jp.github.io/posts/show-and-hide-htmlcss-ul-li-point/</link>
+      <link>https://seiri-blog.github.io/posts/show-and-hide-htmlcss-ul-li-point/</link>
       <pubDate>Fri, 13 Jan 2023 00:05:34 +0900</pubDate>
       
-      <guid>https://seiri-blog-jp.github.io/posts/show-and-hide-htmlcss-ul-li-point/</guid>
+      <guid>https://seiri-blog.github.io/posts/show-and-hide-htmlcss-ul-li-point/</guid>
       <description>本記事はul liの点を表示・非表示する方法を紹介します。 具体的には下記を参照していただければと思います。 ul liの点を非表示する方法 &amp;lt;ul&amp;gt; &amp;lt;</description>
     </item>
     
     <item>
       <title>【AWS】S3 へファイル転送ツール</title>
-      <link>https://seiri-blog-jp.github.io/posts/aws-file-transfer-tool-to-s3/</link>
+      <link>https://seiri-blog.github.io/posts/aws-file-transfer-tool-to-s3/</link>
       <pubDate>Mon, 19 Dec 2022 18:34:03 +0900</pubDate>
       
-      <guid>https://seiri-blog-jp.github.io/posts/aws-file-transfer-tool-to-s3/</guid>
+      <guid>https://seiri-blog.github.io/posts/aws-file-transfer-tool-to-s3/</guid>
       <description>準備 まずCloudBerry Explorerをアクセス 自分のメールアドレスを入力してから Download ボタン押下する ツールをダウンロードする ツールをイン</description>
     </item>
     
     <item>
       <title>このサイトについて</title>
-      <link>https://seiri-blog-jp.github.io/about/</link>
+      <link>https://seiri-blog.github.io/about/</link>
       <pubDate>Mon, 19 Dec 2022 18:34:03 +0900</pubDate>
       
-      <guid>https://seiri-blog-jp.github.io/about/</guid>
+      <guid>https://seiri-blog.github.io/about/</guid>
       <description>概要 これは Hugo に基づいて開発されたオンラインの ブログサイトです。 サイトの URL：https://seiri-blog.github.io/ 当サ</description>
     </item>
     
     <item>
       <title>OpenAIに関する話</title>
-      <link>https://seiri-blog-jp.github.io/posts/story-about-openai/</link>
+      <link>https://seiri-blog.github.io/posts/story-about-openai/</link>
       <pubDate>Mon, 12 Dec 2022 19:48:11 +0900</pubDate>
       
-      <guid>https://seiri-blog-jp.github.io/posts/story-about-openai/</guid>
+      <guid>https://seiri-blog.github.io/posts/story-about-openai/</guid>
       <description>OpenAIとは OpenAI は人工知能の研究を行う非営利団体です。OpenAI は 2015 年にエリック・シュミット氏、イーサン・アシマー氏、ジョン・ピータース</description>
     </item>
     
     <item>
       <title>GPT3に関する話</title>
-      <link>https://seiri-blog-jp.github.io/posts/story-about-gpt3/</link>
+      <link>https://seiri-blog.github.io/posts/story-about-gpt3/</link>
       <pubDate>Mon, 12 Dec 2022 18:27:05 +0900</pubDate>
       
-      <guid>https://seiri-blog-jp.github.io/posts/story-about-gpt3/</guid>
+      <guid>https://seiri-blog.github.io/posts/story-about-gpt3/</guid>
       <description>GPTとは GPT は Generative Pretrained Transformer の略で、トランスフォーマーを使った言語モデルの一種です。GPT は大量の文章データを分析し、それらから文章を生成することが</description>
     </item>
     
     <item>
       <title>OpenAI 使い方</title>
-      <link>https://seiri-blog-jp.github.io/posts/openai-how-to-use/</link>
+      <link>https://seiri-blog.github.io/posts/openai-how-to-use/</link>
       <pubDate>Sat, 10 Dec 2022 10:47:15 +0900</pubDate>
       
-      <guid>https://seiri-blog-jp.github.io/posts/openai-how-to-use/</guid>
+      <guid>https://seiri-blog.github.io/posts/openai-how-to-use/</guid>
       <description>ChatGPTとは ChatGPTは、OpenAIが開発した大規模な言語処理の人工知能モデルです。GPTは「Generative Pre-trained Transf</description>
     </item>
     
     <item>
       <title>Amazon API Gateway</title>
-      <link>https://seiri-blog-jp.github.io/posts/amazon-api-gateway/</link>
+      <link>https://seiri-blog.github.io/posts/amazon-api-gateway/</link>
       <pubDate>Fri, 22 Jul 2022 16:42:09 +0900</pubDate>
       
-      <guid>https://seiri-blog-jp.github.io/posts/amazon-api-gateway/</guid>
+      <guid>https://seiri-blog.github.io/posts/amazon-api-gateway/</guid>
       <description>Amazon API Gateway とは Amazon API Gateway は、あらゆる規模の REST、HTTP、および WebSocket API を作成、公開、維持、モニタリング、およびセキュア化するための AWS のサービスです</description>
     </item>
     
     <item>
       <title>AWS Lambda</title>
-      <link>https://seiri-blog-jp.github.io/posts/aws-lambda/</link>
+      <link>https://seiri-blog.github.io/posts/aws-lambda/</link>
       <pubDate>Fri, 22 Jul 2022 12:03:11 +0900</pubDate>
       
-      <guid>https://seiri-blog-jp.github.io/posts/aws-lambda/</guid>
+      <guid>https://seiri-blog.github.io/posts/aws-lambda/</guid>
       <description>AWS Lambda とは Lambda はサーバーをプロビジョニングしたり管理しなくてもコードを実行できるコンピューティングサービスです。Lambda は可用性の高いコンピ</description>
     </item>
     
     <item>
       <title>Amazon S3</title>
-      <link>https://seiri-blog-jp.github.io/posts/amazons-s3/</link>
+      <link>https://seiri-blog.github.io/posts/amazons-s3/</link>
       <pubDate>Fri, 22 Jul 2022 11:54:52 +0900</pubDate>
       
-      <guid>https://seiri-blog-jp.github.io/posts/amazons-s3/</guid>
+      <guid>https://seiri-blog.github.io/posts/amazons-s3/</guid>
       <description>Amazon S3 とは Amazon Simple Storage Service (Amazon S3) は、業界をリードするスケーラビリティ、データ可用性、セキュリティ、およびパフォーマンスを提供するオブジェクトストレージサ</description>
     </item>
     
     <item>
       <title>AWS DynamoDB</title>
-      <link>https://seiri-blog-jp.github.io/posts/aws-dynamodb/</link>
+      <link>https://seiri-blog.github.io/posts/aws-dynamodb/</link>
       <pubDate>Thu, 14 Jul 2022 16:33:15 +0900</pubDate>
       
-      <guid>https://seiri-blog-jp.github.io/posts/aws-dynamodb/</guid>
+      <guid>https://seiri-blog.github.io/posts/aws-dynamodb/</guid>
       <description>Amazon DynamoDB とは Amazon DynamoDB デベロッパーガイド Amazon DynamoDB は、フルマネージドの NoSQL データベースサービスであり、高速で予測可能なパフォーマンスとシームレスな拡張性が特長</description>
     </item>
     
     <item>
       <title>【Salesforce】Apexで選択リスト取得方法</title>
-      <link>https://seiri-blog-jp.github.io/posts/selection-list-acquisition-method-at-salesforce-apex/</link>
+      <link>https://seiri-blog.github.io/posts/selection-list-acquisition-method-at-salesforce-apex/</link>
       <pubDate>Tue, 12 Jul 2022 16:24:40 +0900</pubDate>
       
-      <guid>https://seiri-blog-jp.github.io/posts/selection-list-acquisition-method-at-salesforce-apex/</guid>
+      <guid>https://seiri-blog.github.io/posts/selection-list-acquisition-method-at-salesforce-apex/</guid>
       <description>目的 Apexであるオブジェクトにある選択リスト項目の選択値を全部取得する方法を共有します。 実装 /** * 選択リストの項目値を取得 * @param {String} sObjectName オブジェク</description>
     </item>
     
     <item>
       <title>【Salesforce】アクションボタン</title>
-      <link>https://seiri-blog-jp.github.io/posts/salesforce-action-button/</link>
+      <link>https://seiri-blog.github.io/posts/salesforce-action-button/</link>
       <pubDate>Tue, 12 Jul 2022 16:09:43 +0900</pubDate>
       
-      <guid>https://seiri-blog-jp.github.io/posts/salesforce-action-button/</guid>
+      <guid>https://seiri-blog.github.io/posts/salesforce-action-button/</guid>
       <description>目的 LWCのlightning-quick-action-panelモーダル画面の幅を調整できないため、 今回AuraとLWCでのアクションボ</description>
     </item>
     
     <item>
       <title>【Salesforce】FLS権限チェック</title>
-      <link>https://seiri-blog-jp.github.io/posts/salesforce-fls-authority-check/</link>
+      <link>https://seiri-blog.github.io/posts/salesforce-fls-authority-check/</link>
       <pubDate>Mon, 11 Jul 2022 20:02:42 +0900</pubDate>
       
-      <guid>https://seiri-blog-jp.github.io/posts/salesforce-fls-authority-check/</guid>
+      <guid>https://seiri-blog.github.io/posts/salesforce-fls-authority-check/</guid>
       <description>目的 CRUD および項目レベルセキュリティ (FLS) 権限チェックUtilを作成方法を共有します ソース public with sharing class FLSUtil { //環境の接頭辞 private static final String ENV_PREFIX = getPrefix(); //アンダーバ</description>
     </item>
     
     <item>
       <title>【Salesforce】プラットフォームイベント説明と利用方法</title>
-      <link>https://seiri-blog-jp.github.io/posts/salesforce-platform-event-description-and-usage/</link>
+      <link>https://seiri-blog.github.io/posts/salesforce-platform-event-description-and-usage/</link>
       <pubDate>Mon, 11 Jul 2022 16:45:24 +0900</pubDate>
       
-      <guid>https://seiri-blog-jp.github.io/posts/salesforce-platform-event-description-and-usage/</guid>
+      <guid>https://seiri-blog.github.io/posts/salesforce-platform-event-description-and-usage/</guid>
       <description>プラットフォームイベントの役割 プラットフォームイベントを使用し、リアルタイムイベントデータのやり取りによって、Salesforce のビジネス</description>
     </item>
     
     <item>
       <title>【Salesforce】データローダバッチ（エクスポート編）</title>
-      <link>https://seiri-blog-jp.github.io/posts/salesforce-data-loader-batch-export-edition/</link>
+      <link>https://seiri-blog.github.io/posts/salesforce-data-loader-batch-export-edition/</link>
       <pubDate>Mon, 30 May 2022 19:45:23 +0900</pubDate>
       
-      <guid>https://seiri-blog-jp.github.io/posts/salesforce-data-loader-batch-export-edition/</guid>
+      <guid>https://seiri-blog.github.io/posts/salesforce-data-loader-batch-export-edition/</guid>
       <description>【Salesforce】データローダバッチ（インポート編） データローダ データローダは、データを一括でインポートまたはエクスポートするためのク</description>
     </item>
     
     <item>
       <title>【Salesforce】データローダバッチ（インポート編）</title>
-      <link>https://seiri-blog-jp.github.io/posts/salesforce-data-loader-batch-import-edition/</link>
+      <link>https://seiri-blog.github.io/posts/salesforce-data-loader-batch-import-edition/</link>
       <pubDate>Mon, 30 May 2022 19:05:22 +0900</pubDate>
       
-      <guid>https://seiri-blog-jp.github.io/posts/salesforce-data-loader-batch-import-edition/</guid>
+      <guid>https://seiri-blog.github.io/posts/salesforce-data-loader-batch-import-edition/</guid>
       <description>【Salesforce】データローダバッチ（エクスポート編） データローダ データローダは、データを一括でインポートまたはエクスポートするための</description>
     </item>
     
     <item>
       <title>【Salesforce】LWCでのPath共通コンポーネント</title>
-      <link>https://seiri-blog-jp.github.io/posts/lwc-path-common-component/</link>
+      <link>https://seiri-blog.github.io/posts/lwc-path-common-component/</link>
       <pubDate>Mon, 16 May 2022 14:11:39 +0900</pubDate>
       
-      <guid>https://seiri-blog-jp.github.io/posts/lwc-path-common-component/</guid>
+      <guid>https://seiri-blog.github.io/posts/lwc-path-common-component/</guid>
       <description>目的 LWCでのPath共通コンポーネントを共有します。 ソース path &amp;lt;template&amp;gt; &amp;lt;div class=&amp;#34;slds-path&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;slds-grid slds-path__track&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;slds-grid slds-path__scroller-container&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;slds-path__scroller&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;slds-path__scroller_inner&amp;#34;&amp;gt; &amp;lt;ul class=&amp;#34;slds-path__nav&amp;#34; role=&amp;#34;listbox&amp;#34; aria-orientation=&amp;#34;horizontal&amp;#34;&amp;gt; &amp;lt;template for:each={pathItemList} for:item=&amp;#34;pathItem&amp;#34; for:index=&amp;#34;index&amp;#34;&amp;gt; {getIndex} &amp;lt;template if:true={pathIndexGeCurrentIndex}&amp;gt; &amp;lt;li key={pathItem} if:true={pathIndexEqCurrentIndex} class=&amp;#34;slds-path__item slds-is-current slds-is-active&amp;#34; role=&amp;#34;presentation&amp;#34;&amp;gt; &amp;lt;a aria-selected=&amp;#34;true&amp;#34; class=&amp;#34;slds-path__link&amp;#34; href=&amp;#34;javasctipt:void();&amp;#34; role=&amp;#34;option&amp;#34; tabindex=&amp;#34;-1&amp;#34;&amp;gt; &amp;lt;span class=&amp;#34;slds-path__stage&amp;#34;&amp;gt;</description>
     </item>
     
     <item>
       <title>【Salesforce】LWC CSV出力方法</title>
-      <link>https://seiri-blog-jp.github.io/posts/salesforce-lwc-csv-output-method/</link>
+      <link>https://seiri-blog.github.io/posts/salesforce-lwc-csv-output-method/</link>
       <pubDate>Tue, 29 Mar 2022 16:38:42 +0900</pubDate>
       
-      <guid>https://seiri-blog-jp.github.io/posts/salesforce-lwc-csv-output-method/</guid>
+      <guid>https://seiri-blog.github.io/posts/salesforce-lwc-csv-output-method/</guid>
       <description>1.目的 今回LWCでのCSVファイルを出力方法を共有します。 2.実装例 exportDataToCSVInLWC &amp;lt;template&amp;gt; &amp;lt;lightning-card title=&amp;#34;Export Data as CSV in Lightning Web Components&amp;#34; icon-name=&amp;#34;custom:custom63&amp;#34;&amp;gt; &amp;lt;template if:true={data}&amp;gt; &amp;lt;div class=&amp;#34;slds-p-around_medium lgc-bg-inverse&amp;#34;&amp;gt; &amp;lt;p&amp;gt;Do you want download data as a CSV format, Click Here &amp;amp;nbsp; &amp;lt;lightning-button icon-name=&amp;#34;utility:download&amp;#34; label=&amp;#34;Download as CSV&amp;#34; title=&amp;#34;Download</description>
     </item>
     
     <item>
       <title>Amplify &#43; Reactでアプリケーション作成</title>
-      <link>https://seiri-blog-jp.github.io/posts/application-creating-at-amplify-react/</link>
+      <link>https://seiri-blog.github.io/posts/application-creating-at-amplify-react/</link>
       <pubDate>Mon, 24 Jan 2022 18:11:28 +0900</pubDate>
       
-      <guid>https://seiri-blog-jp.github.io/posts/application-creating-at-amplify-react/</guid>
+      <guid>https://seiri-blog.github.io/posts/application-creating-at-amplify-react/</guid>
       <description>準備 下記コマンドを順番に実行し、Amplify-Reactでの環境を構築する 1.AmplifyCLIをインストール npm install -g @aws-amplify/cli 2.Amplify</description>
     </item>
     
     <item>
       <title>AmplifyでS3と連携する方法</title>
-      <link>https://seiri-blog-jp.github.io/posts/amplify-setup-s3-and-operation/</link>
+      <link>https://seiri-blog.github.io/posts/amplify-setup-s3-and-operation/</link>
       <pubDate>Fri, 21 Jan 2022 12:15:55 +0900</pubDate>
       
-      <guid>https://seiri-blog-jp.github.io/posts/amplify-setup-s3-and-operation/</guid>
+      <guid>https://seiri-blog.github.io/posts/amplify-setup-s3-and-operation/</guid>
       <description>準備 1.amplify add storageコマンドで、S3を追加する amplify add storage ? Please select from one of the below mentioned services (Use arrow keys) ❯ Content (Images, audio, video, etc.) NoSQL Database 2.amplify pushコマンドで作成したS3をAWSにデ</description>
     </item>
     
     <item>
       <title>AmplifyでGraphQLを呼出す方法</title>
-      <link>https://seiri-blog-jp.github.io/posts/amplify-call-graphql/</link>
+      <link>https://seiri-blog.github.io/posts/amplify-call-graphql/</link>
       <pubDate>Thu, 20 Jan 2022 19:58:17 +0900</pubDate>
       
-      <guid>https://seiri-blog-jp.github.io/posts/amplify-call-graphql/</guid>
+      <guid>https://seiri-blog.github.io/posts/amplify-call-graphql/</guid>
       <description>準備 1.amplify add apiコマンドで、GraphQL APIを追加する amplify add api ? Please select from one of the below mentioned services: &amp;gt; GraphQL ? Here is the GraphQL API that we will create. Select a setting to edit or continue: &amp;gt; Continue ? Choose a schema template: &amp;gt; Single object</description>
     </item>
     
     <item>
       <title>AmplifyでAPI Gatewayを呼出す方法</title>
-      <link>https://seiri-blog-jp.github.io/posts/amplify-call-gateway/</link>
+      <link>https://seiri-blog.github.io/posts/amplify-call-gateway/</link>
       <pubDate>Thu, 20 Jan 2022 19:05:44 +0900</pubDate>
       
-      <guid>https://seiri-blog-jp.github.io/posts/amplify-call-gateway/</guid>
+      <guid>https://seiri-blog.github.io/posts/amplify-call-gateway/</guid>
       <description>準備 1.amplify add apiコマンドで、Rest APIを追加する amplify add api ? Please select from one of the below mentioned services GraphQL ❯ REST 2.amplify pushコマンドで作成したRest APIをAWSにデプロ</description>
     </item>
     
     <item>
       <title>AmplifyでのAuthUtilを作成する</title>
-      <link>https://seiri-blog-jp.github.io/posts/create-authutil-on-amplify/</link>
+      <link>https://seiri-blog.github.io/posts/create-authutil-on-amplify/</link>
       <pubDate>Thu, 20 Jan 2022 16:31:14 +0900</pubDate>
       
-      <guid>https://seiri-blog-jp.github.io/posts/create-authutil-on-amplify/</guid>
+      <guid>https://seiri-blog.github.io/posts/create-authutil-on-amplify/</guid>
       <description>前提 1.amplify add authコマンドで認証サービスを作成する amplify add auth ? Do you want to use the default authentication and security configuration? Default configuration ? How do you want users to be able to sign in? Username ? Do you want to configure advanced settings? No, I am done. 2.amplify pus</description>
     </item>
     
     <item>
       <title>Pythonで日本の新型コロナ患者情報取得</title>
-      <link>https://seiri-blog-jp.github.io/posts/python-corona-patient-info-in-japanese/</link>
+      <link>https://seiri-blog.github.io/posts/python-corona-patient-info-in-japanese/</link>
       <pubDate>Tue, 18 Jan 2022 19:21:37 +0900</pubDate>
       
-      <guid>https://seiri-blog-jp.github.io/posts/python-corona-patient-info-in-japanese/</guid>
+      <guid>https://seiri-blog.github.io/posts/python-corona-patient-info-in-japanese/</guid>
       <description>#環境 Win10 Python 3.8.10 ・requests==2.25.1 ・pandas==1.3.1 #実装 import requests as rq import pandas as pd url = &amp;#39;https://covid19-japan-web-api.vercel.app/api/v1/positives?prefecture={0}&amp;#39; prefectures = [&amp;#39;北海道&amp;#39;,&amp;#</description>
     </item>
     
     <item>
       <title>PythonでのAWS Lambda 環境変数の取得</title>
-      <link>https://seiri-blog-jp.github.io/posts/aws-lambda-environment-variable-acquisition-on-python/</link>
+      <link>https://seiri-blog.github.io/posts/aws-lambda-environment-variable-acquisition-on-python/</link>
       <pubDate>Mon, 27 Dec 2021 17:53:32 +0900</pubDate>
       
-      <guid>https://seiri-blog-jp.github.io/posts/aws-lambda-environment-variable-acquisition-on-python/</guid>
+      <guid>https://seiri-blog.github.io/posts/aws-lambda-environment-variable-acquisition-on-python/</guid>
       <description>準備 環境変数の設定 環境変数は、関数の未公開バージョンで定義します。バージョンを公開するとき、他のバージョン固有の設定とともに、そのバージョン</description>
     </item>
     
     <item>
       <title>PythonでのAWS Lambda 共通DynamoDB操作Util</title>
-      <link>https://seiri-blog-jp.github.io/posts/aws-lambda-common-dynamodb-operation-util-in-python/</link>
+      <link>https://seiri-blog.github.io/posts/aws-lambda-common-dynamodb-operation-util-in-python/</link>
       <pubDate>Mon, 27 Dec 2021 17:33:59 +0900</pubDate>
       
-      <guid>https://seiri-blog-jp.github.io/posts/aws-lambda-common-dynamodb-operation-util-in-python/</guid>
+      <guid>https://seiri-blog.github.io/posts/aws-lambda-common-dynamodb-operation-util-in-python/</guid>
       <description>目的 PythonでのDBUtilの作成方法を共有します。 実装 import boto3 dynamodb = boto3.resource(&amp;#39;dynamodb&amp;#39;, endpoint_url=&amp;#34;XXXXXXX&amp;#34;) class DynamoDB: &amp;#34;&amp;#34;&amp;#34;DynamoDBの操作(CRUD)</description>
     </item>
     
     <item>
       <title>AWS Lambda クォータ</title>
-      <link>https://seiri-blog-jp.github.io/posts/aws-lambda-quota/</link>
+      <link>https://seiri-blog.github.io/posts/aws-lambda-quota/</link>
       <pubDate>Mon, 27 Dec 2021 16:29:51 +0900</pubDate>
       
-      <guid>https://seiri-blog-jp.github.io/posts/aws-lambda-quota/</guid>
+      <guid>https://seiri-blog.github.io/posts/aws-lambda-quota/</guid>
       <description>コンピューティングとストレージ Lambda では、関数の実行と保存に使用できるコンピューティングおよびストレージリソースの量に対してクォータを設定します</description>
     </item>
     
     <item>
       <title>【AWS】LambdaでS3ファイルをtmpディレクトリに保存</title>
-      <link>https://seiri-blog-jp.github.io/posts/aws-lambda-by-s3-file-tmp-directory-save/</link>
+      <link>https://seiri-blog.github.io/posts/aws-lambda-by-s3-file-tmp-directory-save/</link>
       <pubDate>Mon, 27 Dec 2021 16:14:46 +0900</pubDate>
       
-      <guid>https://seiri-blog-jp.github.io/posts/aws-lambda-by-s3-file-tmp-directory-save/</guid>
+      <guid>https://seiri-blog.github.io/posts/aws-lambda-by-s3-file-tmp-directory-save/</guid>
       <description>はじめに 各実行環境は、/tmp ディレクトリ内の 512 MB のディスク領域を提供します。ディレクトリのコンテンツは、実行環境が停止された際に維持され、</description>
     </item>
     
     <item>
       <title>PythonでのAWS Lambda 共通ユーザ操作Util</title>
-      <link>https://seiri-blog-jp.github.io/posts/aws-lambda-common-user-operation-util-in-python/</link>
+      <link>https://seiri-blog.github.io/posts/aws-lambda-common-user-operation-util-in-python/</link>
       <pubDate>Mon, 27 Dec 2021 12:38:54 +0900</pubDate>
       
-      <guid>https://seiri-blog-jp.github.io/posts/aws-lambda-common-user-operation-util-in-python/</guid>
+      <guid>https://seiri-blog.github.io/posts/aws-lambda-common-user-operation-util-in-python/</guid>
       <description>目的 Python boto3 ラブライブを利用して、AWS Coginitでの操作Utitl作成方法を共有します。 実装 # -*- coding: utf-8 -*- import secrets import string import boto3 USERPOOL_ID = &amp;#39;USERPOOL_ID&amp;#39; client = boto3.client(&amp;#39;cognito-idp&amp;#39;) def show_user_list(): &amp;#34</description>
     </item>
     
     <item>
       <title>PythonでStepFunctionを実行する方法(boto3)</title>
-      <link>https://seiri-blog-jp.github.io/posts/python-execute-stepfunction/</link>
+      <link>https://seiri-blog.github.io/posts/python-execute-stepfunction/</link>
       <pubDate>Mon, 27 Dec 2021 12:18:23 +0900</pubDate>
       
-      <guid>https://seiri-blog-jp.github.io/posts/python-execute-stepfunction/</guid>
+      <guid>https://seiri-blog.github.io/posts/python-execute-stepfunction/</guid>
       <description>実装 # -*- coding: utf-8 -*- import boto3 stepfunctions_client = boto3.client(&amp;#39;stepfunctions&amp;#39;) def execute(state_machine_arn, input_message_body): &amp;#34;&amp;#34;&amp;#34;StepFunctionsを呼び出す関数 Args: state_machine_arn: 呼び出したいStepFunction</description>
     </item>
     
     <item>
       <title>pythonでのAWS Lambda キュー送信</title>
-      <link>https://seiri-blog-jp.github.io/posts/aws-lambda-queue-send-in-python/</link>
+      <link>https://seiri-blog.github.io/posts/aws-lambda-queue-send-in-python/</link>
       <pubDate>Mon, 27 Dec 2021 12:15:01 +0900</pubDate>
       
-      <guid>https://seiri-blog-jp.github.io/posts/aws-lambda-queue-send-in-python/</guid>
+      <guid>https://seiri-blog.github.io/posts/aws-lambda-queue-send-in-python/</guid>
       <description>実装 # -*- coding: utf-8 -*- import boto3 sqs_client = boto3.client(&amp;#39;sqs&amp;#39;) def push_message(message_body): &amp;#34;&amp;#34;&amp;#34;SQSの特定キューにメッセージをPUSHする Args: message_body: PUSHするメッセージ Returns: sqsメッ</description>
     </item>
     
     <item>
       <title>PythonでのAWS Lambda 共通ログ出力Util</title>
-      <link>https://seiri-blog-jp.github.io/posts/aws-lambda-common-logging-util-in-python/</link>
+      <link>https://seiri-blog.github.io/posts/aws-lambda-common-logging-util-in-python/</link>
       <pubDate>Mon, 27 Dec 2021 12:06:59 +0900</pubDate>
       
-      <guid>https://seiri-blog-jp.github.io/posts/aws-lambda-common-logging-util-in-python/</guid>
+      <guid>https://seiri-blog.github.io/posts/aws-lambda-common-logging-util-in-python/</guid>
       <description>実装 # -*- coding: utf-8 -*- import logging import sys from datetime import datetime from pytz import timezone def _customTime(*args): &amp;#34;&amp;#34;&amp;#34;ログ用の時間出力 Returns: 現在時間（Asia/Tokyo） &amp;#34;&amp;#34;&amp;#34; return datetime.now(timezone(&amp;#39;Asia/Tokyo&amp;#39;)).timetuple() LOG_LEVEL = &amp;#39;INFO&amp;#39; _logger = logging.getLogger(__name__)</description>
     </item>
     
     <item>
       <title>PythonでのAWS Lambda 共通認証Util</title>
-      <link>https://seiri-blog-jp.github.io/posts/aws-lambda-common-authorization-util-in-python/</link>
+      <link>https://seiri-blog.github.io/posts/aws-lambda-common-authorization-util-in-python/</link>
       <pubDate>Mon, 27 Dec 2021 11:54:25 +0900</pubDate>
       
-      <guid>https://seiri-blog-jp.github.io/posts/aws-lambda-common-authorization-util-in-python/</guid>
+      <guid>https://seiri-blog.github.io/posts/aws-lambda-common-authorization-util-in-python/</guid>
       <description>実装 # -*- coding: utf-8 -*- import base64 import boto3 import json cognito_client = boto3.client(&amp;#39;cognito-idp&amp;#39;) cognito_identity_client = boto3.client(&amp;#39;cognito-identity&amp;#39;) USERPOOL_ID = &amp;#39;USERPOOL_ID&amp;#39; CLIENT_ID = &amp;#39;CLIENT_ID&amp;#39; IDENTITYPOOL_ID = &amp;#39;IDENTITYPOOL_ID&amp;#39; def authenticate(user_id, password): &amp;#34;&amp;#34;&amp;#34;指定されたユーザIDとパスワードで認証を実施する</description>
     </item>
     
     <item>
       <title>PythonでのAWS Lambda 共通レスポンスUtil</title>
-      <link>https://seiri-blog-jp.github.io/posts/aws-lambda-common-response-util-in-python/</link>
+      <link>https://seiri-blog.github.io/posts/aws-lambda-common-response-util-in-python/</link>
       <pubDate>Mon, 27 Dec 2021 11:22:36 +0900</pubDate>
       
-      <guid>https://seiri-blog-jp.github.io/posts/aws-lambda-common-response-util-in-python/</guid>
+      <guid>https://seiri-blog.github.io/posts/aws-lambda-common-response-util-in-python/</guid>
       <description>目的 PythonでのLambda関数共通レスポンスUtilを作成方法を共有します。 実装 import decimal import json class DecimalEncoder(json.JSONEncoder): &amp;#34;&amp;#34;&amp;#34;DecimalEncoder クラス Decimal クラスを使用して保存された数値を</description>
     </item>
     
     <item>
       <title>JSでの日付フォーマット</title>
-      <link>https://seiri-blog-jp.github.io/posts/date-format-in-js/</link>
+      <link>https://seiri-blog.github.io/posts/date-format-in-js/</link>
       <pubDate>Fri, 24 Dec 2021 15:08:50 +0900</pubDate>
       
-      <guid>https://seiri-blog-jp.github.io/posts/date-format-in-js/</guid>
+      <guid>https://seiri-blog.github.io/posts/date-format-in-js/</guid>
       <description>実装 /** * 日付フォーマット * @param {Date} date date * @param {string} fmt format * @returns {string} StringDate */ export const dateFormat = (date, fmt = &amp;#39;YYYY/mm/dd&amp;#39;) =&amp;gt; { let ret; const opt = { &amp;#39;Y+&amp;#39;: date.getFullYear().toString(), // 年 &amp;#39;m+&amp;#39;: (date.getMonth() + 1).toString(), // 月 &amp;#39;d+&amp;#39;: date.getDate().toString(), // 日 &amp;#39;H+&amp;#39;: date.getHours().toString(), // 時 &amp;#39;M+&amp;#39;: date.getMinutes().toString(), // 分 &amp;#39;S+&amp;#39;: date.getSeconds().toString() // 秒 };</description>
     </item>
     
     <item>
       <title>JSでのURLパラメータ取得</title>
-      <link>https://seiri-blog-jp.github.io/posts/js-get-url-parameter/</link>
+      <link>https://seiri-blog.github.io/posts/js-get-url-parameter/</link>
       <pubDate>Fri, 24 Dec 2021 15:06:16 +0900</pubDate>
       
-      <guid>https://seiri-blog-jp.github.io/posts/js-get-url-parameter/</guid>
+      <guid>https://seiri-blog.github.io/posts/js-get-url-parameter/</guid>
       <description>実装例 /** * パラーメタの取得 * @param {string} name パラメータ名 * @param {string} url URL * @returns {string} 取得パラメータ */ export const getParam = (name, url) =&amp;gt; { if (!url) url = window.location.href; name = name.replace(/[\[\]]/g, &amp;#39;\\$&amp;amp;&amp;#39;); let regex = new RegExp(&amp;#39;[?&amp;amp;]&amp;#39; + name + &amp;#39;(=([^&amp;amp;#]*)|&amp;amp;|#|$)&amp;#39;), results = regex.exec(url); if (!results)</description>
     </item>
     
     <item>
       <title>JSでのファイルサイズ変換関数</title>
-      <link>https://seiri-blog-jp.github.io/posts/js-file-size-convert/</link>
+      <link>https://seiri-blog.github.io/posts/js-file-size-convert/</link>
       <pubDate>Fri, 24 Dec 2021 15:04:24 +0900</pubDate>
       
-      <guid>https://seiri-blog-jp.github.io/posts/js-file-size-convert/</guid>
+      <guid>https://seiri-blog.github.io/posts/js-file-size-convert/</guid>
       <description>実装 /** * ファイルサイズ変換 * @param {*} size バイト * @returns 変換後のサイズ */ export const fileSizeUnit = (size) =&amp;gt; { // 1 KB = 1024 Byte const kb = 1024 const mb = Math.pow(kb, 2) const gb = Math.pow(kb, 3) const tb = Math.pow(kb, 4) const pb = Math.pow(kb, 5) const round =</description>
     </item>
     
     <item>
       <title>Pythonでのデータ埋める方法</title>
-      <link>https://seiri-blog-jp.github.io/posts/python-fill-data/</link>
+      <link>https://seiri-blog.github.io/posts/python-fill-data/</link>
       <pubDate>Thu, 23 Dec 2021 12:51:07 +0900</pubDate>
       
-      <guid>https://seiri-blog-jp.github.io/posts/python-fill-data/</guid>
+      <guid>https://seiri-blog.github.io/posts/python-fill-data/</guid>
       <description>実装例 def padding_formatter(item, padding, data_type): &amp;#34;&amp;#34;&amp;#34; 引数で指定された桁数までデータを埋める 埋める内容は以下の通り ・データ型[numeric: 数字] 先頭0埋め ・データ型[half</description>
     </item>
     
     <item>
       <title>PythonでのDBSessionクラス</title>
-      <link>https://seiri-blog-jp.github.io/posts/python-dbsession-class/</link>
+      <link>https://seiri-blog.github.io/posts/python-dbsession-class/</link>
       <pubDate>Thu, 23 Dec 2021 12:38:42 +0900</pubDate>
       
-      <guid>https://seiri-blog-jp.github.io/posts/python-dbsession-class/</guid>
+      <guid>https://seiri-blog.github.io/posts/python-dbsession-class/</guid>
       <description>SQLAlchemyとは SQLAlchemyとは、Pythonの中では最もよく利用されているORMの一つです。 ORM以外にも以下の機能を持ち</description>
     </item>
     
     <item>
       <title>JSでのイベントUtil作成</title>
-      <link>https://seiri-blog-jp.github.io/posts/js-event-util/</link>
+      <link>https://seiri-blog.github.io/posts/js-event-util/</link>
       <pubDate>Tue, 21 Dec 2021 19:07:59 +0900</pubDate>
       
-      <guid>https://seiri-blog-jp.github.io/posts/js-event-util/</guid>
+      <guid>https://seiri-blog.github.io/posts/js-event-util/</guid>
       <description>実装例 export class EventEmitter { constructor() { this.registry = {}; } on(name, listener) { this.registry[name] = this.registry[name] || []; this.registry[name].push(listener); return this; } once(name, listener) { const doOnce = function () { listener.apply(null, arguments); this.removeListener(name, doOnce); }.bind(this); this.on(name, doOnce); return this; } emit(name) { const args = Array.prototype.slice.call(arguments, 1); const listeners = this.registry[name]; let count = 0; if (listeners) { listeners.forEach((listener) =&amp;gt; { count += 1; listener.apply(null, args);</description>
     </item>
     
     <item>
       <title>JSでのストレージUtil作成</title>
-      <link>https://seiri-blog-jp.github.io/posts/js-storage-util/</link>
+      <link>https://seiri-blog.github.io/posts/js-storage-util/</link>
       <pubDate>Tue, 21 Dec 2021 18:33:46 +0900</pubDate>
       
-      <guid>https://seiri-blog-jp.github.io/posts/js-storage-util/</guid>
+      <guid>https://seiri-blog.github.io/posts/js-storage-util/</guid>
       <description>1.説明 セッションストレージとロカールストレージUtilの作成方法を共有します。 2.ソース /** * セッション */ export const session = { /** * セッションストレージ</description>
     </item>
     
     <item>
       <title>JSでのレスポンスクラスハンドラーの作成</title>
-      <link>https://seiri-blog-jp.github.io/posts/response-class-handler-creating-on-js/</link>
+      <link>https://seiri-blog.github.io/posts/response-class-handler-creating-on-js/</link>
       <pubDate>Tue, 21 Dec 2021 18:30:15 +0900</pubDate>
       
-      <guid>https://seiri-blog-jp.github.io/posts/response-class-handler-creating-on-js/</guid>
+      <guid>https://seiri-blog.github.io/posts/response-class-handler-creating-on-js/</guid>
       <description>1.目的 レスポンスクラスハンドラーの作成方法を共有します。 2.ソース /** * リクエストの結果をハンドリングする. * @param {Promiss} promiss * @return reponse レスポンス =&amp;gt; {success: XXX, data:</description>
     </item>
     
     <item>
       <title>【Salesforce】LWC Toastメッセージ共通Util</title>
-      <link>https://seiri-blog-jp.github.io/posts/salesforce-lwc-toast-message-common-util/</link>
+      <link>https://seiri-blog.github.io/posts/salesforce-lwc-toast-message-common-util/</link>
       <pubDate>Tue, 21 Dec 2021 18:27:36 +0900</pubDate>
       
-      <guid>https://seiri-blog-jp.github.io/posts/salesforce-lwc-toast-message-common-util/</guid>
+      <guid>https://seiri-blog.github.io/posts/salesforce-lwc-toast-message-common-util/</guid>
       <description>1.目的 LWCでのToastメッセージ共通Utilを共有します。 2.実装 import { ShowToastEvent } from &amp;#39;lightning/platformShowToastEvent&amp;#39;; /** * メッセージ表示 * @param {window} that * @param {string} title タイトール * @param {string} message メッ</description>
     </item>
     
     <item>
       <title>【Salesforce】LWC 共通モーダル画面を作成</title>
-      <link>https://seiri-blog-jp.github.io/posts/creation-salesforce-lwc-common-modal-screen/</link>
+      <link>https://seiri-blog.github.io/posts/creation-salesforce-lwc-common-modal-screen/</link>
       <pubDate>Mon, 29 Nov 2021 19:36:52 +0900</pubDate>
       
-      <guid>https://seiri-blog-jp.github.io/posts/creation-salesforce-lwc-common-modal-screen/</guid>
+      <guid>https://seiri-blog.github.io/posts/creation-salesforce-lwc-common-modal-screen/</guid>
       <description>目的 LWCでの共通モーダル画面を作成する方法を共通します ソース modal .slds-modal__content.slds-p-around_medium{ text-align: center !important; } &amp;lt;template&amp;gt; &amp;lt;!--Use template if:true to display/hide popup based on isModalOpen value--&amp;gt; &amp;lt;template if:true={_isModalOpen}&amp;gt; &amp;lt;!-- Modal/Popup Box LWC starts here --&amp;gt; &amp;lt;section role=&amp;#34;dialog&amp;#34; tabindex=&amp;#34;-1&amp;#34; aria-labelledby=&amp;#34;modal-heading-01&amp;#34; aria-modal=&amp;#34;true&amp;#34; class=&amp;#34;slds-modal slds-fade-in-open&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;slds-modal__container&amp;#34;&amp;gt; &amp;lt;!-- Modal/Popup Box LWC</description>
     </item>
     
     <item>
       <title>ブラウザを判断する方法</title>
-      <link>https://seiri-blog-jp.github.io/posts/js-judge-browser/</link>
+      <link>https://seiri-blog.github.io/posts/js-judge-browser/</link>
       <pubDate>Mon, 22 Nov 2021 17:28:47 +0900</pubDate>
       
-      <guid>https://seiri-blog-jp.github.io/posts/js-judge-browser/</guid>
+      <guid>https://seiri-blog.github.io/posts/js-judge-browser/</guid>
       <description>目的 JavaScriptでブラウザを判断する方法を共有します。 実行方法 export const isIE11 = isIE11Test(navigator); export const isChrome = isChromeTest(navigator); export const isSafari = isSafariTest(navigator); export function isIE11Test(navigator) { return /Trident.*rv[ :]*11\./.test(navigator.userAgent); } export function isChromeTest(navigator) { return ( /Chrome/.test(navigator.userAgent) &amp;amp;&amp;amp; /Google Inc/.test(navigator.vendor) ); }</description>
     </item>
     
     <item>
       <title>【Salesforce】Apex共通レスポンス基底クラス</title>
-      <link>https://seiri-blog-jp.github.io/posts/salesforce-apex-common-response-superclass/</link>
+      <link>https://seiri-blog.github.io/posts/salesforce-apex-common-response-superclass/</link>
       <pubDate>Mon, 22 Nov 2021 17:18:13 +0900</pubDate>
       
-      <guid>https://seiri-blog-jp.github.io/posts/salesforce-apex-common-response-superclass/</guid>
+      <guid>https://seiri-blog.github.io/posts/salesforce-apex-common-response-superclass/</guid>
       <description>目的 LWCでApexクラスを呼出す基底クラスを作成する方法を紹介します。 LWCでApexクラスを呼出すときの返却値は主に正常系、警告系と異常</description>
     </item>
     
     <item>
       <title>JavaScriptで配列を比較する方法</title>
-      <link>https://seiri-blog-jp.github.io/posts/js-by-array-diff/</link>
+      <link>https://seiri-blog.github.io/posts/js-by-array-diff/</link>
       <pubDate>Mon, 22 Nov 2021 17:06:22 +0900</pubDate>
       
-      <guid>https://seiri-blog-jp.github.io/posts/js-by-array-diff/</guid>
+      <guid>https://seiri-blog.github.io/posts/js-by-array-diff/</guid>
       <description>実装例 /** * 配列の比較 * @param array1 配列1 * @param array2 配列2 * @returns 同じの場合：True、その他の場合：False */ export const arraysEqual = (array1, array2) =&amp;gt; { if (!array1 || !array2) { return false; } if (array1.length !== array2.length) { return</description>
     </item>
     
     <item>
       <title>JavaScriptでオブジェクトをコピーする方法</title>
-      <link>https://seiri-blog-jp.github.io/posts/js-object-copy/</link>
+      <link>https://seiri-blog.github.io/posts/js-object-copy/</link>
       <pubDate>Mon, 22 Nov 2021 17:05:15 +0900</pubDate>
       
-      <guid>https://seiri-blog-jp.github.io/posts/js-object-copy/</guid>
+      <guid>https://seiri-blog.github.io/posts/js-object-copy/</guid>
       <description>実行例 /** * オブジェクトをコピー * @param obj 対象オブジェクト * @return 新しいオブジェクト */ export const deepCopy = (obj) =&amp;gt; { if (Object(obj) !== obj) { return obj; } if (obj instanceof Set) { return new Set(obj); } if (obj instanceof Date) { return new Date(obj);</description>
     </item>
     
     <item>
       <title>唯一のIDを生成する方法</title>
-      <link>https://seiri-blog-jp.github.io/posts/generating-unique-id/</link>
+      <link>https://seiri-blog.github.io/posts/generating-unique-id/</link>
       <pubDate>Mon, 22 Nov 2021 17:02:25 +0900</pubDate>
       
-      <guid>https://seiri-blog-jp.github.io/posts/generating-unique-id/</guid>
+      <guid>https://seiri-blog.github.io/posts/generating-unique-id/</guid>
       <description>目的 JavaScriptで唯一のIDを生成する方法を共有します。 実装方法 export const guid = () =&amp;gt; { const s4 = () =&amp;gt; { return Math.floor((1 + Math.random()) * 0x10000) .toString(16) .substring(1); } return ( s4() + s4() + &amp;#39;-&amp;#39; + s4() + &amp;#39;-&amp;#39; +</description>
     </item>
     
     <item>
       <title>ApexでAWS S3署名付きURL発行</title>
-      <link>https://seiri-blog-jp.github.io/posts/apex-create-aws-s3-sign-with-url/</link>
+      <link>https://seiri-blog.github.io/posts/apex-create-aws-s3-sign-with-url/</link>
       <pubDate>Mon, 22 Nov 2021 16:48:56 +0900</pubDate>
       
-      <guid>https://seiri-blog-jp.github.io/posts/apex-create-aws-s3-sign-with-url/</guid>
+      <guid>https://seiri-blog.github.io/posts/apex-create-aws-s3-sign-with-url/</guid>
       <description>目的 ApexでS3署名付きURLを発行する方法を共用します。 ソース public class AwsS3Util { private static final String AMZ_ALGORITHM = &amp;#39;AWS4-HMAC-SHA256&amp;#39;; private static final String ACCESS_KEY = &amp;#39;アクセスキー&amp;#39;; private static final</description>
     </item>
     
     <item>
       <title>Apex REST API Callouts Util作成</title>
-      <link>https://seiri-blog-jp.github.io/posts/apex-rest-api-callouts-util-creation/</link>
+      <link>https://seiri-blog.github.io/posts/apex-rest-api-callouts-util-creation/</link>
       <pubDate>Mon, 22 Nov 2021 16:41:02 +0900</pubDate>
       
-      <guid>https://seiri-blog-jp.github.io/posts/apex-rest-api-callouts-util-creation/</guid>
+      <guid>https://seiri-blog.github.io/posts/apex-rest-api-callouts-util-creation/</guid>
       <description>1.目的 Apex REST Callouts Utilを作成します。 2.ソース public class CalloutUtil{ /**リクエストメソッド */ private enum RequestMethod { GET, POST, PUT } /** * GET請求を出す * @param {String} url URL * @param {Map} mapHeader ヘッダー</description>
     </item>
     
     <item>
       <title>LWCでのファイルダウンロード</title>
-      <link>https://seiri-blog-jp.github.io/posts/file-download-in-lwc/</link>
+      <link>https://seiri-blog.github.io/posts/file-download-in-lwc/</link>
       <pubDate>Mon, 02 Aug 2021 18:36:58 +0900</pubDate>
       
-      <guid>https://seiri-blog-jp.github.io/posts/file-download-in-lwc/</guid>
+      <guid>https://seiri-blog.github.io/posts/file-download-in-lwc/</guid>
       <description>目的 LWCでのファイルダウンロード方法を共有します。 ソース構成図 force-app └─main └─default ├─classes │ ├─GetFileDem</description>
     </item>
     
     <item>
       <title>LWCでのファイル一括ダウンロード方法</title>
-      <link>https://seiri-blog-jp.github.io/posts/lwc-file-bulk-download/</link>
+      <link>https://seiri-blog.github.io/posts/lwc-file-bulk-download/</link>
       <pubDate>Mon, 02 Aug 2021 10:57:14 +0900</pubDate>
       
-      <guid>https://seiri-blog-jp.github.io/posts/lwc-file-bulk-download/</guid>
+      <guid>https://seiri-blog.github.io/posts/lwc-file-bulk-download/</guid>
       <description>目的 今回ClassicモードでVisualforceにLWCのでファイル一括ダウンロードする方法を共有します。 前提 jszip.jsを静的リソ</description>
     </item>
     
     <item>
       <title>VFPageにLWCでのファイルUP方法</title>
-      <link>https://seiri-blog-jp.github.io/posts/vfpage-lwc-on-file-up/</link>
+      <link>https://seiri-blog.github.io/posts/vfpage-lwc-on-file-up/</link>
       <pubDate>Thu, 29 Jul 2021 16:30:01 +0900</pubDate>
       
-      <guid>https://seiri-blog-jp.github.io/posts/vfpage-lwc-on-file-up/</guid>
+      <guid>https://seiri-blog.github.io/posts/vfpage-lwc-on-file-up/</guid>
       <description>1.目的 Salesforce Lightningモード下にLWCでのファイルをアップロードするには&amp;lt;lightning-file-upload&amp;gt;コン</description>
     </item>
     
     <item>
       <title>【Salesforce】VFページにLWCを表示する方法</title>
-      <link>https://seiri-blog-jp.github.io/posts/salesforce-vfpage-display-lwc/</link>
+      <link>https://seiri-blog.github.io/posts/salesforce-vfpage-display-lwc/</link>
       <pubDate>Wed, 28 Jul 2021 14:42:39 +0900</pubDate>
       
-      <guid>https://seiri-blog-jp.github.io/posts/salesforce-vfpage-display-lwc/</guid>
+      <guid>https://seiri-blog.github.io/posts/salesforce-vfpage-display-lwc/</guid>
       <description>目的 LWCををVFページに表示する方法を紹介します。 基本的な考え方はVFページにLightningOutという仕組みを利用して、LWCを表示</description>
     </item>
     
     <item>
       <title>LWCでAWS S3と連携する方法</title>
-      <link>https://seiri-blog-jp.github.io/posts/lwc-by-aws-3-and-operation/</link>
+      <link>https://seiri-blog.github.io/posts/lwc-by-aws-3-and-operation/</link>
       <pubDate>Wed, 28 Jul 2021 13:02:56 +0900</pubDate>
       
-      <guid>https://seiri-blog-jp.github.io/posts/lwc-by-aws-3-and-operation/</guid>
+      <guid>https://seiri-blog.github.io/posts/lwc-by-aws-3-and-operation/</guid>
       <description>1.目的 今回LWC中にAWSのSDK for javascriptでS3と連携する方法を共有します。 2.前提 2.1.AWS S3バケットCross-Origin Resource</description>
     </item>
     
     <item>
       <title>LWCでのDatePicker自分で作る</title>
-      <link>https://seiri-blog-jp.github.io/posts/lwc-on-datepicker-myself-with-make/</link>
+      <link>https://seiri-blog.github.io/posts/lwc-on-datepicker-myself-with-make/</link>
       <pubDate>Mon, 26 Jul 2021 14:49:28 +0900</pubDate>
       
-      <guid>https://seiri-blog-jp.github.io/posts/lwc-on-datepicker-myself-with-make/</guid>
+      <guid>https://seiri-blog.github.io/posts/lwc-on-datepicker-myself-with-make/</guid>
       <description>1.目的 LWCでのDatePickerの作成方法を共有します。 2.ソース構成図 lwc ├─datePicker └─datePickerContai</description>
     </item>
     
     <item>
       <title>LWCでの共通Util自分で作る</title>
-      <link>https://seiri-blog-jp.github.io/posts/lwc-on-common-util-myself-with-make/</link>
+      <link>https://seiri-blog.github.io/posts/lwc-on-common-util-myself-with-make/</link>
       <pubDate>Mon, 26 Jul 2021 10:52:54 +0900</pubDate>
       
-      <guid>https://seiri-blog-jp.github.io/posts/lwc-on-common-util-myself-with-make/</guid>
+      <guid>https://seiri-blog.github.io/posts/lwc-on-common-util-myself-with-make/</guid>
       <description>1.目的 今回LWCでの共通Utilの作成方法を共有します。 2.ソース構成図 lwc ├─commonUtil └─commonUtilChild commonUtil /** *</description>
     </item>
     
     <item>
       <title>LWCでの共通CSS</title>
-      <link>https://seiri-blog-jp.github.io/posts/lwc-common-css/</link>
+      <link>https://seiri-blog.github.io/posts/lwc-common-css/</link>
       <pubDate>Mon, 26 Jul 2021 10:30:25 +0900</pubDate>
       
-      <guid>https://seiri-blog-jp.github.io/posts/lwc-common-css/</guid>
+      <guid>https://seiri-blog.github.io/posts/lwc-common-css/</guid>
       <description>目的 今回LWCでの共通スタイルシート(CSS)の方法を共有します。 ソース構成図 lwc ├─commonStyle └─commonStyleChil</description>
     </item>
     
     <item>
       <title>LWCでのStyling Hooks</title>
-      <link>https://seiri-blog-jp.github.io/posts/lwc-styling-hooks/</link>
+      <link>https://seiri-blog.github.io/posts/lwc-styling-hooks/</link>
       <pubDate>Wed, 21 Jul 2021 19:17:39 +0900</pubDate>
       
-      <guid>https://seiri-blog-jp.github.io/posts/lwc-styling-hooks/</guid>
+      <guid>https://seiri-blog.github.io/posts/lwc-styling-hooks/</guid>
       <description>1.目的 今回Lighting Desigin Systemで提供された標準デザインを変えようと思います。 基本的にはスタイルフックを使って、標準のデザインを変</description>
     </item>
     
     <item>
       <title>LWCでの再帰的なコンポーネント自分で作る</title>
-      <link>https://seiri-blog-jp.github.io/posts/lwc-on-recursive-component-myself-with-make/</link>
+      <link>https://seiri-blog.github.io/posts/lwc-on-recursive-component-myself-with-make/</link>
       <pubDate>Wed, 21 Jul 2021 18:36:08 +0900</pubDate>
       
-      <guid>https://seiri-blog-jp.github.io/posts/lwc-on-recursive-component-myself-with-make/</guid>
+      <guid>https://seiri-blog.github.io/posts/lwc-on-recursive-component-myself-with-make/</guid>
       <description>1.目的 ReactやVueでのコンポネント必要に応じて、時々共通処理のため、再帰的なコンポネントを実装したことがありますが、今回LWCでの再</description>
     </item>
     
     <item>
       <title>LWC GroupButtonコンポーネント自分で作る</title>
-      <link>https://seiri-blog-jp.github.io/posts/create-lwc-groupbutton-component-self/</link>
+      <link>https://seiri-blog.github.io/posts/create-lwc-groupbutton-component-self/</link>
       <pubDate>Mon, 19 Jul 2021 19:28:25 +0900</pubDate>
       
-      <guid>https://seiri-blog-jp.github.io/posts/create-lwc-groupbutton-component-self/</guid>
+      <guid>https://seiri-blog.github.io/posts/create-lwc-groupbutton-component-self/</guid>
       <description>1.目的 LWCでのループ回す方法は&amp;lt;template for:eatch={items} for:item=&amp;quot;item&amp;quot; for:index=&amp;quot;idx&amp;quot;&amp;gt;ですが、但しタグ中に</description>
     </item>
     
     <item>
       <title>LWC 条件判断コンポーネント自分で作る</title>
-      <link>https://seiri-blog-jp.github.io/posts/create-lwc-condition-judgement-component-self/</link>
+      <link>https://seiri-blog.github.io/posts/create-lwc-condition-judgement-component-self/</link>
       <pubDate>Mon, 19 Jul 2021 18:51:44 +0900</pubDate>
       
-      <guid>https://seiri-blog-jp.github.io/posts/create-lwc-condition-judgement-component-self/</guid>
+      <guid>https://seiri-blog.github.io/posts/create-lwc-condition-judgement-component-self/</guid>
       <description>1.目的 LWCでの条件判断はif:trueまたはif:falseしか判断できないので、今回trueやfalseをこだわらない、複雑の条件を判</description>
     </item>
     
     <item>
       <title>LWC Calendarコンポーネント自分で作る</title>
-      <link>https://seiri-blog-jp.github.io/posts/create-lwc-calendar-component-self/</link>
+      <link>https://seiri-blog.github.io/posts/create-lwc-calendar-component-self/</link>
       <pubDate>Mon, 19 Jul 2021 17:29:18 +0900</pubDate>
       
-      <guid>https://seiri-blog-jp.github.io/posts/create-lwc-calendar-component-self/</guid>
+      <guid>https://seiri-blog.github.io/posts/create-lwc-calendar-component-self/</guid>
       <description>1.目的 LWCに既存のカレンダーコンポーネントでは&amp;lt;lighting-input type=&amp;quot;date&amp;quot;&amp;gt;&amp;l</description>
     </item>
     
     <item>
       <title>LWC ContextMenuコンポーネント自分で作る</title>
-      <link>https://seiri-blog-jp.github.io/posts/create-lwc-contextmenu-component-self/</link>
+      <link>https://seiri-blog.github.io/posts/create-lwc-contextmenu-component-self/</link>
       <pubDate>Mon, 19 Jul 2021 11:26:55 +0900</pubDate>
       
-      <guid>https://seiri-blog-jp.github.io/posts/create-lwc-contextmenu-component-self/</guid>
+      <guid>https://seiri-blog.github.io/posts/create-lwc-contextmenu-component-self/</guid>
       <description>1.目的 今回LWCでContextMenuコンポーネントを作成しようと思います、 基本的な考え方は右クリックをすると、カーソルの座標を取得し、</description>
     </item>
     
     <item>
       <title>【Salesforce】LWC Router</title>
-      <link>https://seiri-blog-jp.github.io/posts/salesforce-lwc-router/</link>
+      <link>https://seiri-blog.github.io/posts/salesforce-lwc-router/</link>
       <pubDate>Fri, 16 Jul 2021 17:30:12 +0900</pubDate>
       
-      <guid>https://seiri-blog-jp.github.io/posts/salesforce-lwc-router/</guid>
+      <guid>https://seiri-blog.github.io/posts/salesforce-lwc-router/</guid>
       <description>目的 今回自分で開発したSalesforce側使えるLWCでの画面遷移方法を紹介します。 構成図 lwc ├─router ├─myRouterConta</description>
     </item>
     
