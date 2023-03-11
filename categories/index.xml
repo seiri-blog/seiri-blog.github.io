@@ -8,7 +8,7 @@
     <copyright>2023 Seiri All rights reserved</copyright>
     <lastBuildDate>Thu, 09 Feb 2023 10:19:33 +0900</lastBuildDate><atom:link href="https://seiri-blog.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>git</title>
+      <title>Git</title>
       <link>https://seiri-blog.github.io/categories/git/</link>
       <pubDate>Thu, 09 Feb 2023 10:19:33 +0900</pubDate>
       
@@ -103,69 +103,6 @@
       <pubDate>Fri, 13 Jan 2023 00:05:34 +0900</pubDate>
       
       <guid>https://seiri-blog.github.io/categories/html5/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>advanced</title>
-      <link>https://seiri-blog.github.io/categories/advanced/</link>
-      <pubDate>Thu, 29 Dec 2022 19:36:52 +0900</pubDate>
-      
-      <guid>https://seiri-blog.github.io/categories/advanced/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>command</title>
-      <link>https://seiri-blog.github.io/categories/command/</link>
-      <pubDate>Thu, 29 Dec 2022 19:36:52 +0900</pubDate>
-      
-      <guid>https://seiri-blog.github.io/categories/command/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>JavaScript</title>
-      <link>https://seiri-blog.github.io/categories/javascript/</link>
-      <pubDate>Thu, 29 Dec 2022 19:36:52 +0900</pubDate>
-      
-      <guid>https://seiri-blog.github.io/categories/javascript/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>LightningWebComponents</title>
-      <link>https://seiri-blog.github.io/categories/lightningwebcomponents/</link>
-      <pubDate>Thu, 29 Dec 2022 19:36:52 +0900</pubDate>
-      
-      <guid>https://seiri-blog.github.io/categories/lightningwebcomponents/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>lwc</title>
-      <link>https://seiri-blog.github.io/categories/lwc/</link>
-      <pubDate>Thu, 29 Dec 2022 19:36:52 +0900</pubDate>
-      
-      <guid>https://seiri-blog.github.io/categories/lwc/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>operation</title>
-      <link>https://seiri-blog.github.io/categories/operation/</link>
-      <pubDate>Thu, 29 Dec 2022 19:36:52 +0900</pubDate>
-      
-      <guid>https://seiri-blog.github.io/categories/operation/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Salesforce</title>
-      <link>https://seiri-blog.github.io/categories/salesforce/</link>
-      <pubDate>Thu, 29 Dec 2022 19:36:52 +0900</pubDate>
-      
-      <guid>https://seiri-blog.github.io/categories/salesforce/</guid>
       <description></description>
     </item>
     
@@ -368,6 +305,15 @@
     </item>
     
     <item>
+      <title>Salesforce</title>
+      <link>https://seiri-blog.github.io/categories/salesforce/</link>
+      <pubDate>Tue, 12 Jul 2022 16:24:40 +0900</pubDate>
+      
+      <guid>https://seiri-blog.github.io/categories/salesforce/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>SFDX</title>
       <link>https://seiri-blog.github.io/categories/sfdx/</link>
       <pubDate>Tue, 12 Jul 2022 16:24:40 +0900</pubDate>
@@ -382,6 +328,15 @@
       <pubDate>Tue, 12 Jul 2022 16:09:43 +0900</pubDate>
       
       <guid>https://seiri-blog.github.io/categories/aura%E3%82%B3%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%8D%E3%83%B3%E3%83%88/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>lwc</title>
+      <link>https://seiri-blog.github.io/categories/lwc/</link>
+      <pubDate>Tue, 12 Jul 2022 16:09:43 +0900</pubDate>
+      
+      <guid>https://seiri-blog.github.io/categories/lwc/</guid>
       <description></description>
     </item>
     
@@ -449,11 +404,29 @@
     </item>
     
     <item>
+      <title>LightningWebComponents</title>
+      <link>https://seiri-blog.github.io/categories/lightningwebcomponents/</link>
+      <pubDate>Mon, 16 May 2022 14:11:39 +0900</pubDate>
+      
+      <guid>https://seiri-blog.github.io/categories/lightningwebcomponents/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Lightningコンポーネント</title>
       <link>https://seiri-blog.github.io/categories/lightning%E3%82%B3%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%8D%E3%83%B3%E3%83%88/</link>
       <pubDate>Mon, 16 May 2022 14:11:39 +0900</pubDate>
       
       <guid>https://seiri-blog.github.io/categories/lightning%E3%82%B3%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%8D%E3%83%B3%E3%83%88/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>JavaScript</title>
+      <link>https://seiri-blog.github.io/categories/javascript/</link>
+      <pubDate>Tue, 29 Mar 2022 16:38:42 +0900</pubDate>
+      
+      <guid>https://seiri-blog.github.io/categories/javascript/</guid>
       <description></description>
     </item>
     

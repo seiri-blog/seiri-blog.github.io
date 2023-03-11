@@ -17,12 +17,12 @@
     </item>
     
     <item>
-      <title>【Salesforce】LWCでの共通CSS</title>
+      <title>LWCでの共通CSS</title>
       <link>https://seiri-blog.github.io/posts/lwc-common-css/</link>
       <pubDate>Mon, 26 Jul 2021 10:30:25 +0900</pubDate>
       
       <guid>https://seiri-blog.github.io/posts/lwc-common-css/</guid>
-      <description>LWC共通CSS方法説明 スタイルシートを使用して共通のCSSを定義し、それを複数のコンポーネントでインポートします。 CSSをグローバルに定義</description>
+      <description>目的 今回LWCでの共通スタイルシート(CSS)の方法を共有します。 ソース構成図 lwc ├─commonStyle └─commonStyleChil</description>
     </item>
     
   </channel>
