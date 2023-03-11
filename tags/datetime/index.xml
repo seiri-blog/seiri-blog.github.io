@@ -8,12 +8,12 @@
     <copyright>2023 Seiri All rights reserved</copyright>
     <lastBuildDate>Fri, 24 Dec 2021 15:08:50 +0900</lastBuildDate><atom:link href="https://seiri-blog.github.io/tags/datetime/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>JSでの日付フォーマット</title>
-      <link>https://seiri-blog.github.io/posts/date-format-in-js/</link>
+      <title>JavaScript日付フォーマット</title>
+      <link>https://seiri-blog.github.io/posts/js-date-format/</link>
       <pubDate>Fri, 24 Dec 2021 15:08:50 +0900</pubDate>
       
-      <guid>https://seiri-blog.github.io/posts/date-format-in-js/</guid>
-      <description>実装 /** * 日付フォーマット * @param {Date} date date * @param {string} fmt format * @returns {string} StringDate */ export const dateFormat = (date, fmt = &amp;#39;YYYY/mm/dd&amp;#39;) =&amp;gt; { let ret; const opt = { &amp;#39;Y+&amp;#39;: date.getFullYear().toString(), // 年 &amp;#39;m+&amp;#39;: (date.getMonth() + 1).toString(), // 月 &amp;#39;d+&amp;#39;: date.getDate().toString(), // 日 &amp;#39;H+&amp;#39;: date.getHours().toString(), // 時 &amp;#39;M+&amp;#39;: date.getMinutes().toString(), // 分 &amp;#39;S+&amp;#39;: date.getSeconds().toString() // 秒 };</description>
+      <guid>https://seiri-blog.github.io/posts/js-date-format/</guid>
+      <description>JavaScript日付フォーマット方法 JavaScript日付フォーマット方法を紹介します。 方法1 JavaScriptでの日付フォーマット</description>
     </item>
     
   </channel>
