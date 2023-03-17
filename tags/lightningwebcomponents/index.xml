@@ -40,7 +40,7 @@
       <pubDate>Mon, 16 May 2022 14:11:39 +0900</pubDate>
       
       <guid>https://seiri-blog.github.io/posts/lwc-path-common-component/</guid>
-      <description>目的 LWCでのPath共通コンポーネントを共有します。 ソース path &amp;lt;template&amp;gt; &amp;lt;div class=&amp;#34;slds-path&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;slds-grid slds-path__track&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;slds-grid slds-path__scroller-container&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;slds-path__scroller&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;slds-path__scroller_inner&amp;#34;&amp;gt; &amp;lt;ul class=&amp;#34;slds-path__nav&amp;#34; role=&amp;#34;listbox&amp;#34; aria-orientation=&amp;#34;horizontal&amp;#34;&amp;gt; &amp;lt;template for:each={pathItemList} for:item=&amp;#34;pathItem&amp;#34; for:index=&amp;#34;index&amp;#34;&amp;gt; {getIndex} &amp;lt;template if:true={pathIndexGeCurrentIndex}&amp;gt; &amp;lt;li key={pathItem} if:true={pathIndexEqCurrentIndex} class=&amp;#34;slds-path__item slds-is-current slds-is-active&amp;#34; role=&amp;#34;presentation&amp;#34;&amp;gt; &amp;lt;a aria-selected=&amp;#34;true&amp;#34; class=&amp;#34;slds-path__link&amp;#34; href=&amp;#34;javasctipt:void();&amp;#34; role=&amp;#34;option&amp;#34; tabindex=&amp;#34;-1&amp;#34;&amp;gt; &amp;lt;span class=&amp;#34;slds-path__stage&amp;#34;&amp;gt;</description>
+      <description>目的 LWC での Path 共通コンポーネントを共有します。 実装例 path path.html &amp;lt;template&amp;gt; &amp;lt;div class=&amp;#34;slds-path&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;slds-grid slds-path__track&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;slds-grid slds-path__scroller-container&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;slds-path__scroller&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;slds-path__scroller_inner&amp;#34;&amp;gt; &amp;lt;ul class=&amp;#34;slds-path__nav&amp;#34; role=&amp;#34;listbox&amp;#34; aria-orientation=&amp;#34;horizontal&amp;#34; &amp;gt; &amp;lt;template for:each=&amp;#34;{pathItemList}&amp;#34; for:item=&amp;#34;pathItem&amp;#34; for:index=&amp;#34;index&amp;#34; &amp;gt; {getIndex} &amp;lt;template if:true=&amp;#34;{pathIndexGeCurrentIndex}&amp;#34;&amp;gt; &amp;lt;li key=&amp;#34;{pathItem}&amp;#34; if:true=&amp;#34;{pathIndexEqCurrentIndex}&amp;#34; class=&amp;#34;slds-path__item slds-is-current slds-is-active&amp;#34; role=&amp;#34;presentation&amp;#34; &amp;gt; &amp;lt;a aria-selected=&amp;#34;true&amp;#34; class=&amp;#34;slds-path__link&amp;#34; href=&amp;#34;javasctipt:void();&amp;#34; role=&amp;#34;option&amp;#34; tabindex=&amp;#34;-1&amp;#34; &amp;gt; &amp;lt;span class=&amp;#34;slds-path__stage&amp;#34;&amp;gt;</description>
     </item>
     
     <item>
@@ -94,7 +94,7 @@
       <pubDate>Wed, 28 Jul 2021 14:42:39 +0900</pubDate>
       
       <guid>https://seiri-blog.github.io/posts/salesforce-vfpage-display-lwc/</guid>
-      <description>VFページにLWCを表示する方法説明 基本的な考え方はVFページにLightningOutという仕組みを利用して、LWCを表示すると思います。</description>
+      <description>VF ページに LWC を表示する方法説明 基本的な考え方は VF ページに LightningOut という仕組みを利用して、LWC を表示すると思います。 LightningOut の仕組み VF ⇒ Aura ⇒ LWCという</description>
     </item>
     
     <item>
