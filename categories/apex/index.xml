@@ -13,7 +13,7 @@
       <pubDate>Tue, 12 Jul 2022 16:24:40 +0900</pubDate>
       
       <guid>https://seiri-blog.github.io/posts/selection-list-acquisition-method-at-salesforce-apex/</guid>
-      <description>目的 Apexであるオブジェクトにある選択リスト項目の選択値を全部取得する方法を共有します。 実装 /** * 選択リストの項目値を取得 * @param {String} sObjectName オブジェク</description>
+      <description>Apex選択リスト取得方法説明 Apexを使用してSalesforce内の選択リストから値を取得する方法は以下の通りです。 最初に、選択リストが</description>
     </item>
     
     <item>
@@ -22,7 +22,7 @@
       <pubDate>Mon, 22 Nov 2021 17:18:13 +0900</pubDate>
       
       <guid>https://seiri-blog.github.io/posts/salesforce-apex-common-response-superclass/</guid>
-      <description>目的 LWCでApexクラスを呼出す基底クラスを作成する方法を紹介します。 LWCでApexクラスを呼出すときの返却値は主に正常系、警告系と異常</description>
+      <description>Apex共通レスポンス基底クラス作成方法 LWCでApexクラスを呼出す基底クラスを作成する方法を共有します。 LWCでApexクラスを呼出すと</description>
     </item>
     
     <item>

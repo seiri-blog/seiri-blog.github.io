@@ -13,7 +13,7 @@
       <pubDate>Thu, 23 Dec 2021 12:38:42 +0900</pubDate>
       
       <guid>https://seiri-blog.github.io/posts/python-dbsession-class/</guid>
-      <description>SQLAlchemyとは SQLAlchemyとは、Pythonの中では最もよく利用されているORMの一つです。 ORM以外にも以下の機能を持ち</description>
+      <description>SQLAlchemy とは SQLAlchemy とは、python の中では最もよく利用されている ORM の一つです。 ORM 以外にも以下の機能を持ちます。 1.データベースへの接続、SQL の実行</description>
     </item>
     
   </channel>

@@ -6,7 +6,16 @@
     <description>Recent content in JSZip on Seiri&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>2023 Seiri All rights reserved</copyright>
-    <lastBuildDate>Mon, 02 Aug 2021 10:57:14 +0900</lastBuildDate><atom:link href="https://seiri-blog.github.io/tags/jszip/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 29 Dec 2022 16:30:01 +0900</lastBuildDate><atom:link href="https://seiri-blog.github.io/tags/jszip/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>【Salesforce】LWCでのファイル一括ダウンロード方法</title>
+      <link>https://seiri-blog.github.io/posts/lwc-mass-file-download/</link>
+      <pubDate>Thu, 29 Dec 2022 16:30:01 +0900</pubDate>
+      
+      <guid>https://seiri-blog.github.io/posts/lwc-mass-file-download/</guid>
+      <description>目的 今回 Classic モードで Visualforce に LWC のでファイル一括ダウンロードする方法を共有します。 前提 jszip.js を静的リソースにアップロードする ソース構成図 force-app └─main └</description>
+    </item>
+    
     <item>
       <title>LWCでのファイル一括ダウンロード方法</title>
       <link>https://seiri-blog.github.io/posts/lwc-file-bulk-download/</link>
