@@ -13,7 +13,7 @@
       <pubDate>Mon, 30 May 2022 19:45:23 +0900</pubDate>
       
       <guid>https://seiri-blog.github.io/posts/salesforce-data-loader-batch-export-edition/</guid>
-      <description>【Salesforce】データローダバッチ（インポート編） データローダ データローダは、データを一括でインポートまたはエクスポートするためのク</description>
+      <description>データローダとは データローダは、データを一括でインポートまたはエクスポートするためのクライアントアプリケーションです。Salesforce レ</description>
     </item>
     
     <item>
@@ -22,7 +22,7 @@
       <pubDate>Mon, 30 May 2022 19:05:22 +0900</pubDate>
       
       <guid>https://seiri-blog.github.io/posts/salesforce-data-loader-batch-import-edition/</guid>
-      <description>【Salesforce】データローダバッチ（エクスポート編） データローダ データローダは、データを一括でインポートまたはエクスポートするための</description>
+      <description>データローダとは データローダは、データを一括でインポートまたはエクスポートするためのクライアントアプリケーションです。Salesforce レ</description>
     </item>
     
   </channel>
