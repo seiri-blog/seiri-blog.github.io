@@ -584,15 +584,6 @@
     </item>
     
     <item>
-      <title>LWCでのファイル一括ダウンロード方法</title>
-      <link>https://seiri-blog.github.io/posts/lwc-file-bulk-download/</link>
-      <pubDate>Mon, 02 Aug 2021 10:57:14 +0900</pubDate>
-      
-      <guid>https://seiri-blog.github.io/posts/lwc-file-bulk-download/</guid>
-      <description>目的 今回ClassicモードでVisualforceにLWCのでファイル一括ダウンロードする方法を共有します。 前提 jszip.jsを静的リソ</description>
-    </item>
-    
-    <item>
       <title>VFPageにLWCでのファイルUP方法</title>
       <link>https://seiri-blog.github.io/posts/vfpage-lwc-on-file-up/</link>
       <pubDate>Thu, 29 Jul 2021 16:30:01 +0900</pubDate>
