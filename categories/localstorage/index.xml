@@ -13,7 +13,7 @@
       <pubDate>Tue, 21 Dec 2021 18:33:46 +0900</pubDate>
       
       <guid>https://seiri-blog.github.io/posts/js-storage-util/</guid>
-      <description>1.説明 セッションストレージとロカールストレージUtilの作成方法を共有します。 2.ソース /** * セッション */ export const session = { /** * セッションストレージ</description>
+      <description>1.説明 セッションストレージとロカールストレージ Util の作成方法を共有します。 2.ソース /** * セッション */ export const session = { /** * セッションストレージ設定 *</description>
     </item>
     
   </channel>

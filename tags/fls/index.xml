@@ -13,7 +13,7 @@
       <pubDate>Mon, 11 Jul 2022 20:02:42 +0900</pubDate>
       
       <guid>https://seiri-blog.github.io/posts/salesforce-fls-authority-check/</guid>
-      <description>目的 CRUD および項目レベルセキュリティ (FLS) 権限チェックUtilを作成方法を共有します ソース public with sharing class FLSUtil { //環境の接頭辞 private static final String ENV_PREFIX = getPrefix(); //アンダーバ</description>
+      <description>目的 CRUD および項目レベルセキュリティ (FLS) 権限チェック Util を作成方法を共有します ソース public with sharing class FLSUtil { //環境の接頭辞 private static final String ENV_PREFIX = getPrefix(); //アンダーバーC private</description>
     </item>
     
   </channel>

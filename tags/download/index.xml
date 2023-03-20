@@ -13,7 +13,7 @@
       <pubDate>Mon, 02 Aug 2021 18:36:58 +0900</pubDate>
       
       <guid>https://seiri-blog.github.io/posts/file-download-in-lwc/</guid>
-      <description>目的 LWCでのファイルダウンロード方法を共有します。 ソース構成図 force-app └─main └─default ├─classes │ ├─GetFileDem</description>
+      <description>目的 LWC でのファイルダウンロード方法を共有します。 ソース構成図 force-app └─main └─default ├─classes │ ├─GetFileDemoC</description>
     </item>
     
   </channel>

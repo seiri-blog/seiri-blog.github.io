@@ -13,7 +13,7 @@
       <pubDate>Thu, 29 Dec 2022 19:36:52 +0900</pubDate>
       
       <guid>https://seiri-blog.github.io/posts/lwc-life-cycle-hook/</guid>
-      <description>LWCライフサイクルフックの説明 LWCのライフサイクルフックには、インスタンス化、接続、更新、破棄の4つのフェーズがあります。それぞれのフェ</description>
+      <description>LWCライフサイクルフックの説明 LWC のライフサイクルフックには、インスタンス化、接続、更新、破棄の 4 つのフェーズがあります。それぞれのフェーズ</description>
     </item>
     
     <item>
@@ -22,7 +22,7 @@
       <pubDate>Thu, 29 Dec 2022 19:36:52 +0900</pubDate>
       
       <guid>https://seiri-blog.github.io/posts/salesforce_lwc_setup_environment/</guid>
-      <description>LWCの環境構築方法 LWCの環境構築の詳しい方法は以下のようになります。 SalesforceのDeveloper Editionアカウントを取</description>
+      <description>LWC の環境構築方法 LWC の環境構築の詳しい方法は以下のようになります。 Salesforce の Developer Edition アカウントを取得します。 Developer Edition アカウントは、開発者向けのアカウントで、</description>
     </item>
     
     <item>
@@ -31,7 +31,7 @@
       <pubDate>Thu, 29 Dec 2022 19:36:52 +0900</pubDate>
       
       <guid>https://seiri-blog.github.io/posts/lwc-introduction/</guid>
-      <description>LWCの説明 LWC (Lightning Web Components) の基礎となる概念は以下のとおりです。 Web Components: LWCはWeb Componentsと呼ばれる技術を使用しています。Web Comp</description>
+      <description>LWC の説明 LWC (Lightning Web Components) の基礎となる概念は以下のとおりです。 Web Components: LWC は Web Components と呼ばれる技術を使用しています。Web Components は、ブラウザの API を使用して、カスタム</description>
     </item>
     
     <item>
@@ -40,7 +40,7 @@
       <pubDate>Tue, 29 Mar 2022 16:38:42 +0900</pubDate>
       
       <guid>https://seiri-blog.github.io/posts/salesforce-lwc-csv-output-method/</guid>
-      <description>LWCでCSV出力方法説明 LWCでCSVファイルを出力する考え方は主に下記の流れとなります。 1.LWC のコンポーネントにデータを持たせます。 2.CS</description>
+      <description>LWC で CSV 出力方法説明 LWC で CSV ファイルを出力する考え方は主に下記の流れとなります。 1.LWC のコンポーネントにデータを持たせます。 2.CSV を作成するため、各行の</description>
     </item>
     
     <item>
@@ -58,7 +58,7 @@
       <pubDate>Thu, 20 Jan 2022 19:58:17 +0900</pubDate>
       
       <guid>https://seiri-blog.github.io/posts/amplify-call-graphql/</guid>
-      <description>準備 1.amplify add apiコマンドで、GraphQL APIを追加する amplify add api ? Please select from one of the below mentioned services: &amp;gt; GraphQL ? Here is the GraphQL API that we will create. Select a setting to edit or continue: &amp;gt; Continue ? Choose a schema template: &amp;gt; Single object</description>
+      <description>準備 1.amplify add apiコマンドで、GraphQL API を追加する amplify add api ? Please select from one of the below mentioned services: &amp;gt; GraphQL ? Here is the GraphQL API that we will create. Select a setting to edit or continue: &amp;gt; Continue ? Choose a schema template: &amp;gt; Single object with fields</description>
     </item>
     
     <item>
@@ -67,7 +67,7 @@
       <pubDate>Thu, 20 Jan 2022 19:05:44 +0900</pubDate>
       
       <guid>https://seiri-blog.github.io/posts/amplify-call-gateway/</guid>
-      <description>準備 1.amplify add apiコマンドで、Rest APIを追加する amplify add api ? Please select from one of the below mentioned services GraphQL ❯ REST 2.amplify pushコマンドで作成したRest APIをAWSにデプロ</description>
+      <description>準備 1.amplify add apiコマンドで、Rest API を追加する amplify add api ? Please select from one of the below mentioned services GraphQL ❯ REST 2.amplify pushコマンドで作成した Rest API を AWS にデプロイし、 AWS のAPI G</description>
     </item>
     
     <item>
@@ -85,7 +85,7 @@
       <pubDate>Fri, 24 Dec 2021 15:08:50 +0900</pubDate>
       
       <guid>https://seiri-blog.github.io/posts/js-date-format/</guid>
-      <description>JavaScript日付フォーマット方法 JavaScript日付フォーマット方法を紹介します。 方法1 JavaScriptでの日付フォーマット</description>
+      <description>JavaScript日付フォーマット方法 JavaScript 日付フォーマット方法を紹介します。 方法 1 JavaScript での日付フォーマットは正規表現と Date 型のgetFullYe</description>
     </item>
     
     <item>
@@ -121,7 +121,7 @@
       <pubDate>Tue, 21 Dec 2021 18:33:46 +0900</pubDate>
       
       <guid>https://seiri-blog.github.io/posts/js-storage-util/</guid>
-      <description>1.説明 セッションストレージとロカールストレージUtilの作成方法を共有します。 2.ソース /** * セッション */ export const session = { /** * セッションストレージ</description>
+      <description>1.説明 セッションストレージとロカールストレージ Util の作成方法を共有します。 2.ソース /** * セッション */ export const session = { /** * セッションストレージ設定 *</description>
     </item>
     
     <item>
@@ -139,7 +139,7 @@
       <pubDate>Mon, 29 Nov 2021 19:36:52 +0900</pubDate>
       
       <guid>https://seiri-blog.github.io/posts/creation-salesforce-lwc-common-modal-screen/</guid>
-      <description>共通モーダル画面作成方法説明 共通モーダルはモーダルを開くためのAPIを持ち、他のコンポーネントから呼び出すことができます。 他のコンポーネント</description>
+      <description>共通モーダル画面作成方法説明 共通モーダルはモーダルを開くための API を持ち、他のコンポーネントから呼び出すことができます。 他のコンポーネントで、</description>
     </item>
     
     <item>
@@ -148,7 +148,7 @@
       <pubDate>Mon, 22 Nov 2021 17:28:47 +0900</pubDate>
       
       <guid>https://seiri-blog.github.io/posts/js-judge-browser/</guid>
-      <description>目的 JavaScriptでブラウザを判断する方法を共有します。 実行方法 export const isIE11 = isIE11Test(navigator); export const isChrome = isChromeTest(navigator); export const isSafari = isSafariTest(navigator); export function isIE11Test(navigator) { return /Trident.*rv[ :]*11\./.test(navigator.userAgent); } export function isChromeTest(navigator) { return ( /Chrome/.test(navigator.userAgent) &amp;amp;&amp;amp; /Google Inc/.test(navigator.vendor) ); }</description>
+      <description>目的 JavaScript でブラウザを判断する方法を共有します。 実行方法 export const isIE11 = isIE11Test(navigator); export const isChrome = isChromeTest(navigator); export const isSafari = isSafariTest(navigator); export function isIE11Test(navigator) { return /Trident.*rv[ :]*11\./.test(navigator.userAgent); } export function isChromeTest(navigator) { return ( /Chrome/.test(navigator.userAgent) &amp;amp;&amp;amp; /Google Inc/.test(navigator.vendor) ); } export function isSafariTest(navigator) { return /^((?!chrome|android).)*safari/i.test(navigator.userAgent); }</description>
     </item>
     
     <item>
@@ -175,7 +175,7 @@
       <pubDate>Mon, 22 Nov 2021 17:02:25 +0900</pubDate>
       
       <guid>https://seiri-blog.github.io/posts/generating-unique-id/</guid>
-      <description>目的 JavaScriptで唯一のIDを生成する方法を共有します。 実装方法 export const guid = () =&amp;gt; { const s4 = () =&amp;gt; { return Math.floor((1 + Math.random()) * 0x10000) .toString(16) .substring(1); } return ( s4() + s4() + &amp;#39;-&amp;#39; + s4() + &amp;#39;-&amp;#39; +</description>
+      <description>目的 JavaScript で唯一の ID を生成する方法を共有します。 実装方法 export const guid = () =&amp;gt; { const s4 = () =&amp;gt; { return Math.floor((1 + Math.random()) * 0x10000) .toString(16) .substring(1); } return ( s4() + s4() + &amp;#39;-&amp;#39; + s4() + &amp;#39;-&amp;#39; + s4() + &amp;#39;-&amp;#39; + s4() + &amp;#39;-&amp;#39; + s4() +</description>
     </item>
     
   </channel>

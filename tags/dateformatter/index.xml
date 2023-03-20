@@ -13,7 +13,7 @@
       <pubDate>Fri, 24 Dec 2021 15:08:50 +0900</pubDate>
       
       <guid>https://seiri-blog.github.io/posts/js-date-format/</guid>
-      <description>JavaScript日付フォーマット方法 JavaScript日付フォーマット方法を紹介します。 方法1 JavaScriptでの日付フォーマット</description>
+      <description>JavaScript日付フォーマット方法 JavaScript 日付フォーマット方法を紹介します。 方法 1 JavaScript での日付フォーマットは正規表現と Date 型のgetFullYe</description>
     </item>
     
   </channel>

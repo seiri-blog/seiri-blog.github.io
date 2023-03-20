@@ -13,7 +13,7 @@
       <pubDate>Wed, 21 Jul 2021 18:36:08 +0900</pubDate>
       
       <guid>https://seiri-blog.github.io/posts/lwc-on-recursive-component-myself-with-make/</guid>
-      <description>1.目的 ReactやVueでのコンポネント必要に応じて、時々共通処理のため、再帰的なコンポネントを実装したことがありますが、今回LWCでの再</description>
+      <description>1.目的 React や Vue でのコンポネント必要に応じて、時々共通処理のため、再帰的なコンポネントを実装したことがありますが、今回 LWC での再帰的なコンポネン</description>
     </item>
     
   </channel>

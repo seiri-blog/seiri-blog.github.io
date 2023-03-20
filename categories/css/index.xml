@@ -13,7 +13,7 @@
       <pubDate>Fri, 13 Jan 2023 00:05:34 +0900</pubDate>
       
       <guid>https://seiri-blog.github.io/posts/show-and-hide-htmlcss-ul-li-point/</guid>
-      <description>本記事はul liの点を表示・非表示する方法を紹介します。 具体的には下記を参照していただければと思います。 ul liの点を非表示する方法 &amp;lt;ul&amp;gt; &amp;lt;</description>
+      <description>本記事は ul li の点を表示・非表示する方法を紹介します。 具体的には下記を参照していただければと思います。 ul li の点を非表示する方法 &amp;lt;ul&amp;gt; &amp;lt;li&amp;</description>
     </item>
     
     <item>
@@ -22,7 +22,7 @@
       <pubDate>Mon, 26 Jul 2021 10:30:25 +0900</pubDate>
       
       <guid>https://seiri-blog.github.io/posts/lwc-common-css/</guid>
-      <description>LWC共通CSS方法説明 スタイルシートを使用して共通のCSSを定義し、それを複数のコンポーネントでインポートします。 CSSをグローバルに定義</description>
+      <description>LWC 共通 CSS 方法説明 スタイルシートを使用して共通の CSS を定義し、それを複数のコンポーネントでインポートします。 CSS をグローバルに定義し、それをすべて</description>
     </item>
     
   </channel>

@@ -58,7 +58,7 @@
       <pubDate>Mon, 24 Jan 2022 18:11:28 +0900</pubDate>
       
       <guid>https://seiri-blog.github.io/posts/application-creating-at-amplify-react/</guid>
-      <description>準備 下記コマンドを順番に実行し、Amplify-Reactでの環境を構築する 1.AmplifyCLIをインストール npm install -g @aws-amplify/cli 2.Amplify</description>
+      <description>準備 下記コマンドを順番に実行し、Amplify-React での環境を構築する 1.AmplifyCLI をインストール npm install -g @aws-amplify/cli 2.Amplify を設定する amplify configure Specify the AWS Region ? region: # Your preferred region Specify the</description>
     </item>
     
     <item>
@@ -76,7 +76,7 @@
       <pubDate>Thu, 20 Jan 2022 19:58:17 +0900</pubDate>
       
       <guid>https://seiri-blog.github.io/posts/amplify-call-graphql/</guid>
-      <description>準備 1.amplify add apiコマンドで、GraphQL APIを追加する amplify add api ? Please select from one of the below mentioned services: &amp;gt; GraphQL ? Here is the GraphQL API that we will create. Select a setting to edit or continue: &amp;gt; Continue ? Choose a schema template: &amp;gt; Single object</description>
+      <description>準備 1.amplify add apiコマンドで、GraphQL API を追加する amplify add api ? Please select from one of the below mentioned services: &amp;gt; GraphQL ? Here is the GraphQL API that we will create. Select a setting to edit or continue: &amp;gt; Continue ? Choose a schema template: &amp;gt; Single object with fields</description>
     </item>
     
     <item>
@@ -85,7 +85,7 @@
       <pubDate>Thu, 20 Jan 2022 19:05:44 +0900</pubDate>
       
       <guid>https://seiri-blog.github.io/posts/amplify-call-gateway/</guid>
-      <description>準備 1.amplify add apiコマンドで、Rest APIを追加する amplify add api ? Please select from one of the below mentioned services GraphQL ❯ REST 2.amplify pushコマンドで作成したRest APIをAWSにデプロ</description>
+      <description>準備 1.amplify add apiコマンドで、Rest API を追加する amplify add api ? Please select from one of the below mentioned services GraphQL ❯ REST 2.amplify pushコマンドで作成した Rest API を AWS にデプロイし、 AWS のAPI G</description>
     </item>
     
     <item>
@@ -98,7 +98,7 @@
     </item>
     
     <item>
-      <title>PythonでのAWS Lambda 環境変数の取得</title>
+      <title>PythonでのAWS Lambda環境変数の取得</title>
       <link>https://seiri-blog.github.io/posts/aws-lambda-environment-variable-acquisition-on-python/</link>
       <pubDate>Mon, 27 Dec 2021 17:53:32 +0900</pubDate>
       
@@ -107,7 +107,7 @@
     </item>
     
     <item>
-      <title>PythonでのAWS Lambda 共通DynamoDB操作Util</title>
+      <title>PythonでのAWS Lambda共通DynamoDB操作Util</title>
       <link>https://seiri-blog.github.io/posts/aws-lambda-common-dynamodb-operation-util-in-python/</link>
       <pubDate>Mon, 27 Dec 2021 17:33:59 +0900</pubDate>
       
@@ -125,7 +125,7 @@
     </item>
     
     <item>
-      <title>PythonでのAWS Lambda 共通ユーザ操作Util</title>
+      <title>PythonでのAWS Lambda共通ユーザ操作Util</title>
       <link>https://seiri-blog.github.io/posts/aws-lambda-common-user-operation-util-in-python/</link>
       <pubDate>Mon, 27 Dec 2021 12:38:54 +0900</pubDate>
       
@@ -134,7 +134,7 @@
     </item>
     
     <item>
-      <title>PythonでのAWS Lambda キュー送信</title>
+      <title>PythonでのAWS Lambdaキュー送信</title>
       <link>https://seiri-blog.github.io/posts/aws-lambda-queue-send-in-python/</link>
       <pubDate>Mon, 27 Dec 2021 12:15:01 +0900</pubDate>
       
@@ -143,7 +143,7 @@
     </item>
     
     <item>
-      <title>PythonでのAWS Lambda 共通ログ出力Util</title>
+      <title>PythonでのAWS Lambda共通ログ出力Util</title>
       <link>https://seiri-blog.github.io/posts/aws-lambda-common-logging-util-in-python/</link>
       <pubDate>Mon, 27 Dec 2021 12:06:59 +0900</pubDate>
       
@@ -161,7 +161,7 @@
     </item>
     
     <item>
-      <title>PythonでのAWS Lambda 共通レスポンスUtil</title>
+      <title>PythonでのAWS Lambda共通レスポンスUtil</title>
       <link>https://seiri-blog.github.io/posts/aws-lambda-common-response-util-in-python/</link>
       <pubDate>Mon, 27 Dec 2021 11:22:36 +0900</pubDate>
       
@@ -175,7 +175,7 @@
       <pubDate>Mon, 22 Nov 2021 16:48:56 +0900</pubDate>
       
       <guid>https://seiri-blog.github.io/posts/apex-create-aws-s3-sign-with-url/</guid>
-      <description>目的 ApexでS3署名付きURLを発行する方法を共用します。 ソース public class AwsS3Util { private static final String AMZ_ALGORITHM = &amp;#39;AWS4-HMAC-SHA256&amp;#39;; private static final String ACCESS_KEY = &amp;#39;アクセスキー&amp;#39;; private static final</description>
+      <description>目的 Apex で S3 署名付き URL を発行する方法を共用します。 ソース public class AwsS3Util { private static final String AMZ_ALGORITHM = &amp;#39;AWS4-HMAC-SHA256&amp;#39;; private static final String ACCESS_KEY = &amp;#39;アクセスキー&amp;#39;; private static final String SECRET_KEY = &amp;#3</description>
     </item>
     
     <item>
@@ -184,7 +184,7 @@
       <pubDate>Wed, 28 Jul 2021 13:02:56 +0900</pubDate>
       
       <guid>https://seiri-blog.github.io/posts/lwc-by-aws-3-and-operation/</guid>
-      <description>1.目的 今回LWC中にAWSのSDK for javascriptでS3と連携する方法を共有します。 2.前提 2.1.AWS S3バケットCross-Origin Resource</description>
+      <description>1.目的 今回 LWC 中に AWS の SDK for javascript で S3 と連携する方法を共有します。 2.前提 2.1.AWS S3 バケット Cross-Origin Resource Sharing (CORS)の設定 [ { &amp;#34;AllowedHeaders&amp;#34;: [&amp;#34;*&amp;#34;], &amp;#34;AllowedMethods&amp;#34;: [&amp;#34;HEAD&amp;#34;, &amp;#34;GET&amp;#34;, &amp;#34;PUT&amp;#34;, &amp;#34;POST&amp;#34;, &amp;#34;DELETE&amp;#34;], &amp;#34;AllowedOrigins&amp;#34;: [&amp;#34;*&amp;#34;], &amp;#34;ExposeHeaders&amp;#34;: [&amp;#34;ETag&amp;#34;] } ] 2.2.Salesforce 側</description>
     </item>
     
   </channel>
