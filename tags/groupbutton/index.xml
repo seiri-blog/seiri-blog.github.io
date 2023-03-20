@@ -13,7 +13,7 @@
       <pubDate>Mon, 19 Jul 2021 19:28:25 +0900</pubDate>
       
       <guid>https://seiri-blog.github.io/posts/create-lwc-groupbutton-component-self/</guid>
-      <description>1.目的 LWCでのループ回す方法は&amp;lt;template for:eatch={items} for:item=&amp;quot;item&amp;quot; for:index=&amp;quot;idx&amp;quot;&amp;gt;ですが、但しタグ中に</description>
+      <description>1.目的 LWC でのループ回す方法は&amp;lt;template for:eatch={items} for:item=&amp;quot;item&amp;quot; for:index=&amp;quot;idx&amp;quot;&amp;gt;ですが、但しタグ中には&amp;</description>
     </item>
     
   </channel>

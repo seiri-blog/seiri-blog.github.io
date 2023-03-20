@@ -9,10 +9,10 @@
     <lastBuildDate>Thu, 29 Dec 2022 19:36:52 +0900</lastBuildDate><atom:link href="https://seiri-blog.github.io/tags/command/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>【Git】ファイル名大文字&amp;小文字を区別する方法</title>
-      <link>https://seiri-blog.github.io/posts/git-operation-copy/</link>
+      <link>https://seiri-blog.github.io/posts/git-config-core-ignorecase/</link>
       <pubDate>Thu, 29 Dec 2022 19:36:52 +0900</pubDate>
       
-      <guid>https://seiri-blog.github.io/posts/git-operation-copy/</guid>
+      <guid>https://seiri-blog.github.io/posts/git-config-core-ignorecase/</guid>
       <description>Gitでのファイル名の大文字・小文字区別の説明 Gitはファイル名の大文字・小文字を区別します。 例えば、「hello.txt」と「Hello.</description>
     </item>
     
@@ -22,7 +22,7 @@
       <pubDate>Thu, 29 Dec 2022 19:36:52 +0900</pubDate>
       
       <guid>https://seiri-blog.github.io/posts/git-advanced-operation-part1/</guid>
-      <description>Gitの上級操作方法 Gitには様々な上級操作がありますが、今回は下記操作方法を説明したいと思います。 マージ: masterブランチで最新のソー</description>
+      <description>Git の上級操作方法 Git には様々な上級操作がありますが、今回は下記操作方法を説明したいと思います。 マージ: master ブランチで最新のソースをプルし、new</description>
     </item>
     
     <item>
@@ -31,7 +31,7 @@
       <pubDate>Thu, 29 Dec 2022 19:36:52 +0900</pubDate>
       
       <guid>https://seiri-blog.github.io/posts/git-advanced-operation-part2/</guid>
-      <description>Gitの上級操作方法 Gitには様々な上級操作がありますが、今回は下記操作方法を説明したいと思います。 タグの操作: タグを作成、削除、移動する方</description>
+      <description>Git の上級操作方法 Git には様々な上級操作がありますが、今回は下記操作方法を説明したいと思います。 タグの操作: タグを作成、削除、移動する方法。 # タ</description>
     </item>
     
     <item>
@@ -40,7 +40,7 @@
       <pubDate>Thu, 29 Dec 2022 19:36:52 +0900</pubDate>
       
       <guid>https://seiri-blog.github.io/posts/git-advanced-operation-part3/</guid>
-      <description>Gitの上級操作方法 Gitには様々な上級操作がありますが、今回は下記操作方法を説明したいと思います。 git cherry-pick: git cherry-pick コマンドは、特定のコミットを別の</description>
+      <description>Git の上級操作方法 Git には様々な上級操作がありますが、今回は下記操作方法を説明したいと思います。 git cherry-pick: git cherry-pick コマンドは、特定のコミットを別のブランチ</description>
     </item>
     
     <item>
@@ -49,7 +49,7 @@
       <pubDate>Thu, 29 Dec 2022 19:36:52 +0900</pubDate>
       
       <guid>https://seiri-blog.github.io/posts/git-operation/</guid>
-      <description>Gitの用途と関連製品の紹介 Gitはオープンソースの分散型バージョン管理システムです。 開発者が複数人で協力してソフトウェアを開発するために使</description>
+      <description>Git の用途と関連製品の紹介 Git はオープンソースの分散型バージョン管理システムです。 開発者が複数人で協力してソフトウェアを開発するために使用されま</description>
     </item>
     
   </channel>

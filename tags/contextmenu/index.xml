@@ -13,7 +13,7 @@
       <pubDate>Mon, 19 Jul 2021 11:26:55 +0900</pubDate>
       
       <guid>https://seiri-blog.github.io/posts/create-lwc-contextmenu-component-self/</guid>
-      <description>1.目的 今回LWCでContextMenuコンポーネントを作成しようと思います、 基本的な考え方は右クリックをすると、カーソルの座標を取得し、</description>
+      <description>1.目的 今回 LWC で ContextMenu コンポーネントを作成しようと思います、 基本的な考え方は右クリックをすると、カーソルの座標を取得し、 その座標を使って、Con</description>
     </item>
     
   </channel>

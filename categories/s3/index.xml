@@ -49,7 +49,7 @@
       <pubDate>Mon, 22 Nov 2021 16:48:56 +0900</pubDate>
       
       <guid>https://seiri-blog.github.io/posts/apex-create-aws-s3-sign-with-url/</guid>
-      <description>目的 ApexでS3署名付きURLを発行する方法を共用します。 ソース public class AwsS3Util { private static final String AMZ_ALGORITHM = &amp;#39;AWS4-HMAC-SHA256&amp;#39;; private static final String ACCESS_KEY = &amp;#39;アクセスキー&amp;#39;; private static final</description>
+      <description>目的 Apex で S3 署名付き URL を発行する方法を共用します。 ソース public class AwsS3Util { private static final String AMZ_ALGORITHM = &amp;#39;AWS4-HMAC-SHA256&amp;#39;; private static final String ACCESS_KEY = &amp;#39;アクセスキー&amp;#39;; private static final String SECRET_KEY = &amp;#3</description>
     </item>
     
     <item>
@@ -58,7 +58,7 @@
       <pubDate>Wed, 28 Jul 2021 13:02:56 +0900</pubDate>
       
       <guid>https://seiri-blog.github.io/posts/lwc-by-aws-3-and-operation/</guid>
-      <description>1.目的 今回LWC中にAWSのSDK for javascriptでS3と連携する方法を共有します。 2.前提 2.1.AWS S3バケットCross-Origin Resource</description>
+      <description>1.目的 今回 LWC 中に AWS の SDK for javascript で S3 と連携する方法を共有します。 2.前提 2.1.AWS S3 バケット Cross-Origin Resource Sharing (CORS)の設定 [ { &amp;#34;AllowedHeaders&amp;#34;: [&amp;#34;*&amp;#34;], &amp;#34;AllowedMethods&amp;#34;: [&amp;#34;HEAD&amp;#34;, &amp;#34;GET&amp;#34;, &amp;#34;PUT&amp;#34;, &amp;#34;POST&amp;#34;, &amp;#34;DELETE&amp;#34;], &amp;#34;AllowedOrigins&amp;#34;: [&amp;#34;*&amp;#34;], &amp;#34;ExposeHeaders&amp;#34;: [&amp;#34;ETag&amp;#34;] } ] 2.2.Salesforce 側</description>
     </item>
     
   </channel>
