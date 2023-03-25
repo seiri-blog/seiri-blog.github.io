@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>GitHub Profile on Seiri&#39;s Blog</title>
+    <link>https://seiri-blog.github.io/categories/github-profile/</link>
+    <description>Recent content in GitHub Profile on Seiri&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>2023 Seiri All rights reserved</copyright>
+    <lastBuildDate>Sat, 25 Mar 2023 16:46:55 +0900</lastBuildDate><atom:link href="https://seiri-blog.github.io/categories/github-profile/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Githubのプロファイルを設定する方法</title>
+      <link>https://seiri-blog.github.io/posts/how-to-setup-github-profile/</link>
+      <pubDate>Sat, 25 Mar 2023 16:46:55 +0900</pubDate>
+      
+      <guid>https://seiri-blog.github.io/posts/how-to-setup-github-profile/</guid>
+      <description>GitHubプロファイルを作成するには、以下の手順を実行します。 GitHubにログインし、右上のアイコンをクリックして、ドロップダウンメニュ</description>
+    </item>
+    
+  </channel>
+</rss>
