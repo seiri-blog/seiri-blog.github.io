@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>hugo on Seiri&#39;s Blog</title>
+    <link>https://seiri-blog.github.io/tags/hugo/</link>
+    <description>Recent content in hugo on Seiri&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>2023 Seiri All rights reserved</copyright>
+    <lastBuildDate>Sat, 25 Mar 2023 17:04:20 +0900</lastBuildDate><atom:link href="https://seiri-blog.github.io/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>HugoとHexoの違い</title>
+      <link>https://seiri-blog.github.io/posts/hugo-and-hexo-difference/</link>
+      <pubDate>Sat, 25 Mar 2023 17:04:20 +0900</pubDate>
+      
+      <guid>https://seiri-blog.github.io/posts/hugo-and-hexo-difference/</guid>
+      <description>HugoとHexoは、両方とも静的サイトジェネレーターですが、いくつかの違いがあります。 開発言語：HugoはGo言語で書かれており、Hexo</description>
+    </item>
+    
+  </channel>
+</rss>
