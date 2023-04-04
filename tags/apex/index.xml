@@ -6,7 +6,16 @@
     <description>Recent content in Apex on Seiri&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>2023 Seiri All rights reserved</copyright>
-    <lastBuildDate>Tue, 12 Jul 2022 16:24:40 +0900</lastBuildDate><atom:link href="https://seiri-blog.github.io/tags/apex/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 04 Apr 2023 18:23:36 +0900</lastBuildDate><atom:link href="https://seiri-blog.github.io/tags/apex/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>VSCodeでSalesforceのコードフォーマットする方法</title>
+      <link>https://seiri-blog.github.io/posts/salesforce-source-code-format/</link>
+      <pubDate>Tue, 04 Apr 2023 18:23:36 +0900</pubDate>
+      
+      <guid>https://seiri-blog.github.io/posts/salesforce-source-code-format/</guid>
+      <description>VSCode の環境構築 今回に関しては設定は詳しく説明しません、やり方のみ詳しく説明させていただきます。 下記リンクを開いて、自分の PC にダウンロードする https://github.com/RyuSeiri/Salesforce-Source-Format</description>
+    </item>
+    
     <item>
       <title>【Salesforce】Apexで選択リスト取得方法</title>
       <link>https://seiri-blog.github.io/posts/selection-list-acquisition-method-at-salesforce-apex/</link>
