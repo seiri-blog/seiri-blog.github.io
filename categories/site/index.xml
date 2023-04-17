@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>hugo on Seiri&#39;s Blog</title>
-    <link>https://seiri-blog.github.io/tags/hugo/</link>
-    <description>Recent content in hugo on Seiri&#39;s Blog</description>
+    <title>site on Seiri&#39;s Blog</title>
+    <link>https://seiri-blog.github.io/categories/site/</link>
+    <description>Recent content in site on Seiri&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>2023 Seiri All rights reserved</copyright>
-    <lastBuildDate>Mon, 17 Apr 2023 12:53:09 +0900</lastBuildDate><atom:link href="https://seiri-blog.github.io/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 17 Apr 2023 12:53:09 +0900</lastBuildDate><atom:link href="https://seiri-blog.github.io/categories/site/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Githubを利用してhugoサイト構築する方法</title>
       <link>https://seiri-blog.github.io/posts/create-hugo-site/</link>
@@ -14,15 +14,6 @@
       
       <guid>https://seiri-blog.github.io/posts/create-hugo-site/</guid>
       <description>環境構築 今回は Win11 システムでの環境構築方法を説明致します。 下記 URL で hugo をダウロードする https://github.com/gohugoio/hugo/releases/download/v0.111.3/hugo_extended_0.111.3_windows-amd64.zip ※上記ダウンロードできない場合直接 https://github.com/gohugoio/hugo/releases にアクセスして、Wi</description>
-    </item>
-    
-    <item>
-      <title>HugoとHexoの違い</title>
-      <link>https://seiri-blog.github.io/posts/hugo-and-hexo-difference/</link>
-      <pubDate>Sat, 25 Mar 2023 17:04:20 +0900</pubDate>
-      
-      <guid>https://seiri-blog.github.io/posts/hugo-and-hexo-difference/</guid>
-      <description>HugoとHexoは、両方とも静的サイトジェネレーターですが、いくつかの違いがあります。 開発言語：HugoはGo言語で書かれており、Hexo</description>
     </item>
     
   </channel>
