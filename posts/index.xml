@@ -6,7 +6,16 @@
     <description>Recent content in Posts on Seiri&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>2023 Seiri All rights reserved</copyright>
-    <lastBuildDate>Tue, 04 Apr 2023 18:23:36 +0900</lastBuildDate><atom:link href="https://seiri-blog.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 17 Apr 2023 10:58:05 +0900</lastBuildDate><atom:link href="https://seiri-blog.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>サイトポリシーテンプレート</title>
+      <link>https://seiri-blog.github.io/posts/site-policy-template/</link>
+      <pubDate>Mon, 17 Apr 2023 10:58:05 +0900</pubDate>
+      
+      <guid>https://seiri-blog.github.io/posts/site-policy-template/</guid>
+      <description>サイトポリシーとは サイトポリシーとは、ウェブサイトの運営者が訪問者に対して示す、サイトのルールや方針をまとめたページのことです。一般的に、サ</description>
+    </item>
+    
     <item>
       <title>VSCodeでSalesforceのコードフォーマットする方法</title>
       <link>https://seiri-blog.github.io/posts/salesforce-source-code-format/</link>
