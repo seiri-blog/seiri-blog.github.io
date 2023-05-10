@@ -2,125 +2,125 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>LightningWebComponents on Seiri&#39;s Blog</title>
-    <link>https://seiri-blog.github.io/tags/lightningwebcomponents/</link>
+    <link>https://seiri.eu.org/tags/lightningwebcomponents/</link>
     <description>Recent content in LightningWebComponents on Seiri&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>2023 Seiri All rights reserved</copyright>
-    <lastBuildDate>Thu, 29 Dec 2022 19:36:52 +0900</lastBuildDate><atom:link href="https://seiri-blog.github.io/tags/lightningwebcomponents/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 29 Dec 2022 19:36:52 +0900</lastBuildDate><atom:link href="https://seiri.eu.org/tags/lightningwebcomponents/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>【Salesforce】LWCライフサイクルフック</title>
-      <link>https://seiri-blog.github.io/posts/lwc-life-cycle-hook/</link>
+      <link>https://seiri.eu.org/posts/lwc-life-cycle-hook/</link>
       <pubDate>Thu, 29 Dec 2022 19:36:52 +0900</pubDate>
       
-      <guid>https://seiri-blog.github.io/posts/lwc-life-cycle-hook/</guid>
+      <guid>https://seiri.eu.org/posts/lwc-life-cycle-hook/</guid>
       <description>LWCライフサイクルフックの説明 LWC のライフサイクルフックには、インスタンス化、接続、更新、破棄の 4 つのフェーズがあります。それぞれのフェーズ</description>
     </item>
     
     <item>
       <title>【Salesforce】LWC入門</title>
-      <link>https://seiri-blog.github.io/posts/lwc-introduction/</link>
+      <link>https://seiri.eu.org/posts/lwc-introduction/</link>
       <pubDate>Thu, 29 Dec 2022 19:36:52 +0900</pubDate>
       
-      <guid>https://seiri-blog.github.io/posts/lwc-introduction/</guid>
+      <guid>https://seiri.eu.org/posts/lwc-introduction/</guid>
       <description>LWC の説明 LWC (Lightning Web Components) の基礎となる概念は以下のとおりです。 Web Components: LWC は Web Components と呼ばれる技術を使用しています。Web Components は、ブラウザの API を使用して、カスタム</description>
     </item>
     
     <item>
       <title>【Salesforce】LWC環境構築</title>
-      <link>https://seiri-blog.github.io/posts/salesforce_lwc_setup_environment/</link>
+      <link>https://seiri.eu.org/posts/salesforce_lwc_setup_environment/</link>
       <pubDate>Thu, 29 Dec 2022 19:36:52 +0900</pubDate>
       
-      <guid>https://seiri-blog.github.io/posts/salesforce_lwc_setup_environment/</guid>
+      <guid>https://seiri.eu.org/posts/salesforce_lwc_setup_environment/</guid>
       <description>LWC の環境構築方法 LWC の環境構築の詳しい方法は以下のようになります。 Salesforce の Developer Edition アカウントを取得します。 Developer Edition アカウントは、開発者向けのアカウントで、</description>
     </item>
     
     <item>
       <title>【Salesforce】LWCでのPath共通コンポーネント</title>
-      <link>https://seiri-blog.github.io/posts/lwc-path-common-component/</link>
+      <link>https://seiri.eu.org/posts/lwc-path-common-component/</link>
       <pubDate>Mon, 16 May 2022 14:11:39 +0900</pubDate>
       
-      <guid>https://seiri-blog.github.io/posts/lwc-path-common-component/</guid>
+      <guid>https://seiri.eu.org/posts/lwc-path-common-component/</guid>
       <description>目的 LWC での Path 共通コンポーネントを共有します。 実装例 path path.html &amp;lt;template&amp;gt; &amp;lt;div class=&amp;#34;slds-path&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;slds-grid slds-path__track&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;slds-grid slds-path__scroller-container&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;slds-path__scroller&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;slds-path__scroller_inner&amp;#34;&amp;gt; &amp;lt;ul class=&amp;#34;slds-path__nav&amp;#34; role=&amp;#34;listbox&amp;#34; aria-orientation=&amp;#34;horizontal&amp;#34; &amp;gt; &amp;lt;template for:each=&amp;#34;{pathItemList}&amp;#34; for:item=&amp;#34;pathItem&amp;#34; for:index=&amp;#34;index&amp;#34; &amp;gt; {getIndex} &amp;lt;template if:true=&amp;#34;{pathIndexGeCurrentIndex}&amp;#34;&amp;gt; &amp;lt;li key=&amp;#34;{pathItem}&amp;#34; if:true=&amp;#34;{pathIndexEqCurrentIndex}&amp;#34; class=&amp;#34;slds-path__item slds-is-current slds-is-active&amp;#34; role=&amp;#34;presentation&amp;#34; &amp;gt; &amp;lt;a aria-selected=&amp;#34;true&amp;#34; class=&amp;#34;slds-path__link&amp;#34; href=&amp;#34;javasctipt:void();&amp;#34; role=&amp;#34;option&amp;#34; tabindex=&amp;#34;-1&amp;#34; &amp;gt; &amp;lt;span class=&amp;#34;slds-path__stage&amp;#34;&amp;gt;</description>
     </item>
     
     <item>
       <title>【Salesforce】LWC CSV出力方法</title>
-      <link>https://seiri-blog.github.io/posts/salesforce-lwc-csv-output-method/</link>
+      <link>https://seiri.eu.org/posts/salesforce-lwc-csv-output-method/</link>
       <pubDate>Tue, 29 Mar 2022 16:38:42 +0900</pubDate>
       
-      <guid>https://seiri-blog.github.io/posts/salesforce-lwc-csv-output-method/</guid>
+      <guid>https://seiri.eu.org/posts/salesforce-lwc-csv-output-method/</guid>
       <description>LWC で CSV 出力方法説明 LWC で CSV ファイルを出力する考え方は主に下記の流れとなります。 1.LWC のコンポーネントにデータを持たせます。 2.CSV を作成するため、各行の</description>
     </item>
     
     <item>
       <title>JSでのレスポンスクラスハンドラーの作成</title>
-      <link>https://seiri-blog.github.io/posts/response-class-handler-creating-on-js/</link>
+      <link>https://seiri.eu.org/posts/response-class-handler-creating-on-js/</link>
       <pubDate>Tue, 21 Dec 2021 18:30:15 +0900</pubDate>
       
-      <guid>https://seiri-blog.github.io/posts/response-class-handler-creating-on-js/</guid>
+      <guid>https://seiri.eu.org/posts/response-class-handler-creating-on-js/</guid>
       <description>1.目的 レスポンスクラスハンドラーの作成方法を共有します。 2.ソース /** * リクエストの結果をハンドリングする. * @param {Promiss} promiss * @return reponse レスポンス =&amp;gt; {success: XXX, data:</description>
     </item>
     
     <item>
       <title>【Salesforce】LWC 共通 Toast Util</title>
-      <link>https://seiri-blog.github.io/posts/salesforce-lwc-toast-message-common-util/</link>
+      <link>https://seiri.eu.org/posts/salesforce-lwc-toast-message-common-util/</link>
       <pubDate>Tue, 21 Dec 2021 18:27:36 +0900</pubDate>
       
-      <guid>https://seiri-blog.github.io/posts/salesforce-lwc-toast-message-common-util/</guid>
+      <guid>https://seiri.eu.org/posts/salesforce-lwc-toast-message-common-util/</guid>
       <description>【Salesforce】FLS 権限チェック LWC での Toast メッセージ LWC で Toast メッセージを表示するために、共通の Util クラスを作成することができます。 Toast メッ</description>
     </item>
     
     <item>
       <title>【Salesforce】LWCでの共通モーダル画面</title>
-      <link>https://seiri-blog.github.io/posts/creation-salesforce-lwc-common-modal-screen/</link>
+      <link>https://seiri.eu.org/posts/creation-salesforce-lwc-common-modal-screen/</link>
       <pubDate>Mon, 29 Nov 2021 19:36:52 +0900</pubDate>
       
-      <guid>https://seiri-blog.github.io/posts/creation-salesforce-lwc-common-modal-screen/</guid>
+      <guid>https://seiri.eu.org/posts/creation-salesforce-lwc-common-modal-screen/</guid>
       <description>共通モーダル画面作成方法説明 共通モーダルはモーダルを開くための API を持ち、他のコンポーネントから呼び出すことができます。 他のコンポーネントで、</description>
     </item>
     
     <item>
       <title>LWCでのファイル一括ダウンロード方法</title>
-      <link>https://seiri-blog.github.io/posts/lwc-file-bulk-download/</link>
+      <link>https://seiri.eu.org/posts/lwc-file-bulk-download/</link>
       <pubDate>Mon, 02 Aug 2021 10:57:14 +0900</pubDate>
       
-      <guid>https://seiri-blog.github.io/posts/lwc-file-bulk-download/</guid>
+      <guid>https://seiri.eu.org/posts/lwc-file-bulk-download/</guid>
       <description>目的 今回 Classic モードで Visualforce に LWC のでファイル一括ダウンロードする方法を共有します。 前提 jszip.js を静的リソースにアップロードする ソース構成図 force-app └─main └</description>
     </item>
     
     <item>
       <title>【Salesforce】VFページにLWCを表示する方法</title>
-      <link>https://seiri-blog.github.io/posts/salesforce-vfpage-display-lwc/</link>
+      <link>https://seiri.eu.org/posts/salesforce-vfpage-display-lwc/</link>
       <pubDate>Wed, 28 Jul 2021 14:42:39 +0900</pubDate>
       
-      <guid>https://seiri-blog.github.io/posts/salesforce-vfpage-display-lwc/</guid>
+      <guid>https://seiri.eu.org/posts/salesforce-vfpage-display-lwc/</guid>
       <description>VF ページに LWC を表示する方法説明 基本的な考え方は VF ページに LightningOut という仕組みを利用して、LWC を表示すると思います。 LightningOut の仕組み VF ⇒ Aura ⇒ LWCという</description>
     </item>
     
     <item>
       <title>LWCでの共通Util自分で作る</title>
-      <link>https://seiri-blog.github.io/posts/lwc-on-common-util-myself-with-make/</link>
+      <link>https://seiri.eu.org/posts/lwc-on-common-util-myself-with-make/</link>
       <pubDate>Mon, 26 Jul 2021 10:52:54 +0900</pubDate>
       
-      <guid>https://seiri-blog.github.io/posts/lwc-on-common-util-myself-with-make/</guid>
+      <guid>https://seiri.eu.org/posts/lwc-on-common-util-myself-with-make/</guid>
       <description>1.目的 今回 LWC での共通 Util の作成方法を共有します。 2.ソース構成図 lwc ├─commonUtil └─commonUtilChild commonUtil /** * デートフォ</description>
     </item>
     
     <item>
       <title>【Salesforce】LWCでの共通CSS</title>
-      <link>https://seiri-blog.github.io/posts/lwc-common-css/</link>
+      <link>https://seiri.eu.org/posts/lwc-common-css/</link>
       <pubDate>Mon, 26 Jul 2021 10:30:25 +0900</pubDate>
       
-      <guid>https://seiri-blog.github.io/posts/lwc-common-css/</guid>
+      <guid>https://seiri.eu.org/posts/lwc-common-css/</guid>
       <description>LWC 共通 CSS 方法説明 スタイルシートを使用して共通の CSS を定義し、それを複数のコンポーネントでインポートします。 CSS をグローバルに定義し、それをすべて</description>
     </item>
     
     <item>
       <title>LWCでの再帰的なコンポーネント自分で作る</title>
-      <link>https://seiri-blog.github.io/posts/lwc-on-recursive-component-myself-with-make/</link>
+      <link>https://seiri.eu.org/posts/lwc-on-recursive-component-myself-with-make/</link>
       <pubDate>Wed, 21 Jul 2021 18:36:08 +0900</pubDate>
       
-      <guid>https://seiri-blog.github.io/posts/lwc-on-recursive-component-myself-with-make/</guid>
+      <guid>https://seiri.eu.org/posts/lwc-on-recursive-component-myself-with-make/</guid>
       <description>1.目的 React や Vue でのコンポネント必要に応じて、時々共通処理のため、再帰的なコンポネントを実装したことがありますが、今回 LWC での再帰的なコンポネン</description>
     </item>
     

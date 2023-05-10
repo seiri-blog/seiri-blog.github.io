@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>utils on Seiri&#39;s Blog</title>
-    <link>https://seiri-blog.github.io/tags/utils/</link>
+    <link>https://seiri.eu.org/tags/utils/</link>
     <description>Recent content in utils on Seiri&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>2023 Seiri All rights reserved</copyright>
-    <lastBuildDate>Mon, 26 Jul 2021 10:52:54 +0900</lastBuildDate><atom:link href="https://seiri-blog.github.io/tags/utils/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 26 Jul 2021 10:52:54 +0900</lastBuildDate><atom:link href="https://seiri.eu.org/tags/utils/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>LWCでの共通Util自分で作る</title>
-      <link>https://seiri-blog.github.io/posts/lwc-on-common-util-myself-with-make/</link>
+      <link>https://seiri.eu.org/posts/lwc-on-common-util-myself-with-make/</link>
       <pubDate>Mon, 26 Jul 2021 10:52:54 +0900</pubDate>
       
-      <guid>https://seiri-blog.github.io/posts/lwc-on-common-util-myself-with-make/</guid>
+      <guid>https://seiri.eu.org/posts/lwc-on-common-util-myself-with-make/</guid>
       <description>1.目的 今回 LWC での共通 Util の作成方法を共有します。 2.ソース構成図 lwc ├─commonUtil └─commonUtilChild commonUtil /** * デートフォ</description>
     </item>
     

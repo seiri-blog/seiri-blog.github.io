@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>stepfunctions on Seiri&#39;s Blog</title>
-    <link>https://seiri-blog.github.io/tags/stepfunctions/</link>
+    <link>https://seiri.eu.org/tags/stepfunctions/</link>
     <description>Recent content in stepfunctions on Seiri&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>2023 Seiri All rights reserved</copyright>
-    <lastBuildDate>Mon, 27 Dec 2021 12:18:23 +0900</lastBuildDate><atom:link href="https://seiri-blog.github.io/tags/stepfunctions/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 27 Dec 2021 12:18:23 +0900</lastBuildDate><atom:link href="https://seiri.eu.org/tags/stepfunctions/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>PythonでStepFunctionを実行する方法(boto3)</title>
-      <link>https://seiri-blog.github.io/posts/python-execute-stepfunction/</link>
+      <link>https://seiri.eu.org/posts/python-execute-stepfunction/</link>
       <pubDate>Mon, 27 Dec 2021 12:18:23 +0900</pubDate>
       
-      <guid>https://seiri-blog.github.io/posts/python-execute-stepfunction/</guid>
+      <guid>https://seiri.eu.org/posts/python-execute-stepfunction/</guid>
       <description>実装 # -*- coding: utf-8 -*- import boto3 stepfunctions_client = boto3.client(&amp;#39;stepfunctions&amp;#39;) def execute(state_machine_arn, input_message_body): &amp;#34;&amp;#34;&amp;#34;StepFunctionsを呼び出す関数 Args: state_machine_arn: 呼び出したいStepFunction</description>
     </item>
     

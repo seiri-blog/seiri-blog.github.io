@@ -2,845 +2,845 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Tags on Seiri&#39;s Blog</title>
-    <link>https://seiri-blog.github.io/tags/</link>
+    <link>https://seiri.eu.org/tags/</link>
     <description>Recent content in Tags on Seiri&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>2023 Seiri All rights reserved</copyright>
-    <lastBuildDate>Mon, 17 Apr 2023 12:53:09 +0900</lastBuildDate><atom:link href="https://seiri-blog.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 17 Apr 2023 12:53:09 +0900</lastBuildDate><atom:link href="https://seiri.eu.org/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>github</title>
-      <link>https://seiri-blog.github.io/tags/github/</link>
+      <link>https://seiri.eu.org/tags/github/</link>
       <pubDate>Mon, 17 Apr 2023 12:53:09 +0900</pubDate>
       
-      <guid>https://seiri-blog.github.io/tags/github/</guid>
+      <guid>https://seiri.eu.org/tags/github/</guid>
       <description></description>
     </item>
     
     <item>
       <title>hugo</title>
-      <link>https://seiri-blog.github.io/tags/hugo/</link>
+      <link>https://seiri.eu.org/tags/hugo/</link>
       <pubDate>Mon, 17 Apr 2023 12:53:09 +0900</pubDate>
       
-      <guid>https://seiri-blog.github.io/tags/hugo/</guid>
+      <guid>https://seiri.eu.org/tags/hugo/</guid>
       <description></description>
     </item>
     
     <item>
       <title>site</title>
-      <link>https://seiri-blog.github.io/tags/site/</link>
+      <link>https://seiri.eu.org/tags/site/</link>
       <pubDate>Mon, 17 Apr 2023 12:53:09 +0900</pubDate>
       
-      <guid>https://seiri-blog.github.io/tags/site/</guid>
+      <guid>https://seiri.eu.org/tags/site/</guid>
       <description></description>
     </item>
     
     <item>
       <title>テンプレート</title>
-      <link>https://seiri-blog.github.io/tags/%E3%83%86%E3%83%B3%E3%83%97%E3%83%AC%E3%83%BC%E3%83%88/</link>
+      <link>https://seiri.eu.org/tags/%E3%83%86%E3%83%B3%E3%83%97%E3%83%AC%E3%83%BC%E3%83%88/</link>
       <pubDate>Mon, 17 Apr 2023 10:58:05 +0900</pubDate>
       
-      <guid>https://seiri-blog.github.io/tags/%E3%83%86%E3%83%B3%E3%83%97%E3%83%AC%E3%83%BC%E3%83%88/</guid>
+      <guid>https://seiri.eu.org/tags/%E3%83%86%E3%83%B3%E3%83%97%E3%83%AC%E3%83%BC%E3%83%88/</guid>
       <description></description>
     </item>
     
     <item>
       <title>ポリシー</title>
-      <link>https://seiri-blog.github.io/tags/%E3%83%9D%E3%83%AA%E3%82%B7%E3%83%BC/</link>
+      <link>https://seiri.eu.org/tags/%E3%83%9D%E3%83%AA%E3%82%B7%E3%83%BC/</link>
       <pubDate>Mon, 17 Apr 2023 10:58:05 +0900</pubDate>
       
-      <guid>https://seiri-blog.github.io/tags/%E3%83%9D%E3%83%AA%E3%82%B7%E3%83%BC/</guid>
+      <guid>https://seiri.eu.org/tags/%E3%83%9D%E3%83%AA%E3%82%B7%E3%83%BC/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Apex</title>
-      <link>https://seiri-blog.github.io/tags/apex/</link>
+      <link>https://seiri.eu.org/tags/apex/</link>
       <pubDate>Tue, 04 Apr 2023 18:23:36 +0900</pubDate>
       
-      <guid>https://seiri-blog.github.io/tags/apex/</guid>
+      <guid>https://seiri.eu.org/tags/apex/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Format</title>
-      <link>https://seiri-blog.github.io/tags/format/</link>
+      <link>https://seiri.eu.org/tags/format/</link>
       <pubDate>Tue, 04 Apr 2023 18:23:36 +0900</pubDate>
       
-      <guid>https://seiri-blog.github.io/tags/format/</guid>
+      <guid>https://seiri.eu.org/tags/format/</guid>
       <description></description>
     </item>
     
     <item>
       <title>lwc</title>
-      <link>https://seiri-blog.github.io/tags/lwc/</link>
+      <link>https://seiri.eu.org/tags/lwc/</link>
       <pubDate>Tue, 04 Apr 2023 18:23:36 +0900</pubDate>
       
-      <guid>https://seiri-blog.github.io/tags/lwc/</guid>
+      <guid>https://seiri.eu.org/tags/lwc/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Salesforce</title>
-      <link>https://seiri-blog.github.io/tags/salesforce/</link>
+      <link>https://seiri.eu.org/tags/salesforce/</link>
       <pubDate>Tue, 04 Apr 2023 18:23:36 +0900</pubDate>
       
-      <guid>https://seiri-blog.github.io/tags/salesforce/</guid>
+      <guid>https://seiri.eu.org/tags/salesforce/</guid>
       <description></description>
     </item>
     
     <item>
       <title>hexo</title>
-      <link>https://seiri-blog.github.io/tags/hexo/</link>
+      <link>https://seiri.eu.org/tags/hexo/</link>
       <pubDate>Sat, 25 Mar 2023 17:04:20 +0900</pubDate>
       
-      <guid>https://seiri-blog.github.io/tags/hexo/</guid>
+      <guid>https://seiri.eu.org/tags/hexo/</guid>
       <description></description>
     </item>
     
     <item>
       <title>git</title>
-      <link>https://seiri-blog.github.io/tags/git/</link>
+      <link>https://seiri.eu.org/tags/git/</link>
       <pubDate>Sat, 25 Mar 2023 16:46:55 +0900</pubDate>
       
-      <guid>https://seiri-blog.github.io/tags/git/</guid>
+      <guid>https://seiri.eu.org/tags/git/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Markdown</title>
-      <link>https://seiri-blog.github.io/tags/markdown/</link>
+      <link>https://seiri.eu.org/tags/markdown/</link>
       <pubDate>Fri, 13 Jan 2023 00:10:08 +0900</pubDate>
       
-      <guid>https://seiri-blog.github.io/tags/markdown/</guid>
+      <guid>https://seiri.eu.org/tags/markdown/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Markdown記法</title>
-      <link>https://seiri-blog.github.io/tags/markdown%E8%A8%98%E6%B3%95/</link>
+      <link>https://seiri.eu.org/tags/markdown%E8%A8%98%E6%B3%95/</link>
       <pubDate>Fri, 13 Jan 2023 00:10:08 +0900</pubDate>
       
-      <guid>https://seiri-blog.github.io/tags/markdown%E8%A8%98%E6%B3%95/</guid>
+      <guid>https://seiri.eu.org/tags/markdown%E8%A8%98%E6%B3%95/</guid>
       <description></description>
     </item>
     
     <item>
       <title>文法</title>
-      <link>https://seiri-blog.github.io/tags/%E6%96%87%E6%B3%95/</link>
+      <link>https://seiri.eu.org/tags/%E6%96%87%E6%B3%95/</link>
       <pubDate>Fri, 13 Jan 2023 00:10:08 +0900</pubDate>
       
-      <guid>https://seiri-blog.github.io/tags/%E6%96%87%E6%B3%95/</guid>
+      <guid>https://seiri.eu.org/tags/%E6%96%87%E6%B3%95/</guid>
       <description></description>
     </item>
     
     <item>
       <title>記法</title>
-      <link>https://seiri-blog.github.io/tags/%E8%A8%98%E6%B3%95/</link>
+      <link>https://seiri.eu.org/tags/%E8%A8%98%E6%B3%95/</link>
       <pubDate>Fri, 13 Jan 2023 00:10:08 +0900</pubDate>
       
-      <guid>https://seiri-blog.github.io/tags/%E8%A8%98%E6%B3%95/</guid>
+      <guid>https://seiri.eu.org/tags/%E8%A8%98%E6%B3%95/</guid>
       <description></description>
     </item>
     
     <item>
       <title>CSS</title>
-      <link>https://seiri-blog.github.io/tags/css/</link>
+      <link>https://seiri.eu.org/tags/css/</link>
       <pubDate>Fri, 13 Jan 2023 00:05:34 +0900</pubDate>
       
-      <guid>https://seiri-blog.github.io/tags/css/</guid>
+      <guid>https://seiri.eu.org/tags/css/</guid>
       <description></description>
     </item>
     
     <item>
       <title>CSS3</title>
-      <link>https://seiri-blog.github.io/tags/css3/</link>
+      <link>https://seiri.eu.org/tags/css3/</link>
       <pubDate>Fri, 13 Jan 2023 00:05:34 +0900</pubDate>
       
-      <guid>https://seiri-blog.github.io/tags/css3/</guid>
+      <guid>https://seiri.eu.org/tags/css3/</guid>
       <description></description>
     </item>
     
     <item>
       <title>HTML</title>
-      <link>https://seiri-blog.github.io/tags/html/</link>
+      <link>https://seiri.eu.org/tags/html/</link>
       <pubDate>Fri, 13 Jan 2023 00:05:34 +0900</pubDate>
       
-      <guid>https://seiri-blog.github.io/tags/html/</guid>
+      <guid>https://seiri.eu.org/tags/html/</guid>
       <description></description>
     </item>
     
     <item>
       <title>HTML,CSS</title>
-      <link>https://seiri-blog.github.io/tags/htmlcss/</link>
+      <link>https://seiri.eu.org/tags/htmlcss/</link>
       <pubDate>Fri, 13 Jan 2023 00:05:34 +0900</pubDate>
       
-      <guid>https://seiri-blog.github.io/tags/htmlcss/</guid>
+      <guid>https://seiri.eu.org/tags/htmlcss/</guid>
       <description></description>
     </item>
     
     <item>
       <title>HTML5</title>
-      <link>https://seiri-blog.github.io/tags/html5/</link>
+      <link>https://seiri.eu.org/tags/html5/</link>
       <pubDate>Fri, 13 Jan 2023 00:05:34 +0900</pubDate>
       
-      <guid>https://seiri-blog.github.io/tags/html5/</guid>
+      <guid>https://seiri.eu.org/tags/html5/</guid>
       <description></description>
     </item>
     
     <item>
       <title>advanced</title>
-      <link>https://seiri-blog.github.io/tags/advanced/</link>
+      <link>https://seiri.eu.org/tags/advanced/</link>
       <pubDate>Thu, 29 Dec 2022 19:36:52 +0900</pubDate>
       
-      <guid>https://seiri-blog.github.io/tags/advanced/</guid>
+      <guid>https://seiri.eu.org/tags/advanced/</guid>
       <description></description>
     </item>
     
     <item>
       <title>command</title>
-      <link>https://seiri-blog.github.io/tags/command/</link>
+      <link>https://seiri.eu.org/tags/command/</link>
       <pubDate>Thu, 29 Dec 2022 19:36:52 +0900</pubDate>
       
-      <guid>https://seiri-blog.github.io/tags/command/</guid>
+      <guid>https://seiri.eu.org/tags/command/</guid>
       <description></description>
     </item>
     
     <item>
       <title>JavaScript</title>
-      <link>https://seiri-blog.github.io/tags/javascript/</link>
+      <link>https://seiri.eu.org/tags/javascript/</link>
       <pubDate>Thu, 29 Dec 2022 19:36:52 +0900</pubDate>
       
-      <guid>https://seiri-blog.github.io/tags/javascript/</guid>
+      <guid>https://seiri.eu.org/tags/javascript/</guid>
       <description></description>
     </item>
     
     <item>
       <title>LightningWebComponents</title>
-      <link>https://seiri-blog.github.io/tags/lightningwebcomponents/</link>
+      <link>https://seiri.eu.org/tags/lightningwebcomponents/</link>
       <pubDate>Thu, 29 Dec 2022 19:36:52 +0900</pubDate>
       
-      <guid>https://seiri-blog.github.io/tags/lightningwebcomponents/</guid>
+      <guid>https://seiri.eu.org/tags/lightningwebcomponents/</guid>
       <description></description>
     </item>
     
     <item>
       <title>operation</title>
-      <link>https://seiri-blog.github.io/tags/operation/</link>
+      <link>https://seiri.eu.org/tags/operation/</link>
       <pubDate>Thu, 29 Dec 2022 19:36:52 +0900</pubDate>
       
-      <guid>https://seiri-blog.github.io/tags/operation/</guid>
+      <guid>https://seiri.eu.org/tags/operation/</guid>
       <description></description>
     </item>
     
     <item>
       <title>fileupload</title>
-      <link>https://seiri-blog.github.io/tags/fileupload/</link>
+      <link>https://seiri.eu.org/tags/fileupload/</link>
       <pubDate>Thu, 29 Dec 2022 16:30:01 +0900</pubDate>
       
-      <guid>https://seiri-blog.github.io/tags/fileupload/</guid>
+      <guid>https://seiri.eu.org/tags/fileupload/</guid>
       <description></description>
     </item>
     
     <item>
       <title>JSZip</title>
-      <link>https://seiri-blog.github.io/tags/jszip/</link>
+      <link>https://seiri.eu.org/tags/jszip/</link>
       <pubDate>Thu, 29 Dec 2022 16:30:01 +0900</pubDate>
       
-      <guid>https://seiri-blog.github.io/tags/jszip/</guid>
+      <guid>https://seiri.eu.org/tags/jszip/</guid>
       <description></description>
     </item>
     
     <item>
       <title>LightningOut</title>
-      <link>https://seiri-blog.github.io/tags/lightningout/</link>
+      <link>https://seiri.eu.org/tags/lightningout/</link>
       <pubDate>Thu, 29 Dec 2022 16:30:01 +0900</pubDate>
       
-      <guid>https://seiri-blog.github.io/tags/lightningout/</guid>
+      <guid>https://seiri.eu.org/tags/lightningout/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Amazon</title>
-      <link>https://seiri-blog.github.io/tags/amazon/</link>
+      <link>https://seiri.eu.org/tags/amazon/</link>
       <pubDate>Mon, 19 Dec 2022 18:34:03 +0900</pubDate>
       
-      <guid>https://seiri-blog.github.io/tags/amazon/</guid>
+      <guid>https://seiri.eu.org/tags/amazon/</guid>
       <description></description>
     </item>
     
     <item>
       <title>AWS</title>
-      <link>https://seiri-blog.github.io/tags/aws/</link>
+      <link>https://seiri.eu.org/tags/aws/</link>
       <pubDate>Mon, 19 Dec 2022 18:34:03 +0900</pubDate>
       
-      <guid>https://seiri-blog.github.io/tags/aws/</guid>
+      <guid>https://seiri.eu.org/tags/aws/</guid>
       <description></description>
     </item>
     
     <item>
       <title>S3</title>
-      <link>https://seiri-blog.github.io/tags/s3/</link>
+      <link>https://seiri.eu.org/tags/s3/</link>
       <pubDate>Mon, 19 Dec 2022 18:34:03 +0900</pubDate>
       
-      <guid>https://seiri-blog.github.io/tags/s3/</guid>
+      <guid>https://seiri.eu.org/tags/s3/</guid>
       <description></description>
     </item>
     
     <item>
       <title>tool</title>
-      <link>https://seiri-blog.github.io/tags/tool/</link>
+      <link>https://seiri.eu.org/tags/tool/</link>
       <pubDate>Mon, 19 Dec 2022 18:34:03 +0900</pubDate>
       
-      <guid>https://seiri-blog.github.io/tags/tool/</guid>
+      <guid>https://seiri.eu.org/tags/tool/</guid>
       <description></description>
     </item>
     
     <item>
       <title>ツール</title>
-      <link>https://seiri-blog.github.io/tags/%E3%83%84%E3%83%BC%E3%83%AB/</link>
+      <link>https://seiri.eu.org/tags/%E3%83%84%E3%83%BC%E3%83%AB/</link>
       <pubDate>Mon, 19 Dec 2022 18:34:03 +0900</pubDate>
       
-      <guid>https://seiri-blog.github.io/tags/%E3%83%84%E3%83%BC%E3%83%AB/</guid>
+      <guid>https://seiri.eu.org/tags/%E3%83%84%E3%83%BC%E3%83%AB/</guid>
       <description></description>
     </item>
     
     <item>
       <title>AI</title>
-      <link>https://seiri-blog.github.io/tags/ai/</link>
+      <link>https://seiri.eu.org/tags/ai/</link>
       <pubDate>Mon, 12 Dec 2022 19:48:11 +0900</pubDate>
       
-      <guid>https://seiri-blog.github.io/tags/ai/</guid>
+      <guid>https://seiri.eu.org/tags/ai/</guid>
       <description></description>
     </item>
     
     <item>
       <title>ChatGPT</title>
-      <link>https://seiri-blog.github.io/tags/chatgpt/</link>
+      <link>https://seiri.eu.org/tags/chatgpt/</link>
       <pubDate>Mon, 12 Dec 2022 19:48:11 +0900</pubDate>
       
-      <guid>https://seiri-blog.github.io/tags/chatgpt/</guid>
+      <guid>https://seiri.eu.org/tags/chatgpt/</guid>
       <description></description>
     </item>
     
     <item>
       <title>gpt</title>
-      <link>https://seiri-blog.github.io/tags/gpt/</link>
+      <link>https://seiri.eu.org/tags/gpt/</link>
       <pubDate>Mon, 12 Dec 2022 19:48:11 +0900</pubDate>
       
-      <guid>https://seiri-blog.github.io/tags/gpt/</guid>
+      <guid>https://seiri.eu.org/tags/gpt/</guid>
       <description></description>
     </item>
     
     <item>
       <title>gpt-3</title>
-      <link>https://seiri-blog.github.io/tags/gpt-3/</link>
+      <link>https://seiri.eu.org/tags/gpt-3/</link>
       <pubDate>Mon, 12 Dec 2022 19:48:11 +0900</pubDate>
       
-      <guid>https://seiri-blog.github.io/tags/gpt-3/</guid>
+      <guid>https://seiri.eu.org/tags/gpt-3/</guid>
       <description></description>
     </item>
     
     <item>
       <title>OpenAI</title>
-      <link>https://seiri-blog.github.io/tags/openai/</link>
+      <link>https://seiri.eu.org/tags/openai/</link>
       <pubDate>Mon, 12 Dec 2022 19:48:11 +0900</pubDate>
       
-      <guid>https://seiri-blog.github.io/tags/openai/</guid>
+      <guid>https://seiri.eu.org/tags/openai/</guid>
       <description></description>
     </item>
     
     <item>
       <title>GPT3</title>
-      <link>https://seiri-blog.github.io/tags/gpt3/</link>
+      <link>https://seiri.eu.org/tags/gpt3/</link>
       <pubDate>Sat, 10 Dec 2022 10:47:15 +0900</pubDate>
       
-      <guid>https://seiri-blog.github.io/tags/gpt3/</guid>
+      <guid>https://seiri.eu.org/tags/gpt3/</guid>
       <description></description>
     </item>
     
     <item>
       <title>AmazonWebServices</title>
-      <link>https://seiri-blog.github.io/tags/amazonwebservices/</link>
+      <link>https://seiri.eu.org/tags/amazonwebservices/</link>
       <pubDate>Fri, 22 Jul 2022 16:42:09 +0900</pubDate>
       
-      <guid>https://seiri-blog.github.io/tags/amazonwebservices/</guid>
+      <guid>https://seiri.eu.org/tags/amazonwebservices/</guid>
       <description></description>
     </item>
     
     <item>
       <title>API</title>
-      <link>https://seiri-blog.github.io/tags/api/</link>
+      <link>https://seiri.eu.org/tags/api/</link>
       <pubDate>Fri, 22 Jul 2022 16:42:09 +0900</pubDate>
       
-      <guid>https://seiri-blog.github.io/tags/api/</guid>
+      <guid>https://seiri.eu.org/tags/api/</guid>
       <description></description>
     </item>
     
     <item>
       <title>APIGateway</title>
-      <link>https://seiri-blog.github.io/tags/apigateway/</link>
+      <link>https://seiri.eu.org/tags/apigateway/</link>
       <pubDate>Fri, 22 Jul 2022 16:42:09 +0900</pubDate>
       
-      <guid>https://seiri-blog.github.io/tags/apigateway/</guid>
+      <guid>https://seiri.eu.org/tags/apigateway/</guid>
       <description></description>
     </item>
     
     <item>
       <title>lambda</title>
-      <link>https://seiri-blog.github.io/tags/lambda/</link>
+      <link>https://seiri.eu.org/tags/lambda/</link>
       <pubDate>Fri, 22 Jul 2022 12:03:11 +0900</pubDate>
       
-      <guid>https://seiri-blog.github.io/tags/lambda/</guid>
+      <guid>https://seiri.eu.org/tags/lambda/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Lambda-Layers</title>
-      <link>https://seiri-blog.github.io/tags/lambda-layers/</link>
+      <link>https://seiri.eu.org/tags/lambda-layers/</link>
       <pubDate>Fri, 22 Jul 2022 12:03:11 +0900</pubDate>
       
-      <guid>https://seiri-blog.github.io/tags/lambda-layers/</guid>
+      <guid>https://seiri.eu.org/tags/lambda-layers/</guid>
       <description></description>
     </item>
     
     <item>
       <title>amazons3</title>
-      <link>https://seiri-blog.github.io/tags/amazons3/</link>
+      <link>https://seiri.eu.org/tags/amazons3/</link>
       <pubDate>Fri, 22 Jul 2022 11:54:52 +0900</pubDate>
       
-      <guid>https://seiri-blog.github.io/tags/amazons3/</guid>
+      <guid>https://seiri.eu.org/tags/amazons3/</guid>
       <description></description>
     </item>
     
     <item>
       <title>awsS3</title>
-      <link>https://seiri-blog.github.io/tags/awss3/</link>
+      <link>https://seiri.eu.org/tags/awss3/</link>
       <pubDate>Fri, 22 Jul 2022 11:54:52 +0900</pubDate>
       
-      <guid>https://seiri-blog.github.io/tags/awss3/</guid>
+      <guid>https://seiri.eu.org/tags/awss3/</guid>
       <description></description>
     </item>
     
     <item>
       <title>DynamoDB</title>
-      <link>https://seiri-blog.github.io/tags/dynamodb/</link>
+      <link>https://seiri.eu.org/tags/dynamodb/</link>
       <pubDate>Thu, 14 Jul 2022 16:33:15 +0900</pubDate>
       
-      <guid>https://seiri-blog.github.io/tags/dynamodb/</guid>
+      <guid>https://seiri.eu.org/tags/dynamodb/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Object</title>
-      <link>https://seiri-blog.github.io/tags/object/</link>
+      <link>https://seiri.eu.org/tags/object/</link>
       <pubDate>Tue, 12 Jul 2022 16:24:40 +0900</pubDate>
       
-      <guid>https://seiri-blog.github.io/tags/object/</guid>
+      <guid>https://seiri.eu.org/tags/object/</guid>
       <description></description>
     </item>
     
     <item>
       <title>picklist</title>
-      <link>https://seiri-blog.github.io/tags/picklist/</link>
+      <link>https://seiri.eu.org/tags/picklist/</link>
       <pubDate>Tue, 12 Jul 2022 16:24:40 +0900</pubDate>
       
-      <guid>https://seiri-blog.github.io/tags/picklist/</guid>
+      <guid>https://seiri.eu.org/tags/picklist/</guid>
       <description></description>
     </item>
     
     <item>
       <title>SFDX</title>
-      <link>https://seiri-blog.github.io/tags/sfdx/</link>
+      <link>https://seiri.eu.org/tags/sfdx/</link>
       <pubDate>Tue, 12 Jul 2022 16:24:40 +0900</pubDate>
       
-      <guid>https://seiri-blog.github.io/tags/sfdx/</guid>
+      <guid>https://seiri.eu.org/tags/sfdx/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Auraコンポーネント</title>
-      <link>https://seiri-blog.github.io/tags/aura%E3%82%B3%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%8D%E3%83%B3%E3%83%88/</link>
+      <link>https://seiri.eu.org/tags/aura%E3%82%B3%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%8D%E3%83%B3%E3%83%88/</link>
       <pubDate>Tue, 12 Jul 2022 16:09:43 +0900</pubDate>
       
-      <guid>https://seiri-blog.github.io/tags/aura%E3%82%B3%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%8D%E3%83%B3%E3%83%88/</guid>
+      <guid>https://seiri.eu.org/tags/aura%E3%82%B3%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%8D%E3%83%B3%E3%83%88/</guid>
       <description></description>
     </item>
     
     <item>
       <title>アクションボタン</title>
-      <link>https://seiri-blog.github.io/tags/%E3%82%A2%E3%82%AF%E3%82%B7%E3%83%A7%E3%83%B3%E3%83%9C%E3%82%BF%E3%83%B3/</link>
+      <link>https://seiri.eu.org/tags/%E3%82%A2%E3%82%AF%E3%82%B7%E3%83%A7%E3%83%B3%E3%83%9C%E3%82%BF%E3%83%B3/</link>
       <pubDate>Tue, 12 Jul 2022 16:09:43 +0900</pubDate>
       
-      <guid>https://seiri-blog.github.io/tags/%E3%82%A2%E3%82%AF%E3%82%B7%E3%83%A7%E3%83%B3%E3%83%9C%E3%82%BF%E3%83%B3/</guid>
+      <guid>https://seiri.eu.org/tags/%E3%82%A2%E3%82%AF%E3%82%B7%E3%83%A7%E3%83%B3%E3%83%9C%E3%82%BF%E3%83%B3/</guid>
       <description></description>
     </item>
     
     <item>
       <title>fls</title>
-      <link>https://seiri-blog.github.io/tags/fls/</link>
+      <link>https://seiri.eu.org/tags/fls/</link>
       <pubDate>Mon, 11 Jul 2022 20:02:42 +0900</pubDate>
       
-      <guid>https://seiri-blog.github.io/tags/fls/</guid>
+      <guid>https://seiri.eu.org/tags/fls/</guid>
       <description></description>
     </item>
     
     <item>
       <title>PlatformEvents</title>
-      <link>https://seiri-blog.github.io/tags/platformevents/</link>
+      <link>https://seiri.eu.org/tags/platformevents/</link>
       <pubDate>Mon, 11 Jul 2022 16:45:24 +0900</pubDate>
       
-      <guid>https://seiri-blog.github.io/tags/platformevents/</guid>
+      <guid>https://seiri.eu.org/tags/platformevents/</guid>
       <description></description>
     </item>
     
     <item>
       <title>batch</title>
-      <link>https://seiri-blog.github.io/tags/batch/</link>
+      <link>https://seiri.eu.org/tags/batch/</link>
       <pubDate>Mon, 30 May 2022 19:45:23 +0900</pubDate>
       
-      <guid>https://seiri-blog.github.io/tags/batch/</guid>
+      <guid>https://seiri.eu.org/tags/batch/</guid>
       <description></description>
     </item>
     
     <item>
       <title>DataLoader</title>
-      <link>https://seiri-blog.github.io/tags/dataloader/</link>
+      <link>https://seiri.eu.org/tags/dataloader/</link>
       <pubDate>Mon, 30 May 2022 19:45:23 +0900</pubDate>
       
-      <guid>https://seiri-blog.github.io/tags/dataloader/</guid>
+      <guid>https://seiri.eu.org/tags/dataloader/</guid>
       <description></description>
     </item>
     
     <item>
       <title>データローダ</title>
-      <link>https://seiri-blog.github.io/tags/%E3%83%87%E3%83%BC%E3%82%BF%E3%83%AD%E3%83%BC%E3%83%80/</link>
+      <link>https://seiri.eu.org/tags/%E3%83%87%E3%83%BC%E3%82%BF%E3%83%AD%E3%83%BC%E3%83%80/</link>
       <pubDate>Mon, 30 May 2022 19:45:23 +0900</pubDate>
       
-      <guid>https://seiri-blog.github.io/tags/%E3%83%87%E3%83%BC%E3%82%BF%E3%83%AD%E3%83%BC%E3%83%80/</guid>
+      <guid>https://seiri.eu.org/tags/%E3%83%87%E3%83%BC%E3%82%BF%E3%83%AD%E3%83%BC%E3%83%80/</guid>
       <description></description>
     </item>
     
     <item>
       <title>バッチ</title>
-      <link>https://seiri-blog.github.io/tags/%E3%83%90%E3%83%83%E3%83%81/</link>
+      <link>https://seiri.eu.org/tags/%E3%83%90%E3%83%83%E3%83%81/</link>
       <pubDate>Mon, 30 May 2022 19:45:23 +0900</pubDate>
       
-      <guid>https://seiri-blog.github.io/tags/%E3%83%90%E3%83%83%E3%83%81/</guid>
+      <guid>https://seiri.eu.org/tags/%E3%83%90%E3%83%83%E3%83%81/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Lightningコンポーネント</title>
-      <link>https://seiri-blog.github.io/tags/lightning%E3%82%B3%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%8D%E3%83%B3%E3%83%88/</link>
+      <link>https://seiri.eu.org/tags/lightning%E3%82%B3%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%8D%E3%83%B3%E3%83%88/</link>
       <pubDate>Mon, 16 May 2022 14:11:39 +0900</pubDate>
       
-      <guid>https://seiri-blog.github.io/tags/lightning%E3%82%B3%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%8D%E3%83%B3%E3%83%88/</guid>
+      <guid>https://seiri.eu.org/tags/lightning%E3%82%B3%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%8D%E3%83%B3%E3%83%88/</guid>
       <description></description>
     </item>
     
     <item>
       <title>amplify</title>
-      <link>https://seiri-blog.github.io/tags/amplify/</link>
+      <link>https://seiri.eu.org/tags/amplify/</link>
       <pubDate>Mon, 24 Jan 2022 18:11:28 +0900</pubDate>
       
-      <guid>https://seiri-blog.github.io/tags/amplify/</guid>
+      <guid>https://seiri.eu.org/tags/amplify/</guid>
       <description></description>
     </item>
     
     <item>
       <title>React</title>
-      <link>https://seiri-blog.github.io/tags/react/</link>
+      <link>https://seiri.eu.org/tags/react/</link>
       <pubDate>Mon, 24 Jan 2022 18:11:28 +0900</pubDate>
       
-      <guid>https://seiri-blog.github.io/tags/react/</guid>
+      <guid>https://seiri.eu.org/tags/react/</guid>
       <description></description>
     </item>
     
     <item>
       <title>ReactRouter</title>
-      <link>https://seiri-blog.github.io/tags/reactrouter/</link>
+      <link>https://seiri.eu.org/tags/reactrouter/</link>
       <pubDate>Mon, 24 Jan 2022 18:11:28 +0900</pubDate>
       
-      <guid>https://seiri-blog.github.io/tags/reactrouter/</guid>
+      <guid>https://seiri.eu.org/tags/reactrouter/</guid>
       <description></description>
     </item>
     
     <item>
       <title>環境構築</title>
-      <link>https://seiri-blog.github.io/tags/%E7%92%B0%E5%A2%83%E6%A7%8B%E7%AF%89/</link>
+      <link>https://seiri.eu.org/tags/%E7%92%B0%E5%A2%83%E6%A7%8B%E7%AF%89/</link>
       <pubDate>Mon, 24 Jan 2022 18:11:28 +0900</pubDate>
       
-      <guid>https://seiri-blog.github.io/tags/%E7%92%B0%E5%A2%83%E6%A7%8B%E7%AF%89/</guid>
+      <guid>https://seiri.eu.org/tags/%E7%92%B0%E5%A2%83%E6%A7%8B%E7%AF%89/</guid>
       <description></description>
     </item>
     
     <item>
       <title>GraphQL</title>
-      <link>https://seiri-blog.github.io/tags/graphql/</link>
+      <link>https://seiri.eu.org/tags/graphql/</link>
       <pubDate>Thu, 20 Jan 2022 19:58:17 +0900</pubDate>
       
-      <guid>https://seiri-blog.github.io/tags/graphql/</guid>
+      <guid>https://seiri.eu.org/tags/graphql/</guid>
       <description></description>
     </item>
     
     <item>
       <title>python</title>
-      <link>https://seiri-blog.github.io/tags/python/</link>
+      <link>https://seiri.eu.org/tags/python/</link>
       <pubDate>Tue, 18 Jan 2022 19:21:37 +0900</pubDate>
       
-      <guid>https://seiri-blog.github.io/tags/python/</guid>
+      <guid>https://seiri.eu.org/tags/python/</guid>
       <description></description>
     </item>
     
     <item>
       <title>python3</title>
-      <link>https://seiri-blog.github.io/tags/python3/</link>
+      <link>https://seiri.eu.org/tags/python3/</link>
       <pubDate>Tue, 18 Jan 2022 19:21:37 +0900</pubDate>
       
-      <guid>https://seiri-blog.github.io/tags/python3/</guid>
+      <guid>https://seiri.eu.org/tags/python3/</guid>
       <description></description>
     </item>
     
     <item>
       <title>AWSLambda</title>
-      <link>https://seiri-blog.github.io/tags/awslambda/</link>
+      <link>https://seiri.eu.org/tags/awslambda/</link>
       <pubDate>Mon, 27 Dec 2021 17:53:32 +0900</pubDate>
       
-      <guid>https://seiri-blog.github.io/tags/awslambda/</guid>
+      <guid>https://seiri.eu.org/tags/awslambda/</guid>
       <description></description>
     </item>
     
     <item>
       <title>cognito</title>
-      <link>https://seiri-blog.github.io/tags/cognito/</link>
+      <link>https://seiri.eu.org/tags/cognito/</link>
       <pubDate>Mon, 27 Dec 2021 12:38:54 +0900</pubDate>
       
-      <guid>https://seiri-blog.github.io/tags/cognito/</guid>
+      <guid>https://seiri.eu.org/tags/cognito/</guid>
       <description></description>
     </item>
     
     <item>
       <title>stepfunctions</title>
-      <link>https://seiri-blog.github.io/tags/stepfunctions/</link>
+      <link>https://seiri.eu.org/tags/stepfunctions/</link>
       <pubDate>Mon, 27 Dec 2021 12:18:23 +0900</pubDate>
       
-      <guid>https://seiri-blog.github.io/tags/stepfunctions/</guid>
+      <guid>https://seiri.eu.org/tags/stepfunctions/</guid>
       <description></description>
     </item>
     
     <item>
       <title>date</title>
-      <link>https://seiri-blog.github.io/tags/date/</link>
+      <link>https://seiri.eu.org/tags/date/</link>
       <pubDate>Fri, 24 Dec 2021 15:08:50 +0900</pubDate>
       
-      <guid>https://seiri-blog.github.io/tags/date/</guid>
+      <guid>https://seiri.eu.org/tags/date/</guid>
       <description></description>
     </item>
     
     <item>
       <title>DateFormatter</title>
-      <link>https://seiri-blog.github.io/tags/dateformatter/</link>
+      <link>https://seiri.eu.org/tags/dateformatter/</link>
       <pubDate>Fri, 24 Dec 2021 15:08:50 +0900</pubDate>
       
-      <guid>https://seiri-blog.github.io/tags/dateformatter/</guid>
+      <guid>https://seiri.eu.org/tags/dateformatter/</guid>
       <description></description>
     </item>
     
     <item>
       <title>datetime</title>
-      <link>https://seiri-blog.github.io/tags/datetime/</link>
+      <link>https://seiri.eu.org/tags/datetime/</link>
       <pubDate>Fri, 24 Dec 2021 15:08:50 +0900</pubDate>
       
-      <guid>https://seiri-blog.github.io/tags/datetime/</guid>
+      <guid>https://seiri.eu.org/tags/datetime/</guid>
       <description></description>
     </item>
     
     <item>
       <title>datetimeformatter</title>
-      <link>https://seiri-blog.github.io/tags/datetimeformatter/</link>
+      <link>https://seiri.eu.org/tags/datetimeformatter/</link>
       <pubDate>Fri, 24 Dec 2021 15:08:50 +0900</pubDate>
       
-      <guid>https://seiri-blog.github.io/tags/datetimeformatter/</guid>
+      <guid>https://seiri.eu.org/tags/datetimeformatter/</guid>
       <description></description>
     </item>
     
     <item>
       <title>sqlalchemy</title>
-      <link>https://seiri-blog.github.io/tags/sqlalchemy/</link>
+      <link>https://seiri.eu.org/tags/sqlalchemy/</link>
       <pubDate>Thu, 23 Dec 2021 12:38:42 +0900</pubDate>
       
-      <guid>https://seiri-blog.github.io/tags/sqlalchemy/</guid>
+      <guid>https://seiri.eu.org/tags/sqlalchemy/</guid>
       <description></description>
     </item>
     
     <item>
       <title>localStorage</title>
-      <link>https://seiri-blog.github.io/tags/localstorage/</link>
+      <link>https://seiri.eu.org/tags/localstorage/</link>
       <pubDate>Tue, 21 Dec 2021 18:33:46 +0900</pubDate>
       
-      <guid>https://seiri-blog.github.io/tags/localstorage/</guid>
+      <guid>https://seiri.eu.org/tags/localstorage/</guid>
       <description></description>
     </item>
     
     <item>
       <title>sessionStorage</title>
-      <link>https://seiri-blog.github.io/tags/sessionstorage/</link>
+      <link>https://seiri.eu.org/tags/sessionstorage/</link>
       <pubDate>Tue, 21 Dec 2021 18:33:46 +0900</pubDate>
       
-      <guid>https://seiri-blog.github.io/tags/sessionstorage/</guid>
+      <guid>https://seiri.eu.org/tags/sessionstorage/</guid>
       <description></description>
     </item>
     
     <item>
       <title>presigned-url</title>
-      <link>https://seiri-blog.github.io/tags/presigned-url/</link>
+      <link>https://seiri.eu.org/tags/presigned-url/</link>
       <pubDate>Mon, 22 Nov 2021 16:48:56 +0900</pubDate>
       
-      <guid>https://seiri-blog.github.io/tags/presigned-url/</guid>
+      <guid>https://seiri.eu.org/tags/presigned-url/</guid>
       <description></description>
     </item>
     
     <item>
       <title>download</title>
-      <link>https://seiri-blog.github.io/tags/download/</link>
+      <link>https://seiri.eu.org/tags/download/</link>
       <pubDate>Mon, 02 Aug 2021 18:36:58 +0900</pubDate>
       
-      <guid>https://seiri-blog.github.io/tags/download/</guid>
+      <guid>https://seiri.eu.org/tags/download/</guid>
       <description></description>
     </item>
     
     <item>
       <title>forcetk.js</title>
-      <link>https://seiri-blog.github.io/tags/forcetk.js/</link>
+      <link>https://seiri.eu.org/tags/forcetk.js/</link>
       <pubDate>Thu, 29 Jul 2021 16:30:01 +0900</pubDate>
       
-      <guid>https://seiri-blog.github.io/tags/forcetk.js/</guid>
+      <guid>https://seiri.eu.org/tags/forcetk.js/</guid>
       <description></description>
     </item>
     
     <item>
       <title>VFページ</title>
-      <link>https://seiri-blog.github.io/tags/vf%E3%83%9A%E3%83%BC%E3%82%B8/</link>
+      <link>https://seiri.eu.org/tags/vf%E3%83%9A%E3%83%BC%E3%82%B8/</link>
       <pubDate>Thu, 29 Jul 2021 16:30:01 +0900</pubDate>
       
-      <guid>https://seiri-blog.github.io/tags/vf%E3%83%9A%E3%83%BC%E3%82%B8/</guid>
+      <guid>https://seiri.eu.org/tags/vf%E3%83%9A%E3%83%BC%E3%82%B8/</guid>
       <description></description>
     </item>
     
     <item>
       <title>DatePicker</title>
-      <link>https://seiri-blog.github.io/tags/datepicker/</link>
+      <link>https://seiri.eu.org/tags/datepicker/</link>
       <pubDate>Mon, 26 Jul 2021 14:49:28 +0900</pubDate>
       
-      <guid>https://seiri-blog.github.io/tags/datepicker/</guid>
+      <guid>https://seiri.eu.org/tags/datepicker/</guid>
       <description></description>
     </item>
     
     <item>
       <title>チェック</title>
-      <link>https://seiri-blog.github.io/tags/%E3%83%81%E3%82%A7%E3%83%83%E3%82%AF/</link>
+      <link>https://seiri.eu.org/tags/%E3%83%81%E3%82%A7%E3%83%83%E3%82%AF/</link>
       <pubDate>Mon, 26 Jul 2021 14:49:28 +0900</pubDate>
       
-      <guid>https://seiri-blog.github.io/tags/%E3%83%81%E3%82%A7%E3%83%83%E3%82%AF/</guid>
+      <guid>https://seiri.eu.org/tags/%E3%83%81%E3%82%A7%E3%83%83%E3%82%AF/</guid>
       <description></description>
     </item>
     
     <item>
       <title>utils</title>
-      <link>https://seiri-blog.github.io/tags/utils/</link>
+      <link>https://seiri.eu.org/tags/utils/</link>
       <pubDate>Mon, 26 Jul 2021 10:52:54 +0900</pubDate>
       
-      <guid>https://seiri-blog.github.io/tags/utils/</guid>
+      <guid>https://seiri.eu.org/tags/utils/</guid>
       <description></description>
     </item>
     
     <item>
       <title>hooks</title>
-      <link>https://seiri-blog.github.io/tags/hooks/</link>
+      <link>https://seiri.eu.org/tags/hooks/</link>
       <pubDate>Wed, 21 Jul 2021 19:17:39 +0900</pubDate>
       
-      <guid>https://seiri-blog.github.io/tags/hooks/</guid>
+      <guid>https://seiri.eu.org/tags/hooks/</guid>
       <description></description>
     </item>
     
     <item>
       <title>LDS</title>
-      <link>https://seiri-blog.github.io/tags/lds/</link>
+      <link>https://seiri.eu.org/tags/lds/</link>
       <pubDate>Wed, 21 Jul 2021 19:17:39 +0900</pubDate>
       
-      <guid>https://seiri-blog.github.io/tags/lds/</guid>
+      <guid>https://seiri.eu.org/tags/lds/</guid>
       <description></description>
     </item>
     
     <item>
       <title>styling</title>
-      <link>https://seiri-blog.github.io/tags/styling/</link>
+      <link>https://seiri.eu.org/tags/styling/</link>
       <pubDate>Wed, 21 Jul 2021 19:17:39 +0900</pubDate>
       
-      <guid>https://seiri-blog.github.io/tags/styling/</guid>
+      <guid>https://seiri.eu.org/tags/styling/</guid>
       <description></description>
     </item>
     
     <item>
       <title>再帰</title>
-      <link>https://seiri-blog.github.io/tags/%E5%86%8D%E5%B8%B0/</link>
+      <link>https://seiri.eu.org/tags/%E5%86%8D%E5%B8%B0/</link>
       <pubDate>Wed, 21 Jul 2021 18:36:08 +0900</pubDate>
       
-      <guid>https://seiri-blog.github.io/tags/%E5%86%8D%E5%B8%B0/</guid>
+      <guid>https://seiri.eu.org/tags/%E5%86%8D%E5%B8%B0/</guid>
       <description></description>
     </item>
     
     <item>
       <title>GroupButton</title>
-      <link>https://seiri-blog.github.io/tags/groupbutton/</link>
+      <link>https://seiri.eu.org/tags/groupbutton/</link>
       <pubDate>Mon, 19 Jul 2021 19:28:25 +0900</pubDate>
       
-      <guid>https://seiri-blog.github.io/tags/groupbutton/</guid>
+      <guid>https://seiri.eu.org/tags/groupbutton/</guid>
       <description></description>
     </item>
     
     <item>
       <title>条件判断</title>
-      <link>https://seiri-blog.github.io/tags/%E6%9D%A1%E4%BB%B6%E5%88%A4%E6%96%AD/</link>
+      <link>https://seiri.eu.org/tags/%E6%9D%A1%E4%BB%B6%E5%88%A4%E6%96%AD/</link>
       <pubDate>Mon, 19 Jul 2021 18:51:44 +0900</pubDate>
       
-      <guid>https://seiri-blog.github.io/tags/%E6%9D%A1%E4%BB%B6%E5%88%A4%E6%96%AD/</guid>
+      <guid>https://seiri.eu.org/tags/%E6%9D%A1%E4%BB%B6%E5%88%A4%E6%96%AD/</guid>
       <description></description>
     </item>
     
     <item>
       <title>calendar</title>
-      <link>https://seiri-blog.github.io/tags/calendar/</link>
+      <link>https://seiri.eu.org/tags/calendar/</link>
       <pubDate>Mon, 19 Jul 2021 17:29:18 +0900</pubDate>
       
-      <guid>https://seiri-blog.github.io/tags/calendar/</guid>
+      <guid>https://seiri.eu.org/tags/calendar/</guid>
       <description></description>
     </item>
     
     <item>
       <title>ContextMenu</title>
-      <link>https://seiri-blog.github.io/tags/contextmenu/</link>
+      <link>https://seiri.eu.org/tags/contextmenu/</link>
       <pubDate>Mon, 19 Jul 2021 11:26:55 +0900</pubDate>
       
-      <guid>https://seiri-blog.github.io/tags/contextmenu/</guid>
+      <guid>https://seiri.eu.org/tags/contextmenu/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Router</title>
-      <link>https://seiri-blog.github.io/tags/router/</link>
+      <link>https://seiri.eu.org/tags/router/</link>
       <pubDate>Fri, 16 Jul 2021 17:30:12 +0900</pubDate>
       
-      <guid>https://seiri-blog.github.io/tags/router/</guid>
+      <guid>https://seiri.eu.org/tags/router/</guid>
       <description></description>
     </item>
     
     <item>
       <title>画面遷移</title>
-      <link>https://seiri-blog.github.io/tags/%E7%94%BB%E9%9D%A2%E9%81%B7%E7%A7%BB/</link>
+      <link>https://seiri.eu.org/tags/%E7%94%BB%E9%9D%A2%E9%81%B7%E7%A7%BB/</link>
       <pubDate>Fri, 16 Jul 2021 17:30:12 +0900</pubDate>
       
-      <guid>https://seiri-blog.github.io/tags/%E7%94%BB%E9%9D%A2%E9%81%B7%E7%A7%BB/</guid>
+      <guid>https://seiri.eu.org/tags/%E7%94%BB%E9%9D%A2%E9%81%B7%E7%A7%BB/</guid>
       <description></description>
     </item>
     

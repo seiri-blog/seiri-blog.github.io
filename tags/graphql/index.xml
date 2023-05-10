@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>GraphQL on Seiri&#39;s Blog</title>
-    <link>https://seiri-blog.github.io/tags/graphql/</link>
+    <link>https://seiri.eu.org/tags/graphql/</link>
     <description>Recent content in GraphQL on Seiri&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>2023 Seiri All rights reserved</copyright>
-    <lastBuildDate>Thu, 20 Jan 2022 19:58:17 +0900</lastBuildDate><atom:link href="https://seiri-blog.github.io/tags/graphql/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 20 Jan 2022 19:58:17 +0900</lastBuildDate><atom:link href="https://seiri.eu.org/tags/graphql/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>AmplifyでGraphQLを呼出す方法</title>
-      <link>https://seiri-blog.github.io/posts/amplify-call-graphql/</link>
+      <link>https://seiri.eu.org/posts/amplify-call-graphql/</link>
       <pubDate>Thu, 20 Jan 2022 19:58:17 +0900</pubDate>
       
-      <guid>https://seiri-blog.github.io/posts/amplify-call-graphql/</guid>
+      <guid>https://seiri.eu.org/posts/amplify-call-graphql/</guid>
       <description>準備 1.amplify add apiコマンドで、GraphQL API を追加する amplify add api ? Please select from one of the below mentioned services: &amp;gt; GraphQL ? Here is the GraphQL API that we will create. Select a setting to edit or continue: &amp;gt; Continue ? Choose a schema template: &amp;gt; Single object with fields</description>
     </item>
     

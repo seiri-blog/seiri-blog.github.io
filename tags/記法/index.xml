@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>記法 on Seiri&#39;s Blog</title>
-    <link>https://seiri-blog.github.io/tags/%E8%A8%98%E6%B3%95/</link>
+    <link>https://seiri.eu.org/tags/%E8%A8%98%E6%B3%95/</link>
     <description>Recent content in 記法 on Seiri&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>2023 Seiri All rights reserved</copyright>
-    <lastBuildDate>Fri, 13 Jan 2023 00:10:08 +0900</lastBuildDate><atom:link href="https://seiri-blog.github.io/tags/%E8%A8%98%E6%B3%95/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 13 Jan 2023 00:10:08 +0900</lastBuildDate><atom:link href="https://seiri.eu.org/tags/%E8%A8%98%E6%B3%95/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Markdown記法</title>
-      <link>https://seiri-blog.github.io/posts/markdown-notation/</link>
+      <link>https://seiri.eu.org/posts/markdown-notation/</link>
       <pubDate>Fri, 13 Jan 2023 00:10:08 +0900</pubDate>
       
-      <guid>https://seiri-blog.github.io/posts/markdown-notation/</guid>
+      <guid>https://seiri.eu.org/posts/markdown-notation/</guid>
       <description>Markdown 記法 見出し 先頭に#をつけることによって見出しになります。見出しのレベルは#の数で表現します。 # 見出し1 ## 見出し2 ### 見出し3 #### 見出し4 ##### 見出</description>
     </item>
     

@@ -2,62 +2,62 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>S3 on Seiri&#39;s Blog</title>
-    <link>https://seiri-blog.github.io/tags/s3/</link>
+    <link>https://seiri.eu.org/tags/s3/</link>
     <description>Recent content in S3 on Seiri&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>2023 Seiri All rights reserved</copyright>
-    <lastBuildDate>Mon, 19 Dec 2022 18:34:03 +0900</lastBuildDate><atom:link href="https://seiri-blog.github.io/tags/s3/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 19 Dec 2022 18:34:03 +0900</lastBuildDate><atom:link href="https://seiri.eu.org/tags/s3/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>【AWS】S3 へファイル転送ツール</title>
-      <link>https://seiri-blog.github.io/posts/aws-file-transfer-tool-to-s3/</link>
+      <link>https://seiri.eu.org/posts/aws-file-transfer-tool-to-s3/</link>
       <pubDate>Mon, 19 Dec 2022 18:34:03 +0900</pubDate>
       
-      <guid>https://seiri-blog.github.io/posts/aws-file-transfer-tool-to-s3/</guid>
+      <guid>https://seiri.eu.org/posts/aws-file-transfer-tool-to-s3/</guid>
       <description>準備 まずCloudBerry Explorerをアクセス 自分のメールアドレスを入力してから Download ボタン押下する ツールをダウンロードする ツールをイン</description>
     </item>
     
     <item>
       <title>Amazon S3</title>
-      <link>https://seiri-blog.github.io/posts/amazons-s3/</link>
+      <link>https://seiri.eu.org/posts/amazons-s3/</link>
       <pubDate>Fri, 22 Jul 2022 11:54:52 +0900</pubDate>
       
-      <guid>https://seiri-blog.github.io/posts/amazons-s3/</guid>
+      <guid>https://seiri.eu.org/posts/amazons-s3/</guid>
       <description>Amazon S3 とは Amazon Simple Storage Service (Amazon S3) は、業界をリードするスケーラビリティ、データ可用性、セキュリティ、およびパフォーマンスを提供するオブジェクトストレージサ</description>
     </item>
     
     <item>
       <title>AmplifyでS3と連携する方法</title>
-      <link>https://seiri-blog.github.io/posts/amplify-setup-s3-and-operation/</link>
+      <link>https://seiri.eu.org/posts/amplify-setup-s3-and-operation/</link>
       <pubDate>Fri, 21 Jan 2022 12:15:55 +0900</pubDate>
       
-      <guid>https://seiri-blog.github.io/posts/amplify-setup-s3-and-operation/</guid>
+      <guid>https://seiri.eu.org/posts/amplify-setup-s3-and-operation/</guid>
       <description>準備 1.amplify add storageコマンドで、S3 を追加する amplify add storage ? Please select from one of the below mentioned services (Use arrow keys) ❯ Content (Images, audio, video, etc.) NoSQL Database 2.amplify pushコマンドで作成した S3 を AWS にデプロイ</description>
     </item>
     
     <item>
       <title>【AWS】LambdaでS3ファイルをtmpディレクトリに保存</title>
-      <link>https://seiri-blog.github.io/posts/aws-lambda-by-s3-file-tmp-directory-save/</link>
+      <link>https://seiri.eu.org/posts/aws-lambda-by-s3-file-tmp-directory-save/</link>
       <pubDate>Mon, 27 Dec 2021 16:14:46 +0900</pubDate>
       
-      <guid>https://seiri-blog.github.io/posts/aws-lambda-by-s3-file-tmp-directory-save/</guid>
+      <guid>https://seiri.eu.org/posts/aws-lambda-by-s3-file-tmp-directory-save/</guid>
       <description>はじめに 各実行環境は、/tmp ディレクトリ内の 512 MB~ 10240 MB のディスク領域を提供します。ディレクトリのコンテンツは、実行環境が停止された際に維持さ</description>
     </item>
     
     <item>
       <title>ApexでAWS S3署名付きURL発行</title>
-      <link>https://seiri-blog.github.io/posts/apex-create-aws-s3-sign-with-url/</link>
+      <link>https://seiri.eu.org/posts/apex-create-aws-s3-sign-with-url/</link>
       <pubDate>Mon, 22 Nov 2021 16:48:56 +0900</pubDate>
       
-      <guid>https://seiri-blog.github.io/posts/apex-create-aws-s3-sign-with-url/</guid>
+      <guid>https://seiri.eu.org/posts/apex-create-aws-s3-sign-with-url/</guid>
       <description>目的 Apex で S3 署名付き URL を発行する方法を共用します。 ソース public class AwsS3Util { private static final String AMZ_ALGORITHM = &amp;#39;AWS4-HMAC-SHA256&amp;#39;; private static final String ACCESS_KEY = &amp;#39;アクセスキー&amp;#39;; private static final String SECRET_KEY = &amp;#3</description>
     </item>
     
     <item>
       <title>LWCでAWS S3と連携する方法</title>
-      <link>https://seiri-blog.github.io/posts/lwc-by-aws-3-and-operation/</link>
+      <link>https://seiri.eu.org/posts/lwc-by-aws-3-and-operation/</link>
       <pubDate>Wed, 28 Jul 2021 13:02:56 +0900</pubDate>
       
-      <guid>https://seiri-blog.github.io/posts/lwc-by-aws-3-and-operation/</guid>
+      <guid>https://seiri.eu.org/posts/lwc-by-aws-3-and-operation/</guid>
       <description>1.目的 今回 LWC 中に AWS の SDK for javascript で S3 と連携する方法を共有します。 2.前提 2.1.AWS S3 バケット Cross-Origin Resource Sharing (CORS)の設定 [ { &amp;#34;AllowedHeaders&amp;#34;: [&amp;#34;*&amp;#34;], &amp;#34;AllowedMethods&amp;#34;: [&amp;#34;HEAD&amp;#34;, &amp;#34;GET&amp;#34;, &amp;#34;PUT&amp;#34;, &amp;#34;POST&amp;#34;, &amp;#34;DELETE&amp;#34;], &amp;#34;AllowedOrigins&amp;#34;: [&amp;#34;*&amp;#34;], &amp;#34;ExposeHeaders&amp;#34;: [&amp;#34;ETag&amp;#34;] } ] 2.2.Salesforce 側</description>
     </item>
     

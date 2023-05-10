@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>DateFormatter on Seiri&#39;s Blog</title>
-    <link>https://seiri-blog.github.io/categories/dateformatter/</link>
+    <link>https://seiri.eu.org/categories/dateformatter/</link>
     <description>Recent content in DateFormatter on Seiri&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>2023 Seiri All rights reserved</copyright>
-    <lastBuildDate>Fri, 24 Dec 2021 15:08:50 +0900</lastBuildDate><atom:link href="https://seiri-blog.github.io/categories/dateformatter/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 24 Dec 2021 15:08:50 +0900</lastBuildDate><atom:link href="https://seiri.eu.org/categories/dateformatter/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>JavaScript日付フォーマット</title>
-      <link>https://seiri-blog.github.io/posts/js-date-format/</link>
+      <link>https://seiri.eu.org/posts/js-date-format/</link>
       <pubDate>Fri, 24 Dec 2021 15:08:50 +0900</pubDate>
       
-      <guid>https://seiri-blog.github.io/posts/js-date-format/</guid>
+      <guid>https://seiri.eu.org/posts/js-date-format/</guid>
       <description>JavaScript日付フォーマット方法 JavaScript 日付フォーマット方法を紹介します。 方法 1 JavaScript での日付フォーマットは正規表現と Date 型のgetFullYe</description>
     </item>
     
