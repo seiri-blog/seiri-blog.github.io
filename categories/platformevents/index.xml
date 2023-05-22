@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>PlatformEvents on Seiri&#39;s Blog</title>
-    <link>https://seiri.eu.org/categories/platformevents/</link>
+    <link>https://seiri.blog/categories/platformevents/</link>
     <description>Recent content in PlatformEvents on Seiri&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>2023 Seiri All rights reserved</copyright>
-    <lastBuildDate>Mon, 11 Jul 2022 16:45:24 +0900</lastBuildDate><atom:link href="https://seiri.eu.org/categories/platformevents/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 11 Jul 2022 16:45:24 +0900</lastBuildDate><atom:link href="https://seiri.blog/categories/platformevents/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>【Salesforce】プラットフォームイベント説明と利用方法</title>
-      <link>https://seiri.eu.org/posts/salesforce-platform-event-description-and-usage/</link>
+      <link>https://seiri.blog/posts/salesforce-platform-event-description-and-usage/</link>
       <pubDate>Mon, 11 Jul 2022 16:45:24 +0900</pubDate>
       
-      <guid>https://seiri.eu.org/posts/salesforce-platform-event-description-and-usage/</guid>
+      <guid>https://seiri.blog/posts/salesforce-platform-event-description-and-usage/</guid>
       <description>プラットフォームイベントの役割 プラットフォームイベントを使用し、リアルタイムイベントデータのやり取りによって、Salesforce のビジネス</description>
     </item>
     

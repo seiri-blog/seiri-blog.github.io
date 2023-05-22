@@ -2,80 +2,80 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>lambda on Seiri&#39;s Blog</title>
-    <link>https://seiri.eu.org/categories/lambda/</link>
+    <link>https://seiri.blog/categories/lambda/</link>
     <description>Recent content in lambda on Seiri&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>2023 Seiri All rights reserved</copyright>
-    <lastBuildDate>Fri, 22 Jul 2022 12:03:11 +0900</lastBuildDate><atom:link href="https://seiri.eu.org/categories/lambda/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 22 Jul 2022 12:03:11 +0900</lastBuildDate><atom:link href="https://seiri.blog/categories/lambda/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>AWS Lambda</title>
-      <link>https://seiri.eu.org/posts/aws-lambda/</link>
+      <link>https://seiri.blog/posts/aws-lambda/</link>
       <pubDate>Fri, 22 Jul 2022 12:03:11 +0900</pubDate>
       
-      <guid>https://seiri.eu.org/posts/aws-lambda/</guid>
+      <guid>https://seiri.blog/posts/aws-lambda/</guid>
       <description>AWS Lambda とは Lambda はサーバーをプロビジョニングしたり管理しなくてもコードを実行できるコンピューティングサービスです。Lambda は可用性の高いコンピ</description>
     </item>
     
     <item>
       <title>PythonでのAWS Lambda環境変数の取得</title>
-      <link>https://seiri.eu.org/posts/aws-lambda-environment-variable-acquisition-on-python/</link>
+      <link>https://seiri.blog/posts/aws-lambda-environment-variable-acquisition-on-python/</link>
       <pubDate>Mon, 27 Dec 2021 17:53:32 +0900</pubDate>
       
-      <guid>https://seiri.eu.org/posts/aws-lambda-environment-variable-acquisition-on-python/</guid>
+      <guid>https://seiri.blog/posts/aws-lambda-environment-variable-acquisition-on-python/</guid>
       <description>準備 環境変数の設定 環境変数は、関数の未公開バージョンで定義します。バージョンを公開するとき、他のバージョン固有の設定とともに、そのバージョン</description>
     </item>
     
     <item>
       <title>PythonでのAWS Lambda共通ユーザ操作Util</title>
-      <link>https://seiri.eu.org/posts/aws-lambda-common-user-operation-util-in-python/</link>
+      <link>https://seiri.blog/posts/aws-lambda-common-user-operation-util-in-python/</link>
       <pubDate>Mon, 27 Dec 2021 12:38:54 +0900</pubDate>
       
-      <guid>https://seiri.eu.org/posts/aws-lambda-common-user-operation-util-in-python/</guid>
+      <guid>https://seiri.blog/posts/aws-lambda-common-user-operation-util-in-python/</guid>
       <description>目的 boto3 ラブライブを利用して、AWS Coginit での操作 Utitl 作成方法を共有します。 実装 # -*- coding: utf-8 -*- import secrets import string import boto3 USERPOOL_ID = &amp;#39;USERPOOL_ID&amp;#39; client = boto3.client(&amp;#39;cognito-idp&amp;#39;) def show_user_list(): &amp;#34;&amp;#34;&amp;#34;</description>
     </item>
     
     <item>
       <title>PythonでStepFunctionを実行する方法(boto3)</title>
-      <link>https://seiri.eu.org/posts/python-execute-stepfunction/</link>
+      <link>https://seiri.blog/posts/python-execute-stepfunction/</link>
       <pubDate>Mon, 27 Dec 2021 12:18:23 +0900</pubDate>
       
-      <guid>https://seiri.eu.org/posts/python-execute-stepfunction/</guid>
+      <guid>https://seiri.blog/posts/python-execute-stepfunction/</guid>
       <description>実装 # -*- coding: utf-8 -*- import boto3 stepfunctions_client = boto3.client(&amp;#39;stepfunctions&amp;#39;) def execute(state_machine_arn, input_message_body): &amp;#34;&amp;#34;&amp;#34;StepFunctionsを呼び出す関数 Args: state_machine_arn: 呼び出したいStepFunction</description>
     </item>
     
     <item>
       <title>PythonでのAWS Lambdaキュー送信</title>
-      <link>https://seiri.eu.org/posts/aws-lambda-queue-send-in-python/</link>
+      <link>https://seiri.blog/posts/aws-lambda-queue-send-in-python/</link>
       <pubDate>Mon, 27 Dec 2021 12:15:01 +0900</pubDate>
       
-      <guid>https://seiri.eu.org/posts/aws-lambda-queue-send-in-python/</guid>
+      <guid>https://seiri.blog/posts/aws-lambda-queue-send-in-python/</guid>
       <description>実装 # -*- coding: utf-8 -*- import boto3 sqs_client = boto3.client(&amp;#39;sqs&amp;#39;) def push_message(message_body): &amp;#34;&amp;#34;&amp;#34;SQSの特定キューにメッセージをPUSHする Args: message_body: PUSHするメッセージ Returns: sqsメッ</description>
     </item>
     
     <item>
       <title>PythonでのAWS Lambda共通ログ出力Util</title>
-      <link>https://seiri.eu.org/posts/aws-lambda-common-logging-util-in-python/</link>
+      <link>https://seiri.blog/posts/aws-lambda-common-logging-util-in-python/</link>
       <pubDate>Mon, 27 Dec 2021 12:06:59 +0900</pubDate>
       
-      <guid>https://seiri.eu.org/posts/aws-lambda-common-logging-util-in-python/</guid>
+      <guid>https://seiri.blog/posts/aws-lambda-common-logging-util-in-python/</guid>
       <description>実装 # -*- coding: utf-8 -*- import logging import sys from datetime import datetime from pytz import timezone def _customTime(*args): &amp;#34;&amp;#34;&amp;#34;ログ用の時間出力 Returns: 現在時間（Asia/Tokyo） &amp;#34;&amp;#34;&amp;#34; return datetime.now(timezone(&amp;#39;Asia/Tokyo&amp;#39;)).timetuple() LOG_LEVEL = &amp;#39;INFO&amp;#39; _logger = logging.getLogger(__name__)</description>
     </item>
     
     <item>
       <title>PythonでのAWS Lambda 共通認証Util</title>
-      <link>https://seiri.eu.org/posts/aws-lambda-common-authorization-util-in-python/</link>
+      <link>https://seiri.blog/posts/aws-lambda-common-authorization-util-in-python/</link>
       <pubDate>Mon, 27 Dec 2021 11:54:25 +0900</pubDate>
       
-      <guid>https://seiri.eu.org/posts/aws-lambda-common-authorization-util-in-python/</guid>
+      <guid>https://seiri.blog/posts/aws-lambda-common-authorization-util-in-python/</guid>
       <description>実装 # -*- coding: utf-8 -*- import base64 import boto3 import json cognito_client = boto3.client(&amp;#39;cognito-idp&amp;#39;) cognito_identity_client = boto3.client(&amp;#39;cognito-identity&amp;#39;) USERPOOL_ID = &amp;#39;USERPOOL_ID&amp;#39; CLIENT_ID = &amp;#39;CLIENT_ID&amp;#39; IDENTITYPOOL_ID = &amp;#39;IDENTITYPOOL_ID&amp;#39; def authenticate(user_id, password): &amp;#34;&amp;#34;&amp;#34;指定されたユーザIDとパスワードで認証を実施する</description>
     </item>
     
     <item>
       <title>PythonでのAWS Lambda共通レスポンスUtil</title>
-      <link>https://seiri.eu.org/posts/aws-lambda-common-response-util-in-python/</link>
+      <link>https://seiri.blog/posts/aws-lambda-common-response-util-in-python/</link>
       <pubDate>Mon, 27 Dec 2021 11:22:36 +0900</pubDate>
       
-      <guid>https://seiri.eu.org/posts/aws-lambda-common-response-util-in-python/</guid>
+      <guid>https://seiri.blog/posts/aws-lambda-common-response-util-in-python/</guid>
       <description>目的 python での Lambda 関数共通レスポンス Util を作成方法を共有します。 実装 import decimal import json class DecimalEncoder(json.JSONEncoder): &amp;#34;&amp;#34;&amp;#34;DecimalEncoder クラス Decimal クラスを使用して保存された数値を出力するために使用されます</description>
     </item>
     

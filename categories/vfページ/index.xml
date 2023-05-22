@@ -2,26 +2,26 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>VFページ on Seiri&#39;s Blog</title>
-    <link>https://seiri.eu.org/categories/vf%E3%83%9A%E3%83%BC%E3%82%B8/</link>
+    <link>https://seiri.blog/categories/vf%E3%83%9A%E3%83%BC%E3%82%B8/</link>
     <description>Recent content in VFページ on Seiri&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>2023 Seiri All rights reserved</copyright>
-    <lastBuildDate>Thu, 29 Jul 2021 16:30:01 +0900</lastBuildDate><atom:link href="https://seiri.eu.org/categories/vf%E3%83%9A%E3%83%BC%E3%82%B8/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 29 Jul 2021 16:30:01 +0900</lastBuildDate><atom:link href="https://seiri.blog/categories/vf%E3%83%9A%E3%83%BC%E3%82%B8/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>VFPageにLWCでのファイルUP方法</title>
-      <link>https://seiri.eu.org/posts/vfpage-lwc-on-file-up/</link>
+      <link>https://seiri.blog/posts/vfpage-lwc-on-file-up/</link>
       <pubDate>Thu, 29 Jul 2021 16:30:01 +0900</pubDate>
       
-      <guid>https://seiri.eu.org/posts/vfpage-lwc-on-file-up/</guid>
+      <guid>https://seiri.blog/posts/vfpage-lwc-on-file-up/</guid>
       <description>1.目的 Salesforce Lightning モード下に LWC でのファイルをアップロードするには&amp;lt;lightning-file-upload&amp;gt;コンポネントを使って、フ</description>
     </item>
     
     <item>
       <title>【Salesforce】VFページにLWCを表示する方法</title>
-      <link>https://seiri.eu.org/posts/salesforce-vfpage-display-lwc/</link>
+      <link>https://seiri.blog/posts/salesforce-vfpage-display-lwc/</link>
       <pubDate>Wed, 28 Jul 2021 14:42:39 +0900</pubDate>
       
-      <guid>https://seiri.eu.org/posts/salesforce-vfpage-display-lwc/</guid>
+      <guid>https://seiri.blog/posts/salesforce-vfpage-display-lwc/</guid>
       <description>VF ページに LWC を表示する方法説明 基本的な考え方は VF ページに LightningOut という仕組みを利用して、LWC を表示すると思います。 LightningOut の仕組み VF ⇒ Aura ⇒ LWCという</description>
     </item>
     
