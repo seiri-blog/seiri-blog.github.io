@@ -33,8 +33,8 @@
 <script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://seiri.blog/posts/"},{"@type":"ListItem","position":2,"name":"PythonでのAWS Lambda環境変数の取得","item":"https://seiri.blog/posts/aws-lambda-environment-variable-acquisition-on-python/"}]}</script>
 <script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"PythonでのAWS Lambda環境変数の取得","name":"PythonでのAWS Lambda環境変数の取得","description":"準備 環境変数の設定 環境変数は、関数の未公開バージョンで定義します。バージョンを公開するとき、他のバージョン固有の設定とともに、そのバージョン","keywords":["python","AWS","lambda","AWSLambda"],"articleBody":"準備 環境変数の設定 環境変数は、関数の未公開バージョンで定義します。バージョンを公開するとき、他のバージョン固有の設定とともに、そのバージョンの環境変数がロックされます。\n関数の環境変数を作成するには、キーと値を定義します。関数は、キーの名前を使用して、環境変数の値を取得します。\nLambda コンソールで環境変数を設定するには\n Lambda コンソールで [Functions (関数)] ページを開きます。 関数を選択します。 [Configuration] (設定) を選択してから、[Environment variables] (環境変数) を選択します。 [環境変数] で、[編集] を選択します。 [環境変数の追加] を選択します キーと値を入力します。  Requirements  キーは文字で始まり、少なくとも 2 文字です。 キーには、文字、数字、およびアンダースコア (_) のみを含める。 キーは Lambda によって予約されていない。 すべての環境変数の合計サイズは 4 KB を超えない。     [Save] を選択します。  実装 import os def lambda_handler(event, context): print os.environ['env_name'] return 参照 https://docs.aws.amazon.com/ja_jp/lambda/latest/dg/configuration-envvars.html\n","wordCount":"383","inLanguage":"ja","datePublished":"2021-12-27T17:53:32+09:00","dateModified":"2021-12-27T17:53:32+09:00","author":{"@type":"Person","name":"Seiri"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://seiri.blog/posts/aws-lambda-environment-variable-acquisition-on-python/"},"publisher":{"@type":"Organization","name":"Seiri's Blog","logo":{"@type":"ImageObject","url":"https://seiri.blog/favicon.ico"}}}</script>
 </head>
-<body class=dark id=top>
-<script>localStorage.getItem("pref-theme")==="light"&&document.body.classList.remove('dark')</script>
+<body id=top>
+<script>localStorage.getItem("pref-theme")==="dark"&&document.body.classList.add('dark')</script>
 <header class=header>
 <nav class=nav>
 <div class=logo>

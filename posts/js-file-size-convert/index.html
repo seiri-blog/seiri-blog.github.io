@@ -33,8 +33,8 @@
 <script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://seiri.blog/posts/"},{"@type":"ListItem","position":2,"name":"JSでのファイルサイズ変換関数","item":"https://seiri.blog/posts/js-file-size-convert/"}]}</script>
 <script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"JSでのファイルサイズ変換関数","name":"JSでのファイルサイズ変換関数","description":"実装 /** * ファイルサイズ変換 * @param {*} size バイト * @returns 変換後のサイズ */ export const fileSizeUnit = (size) =\u0026gt; { // 1 KB = 1024 Byte const kb = 1024 const mb = Math.pow(kb, 2) const gb = Math.pow(kb, 3) const tb = Math.pow(kb, 4) const pb = Math.pow(kb, 5) const round =","keywords":["JavaScript"],"articleBody":"実装 /** * ファイルサイズ変換 * @param {*} size バイト * @returns 変換後のサイズ */ export const fileSizeUnit = (size) = { // 1 KB = 1024 Byte  const kb = 1024 const mb = Math.pow(kb, 2) const gb = Math.pow(kb, 3) const tb = Math.pow(kb, 4) const pb = Math.pow(kb, 5) const round = (size, unit) = { return Math.round(size / unit * 100.0) / 100.0 } if (size = pb) { return round(size, pb) + 'PB'; } else if (size = tb) { return round(size, tb) + 'TB'; } else if (size = gb) { return round(size, gb) + 'GB'; } else if (size = mb) { return round(size, mb) + 'MB'; } else if (size = kb) { return round(size, kb) + 'KB'; } return size + 'バイト'; } ","wordCount":"160","inLanguage":"ja","datePublished":"2021-12-24T15:04:24+09:00","dateModified":"2021-12-24T15:04:24+09:00","author":{"@type":"Person","name":"Seiri"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://seiri.blog/posts/js-file-size-convert/"},"publisher":{"@type":"Organization","name":"Seiri's Blog","logo":{"@type":"ImageObject","url":"https://seiri.blog/favicon.ico"}}}</script>
 </head>
-<body class=dark id=top>
-<script>localStorage.getItem("pref-theme")==="light"&&document.body.classList.remove('dark')</script>
+<body id=top>
+<script>localStorage.getItem("pref-theme")==="dark"&&document.body.classList.add('dark')</script>
 <header class=header>
 <nav class=nav>
 <div class=logo>

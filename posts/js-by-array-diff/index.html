@@ -33,8 +33,8 @@
 <script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://seiri.blog/posts/"},{"@type":"ListItem","position":2,"name":"JavaScriptで配列を比較する方法","item":"https://seiri.blog/posts/js-by-array-diff/"}]}</script>
 <script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"JavaScriptで配列を比較する方法","name":"JavaScriptで配列を比較する方法","description":"実装例 /** * 配列の比較 * @param array1 配列1 * @param array2 配列2 * @returns 同じの場合：True、その他の場合：False */ export const arraysEqual = (array1, array2) =\u0026gt; { if (!array1 || !array2) { return false; } if (array1.length !== array2.length) { return","keywords":["JavaScript"],"articleBody":"実装例 /** * 配列の比較 * @param array1 配列1 * @param array2 配列2 * @returns 同じの場合：True、その他の場合：False */ export const arraysEqual = (array1, array2) = { if (!array1 || !array2) { return false; } if (array1.length !== array2.length) { return false; } for (let index = 0; index  array1.length; index++) { if (array1[index] instanceof Array \u0026\u0026 array2[index] instanceof Array) { if (!arraysEqual(array1[index], array2[index])) { return false; } } else if (array1[index] !== array2[index]) { return false; } } return true; } ","wordCount":"112","inLanguage":"ja","datePublished":"2021-11-22T17:06:22+09:00","dateModified":"2021-11-22T17:06:22+09:00","author":{"@type":"Person","name":"Seiri"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://seiri.blog/posts/js-by-array-diff/"},"publisher":{"@type":"Organization","name":"Seiri's Blog","logo":{"@type":"ImageObject","url":"https://seiri.blog/favicon.ico"}}}</script>
 </head>
-<body class=dark id=top>
-<script>localStorage.getItem("pref-theme")==="light"&&document.body.classList.remove('dark')</script>
+<body id=top>
+<script>localStorage.getItem("pref-theme")==="dark"&&document.body.classList.add('dark')</script>
 <header class=header>
 <nav class=nav>
 <div class=logo>

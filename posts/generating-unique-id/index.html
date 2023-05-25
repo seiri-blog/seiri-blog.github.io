@@ -33,8 +33,8 @@
 <script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://seiri.blog/posts/"},{"@type":"ListItem","position":2,"name":"唯一のIDを生成する方法","item":"https://seiri.blog/posts/generating-unique-id/"}]}</script>
 <script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"唯一のIDを生成する方法","name":"唯一のIDを生成する方法","description":"目的 JavaScript で唯一の ID を生成する方法を共有します。 実装方法 export const guid = () =\u0026gt; { const s4 = () =\u0026gt; { return Math.floor((1 + Math.random()) * 0x10000) .toString(16) .substring(1); } return ( s4() + s4() + \u0026#39;-\u0026#39; + s4() + \u0026#39;-\u0026#39; + s4() + \u0026#39;-\u0026#39; + s4() + \u0026#39;-\u0026#39; + s4() +","keywords":["JavaScript"],"articleBody":"目的 JavaScript で唯一の ID を生成する方法を共有します。\n実装方法 export const guid = () = { const s4 = () = { return Math.floor((1 + Math.random()) * 0x10000) .toString(16) .substring(1); } return ( s4() + s4() + '-' + s4() + '-' + s4() + '-' + s4() + '-' + s4() + s4() + s4() ); } ","wordCount":"75","inLanguage":"ja","datePublished":"2021-11-22T17:02:25+09:00","dateModified":"2021-11-22T17:02:25+09:00","author":{"@type":"Person","name":"Seiri"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://seiri.blog/posts/generating-unique-id/"},"publisher":{"@type":"Organization","name":"Seiri's Blog","logo":{"@type":"ImageObject","url":"https://seiri.blog/favicon.ico"}}}</script>
 </head>
-<body class=dark id=top>
-<script>localStorage.getItem("pref-theme")==="light"&&document.body.classList.remove('dark')</script>
+<body id=top>
+<script>localStorage.getItem("pref-theme")==="dark"&&document.body.classList.add('dark')</script>
 <header class=header>
 <nav class=nav>
 <div class=logo>
