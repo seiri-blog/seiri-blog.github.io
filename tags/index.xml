@@ -6,7 +6,52 @@
     <description>Recent content in Tags on Seiri&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>2023 Seiri All rights reserved</copyright>
-    <lastBuildDate>Mon, 17 Apr 2023 12:53:09 +0900</lastBuildDate><atom:link href="https://seiri.blog/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 31 May 2023 19:17:41 +0900</lastBuildDate><atom:link href="https://seiri.blog/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>LightningWebComponents</title>
+      <link>https://seiri.blog/tags/lightningwebcomponents/</link>
+      <pubDate>Wed, 31 May 2023 19:17:41 +0900</pubDate>
+      
+      <guid>https://seiri.blog/tags/lightningwebcomponents/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Lightningコンポーネント</title>
+      <link>https://seiri.blog/tags/lightning%E3%82%B3%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%8D%E3%83%B3%E3%83%88/</link>
+      <pubDate>Wed, 31 May 2023 19:17:41 +0900</pubDate>
+      
+      <guid>https://seiri.blog/tags/lightning%E3%82%B3%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%8D%E3%83%B3%E3%83%88/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>lwc</title>
+      <link>https://seiri.blog/tags/lwc/</link>
+      <pubDate>Wed, 31 May 2023 19:17:41 +0900</pubDate>
+      
+      <guid>https://seiri.blog/tags/lwc/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Salesforce</title>
+      <link>https://seiri.blog/tags/salesforce/</link>
+      <pubDate>Wed, 31 May 2023 19:17:41 +0900</pubDate>
+      
+      <guid>https://seiri.blog/tags/salesforce/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>util</title>
+      <link>https://seiri.blog/tags/util/</link>
+      <pubDate>Wed, 31 May 2023 19:17:41 +0900</pubDate>
+      
+      <guid>https://seiri.blog/tags/util/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>github</title>
       <link>https://seiri.blog/tags/github/</link>
@@ -67,24 +112,6 @@
       <pubDate>Tue, 04 Apr 2023 18:23:36 +0900</pubDate>
       
       <guid>https://seiri.blog/tags/format/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>lwc</title>
-      <link>https://seiri.blog/tags/lwc/</link>
-      <pubDate>Tue, 04 Apr 2023 18:23:36 +0900</pubDate>
-      
-      <guid>https://seiri.blog/tags/lwc/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Salesforce</title>
-      <link>https://seiri.blog/tags/salesforce/</link>
-      <pubDate>Tue, 04 Apr 2023 18:23:36 +0900</pubDate>
-      
-      <guid>https://seiri.blog/tags/salesforce/</guid>
       <description></description>
     </item>
     
@@ -211,15 +238,6 @@
       <pubDate>Thu, 29 Dec 2022 19:36:52 +0900</pubDate>
       
       <guid>https://seiri.blog/tags/javascript/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>LightningWebComponents</title>
-      <link>https://seiri.blog/tags/lightningwebcomponents/</link>
-      <pubDate>Thu, 29 Dec 2022 19:36:52 +0900</pubDate>
-      
-      <guid>https://seiri.blog/tags/lightningwebcomponents/</guid>
       <description></description>
     </item>
     
@@ -526,15 +544,6 @@
       <pubDate>Mon, 30 May 2022 19:45:23 +0900</pubDate>
       
       <guid>https://seiri.blog/tags/%E3%83%90%E3%83%83%E3%83%81/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Lightningコンポーネント</title>
-      <link>https://seiri.blog/tags/lightning%E3%82%B3%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%8D%E3%83%B3%E3%83%88/</link>
-      <pubDate>Mon, 16 May 2022 14:11:39 +0900</pubDate>
-      
-      <guid>https://seiri.blog/tags/lightning%E3%82%B3%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%8D%E3%83%B3%E3%83%88/</guid>
       <description></description>
     </item>
     

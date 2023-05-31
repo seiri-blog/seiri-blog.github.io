@@ -6,7 +6,16 @@
     <description>Recent content in lwc on Seiri&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>2023 Seiri All rights reserved</copyright>
-    <lastBuildDate>Tue, 04 Apr 2023 18:23:36 +0900</lastBuildDate><atom:link href="https://seiri.blog/tags/lwc/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 31 May 2023 19:17:41 +0900</lastBuildDate><atom:link href="https://seiri.blog/tags/lwc/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>【Salesforce】ExperienceCloudサイト画面遷移Utilを自分で作る</title>
+      <link>https://seiri.blog/posts/salesforce-lwc-navagation-common-util/</link>
+      <pubDate>Wed, 31 May 2023 19:17:41 +0900</pubDate>
+      
+      <guid>https://seiri.blog/posts/salesforce-lwc-navagation-common-util/</guid>
+      <description>LWC での画面遷移 LWC の中にNavigationMixinを提供しています、それを利用して、画面を遷移することができます、今回はNavigatio</description>
+    </item>
+    
     <item>
       <title>VSCodeでSalesforceのコードフォーマットする方法</title>
       <link>https://seiri.blog/posts/salesforce-source-code-format/</link>
@@ -103,7 +112,7 @@
       <pubDate>Tue, 21 Dec 2021 18:27:36 +0900</pubDate>
       
       <guid>https://seiri.blog/posts/salesforce-lwc-toast-message-common-util/</guid>
-      <description>【Salesforce】FLS 権限チェック LWC での Toast メッセージ LWC で Toast メッセージを表示するために、共通の Util クラスを作成することができます。 Toast メッ</description>
+      <description>LWC での Toast メッセージ LWC で Toast メッセージを表示するために、共通の Util クラスを作成することができます。 Toast メッセージのタイトル、メッセージ、種類(suc</description>
     </item>
     
     <item>

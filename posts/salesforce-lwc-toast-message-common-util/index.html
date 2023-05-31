@@ -5,7 +5,7 @@
 <meta name=robots content="index, follow">
 <title>【Salesforce】LWC 共通 Toast Util | Seiri's Blog</title>
 <meta name=keywords content="Salesforce,Lightningコンポーネント,lwc,LightningWebComponents">
-<meta name=description content="【Salesforce】FLS 権限チェック LWC での Toast メッセージ LWC で Toast メッセージを表示するために、共通の Util クラスを作成することができます。 Toast メッ">
+<meta name=description content="LWC での Toast メッセージ LWC で Toast メッセージを表示するために、共通の Util クラスを作成することができます。 Toast メッセージのタイトル、メッセージ、種類(suc">
 <meta name=author content="Seiri">
 <link rel=canonical href=https://seiri.blog/posts/salesforce-lwc-toast-message-common-util/>
 <meta name=yandex-verification content="6b79e4a21fa2921c">
@@ -22,16 +22,16 @@
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-PLYEQ297HF"></script>
 <script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-PLYEQ297HF',{anonymize_ip:!1})}</script>
 <meta property="og:title" content="【Salesforce】LWC 共通 Toast Util">
-<meta property="og:description" content="【Salesforce】FLS 権限チェック LWC での Toast メッセージ LWC で Toast メッセージを表示するために、共通の Util クラスを作成することができます。 Toast メッ">
+<meta property="og:description" content="LWC での Toast メッセージ LWC で Toast メッセージを表示するために、共通の Util クラスを作成することができます。 Toast メッセージのタイトル、メッセージ、種類(suc">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://seiri.blog/posts/salesforce-lwc-toast-message-common-util/"><meta property="article:section" content="posts">
 <meta property="article:published_time" content="2021-12-21T18:27:36+09:00">
 <meta property="article:modified_time" content="2021-12-21T18:27:36+09:00"><meta property="og:site_name" content="Seiri's Blog">
 <meta name=twitter:card content="summary">
 <meta name=twitter:title content="【Salesforce】LWC 共通 Toast Util">
-<meta name=twitter:description content="【Salesforce】FLS 権限チェック LWC での Toast メッセージ LWC で Toast メッセージを表示するために、共通の Util クラスを作成することができます。 Toast メッ">
+<meta name=twitter:description content="LWC での Toast メッセージ LWC で Toast メッセージを表示するために、共通の Util クラスを作成することができます。 Toast メッセージのタイトル、メッセージ、種類(suc">
 <script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://seiri.blog/posts/"},{"@type":"ListItem","position":2,"name":"【Salesforce】LWC 共通 Toast Util","item":"https://seiri.blog/posts/salesforce-lwc-toast-message-common-util/"}]}</script>
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"【Salesforce】LWC 共通 Toast Util","name":"【Salesforce】LWC 共通 Toast Util","description":"【Salesforce】FLS 権限チェック LWC での Toast メッセージ LWC で Toast メッセージを表示するために、共通の Util クラスを作成することができます。 Toast メッ","keywords":["Salesforce","Lightningコンポーネント","lwc","LightningWebComponents"],"articleBody":"【Salesforce】FLS 権限チェック\nLWC での Toast メッセージ   LWC で Toast メッセージを表示するために、共通の Util クラスを作成することができます。\n  Toast メッセージのタイトル、メッセージ、種類(success, warning, error)などを指定することができます。\n  Toast メッセージを表示するために必要な import を記述する。\n  実装例 以下は、Toast メッセージを表示する共通の Util\nimport { ShowToastEvent } from \"lightning/platformShowToastEvent\"; /** * メッセージ表示 * @param {window} that * @param {string} title タイトール * @param {string} message メッセージ * @param {string} variant タイプ info、success、warning、error */ export const showToast = (that, title, message, variant) = { const event = new ShowToastEvent({ title: title, message: message, variant: variant, }); that.dispatchEvent(event); }; /** * 情報メッセージを表示 * @param {*} that this * @param {*} message メッセージ */ export const showInfoToast = (that, message) = { showToast(that, \"Info\", message, \"info\"); }; /** * 成功メッセージを表示 * @param {*} that this * @param {*} message メッセージ */ export const showSuccessToast = (that, message) = { showToast(that, \"Success\", message, \"success\"); }; /** *エラーメッセージを表示 * @param {*} that this * @param {*} message メッセージ */ export const showErrorToast = (that, message) = { showToast(that, \"Error\", message, \"error\"); }; /** * ワーニングメッセージを表示 * @param {*} that this * @param {*} message メッセージ */ export const showWarningToast = (that, message) = { showToast(that, \"Warning\", message, \"warning\"); }; ","wordCount":"427","inLanguage":"ja","datePublished":"2021-12-21T18:27:36+09:00","dateModified":"2021-12-21T18:27:36+09:00","author":{"@type":"Person","name":"Seiri"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://seiri.blog/posts/salesforce-lwc-toast-message-common-util/"},"publisher":{"@type":"Organization","name":"Seiri's Blog","logo":{"@type":"ImageObject","url":"https://seiri.blog/favicon.ico"}}}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"【Salesforce】LWC 共通 Toast Util","name":"【Salesforce】LWC 共通 Toast Util","description":"LWC での Toast メッセージ LWC で Toast メッセージを表示するために、共通の Util クラスを作成することができます。 Toast メッセージのタイトル、メッセージ、種類(suc","keywords":["Salesforce","Lightningコンポーネント","lwc","LightningWebComponents"],"articleBody":"LWC での Toast メッセージ   LWC で Toast メッセージを表示するために、共通の Util クラスを作成することができます。\n  Toast メッセージのタイトル、メッセージ、種類(success, warning, error)などを指定することができます。\n  Toast メッセージを表示するために必要な import を記述する。\n  実装例 以下は、Toast メッセージを表示する共通の Util\nimport { ShowToastEvent } from \"lightning/platformShowToastEvent\"; /** * メッセージ表示 * @param {window} that * @param {string} title タイトール * @param {string} message メッセージ * @param {string} variant タイプ info、success、warning、error */ export const showToast = (that, title, message, variant) = { const event = new ShowToastEvent({ title: title, message: message, variant: variant, }); that.dispatchEvent(event); }; /** * 情報メッセージを表示 * @param {*} that this * @param {*} message メッセージ */ export const showInfoToast = (that, message) = { showToast(that, \"Info\", message, \"info\"); }; /** * 成功メッセージを表示 * @param {*} that this * @param {*} message メッセージ */ export const showSuccessToast = (that, message) = { showToast(that, \"Success\", message, \"success\"); }; /** *エラーメッセージを表示 * @param {*} that this * @param {*} message メッセージ */ export const showErrorToast = (that, message) = { showToast(that, \"Error\", message, \"error\"); }; /** * ワーニングメッセージを表示 * @param {*} that this * @param {*} message メッセージ */ export const showWarningToast = (that, message) = { showToast(that, \"Warning\", message, \"warning\"); }; ","wordCount":"406","inLanguage":"ja","datePublished":"2021-12-21T18:27:36+09:00","dateModified":"2021-12-21T18:27:36+09:00","author":{"@type":"Person","name":"Seiri"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://seiri.blog/posts/salesforce-lwc-toast-message-common-util/"},"publisher":{"@type":"Organization","name":"Seiri's Blog","logo":{"@type":"ImageObject","url":"https://seiri.blog/favicon.ico"}}}</script>
 </head>
 <body id=top>
 <script>localStorage.getItem("pref-theme")==="dark"&&document.body.classList.add('dark')</script>
@@ -91,7 +91,7 @@
 <h1 class=post-title>
 【Salesforce】LWC 共通 Toast Util
 </h1>
-<div class=post-meta><span title="2021-12-21 18:27:36 +0900 +0900">2021年12月21日</span>&nbsp;·&nbsp;1 分&nbsp;·&nbsp;427 文字&nbsp;·&nbsp;Seiri
+<div class=post-meta><span title="2021-12-21 18:27:36 +0900 +0900">2021年12月21日</span>&nbsp;·&nbsp;1 分&nbsp;·&nbsp;406 文字&nbsp;·&nbsp;Seiri
 </div>
 </header> <div class=toc>
 <details open>
@@ -112,7 +112,7 @@
 <ins class=adsbygoogle style=display:inline-block;width:728px;height:90px data-ad-client=ca-pub-4988552421895566 data-ad-slot=7460187386></ins>
 <script>(adsbygoogle=window.adsbygoogle||[]).push({})</script>
 </div>
-<div class=post-content><p>【Salesforce】FLS 権限チェック</p>
+<div class=post-content><img alt="【Salesforce】LWC 共通 Toast Util" src=/images/Salesforce.png>
 <h2 id=lwc-での-toast-メッセージ>LWC での Toast メッセージ<a hidden class=anchor aria-hidden=true href=#lwc-での-toast-メッセージ>#</a></h2>
 <ul>
 <li>
