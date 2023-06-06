@@ -2,6 +2,9 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://seiri.blog/policy/</loc>
+    <lastmod>2023-06-06T21:34:03+09:00</lastmod>
+  </url><url>
     <loc>https://seiri.blog/categories/</loc>
     <lastmod>2023-05-31T19:17:41+09:00</lastmod>
   </url><url>
@@ -121,9 +124,6 @@
   </url><url>
     <loc>https://seiri.blog/posts/how-to-setup-github-profile/</loc>
     <lastmod>2023-03-25T16:46:55+09:00</lastmod>
-  </url><url>
-    <loc>https://seiri.blog/policy/</loc>
-    <lastmod>2023-03-09T18:34:03+09:00</lastmod>
   </url><url>
     <loc>https://seiri.blog/posts/how-easy-to-use-github/</loc>
     <lastmod>2023-02-09T10:19:33+09:00</lastmod>
