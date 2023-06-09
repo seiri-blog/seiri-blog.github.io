@@ -6,7 +6,16 @@
     <description>Recent content in lwc on Seiri&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>2023 Seiri All rights reserved</copyright>
-    <lastBuildDate>Fri, 09 Jun 2023 18:01:10 +0900</lastBuildDate><atom:link href="https://seiri.blog/categories/lwc/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 09 Jun 2023 18:05:01 +0900</lastBuildDate><atom:link href="https://seiri.blog/categories/lwc/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Salesforce Apexテストクラス作成する方法</title>
+      <link>https://seiri.blog/posts/salesforce-apex-debug/</link>
+      <pubDate>Fri, 09 Jun 2023 18:05:01 +0900</pubDate>
+      
+      <guid>https://seiri.blog/posts/salesforce-apex-debug/</guid>
+      <description>Salesforce のデバッグ方法 デバッグログの有効化: Salesforce のセットアップで、デバッグログを有効にすることができます。デバッグログは、Apex コードやトリガーの</description>
+    </item>
+    
     <item>
       <title>Salesforce Apexテストクラス作成する方法</title>
       <link>https://seiri.blog/posts/salesforce-apex-test-class/</link>
