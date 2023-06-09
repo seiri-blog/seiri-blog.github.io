@@ -6,7 +6,25 @@
     <description>Recent content in Salesforce on Seiri&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>2023 Seiri All rights reserved</copyright>
-    <lastBuildDate>Wed, 31 May 2023 19:17:41 +0900</lastBuildDate><atom:link href="https://seiri.blog/tags/salesforce/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 09 Jun 2023 18:01:10 +0900</lastBuildDate><atom:link href="https://seiri.blog/tags/salesforce/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Salesforce Apexテストクラス作成する方法</title>
+      <link>https://seiri.blog/posts/salesforce-apex-test-class/</link>
+      <pubDate>Fri, 09 Jun 2023 18:01:10 +0900</pubDate>
+      
+      <guid>https://seiri.blog/posts/salesforce-apex-test-class/</guid>
+      <description>Salesforce テストクラスは、Apex コードのユニットテストを実行するために使用されます。 以下は、Salesforce テストクラスの作成手順の概要です。</description>
+    </item>
+    
+    <item>
+      <title>【Salesforce】LWCでExperience Cloudログアウトする方法</title>
+      <link>https://seiri.blog/posts/lwc-and-aura-experience-cloud-logout/</link>
+      <pubDate>Fri, 09 Jun 2023 17:13:05 +0900</pubDate>
+      
+      <guid>https://seiri.blog/posts/lwc-and-aura-experience-cloud-logout/</guid>
+      <description>ログアウト方法 1 &amp;lt;site_name&amp;gt;/secur/logout.jspへ遷移し、ログアウトする方法 lwc:logout &amp;lt;template&amp;gt; &amp;lt;lightning-button label=&amp;#34;</description>
+    </item>
+    
     <item>
       <title>【Salesforce】ExperienceCloudサイト画面遷移Utilを自分で作る</title>
       <link>https://seiri.blog/posts/salesforce-lwc-navagation-common-util/</link>

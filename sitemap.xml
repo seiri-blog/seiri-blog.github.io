@@ -2,11 +2,44 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://seiri.blog/categories/</loc>
+    <lastmod>2023-06-09T18:01:10+09:00</lastmod>
+  </url><url>
+    <loc>https://seiri.blog/tags/lwc/</loc>
+    <lastmod>2023-06-09T18:01:10+09:00</lastmod>
+  </url><url>
+    <loc>https://seiri.blog/categories/lwc/</loc>
+    <lastmod>2023-06-09T18:01:10+09:00</lastmod>
+  </url><url>
+    <loc>https://seiri.blog/posts/</loc>
+    <lastmod>2023-06-09T18:01:10+09:00</lastmod>
+  </url><url>
+    <loc>https://seiri.blog/tags/salesforce/</loc>
+    <lastmod>2023-06-09T18:01:10+09:00</lastmod>
+  </url><url>
+    <loc>https://seiri.blog/categories/salesforce/</loc>
+    <lastmod>2023-06-09T18:01:10+09:00</lastmod>
+  </url><url>
+    <loc>https://seiri.blog/posts/salesforce-apex-test-class/</loc>
+    <lastmod>2023-06-09T18:01:10+09:00</lastmod>
+  </url><url>
+    <loc>https://seiri.blog/</loc>
+    <lastmod>2023-06-09T18:01:10+09:00</lastmod>
+  </url><url>
+    <loc>https://seiri.blog/tags/</loc>
+    <lastmod>2023-06-09T18:01:10+09:00</lastmod>
+  </url><url>
+    <loc>https://seiri.blog/tags/%E3%83%86%E3%82%B9%E3%83%88%E3%82%AF%E3%83%A9%E3%82%B9/</loc>
+    <lastmod>2023-06-09T18:01:10+09:00</lastmod>
+  </url><url>
+    <loc>https://seiri.blog/categories/%E3%83%86%E3%82%B9%E3%83%88%E3%82%AF%E3%83%A9%E3%82%B9/</loc>
+    <lastmod>2023-06-09T18:01:10+09:00</lastmod>
+  </url><url>
+    <loc>https://seiri.blog/posts/lwc-and-aura-experience-cloud-logout/</loc>
+    <lastmod>2023-06-09T17:13:05+09:00</lastmod>
+  </url><url>
     <loc>https://seiri.blog/policy/</loc>
     <lastmod>2023-06-06T21:34:03+09:00</lastmod>
-  </url><url>
-    <loc>https://seiri.blog/categories/</loc>
-    <lastmod>2023-05-31T19:17:41+09:00</lastmod>
   </url><url>
     <loc>https://seiri.blog/tags/lightningwebcomponents/</loc>
     <lastmod>2023-05-31T19:17:41+09:00</lastmod>
@@ -18,27 +51,6 @@
     <lastmod>2023-05-31T19:17:41+09:00</lastmod>
   </url><url>
     <loc>https://seiri.blog/categories/lightning%E3%82%B3%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%8D%E3%83%B3%E3%83%88/</loc>
-    <lastmod>2023-05-31T19:17:41+09:00</lastmod>
-  </url><url>
-    <loc>https://seiri.blog/tags/lwc/</loc>
-    <lastmod>2023-05-31T19:17:41+09:00</lastmod>
-  </url><url>
-    <loc>https://seiri.blog/categories/lwc/</loc>
-    <lastmod>2023-05-31T19:17:41+09:00</lastmod>
-  </url><url>
-    <loc>https://seiri.blog/posts/</loc>
-    <lastmod>2023-05-31T19:17:41+09:00</lastmod>
-  </url><url>
-    <loc>https://seiri.blog/tags/salesforce/</loc>
-    <lastmod>2023-05-31T19:17:41+09:00</lastmod>
-  </url><url>
-    <loc>https://seiri.blog/categories/salesforce/</loc>
-    <lastmod>2023-05-31T19:17:41+09:00</lastmod>
-  </url><url>
-    <loc>https://seiri.blog/</loc>
-    <lastmod>2023-05-31T19:17:41+09:00</lastmod>
-  </url><url>
-    <loc>https://seiri.blog/tags/</loc>
     <lastmod>2023-05-31T19:17:41+09:00</lastmod>
   </url><url>
     <loc>https://seiri.blog/tags/util/</loc>
