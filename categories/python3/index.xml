@@ -67,7 +67,7 @@
       <pubDate>Mon, 27 Dec 2021 11:54:25 +0900</pubDate>
       
       <guid>https://seiri.blog/posts/aws-lambda-common-authorization-util-in-python/</guid>
-      <description>実装 # -*- coding: utf-8 -*- import base64 import boto3 import json cognito_client = boto3.client(&amp;#39;cognito-idp&amp;#39;) cognito_identity_client = boto3.client(&amp;#39;cognito-identity&amp;#39;) USERPOOL_ID = &amp;#39;USERPOOL_ID&amp;#39; CLIENT_ID = &amp;#39;CLIENT_ID&amp;#39; IDENTITYPOOL_ID = &amp;#39;IDENTITYPOOL_ID&amp;#39; def authenticate(user_id, password): &amp;#34;&amp;#34;&amp;#34;指定されたユーザIDとパスワードで認証を実施する</description>
+      <description>実装方法 Cognito User Pool を使用するためのユーティリティクラスの例を示します。このクラスは、AWS SDK の boto3 を使用して Cognito User Pool とのインタラクションを簡素化しま</description>
     </item>
     
     <item>
