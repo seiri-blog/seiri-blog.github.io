@@ -499,7 +499,7 @@
       <pubDate>Mon, 27 Dec 2021 11:22:36 +0900</pubDate>
       
       <guid>https://seiri.blog/posts/aws-lambda-common-response-util-in-python/</guid>
-      <description>目的 python での Lambda 関数共通レスポンス Util を作成方法を共有します。 実装 import decimal import json class DecimalEncoder(json.JSONEncoder): &amp;#34;&amp;#34;&amp;#34;DecimalEncoder クラス Decimal クラスを使用して保存された数値を出力するために使用されます</description>
+      <description>目的 python での Lambda 関数共通レスポンス Util を作成方法を共有します。 実装 import decimal import json class ResponseUtils: class DecimalEncoder(json.JSONEncoder): &amp;#34;&amp;#34;&amp;#34;DecimalEncoder クラス Decimal クラスを使用して保存された数値を出力するために使用され</description>
     </item>
     
     <item>
