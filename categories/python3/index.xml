@@ -22,7 +22,7 @@
       <pubDate>Mon, 27 Dec 2021 16:14:46 +0900</pubDate>
       
       <guid>https://seiri.blog/posts/aws-lambda-by-s3-file-tmp-directory-save/</guid>
-      <description>はじめに 各実行環境は、/tmp ディレクトリ内の 512 MB~ 10240 MB のディスク領域を提供します。ディレクトリのコンテンツは、実行環境が停止された際に維持さ</description>
+      <description>tmp ディレクトリ説明 各実行環境は、/tmp ディレクトリ内の 512 MB~ 10240 MB のディスク領域を提供します。ディレクトリのコンテンツは、実行環境が停止された</description>
     </item>
     
     <item>
