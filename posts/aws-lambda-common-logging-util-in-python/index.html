@@ -5,7 +5,7 @@
 <meta name=robots content="index, follow">
 <title>PythonでのAWS Lambda共通ログ出力Util | Seiri's Blog</title>
 <meta name=keywords content="python,AWS,python3,lambda,AWSLambda">
-<meta name=description content="実装 # -*- coding: utf-8 -*- import logging import sys from datetime import datetime from pytz import timezone def _customTime(*args): &#34;&#34;&#34;ログ用の時間出力 Returns: 現在時間（Asia/Tokyo） &#34;&#34;&#34; return datetime.now(timezone('Asia/Tokyo')).timetuple() LOG_LEVEL = 'INFO' _logger = logging.getLogger(__name__)">
+<meta name=description content="実装方法 以下に、Python で AWS Lambda 内で共通的に使用されるログ出力のためのユーティリティクラスの例を示します。このクラスを使用すると、Lamb">
 <meta name=author content="Seiri">
 <link rel=canonical href=https://seiri.blog/posts/aws-lambda-common-logging-util-in-python/>
 <meta name=yandex-verification content="6b79e4a21fa2921c">
@@ -22,16 +22,16 @@
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-PLYEQ297HF"></script>
 <script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-PLYEQ297HF',{anonymize_ip:!1})}</script>
 <meta property="og:title" content="PythonでのAWS Lambda共通ログ出力Util">
-<meta property="og:description" content="実装 # -*- coding: utf-8 -*- import logging import sys from datetime import datetime from pytz import timezone def _customTime(*args): &#34;&#34;&#34;ログ用の時間出力 Returns: 現在時間（Asia/Tokyo） &#34;&#34;&#34; return datetime.now(timezone('Asia/Tokyo')).timetuple() LOG_LEVEL = 'INFO' _logger = logging.getLogger(__name__)">
+<meta property="og:description" content="実装方法 以下に、Python で AWS Lambda 内で共通的に使用されるログ出力のためのユーティリティクラスの例を示します。このクラスを使用すると、Lamb">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://seiri.blog/posts/aws-lambda-common-logging-util-in-python/"><meta property="article:section" content="posts">
 <meta property="article:published_time" content="2021-12-27T12:06:59+09:00">
 <meta property="article:modified_time" content="2021-12-27T12:06:59+09:00"><meta property="og:site_name" content="Seiri's Blog">
 <meta name=twitter:card content="summary">
 <meta name=twitter:title content="PythonでのAWS Lambda共通ログ出力Util">
-<meta name=twitter:description content="実装 # -*- coding: utf-8 -*- import logging import sys from datetime import datetime from pytz import timezone def _customTime(*args): &#34;&#34;&#34;ログ用の時間出力 Returns: 現在時間（Asia/Tokyo） &#34;&#34;&#34; return datetime.now(timezone('Asia/Tokyo')).timetuple() LOG_LEVEL = 'INFO' _logger = logging.getLogger(__name__)">
+<meta name=twitter:description content="実装方法 以下に、Python で AWS Lambda 内で共通的に使用されるログ出力のためのユーティリティクラスの例を示します。このクラスを使用すると、Lamb">
 <script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://seiri.blog/posts/"},{"@type":"ListItem","position":2,"name":"PythonでのAWS Lambda共通ログ出力Util","item":"https://seiri.blog/posts/aws-lambda-common-logging-util-in-python/"}]}</script>
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"PythonでのAWS Lambda共通ログ出力Util","name":"PythonでのAWS Lambda共通ログ出力Util","description":"実装 # -*- coding: utf-8 -*- import logging import sys from datetime import datetime from pytz import timezone def _customTime(*args): \u0026#34;\u0026#34;\u0026#34;ログ用の時間出力 Returns: 現在時間（Asia/Tokyo） \u0026#34;\u0026#34;\u0026#34; return datetime.now(timezone(\u0026#39;Asia/Tokyo\u0026#39;)).timetuple() LOG_LEVEL = \u0026#39;INFO\u0026#39; _logger = logging.getLogger(__name__)","keywords":["python","AWS","python3","lambda","AWSLambda"],"articleBody":"実装 # -*- coding: utf-8 -*- import logging import sys from datetime import datetime from pytz import timezone def _customTime(*args): \"\"\"ログ用の時間出力 Returns: 現在時間（Asia/Tokyo） \"\"\" return datetime.now(timezone('Asia/Tokyo')).timetuple() LOG_LEVEL = 'INFO' _logger = logging.getLogger(__name__) _logger.setLevel(LOG_LEVEL) _logger.propagate = False for h in _logger.handlers: _logger.removeHandler(h) h = logging.StreamHandler(sys.stdout) # ロガーのフォーマット指定 FORMAT = '%(asctime)s.%(msecs)-3d[%(request_id)s] %(levelname)s' datefmt = '%y/%m/%d%H:%M:%S' formatter = logging.Formatter(fmt=FORMAT, datefmt=datefmt) # ロガーの時間指定（タイムゾーンがLambda環境でもAsia/Tokyoになるようにするため） formatter.converter = _customTime h.setFormatter(formatter) _logger.addHandler(h) def info(message): \"\"\"情報ログ出力 Args: message: メッセージ \"\"\" _logger.info(f': {message}') def warning(message): \"\"\"警告ログ出力 Args: message: メッセージ \"\"\" _logger.warning(f': {message}') def error(message, ex=None): \"\"\"エラーログ出力 Args: message: メッセージ ex: 例外オブジェクト \"\"\" if ex is not None and isinstance(ex, Exception): _logger.exception(f': {message}') else: _logger.error(f': {message}') def debug(message): \"\"\"ディバグログ出力 Args: message: メッセージ \"\"\" _logger.debug(f': {message}') 参考 https://docs.aws.amazon.com/ja_jp/lambda/latest/dg/python-logging.html\nhttps://docs.python.org/ja/3/howto/logging.html\n","wordCount":"319","inLanguage":"ja","datePublished":"2021-12-27T12:06:59+09:00","dateModified":"2021-12-27T12:06:59+09:00","author":{"@type":"Person","name":"Seiri"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://seiri.blog/posts/aws-lambda-common-logging-util-in-python/"},"publisher":{"@type":"Organization","name":"Seiri's Blog","logo":{"@type":"ImageObject","url":"https://seiri.blog/favicon.ico"}}}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"PythonでのAWS Lambda共通ログ出力Util","name":"PythonでのAWS Lambda共通ログ出力Util","description":"実装方法 以下に、Python で AWS Lambda 内で共通的に使用されるログ出力のためのユーティリティクラスの例を示します。このクラスを使用すると、Lamb","keywords":["python","AWS","python3","lambda","AWSLambda"],"articleBody":"実装方法 以下に、Python で AWS Lambda 内で共通的に使用されるログ出力のためのユーティリティクラスの例を示します。このクラスを使用すると、Lambda 関数のログを簡単に出力することができます。\nimport logging import sys from datetime import datetime from pytz import timezone LOG_LEVEL = 'INFO' class LogUtils: def __init__(self): self._logger = logging.getLogger(__name__) self._logger.setLevel(LOG_LEVEL) self._logger.propagate = False for h in self._logger.handlers: self._logger.removeHandler(h) h = logging.StreamHandler(sys.stdout) # ロガーのフォーマット指定 FORMAT = '%(asctime)s.%(msecs)-3d[%(request_id)s] %(levelname)s' datefmt = '%y/%m/%d%H:%M:%S' formatter = logging.Formatter(fmt=FORMAT, datefmt=datefmt) # ロガーの時間指定（タイムゾーンがLambda環境でもAsia/Tokyoになるようにするため） formatter.converter = this._customTime h.setFormatter(formatter) self._logger.addHandler(h) def _customTime(self, *args): \"\"\"ログ用の時間出力 Returns: 現在時間（Asia/Tokyo） \"\"\" return datetime.now(timezone('Asia/Tokyo')).timetuple() def info(self, message): \"\"\"情報ログ出力 Args: message: メッセージ \"\"\" self._logger.info(f': {message}') def warning(self, message): \"\"\"警告ログ出力 Args: message: メッセージ \"\"\" self._logger.warning(f': {message}') def error(self, message, ex=None): \"\"\"エラーログ出力 Args: message: メッセージ ex: 例外オブジェクト \"\"\" if ex is not None and isinstance(ex, Exception): self._logger.exception(f': {message}') else: self. _logger.error(f': {message}') def debug(self, message): \"\"\"ディバグログ出力 Args: message: メッセージ \"\"\" self._logger.debug(f': {message}') 上記の例では、LogUtils というクラスが定義されています。このクラスはログ出力の共通操作を提供します。\n__init__メソッドでは、logging モジュールを使用してルートロガーを取得し、ログレベルを設定します。この例では INFO レベルに設定していますが、必要に応じて変更してください。\n以下のメソッドが提供されています:\n info: INFO レベルのログメッセージを出力します。 warning: WARNING レベルのログメッセージを出力します。 error: ERROR レベルのログメッセージを出力します。 exception: 例外情報を含む ERROR レベルのログメッセージを出力します。 debug: DEBUG レベルのログメッセージを出力します  これらのメソッドを使用するには、Lambda 関数内でインスタンスを作成し、適切なメソッドを呼び出すことができます。\n例えば、以下のような使い方ができます:\ndef lambda_handler(event, context): logger = LogUtils() logger.info('This is an informational message') logger.warning('This is a warning message') logger.error('This is an error message') try: result = 1 / 0 except Exception as e: logger.exception('An exception occurred') 上記の例では、logger インスタンスを作成し、異なるレベルのログメッセージを出力しています。また、例外が発生した場合には exception メソッドを使用して例外情報をログ出力しています。\nログは Lambda 関数の実行結果やデバッグ情報の重要な一部であるため、適切なログ出力を行うことが推奨されます。この例のログ出力方法を基にして、必要に応じてカスタマイズや追加の操作を行ってください。\n参考 https://docs.aws.amazon.com/ja_jp/lambda/latest/dg/python-logging.html\nhttps://docs.python.org/ja/3/howto/logging.html\n","wordCount":"969","inLanguage":"ja","datePublished":"2021-12-27T12:06:59+09:00","dateModified":"2021-12-27T12:06:59+09:00","author":{"@type":"Person","name":"Seiri"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://seiri.blog/posts/aws-lambda-common-logging-util-in-python/"},"publisher":{"@type":"Organization","name":"Seiri's Blog","logo":{"@type":"ImageObject","url":"https://seiri.blog/favicon.ico"}}}</script>
 </head>
 <body id=top>
 <script>localStorage.getItem("pref-theme")==="dark"&&document.body.classList.add('dark')</script>
@@ -101,7 +101,7 @@
 <h1 class=post-title>
 PythonでのAWS Lambda共通ログ出力Util
 </h1>
-<div class=post-meta><span title="2021-12-27 12:06:59 +0900 +0900">2021年12月27日</span>&nbsp;·&nbsp;1 分&nbsp;·&nbsp;319 文字&nbsp;·&nbsp;Seiri
+<div class=post-meta><span title="2021-12-27 12:06:59 +0900 +0900">2021年12月27日</span>&nbsp;·&nbsp;2 分&nbsp;·&nbsp;969 文字&nbsp;·&nbsp;Seiri
 </div>
 </header> <div class=toc>
 <details open>
@@ -110,7 +110,7 @@ PythonでのAWS Lambda共通ログ出力Util
 </summary>
 <div class=inner><ul>
 <li>
-<a href=#%e5%ae%9f%e8%a3%85 aria-label=実装>実装</a></li>
+<a href=#%e5%ae%9f%e8%a3%85%e6%96%b9%e6%b3%95 aria-label=実装方法>実装方法</a></li>
 <li>
 <a href=#%e5%8f%82%e8%80%83 aria-label=参考>参考</a>
 </li>
@@ -123,77 +123,101 @@ PythonでのAWS Lambda共通ログ出力Util
 <script>(adsbygoogle=window.adsbygoogle||[]).push({})</script>
 </div>
 <div class=post-content><img alt="PythonでのAWS Lambda共通ログ出力Util" src=/images/AWS.png>
-<h2 id=実装>実装<a hidden class=anchor aria-hidden=true href=#実装>#</a></h2>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-log_utils.py data-lang=log_utils.py><span style=color:#75715e># -*- coding: utf-8 -*-</span>
-<span style=color:#f92672>import</span> logging
+<h2 id=実装方法>実装方法<a hidden class=anchor aria-hidden=true href=#実装方法>#</a></h2>
+<p>以下に、Python で AWS Lambda 内で共通的に使用されるログ出力のためのユーティリティクラスの例を示します。このクラスを使用すると、Lambda 関数のログを簡単に出力することができます。</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-py data-lang=py><span style=color:#f92672>import</span> logging
 <span style=color:#f92672>import</span> sys
 <span style=color:#f92672>from</span> datetime <span style=color:#f92672>import</span> datetime
 <span style=color:#f92672>from</span> pytz <span style=color:#f92672>import</span> timezone
 
-
-<span style=color:#66d9ef>def</span> <span style=color:#a6e22e>_customTime</span>(<span style=color:#f92672>*</span>args):
-    <span style=color:#e6db74>&#34;&#34;&#34;ログ用の時間出力
-</span><span style=color:#e6db74>    Returns:
-</span><span style=color:#e6db74>        現在時間（Asia/Tokyo）
-</span><span style=color:#e6db74>    &#34;&#34;&#34;</span>
-    <span style=color:#66d9ef>return</span> datetime<span style=color:#f92672>.</span>now(timezone(<span style=color:#e6db74>&#39;Asia/Tokyo&#39;</span>))<span style=color:#f92672>.</span>timetuple()
-
-
 LOG_LEVEL <span style=color:#f92672>=</span> <span style=color:#e6db74>&#39;INFO&#39;</span>
-_logger <span style=color:#f92672>=</span> logging<span style=color:#f92672>.</span>getLogger(__name__)
-_logger<span style=color:#f92672>.</span>setLevel(LOG_LEVEL)
-_logger<span style=color:#f92672>.</span>propagate <span style=color:#f92672>=</span> <span style=color:#66d9ef>False</span>
-<span style=color:#66d9ef>for</span> h <span style=color:#f92672>in</span> _logger<span style=color:#f92672>.</span>handlers:
-    _logger<span style=color:#f92672>.</span>removeHandler(h)
 
-h <span style=color:#f92672>=</span> logging<span style=color:#f92672>.</span>StreamHandler(sys<span style=color:#f92672>.</span>stdout)
-<span style=color:#75715e># ロガーのフォーマット指定</span>
-FORMAT <span style=color:#f92672>=</span> <span style=color:#e6db74>&#39;</span><span style=color:#e6db74>%(asctime)s</span><span style=color:#e6db74>.</span><span style=color:#e6db74>%(msecs)-3d</span><span style=color:#e6db74> [</span><span style=color:#e6db74>%(request_id)s</span><span style=color:#e6db74>] </span><span style=color:#e6db74>%(levelname)s</span><span style=color:#e6db74>&#39;</span>
-datefmt <span style=color:#f92672>=</span> <span style=color:#e6db74>&#39;%y/%m/</span><span style=color:#e6db74>%d</span><span style=color:#e6db74> %H:%M:%S&#39;</span>
-formatter <span style=color:#f92672>=</span> logging<span style=color:#f92672>.</span>Formatter(fmt<span style=color:#f92672>=</span>FORMAT, datefmt<span style=color:#f92672>=</span>datefmt)
-<span style=color:#75715e># ロガーの時間指定（タイムゾーンがLambda環境でもAsia/Tokyoになるようにするため）</span>
-formatter<span style=color:#f92672>.</span>converter <span style=color:#f92672>=</span> _customTime
-h<span style=color:#f92672>.</span>setFormatter(formatter)
-_logger<span style=color:#f92672>.</span>addHandler(h)
+<span style=color:#66d9ef>class</span> <span style=color:#a6e22e>LogUtils</span>:
 
+    <span style=color:#66d9ef>def</span> __init__(self):
+        self<span style=color:#f92672>.</span>_logger <span style=color:#f92672>=</span> logging<span style=color:#f92672>.</span>getLogger(__name__)
+        self<span style=color:#f92672>.</span>_logger<span style=color:#f92672>.</span>setLevel(LOG_LEVEL)
+         self<span style=color:#f92672>.</span>_logger<span style=color:#f92672>.</span>propagate <span style=color:#f92672>=</span> <span style=color:#66d9ef>False</span>
+        <span style=color:#66d9ef>for</span> h <span style=color:#f92672>in</span>  self<span style=color:#f92672>.</span>_logger<span style=color:#f92672>.</span>handlers:
+             self<span style=color:#f92672>.</span>_logger<span style=color:#f92672>.</span>removeHandler(h)
+        h <span style=color:#f92672>=</span> logging<span style=color:#f92672>.</span>StreamHandler(sys<span style=color:#f92672>.</span>stdout)
+        <span style=color:#75715e># ロガーのフォーマット指定</span>
+        FORMAT <span style=color:#f92672>=</span> <span style=color:#e6db74>&#39;</span><span style=color:#e6db74>%(asctime)s</span><span style=color:#e6db74>.</span><span style=color:#e6db74>%(msecs)-3d</span><span style=color:#e6db74> [</span><span style=color:#e6db74>%(request_id)s</span><span style=color:#e6db74>] </span><span style=color:#e6db74>%(levelname)s</span><span style=color:#e6db74>&#39;</span>
+        datefmt <span style=color:#f92672>=</span> <span style=color:#e6db74>&#39;%y/%m/</span><span style=color:#e6db74>%d</span><span style=color:#e6db74> %H:%M:%S&#39;</span>
+        formatter <span style=color:#f92672>=</span> logging<span style=color:#f92672>.</span>Formatter(fmt<span style=color:#f92672>=</span>FORMAT, datefmt<span style=color:#f92672>=</span>datefmt)
+        <span style=color:#75715e># ロガーの時間指定（タイムゾーンがLambda環境でもAsia/Tokyoになるようにするため）</span>
+        formatter<span style=color:#f92672>.</span>converter <span style=color:#f92672>=</span> this<span style=color:#f92672>.</span>_customTime
+        h<span style=color:#f92672>.</span>setFormatter(formatter)
+        self<span style=color:#f92672>.</span>_logger<span style=color:#f92672>.</span>addHandler(h)
 
-<span style=color:#66d9ef>def</span> <span style=color:#a6e22e>info</span>(message):
-    <span style=color:#e6db74>&#34;&#34;&#34;情報ログ出力
-</span><span style=color:#e6db74>    Args:
-</span><span style=color:#e6db74>        message: メッセージ
-</span><span style=color:#e6db74>    &#34;&#34;&#34;</span>
-    _logger<span style=color:#f92672>.</span>info(<span style=color:#e6db74>f</span><span style=color:#e6db74>&#39;: </span><span style=color:#e6db74>{</span>message<span style=color:#e6db74>}</span><span style=color:#e6db74>&#39;</span>)
+    <span style=color:#66d9ef>def</span> <span style=color:#a6e22e>_customTime</span>(self, <span style=color:#f92672>*</span>args):
+        <span style=color:#e6db74>&#34;&#34;&#34;ログ用の時間出力
+</span><span style=color:#e6db74>        Returns:
+</span><span style=color:#e6db74>            現在時間（Asia/Tokyo）
+</span><span style=color:#e6db74>        &#34;&#34;&#34;</span>
+        <span style=color:#66d9ef>return</span> datetime<span style=color:#f92672>.</span>now(timezone(<span style=color:#e6db74>&#39;Asia/Tokyo&#39;</span>))<span style=color:#f92672>.</span>timetuple()
 
-
-<span style=color:#66d9ef>def</span> <span style=color:#a6e22e>warning</span>(message):
-    <span style=color:#e6db74>&#34;&#34;&#34;警告ログ出力
-</span><span style=color:#e6db74>    Args:
-</span><span style=color:#e6db74>        message: メッセージ
-</span><span style=color:#e6db74>    &#34;&#34;&#34;</span>
-    _logger<span style=color:#f92672>.</span>warning(<span style=color:#e6db74>f</span><span style=color:#e6db74>&#39;: </span><span style=color:#e6db74>{</span>message<span style=color:#e6db74>}</span><span style=color:#e6db74>&#39;</span>)
-
-
-<span style=color:#66d9ef>def</span> <span style=color:#a6e22e>error</span>(message, ex<span style=color:#f92672>=</span><span style=color:#66d9ef>None</span>):
-    <span style=color:#e6db74>&#34;&#34;&#34;エラーログ出力
-</span><span style=color:#e6db74>    Args:
-</span><span style=color:#e6db74>        message: メッセージ
-</span><span style=color:#e6db74>        ex: 例外オブジェクト
-</span><span style=color:#e6db74>    &#34;&#34;&#34;</span>
-    <span style=color:#66d9ef>if</span> ex <span style=color:#f92672>is</span> <span style=color:#f92672>not</span> <span style=color:#66d9ef>None</span> <span style=color:#f92672>and</span> isinstance(ex, <span style=color:#a6e22e>Exception</span>):
-        _logger<span style=color:#f92672>.</span>exception(<span style=color:#e6db74>f</span><span style=color:#e6db74>&#39;: </span><span style=color:#e6db74>{</span>message<span style=color:#e6db74>}</span><span style=color:#e6db74>&#39;</span>)
-    <span style=color:#66d9ef>else</span>:
-        _logger<span style=color:#f92672>.</span>error(<span style=color:#e6db74>f</span><span style=color:#e6db74>&#39;: </span><span style=color:#e6db74>{</span>message<span style=color:#e6db74>}</span><span style=color:#e6db74>&#39;</span>)
+    <span style=color:#66d9ef>def</span> <span style=color:#a6e22e>info</span>(self, message):
+        <span style=color:#e6db74>&#34;&#34;&#34;情報ログ出力
+</span><span style=color:#e6db74>        Args:
+</span><span style=color:#e6db74>            message: メッセージ
+</span><span style=color:#e6db74>        &#34;&#34;&#34;</span>
+        self<span style=color:#f92672>.</span>_logger<span style=color:#f92672>.</span>info(<span style=color:#e6db74>f</span><span style=color:#e6db74>&#39;: </span><span style=color:#e6db74>{</span>message<span style=color:#e6db74>}</span><span style=color:#e6db74>&#39;</span>)
 
 
-<span style=color:#66d9ef>def</span> <span style=color:#a6e22e>debug</span>(message):
-    <span style=color:#e6db74>&#34;&#34;&#34;ディバグログ出力
-</span><span style=color:#e6db74>    Args:
-</span><span style=color:#e6db74>        message: メッセージ
-</span><span style=color:#e6db74>    &#34;&#34;&#34;</span>
-    _logger<span style=color:#f92672>.</span>debug(<span style=color:#e6db74>f</span><span style=color:#e6db74>&#39;: </span><span style=color:#e6db74>{</span>message<span style=color:#e6db74>}</span><span style=color:#e6db74>&#39;</span>)
+    <span style=color:#66d9ef>def</span> <span style=color:#a6e22e>warning</span>(self, message):
+        <span style=color:#e6db74>&#34;&#34;&#34;警告ログ出力
+</span><span style=color:#e6db74>        Args:
+</span><span style=color:#e6db74>            message: メッセージ
+</span><span style=color:#e6db74>        &#34;&#34;&#34;</span>
+        self<span style=color:#f92672>.</span>_logger<span style=color:#f92672>.</span>warning(<span style=color:#e6db74>f</span><span style=color:#e6db74>&#39;: </span><span style=color:#e6db74>{</span>message<span style=color:#e6db74>}</span><span style=color:#e6db74>&#39;</span>)
 
 
-</code></pre></div><h2 id=参考>参考<a hidden class=anchor aria-hidden=true href=#参考>#</a></h2>
+    <span style=color:#66d9ef>def</span> <span style=color:#a6e22e>error</span>(self, message, ex<span style=color:#f92672>=</span><span style=color:#66d9ef>None</span>):
+        <span style=color:#e6db74>&#34;&#34;&#34;エラーログ出力
+</span><span style=color:#e6db74>        Args:
+</span><span style=color:#e6db74>            message: メッセージ
+</span><span style=color:#e6db74>            ex: 例外オブジェクト
+</span><span style=color:#e6db74>        &#34;&#34;&#34;</span>
+        <span style=color:#66d9ef>if</span> ex <span style=color:#f92672>is</span> <span style=color:#f92672>not</span> <span style=color:#66d9ef>None</span> <span style=color:#f92672>and</span> isinstance(ex, <span style=color:#a6e22e>Exception</span>):
+            self<span style=color:#f92672>.</span>_logger<span style=color:#f92672>.</span>exception(<span style=color:#e6db74>f</span><span style=color:#e6db74>&#39;: </span><span style=color:#e6db74>{</span>message<span style=color:#e6db74>}</span><span style=color:#e6db74>&#39;</span>)
+        <span style=color:#66d9ef>else</span>:
+           self<span style=color:#f92672>.</span> _logger<span style=color:#f92672>.</span>error(<span style=color:#e6db74>f</span><span style=color:#e6db74>&#39;: </span><span style=color:#e6db74>{</span>message<span style=color:#e6db74>}</span><span style=color:#e6db74>&#39;</span>)
+
+
+    <span style=color:#66d9ef>def</span> <span style=color:#a6e22e>debug</span>(self, message):
+        <span style=color:#e6db74>&#34;&#34;&#34;ディバグログ出力
+</span><span style=color:#e6db74>        Args:
+</span><span style=color:#e6db74>            message: メッセージ
+</span><span style=color:#e6db74>        &#34;&#34;&#34;</span>
+        self<span style=color:#f92672>.</span>_logger<span style=color:#f92672>.</span>debug(<span style=color:#e6db74>f</span><span style=color:#e6db74>&#39;: </span><span style=color:#e6db74>{</span>message<span style=color:#e6db74>}</span><span style=color:#e6db74>&#39;</span>)
+</code></pre></div><p>上記の例では、LogUtils というクラスが定義されています。このクラスはログ出力の共通操作を提供します。</p>
+<p><code>__init__</code>メソッドでは、logging モジュールを使用してルートロガーを取得し、ログレベルを設定します。この例では INFO レベルに設定していますが、必要に応じて変更してください。</p>
+<p>以下のメソッドが提供されています:</p>
+<ul>
+<li><code>info</code>: INFO レベルのログメッセージを出力します。</li>
+<li><code>warning</code>: WARNING レベルのログメッセージを出力します。</li>
+<li><code>error</code>: ERROR レベルのログメッセージを出力します。</li>
+<li><code>exception</code>: 例外情報を含む ERROR レベルのログメッセージを出力します。</li>
+<li><code>debug</code>: DEBUG レベルのログメッセージを出力します</li>
+</ul>
+<p>これらのメソッドを使用するには、Lambda 関数内でインスタンスを作成し、適切なメソッドを呼び出すことができます。<br>
+例えば、以下のような使い方ができます:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-py data-lang=py><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>lambda_handler</span>(event, context):
+    logger <span style=color:#f92672>=</span> LogUtils()
+
+    logger<span style=color:#f92672>.</span>info(<span style=color:#e6db74>&#39;This is an informational message&#39;</span>)
+    logger<span style=color:#f92672>.</span>warning(<span style=color:#e6db74>&#39;This is a warning message&#39;</span>)
+    logger<span style=color:#f92672>.</span>error(<span style=color:#e6db74>&#39;This is an error message&#39;</span>)
+
+    <span style=color:#66d9ef>try</span>:
+        result <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span> <span style=color:#f92672>/</span> <span style=color:#ae81ff>0</span>
+    <span style=color:#66d9ef>except</span> <span style=color:#a6e22e>Exception</span> <span style=color:#66d9ef>as</span> e:
+        logger<span style=color:#f92672>.</span>exception(<span style=color:#e6db74>&#39;An exception occurred&#39;</span>)
+
+</code></pre></div><p>上記の例では、<code>logger</code> インスタンスを作成し、異なるレベルのログメッセージを出力しています。また、例外が発生した場合には <code>exception</code> メソッドを使用して例外情報をログ出力しています。</p>
+<p>ログは Lambda 関数の実行結果やデバッグ情報の重要な一部であるため、適切なログ出力を行うことが推奨されます。この例のログ出力方法を基にして、必要に応じてカスタマイズや追加の操作を行ってください。</p>
+<h2 id=参考>参考<a hidden class=anchor aria-hidden=true href=#参考>#</a></h2>
 <p><a href=https://docs.aws.amazon.com/ja_jp/lambda/latest/dg/python-logging.html>https://docs.aws.amazon.com/ja_jp/lambda/latest/dg/python-logging.html</a></p>
 <p><a href=https://docs.python.org/ja/3/howto/logging.html>https://docs.python.org/ja/3/howto/logging.html</a></p>
 </div>
