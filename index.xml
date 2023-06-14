@@ -665,12 +665,12 @@
     </item>
     
     <item>
-      <title>Apex REST API Callouts Util作成</title>
+      <title>Apex REST API コールアウトユーティリティ</title>
       <link>https://seiri.blog/posts/apex-rest-api-callouts-util-creation/</link>
       <pubDate>Mon, 22 Nov 2021 16:41:02 +0900</pubDate>
       
       <guid>https://seiri.blog/posts/apex-rest-api-callouts-util-creation/</guid>
-      <description>1.目的 Apex REST Callouts Util を作成します。 2.ソース public class CalloutUtil{ /**リクエストメソッド */ private enum RequestMethod { GET, POST, PUT } /** * GET請求を出す * @param {String} url URL * @param {Map} mapHeader ヘッダー * @param {Map}</description>
+      <description>作成方法 Apex REST API コールアウトユーティリティ（Apex REST API Callouts Utility）を作成するには、以下の手順を参考にしてください。 Apex クラスの作成: 新し</description>
     </item>
     
     <item>
