@@ -728,11 +728,20 @@
     </item>
     
     <item>
-      <title>presigned-url</title>
-      <link>https://seiri.blog/tags/presigned-url/</link>
+      <title>PresignedUrl</title>
+      <link>https://seiri.blog/tags/presignedurl/</link>
       <pubDate>Mon, 22 Nov 2021 16:48:56 +0900</pubDate>
       
-      <guid>https://seiri.blog/tags/presigned-url/</guid>
+      <guid>https://seiri.blog/tags/presignedurl/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>署名付きURL</title>
+      <link>https://seiri.blog/tags/%E7%BD%B2%E5%90%8D%E4%BB%98%E3%81%8Durl/</link>
+      <pubDate>Mon, 22 Nov 2021 16:48:56 +0900</pubDate>
+      
+      <guid>https://seiri.blog/tags/%E7%BD%B2%E5%90%8D%E4%BB%98%E3%81%8Durl/</guid>
       <description></description>
     </item>
     
