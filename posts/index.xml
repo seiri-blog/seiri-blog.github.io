@@ -472,7 +472,7 @@
       <pubDate>Mon, 27 Dec 2021 12:15:01 +0900</pubDate>
       
       <guid>https://seiri.blog/posts/aws-lambda-queue-send-in-python/</guid>
-      <description>実装 # -*- coding: utf-8 -*- import boto3 sqs_client = boto3.client(&amp;#39;sqs&amp;#39;) def push_message(message_body): &amp;#34;&amp;#34;&amp;#34;SQSの特定キューにメッセージをPUSHする Args: message_body: PUSHするメッセージ Returns: sqsメッ</description>
+      <description>実装方法 Python で AWS Lambda からキューにメッセージを送信するには、以下の手順に従います。 boto3モジュールをインポートします。 import boto3 SQS (Simple Queue Service) クライアント</description>
     </item>
     
     <item>
