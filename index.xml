@@ -445,7 +445,7 @@
       <pubDate>Mon, 27 Dec 2021 17:33:59 +0900</pubDate>
       
       <guid>https://seiri.blog/posts/aws-lambda-common-dynamodb-operation-util-in-python/</guid>
-      <description>目的 python での DBUtil の作成方法を共有します。 実装 import boto3 dynamodb = boto3.resource(&amp;#39;dynamodb&amp;#39;, endpoint_url=&amp;#34;XXXXXXX&amp;#34;) class DynamoDB: &amp;#34;&amp;#34;&amp;#34;DynamoDBの操作(CRUD)クラス Args: table_name: テーブル名</description>
+      <description>python での DBUtil の作成方法 以下に、Python で AWS Lambda 内で共通的に使用される DynamoDB 操作のためのユーティリティクラスの例を示します。このクラスを使用すると、</description>
     </item>
     
     <item>
