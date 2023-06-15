@@ -170,12 +170,12 @@
     </item>
     
     <item>
-      <title>唯一のIDを生成する方法</title>
+      <title>JavaSrcriptでパッケージを使わずにUUIDを生成する方法</title>
       <link>https://seiri.blog/posts/generating-unique-id/</link>
       <pubDate>Mon, 22 Nov 2021 17:02:25 +0900</pubDate>
       
       <guid>https://seiri.blog/posts/generating-unique-id/</guid>
-      <description>目的 JavaScript で唯一の ID を生成する方法を共有します。 実装方法 export const guid = () =&amp;gt; { const s4 = () =&amp;gt; { return Math.floor((1 + Math.random()) * 0x10000) .toString(16) .substring(1); } return ( s4() + s4() + &amp;#39;-&amp;#39; + s4() + &amp;#39;-&amp;#39; + s4() + &amp;#39;-&amp;#39; + s4() + &amp;#39;-&amp;#39; + s4() +</description>
+      <description>UUID 説明 UUID（Universally Unique Identifier）は、一意の識別子を生成するための規格です。UUID は 128 ビットの値で表され、通常</description>
     </item>
     
   </channel>

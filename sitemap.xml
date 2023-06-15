@@ -713,6 +713,12 @@
     <loc>https://seiri.blog/posts/generating-unique-id/</loc>
     <lastmod>2021-11-22T17:02:25+09:00</lastmod>
   </url><url>
+    <loc>https://seiri.blog/tags/uuid/</loc>
+    <lastmod>2021-11-22T17:02:25+09:00</lastmod>
+  </url><url>
+    <loc>https://seiri.blog/categories/uuid/</loc>
+    <lastmod>2021-11-22T17:02:25+09:00</lastmod>
+  </url><url>
     <loc>https://seiri.blog/posts/apex-create-aws-s3-sign-with-url/</loc>
     <lastmod>2021-11-22T16:48:56+09:00</lastmod>
   </url><url>
