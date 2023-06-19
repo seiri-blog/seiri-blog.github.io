@@ -31,7 +31,7 @@
 <meta name=twitter:title content="VSCodeでSalesforceのコードフォーマットする方法">
 <meta name=twitter:description content="VSCode の環境構築 今回に関しては設定は詳しく説明しません、やり方のみ詳しく説明させていただきます。 下記リンクを開いて、自分の PC にダウンロードする https://github.com/RyuSeiri/Salesforce-Source-Format">
 <script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://seiri.blog/posts/"},{"@type":"ListItem","position":2,"name":"VSCodeでSalesforceのコードフォーマットする方法","item":"https://seiri.blog/posts/salesforce-source-code-format/"}]}</script>
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"VSCodeでSalesforceのコードフォーマットする方法","name":"VSCodeでSalesforceのコードフォーマットする方法","description":"VSCode の環境構築 今回に関しては設定は詳しく説明しません、やり方のみ詳しく説明させていただきます。 下記リンクを開いて、自分の PC にダウンロードする https://github.com/RyuSeiri/Salesforce-Source-Format","keywords":["Salesforce","lwc","Apex","Format"],"articleBody":"VSCode の環境構築 今回に関しては設定は詳しく説明しません、やり方のみ詳しく説明させていただきます。\n 下記リンクを開いて、自分の PC にダウンロードする  https://github.com/RyuSeiri/Salesforce-Source-Format\n VSCode を開いて、Crl + Shift + Pキー打つ、create Project with Manifestを選択し、新しいプロジェクトを作成   最初ダウロードしたファイルを全部さっき作成したプロジェクトフォルダの下にコピーする   VSCode のターミナルでnpm install --saveを実行する   .vscode/extensions.json中の拡張機能を全部インストールする   VSCode を開いて、Crl + Shift + Pキー打つ、Reload Windowを選択、プロジェクトをリロードする  動作確認  保存する時自動的にソースをフォーマットする SOQL もフォーマットでできる  フォーマット前 - public with sharing class test { - @AuraEnabled - public static string methodName(){ - try { - Account acc = [select Id, - Name from Account]; - return acc[0].Name; - } catch (Exception e) { - throw new AuraHandledException(e.getMessage()); - } - } - }  フォーマット後 + public with sharing class test { + @AuraEnabled + public static string methodName() { + try { + Account acc = [ + SELECT Id, Name + FROM Account + ]; + return acc[0].Name; + } catch (Exception e) { + throw new AuraHandledException(e.getMessage()); + } + } + }  参考\nhttps://developer.salesforce.com/tools/vscode/ja/user-guide/prettier\n","wordCount":"423","inLanguage":"ja","datePublished":"2023-04-04T18:23:36+09:00","dateModified":"2023-04-04T18:23:36+09:00","author":{"@type":"Person","name":"Seiri"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://seiri.blog/posts/salesforce-source-code-format/"},"publisher":{"@type":"Organization","name":"Seiri's Blog","logo":{"@type":"ImageObject","url":"https://seiri.blog/favicon.ico"}}}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"VSCodeでSalesforceのコードフォーマットする方法","name":"VSCodeでSalesforceのコードフォーマットする方法","description":"VSCode の環境構築 今回に関しては設定は詳しく説明しません、やり方のみ詳しく説明させていただきます。 下記リンクを開いて、自分の PC にダウンロードする https://github.com/RyuSeiri/Salesforce-Source-Format","keywords":["Salesforce","lwc","Apex","Format"],"articleBody":"VSCode の環境構築 今回に関しては設定は詳しく説明しません、やり方のみ詳しく説明させていただきます。\n 下記リンクを開いて、自分の PC にダウンロードする  https://github.com/RyuSeiri/Salesforce-Source-Format\n VSCode を開いて、Crl + Shift + Pキー打つ、create Project with Manifestを選択し、新しいプロジェクトを作成      最初ダウロードしたファイルを全部さっき作成したプロジェクトフォルダの下にコピーする    VSCode のターミナルでnpm install --saveを実行する    .vscode/extensions.json中の拡張機能を全部インストールする    VSCode を開いて、Crl + Shift + Pキー打つ、Reload Windowを選択、プロジェクトをリロードする   動作確認  保存する時自動的にソースをフォーマットする SOQL もフォーマットでできる  フォーマット前 - public with sharing class test { - @AuraEnabled - public static string methodName(){ - try { - Account acc = [select Id, - Name from Account]; - return acc[0].Name; - } catch (Exception e) { - throw new AuraHandledException(e.getMessage()); - } - } - }  フォーマット後 + public with sharing class test { + @AuraEnabled + public static string methodName() { + try { + Account acc = [ + SELECT Id, Name + FROM Account + ]; + return acc[0].Name; + } catch (Exception e) { + throw new AuraHandledException(e.getMessage()); + } + } + }  参考\nhttps://developer.salesforce.com/tools/vscode/ja/user-guide/prettier\n","wordCount":"423","inLanguage":"ja","datePublished":"2023-04-04T18:23:36+09:00","dateModified":"2023-04-04T18:23:36+09:00","author":{"@type":"Person","name":"Seiri"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://seiri.blog/posts/salesforce-source-code-format/"},"publisher":{"@type":"Organization","name":"Seiri's Blog","logo":{"@type":"ImageObject","url":"https://seiri.blog/favicon.ico"}}}</script>
 </head>
 <body id=top>
 <script>localStorage.getItem("pref-theme")==="dark"&&document.body.classList.add('dark')</script>
@@ -131,31 +131,31 @@ VSCodeでSalesforceのコードフォーマットする方法
 <ul>
 <li>VSCode を開いて、<code>Crl + Shift + P</code>キー打つ、<code>create Project with Manifest</code>を選択し、新しいプロジェクトを作成</li>
 </ul>
-<p><img loading=lazy src=/images/5e90b2f6-021f-9d01-30c0-06612331bb9d.png alt=image.png>
+<p><a href=/images/5e90b2f6-021f-9d01-30c0-06612331bb9d.png><img loading=lazy src=/images/5e90b2f6-021f-9d01-30c0-06612331bb9d.png alt=image.png></a>
 </p>
-<p><img loading=lazy src=/images/31cb3dd0-53bb-4ce0-1a42-43e0f3fd6ed1.png alt=image.png>
+<p><a href=/images/31cb3dd0-53bb-4ce0-1a42-43e0f3fd6ed1.png><img loading=lazy src=/images/31cb3dd0-53bb-4ce0-1a42-43e0f3fd6ed1.png alt=image.png></a>
 </p>
-<p><img loading=lazy src=/images/f908ecd3-e3d5-2e20-5cba-980ceea3b00e.png alt=image.png>
+<p><a href=/images/f908ecd3-e3d5-2e20-5cba-980ceea3b00e.png><img loading=lazy src=/images/f908ecd3-e3d5-2e20-5cba-980ceea3b00e.png alt=image.png></a>
 </p>
 <ul>
 <li>最初ダウロードしたファイルを全部さっき作成したプロジェクトフォルダの下にコピーする</li>
 </ul>
-<p><img loading=lazy src=/images/e27609e1-3790-d4fe-1c44-36089aba6570.png alt=image.png>
+<p><a href=/images/e27609e1-3790-d4fe-1c44-36089aba6570.png><img loading=lazy src=/images/e27609e1-3790-d4fe-1c44-36089aba6570.png alt=image.png></a>
 </p>
 <ul>
 <li>VSCode のターミナルで<code>npm install --save</code>を実行する</li>
 </ul>
-<p><img loading=lazy src=/images/dfc18b80-dab4-41b7-72e3-4576517071fd.png alt=image.png>
+<p><a href=/images/dfc18b80-dab4-41b7-72e3-4576517071fd.png><img loading=lazy src=/images/dfc18b80-dab4-41b7-72e3-4576517071fd.png alt=image.png></a>
 </p>
 <ul>
 <li><code>.vscode/extensions.json</code>中の拡張機能を全部インストールする</li>
 </ul>
-<p><img loading=lazy src=/images/f002bda0-e220-128c-4513-2d50dfa6fece.png alt=image.png>
+<p><a href=/images/f002bda0-e220-128c-4513-2d50dfa6fece.png><img loading=lazy src=/images/f002bda0-e220-128c-4513-2d50dfa6fece.png alt=image.png></a>
 </p>
 <ul>
 <li>VSCode を開いて、<code>Crl + Shift + P</code>キー打つ、<code>Reload Window</code>を選択、プロジェクトをリロードする</li>
 </ul>
-<p><img loading=lazy src=/images/9eb20468-b7ea-bb74-9794-a92876801800.png alt=image.png>
+<p><a href=/images/9eb20468-b7ea-bb74-9794-a92876801800.png><img loading=lazy src=/images/9eb20468-b7ea-bb74-9794-a92876801800.png alt=image.png></a>
 </p>
 <h2 id=動作確認>動作確認<a hidden class=anchor aria-hidden=true href=#動作確認>#</a></h2>
 <ul>
