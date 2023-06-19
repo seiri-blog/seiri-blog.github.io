@@ -688,7 +688,7 @@
       <pubDate>Wed, 28 Jul 2021 14:42:39 +0900</pubDate>
       
       <guid>https://seiri.blog/posts/salesforce-vfpage-display-lwc/</guid>
-      <description>![Github&amp;quot; src=&amp;quot;/images/Salesforce.png) VF ページに LWC を表示する方法説明 基本的な考え方は VF ページに LightningOut という仕組みを利用して、LWC を表示すると思います。 LightningOut の仕組み VF ⇒ Aura ⇒ LWCと</description>
+      <description>VF ページに LWC を表示する方法説明 基本的な考え方は VF ページに LightningOut という仕組みを利用して、LWC を表示すると思います。 LightningOut の仕組み VF ⇒ Aura ⇒ LWCという</description>
     </item>
     
     <item>
