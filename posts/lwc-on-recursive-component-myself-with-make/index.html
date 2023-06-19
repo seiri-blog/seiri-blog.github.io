@@ -31,7 +31,7 @@
 <meta name=twitter:title content="LWCでの再帰的なコンポーネント自分で作る">
 <meta name=twitter:description content="1.目的 React や Vue でのコンポネント必要に応じて、時々共通処理のため、再帰的なコンポネントを実装したことがありますが、今回 LWC での再帰的なコンポネン">
 <script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://seiri.blog/posts/"},{"@type":"ListItem","position":2,"name":"LWCでの再帰的なコンポーネント自分で作る","item":"https://seiri.blog/posts/lwc-on-recursive-component-myself-with-make/"}]}</script>
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"LWCでの再帰的なコンポーネント自分で作る","name":"LWCでの再帰的なコンポーネント自分で作る","description":"1.目的 React や Vue でのコンポネント必要に応じて、時々共通処理のため、再帰的なコンポネントを実装したことがありますが、今回 LWC での再帰的なコンポネン","keywords":["Salesforce","再帰","lwc","LightningWebComponents"],"articleBody":"1.目的 React や Vue でのコンポネント必要に応じて、時々共通処理のため、再帰的なコンポネントを実装したことがありますが、今回 LWC での再帰的なコンポネントの実装方法を共有します。\n2.ソース構成図 lwc ├─menu ├─menuItem └─menuContainer  menu\n   template div class=\"slds-dropdown-trigger slds-dropdown-trigger_click slds-is-open\" div class=\"slds-dropdown slds-dropdown_left slds-dropdown_small\" ul class=\"slds-dropdown__list\" c-menu-item child-items={_items} c-menu-item ul div div template import { LightningElement, api } from 'lwc'; export default class Menu extends LightningElement { @api get items() { return this._items || []; } set items(value) { this._items = value; } }   xmlns=\"http://soap.sforce.com/2006/04/metadata\" 52.0 false   menuItem\n   template template for:each={_children} for:item=\"it\" for:index=\"index\" template if:false={it.items} li class=\"slds-dropdown__item\" role=\"presentation\" key={item} a href=\"#\" span class=\"slds-truncate\" title={it.label}{it.label}span a li template template if:true={it.items} li class=\"slds-dropdown__header slds-truncate\" key={item} span title={it.label}{it.label}span li c-menu-item child-items={it.items} key={item}c-menu-item template template template import { LightningElement, api, track } from 'lwc'; export default class MenuItem extends LightningElement { @track _children = []; /** * childItemsを取得 */ @api get childItems() { return this._children; } /** * childItemsを設定 * @param {any} value */ set childItems(value) { this._children = value || []; } }   xmlns=\"http://soap.sforce.com/2006/04/metadata\" 52.0 false   menuContainer\n   template div class=\"slds-card\" style=\"height:500px;width:1200px\" c-menu items={items}c-menu div template import { LightningElement, track } from 'lwc'; export default class MenuContainer extends LightningElement { @track items = [{ label: 'メニュー1', items: [{ label: 'サブメニュー1-1', }, { label: 'サブメニュー1-2', }, ], }, { label: 'メニュー2', items: [{ label: 'サブメニュー2-1', }, { label: 'サブメニュー2-2', }, ], }, ]; }   xmlns=\"http://soap.sforce.com/2006/04/metadata\" 52.0 false  3.ロカールで動作確認 menuContainer 中に右クリックし、SFDX:Preview Component Locallyを押下する\n Use Desktop Browserを選択する\n サーバを立ち上げて、ブラウザを自動的に開く\n 4.参考 https://www.lightningdesignsystem.com/components/menus/#site-main-content\n","wordCount":"552","inLanguage":"ja","datePublished":"2021-07-21T18:36:08+09:00","dateModified":"2021-07-21T18:36:08+09:00","author":{"@type":"Person","name":"Seiri"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://seiri.blog/posts/lwc-on-recursive-component-myself-with-make/"},"publisher":{"@type":"Organization","name":"Seiri's Blog","logo":{"@type":"ImageObject","url":"https://seiri.blog/favicon.ico"}}}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"LWCでの再帰的なコンポーネント自分で作る","name":"LWCでの再帰的なコンポーネント自分で作る","description":"1.目的 React や Vue でのコンポネント必要に応じて、時々共通処理のため、再帰的なコンポネントを実装したことがありますが、今回 LWC での再帰的なコンポネン","keywords":["Salesforce","再帰","lwc","LightningWebComponents"],"articleBody":"1.目的 React や Vue でのコンポネント必要に応じて、時々共通処理のため、再帰的なコンポネントを実装したことがありますが、今回 LWC での再帰的なコンポネントの実装方法を共有します。\n2.ソース構成図 lwc ├─menu ├─menuItem └─menuContainer  menu\n  template div class=\"slds-dropdown-trigger slds-dropdown-trigger_click slds-is-open\" div class=\"slds-dropdown slds-dropdown_left slds-dropdown_small\" ul class=\"slds-dropdown__list\" c-menu-item child-items={_items} c-menu-item ul div div template import { LightningElement, api } from 'lwc'; export default class Menu extends LightningElement { @api get items() { return this._items || []; } set items(value) { this._items = value; } }   xmlns=\"http://soap.sforce.com/2006/04/metadata\" 52.0 false   menuItem\n  template template for:each={_children} for:item=\"it\" for:index=\"index\" template if:false={it.items} li class=\"slds-dropdown__item\" role=\"presentation\" key={item} a href=\"#\" span class=\"slds-truncate\" title={it.label}{it.label}span a li template template if:true={it.items} li class=\"slds-dropdown__header slds-truncate\" key={item} span title={it.label}{it.label}span li c-menu-item child-items={it.items} key={item}c-menu-item template template template import { LightningElement, api, track } from 'lwc'; export default class MenuItem extends LightningElement { @track _children = []; /** * childItemsを取得 */ @api get childItems() { return this._children; } /** * childItemsを設定 * @param {any} value */ set childItems(value) { this._children = value || []; } }   xmlns=\"http://soap.sforce.com/2006/04/metadata\" 52.0 false   menuContainer\n  template div class=\"slds-card\" style=\"height:500px;width:1200px\" c-menu items={items}c-menu div template import { LightningElement, track } from 'lwc'; export default class MenuContainer extends LightningElement { @track items = [{ label: 'メニュー1', items: [{ label: 'サブメニュー1-1', }, { label: 'サブメニュー1-2', }, ], }, { label: 'メニュー2', items: [{ label: 'サブメニュー2-1', }, { label: 'サブメニュー2-2', }, ], }, ]; }   xmlns=\"http://soap.sforce.com/2006/04/metadata\" 52.0 false  3.ロカールで動作確認 menuContainer 中に右クリックし、SFDX:Preview Component Locallyを押下する\n\nUse Desktop Browserを選択する\n\nサーバを立ち上げて、ブラウザを自動的に開く\n\n4.参考 https://www.lightningdesignsystem.com/components/menus/#site-main-content\n","wordCount":"552","inLanguage":"ja","datePublished":"2021-07-21T18:36:08+09:00","dateModified":"2021-07-21T18:36:08+09:00","author":{"@type":"Person","name":"Seiri"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://seiri.blog/posts/lwc-on-recursive-component-myself-with-make/"},"publisher":{"@type":"Organization","name":"Seiri's Blog","logo":{"@type":"ImageObject","url":"https://seiri.blog/favicon.ico"}}}</script>
 </head>
 <body id=top>
 <script>localStorage.getItem("pref-theme")==="dark"&&document.body.classList.add('dark')</script>
@@ -136,8 +136,7 @@ LWCでの再帰的なコンポーネント自分で作る
  └─menuContainer
 </code></pre><ul>
 <li>menu<br>
-<a href=/images/068d533a-4404-d83a-752b-9937425ebd42.png><img loading=lazy src=/images/068d533a-4404-d83a-752b-9937425ebd42.png alt=image.png></a>
-</li>
+<a href=/images/068d533a-4404-d83a-752b-9937425ebd42.png target=_blank><img loading=lazy src=/images/068d533a-4404-d83a-752b-9937425ebd42.png alt=image.png></a></li>
 </ul>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-menu.html data-lang=menu.html>&lt;<span style=color:#f92672>template</span>&gt;
     &lt;<span style=color:#f92672>div</span> <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;slds-dropdown-trigger slds-dropdown-trigger_click slds-is-open&#34;</span>&gt;
@@ -168,8 +167,7 @@ LWCでの再帰的なコンポーネント自分で作る
 <span style=color:#f92672>&lt;/LightningComponentBundle&gt;</span>
 </code></pre></div><ul>
 <li>menuItem<br>
-<a href=/images/c931b089-52f3-3933-b133-e37b731d1310.png><img loading=lazy src=/images/c931b089-52f3-3933-b133-e37b731d1310.png alt=image.png></a>
-</li>
+<a href=/images/c931b089-52f3-3933-b133-e37b731d1310.png target=_blank><img loading=lazy src=/images/c931b089-52f3-3933-b133-e37b731d1310.png alt=image.png></a></li>
 </ul>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-menuItem.html data-lang=menuItem.html>&lt;<span style=color:#f92672>template</span>&gt;
     &lt;<span style=color:#f92672>template</span> <span style=color:#a6e22e>for:each</span><span style=color:#f92672>=</span><span style=color:#e6db74>{_children}</span> <span style=color:#a6e22e>for:item</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;it&#34;</span> <span style=color:#a6e22e>for:index</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;index&#34;</span>&gt;
@@ -216,8 +214,7 @@ LWCでの再帰的なコンポーネント自分で作る
 <span style=color:#f92672>&lt;/LightningComponentBundle&gt;</span>
 </code></pre></div><ul>
 <li>menuContainer<br>
-<a href=/images/3e732255-f1f1-664f-1820-da94bcafd6ab.png><img loading=lazy src=/images/3e732255-f1f1-664f-1820-da94bcafd6ab.png alt=image.png></a>
-</li>
+<a href=/images/3e732255-f1f1-664f-1820-da94bcafd6ab.png target=_blank><img loading=lazy src=/images/3e732255-f1f1-664f-1820-da94bcafd6ab.png alt=image.png></a></li>
 </ul>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-menuContainer.html data-lang=menuContainer.html>&lt;<span style=color:#f92672>template</span>&gt;
     &lt;<span style=color:#f92672>div</span> <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;slds-card&#34;</span> <span style=color:#a6e22e>style</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;height:500px;width:1200px&#34;</span>&gt;
@@ -253,14 +250,11 @@ LWCでの再帰的なコンポーネント自分で作る
 <span style=color:#f92672>&lt;/LightningComponentBundle&gt;</span>
 </code></pre></div><h2 id=3ロカールで動作確認>3.ロカールで動作確認<a hidden class=anchor aria-hidden=true href=#3ロカールで動作確認>#</a></h2>
 <p>menuContainer 中に右クリックし、<code>SFDX:Preview Component Locally</code>を押下する<br>
-<a href=/images/8acbafaa-a7fe-ca49-6c48-f18b116338bd.png><img loading=lazy src=/images/8acbafaa-a7fe-ca49-6c48-f18b116338bd.png alt=image.png></a>
-</p>
+<a href=/images/8acbafaa-a7fe-ca49-6c48-f18b116338bd.png target=_blank><img loading=lazy src=/images/8acbafaa-a7fe-ca49-6c48-f18b116338bd.png alt=image.png></a></p>
 <p><code>Use Desktop Browser</code>を選択する<br>
-<a href=/images/558e5ad0-7bc9-4340-d113-5c6b261c102b.png><img loading=lazy src=/images/558e5ad0-7bc9-4340-d113-5c6b261c102b.png alt=image.png></a>
-</p>
+<a href=/images/558e5ad0-7bc9-4340-d113-5c6b261c102b.png target=_blank><img loading=lazy src=/images/558e5ad0-7bc9-4340-d113-5c6b261c102b.png alt=image.png></a></p>
 <p>サーバを立ち上げて、ブラウザを自動的に開く<br>
-<a href=/images/84e05aba-c205-543c-0667-be42e1c1daf0.png><img loading=lazy src=/images/84e05aba-c205-543c-0667-be42e1c1daf0.png alt=image.png></a>
-</p>
+<a href=/images/84e05aba-c205-543c-0667-be42e1c1daf0.png target=_blank><img loading=lazy src=/images/84e05aba-c205-543c-0667-be42e1c1daf0.png alt=image.png></a></p>
 <h2 id=4参考>4.参考<a hidden class=anchor aria-hidden=true href=#4参考>#</a></h2>
 <p><a href=https://www.lightningdesignsystem.com/components/menus/#site-main-content>https://www.lightningdesignsystem.com/components/menus/#site-main-content</a></p>
 </div>
