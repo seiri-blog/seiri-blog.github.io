@@ -130,7 +130,7 @@
       <pubDate>Thu, 29 Dec 2022 19:36:52 +0900</pubDate>
       
       <guid>https://seiri.blog/posts/git-config-core-ignorecase/</guid>
-      <description>Gitでのファイル名の大文字・小文字区別の説明 Gitはファイル名の大文字・小文字を区別します。 例えば、「hello.txt」と「Hello.</description>
+      <description>Git でのファイル名の大文字・小文字区別の説明 Git はファイル名の大文字・小文字を区別します。 例えば、「hello.txt」と「Hello.txt」</description>
     </item>
     
     <item>
@@ -769,7 +769,7 @@
       <pubDate>Mon, 19 Jul 2021 17:29:18 +0900</pubDate>
       
       <guid>https://seiri.blog/posts/create-lwc-calendar-component-self/</guid>
-      <description>1.目的 LWC に既存のカレンダーコンポーネントでは&amp;lt;lighting-input type=&amp;quot;date&amp;quot;&amp;gt;&amp;lt;</description>
+      <description>目的 LWC に既存のカレンダーコンポーネントでは&amp;lt;lighting-input type=&amp;quot;date&amp;quot;&amp;gt;&amp;lt;/l</description>
     </item>
     
     <item>

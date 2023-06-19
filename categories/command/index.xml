@@ -13,7 +13,7 @@
       <pubDate>Thu, 29 Dec 2022 19:36:52 +0900</pubDate>
       
       <guid>https://seiri.blog/posts/git-config-core-ignorecase/</guid>
-      <description>Gitでのファイル名の大文字・小文字区別の説明 Gitはファイル名の大文字・小文字を区別します。 例えば、「hello.txt」と「Hello.</description>
+      <description>Git でのファイル名の大文字・小文字区別の説明 Git はファイル名の大文字・小文字を区別します。 例えば、「hello.txt」と「Hello.txt」</description>
     </item>
     
     <item>
