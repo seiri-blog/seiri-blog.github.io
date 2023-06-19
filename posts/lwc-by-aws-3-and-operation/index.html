@@ -31,7 +31,7 @@
 <meta name=twitter:title content="LWCでAWS S3と連携する方法">
 <meta name=twitter:description content="1.目的 今回 LWC 中に AWS の SDK for javascript で S3 と連携する方法を共有します。 2.前提 2.1.AWS S3 バケット Cross-Origin Resource Sharing (CORS)の設定 [ { &#34;AllowedHeaders&#34;: [&#34;*&#34;], &#34;AllowedMethods&#34;: [&#34;HEAD&#34;, &#34;GET&#34;, &#34;PUT&#34;, &#34;POST&#34;, &#34;DELETE&#34;], &#34;AllowedOrigins&#34;: [&#34;*&#34;], &#34;ExposeHeaders&#34;: [&#34;ETag&#34;] } ] 2.2.Salesforce 側">
 <script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://seiri.blog/posts/"},{"@type":"ListItem","position":2,"name":"LWCでAWS S3と連携する方法","item":"https://seiri.blog/posts/lwc-by-aws-3-and-operation/"}]}</script>
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"LWCでAWS S3と連携する方法","name":"LWCでAWS S3と連携する方法","description":"1.目的 今回 LWC 中に AWS の SDK for javascript で S3 と連携する方法を共有します。 2.前提 2.1.AWS S3 バケット Cross-Origin Resource Sharing (CORS)の設定 [ { \u0026#34;AllowedHeaders\u0026#34;: [\u0026#34;*\u0026#34;], \u0026#34;AllowedMethods\u0026#34;: [\u0026#34;HEAD\u0026#34;, \u0026#34;GET\u0026#34;, \u0026#34;PUT\u0026#34;, \u0026#34;POST\u0026#34;, \u0026#34;DELETE\u0026#34;], \u0026#34;AllowedOrigins\u0026#34;: [\u0026#34;*\u0026#34;], \u0026#34;ExposeHeaders\u0026#34;: [\u0026#34;ETag\u0026#34;] } ] 2.2.Salesforce 側","keywords":["AWS","S3","Salesforce","lwc"],"articleBody":"1.目的 今回 LWC 中に AWS の SDK for javascript で S3 と連携する方法を共有します。\n2.前提  2.1.AWS S3 バケット Cross-Origin Resource Sharing (CORS)の設定  [ { \"AllowedHeaders\": [\"*\"], \"AllowedMethods\": [\"HEAD\", \"GET\", \"PUT\", \"POST\", \"DELETE\"], \"AllowedOrigins\": [\"*\"], \"ExposeHeaders\": [\"ETag\"] } ]   2.2.Salesforce 側静的リソースに AWS の SDK をアップロードする\n  2.3.Salesforce 側 CSP 信頼済みサイトの設定\n  3.ソース構成図 lwc ├─fileuploadMock ├─fileuploadModal ├─progressbar └─utils  fileuploadMock\n  .container { background-color: #fff; min-height:100%; } .wrapper { background-color: #cecece; overflow: scroll; width: 100%; } template template if:true={loading} lightning-spinner alternative-text=\"Loading\" size=\"medium\"lightning-spinner template c-progressbar upload-file-name={uploadFileName} progress={progress} onabort={Abort} c-progressbar c-fileupload-modal title=\"ファイル追加\" onselect={uploadHandler} onfolderchange={folderchangeHandler}c-fileupload-modal lightning-card div class=\"slds-p-horizontal_small\" div class=\"slds-form\" div class=\"slds-form__row\" div class=\"slds-form__item\" button class=\"slds-button slds-button_brand\" onclick={fileSelectorHandler}ファイル追加button div div div div div slot=\"footer\" lightning-datatable hide-checkbox-column key-field=\"key\" columns={columns} data={objectlist} onrowaction={handleRowAction} lightning-datatable div lightning-card template import { LightningElement, track } from 'lwc'; import { NavigationMixin } from 'lightning/navigation'; import { loadScript } from 'lightning/platformResourceLoader'; import AWS_SDK from '@salesforce/resourceUrl/aws_sdk'; import { showToast, dateFormat, fileSizeUnit } from 'c/utils'; const bucketName = \"bucket-name\";//バケット名 const region = \"ap-northeast-1\";//地域 const accessKeyId = \"accessKeyId \";//アクセスID const secretAccessKey = \"secretAccessKey\";//アクセスキー  export default class FileuploadMock extends NavigationMixin(LightningElement) { //ファイル非活性  @track fileDisable; @track datas; @track objectlist = []; @track folder; @track loading; @track uploadFileName; @track progress; /** * 初期化AWS */ async initAWS() { AWS.config.update({ region: region, accessKeyId: accessKeyId, secretAccessKey: secretAccessKey }); this.s3 = new AWS.S3({ apiVersion: \"2006-03-01\", params: { Bucket: bucketName } }); await this.listObjects(); } /** * ファイルアップロード * @param {*} event */ async uploadHandler(event) { let input = event.detail; let files = input.files; if (files.length  0) { try { // let result = await this.upload(files[0]);  let result = await this.managedUpload(files[0], (progress) = { this.uploadFileName = files[0].name; this.progress = Math.floor(progress.loaded / progress.total * 100); this.template.querySelector('c-progressbar').open(); }); // console.log(result);  this.template.querySelector('c-progressbar').close(); await this.listObjects(); showToast(this, '', '成功にアップロードしました', 'success'); } catch (err) { showToast(this, '', err.message, 'error'); console.error(\"Error:\", err); } } } /** * ファイルアップロードキャンセル */ async Abort() { await this.request.abort(); } /** * ファイルダウンロード * @param {*} event */ async fileDownload(fileKey) { try { this.loading = true; await this.downloadFile(fileKey); } catch (err) { showToast(this, '', err.message, 'error'); console.error(\"Error:\", err); } finally { this.loading = false; } } /** * ファイル削除 * @param {string} fileKey */ async deleteFile(fileKey) { try { this.loading = true; await this.deleteObject(fileKey); await this.listObjects(); showToast(this, '', '成功に削除しました', 'success'); } catch (err) { showToast(this, '', err.message, 'error'); console.error(\"Error:\", err); } finally { this.loading = false; } } /** * ファイルリスト取得 */ async listObjects() { let data = await this.s3.listObjects().promise(); console.log(data); this.objectlist = []; data.Contents.forEach(e = { let key = e.Key; let folder; let fileName; if (e.Size === 0) return; if (key.lastIndexOf('/')  -1) { fileName = key.substring(key.lastIndexOf('/') + 1, key.length); folder = './' + key.replace(fileName, ''); } else { folder = './'; fileName = key; } let fileType = fileName.split('.')[1]; this.objectlist.push({ key: key, folder: folder, fileName: fileName, fileType: fileType, LastModified: dateFormat(e.LastModified, 'YYYY/mm/dd HH:MM:SS'), Owner: e.Owner.DisplayName, Size: fileSizeUnit(e.Size), StorageClass: e.StorageClass }) }); } /** * ファイル取得処理 * @param {string} fileKey キー * @param {string} fileName ファイル名 */ async downloadFile(fileKey) { let url = await this.getSignedUrlPromise('getObject', { Bucket: bucketName, Key: fileKey, Expires: 1 }); console.log(url); window.location.href = url; } /** * オブジェクト取得 * @param {*} fileKey キー */ getObject(fileKey) { return this.s3.getObject({ Key: fileKey }).promise(); } /** * ファイル保存処理 * @param {File(blob)} file ファイル */ putObject(file) { const { folder } = this; let fileName = file.name; let fileKey; if (folder || folder === 0) fileKey = `${folder}/${fileName}`; else fileKey = fileName; return this.s3.putObject({ Key: fileKey, Body: file }).promise(); } /** * ファイル削除処理 * @param {string} fileKey ファイルキー */ deleteObject(fileKey) { return this.s3.deleteObject({ Key: fileKey }).promise(); } /** * ファイル保存処理(ビッグサイズ用) * @param {File(blob)} file ファイル */ upload(file) { const { folder } = this; let fileName = file.name; let fileKey; if (folder || folder === 0) fileKey = `${folder}/${fileName}`; else fileKey = fileName; return this.s3.upload({ Key: fileKey, Body: file }).promise(); } /** * URL発行 * @param {*} action アクション：getObject,putObject,deleteObject * @param {*} fileKey ファイルキー */ getSignedUrlPromise(action, params) { return this.s3.getSignedUrlPromise(action, params); } /** * マルチファイルアップロード管理 * @param {*} file */ managedUpload(file, progressCallBack) { const { folder } = this; let fileName = file.name; let fileKey; if (folder || folder === 0) fileKey = `${folder}/${fileName}`; else fileKey = fileName; this.request = new AWS.S3.ManagedUpload({ partSize: 100 * 1024 * 1024, queueSize: 1, params: { Bucket: bucketName, Key: fileKey, Body: file } }); this.request.on('httpUploadProgress', (progress) = { if (progressCallBack) progressCallBack(progress); else console.log('progress:', Math.floor(progress.loaded / progress.total * 100)); }); this.request.send((err, data) = { if (err) console.error(err); console.info(data); }); return this.request.promise(); } /** * ファイル選択 * @param {*} event */ fileSelectorHandler(event) { event.preventDefault(); this.template.querySelector('c-fileupload-modal').open(); } /** * フォルダ選択 * @param {*} event */ folderchangeHandler(event) { this.folder = event.detail; } /** * RowAction * @param {*} event */ async handleRowAction(event) { const action = event.detail.action; const row = event.detail.row; switch (action.name) { case 'download': await this.fileDownload(row.key); break; case 'delete': await this.deleteFile(row.key); break; } } /** * 初期化 */ connectedCallback() { this.columns = [ { label: 'フォルダー名', fieldName: 'folder' }, { label: 'ファイル名', fieldName: 'fileName', }, { label: 'タイプ', fieldName: 'fileType' }, { label: '最新更新日', fieldName: 'LastModified', }, { label: '所有者', fieldName: 'Owner', }, { label: 'サイズ', fieldName: 'Size', }, { label: 'ストレージクラス', fieldName: 'StorageClass', }, { type: 'action', typeAttributes: { rowActions: [ { label: 'ダウンロード', name: 'download' }, { label: '削除', name: 'delete' } ], menuAlignment: 'auto' } } ]; } /** * aws-sdkロード */ renderedCallback() { if (this.jsinit) return; this.jsinit = true; Promise.all([ loadScript(this, AWS_SDK), ]) .then(async() = { await this.initAWS(); }) .catch(error = { showToast(this, 'JSライブラリロードに失敗しました', error.message, 'error') }); } }   xmlns=\"http://soap.sforce.com/2006/04/metadata\" 52.0 true  lightning__Tab    fileuploadModal\n  template  template if:true={_isModalOpen}  section role=\"dialog\" tabindex=\"-1\" aria-modal=\"true\" class=\"slds-modal slds-fade-in-open\" style=\"z-index:9001\" div class=\"slds-modal__container\" style=\"width: auto;max-width: fit-content;\"  header class=\"slds-modal__header\" button class=\"slds-button slds-button_icon slds-modal__close slds-button_icon-inverse\" title=\"Close\" onclick={close} lightning-icon icon-name=\"utility:close\" alternative-text=\"close\" variant=\"inverse\" size=\"small\" lightning-icon span class=\"slds-assistive-text\"Closespan button h2 class=\"slds-text-heading_medium slds-hyphenate\"{title}h2 header  div class=\"slds-modal__content slds-p-around_medium\" style=\"height:50%\" lightning-input label=\"パス\" name=\"path\" onchange={commonChange}lightning-input lightning-input type=\"file\" label=\"ファイルアップロード\" onchange={uploadHandler} lightning-input div  footer class=\"slds-modal__footer\" button class=\"slds-button slds-button_neutral\" onclick={close}キャンセルbutton ファイル追加 -- footer div section div class=\"slds-backdrop slds-backdrop_open\"div template template import { LightningElement, track, api } from 'lwc'; export default class FileUploadModal extends LightningElement { @api name; @track path; //表示フラグ  @track _isModalOpen; /** * 共通Change処理 * @param {*} event */ commonChange(event) { let name = event.target.name; let value = event.target.value; this[name] = value; this.dispatchEvent(new CustomEvent(\"folderchange\", { detail: value, composed: true, bubbles: true, cancelable: true, })); } /** * ファイルアップロード * @param {*} event */ uploadHandler(event) { let changenEvent = new CustomEvent(\"select\", { detail: event.target, composed: true, bubbles: true, cancelable: true, }); this.dispatchEvent(changenEvent); } /** * モーダル開く */ @api open() { this._isModalOpen = true; } /** * モーダル閉じる */ close(e) { e.preventDefault(); this._isModalOpen = false; } }   xmlns=\"http://soap.sforce.com/2006/04/metadata\" 52.0 false   progressbar\n  template template if:true={isShow} section role=\"dialog\" tabindex=\"-1\" class=\"slds-modal slds-fade-in-open\" aria-modal=\"true\" style=\"z-index:9002\" div class=\"slds-modal__container\" style=\"width: auto;max-width: 50rem;\" header class=\"slds-modal__header\" button class=\"slds-button slds-button_icon slds-modal__close slds-button_icon-inverse\" title=\"Close\" onclick={cancel} lightning-icon icon-name=\"utility:close\" alternative-text=\"close\" variant=\"inverse\" size=\"small\" lightning-icon span class=\"slds-assistive-text\"Closespan button h2 class=\"slds-modal__title slds-hyphenate\"ファイルをアップロードh2 header div class=\"slds-modal__content slds-p-around_medium\" style=\"display: grid;grid-template-columns: 0.5fr 3fr 3fr 0.5fr; height: 5rem;overflow-y: hidden;\" div style=\"align-self: center;\" span class=\"slds-icon_container slds-icon-doctype-xml\" span div div style=\"align-self: center;\" span{uploadFileName} br /b{progress}%bspan div div class=\"slds-progress-bar slds-progress-bar_circular\" style=\"align-self: center;height: 0.6rem;width: 20rem;\" span class=\"slds-progress-bar__value\" style={barStyle}span div div style=\"align-self: center;margin-left: 0.2rem;\" span class={barClass} span div div footer class=\"slds-modal__footer\" span style=\"float: left;\"span button class=\"slds-button slds-button_brand\" onclick={cancel}キャンセルbutton footer div section div class=\"slds-backdrop slds-backdrop_open\"div template template import { LightningElement, track, api } from 'lwc'; const bar_cancel_class = 'slds-icon_container slds-icon_container_circle slds-icon-action-description slds-icon-standard-password'; const bar_success_class = 'slds-icon_container slds-icon_container_circle slds-icon-action-description slds-icon-text-success'; // const approval_flag = myResource + 'action-sprite/svg/symbols.svg##approval'; // const remove_flag = myResource + 'action-sprite/svg/symbols.svg##remove'; export default class Fileupload extends LightningElement { @api uploadFileName; @api progress = 0; @track isShow; /** * ProgressBar */ get barStyle() { return `width:${this.progress}%`; } get barClass() { return this.progress = 100 ? bar_success_class : bar_cancel_class; } /** * キャンセル */ cancel(e) { e.preventDefault(); this.dispatchEvent(new CustomEvent('abort', { detail: true })); this.close(); } @api close() { this.isShow = false; } @api open() { this.isShow = true; } }   xmlns=\"http://soap.sforce.com/2006/04/metadata\" 52.0 false   utils\n  import { ShowToastEvent } from 'lightning/platformShowToastEvent'; /** * メッセージ表示 * @param {window} that * @param {string} title タイトール * @param {string} message メッセージ * @param {string} variant タイプ info、success、warning、error */ export const showToast = (that, title, message, variant) = { const event = new ShowToastEvent({ title: title, message: message, variant: variant, }); that.dispatchEvent(event); } /** * デートフォマート * @param {Date} date date * @param {string} fmt format * @returns {string} StringDate */ export const dateFormat = (date, fmt = 'YYYY/mm/dd') = { let ret; const opt = { 'Y+': date.getFullYear().toString(), // 年  'm+': (date.getMonth() + 1).toString(), // 月  'd+': date.getDate().toString(), // 日  'H+': date.getHours().toString(), // 時  'M+': date.getMinutes().toString(), // 分  'S+': date.getSeconds().toString() // 秒  }; for (let k in opt) { ret = new RegExp('(' + k + ')').exec(fmt); if (ret) { fmt = fmt.replace(ret[1], (ret[1].length == 1) ? (opt[k]) : (opt[k].padStart(ret[1].length, '0'))) }; }; return fmt; } /** * YYYY/MM/DD⇒Mon Nov 27 2017 20:30:00 GMT+0900 (JST)に変換 * @param {string} dataStr stringDate * @returns {Date} Date */ export const datePrase = (dataStr) = { return new Date(dataStr); } /** * デートフォマート * @param {string} date strData * @param {string} fmt format * @returns {string} StringDate */ export const strDateFormat = (strData, fmt = 'YYYY/mm/dd HH:MM:SS') = { return dateFormat(datePrase(strData), fmt); } /** * ファイルサイズ変換 * @param {*} size バイト * @returns 変換後のサイズ */ export const fileSizeUnit = (size) = { // 1 KB = 1024 Byte  const kb = 1024 const mb = Math.pow(kb, 2) const gb = Math.pow(kb, 3) const tb = Math.pow(kb, 4) const pb = Math.pow(kb, 5) const round = (size, unit) = { return Math.round(size / unit * 100.0) / 100.0 } if (size = pb) { return round(size, pb) + 'PB' } else if (size = tb) { return round(size, tb) + 'TB' } else if (size = gb) { return round(size, gb) + 'GB' } else if (size = mb) { return round(size, mb) + 'MB' } else if (size = kb) { return round(size, kb) + 'KB' } return size + 'バイト' }   xmlns=\"http://soap.sforce.com/2006/04/metadata\" 52.0 false  4.Salesforce 側動作確認   4.1.Salesforce 側 Lightning コンポーネントタブを作成\n  4.2.タブを開く\n  4.3.ファイル追加\n  4.4.ファイルダウンロード\n  4.5.ファイル削除\n  5.参考 https://github.com/aws/aws-sdk-js\nhttps://docs.aws.amazon.com/sdk-for-javascript/v3/developer-guide/getting-started-browser.html\nhttps://docs.aws.amazon.com/ja_jp/AmazonS3/latest/userguide/ManageCorsUsing.html\nhttps://developer.salesforce.com/docs/component-library/bundle/lightning-platform-resource-loader/documentation\nhttps://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/S3.html\n","wordCount":"2807","inLanguage":"ja","datePublished":"2021-07-28T13:02:56+09:00","dateModified":"2021-07-28T13:02:56+09:00","author":{"@type":"Person","name":"Seiri"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://seiri.blog/posts/lwc-by-aws-3-and-operation/"},"publisher":{"@type":"Organization","name":"Seiri's Blog","logo":{"@type":"ImageObject","url":"https://seiri.blog/favicon.ico"}}}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"LWCでAWS S3と連携する方法","name":"LWCでAWS S3と連携する方法","description":"1.目的 今回 LWC 中に AWS の SDK for javascript で S3 と連携する方法を共有します。 2.前提 2.1.AWS S3 バケット Cross-Origin Resource Sharing (CORS)の設定 [ { \u0026#34;AllowedHeaders\u0026#34;: [\u0026#34;*\u0026#34;], \u0026#34;AllowedMethods\u0026#34;: [\u0026#34;HEAD\u0026#34;, \u0026#34;GET\u0026#34;, \u0026#34;PUT\u0026#34;, \u0026#34;POST\u0026#34;, \u0026#34;DELETE\u0026#34;], \u0026#34;AllowedOrigins\u0026#34;: [\u0026#34;*\u0026#34;], \u0026#34;ExposeHeaders\u0026#34;: [\u0026#34;ETag\u0026#34;] } ] 2.2.Salesforce 側","keywords":["AWS","S3","Salesforce","lwc"],"articleBody":"1.目的 今回 LWC 中に AWS の SDK for javascript で S3 と連携する方法を共有します。\n2.前提  2.1.AWS S3 バケット Cross-Origin Resource Sharing (CORS)の設定  [ { \"AllowedHeaders\": [\"*\"], \"AllowedMethods\": [\"HEAD\", \"GET\", \"PUT\", \"POST\", \"DELETE\"], \"AllowedOrigins\": [\"*\"], \"ExposeHeaders\": [\"ETag\"] } ]   2.2.Salesforce 側静的リソースに AWS の SDK をアップロードする\n  2.3.Salesforce 側 CSP 信頼済みサイトの設定\n  3.ソース構成図 lwc ├─fileuploadMock ├─fileuploadModal ├─progressbar └─utils  fileuploadMock\n  .container { background-color: #fff; min-height: 100%; } .wrapper { background-color: #cecece; overflow: scroll; width: 100%; } template template if:true=\"{loading}\" lightning-spinner alternative-text=\"Loading\" size=\"medium\" lightning-spinner template c-progressbar upload-file-name=\"{uploadFileName}\" progress=\"{progress}\" onabort=\"{Abort}\"  c-progressbar c-fileupload-modal title=\"ファイル追加\" onselect=\"{uploadHandler}\" onfolderchange=\"{folderchangeHandler}\" c-fileupload-modal lightning-card div class=\"slds-p-horizontal_small\" div class=\"slds-form\" div class=\"slds-form__row\" div class=\"slds-form__item\" button class=\"slds-button slds-button_brand\" onclick=\"{fileSelectorHandler}\"  ファイル追加 button div div div div div slot=\"footer\" lightning-datatable hide-checkbox-column key-field=\"key\" columns=\"{columns}\" data=\"{objectlist}\" onrowaction=\"{handleRowAction}\"  lightning-datatable div lightning-card template import { LightningElement, track } from \"lwc\"; import { NavigationMixin } from \"lightning/navigation\"; import { loadScript } from \"lightning/platformResourceLoader\"; import AWS_SDK from \"@salesforce/resourceUrl/aws_sdk\"; import { showToast, dateFormat, fileSizeUnit } from \"c/utils\"; const bucketName = \"bucket-name\"; //バケット名 const region = \"ap-northeast-1\"; //地域 const accessKeyId = \"accessKeyId \"; //アクセスID const secretAccessKey = \"secretAccessKey\"; //アクセスキー  export default class FileuploadMock extends NavigationMixin(LightningElement) { //ファイル非活性  @track fileDisable; @track datas; @track objectlist = []; @track folder; @track loading; @track uploadFileName; @track progress; /** * 初期化AWS */ async initAWS() { AWS.config.update({ region: region, accessKeyId: accessKeyId, secretAccessKey: secretAccessKey, }); this.s3 = new AWS.S3({ apiVersion: \"2006-03-01\", params: { Bucket: bucketName }, }); await this.listObjects(); } /** * ファイルアップロード * @param {*} event */ async uploadHandler(event) { let input = event.detail; let files = input.files; if (files.length  0) { try { // let result = await this.upload(files[0]);  let result = await this.managedUpload(files[0], (progress) = { this.uploadFileName = files[0].name; this.progress = Math.floor((progress.loaded / progress.total) * 100); this.template.querySelector(\"c-progressbar\").open(); }); // console.log(result);  this.template.querySelector(\"c-progressbar\").close(); await this.listObjects(); showToast(this, \"\", \"成功にアップロードしました\", \"success\"); } catch (err) { showToast(this, \"\", err.message, \"error\"); console.error(\"Error:\", err); } } } /** * ファイルアップロードキャンセル */ async Abort() { await this.request.abort(); } /** * ファイルダウンロード * @param {*} event */ async fileDownload(fileKey) { try { this.loading = true; await this.downloadFile(fileKey); } catch (err) { showToast(this, \"\", err.message, \"error\"); console.error(\"Error:\", err); } finally { this.loading = false; } } /** * ファイル削除 * @param {string} fileKey */ async deleteFile(fileKey) { try { this.loading = true; await this.deleteObject(fileKey); await this.listObjects(); showToast(this, \"\", \"成功に削除しました\", \"success\"); } catch (err) { showToast(this, \"\", err.message, \"error\"); console.error(\"Error:\", err); } finally { this.loading = false; } } /** * ファイルリスト取得 */ async listObjects() { let data = await this.s3.listObjects().promise(); console.log(data); this.objectlist = []; data.Contents.forEach((e) = { let key = e.Key; let folder; let fileName; if (e.Size === 0) return; if (key.lastIndexOf(\"/\")  -1) { fileName = key.substring(key.lastIndexOf(\"/\") + 1, key.length); folder = \"./\" + key.replace(fileName, \"\"); } else { folder = \"./\"; fileName = key; } let fileType = fileName.split(\".\")[1]; this.objectlist.push({ key: key, folder: folder, fileName: fileName, fileType: fileType, LastModified: dateFormat(e.LastModified, \"YYYY/mm/dd HH:MM:SS\"), Owner: e.Owner.DisplayName, Size: fileSizeUnit(e.Size), StorageClass: e.StorageClass, }); }); } /** * ファイル取得処理 * @param {string} fileKey キー * @param {string} fileName ファイル名 */ async downloadFile(fileKey) { let url = await this.getSignedUrlPromise(\"getObject\", { Bucket: bucketName, Key: fileKey, Expires: 1, }); console.log(url); window.location.href = url; } /** * オブジェクト取得 * @param {*} fileKey キー */ getObject(fileKey) { return this.s3.getObject({ Key: fileKey }).promise(); } /** * ファイル保存処理 * @param {File(blob)} file ファイル */ putObject(file) { const { folder } = this; let fileName = file.name; let fileKey; if (folder || folder === 0) fileKey = `${folder}/${fileName}`; else fileKey = fileName; return this.s3.putObject({ Key: fileKey, Body: file }).promise(); } /** * ファイル削除処理 * @param {string} fileKey ファイルキー */ deleteObject(fileKey) { return this.s3.deleteObject({ Key: fileKey }).promise(); } /** * ファイル保存処理(ビッグサイズ用) * @param {File(blob)} file ファイル */ upload(file) { const { folder } = this; let fileName = file.name; let fileKey; if (folder || folder === 0) fileKey = `${folder}/${fileName}`; else fileKey = fileName; return this.s3.upload({ Key: fileKey, Body: file }).promise(); } /** * URL発行 * @param {*} action アクション：getObject,putObject,deleteObject * @param {*} fileKey ファイルキー */ getSignedUrlPromise(action, params) { return this.s3.getSignedUrlPromise(action, params); } /** * マルチファイルアップロード管理 * @param {*} file */ managedUpload(file, progressCallBack) { const { folder } = this; let fileName = file.name; let fileKey; if (folder || folder === 0) fileKey = `${folder}/${fileName}`; else fileKey = fileName; this.request = new AWS.S3.ManagedUpload({ partSize: 100 * 1024 * 1024, queueSize: 1, params: { Bucket: bucketName, Key: fileKey, Body: file }, }); this.request.on(\"httpUploadProgress\", (progress) = { if (progressCallBack) progressCallBack(progress); else console.log( \"progress:\", Math.floor((progress.loaded / progress.total) * 100) ); }); this.request.send((err, data) = { if (err) console.error(err); console.info(data); }); return this.request.promise(); } /** * ファイル選択 * @param {*} event */ fileSelectorHandler(event) { event.preventDefault(); this.template.querySelector(\"c-fileupload-modal\").open(); } /** * フォルダ選択 * @param {*} event */ folderchangeHandler(event) { this.folder = event.detail; } /** * RowAction * @param {*} event */ async handleRowAction(event) { const action = event.detail.action; const row = event.detail.row; switch (action.name) { case \"download\": await this.fileDownload(row.key); break; case \"delete\": await this.deleteFile(row.key); break; } } /** * 初期化 */ connectedCallback() { this.columns = [ { label: \"フォルダー名\", fieldName: \"folder\" }, { label: \"ファイル名\", fieldName: \"fileName\" }, { label: \"タイプ\", fieldName: \"fileType\" }, { label: \"最新更新日\", fieldName: \"LastModified\" }, { label: \"所有者\", fieldName: \"Owner\" }, { label: \"サイズ\", fieldName: \"Size\" }, { label: \"ストレージクラス\", fieldName: \"StorageClass\" }, { type: \"action\", typeAttributes: { rowActions: [ { label: \"ダウンロード\", name: \"download\" }, { label: \"削除\", name: \"delete\" }, ], menuAlignment: \"auto\", }, }, ]; } /** * aws-sdkロード */ renderedCallback() { if (this.jsinit) return; this.jsinit = true; Promise.all([loadScript(this, AWS_SDK)]) .then(async () = { await this.initAWS(); }) .catch((error) = { showToast( this, \"JSライブラリロードに失敗しました\", error.message, \"error\" ); }); } }   xmlns=\"http://soap.sforce.com/2006/04/metadata\" 52.0 true  lightning__Tab    fileuploadModal\n  template  template if:true=\"{_isModalOpen}\"  section role=\"dialog\" tabindex=\"-1\" aria-modal=\"true\" class=\"slds-modal slds-fade-in-open\" style=\"z-index:9001\"  div class=\"slds-modal__container\" style=\"width: auto;max-width: fit-content;\"   header class=\"slds-modal__header\" button class=\"slds-button slds-button_icon slds-modal__close slds-button_icon-inverse\" title=\"Close\" onclick=\"{close}\"  lightning-icon icon-name=\"utility:close\" alternative-text=\"close\" variant=\"inverse\" size=\"small\"  lightning-icon span class=\"slds-assistive-text\"Closespan button h2 class=\"slds-text-heading_medium slds-hyphenate\"{title}h2 header  div class=\"slds-modal__content slds-p-around_medium\" style=\"height:50%\"  lightning-input label=\"パス\" name=\"path\" onchange=\"{commonChange}\" lightning-input lightning-input type=\"file\" label=\"ファイルアップロード\" onchange=\"{uploadHandler}\"  lightning-input div  footer class=\"slds-modal__footer\" button class=\"slds-button slds-button_neutral\" onclick=\"{close}\" キャンセル button ファイル追加 -- footer div section div class=\"slds-backdrop slds-backdrop_open\"div template template import { LightningElement, track, api } from \"lwc\"; export default class FileUploadModal extends LightningElement { @api name; @track path; //表示フラグ  @track _isModalOpen; /** * 共通Change処理 * @param {*} event */ commonChange(event) { let name = event.target.name; let value = event.target.value; this[name] = value; this.dispatchEvent( new CustomEvent(\"folderchange\", { detail: value, composed: true, bubbles: true, cancelable: true, }) ); } /** * ファイルアップロード * @param {*} event */ uploadHandler(event) { let changenEvent = new CustomEvent(\"select\", { detail: event.target, composed: true, bubbles: true, cancelable: true, }); this.dispatchEvent(changenEvent); } /** * モーダル開く */ @api open() { this._isModalOpen = true; } /** * モーダル閉じる */ close(e) { e.preventDefault(); this._isModalOpen = false; } }   xmlns=\"http://soap.sforce.com/2006/04/metadata\" 52.0 false   progressbar\n  template template if:true=\"{isShow}\" section role=\"dialog\" tabindex=\"-1\" class=\"slds-modal slds-fade-in-open\" aria-modal=\"true\" style=\"z-index:9002\"  div class=\"slds-modal__container\" style=\"width: auto;max-width: 50rem;\" header class=\"slds-modal__header\" button class=\"slds-button slds-button_icon slds-modal__close slds-button_icon-inverse\" title=\"Close\" onclick=\"{cancel}\"  lightning-icon icon-name=\"utility:close\" alternative-text=\"close\" variant=\"inverse\" size=\"small\"  lightning-icon span class=\"slds-assistive-text\"Closespan button h2 class=\"slds-modal__title slds-hyphenate\" ファイルをアップロード h2 header div class=\"slds-modal__content slds-p-around_medium\" style=\"display: grid;grid-template-columns: 0.5fr 3fr 3fr 0.5fr; height: 5rem;overflow-y: hidden;\"  div style=\"align-self: center;\" span class=\"slds-icon_container slds-icon-doctype-xml\" span div div style=\"align-self: center;\" span{uploadFileName} br /b{progress}%bspan div div class=\"slds-progress-bar slds-progress-bar_circular\" style=\"align-self: center;height: 0.6rem;width: 20rem;\"  span class=\"slds-progress-bar__value\" style=\"{barStyle}\"span div div style=\"align-self: center;margin-left: 0.2rem;\" span class=\"{barClass}\" span div div footer class=\"slds-modal__footer\" span style=\"float: left;\"span button class=\"slds-button slds-button_brand\" onclick=\"{cancel}\" キャンセル button footer div section div class=\"slds-backdrop slds-backdrop_open\"div template template import { LightningElement, track, api } from \"lwc\"; const bar_cancel_class = \"slds-icon_container slds-icon_container_circle slds-icon-action-description slds-icon-standard-password\"; const bar_success_class = \"slds-icon_container slds-icon_container_circle slds-icon-action-description slds-icon-text-success\"; export default class Fileupload extends LightningElement { @api uploadFileName; @api progress = 0; @track isShow; /** * ProgressBar */ get barStyle() { return `width:${this.progress}%`; } get barClass() { return this.progress = 100 ? bar_success_class : bar_cancel_class; } /** * キャンセル */ cancel(e) { e.preventDefault(); this.dispatchEvent( new CustomEvent(\"abort\", { detail: true, }) ); this.close(); } @api close() { this.isShow = false; } @api open() { this.isShow = true; } }   xmlns=\"http://soap.sforce.com/2006/04/metadata\" 52.0 false   utils\n  import { ShowToastEvent } from \"lightning/platformShowToastEvent\"; /** * メッセージ表示 * @param {window} that * @param {string} title タイトール * @param {string} message メッセージ * @param {string} variant タイプ info、success、warning、error */ export const showToast = (that, title, message, variant) = { const event = new ShowToastEvent({ title: title, message: message, variant: variant, }); that.dispatchEvent(event); }; /** * デートフォマート * @param {Date} date date * @param {string} fmt format * @returns {string} StringDate */ export const dateFormat = (date, fmt = \"YYYY/mm/dd\") = { let ret; const opt = { \"Y+\": date.getFullYear().toString(), // 年  \"m+\": (date.getMonth() + 1).toString(), // 月  \"d+\": date.getDate().toString(), // 日  \"H+\": date.getHours().toString(), // 時  \"M+\": date.getMinutes().toString(), // 分  \"S+\": date.getSeconds().toString(), // 秒  }; for (let k in opt) { ret = new RegExp(\"(\" + k + \")\").exec(fmt); if (ret) { fmt = fmt.replace( ret[1], ret[1].length == 1 ? opt[k] : opt[k].padStart(ret[1].length, \"0\") ); } } return fmt; }; /** * YYYY/MM/DD ⇒ Mon Nov 27 2017 20:30:00 GMT+0900 (JST)に変換 * @param {string} dataStr stringDate * @returns {Date} Date */ export const datePrase = (dataStr) = { return new Date(dataStr); }; /** * デートフォマート * @param {string} date strData * @param {string} fmt format * @returns {string} StringDate */ export const strDateFormat = (strData, fmt = \"YYYY/mm/dd HH:MM:SS\") = { return dateFormat(datePrase(strData), fmt); }; /** * ファイルサイズ変換 * @param {*} size バイト * @returns 変換後のサイズ */ export const fileSizeUnit = (size) = { // 1 KB = 1024 Byte  const kb = 1024; const mb = Math.pow(kb, 2); const gb = Math.pow(kb, 3); const tb = Math.pow(kb, 4); const pb = Math.pow(kb, 5); const round = (size, unit) = { return Math.round((size / unit) * 100.0) / 100.0; }; if (size = pb) { return round(size, pb) + \"PB\"; } else if (size = tb) { return round(size, tb) + \"TB\"; } else if (size = gb) { return round(size, gb) + \"GB\"; } else if (size = mb) { return round(size, mb) + \"MB\"; } else if (size = kb) { return round(size, kb) + \"KB\"; } return size + \"バイト\"; };   xmlns=\"http://soap.sforce.com/2006/04/metadata\" 52.0 false  4.Salesforce 側動作確認   4.1.Salesforce 側 Lightning コンポーネントタブを作成\n  4.2.タブを開く\n  4.3.ファイル追加\n  4.4.ファイルダウンロード\n  4.5.ファイル削除\n  5.参考 https://github.com/aws/aws-sdk-js\nhttps://docs.aws.amazon.com/sdk-for-javascript/v3/developer-guide/getting-started-browser.html\nhttps://docs.aws.amazon.com/ja_jp/AmazonS3/latest/userguide/ManageCorsUsing.html\nhttps://developer.salesforce.com/docs/component-library/bundle/lightning-platform-resource-loader/documentation\nhttps://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/S3.html\n","wordCount":"2592","inLanguage":"ja","datePublished":"2021-07-28T13:02:56+09:00","dateModified":"2021-07-28T13:02:56+09:00","author":{"@type":"Person","name":"Seiri"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://seiri.blog/posts/lwc-by-aws-3-and-operation/"},"publisher":{"@type":"Organization","name":"Seiri's Blog","logo":{"@type":"ImageObject","url":"https://seiri.blog/favicon.ico"}}}</script>
 </head>
 <body id=top>
 <script>localStorage.getItem("pref-theme")==="dark"&&document.body.classList.add('dark')</script>
@@ -101,7 +101,7 @@
 <h1 class=post-title>
 LWCでAWS S3と連携する方法
 </h1>
-<div class=post-meta><span title="2021-07-28 13:02:56 +0900 +0900">2021年7月28日</span>&nbsp;·&nbsp;6 分&nbsp;·&nbsp;2807 文字&nbsp;·&nbsp;Seiri
+<div class=post-meta><span title="2021-07-28 13:02:56 +0900 +0900">2021年7月28日</span>&nbsp;·&nbsp;6 分&nbsp;·&nbsp;2592 文字&nbsp;·&nbsp;Seiri
 </div>
 </header> <div class=toc>
 <details open>
@@ -146,12 +146,12 @@ LWCでAWS S3と連携する方法
 </code></pre></div><ul>
 <li>
 <p>2.2.Salesforce 側静的リソースに AWS の SDK をアップロードする<br>
-<img loading=lazy src=https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/1767576/816d13f2-28f5-67c5-84ac-f4188ce873c3.png alt=image.png>
+<img loading=lazy src=/images/816d13f2-28f5-67c5-84ac-f4188ce873c3.png alt=image.png>
 </p>
 </li>
 <li>
 <p>2.3.Salesforce 側 CSP 信頼済みサイトの設定<br>
-<img loading=lazy src=https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/1767576/a2e8aa58-c4fb-79ca-f1b5-c4117c2c7e03.png alt=image.png>
+<img loading=lazy src=/images/a2e8aa58-c4fb-79ca-f1b5-c4117c2c7e03.png alt=image.png>
 </p>
 </li>
 </ul>
@@ -163,12 +163,12 @@ LWCでAWS S3と連携する方法
  └─utils
 </code></pre><ul>
 <li>fileuploadMock<br>
-<img loading=lazy src=https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/1767576/dcff2ff5-6939-a3d7-bbef-ff11a4a8ad9c.png alt=image.png>
+<img loading=lazy src=/images/dcff2ff5-6939-a3d7-bbef-ff11a4a8ad9c.png alt=image.png>
 </li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fileuploadMock.css data-lang=fileuploadMock.css>.<span style=color:#a6e22e>container</span> {
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-css data-lang=css>.<span style=color:#a6e22e>container</span> {
   <span style=color:#66d9ef>background-color</span>: <span style=color:#ae81ff>#fff</span>;
-  <span style=color:#66d9ef>min-height</span>:<span style=color:#ae81ff>100</span><span style=color:#66d9ef>%</span>;
+  <span style=color:#66d9ef>min-height</span>: <span style=color:#ae81ff>100</span><span style=color:#66d9ef>%</span>;
 }
 
 .<span style=color:#a6e22e>wrapper</span> {
@@ -176,353 +176,369 @@ LWCでAWS S3と連携する方法
   <span style=color:#66d9ef>overflow</span>: <span style=color:#66d9ef>scroll</span>;
   <span style=color:#66d9ef>width</span>: <span style=color:#ae81ff>100</span><span style=color:#66d9ef>%</span>;
 }
-</code></pre></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fileuploadMock.html data-lang=fileuploadMock.html>&lt;<span style=color:#f92672>template</span>&gt;
-    &lt;<span style=color:#f92672>template</span> <span style=color:#a6e22e>if:true</span><span style=color:#f92672>=</span><span style=color:#e6db74>{loading}</span>&gt;
-        &lt;<span style=color:#f92672>lightning-spinner</span> <span style=color:#a6e22e>alternative-text</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;Loading&#34;</span> <span style=color:#a6e22e>size</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;medium&#34;</span>&gt;&lt;/<span style=color:#f92672>lightning-spinner</span>&gt;
-    &lt;/<span style=color:#f92672>template</span>&gt;
-    &lt;<span style=color:#f92672>c-progressbar</span> <span style=color:#a6e22e>upload-file-name</span><span style=color:#f92672>=</span><span style=color:#e6db74>{uploadFileName}</span> <span style=color:#a6e22e>progress</span><span style=color:#f92672>=</span><span style=color:#e6db74>{progress}</span> <span style=color:#a6e22e>onabort</span><span style=color:#f92672>=</span><span style=color:#e6db74>{Abort}</span>&gt;
-    &lt;/<span style=color:#f92672>c-progressbar</span>&gt;
-    &lt;<span style=color:#f92672>c-fileupload-modal</span> <span style=color:#a6e22e>title</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;ファイル追加&#34;</span> <span style=color:#a6e22e>onselect</span><span style=color:#f92672>=</span><span style=color:#e6db74>{uploadHandler}</span> <span style=color:#a6e22e>onfolderchange</span><span style=color:#f92672>=</span><span style=color:#e6db74>{folderchangeHandler}</span>&gt;&lt;/<span style=color:#f92672>c-fileupload-modal</span>&gt;
-    &lt;<span style=color:#f92672>lightning-card</span>&gt;
-        &lt;<span style=color:#f92672>div</span> <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;slds-p-horizontal_small&#34;</span>&gt;
-            &lt;<span style=color:#f92672>div</span> <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;slds-form&#34;</span>&gt;
-                &lt;<span style=color:#f92672>div</span> <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;slds-form__row&#34;</span>&gt;
-                    &lt;<span style=color:#f92672>div</span> <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;slds-form__item&#34;</span>&gt;
-                        &lt;<span style=color:#f92672>button</span> <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;slds-button slds-button_brand&#34;</span> <span style=color:#a6e22e>onclick</span><span style=color:#f92672>=</span><span style=color:#e6db74>{fileSelectorHandler}</span>&gt;ファイル追加&lt;/<span style=color:#f92672>button</span>&gt;
-                    &lt;/<span style=color:#f92672>div</span>&gt;
-                &lt;/<span style=color:#f92672>div</span>&gt;
-            &lt;/<span style=color:#f92672>div</span>&gt;
+</code></pre></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html>&lt;<span style=color:#f92672>template</span>&gt;
+  &lt;<span style=color:#f92672>template</span> <span style=color:#a6e22e>if:true</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;{loading}&#34;</span>&gt;
+    &lt;<span style=color:#f92672>lightning-spinner</span>
+      <span style=color:#a6e22e>alternative-text</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;Loading&#34;</span>
+      <span style=color:#a6e22e>size</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;medium&#34;</span>
+    &gt;&lt;/<span style=color:#f92672>lightning-spinner</span>&gt;
+  &lt;/<span style=color:#f92672>template</span>&gt;
+  &lt;<span style=color:#f92672>c-progressbar</span>
+    <span style=color:#a6e22e>upload-file-name</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;{uploadFileName}&#34;</span>
+    <span style=color:#a6e22e>progress</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;{progress}&#34;</span>
+    <span style=color:#a6e22e>onabort</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;{Abort}&#34;</span>
+  &gt;
+  &lt;/<span style=color:#f92672>c-progressbar</span>&gt;
+  &lt;<span style=color:#f92672>c-fileupload-modal</span>
+    <span style=color:#a6e22e>title</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;ファイル追加&#34;</span>
+    <span style=color:#a6e22e>onselect</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;{uploadHandler}&#34;</span>
+    <span style=color:#a6e22e>onfolderchange</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;{folderchangeHandler}&#34;</span>
+  &gt;&lt;/<span style=color:#f92672>c-fileupload-modal</span>&gt;
+  &lt;<span style=color:#f92672>lightning-card</span>&gt;
+    &lt;<span style=color:#f92672>div</span> <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;slds-p-horizontal_small&#34;</span>&gt;
+      &lt;<span style=color:#f92672>div</span> <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;slds-form&#34;</span>&gt;
+        &lt;<span style=color:#f92672>div</span> <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;slds-form__row&#34;</span>&gt;
+          &lt;<span style=color:#f92672>div</span> <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;slds-form__item&#34;</span>&gt;
+            &lt;<span style=color:#f92672>button</span>
+              <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;slds-button slds-button_brand&#34;</span>
+              <span style=color:#a6e22e>onclick</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;{fileSelectorHandler}&#34;</span>
+            &gt;
+              ファイル追加
+            &lt;/<span style=color:#f92672>button</span>&gt;
+          &lt;/<span style=color:#f92672>div</span>&gt;
         &lt;/<span style=color:#f92672>div</span>&gt;
-        &lt;<span style=color:#f92672>div</span> <span style=color:#a6e22e>slot</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;footer&#34;</span>&gt;
-            &lt;<span style=color:#f92672>lightning-datatable</span> <span style=color:#a6e22e>hide-checkbox-column</span> <span style=color:#a6e22e>key-field</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;key&#34;</span> <span style=color:#a6e22e>columns</span><span style=color:#f92672>=</span><span style=color:#e6db74>{columns}</span> <span style=color:#a6e22e>data</span><span style=color:#f92672>=</span><span style=color:#e6db74>{objectlist}</span>
-                <span style=color:#a6e22e>onrowaction</span><span style=color:#f92672>=</span><span style=color:#e6db74>{handleRowAction}</span>&gt;
-            &lt;/<span style=color:#f92672>lightning-datatable</span>&gt;
-        &lt;/<span style=color:#f92672>div</span>&gt;
-    &lt;/<span style=color:#f92672>lightning-card</span>&gt;
-
+      &lt;/<span style=color:#f92672>div</span>&gt;
+    &lt;/<span style=color:#f92672>div</span>&gt;
+    &lt;<span style=color:#f92672>div</span> <span style=color:#a6e22e>slot</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;footer&#34;</span>&gt;
+      &lt;<span style=color:#f92672>lightning-datatable</span>
+        <span style=color:#a6e22e>hide-checkbox-column</span>
+        <span style=color:#a6e22e>key-field</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;key&#34;</span>
+        <span style=color:#a6e22e>columns</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;{columns}&#34;</span>
+        <span style=color:#a6e22e>data</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;{objectlist}&#34;</span>
+        <span style=color:#a6e22e>onrowaction</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;{handleRowAction}&#34;</span>
+      &gt;
+      &lt;/<span style=color:#f92672>lightning-datatable</span>&gt;
+    &lt;/<span style=color:#f92672>div</span>&gt;
+  &lt;/<span style=color:#f92672>lightning-card</span>&gt;
 &lt;/<span style=color:#f92672>template</span>&gt;
-</code></pre></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fileuploadMock.js data-lang=fileuploadMock.js><span style=color:#66d9ef>import</span> { <span style=color:#a6e22e>LightningElement</span>, <span style=color:#a6e22e>track</span> } <span style=color:#a6e22e>from</span> <span style=color:#e6db74>&#39;lwc&#39;</span>;
-<span style=color:#66d9ef>import</span> { <span style=color:#a6e22e>NavigationMixin</span> } <span style=color:#a6e22e>from</span> <span style=color:#e6db74>&#39;lightning/navigation&#39;</span>;
-<span style=color:#66d9ef>import</span> { <span style=color:#a6e22e>loadScript</span> } <span style=color:#a6e22e>from</span> <span style=color:#e6db74>&#39;lightning/platformResourceLoader&#39;</span>;
-<span style=color:#66d9ef>import</span> <span style=color:#a6e22e>AWS_SDK</span> <span style=color:#a6e22e>from</span> <span style=color:#e6db74>&#39;@salesforce/resourceUrl/aws_sdk&#39;</span>;
-<span style=color:#66d9ef>import</span> { <span style=color:#a6e22e>showToast</span>, <span style=color:#a6e22e>dateFormat</span>, <span style=color:#a6e22e>fileSizeUnit</span> } <span style=color:#a6e22e>from</span> <span style=color:#e6db74>&#39;c/utils&#39;</span>;
+</code></pre></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=color:#66d9ef>import</span> { <span style=color:#a6e22e>LightningElement</span>, <span style=color:#a6e22e>track</span> } <span style=color:#a6e22e>from</span> <span style=color:#e6db74>&#34;lwc&#34;</span>;
+<span style=color:#66d9ef>import</span> { <span style=color:#a6e22e>NavigationMixin</span> } <span style=color:#a6e22e>from</span> <span style=color:#e6db74>&#34;lightning/navigation&#34;</span>;
+<span style=color:#66d9ef>import</span> { <span style=color:#a6e22e>loadScript</span> } <span style=color:#a6e22e>from</span> <span style=color:#e6db74>&#34;lightning/platformResourceLoader&#34;</span>;
+<span style=color:#66d9ef>import</span> <span style=color:#a6e22e>AWS_SDK</span> <span style=color:#a6e22e>from</span> <span style=color:#e6db74>&#34;@salesforce/resourceUrl/aws_sdk&#34;</span>;
+<span style=color:#66d9ef>import</span> { <span style=color:#a6e22e>showToast</span>, <span style=color:#a6e22e>dateFormat</span>, <span style=color:#a6e22e>fileSizeUnit</span> } <span style=color:#a6e22e>from</span> <span style=color:#e6db74>&#34;c/utils&#34;</span>;
 
-<span style=color:#66d9ef>const</span> <span style=color:#a6e22e>bucketName</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;bucket-name&#34;</span>;<span style=color:#75715e>//バケット名
-</span><span style=color:#75715e></span><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>region</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;ap-northeast-1&#34;</span>;<span style=color:#75715e>//地域
-</span><span style=color:#75715e></span><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>accessKeyId</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;accessKeyId &#34;</span>;<span style=color:#75715e>//アクセスID
-</span><span style=color:#75715e></span><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>secretAccessKey</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;secretAccessKey&#34;</span>;<span style=color:#75715e>//アクセスキー
+<span style=color:#66d9ef>const</span> <span style=color:#a6e22e>bucketName</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;bucket-name&#34;</span>; <span style=color:#75715e>//バケット名
+</span><span style=color:#75715e></span><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>region</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;ap-northeast-1&#34;</span>; <span style=color:#75715e>//地域
+</span><span style=color:#75715e></span><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>accessKeyId</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;accessKeyId &#34;</span>; <span style=color:#75715e>//アクセスID
+</span><span style=color:#75715e></span><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>secretAccessKey</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;secretAccessKey&#34;</span>; <span style=color:#75715e>//アクセスキー
 </span><span style=color:#75715e></span>
 <span style=color:#66d9ef>export</span> <span style=color:#66d9ef>default</span> <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>FileuploadMock</span> <span style=color:#66d9ef>extends</span> <span style=color:#a6e22e>NavigationMixin</span>(<span style=color:#a6e22e>LightningElement</span>) {
-    <span style=color:#75715e>//ファイル非活性
-</span><span style=color:#75715e></span>    <span style=color:#960050;background-color:#1e0010>@</span><span style=color:#a6e22e>track</span> <span style=color:#a6e22e>fileDisable</span>;
-    <span style=color:#960050;background-color:#1e0010>@</span><span style=color:#a6e22e>track</span> <span style=color:#a6e22e>datas</span>;
-    <span style=color:#960050;background-color:#1e0010>@</span><span style=color:#a6e22e>track</span> <span style=color:#a6e22e>objectlist</span> <span style=color:#f92672>=</span> [];
-    <span style=color:#960050;background-color:#1e0010>@</span><span style=color:#a6e22e>track</span> <span style=color:#a6e22e>folder</span>;
-    <span style=color:#960050;background-color:#1e0010>@</span><span style=color:#a6e22e>track</span> <span style=color:#a6e22e>loading</span>;
-    <span style=color:#960050;background-color:#1e0010>@</span><span style=color:#a6e22e>track</span> <span style=color:#a6e22e>uploadFileName</span>;
-    <span style=color:#960050;background-color:#1e0010>@</span><span style=color:#a6e22e>track</span> <span style=color:#a6e22e>progress</span>;
+  <span style=color:#75715e>//ファイル非活性
+</span><span style=color:#75715e></span>  <span style=color:#960050;background-color:#1e0010>@</span><span style=color:#a6e22e>track</span> <span style=color:#a6e22e>fileDisable</span>;
+  <span style=color:#960050;background-color:#1e0010>@</span><span style=color:#a6e22e>track</span> <span style=color:#a6e22e>datas</span>;
+  <span style=color:#960050;background-color:#1e0010>@</span><span style=color:#a6e22e>track</span> <span style=color:#a6e22e>objectlist</span> <span style=color:#f92672>=</span> [];
+  <span style=color:#960050;background-color:#1e0010>@</span><span style=color:#a6e22e>track</span> <span style=color:#a6e22e>folder</span>;
+  <span style=color:#960050;background-color:#1e0010>@</span><span style=color:#a6e22e>track</span> <span style=color:#a6e22e>loading</span>;
+  <span style=color:#960050;background-color:#1e0010>@</span><span style=color:#a6e22e>track</span> <span style=color:#a6e22e>uploadFileName</span>;
+  <span style=color:#960050;background-color:#1e0010>@</span><span style=color:#a6e22e>track</span> <span style=color:#a6e22e>progress</span>;
 
-    <span style=color:#75715e>/**
-</span><span style=color:#75715e>     * 初期化AWS
-</span><span style=color:#75715e>     */</span>
-    <span style=color:#66d9ef>async</span> <span style=color:#a6e22e>initAWS</span>() {
-        <span style=color:#a6e22e>AWS</span>.<span style=color:#a6e22e>config</span>.<span style=color:#a6e22e>update</span>({
-            <span style=color:#a6e22e>region</span><span style=color:#f92672>:</span> <span style=color:#a6e22e>region</span>,
-            <span style=color:#a6e22e>accessKeyId</span><span style=color:#f92672>:</span> <span style=color:#a6e22e>accessKeyId</span>,
-            <span style=color:#a6e22e>secretAccessKey</span><span style=color:#f92672>:</span> <span style=color:#a6e22e>secretAccessKey</span>
+  <span style=color:#75715e>/**
+</span><span style=color:#75715e>   * 初期化AWS
+</span><span style=color:#75715e>   */</span>
+  <span style=color:#66d9ef>async</span> <span style=color:#a6e22e>initAWS</span>() {
+    <span style=color:#a6e22e>AWS</span>.<span style=color:#a6e22e>config</span>.<span style=color:#a6e22e>update</span>({
+      <span style=color:#a6e22e>region</span><span style=color:#f92672>:</span> <span style=color:#a6e22e>region</span>,
+      <span style=color:#a6e22e>accessKeyId</span><span style=color:#f92672>:</span> <span style=color:#a6e22e>accessKeyId</span>,
+      <span style=color:#a6e22e>secretAccessKey</span><span style=color:#f92672>:</span> <span style=color:#a6e22e>secretAccessKey</span>,
+    });
+
+    <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>s3</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> <span style=color:#a6e22e>AWS</span>.<span style=color:#a6e22e>S3</span>({
+      <span style=color:#a6e22e>apiVersion</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;2006-03-01&#34;</span>,
+      <span style=color:#a6e22e>params</span><span style=color:#f92672>:</span> { <span style=color:#a6e22e>Bucket</span><span style=color:#f92672>:</span> <span style=color:#a6e22e>bucketName</span> },
+    });
+    <span style=color:#66d9ef>await</span> <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>listObjects</span>();
+  }
+
+  <span style=color:#75715e>/**
+</span><span style=color:#75715e>   * ファイルアップロード
+</span><span style=color:#75715e>   * @param {*} event
+</span><span style=color:#75715e>   */</span>
+  <span style=color:#66d9ef>async</span> <span style=color:#a6e22e>uploadHandler</span>(<span style=color:#a6e22e>event</span>) {
+    <span style=color:#66d9ef>let</span> <span style=color:#a6e22e>input</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>event</span>.<span style=color:#a6e22e>detail</span>;
+    <span style=color:#66d9ef>let</span> <span style=color:#a6e22e>files</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>input</span>.<span style=color:#a6e22e>files</span>;
+    <span style=color:#66d9ef>if</span> (<span style=color:#a6e22e>files</span>.<span style=color:#a6e22e>length</span> <span style=color:#f92672>&gt;</span> <span style=color:#ae81ff>0</span>) {
+      <span style=color:#66d9ef>try</span> {
+        <span style=color:#75715e>// let result = await this.upload(files[0]);
+</span><span style=color:#75715e></span>        <span style=color:#66d9ef>let</span> <span style=color:#a6e22e>result</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>await</span> <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>managedUpload</span>(<span style=color:#a6e22e>files</span>[<span style=color:#ae81ff>0</span>], (<span style=color:#a6e22e>progress</span>) =&gt; {
+          <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>uploadFileName</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>files</span>[<span style=color:#ae81ff>0</span>].<span style=color:#a6e22e>name</span>;
+          <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>progress</span> <span style=color:#f92672>=</span> Math.<span style=color:#a6e22e>floor</span>((<span style=color:#a6e22e>progress</span>.<span style=color:#a6e22e>loaded</span> <span style=color:#f92672>/</span> <span style=color:#a6e22e>progress</span>.<span style=color:#a6e22e>total</span>) <span style=color:#f92672>*</span> <span style=color:#ae81ff>100</span>);
+          <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>template</span>.<span style=color:#a6e22e>querySelector</span>(<span style=color:#e6db74>&#34;c-progressbar&#34;</span>).<span style=color:#a6e22e>open</span>();
         });
 
-        <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>s3</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> <span style=color:#a6e22e>AWS</span>.<span style=color:#a6e22e>S3</span>({
-            <span style=color:#a6e22e>apiVersion</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;2006-03-01&#34;</span>,
-            <span style=color:#a6e22e>params</span><span style=color:#f92672>:</span> { <span style=color:#a6e22e>Bucket</span><span style=color:#f92672>:</span> <span style=color:#a6e22e>bucketName</span> }
-        });
+        <span style=color:#75715e>// console.log(result);
+</span><span style=color:#75715e></span>        <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>template</span>.<span style=color:#a6e22e>querySelector</span>(<span style=color:#e6db74>&#34;c-progressbar&#34;</span>).<span style=color:#a6e22e>close</span>();
         <span style=color:#66d9ef>await</span> <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>listObjects</span>();
+        <span style=color:#a6e22e>showToast</span>(<span style=color:#66d9ef>this</span>, <span style=color:#e6db74>&#34;&#34;</span>, <span style=color:#e6db74>&#34;成功にアップロードしました&#34;</span>, <span style=color:#e6db74>&#34;success&#34;</span>);
+      } <span style=color:#66d9ef>catch</span> (<span style=color:#a6e22e>err</span>) {
+        <span style=color:#a6e22e>showToast</span>(<span style=color:#66d9ef>this</span>, <span style=color:#e6db74>&#34;&#34;</span>, <span style=color:#a6e22e>err</span>.<span style=color:#a6e22e>message</span>, <span style=color:#e6db74>&#34;error&#34;</span>);
+        <span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>error</span>(<span style=color:#e6db74>&#34;Error:&#34;</span>, <span style=color:#a6e22e>err</span>);
+      }
     }
+  }
 
+  <span style=color:#75715e>/**
+</span><span style=color:#75715e>   * ファイルアップロードキャンセル
+</span><span style=color:#75715e>   */</span>
+  <span style=color:#66d9ef>async</span> <span style=color:#a6e22e>Abort</span>() {
+    <span style=color:#66d9ef>await</span> <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>request</span>.<span style=color:#a6e22e>abort</span>();
+  }
 
-
-    <span style=color:#75715e>/**
-</span><span style=color:#75715e>     * ファイルアップロード
-</span><span style=color:#75715e>     * @param {*} event
-</span><span style=color:#75715e>     */</span>
-    <span style=color:#66d9ef>async</span> <span style=color:#a6e22e>uploadHandler</span>(<span style=color:#a6e22e>event</span>) {
-        <span style=color:#66d9ef>let</span> <span style=color:#a6e22e>input</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>event</span>.<span style=color:#a6e22e>detail</span>;
-        <span style=color:#66d9ef>let</span> <span style=color:#a6e22e>files</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>input</span>.<span style=color:#a6e22e>files</span>;
-        <span style=color:#66d9ef>if</span> (<span style=color:#a6e22e>files</span>.<span style=color:#a6e22e>length</span> <span style=color:#f92672>&gt;</span> <span style=color:#ae81ff>0</span>) {
-            <span style=color:#66d9ef>try</span> {
-                <span style=color:#75715e>// let result = await this.upload(files[0]);
-</span><span style=color:#75715e></span>                <span style=color:#66d9ef>let</span> <span style=color:#a6e22e>result</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>await</span> <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>managedUpload</span>(<span style=color:#a6e22e>files</span>[<span style=color:#ae81ff>0</span>], (<span style=color:#a6e22e>progress</span>) =&gt; {
-                    <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>uploadFileName</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>files</span>[<span style=color:#ae81ff>0</span>].<span style=color:#a6e22e>name</span>;
-                    <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>progress</span> <span style=color:#f92672>=</span> Math.<span style=color:#a6e22e>floor</span>(<span style=color:#a6e22e>progress</span>.<span style=color:#a6e22e>loaded</span> <span style=color:#f92672>/</span> <span style=color:#a6e22e>progress</span>.<span style=color:#a6e22e>total</span> <span style=color:#f92672>*</span> <span style=color:#ae81ff>100</span>);
-                    <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>template</span>.<span style=color:#a6e22e>querySelector</span>(<span style=color:#e6db74>&#39;c-progressbar&#39;</span>).<span style=color:#a6e22e>open</span>();
-                });
-
-                <span style=color:#75715e>// console.log(result);
-</span><span style=color:#75715e></span>                <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>template</span>.<span style=color:#a6e22e>querySelector</span>(<span style=color:#e6db74>&#39;c-progressbar&#39;</span>).<span style=color:#a6e22e>close</span>();
-                <span style=color:#66d9ef>await</span> <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>listObjects</span>();
-                <span style=color:#a6e22e>showToast</span>(<span style=color:#66d9ef>this</span>, <span style=color:#e6db74>&#39;&#39;</span>, <span style=color:#e6db74>&#39;成功にアップロードしました&#39;</span>, <span style=color:#e6db74>&#39;success&#39;</span>);
-            } <span style=color:#66d9ef>catch</span> (<span style=color:#a6e22e>err</span>) {
-                <span style=color:#a6e22e>showToast</span>(<span style=color:#66d9ef>this</span>, <span style=color:#e6db74>&#39;&#39;</span>, <span style=color:#a6e22e>err</span>.<span style=color:#a6e22e>message</span>, <span style=color:#e6db74>&#39;error&#39;</span>);
-                <span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>error</span>(<span style=color:#e6db74>&#34;Error:&#34;</span>, <span style=color:#a6e22e>err</span>);
-            }
-        }
+  <span style=color:#75715e>/**
+</span><span style=color:#75715e>   * ファイルダウンロード
+</span><span style=color:#75715e>   * @param {*} event
+</span><span style=color:#75715e>   */</span>
+  <span style=color:#66d9ef>async</span> <span style=color:#a6e22e>fileDownload</span>(<span style=color:#a6e22e>fileKey</span>) {
+    <span style=color:#66d9ef>try</span> {
+      <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>loading</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>true</span>;
+      <span style=color:#66d9ef>await</span> <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>downloadFile</span>(<span style=color:#a6e22e>fileKey</span>);
+    } <span style=color:#66d9ef>catch</span> (<span style=color:#a6e22e>err</span>) {
+      <span style=color:#a6e22e>showToast</span>(<span style=color:#66d9ef>this</span>, <span style=color:#e6db74>&#34;&#34;</span>, <span style=color:#a6e22e>err</span>.<span style=color:#a6e22e>message</span>, <span style=color:#e6db74>&#34;error&#34;</span>);
+      <span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>error</span>(<span style=color:#e6db74>&#34;Error:&#34;</span>, <span style=color:#a6e22e>err</span>);
+    } <span style=color:#66d9ef>finally</span> {
+      <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>loading</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>false</span>;
     }
+  }
 
-    <span style=color:#75715e>/**
-</span><span style=color:#75715e>     * ファイルアップロードキャンセル
-</span><span style=color:#75715e>     */</span>
-    <span style=color:#66d9ef>async</span> <span style=color:#a6e22e>Abort</span>() {
-        <span style=color:#66d9ef>await</span> <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>request</span>.<span style=color:#a6e22e>abort</span>();
+  <span style=color:#75715e>/**
+</span><span style=color:#75715e>   * ファイル削除
+</span><span style=color:#75715e>   * @param {string} fileKey
+</span><span style=color:#75715e>   */</span>
+  <span style=color:#66d9ef>async</span> <span style=color:#a6e22e>deleteFile</span>(<span style=color:#a6e22e>fileKey</span>) {
+    <span style=color:#66d9ef>try</span> {
+      <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>loading</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>true</span>;
+      <span style=color:#66d9ef>await</span> <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>deleteObject</span>(<span style=color:#a6e22e>fileKey</span>);
+      <span style=color:#66d9ef>await</span> <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>listObjects</span>();
+      <span style=color:#a6e22e>showToast</span>(<span style=color:#66d9ef>this</span>, <span style=color:#e6db74>&#34;&#34;</span>, <span style=color:#e6db74>&#34;成功に削除しました&#34;</span>, <span style=color:#e6db74>&#34;success&#34;</span>);
+    } <span style=color:#66d9ef>catch</span> (<span style=color:#a6e22e>err</span>) {
+      <span style=color:#a6e22e>showToast</span>(<span style=color:#66d9ef>this</span>, <span style=color:#e6db74>&#34;&#34;</span>, <span style=color:#a6e22e>err</span>.<span style=color:#a6e22e>message</span>, <span style=color:#e6db74>&#34;error&#34;</span>);
+      <span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>error</span>(<span style=color:#e6db74>&#34;Error:&#34;</span>, <span style=color:#a6e22e>err</span>);
+    } <span style=color:#66d9ef>finally</span> {
+      <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>loading</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>false</span>;
     }
+  }
 
+  <span style=color:#75715e>/**
+</span><span style=color:#75715e>   * ファイルリスト取得
+</span><span style=color:#75715e>   */</span>
+  <span style=color:#66d9ef>async</span> <span style=color:#a6e22e>listObjects</span>() {
+    <span style=color:#66d9ef>let</span> <span style=color:#a6e22e>data</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>await</span> <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>s3</span>.<span style=color:#a6e22e>listObjects</span>().<span style=color:#a6e22e>promise</span>();
+    <span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#a6e22e>data</span>);
+    <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>objectlist</span> <span style=color:#f92672>=</span> [];
+    <span style=color:#a6e22e>data</span>.<span style=color:#a6e22e>Contents</span>.<span style=color:#a6e22e>forEach</span>((<span style=color:#a6e22e>e</span>) =&gt; {
+      <span style=color:#66d9ef>let</span> <span style=color:#a6e22e>key</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>e</span>.<span style=color:#a6e22e>Key</span>;
+      <span style=color:#66d9ef>let</span> <span style=color:#a6e22e>folder</span>;
+      <span style=color:#66d9ef>let</span> <span style=color:#a6e22e>fileName</span>;
+      <span style=color:#66d9ef>if</span> (<span style=color:#a6e22e>e</span>.<span style=color:#a6e22e>Size</span> <span style=color:#f92672>===</span> <span style=color:#ae81ff>0</span>) <span style=color:#66d9ef>return</span>;
+      <span style=color:#66d9ef>if</span> (<span style=color:#a6e22e>key</span>.<span style=color:#a6e22e>lastIndexOf</span>(<span style=color:#e6db74>&#34;/&#34;</span>) <span style=color:#f92672>&gt;</span> <span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>) {
+        <span style=color:#a6e22e>fileName</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>key</span>.<span style=color:#a6e22e>substring</span>(<span style=color:#a6e22e>key</span>.<span style=color:#a6e22e>lastIndexOf</span>(<span style=color:#e6db74>&#34;/&#34;</span>) <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span>, <span style=color:#a6e22e>key</span>.<span style=color:#a6e22e>length</span>);
+        <span style=color:#a6e22e>folder</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;./&#34;</span> <span style=color:#f92672>+</span> <span style=color:#a6e22e>key</span>.<span style=color:#a6e22e>replace</span>(<span style=color:#a6e22e>fileName</span>, <span style=color:#e6db74>&#34;&#34;</span>);
+      } <span style=color:#66d9ef>else</span> {
+        <span style=color:#a6e22e>folder</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;./&#34;</span>;
+        <span style=color:#a6e22e>fileName</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>key</span>;
+      }
 
-    <span style=color:#75715e>/**
-</span><span style=color:#75715e>     * ファイルダウンロード
-</span><span style=color:#75715e>     * @param {*} event
-</span><span style=color:#75715e>     */</span>
-    <span style=color:#66d9ef>async</span> <span style=color:#a6e22e>fileDownload</span>(<span style=color:#a6e22e>fileKey</span>) {
-        <span style=color:#66d9ef>try</span> {
-            <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>loading</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>true</span>;
-            <span style=color:#66d9ef>await</span> <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>downloadFile</span>(<span style=color:#a6e22e>fileKey</span>);
-        } <span style=color:#66d9ef>catch</span> (<span style=color:#a6e22e>err</span>) {
-            <span style=color:#a6e22e>showToast</span>(<span style=color:#66d9ef>this</span>, <span style=color:#e6db74>&#39;&#39;</span>, <span style=color:#a6e22e>err</span>.<span style=color:#a6e22e>message</span>, <span style=color:#e6db74>&#39;error&#39;</span>);
-            <span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>error</span>(<span style=color:#e6db74>&#34;Error:&#34;</span>, <span style=color:#a6e22e>err</span>);
-        } <span style=color:#66d9ef>finally</span> {
-            <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>loading</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>false</span>;
-        }
+      <span style=color:#66d9ef>let</span> <span style=color:#a6e22e>fileType</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>fileName</span>.<span style=color:#a6e22e>split</span>(<span style=color:#e6db74>&#34;.&#34;</span>)[<span style=color:#ae81ff>1</span>];
+      <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>objectlist</span>.<span style=color:#a6e22e>push</span>({
+        <span style=color:#a6e22e>key</span><span style=color:#f92672>:</span> <span style=color:#a6e22e>key</span>,
+        <span style=color:#a6e22e>folder</span><span style=color:#f92672>:</span> <span style=color:#a6e22e>folder</span>,
+        <span style=color:#a6e22e>fileName</span><span style=color:#f92672>:</span> <span style=color:#a6e22e>fileName</span>,
+        <span style=color:#a6e22e>fileType</span><span style=color:#f92672>:</span> <span style=color:#a6e22e>fileType</span>,
+        <span style=color:#a6e22e>LastModified</span><span style=color:#f92672>:</span> <span style=color:#a6e22e>dateFormat</span>(<span style=color:#a6e22e>e</span>.<span style=color:#a6e22e>LastModified</span>, <span style=color:#e6db74>&#34;YYYY/mm/dd HH:MM:SS&#34;</span>),
+        <span style=color:#a6e22e>Owner</span><span style=color:#f92672>:</span> <span style=color:#a6e22e>e</span>.<span style=color:#a6e22e>Owner</span>.<span style=color:#a6e22e>DisplayName</span>,
+        <span style=color:#a6e22e>Size</span><span style=color:#f92672>:</span> <span style=color:#a6e22e>fileSizeUnit</span>(<span style=color:#a6e22e>e</span>.<span style=color:#a6e22e>Size</span>),
+        <span style=color:#a6e22e>StorageClass</span><span style=color:#f92672>:</span> <span style=color:#a6e22e>e</span>.<span style=color:#a6e22e>StorageClass</span>,
+      });
+    });
+  }
+
+  <span style=color:#75715e>/**
+</span><span style=color:#75715e>   * ファイル取得処理
+</span><span style=color:#75715e>   * @param {string} fileKey キー
+</span><span style=color:#75715e>   * @param {string} fileName ファイル名
+</span><span style=color:#75715e>   */</span>
+  <span style=color:#66d9ef>async</span> <span style=color:#a6e22e>downloadFile</span>(<span style=color:#a6e22e>fileKey</span>) {
+    <span style=color:#66d9ef>let</span> <span style=color:#a6e22e>url</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>await</span> <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>getSignedUrlPromise</span>(<span style=color:#e6db74>&#34;getObject&#34;</span>, {
+      <span style=color:#a6e22e>Bucket</span><span style=color:#f92672>:</span> <span style=color:#a6e22e>bucketName</span>,
+      <span style=color:#a6e22e>Key</span><span style=color:#f92672>:</span> <span style=color:#a6e22e>fileKey</span>,
+      <span style=color:#a6e22e>Expires</span><span style=color:#f92672>:</span> <span style=color:#ae81ff>1</span>,
+    });
+    <span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#a6e22e>url</span>);
+    window.<span style=color:#a6e22e>location</span>.<span style=color:#a6e22e>href</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>url</span>;
+  }
+
+  <span style=color:#75715e>/**
+</span><span style=color:#75715e>   * オブジェクト取得
+</span><span style=color:#75715e>   * @param {*} fileKey キー
+</span><span style=color:#75715e>   */</span>
+  <span style=color:#a6e22e>getObject</span>(<span style=color:#a6e22e>fileKey</span>) {
+    <span style=color:#66d9ef>return</span> <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>s3</span>.<span style=color:#a6e22e>getObject</span>({ <span style=color:#a6e22e>Key</span><span style=color:#f92672>:</span> <span style=color:#a6e22e>fileKey</span> }).<span style=color:#a6e22e>promise</span>();
+  }
+
+  <span style=color:#75715e>/**
+</span><span style=color:#75715e>   * ファイル保存処理
+</span><span style=color:#75715e>   * @param {File(blob)} file ファイル
+</span><span style=color:#75715e>   */</span>
+  <span style=color:#a6e22e>putObject</span>(<span style=color:#a6e22e>file</span>) {
+    <span style=color:#66d9ef>const</span> { <span style=color:#a6e22e>folder</span> } <span style=color:#f92672>=</span> <span style=color:#66d9ef>this</span>;
+    <span style=color:#66d9ef>let</span> <span style=color:#a6e22e>fileName</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>file</span>.<span style=color:#a6e22e>name</span>;
+    <span style=color:#66d9ef>let</span> <span style=color:#a6e22e>fileKey</span>;
+    <span style=color:#66d9ef>if</span> (<span style=color:#a6e22e>folder</span> <span style=color:#f92672>||</span> <span style=color:#a6e22e>folder</span> <span style=color:#f92672>===</span> <span style=color:#ae81ff>0</span>) <span style=color:#a6e22e>fileKey</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>`</span><span style=color:#e6db74>${</span><span style=color:#a6e22e>folder</span><span style=color:#e6db74>}</span><span style=color:#e6db74>/</span><span style=color:#e6db74>${</span><span style=color:#a6e22e>fileName</span><span style=color:#e6db74>}</span><span style=color:#e6db74>`</span>;
+    <span style=color:#66d9ef>else</span> <span style=color:#a6e22e>fileKey</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>fileName</span>;
+    <span style=color:#66d9ef>return</span> <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>s3</span>.<span style=color:#a6e22e>putObject</span>({ <span style=color:#a6e22e>Key</span><span style=color:#f92672>:</span> <span style=color:#a6e22e>fileKey</span>, <span style=color:#a6e22e>Body</span><span style=color:#f92672>:</span> <span style=color:#a6e22e>file</span> }).<span style=color:#a6e22e>promise</span>();
+  }
+
+  <span style=color:#75715e>/**
+</span><span style=color:#75715e>   * ファイル削除処理
+</span><span style=color:#75715e>   * @param {string} fileKey ファイルキー
+</span><span style=color:#75715e>   */</span>
+  <span style=color:#a6e22e>deleteObject</span>(<span style=color:#a6e22e>fileKey</span>) {
+    <span style=color:#66d9ef>return</span> <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>s3</span>.<span style=color:#a6e22e>deleteObject</span>({ <span style=color:#a6e22e>Key</span><span style=color:#f92672>:</span> <span style=color:#a6e22e>fileKey</span> }).<span style=color:#a6e22e>promise</span>();
+  }
+
+  <span style=color:#75715e>/**
+</span><span style=color:#75715e>   * ファイル保存処理(ビッグサイズ用)
+</span><span style=color:#75715e>   * @param {File(blob)} file ファイル
+</span><span style=color:#75715e>   */</span>
+  <span style=color:#a6e22e>upload</span>(<span style=color:#a6e22e>file</span>) {
+    <span style=color:#66d9ef>const</span> { <span style=color:#a6e22e>folder</span> } <span style=color:#f92672>=</span> <span style=color:#66d9ef>this</span>;
+    <span style=color:#66d9ef>let</span> <span style=color:#a6e22e>fileName</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>file</span>.<span style=color:#a6e22e>name</span>;
+    <span style=color:#66d9ef>let</span> <span style=color:#a6e22e>fileKey</span>;
+    <span style=color:#66d9ef>if</span> (<span style=color:#a6e22e>folder</span> <span style=color:#f92672>||</span> <span style=color:#a6e22e>folder</span> <span style=color:#f92672>===</span> <span style=color:#ae81ff>0</span>) <span style=color:#a6e22e>fileKey</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>`</span><span style=color:#e6db74>${</span><span style=color:#a6e22e>folder</span><span style=color:#e6db74>}</span><span style=color:#e6db74>/</span><span style=color:#e6db74>${</span><span style=color:#a6e22e>fileName</span><span style=color:#e6db74>}</span><span style=color:#e6db74>`</span>;
+    <span style=color:#66d9ef>else</span> <span style=color:#a6e22e>fileKey</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>fileName</span>;
+    <span style=color:#66d9ef>return</span> <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>s3</span>.<span style=color:#a6e22e>upload</span>({ <span style=color:#a6e22e>Key</span><span style=color:#f92672>:</span> <span style=color:#a6e22e>fileKey</span>, <span style=color:#a6e22e>Body</span><span style=color:#f92672>:</span> <span style=color:#a6e22e>file</span> }).<span style=color:#a6e22e>promise</span>();
+  }
+
+  <span style=color:#75715e>/**
+</span><span style=color:#75715e>   * URL発行
+</span><span style=color:#75715e>   * @param {*} action アクション：getObject,putObject,deleteObject
+</span><span style=color:#75715e>   * @param {*} fileKey ファイルキー
+</span><span style=color:#75715e>   */</span>
+  <span style=color:#a6e22e>getSignedUrlPromise</span>(<span style=color:#a6e22e>action</span>, <span style=color:#a6e22e>params</span>) {
+    <span style=color:#66d9ef>return</span> <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>s3</span>.<span style=color:#a6e22e>getSignedUrlPromise</span>(<span style=color:#a6e22e>action</span>, <span style=color:#a6e22e>params</span>);
+  }
+
+  <span style=color:#75715e>/**
+</span><span style=color:#75715e>   * マルチファイルアップロード管理
+</span><span style=color:#75715e>   * @param {*} file
+</span><span style=color:#75715e>   */</span>
+  <span style=color:#a6e22e>managedUpload</span>(<span style=color:#a6e22e>file</span>, <span style=color:#a6e22e>progressCallBack</span>) {
+    <span style=color:#66d9ef>const</span> { <span style=color:#a6e22e>folder</span> } <span style=color:#f92672>=</span> <span style=color:#66d9ef>this</span>;
+    <span style=color:#66d9ef>let</span> <span style=color:#a6e22e>fileName</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>file</span>.<span style=color:#a6e22e>name</span>;
+    <span style=color:#66d9ef>let</span> <span style=color:#a6e22e>fileKey</span>;
+    <span style=color:#66d9ef>if</span> (<span style=color:#a6e22e>folder</span> <span style=color:#f92672>||</span> <span style=color:#a6e22e>folder</span> <span style=color:#f92672>===</span> <span style=color:#ae81ff>0</span>) <span style=color:#a6e22e>fileKey</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>`</span><span style=color:#e6db74>${</span><span style=color:#a6e22e>folder</span><span style=color:#e6db74>}</span><span style=color:#e6db74>/</span><span style=color:#e6db74>${</span><span style=color:#a6e22e>fileName</span><span style=color:#e6db74>}</span><span style=color:#e6db74>`</span>;
+    <span style=color:#66d9ef>else</span> <span style=color:#a6e22e>fileKey</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>fileName</span>;
+
+    <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>request</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> <span style=color:#a6e22e>AWS</span>.<span style=color:#a6e22e>S3</span>.<span style=color:#a6e22e>ManagedUpload</span>({
+      <span style=color:#a6e22e>partSize</span><span style=color:#f92672>:</span> <span style=color:#ae81ff>100</span> <span style=color:#f92672>*</span> <span style=color:#ae81ff>1024</span> <span style=color:#f92672>*</span> <span style=color:#ae81ff>1024</span>,
+      <span style=color:#a6e22e>queueSize</span><span style=color:#f92672>:</span> <span style=color:#ae81ff>1</span>,
+      <span style=color:#a6e22e>params</span><span style=color:#f92672>:</span> { <span style=color:#a6e22e>Bucket</span><span style=color:#f92672>:</span> <span style=color:#a6e22e>bucketName</span>, <span style=color:#a6e22e>Key</span><span style=color:#f92672>:</span> <span style=color:#a6e22e>fileKey</span>, <span style=color:#a6e22e>Body</span><span style=color:#f92672>:</span> <span style=color:#a6e22e>file</span> },
+    });
+    <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>request</span>.<span style=color:#a6e22e>on</span>(<span style=color:#e6db74>&#34;httpUploadProgress&#34;</span>, (<span style=color:#a6e22e>progress</span>) =&gt; {
+      <span style=color:#66d9ef>if</span> (<span style=color:#a6e22e>progressCallBack</span>) <span style=color:#a6e22e>progressCallBack</span>(<span style=color:#a6e22e>progress</span>);
+      <span style=color:#66d9ef>else</span>
+        <span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(
+          <span style=color:#e6db74>&#34;progress:&#34;</span>,
+          Math.<span style=color:#a6e22e>floor</span>((<span style=color:#a6e22e>progress</span>.<span style=color:#a6e22e>loaded</span> <span style=color:#f92672>/</span> <span style=color:#a6e22e>progress</span>.<span style=color:#a6e22e>total</span>) <span style=color:#f92672>*</span> <span style=color:#ae81ff>100</span>)
+        );
+    });
+
+    <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>request</span>.<span style=color:#a6e22e>send</span>((<span style=color:#a6e22e>err</span>, <span style=color:#a6e22e>data</span>) =&gt; {
+      <span style=color:#66d9ef>if</span> (<span style=color:#a6e22e>err</span>) <span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>error</span>(<span style=color:#a6e22e>err</span>);
+      <span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>info</span>(<span style=color:#a6e22e>data</span>);
+    });
+    <span style=color:#66d9ef>return</span> <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>request</span>.<span style=color:#a6e22e>promise</span>();
+  }
+
+  <span style=color:#75715e>/**
+</span><span style=color:#75715e>   *  ファイル選択
+</span><span style=color:#75715e>   * @param {*} event
+</span><span style=color:#75715e>   */</span>
+  <span style=color:#a6e22e>fileSelectorHandler</span>(<span style=color:#a6e22e>event</span>) {
+    <span style=color:#a6e22e>event</span>.<span style=color:#a6e22e>preventDefault</span>();
+    <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>template</span>.<span style=color:#a6e22e>querySelector</span>(<span style=color:#e6db74>&#34;c-fileupload-modal&#34;</span>).<span style=color:#a6e22e>open</span>();
+  }
+
+  <span style=color:#75715e>/**
+</span><span style=color:#75715e>   * フォルダ選択
+</span><span style=color:#75715e>   * @param {*} event
+</span><span style=color:#75715e>   */</span>
+  <span style=color:#a6e22e>folderchangeHandler</span>(<span style=color:#a6e22e>event</span>) {
+    <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>folder</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>event</span>.<span style=color:#a6e22e>detail</span>;
+  }
+
+  <span style=color:#75715e>/**
+</span><span style=color:#75715e>   * RowAction
+</span><span style=color:#75715e>   * @param {*} event
+</span><span style=color:#75715e>   */</span>
+  <span style=color:#66d9ef>async</span> <span style=color:#a6e22e>handleRowAction</span>(<span style=color:#a6e22e>event</span>) {
+    <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>action</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>event</span>.<span style=color:#a6e22e>detail</span>.<span style=color:#a6e22e>action</span>;
+    <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>row</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>event</span>.<span style=color:#a6e22e>detail</span>.<span style=color:#a6e22e>row</span>;
+    <span style=color:#66d9ef>switch</span> (<span style=color:#a6e22e>action</span>.<span style=color:#a6e22e>name</span>) {
+      <span style=color:#66d9ef>case</span> <span style=color:#e6db74>&#34;download&#34;</span><span style=color:#f92672>:</span>
+        <span style=color:#66d9ef>await</span> <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>fileDownload</span>(<span style=color:#a6e22e>row</span>.<span style=color:#a6e22e>key</span>);
+        <span style=color:#66d9ef>break</span>;
+      <span style=color:#66d9ef>case</span> <span style=color:#e6db74>&#34;delete&#34;</span><span style=color:#f92672>:</span>
+        <span style=color:#66d9ef>await</span> <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>deleteFile</span>(<span style=color:#a6e22e>row</span>.<span style=color:#a6e22e>key</span>);
+        <span style=color:#66d9ef>break</span>;
     }
+  }
 
-    <span style=color:#75715e>/**
-</span><span style=color:#75715e>     * ファイル削除
-</span><span style=color:#75715e>     * @param {string} fileKey
-</span><span style=color:#75715e>     */</span>
-    <span style=color:#66d9ef>async</span> <span style=color:#a6e22e>deleteFile</span>(<span style=color:#a6e22e>fileKey</span>) {
-        <span style=color:#66d9ef>try</span> {
-            <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>loading</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>true</span>;
-            <span style=color:#66d9ef>await</span> <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>deleteObject</span>(<span style=color:#a6e22e>fileKey</span>);
-            <span style=color:#66d9ef>await</span> <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>listObjects</span>();
-            <span style=color:#a6e22e>showToast</span>(<span style=color:#66d9ef>this</span>, <span style=color:#e6db74>&#39;&#39;</span>, <span style=color:#e6db74>&#39;成功に削除しました&#39;</span>, <span style=color:#e6db74>&#39;success&#39;</span>);
-        } <span style=color:#66d9ef>catch</span> (<span style=color:#a6e22e>err</span>) {
-            <span style=color:#a6e22e>showToast</span>(<span style=color:#66d9ef>this</span>, <span style=color:#e6db74>&#39;&#39;</span>, <span style=color:#a6e22e>err</span>.<span style=color:#a6e22e>message</span>, <span style=color:#e6db74>&#39;error&#39;</span>);
-            <span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>error</span>(<span style=color:#e6db74>&#34;Error:&#34;</span>, <span style=color:#a6e22e>err</span>);
-        } <span style=color:#66d9ef>finally</span> {
-            <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>loading</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>false</span>;
-        }
-    }
+  <span style=color:#75715e>/**
+</span><span style=color:#75715e>   * 初期化
+</span><span style=color:#75715e>   */</span>
+  <span style=color:#a6e22e>connectedCallback</span>() {
+    <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>columns</span> <span style=color:#f92672>=</span> [
+      { <span style=color:#a6e22e>label</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;フォルダー名&#34;</span>, <span style=color:#a6e22e>fieldName</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;folder&#34;</span> },
+      { <span style=color:#a6e22e>label</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;ファイル名&#34;</span>, <span style=color:#a6e22e>fieldName</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;fileName&#34;</span> },
+      { <span style=color:#a6e22e>label</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;タイプ&#34;</span>, <span style=color:#a6e22e>fieldName</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;fileType&#34;</span> },
+      { <span style=color:#a6e22e>label</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;最新更新日&#34;</span>, <span style=color:#a6e22e>fieldName</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;LastModified&#34;</span> },
+      { <span style=color:#a6e22e>label</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;所有者&#34;</span>, <span style=color:#a6e22e>fieldName</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;Owner&#34;</span> },
+      { <span style=color:#a6e22e>label</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;サイズ&#34;</span>, <span style=color:#a6e22e>fieldName</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;Size&#34;</span> },
+      { <span style=color:#a6e22e>label</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;ストレージクラス&#34;</span>, <span style=color:#a6e22e>fieldName</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;StorageClass&#34;</span> },
+      {
+        <span style=color:#a6e22e>type</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;action&#34;</span>,
+        <span style=color:#a6e22e>typeAttributes</span><span style=color:#f92672>:</span> {
+          <span style=color:#a6e22e>rowActions</span><span style=color:#f92672>:</span> [
+            { <span style=color:#a6e22e>label</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;ダウンロード&#34;</span>, <span style=color:#a6e22e>name</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;download&#34;</span> },
+            { <span style=color:#a6e22e>label</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;削除&#34;</span>, <span style=color:#a6e22e>name</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;delete&#34;</span> },
+          ],
+          <span style=color:#a6e22e>menuAlignment</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;auto&#34;</span>,
+        },
+      },
+    ];
+  }
 
-    <span style=color:#75715e>/**
-</span><span style=color:#75715e>     * ファイルリスト取得
-</span><span style=color:#75715e>     */</span>
-    <span style=color:#66d9ef>async</span> <span style=color:#a6e22e>listObjects</span>() {
-        <span style=color:#66d9ef>let</span> <span style=color:#a6e22e>data</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>await</span> <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>s3</span>.<span style=color:#a6e22e>listObjects</span>().<span style=color:#a6e22e>promise</span>();
-        <span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#a6e22e>data</span>);
-        <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>objectlist</span> <span style=color:#f92672>=</span> [];
-        <span style=color:#a6e22e>data</span>.<span style=color:#a6e22e>Contents</span>.<span style=color:#a6e22e>forEach</span>(<span style=color:#a6e22e>e</span> =&gt; {
-            <span style=color:#66d9ef>let</span> <span style=color:#a6e22e>key</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>e</span>.<span style=color:#a6e22e>Key</span>;
-            <span style=color:#66d9ef>let</span> <span style=color:#a6e22e>folder</span>;
-            <span style=color:#66d9ef>let</span> <span style=color:#a6e22e>fileName</span>;
-            <span style=color:#66d9ef>if</span> (<span style=color:#a6e22e>e</span>.<span style=color:#a6e22e>Size</span> <span style=color:#f92672>===</span> <span style=color:#ae81ff>0</span>) <span style=color:#66d9ef>return</span>;
-            <span style=color:#66d9ef>if</span> (<span style=color:#a6e22e>key</span>.<span style=color:#a6e22e>lastIndexOf</span>(<span style=color:#e6db74>&#39;/&#39;</span>) <span style=color:#f92672>&gt;</span> <span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>) {
-                <span style=color:#a6e22e>fileName</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>key</span>.<span style=color:#a6e22e>substring</span>(<span style=color:#a6e22e>key</span>.<span style=color:#a6e22e>lastIndexOf</span>(<span style=color:#e6db74>&#39;/&#39;</span>) <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span>, <span style=color:#a6e22e>key</span>.<span style=color:#a6e22e>length</span>);
-                <span style=color:#a6e22e>folder</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#39;./&#39;</span> <span style=color:#f92672>+</span> <span style=color:#a6e22e>key</span>.<span style=color:#a6e22e>replace</span>(<span style=color:#a6e22e>fileName</span>, <span style=color:#e6db74>&#39;&#39;</span>);
-            } <span style=color:#66d9ef>else</span> {
-                <span style=color:#a6e22e>folder</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#39;./&#39;</span>;
-                <span style=color:#a6e22e>fileName</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>key</span>;
-            }
-
-            <span style=color:#66d9ef>let</span> <span style=color:#a6e22e>fileType</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>fileName</span>.<span style=color:#a6e22e>split</span>(<span style=color:#e6db74>&#39;.&#39;</span>)[<span style=color:#ae81ff>1</span>];
-            <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>objectlist</span>.<span style=color:#a6e22e>push</span>({
-                <span style=color:#a6e22e>key</span><span style=color:#f92672>:</span> <span style=color:#a6e22e>key</span>,
-                <span style=color:#a6e22e>folder</span><span style=color:#f92672>:</span> <span style=color:#a6e22e>folder</span>,
-                <span style=color:#a6e22e>fileName</span><span style=color:#f92672>:</span> <span style=color:#a6e22e>fileName</span>,
-                <span style=color:#a6e22e>fileType</span><span style=color:#f92672>:</span> <span style=color:#a6e22e>fileType</span>,
-                <span style=color:#a6e22e>LastModified</span><span style=color:#f92672>:</span> <span style=color:#a6e22e>dateFormat</span>(<span style=color:#a6e22e>e</span>.<span style=color:#a6e22e>LastModified</span>, <span style=color:#e6db74>&#39;YYYY/mm/dd HH:MM:SS&#39;</span>),
-                <span style=color:#a6e22e>Owner</span><span style=color:#f92672>:</span> <span style=color:#a6e22e>e</span>.<span style=color:#a6e22e>Owner</span>.<span style=color:#a6e22e>DisplayName</span>,
-                <span style=color:#a6e22e>Size</span><span style=color:#f92672>:</span> <span style=color:#a6e22e>fileSizeUnit</span>(<span style=color:#a6e22e>e</span>.<span style=color:#a6e22e>Size</span>),
-                <span style=color:#a6e22e>StorageClass</span><span style=color:#f92672>:</span> <span style=color:#a6e22e>e</span>.<span style=color:#a6e22e>StorageClass</span>
-            })
-        });
-    }
-
-    <span style=color:#75715e>/**
-</span><span style=color:#75715e>     * ファイル取得処理
-</span><span style=color:#75715e>     * @param {string} fileKey キー
-</span><span style=color:#75715e>     * @param {string} fileName ファイル名
-</span><span style=color:#75715e>     */</span>
-    <span style=color:#66d9ef>async</span> <span style=color:#a6e22e>downloadFile</span>(<span style=color:#a6e22e>fileKey</span>) {
-        <span style=color:#66d9ef>let</span> <span style=color:#a6e22e>url</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>await</span> <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>getSignedUrlPromise</span>(<span style=color:#e6db74>&#39;getObject&#39;</span>, {
-            <span style=color:#a6e22e>Bucket</span><span style=color:#f92672>:</span> <span style=color:#a6e22e>bucketName</span>,
-            <span style=color:#a6e22e>Key</span><span style=color:#f92672>:</span> <span style=color:#a6e22e>fileKey</span>,
-            <span style=color:#a6e22e>Expires</span><span style=color:#f92672>:</span> <span style=color:#ae81ff>1</span>
-        });
-        <span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#a6e22e>url</span>);
-        window.<span style=color:#a6e22e>location</span>.<span style=color:#a6e22e>href</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>url</span>;
-    }
-
-    <span style=color:#75715e>/**
-</span><span style=color:#75715e>     * オブジェクト取得
-</span><span style=color:#75715e>     * @param {*} fileKey キー
-</span><span style=color:#75715e>     */</span>
-    <span style=color:#a6e22e>getObject</span>(<span style=color:#a6e22e>fileKey</span>) {
-        <span style=color:#66d9ef>return</span> <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>s3</span>.<span style=color:#a6e22e>getObject</span>({ <span style=color:#a6e22e>Key</span><span style=color:#f92672>:</span> <span style=color:#a6e22e>fileKey</span> }).<span style=color:#a6e22e>promise</span>();
-    }
-
-    <span style=color:#75715e>/**
-</span><span style=color:#75715e>     * ファイル保存処理
-</span><span style=color:#75715e>     * @param {File(blob)} file ファイル
-</span><span style=color:#75715e>     */</span>
-    <span style=color:#a6e22e>putObject</span>(<span style=color:#a6e22e>file</span>) {
-        <span style=color:#66d9ef>const</span> { <span style=color:#a6e22e>folder</span> } <span style=color:#f92672>=</span> <span style=color:#66d9ef>this</span>;
-        <span style=color:#66d9ef>let</span> <span style=color:#a6e22e>fileName</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>file</span>.<span style=color:#a6e22e>name</span>;
-        <span style=color:#66d9ef>let</span> <span style=color:#a6e22e>fileKey</span>;
-        <span style=color:#66d9ef>if</span> (<span style=color:#a6e22e>folder</span> <span style=color:#f92672>||</span> <span style=color:#a6e22e>folder</span> <span style=color:#f92672>===</span> <span style=color:#ae81ff>0</span>)
-            <span style=color:#a6e22e>fileKey</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>`</span><span style=color:#e6db74>${</span><span style=color:#a6e22e>folder</span><span style=color:#e6db74>}</span><span style=color:#e6db74>/</span><span style=color:#e6db74>${</span><span style=color:#a6e22e>fileName</span><span style=color:#e6db74>}</span><span style=color:#e6db74>`</span>;
-        <span style=color:#66d9ef>else</span>
-            <span style=color:#a6e22e>fileKey</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>fileName</span>;
-        <span style=color:#66d9ef>return</span> <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>s3</span>.<span style=color:#a6e22e>putObject</span>({ <span style=color:#a6e22e>Key</span><span style=color:#f92672>:</span> <span style=color:#a6e22e>fileKey</span>, <span style=color:#a6e22e>Body</span><span style=color:#f92672>:</span> <span style=color:#a6e22e>file</span> }).<span style=color:#a6e22e>promise</span>();
-    }
-
-    <span style=color:#75715e>/**
-</span><span style=color:#75715e>     * ファイル削除処理
-</span><span style=color:#75715e>     * @param {string} fileKey ファイルキー
-</span><span style=color:#75715e>     */</span>
-    <span style=color:#a6e22e>deleteObject</span>(<span style=color:#a6e22e>fileKey</span>) {
-        <span style=color:#66d9ef>return</span> <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>s3</span>.<span style=color:#a6e22e>deleteObject</span>({ <span style=color:#a6e22e>Key</span><span style=color:#f92672>:</span> <span style=color:#a6e22e>fileKey</span> }).<span style=color:#a6e22e>promise</span>();
-    }
-
-    <span style=color:#75715e>/**
-</span><span style=color:#75715e>     * ファイル保存処理(ビッグサイズ用)
-</span><span style=color:#75715e>     * @param {File(blob)} file ファイル
-</span><span style=color:#75715e>     */</span>
-    <span style=color:#a6e22e>upload</span>(<span style=color:#a6e22e>file</span>) {
-        <span style=color:#66d9ef>const</span> { <span style=color:#a6e22e>folder</span> } <span style=color:#f92672>=</span> <span style=color:#66d9ef>this</span>;
-        <span style=color:#66d9ef>let</span> <span style=color:#a6e22e>fileName</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>file</span>.<span style=color:#a6e22e>name</span>;
-        <span style=color:#66d9ef>let</span> <span style=color:#a6e22e>fileKey</span>;
-        <span style=color:#66d9ef>if</span> (<span style=color:#a6e22e>folder</span> <span style=color:#f92672>||</span> <span style=color:#a6e22e>folder</span> <span style=color:#f92672>===</span> <span style=color:#ae81ff>0</span>)
-            <span style=color:#a6e22e>fileKey</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>`</span><span style=color:#e6db74>${</span><span style=color:#a6e22e>folder</span><span style=color:#e6db74>}</span><span style=color:#e6db74>/</span><span style=color:#e6db74>${</span><span style=color:#a6e22e>fileName</span><span style=color:#e6db74>}</span><span style=color:#e6db74>`</span>;
-        <span style=color:#66d9ef>else</span>
-            <span style=color:#a6e22e>fileKey</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>fileName</span>;
-        <span style=color:#66d9ef>return</span> <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>s3</span>.<span style=color:#a6e22e>upload</span>({ <span style=color:#a6e22e>Key</span><span style=color:#f92672>:</span> <span style=color:#a6e22e>fileKey</span>, <span style=color:#a6e22e>Body</span><span style=color:#f92672>:</span> <span style=color:#a6e22e>file</span> }).<span style=color:#a6e22e>promise</span>();
-    }
-
-    <span style=color:#75715e>/**
-</span><span style=color:#75715e>     * URL発行
-</span><span style=color:#75715e>     * @param {*} action アクション：getObject,putObject,deleteObject
-</span><span style=color:#75715e>     * @param {*} fileKey ファイルキー
-</span><span style=color:#75715e>     */</span>
-    <span style=color:#a6e22e>getSignedUrlPromise</span>(<span style=color:#a6e22e>action</span>, <span style=color:#a6e22e>params</span>) {
-        <span style=color:#66d9ef>return</span> <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>s3</span>.<span style=color:#a6e22e>getSignedUrlPromise</span>(<span style=color:#a6e22e>action</span>, <span style=color:#a6e22e>params</span>);
-    }
-
-    <span style=color:#75715e>/**
-</span><span style=color:#75715e>     * マルチファイルアップロード管理
-</span><span style=color:#75715e>     * @param {*} file
-</span><span style=color:#75715e>     */</span>
-    <span style=color:#a6e22e>managedUpload</span>(<span style=color:#a6e22e>file</span>, <span style=color:#a6e22e>progressCallBack</span>) {
-        <span style=color:#66d9ef>const</span> { <span style=color:#a6e22e>folder</span> } <span style=color:#f92672>=</span> <span style=color:#66d9ef>this</span>;
-        <span style=color:#66d9ef>let</span> <span style=color:#a6e22e>fileName</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>file</span>.<span style=color:#a6e22e>name</span>;
-        <span style=color:#66d9ef>let</span> <span style=color:#a6e22e>fileKey</span>;
-        <span style=color:#66d9ef>if</span> (<span style=color:#a6e22e>folder</span> <span style=color:#f92672>||</span> <span style=color:#a6e22e>folder</span> <span style=color:#f92672>===</span> <span style=color:#ae81ff>0</span>)
-            <span style=color:#a6e22e>fileKey</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>`</span><span style=color:#e6db74>${</span><span style=color:#a6e22e>folder</span><span style=color:#e6db74>}</span><span style=color:#e6db74>/</span><span style=color:#e6db74>${</span><span style=color:#a6e22e>fileName</span><span style=color:#e6db74>}</span><span style=color:#e6db74>`</span>;
-        <span style=color:#66d9ef>else</span>
-            <span style=color:#a6e22e>fileKey</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>fileName</span>;
-
-        <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>request</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> <span style=color:#a6e22e>AWS</span>.<span style=color:#a6e22e>S3</span>.<span style=color:#a6e22e>ManagedUpload</span>({
-            <span style=color:#a6e22e>partSize</span><span style=color:#f92672>:</span> <span style=color:#ae81ff>100</span> <span style=color:#f92672>*</span> <span style=color:#ae81ff>1024</span> <span style=color:#f92672>*</span> <span style=color:#ae81ff>1024</span>,
-            <span style=color:#a6e22e>queueSize</span><span style=color:#f92672>:</span> <span style=color:#ae81ff>1</span>,
-            <span style=color:#a6e22e>params</span><span style=color:#f92672>:</span> { <span style=color:#a6e22e>Bucket</span><span style=color:#f92672>:</span> <span style=color:#a6e22e>bucketName</span>, <span style=color:#a6e22e>Key</span><span style=color:#f92672>:</span> <span style=color:#a6e22e>fileKey</span>, <span style=color:#a6e22e>Body</span><span style=color:#f92672>:</span> <span style=color:#a6e22e>file</span> }
-        });
-        <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>request</span>.<span style=color:#a6e22e>on</span>(<span style=color:#e6db74>&#39;httpUploadProgress&#39;</span>, (<span style=color:#a6e22e>progress</span>) =&gt; {
-            <span style=color:#66d9ef>if</span> (<span style=color:#a6e22e>progressCallBack</span>) <span style=color:#a6e22e>progressCallBack</span>(<span style=color:#a6e22e>progress</span>);
-            <span style=color:#66d9ef>else</span> <span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#e6db74>&#39;progress:&#39;</span>, Math.<span style=color:#a6e22e>floor</span>(<span style=color:#a6e22e>progress</span>.<span style=color:#a6e22e>loaded</span> <span style=color:#f92672>/</span> <span style=color:#a6e22e>progress</span>.<span style=color:#a6e22e>total</span> <span style=color:#f92672>*</span> <span style=color:#ae81ff>100</span>));
-        });
-
-        <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>request</span>.<span style=color:#a6e22e>send</span>((<span style=color:#a6e22e>err</span>, <span style=color:#a6e22e>data</span>) =&gt; {
-            <span style=color:#66d9ef>if</span> (<span style=color:#a6e22e>err</span>)
-                <span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>error</span>(<span style=color:#a6e22e>err</span>);
-            <span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>info</span>(<span style=color:#a6e22e>data</span>);
-        });
-        <span style=color:#66d9ef>return</span> <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>request</span>.<span style=color:#a6e22e>promise</span>();
-    }
-
-    <span style=color:#75715e>/**
-</span><span style=color:#75715e>     *  ファイル選択
-</span><span style=color:#75715e>     * @param {*} event
-</span><span style=color:#75715e>     */</span>
-    <span style=color:#a6e22e>fileSelectorHandler</span>(<span style=color:#a6e22e>event</span>) {
-        <span style=color:#a6e22e>event</span>.<span style=color:#a6e22e>preventDefault</span>();
-        <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>template</span>.<span style=color:#a6e22e>querySelector</span>(<span style=color:#e6db74>&#39;c-fileupload-modal&#39;</span>).<span style=color:#a6e22e>open</span>();
-    }
-
-    <span style=color:#75715e>/**
-</span><span style=color:#75715e>     * フォルダ選択
-</span><span style=color:#75715e>     * @param {*} event
-</span><span style=color:#75715e>     */</span>
-    <span style=color:#a6e22e>folderchangeHandler</span>(<span style=color:#a6e22e>event</span>) {
-        <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>folder</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>event</span>.<span style=color:#a6e22e>detail</span>;
-    }
-
-    <span style=color:#75715e>/**
-</span><span style=color:#75715e>     * RowAction
-</span><span style=color:#75715e>     * @param {*} event
-</span><span style=color:#75715e>     */</span>
-    <span style=color:#66d9ef>async</span> <span style=color:#a6e22e>handleRowAction</span>(<span style=color:#a6e22e>event</span>) {
-        <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>action</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>event</span>.<span style=color:#a6e22e>detail</span>.<span style=color:#a6e22e>action</span>;
-        <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>row</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>event</span>.<span style=color:#a6e22e>detail</span>.<span style=color:#a6e22e>row</span>;
-        <span style=color:#66d9ef>switch</span> (<span style=color:#a6e22e>action</span>.<span style=color:#a6e22e>name</span>) {
-            <span style=color:#66d9ef>case</span> <span style=color:#e6db74>&#39;download&#39;</span><span style=color:#f92672>:</span>
-                <span style=color:#66d9ef>await</span> <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>fileDownload</span>(<span style=color:#a6e22e>row</span>.<span style=color:#a6e22e>key</span>);
-                <span style=color:#66d9ef>break</span>;
-            <span style=color:#66d9ef>case</span> <span style=color:#e6db74>&#39;delete&#39;</span><span style=color:#f92672>:</span>
-                <span style=color:#66d9ef>await</span> <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>deleteFile</span>(<span style=color:#a6e22e>row</span>.<span style=color:#a6e22e>key</span>);
-                <span style=color:#66d9ef>break</span>;
-        }
-    }
-
-    <span style=color:#75715e>/**
-</span><span style=color:#75715e>     * 初期化
-</span><span style=color:#75715e>     */</span>
-    <span style=color:#a6e22e>connectedCallback</span>() {
-        <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>columns</span> <span style=color:#f92672>=</span> [
-            { <span style=color:#a6e22e>label</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#39;フォルダー名&#39;</span>, <span style=color:#a6e22e>fieldName</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#39;folder&#39;</span> },
-            { <span style=color:#a6e22e>label</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#39;ファイル名&#39;</span>, <span style=color:#a6e22e>fieldName</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#39;fileName&#39;</span>, },
-            { <span style=color:#a6e22e>label</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#39;タイプ&#39;</span>, <span style=color:#a6e22e>fieldName</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#39;fileType&#39;</span> },
-            { <span style=color:#a6e22e>label</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#39;最新更新日&#39;</span>, <span style=color:#a6e22e>fieldName</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#39;LastModified&#39;</span>, },
-            { <span style=color:#a6e22e>label</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#39;所有者&#39;</span>, <span style=color:#a6e22e>fieldName</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#39;Owner&#39;</span>, },
-            { <span style=color:#a6e22e>label</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#39;サイズ&#39;</span>, <span style=color:#a6e22e>fieldName</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#39;Size&#39;</span>, },
-            { <span style=color:#a6e22e>label</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#39;ストレージクラス&#39;</span>, <span style=color:#a6e22e>fieldName</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#39;StorageClass&#39;</span>, },
-            {
-                <span style=color:#a6e22e>type</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#39;action&#39;</span>,
-                <span style=color:#a6e22e>typeAttributes</span><span style=color:#f92672>:</span> {
-                    <span style=color:#a6e22e>rowActions</span><span style=color:#f92672>:</span> [
-                        { <span style=color:#a6e22e>label</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#39;ダウンロード&#39;</span>, <span style=color:#a6e22e>name</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#39;download&#39;</span> },
-                        { <span style=color:#a6e22e>label</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#39;削除&#39;</span>, <span style=color:#a6e22e>name</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#39;delete&#39;</span> }
-                    ],
-                    <span style=color:#a6e22e>menuAlignment</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#39;auto&#39;</span>
-                }
-            }
-        ];
-    }
-
-    <span style=color:#75715e>/**
-</span><span style=color:#75715e>     * aws-sdkロード
-</span><span style=color:#75715e>     */</span>
-    <span style=color:#a6e22e>renderedCallback</span>() {
-        <span style=color:#66d9ef>if</span> (<span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>jsinit</span>)
-            <span style=color:#66d9ef>return</span>;
-        <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>jsinit</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>true</span>;
-        Promise.<span style=color:#a6e22e>all</span>([
-                <span style=color:#a6e22e>loadScript</span>(<span style=color:#66d9ef>this</span>, <span style=color:#a6e22e>AWS_SDK</span>),
-            ])
-            .<span style=color:#a6e22e>then</span>(<span style=color:#66d9ef>async</span>() =&gt; {
-                <span style=color:#66d9ef>await</span> <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>initAWS</span>();
-            })
-            .<span style=color:#66d9ef>catch</span>(<span style=color:#a6e22e>error</span> =&gt; {
-                <span style=color:#a6e22e>showToast</span>(<span style=color:#66d9ef>this</span>, <span style=color:#e6db74>&#39;JSライブラリロードに失敗しました&#39;</span>, <span style=color:#a6e22e>error</span>.<span style=color:#a6e22e>message</span>, <span style=color:#e6db74>&#39;error&#39;</span>)
-            });
-    }
+  <span style=color:#75715e>/**
+</span><span style=color:#75715e>   * aws-sdkロード
+</span><span style=color:#75715e>   */</span>
+  <span style=color:#a6e22e>renderedCallback</span>() {
+    <span style=color:#66d9ef>if</span> (<span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>jsinit</span>) <span style=color:#66d9ef>return</span>;
+    <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>jsinit</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>true</span>;
+    Promise.<span style=color:#a6e22e>all</span>([<span style=color:#a6e22e>loadScript</span>(<span style=color:#66d9ef>this</span>, <span style=color:#a6e22e>AWS_SDK</span>)])
+      .<span style=color:#a6e22e>then</span>(<span style=color:#66d9ef>async</span> () =&gt; {
+        <span style=color:#66d9ef>await</span> <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>initAWS</span>();
+      })
+      .<span style=color:#66d9ef>catch</span>((<span style=color:#a6e22e>error</span>) =&gt; {
+        <span style=color:#a6e22e>showToast</span>(
+          <span style=color:#66d9ef>this</span>,
+          <span style=color:#e6db74>&#34;JSライブラリロードに失敗しました&#34;</span>,
+          <span style=color:#a6e22e>error</span>.<span style=color:#a6e22e>message</span>,
+          <span style=color:#e6db74>&#34;error&#34;</span>
+        );
+      });
+  }
 }
-</code></pre></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fileuploadMock.js-meta.xml data-lang=fileuploadMock.js-meta.xml><span style=color:#75715e>&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
+</code></pre></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-xml data-lang=xml><span style=color:#75715e>&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
 <span style=color:#f92672>&lt;LightningComponentBundle</span> <span style=color:#a6e22e>xmlns=</span><span style=color:#e6db74>&#34;http://soap.sforce.com/2006/04/metadata&#34;</span><span style=color:#f92672>&gt;</span>
     <span style=color:#f92672>&lt;apiVersion&gt;</span>52.0<span style=color:#f92672>&lt;/apiVersion&gt;</span>
     <span style=color:#f92672>&lt;isExposed&gt;</span>true<span style=color:#f92672>&lt;/isExposed&gt;</span>
@@ -532,203 +548,253 @@ LWCでAWS S3と連携する方法
 <span style=color:#f92672>&lt;/LightningComponentBundle&gt;</span>
 </code></pre></div><ul>
 <li>fileuploadModal<br>
-<img loading=lazy src=https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/1767576/3dc8eb39-7e1b-d64f-c031-f43c35c09a55.png alt=image.png>
+<img loading=lazy src=/images/3dc8eb39-7e1b-d64f-c031-f43c35c09a55.png alt=image.png>
 </li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fileuploadModal.html data-lang=fileuploadModal.html>&lt;<span style=color:#f92672>template</span>&gt;
-    <span style=color:#75715e>&lt;!--Use template if:true to display/hide popup based on isModalOpen value--&gt;</span>
-    &lt;<span style=color:#f92672>template</span> <span style=color:#a6e22e>if:true</span><span style=color:#f92672>=</span><span style=color:#e6db74>{_isModalOpen}</span>&gt;
-        <span style=color:#75715e>&lt;!-- Modal/Popup Box LWC starts here --&gt;</span>
-        &lt;<span style=color:#f92672>section</span> <span style=color:#a6e22e>role</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;dialog&#34;</span> <span style=color:#a6e22e>tabindex</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;-1&#34;</span> <span style=color:#a6e22e>aria-modal</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;true&#34;</span> <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;slds-modal slds-fade-in-open&#34;</span>
-            <span style=color:#a6e22e>style</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;z-index:9001&#34;</span>&gt;
-            &lt;<span style=color:#f92672>div</span> <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;slds-modal__container&#34;</span> <span style=color:#a6e22e>style</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;width: auto;max-width: fit-content;&#34;</span>&gt;
-                <span style=color:#75715e>&lt;!-- Modal/Popup Box LWC header here --&gt;</span>
-                &lt;<span style=color:#f92672>header</span> <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;slds-modal__header&#34;</span>&gt;
-                    &lt;<span style=color:#f92672>button</span> <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;slds-button slds-button_icon slds-modal__close slds-button_icon-inverse&#34;</span>
-                        <span style=color:#a6e22e>title</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;Close&#34;</span> <span style=color:#a6e22e>onclick</span><span style=color:#f92672>=</span><span style=color:#e6db74>{close}</span>&gt;
-                        &lt;<span style=color:#f92672>lightning-icon</span> <span style=color:#a6e22e>icon-name</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;utility:close&#34;</span> <span style=color:#a6e22e>alternative-text</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;close&#34;</span> <span style=color:#a6e22e>variant</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;inverse&#34;</span>
-                            <span style=color:#a6e22e>size</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;small&#34;</span>&gt;
-                        &lt;/<span style=color:#f92672>lightning-icon</span>&gt;
-                        &lt;<span style=color:#f92672>span</span> <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;slds-assistive-text&#34;</span>&gt;Close&lt;/<span style=color:#f92672>span</span>&gt;
-                    &lt;/<span style=color:#f92672>button</span>&gt;
-                    &lt;<span style=color:#f92672>h2</span> <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;slds-text-heading_medium slds-hyphenate&#34;</span>&gt;{title}&lt;/<span style=color:#f92672>h2</span>&gt;
-                &lt;/<span style=color:#f92672>header</span>&gt;
-                <span style=color:#75715e>&lt;!-- Modal/Popup Box LWC body starts here --&gt;</span>
-                &lt;<span style=color:#f92672>div</span> <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;slds-modal__content slds-p-around_medium&#34;</span> <span style=color:#a6e22e>style</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;height:50%&#34;</span>&gt;
-                    &lt;<span style=color:#f92672>lightning-input</span> <span style=color:#a6e22e>label</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;パス&#34;</span> <span style=color:#a6e22e>name</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;path&#34;</span> <span style=color:#a6e22e>onchange</span><span style=color:#f92672>=</span><span style=color:#e6db74>{commonChange}</span>&gt;&lt;/<span style=color:#f92672>lightning-input</span>&gt;
-                    &lt;<span style=color:#f92672>lightning-input</span> <span style=color:#a6e22e>type</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;file&#34;</span> <span style=color:#a6e22e>label</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;ファイルアップロード&#34;</span> <span style=color:#a6e22e>onchange</span><span style=color:#f92672>=</span><span style=color:#e6db74>{uploadHandler}</span>&gt;
-                    &lt;/<span style=color:#f92672>lightning-input</span>&gt;
-                &lt;/<span style=color:#f92672>div</span>&gt;
-                <span style=color:#75715e>&lt;!-- Modal/Popup Box LWC footer starts here --&gt;</span>
-                &lt;<span style=color:#f92672>footer</span> <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;slds-modal__footer&#34;</span>&gt;
-                    &lt;<span style=color:#f92672>button</span> <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;slds-button slds-button_neutral&#34;</span> <span style=color:#a6e22e>onclick</span><span style=color:#f92672>=</span><span style=color:#e6db74>{close}</span>&gt;キャンセル&lt;/<span style=color:#f92672>button</span>&gt;
-                    <span style=color:#75715e>&lt;!-- &lt;button class=&#34;slds-button slds-button_brand&#34; onclick={confirmHandle}&gt;ファイル追加&lt;/button&gt; --&gt;</span>
-                &lt;/<span style=color:#f92672>footer</span>&gt;
-            &lt;/<span style=color:#f92672>div</span>&gt;
-        &lt;/<span style=color:#f92672>section</span>&gt;
-        &lt;<span style=color:#f92672>div</span> <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;slds-backdrop slds-backdrop_open&#34;</span>&gt;&lt;/<span style=color:#f92672>div</span>&gt;
-    &lt;/<span style=color:#f92672>template</span>&gt;
-&lt;/<span style=color:#f92672>template</span>&gt;
-</code></pre></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fileuploadModal.js data-lang=fileuploadModal.js><span style=color:#66d9ef>import</span> { <span style=color:#a6e22e>LightningElement</span>, <span style=color:#a6e22e>track</span>, <span style=color:#a6e22e>api</span> } <span style=color:#a6e22e>from</span> <span style=color:#e6db74>&#39;lwc&#39;</span>;
-<span style=color:#66d9ef>export</span> <span style=color:#66d9ef>default</span> <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>FileUploadModal</span> <span style=color:#66d9ef>extends</span> <span style=color:#a6e22e>LightningElement</span> {
-
-    <span style=color:#960050;background-color:#1e0010>@</span><span style=color:#a6e22e>api</span> <span style=color:#a6e22e>name</span>;
-    <span style=color:#960050;background-color:#1e0010>@</span><span style=color:#a6e22e>track</span> <span style=color:#a6e22e>path</span>;
-    <span style=color:#75715e>//表示フラグ
-</span><span style=color:#75715e></span>    <span style=color:#960050;background-color:#1e0010>@</span><span style=color:#a6e22e>track</span> <span style=color:#a6e22e>_isModalOpen</span>;
-
-    <span style=color:#75715e>/**
-</span><span style=color:#75715e>     * 共通Change処理
-</span><span style=color:#75715e>     * @param {*} event
-</span><span style=color:#75715e>     */</span>
-    <span style=color:#a6e22e>commonChange</span>(<span style=color:#a6e22e>event</span>) {
-        <span style=color:#66d9ef>let</span> <span style=color:#a6e22e>name</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>event</span>.<span style=color:#a6e22e>target</span>.<span style=color:#a6e22e>name</span>;
-        <span style=color:#66d9ef>let</span> <span style=color:#a6e22e>value</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>event</span>.<span style=color:#a6e22e>target</span>.<span style=color:#a6e22e>value</span>;
-        <span style=color:#66d9ef>this</span>[<span style=color:#a6e22e>name</span>] <span style=color:#f92672>=</span> <span style=color:#a6e22e>value</span>;
-        <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>dispatchEvent</span>(<span style=color:#66d9ef>new</span> <span style=color:#a6e22e>CustomEvent</span>(<span style=color:#e6db74>&#34;folderchange&#34;</span>, {
-            <span style=color:#a6e22e>detail</span><span style=color:#f92672>:</span> <span style=color:#a6e22e>value</span>,
-            <span style=color:#a6e22e>composed</span><span style=color:#f92672>:</span> <span style=color:#66d9ef>true</span>,
-            <span style=color:#a6e22e>bubbles</span><span style=color:#f92672>:</span> <span style=color:#66d9ef>true</span>,
-            <span style=color:#a6e22e>cancelable</span><span style=color:#f92672>:</span> <span style=color:#66d9ef>true</span>,
-        }));
-    }
-
-    <span style=color:#75715e>/**
-</span><span style=color:#75715e>     * ファイルアップロード
-</span><span style=color:#75715e>     * @param {*} event
-</span><span style=color:#75715e>     */</span>
-    <span style=color:#a6e22e>uploadHandler</span>(<span style=color:#a6e22e>event</span>) {
-        <span style=color:#66d9ef>let</span> <span style=color:#a6e22e>changenEvent</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> <span style=color:#a6e22e>CustomEvent</span>(<span style=color:#e6db74>&#34;select&#34;</span>, {
-            <span style=color:#a6e22e>detail</span><span style=color:#f92672>:</span> <span style=color:#a6e22e>event</span>.<span style=color:#a6e22e>target</span>,
-            <span style=color:#a6e22e>composed</span><span style=color:#f92672>:</span> <span style=color:#66d9ef>true</span>,
-            <span style=color:#a6e22e>bubbles</span><span style=color:#f92672>:</span> <span style=color:#66d9ef>true</span>,
-            <span style=color:#a6e22e>cancelable</span><span style=color:#f92672>:</span> <span style=color:#66d9ef>true</span>,
-        });
-        <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>dispatchEvent</span>(<span style=color:#a6e22e>changenEvent</span>);
-    }
-
-    <span style=color:#75715e>/**
-</span><span style=color:#75715e>     * モーダル開く
-</span><span style=color:#75715e>     */</span>
-    <span style=color:#960050;background-color:#1e0010>@</span><span style=color:#a6e22e>api</span>
-    <span style=color:#a6e22e>open</span>() {
-        <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>_isModalOpen</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>true</span>;
-    }
-
-    <span style=color:#75715e>/**
-</span><span style=color:#75715e>     * モーダル閉じる
-</span><span style=color:#75715e>     */</span>
-    <span style=color:#a6e22e>close</span>(<span style=color:#a6e22e>e</span>) {
-        <span style=color:#a6e22e>e</span>.<span style=color:#a6e22e>preventDefault</span>();
-        <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>_isModalOpen</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>false</span>;
-    }
-}
-</code></pre></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fileuploadModal.js-meta.xml data-lang=fileuploadModal.js-meta.xml><span style=color:#75715e>&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
-<span style=color:#f92672>&lt;LightningComponentBundle</span> <span style=color:#a6e22e>xmlns=</span><span style=color:#e6db74>&#34;http://soap.sforce.com/2006/04/metadata&#34;</span><span style=color:#f92672>&gt;</span>
-    <span style=color:#f92672>&lt;apiVersion&gt;</span>52.0<span style=color:#f92672>&lt;/apiVersion&gt;</span>
-    <span style=color:#f92672>&lt;isExposed&gt;</span>false<span style=color:#f92672>&lt;/isExposed&gt;</span>
-<span style=color:#f92672>&lt;/LightningComponentBundle&gt;</span>
-</code></pre></div><ul>
-<li>progressbar<br>
-<img loading=lazy src=https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/1767576/8f5701e8-e9d4-f4a7-2c45-e81f735c724a.png alt=image.png>
-</li>
-</ul>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-progressbar.html data-lang=progressbar.html>&lt;<span style=color:#f92672>template</span>&gt;
-  &lt;<span style=color:#f92672>template</span> <span style=color:#a6e22e>if:true</span><span style=color:#f92672>=</span><span style=color:#e6db74>{isShow}</span>&gt;
-    &lt;<span style=color:#f92672>section</span> <span style=color:#a6e22e>role</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;dialog&#34;</span> <span style=color:#a6e22e>tabindex</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;-1&#34;</span> <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;slds-modal slds-fade-in-open&#34;</span> <span style=color:#a6e22e>aria-modal</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;true&#34;</span> <span style=color:#a6e22e>style</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;z-index:9002&#34;</span>&gt;
-      &lt;<span style=color:#f92672>div</span> <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;slds-modal__container&#34;</span> <span style=color:#a6e22e>style</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;width: auto;max-width: 50rem;&#34;</span>&gt;
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html>&lt;<span style=color:#f92672>template</span>&gt;
+  <span style=color:#75715e>&lt;!--Use template if:true to display/hide popup based on isModalOpen value--&gt;</span>
+  &lt;<span style=color:#f92672>template</span> <span style=color:#a6e22e>if:true</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;{_isModalOpen}&#34;</span>&gt;
+    <span style=color:#75715e>&lt;!-- Modal/Popup Box LWC starts here --&gt;</span>
+    &lt;<span style=color:#f92672>section</span>
+      <span style=color:#a6e22e>role</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;dialog&#34;</span>
+      <span style=color:#a6e22e>tabindex</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;-1&#34;</span>
+      <span style=color:#a6e22e>aria-modal</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;true&#34;</span>
+      <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;slds-modal slds-fade-in-open&#34;</span>
+      <span style=color:#a6e22e>style</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;z-index:9001&#34;</span>
+    &gt;
+      &lt;<span style=color:#f92672>div</span>
+        <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;slds-modal__container&#34;</span>
+        <span style=color:#a6e22e>style</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;width: auto;max-width: fit-content;&#34;</span>
+      &gt;
+        <span style=color:#75715e>&lt;!-- Modal/Popup Box LWC header here --&gt;</span>
         &lt;<span style=color:#f92672>header</span> <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;slds-modal__header&#34;</span>&gt;
-          &lt;<span style=color:#f92672>button</span> <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;slds-button slds-button_icon slds-modal__close slds-button_icon-inverse&#34;</span> <span style=color:#a6e22e>title</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;Close&#34;</span>
-            <span style=color:#a6e22e>onclick</span><span style=color:#f92672>=</span><span style=color:#e6db74>{cancel}</span>&gt;
-            &lt;<span style=color:#f92672>lightning-icon</span> <span style=color:#a6e22e>icon-name</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;utility:close&#34;</span> <span style=color:#a6e22e>alternative-text</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;close&#34;</span> <span style=color:#a6e22e>variant</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;inverse&#34;</span> <span style=color:#a6e22e>size</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;small&#34;</span>&gt;
+          &lt;<span style=color:#f92672>button</span>
+            <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;slds-button slds-button_icon slds-modal__close slds-button_icon-inverse&#34;</span>
+            <span style=color:#a6e22e>title</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;Close&#34;</span>
+            <span style=color:#a6e22e>onclick</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;{close}&#34;</span>
+          &gt;
+            &lt;<span style=color:#f92672>lightning-icon</span>
+              <span style=color:#a6e22e>icon-name</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;utility:close&#34;</span>
+              <span style=color:#a6e22e>alternative-text</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;close&#34;</span>
+              <span style=color:#a6e22e>variant</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;inverse&#34;</span>
+              <span style=color:#a6e22e>size</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;small&#34;</span>
+            &gt;
             &lt;/<span style=color:#f92672>lightning-icon</span>&gt;
             &lt;<span style=color:#f92672>span</span> <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;slds-assistive-text&#34;</span>&gt;Close&lt;/<span style=color:#f92672>span</span>&gt;
           &lt;/<span style=color:#f92672>button</span>&gt;
-          &lt;<span style=color:#f92672>h2</span> <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;slds-modal__title slds-hyphenate&#34;</span>&gt;ファイルをアップロード&lt;/<span style=color:#f92672>h2</span>&gt;
+          &lt;<span style=color:#f92672>h2</span> <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;slds-text-heading_medium slds-hyphenate&#34;</span>&gt;{title}&lt;/<span style=color:#f92672>h2</span>&gt;
         &lt;/<span style=color:#f92672>header</span>&gt;
-        &lt;<span style=color:#f92672>div</span> <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;slds-modal__content slds-p-around_medium&#34;</span>
-          <span style=color:#a6e22e>style</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;display: grid;grid-template-columns: 0.5fr 3fr 3fr 0.5fr; height: 5rem;overflow-y: hidden;&#34;</span>&gt;
-          &lt;<span style=color:#f92672>div</span> <span style=color:#a6e22e>style</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;align-self: center;&#34;</span>&gt;
-            &lt;<span style=color:#f92672>span</span> <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;slds-icon_container slds-icon-doctype-xml&#34;</span>&gt;
-            &lt;/<span style=color:#f92672>span</span>&gt;
-          &lt;/<span style=color:#f92672>div</span>&gt;
-          &lt;<span style=color:#f92672>div</span> <span style=color:#a6e22e>style</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;align-self: center;&#34;</span>&gt;
-            &lt;<span style=color:#f92672>span</span>&gt;{uploadFileName} &lt;<span style=color:#f92672>br</span> /&gt;&lt;<span style=color:#f92672>b</span>&gt;{progress}%&lt;/<span style=color:#f92672>b</span>&gt;&lt;/<span style=color:#f92672>span</span>&gt;
-          &lt;/<span style=color:#f92672>div</span>&gt;
-          &lt;<span style=color:#f92672>div</span> <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;slds-progress-bar slds-progress-bar_circular&#34;</span>
-            <span style=color:#a6e22e>style</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;align-self: center;height: 0.6rem;width: 20rem;&#34;</span>&gt;
-            &lt;<span style=color:#f92672>span</span> <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;slds-progress-bar__value&#34;</span> <span style=color:#a6e22e>style</span><span style=color:#f92672>=</span><span style=color:#e6db74>{barStyle}</span>&gt;&lt;/<span style=color:#f92672>span</span>&gt;
-          &lt;/<span style=color:#f92672>div</span>&gt;
-          &lt;<span style=color:#f92672>div</span> <span style=color:#a6e22e>style</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;align-self: center;margin-left: 0.2rem;&#34;</span>&gt;
-            &lt;<span style=color:#f92672>span</span> <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>{barClass}</span>&gt;
-            &lt;/<span style=color:#f92672>span</span>&gt;
-          &lt;/<span style=color:#f92672>div</span>&gt;
+        <span style=color:#75715e>&lt;!-- Modal/Popup Box LWC body starts here --&gt;</span>
+        &lt;<span style=color:#f92672>div</span>
+          <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;slds-modal__content slds-p-around_medium&#34;</span>
+          <span style=color:#a6e22e>style</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;height:50%&#34;</span>
+        &gt;
+          &lt;<span style=color:#f92672>lightning-input</span>
+            <span style=color:#a6e22e>label</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;パス&#34;</span>
+            <span style=color:#a6e22e>name</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;path&#34;</span>
+            <span style=color:#a6e22e>onchange</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;{commonChange}&#34;</span>
+          &gt;&lt;/<span style=color:#f92672>lightning-input</span>&gt;
+          &lt;<span style=color:#f92672>lightning-input</span>
+            <span style=color:#a6e22e>type</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;file&#34;</span>
+            <span style=color:#a6e22e>label</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;ファイルアップロード&#34;</span>
+            <span style=color:#a6e22e>onchange</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;{uploadHandler}&#34;</span>
+          &gt;
+          &lt;/<span style=color:#f92672>lightning-input</span>&gt;
         &lt;/<span style=color:#f92672>div</span>&gt;
+        <span style=color:#75715e>&lt;!-- Modal/Popup Box LWC footer starts here --&gt;</span>
         &lt;<span style=color:#f92672>footer</span> <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;slds-modal__footer&#34;</span>&gt;
-          &lt;<span style=color:#f92672>span</span> <span style=color:#a6e22e>style</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;float: left;&#34;</span>&gt;&lt;/<span style=color:#f92672>span</span>&gt;
-          &lt;<span style=color:#f92672>button</span> <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;slds-button slds-button_brand&#34;</span> <span style=color:#a6e22e>onclick</span><span style=color:#f92672>=</span><span style=color:#e6db74>{cancel}</span>&gt;キャンセル&lt;/<span style=color:#f92672>button</span>&gt;
+          &lt;<span style=color:#f92672>button</span> <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;slds-button slds-button_neutral&#34;</span> <span style=color:#a6e22e>onclick</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;{close}&#34;</span>&gt;
+            キャンセル
+          &lt;/<span style=color:#f92672>button</span>&gt;
+          <span style=color:#75715e>&lt;!-- &lt;button class=&#34;slds-button slds-button_brand&#34; onclick={confirmHandle}&gt;ファイル追加&lt;/button&gt; --&gt;</span>
         &lt;/<span style=color:#f92672>footer</span>&gt;
       &lt;/<span style=color:#f92672>div</span>&gt;
     &lt;/<span style=color:#f92672>section</span>&gt;
     &lt;<span style=color:#f92672>div</span> <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;slds-backdrop slds-backdrop_open&#34;</span>&gt;&lt;/<span style=color:#f92672>div</span>&gt;
   &lt;/<span style=color:#f92672>template</span>&gt;
 &lt;/<span style=color:#f92672>template</span>&gt;
-</code></pre></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-progressbar.js data-lang=progressbar.js><span style=color:#66d9ef>import</span> { <span style=color:#a6e22e>LightningElement</span>, <span style=color:#a6e22e>track</span>, <span style=color:#a6e22e>api</span> } <span style=color:#a6e22e>from</span> <span style=color:#e6db74>&#39;lwc&#39;</span>;
+</code></pre></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=color:#66d9ef>import</span> { <span style=color:#a6e22e>LightningElement</span>, <span style=color:#a6e22e>track</span>, <span style=color:#a6e22e>api</span> } <span style=color:#a6e22e>from</span> <span style=color:#e6db74>&#34;lwc&#34;</span>;
+<span style=color:#66d9ef>export</span> <span style=color:#66d9ef>default</span> <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>FileUploadModal</span> <span style=color:#66d9ef>extends</span> <span style=color:#a6e22e>LightningElement</span> {
+  <span style=color:#960050;background-color:#1e0010>@</span><span style=color:#a6e22e>api</span> <span style=color:#a6e22e>name</span>;
+  <span style=color:#960050;background-color:#1e0010>@</span><span style=color:#a6e22e>track</span> <span style=color:#a6e22e>path</span>;
+  <span style=color:#75715e>//表示フラグ
+</span><span style=color:#75715e></span>  <span style=color:#960050;background-color:#1e0010>@</span><span style=color:#a6e22e>track</span> <span style=color:#a6e22e>_isModalOpen</span>;
 
-<span style=color:#66d9ef>const</span> <span style=color:#a6e22e>bar_cancel_class</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#39;slds-icon_container slds-icon_container_circle slds-icon-action-description slds-icon-standard-password&#39;</span>;
-<span style=color:#66d9ef>const</span> <span style=color:#a6e22e>bar_success_class</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#39;slds-icon_container slds-icon_container_circle slds-icon-action-description slds-icon-text-success&#39;</span>;
-<span style=color:#75715e>// const approval_flag = myResource + &#39;action-sprite/svg/symbols.svg##approval&#39;;
-</span><span style=color:#75715e>// const remove_flag = myResource + &#39;action-sprite/svg/symbols.svg##remove&#39;;
-</span><span style=color:#75715e></span><span style=color:#66d9ef>export</span> <span style=color:#66d9ef>default</span> <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>Fileupload</span> <span style=color:#66d9ef>extends</span> <span style=color:#a6e22e>LightningElement</span> {
+  <span style=color:#75715e>/**
+</span><span style=color:#75715e>   * 共通Change処理
+</span><span style=color:#75715e>   * @param {*} event
+</span><span style=color:#75715e>   */</span>
+  <span style=color:#a6e22e>commonChange</span>(<span style=color:#a6e22e>event</span>) {
+    <span style=color:#66d9ef>let</span> <span style=color:#a6e22e>name</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>event</span>.<span style=color:#a6e22e>target</span>.<span style=color:#a6e22e>name</span>;
+    <span style=color:#66d9ef>let</span> <span style=color:#a6e22e>value</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>event</span>.<span style=color:#a6e22e>target</span>.<span style=color:#a6e22e>value</span>;
+    <span style=color:#66d9ef>this</span>[<span style=color:#a6e22e>name</span>] <span style=color:#f92672>=</span> <span style=color:#a6e22e>value</span>;
+    <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>dispatchEvent</span>(
+      <span style=color:#66d9ef>new</span> <span style=color:#a6e22e>CustomEvent</span>(<span style=color:#e6db74>&#34;folderchange&#34;</span>, {
+        <span style=color:#a6e22e>detail</span><span style=color:#f92672>:</span> <span style=color:#a6e22e>value</span>,
+        <span style=color:#a6e22e>composed</span><span style=color:#f92672>:</span> <span style=color:#66d9ef>true</span>,
+        <span style=color:#a6e22e>bubbles</span><span style=color:#f92672>:</span> <span style=color:#66d9ef>true</span>,
+        <span style=color:#a6e22e>cancelable</span><span style=color:#f92672>:</span> <span style=color:#66d9ef>true</span>,
+      })
+    );
+  }
 
-    <span style=color:#960050;background-color:#1e0010>@</span><span style=color:#a6e22e>api</span> <span style=color:#a6e22e>uploadFileName</span>;
-    <span style=color:#960050;background-color:#1e0010>@</span><span style=color:#a6e22e>api</span> <span style=color:#a6e22e>progress</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>;
-    <span style=color:#960050;background-color:#1e0010>@</span><span style=color:#a6e22e>track</span> <span style=color:#a6e22e>isShow</span>;
+  <span style=color:#75715e>/**
+</span><span style=color:#75715e>   * ファイルアップロード
+</span><span style=color:#75715e>   * @param {*} event
+</span><span style=color:#75715e>   */</span>
+  <span style=color:#a6e22e>uploadHandler</span>(<span style=color:#a6e22e>event</span>) {
+    <span style=color:#66d9ef>let</span> <span style=color:#a6e22e>changenEvent</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> <span style=color:#a6e22e>CustomEvent</span>(<span style=color:#e6db74>&#34;select&#34;</span>, {
+      <span style=color:#a6e22e>detail</span><span style=color:#f92672>:</span> <span style=color:#a6e22e>event</span>.<span style=color:#a6e22e>target</span>,
+      <span style=color:#a6e22e>composed</span><span style=color:#f92672>:</span> <span style=color:#66d9ef>true</span>,
+      <span style=color:#a6e22e>bubbles</span><span style=color:#f92672>:</span> <span style=color:#66d9ef>true</span>,
+      <span style=color:#a6e22e>cancelable</span><span style=color:#f92672>:</span> <span style=color:#66d9ef>true</span>,
+    });
+    <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>dispatchEvent</span>(<span style=color:#a6e22e>changenEvent</span>);
+  }
 
-    <span style=color:#75715e>/**
-</span><span style=color:#75715e>     * ProgressBar
-</span><span style=color:#75715e>     */</span>
-    <span style=color:#a6e22e>get</span> <span style=color:#a6e22e>barStyle</span>() {
-        <span style=color:#66d9ef>return</span> <span style=color:#e6db74>`width:</span><span style=color:#e6db74>${</span><span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>progress</span><span style=color:#e6db74>}</span><span style=color:#e6db74>%`</span>;
-    }
+  <span style=color:#75715e>/**
+</span><span style=color:#75715e>   * モーダル開く
+</span><span style=color:#75715e>   */</span>
+  <span style=color:#960050;background-color:#1e0010>@</span><span style=color:#a6e22e>api</span>
+  <span style=color:#a6e22e>open</span>() {
+    <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>_isModalOpen</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>true</span>;
+  }
 
-    <span style=color:#a6e22e>get</span> <span style=color:#a6e22e>barClass</span>() {
-        <span style=color:#66d9ef>return</span> <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>progress</span> <span style=color:#f92672>&gt;=</span> <span style=color:#ae81ff>100</span> <span style=color:#f92672>?</span> <span style=color:#a6e22e>bar_success_class</span> <span style=color:#f92672>:</span> <span style=color:#a6e22e>bar_cancel_class</span>;
-    }
-
-    <span style=color:#75715e>/**
-</span><span style=color:#75715e>     * キャンセル
-</span><span style=color:#75715e>     */</span>
-    <span style=color:#a6e22e>cancel</span>(<span style=color:#a6e22e>e</span>) {
-        <span style=color:#a6e22e>e</span>.<span style=color:#a6e22e>preventDefault</span>();
-        <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>dispatchEvent</span>(<span style=color:#66d9ef>new</span> <span style=color:#a6e22e>CustomEvent</span>(<span style=color:#e6db74>&#39;abort&#39;</span>, {
-            <span style=color:#a6e22e>detail</span><span style=color:#f92672>:</span> <span style=color:#66d9ef>true</span>
-        }));
-        <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>close</span>();
-    }
-
-    <span style=color:#960050;background-color:#1e0010>@</span><span style=color:#a6e22e>api</span>
-    <span style=color:#a6e22e>close</span>() {
-        <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>isShow</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>false</span>;
-    }
-
-    <span style=color:#960050;background-color:#1e0010>@</span><span style=color:#a6e22e>api</span>
-    <span style=color:#a6e22e>open</span>() {
-        <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>isShow</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>true</span>;
-    }
+  <span style=color:#75715e>/**
+</span><span style=color:#75715e>   * モーダル閉じる
+</span><span style=color:#75715e>   */</span>
+  <span style=color:#a6e22e>close</span>(<span style=color:#a6e22e>e</span>) {
+    <span style=color:#a6e22e>e</span>.<span style=color:#a6e22e>preventDefault</span>();
+    <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>_isModalOpen</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>false</span>;
+  }
 }
-</code></pre></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-progressbar.js-meta.xml data-lang=progressbar.js-meta.xml><span style=color:#75715e>&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
+</code></pre></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-xml data-lang=xml><span style=color:#75715e>&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
+<span style=color:#f92672>&lt;LightningComponentBundle</span> <span style=color:#a6e22e>xmlns=</span><span style=color:#e6db74>&#34;http://soap.sforce.com/2006/04/metadata&#34;</span><span style=color:#f92672>&gt;</span>
+    <span style=color:#f92672>&lt;apiVersion&gt;</span>52.0<span style=color:#f92672>&lt;/apiVersion&gt;</span>
+    <span style=color:#f92672>&lt;isExposed&gt;</span>false<span style=color:#f92672>&lt;/isExposed&gt;</span>
+<span style=color:#f92672>&lt;/LightningComponentBundle&gt;</span>
+</code></pre></div><ul>
+<li>progressbar<br>
+<img loading=lazy src=/images/8f5701e8-e9d4-f4a7-2c45-e81f735c724a.png alt=image.png>
+</li>
+</ul>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html>&lt;<span style=color:#f92672>template</span>&gt;
+  &lt;<span style=color:#f92672>template</span> <span style=color:#a6e22e>if:true</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;{isShow}&#34;</span>&gt;
+    &lt;<span style=color:#f92672>section</span>
+      <span style=color:#a6e22e>role</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;dialog&#34;</span>
+      <span style=color:#a6e22e>tabindex</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;-1&#34;</span>
+      <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;slds-modal slds-fade-in-open&#34;</span>
+      <span style=color:#a6e22e>aria-modal</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;true&#34;</span>
+      <span style=color:#a6e22e>style</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;z-index:9002&#34;</span>
+    &gt;
+      &lt;<span style=color:#f92672>div</span> <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;slds-modal__container&#34;</span> <span style=color:#a6e22e>style</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;width: auto;max-width: 50rem;&#34;</span>&gt;
+        &lt;<span style=color:#f92672>header</span> <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;slds-modal__header&#34;</span>&gt;
+          &lt;<span style=color:#f92672>button</span>
+            <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;slds-button slds-button_icon slds-modal__close slds-button_icon-inverse&#34;</span>
+            <span style=color:#a6e22e>title</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;Close&#34;</span>
+            <span style=color:#a6e22e>onclick</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;{cancel}&#34;</span>
+          &gt;
+            &lt;<span style=color:#f92672>lightning-icon</span>
+              <span style=color:#a6e22e>icon-name</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;utility:close&#34;</span>
+              <span style=color:#a6e22e>alternative-text</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;close&#34;</span>
+              <span style=color:#a6e22e>variant</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;inverse&#34;</span>
+              <span style=color:#a6e22e>size</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;small&#34;</span>
+            &gt;
+            &lt;/<span style=color:#f92672>lightning-icon</span>&gt;
+            &lt;<span style=color:#f92672>span</span> <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;slds-assistive-text&#34;</span>&gt;Close&lt;/<span style=color:#f92672>span</span>&gt;
+          &lt;/<span style=color:#f92672>button</span>&gt;
+          &lt;<span style=color:#f92672>h2</span> <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;slds-modal__title slds-hyphenate&#34;</span>&gt;
+            ファイルをアップロード
+          &lt;/<span style=color:#f92672>h2</span>&gt;
+        &lt;/<span style=color:#f92672>header</span>&gt;
+        &lt;<span style=color:#f92672>div</span>
+          <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;slds-modal__content slds-p-around_medium&#34;</span>
+          <span style=color:#a6e22e>style</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;display: grid;grid-template-columns: 0.5fr 3fr 3fr 0.5fr; height: 5rem;overflow-y: hidden;&#34;</span>
+        &gt;
+          &lt;<span style=color:#f92672>div</span> <span style=color:#a6e22e>style</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;align-self: center;&#34;</span>&gt;
+            &lt;<span style=color:#f92672>span</span> <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;slds-icon_container slds-icon-doctype-xml&#34;</span>&gt; &lt;/<span style=color:#f92672>span</span>&gt;
+          &lt;/<span style=color:#f92672>div</span>&gt;
+          &lt;<span style=color:#f92672>div</span> <span style=color:#a6e22e>style</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;align-self: center;&#34;</span>&gt;
+            &lt;<span style=color:#f92672>span</span>&gt;{uploadFileName} &lt;<span style=color:#f92672>br</span> /&gt;&lt;<span style=color:#f92672>b</span>&gt;{progress}%&lt;/<span style=color:#f92672>b</span>&gt;&lt;/<span style=color:#f92672>span</span>&gt;
+          &lt;/<span style=color:#f92672>div</span>&gt;
+          &lt;<span style=color:#f92672>div</span>
+            <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;slds-progress-bar slds-progress-bar_circular&#34;</span>
+            <span style=color:#a6e22e>style</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;align-self: center;height: 0.6rem;width: 20rem;&#34;</span>
+          &gt;
+            &lt;<span style=color:#f92672>span</span> <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;slds-progress-bar__value&#34;</span> <span style=color:#a6e22e>style</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;{barStyle}&#34;</span>&gt;&lt;/<span style=color:#f92672>span</span>&gt;
+          &lt;/<span style=color:#f92672>div</span>&gt;
+          &lt;<span style=color:#f92672>div</span> <span style=color:#a6e22e>style</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;align-self: center;margin-left: 0.2rem;&#34;</span>&gt;
+            &lt;<span style=color:#f92672>span</span> <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;{barClass}&#34;</span>&gt; &lt;/<span style=color:#f92672>span</span>&gt;
+          &lt;/<span style=color:#f92672>div</span>&gt;
+        &lt;/<span style=color:#f92672>div</span>&gt;
+        &lt;<span style=color:#f92672>footer</span> <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;slds-modal__footer&#34;</span>&gt;
+          &lt;<span style=color:#f92672>span</span> <span style=color:#a6e22e>style</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;float: left;&#34;</span>&gt;&lt;/<span style=color:#f92672>span</span>&gt;
+          &lt;<span style=color:#f92672>button</span> <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;slds-button slds-button_brand&#34;</span> <span style=color:#a6e22e>onclick</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;{cancel}&#34;</span>&gt;
+            キャンセル
+          &lt;/<span style=color:#f92672>button</span>&gt;
+        &lt;/<span style=color:#f92672>footer</span>&gt;
+      &lt;/<span style=color:#f92672>div</span>&gt;
+    &lt;/<span style=color:#f92672>section</span>&gt;
+    &lt;<span style=color:#f92672>div</span> <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;slds-backdrop slds-backdrop_open&#34;</span>&gt;&lt;/<span style=color:#f92672>div</span>&gt;
+  &lt;/<span style=color:#f92672>template</span>&gt;
+&lt;/<span style=color:#f92672>template</span>&gt;
+</code></pre></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=color:#66d9ef>import</span> { <span style=color:#a6e22e>LightningElement</span>, <span style=color:#a6e22e>track</span>, <span style=color:#a6e22e>api</span> } <span style=color:#a6e22e>from</span> <span style=color:#e6db74>&#34;lwc&#34;</span>;
+
+<span style=color:#66d9ef>const</span> <span style=color:#a6e22e>bar_cancel_class</span> <span style=color:#f92672>=</span>
+  <span style=color:#e6db74>&#34;slds-icon_container slds-icon_container_circle slds-icon-action-description slds-icon-standard-password&#34;</span>;
+<span style=color:#66d9ef>const</span> <span style=color:#a6e22e>bar_success_class</span> <span style=color:#f92672>=</span>
+  <span style=color:#e6db74>&#34;slds-icon_container slds-icon_container_circle slds-icon-action-description slds-icon-text-success&#34;</span>;
+
+<span style=color:#66d9ef>export</span> <span style=color:#66d9ef>default</span> <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>Fileupload</span> <span style=color:#66d9ef>extends</span> <span style=color:#a6e22e>LightningElement</span> {
+  <span style=color:#960050;background-color:#1e0010>@</span><span style=color:#a6e22e>api</span> <span style=color:#a6e22e>uploadFileName</span>;
+  <span style=color:#960050;background-color:#1e0010>@</span><span style=color:#a6e22e>api</span> <span style=color:#a6e22e>progress</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>;
+  <span style=color:#960050;background-color:#1e0010>@</span><span style=color:#a6e22e>track</span> <span style=color:#a6e22e>isShow</span>;
+
+  <span style=color:#75715e>/**
+</span><span style=color:#75715e>   * ProgressBar
+</span><span style=color:#75715e>   */</span>
+  <span style=color:#a6e22e>get</span> <span style=color:#a6e22e>barStyle</span>() {
+    <span style=color:#66d9ef>return</span> <span style=color:#e6db74>`width:</span><span style=color:#e6db74>${</span><span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>progress</span><span style=color:#e6db74>}</span><span style=color:#e6db74>%`</span>;
+  }
+
+  <span style=color:#a6e22e>get</span> <span style=color:#a6e22e>barClass</span>() {
+    <span style=color:#66d9ef>return</span> <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>progress</span> <span style=color:#f92672>&gt;=</span> <span style=color:#ae81ff>100</span> <span style=color:#f92672>?</span> <span style=color:#a6e22e>bar_success_class</span> <span style=color:#f92672>:</span> <span style=color:#a6e22e>bar_cancel_class</span>;
+  }
+
+  <span style=color:#75715e>/**
+</span><span style=color:#75715e>   * キャンセル
+</span><span style=color:#75715e>   */</span>
+  <span style=color:#a6e22e>cancel</span>(<span style=color:#a6e22e>e</span>) {
+    <span style=color:#a6e22e>e</span>.<span style=color:#a6e22e>preventDefault</span>();
+    <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>dispatchEvent</span>(
+      <span style=color:#66d9ef>new</span> <span style=color:#a6e22e>CustomEvent</span>(<span style=color:#e6db74>&#34;abort&#34;</span>, {
+        <span style=color:#a6e22e>detail</span><span style=color:#f92672>:</span> <span style=color:#66d9ef>true</span>,
+      })
+    );
+    <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>close</span>();
+  }
+
+  <span style=color:#960050;background-color:#1e0010>@</span><span style=color:#a6e22e>api</span>
+  <span style=color:#a6e22e>close</span>() {
+    <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>isShow</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>false</span>;
+  }
+
+  <span style=color:#960050;background-color:#1e0010>@</span><span style=color:#a6e22e>api</span>
+  <span style=color:#a6e22e>open</span>() {
+    <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>isShow</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>true</span>;
+  }
+}
+</code></pre></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-xml data-lang=xml><span style=color:#75715e>&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
 <span style=color:#f92672>&lt;LightningComponentBundle</span> <span style=color:#a6e22e>xmlns=</span><span style=color:#e6db74>&#34;http://soap.sforce.com/2006/04/metadata&#34;</span><span style=color:#f92672>&gt;</span>
     <span style=color:#f92672>&lt;apiVersion&gt;</span>52.0<span style=color:#f92672>&lt;/apiVersion&gt;</span>
     <span style=color:#f92672>&lt;isExposed&gt;</span>false<span style=color:#f92672>&lt;/isExposed&gt;</span>
 <span style=color:#f92672>&lt;/LightningComponentBundle&gt;</span>
 </code></pre></div><ul>
 <li>utils<br>
-<img loading=lazy src=https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/1767576/82c5d06d-37d2-6212-d4c5-36f0479d5114.png alt=image.png>
+<img loading=lazy src=/images/82c5d06d-37d2-6212-d4c5-36f0479d5114.png alt=image.png>
 </li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-utils.js data-lang=utils.js>
-<span style=color:#66d9ef>import</span> { <span style=color:#a6e22e>ShowToastEvent</span> } <span style=color:#a6e22e>from</span> <span style=color:#e6db74>&#39;lightning/platformShowToastEvent&#39;</span>;
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=color:#66d9ef>import</span> { <span style=color:#a6e22e>ShowToastEvent</span> } <span style=color:#a6e22e>from</span> <span style=color:#e6db74>&#34;lightning/platformShowToastEvent&#34;</span>;
 
 <span style=color:#75715e>/**
 </span><span style=color:#75715e> * メッセージ表示
@@ -738,13 +804,13 @@ LWCでAWS S3と連携する方法
 </span><span style=color:#75715e> * @param {string} variant タイプ info、success、warning、error
 </span><span style=color:#75715e> */</span>
 <span style=color:#66d9ef>export</span> <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>showToast</span> <span style=color:#f92672>=</span> (<span style=color:#a6e22e>that</span>, <span style=color:#a6e22e>title</span>, <span style=color:#a6e22e>message</span>, <span style=color:#a6e22e>variant</span>) =&gt; {
-    <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>event</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> <span style=color:#a6e22e>ShowToastEvent</span>({
-        <span style=color:#a6e22e>title</span><span style=color:#f92672>:</span> <span style=color:#a6e22e>title</span>,
-        <span style=color:#a6e22e>message</span><span style=color:#f92672>:</span> <span style=color:#a6e22e>message</span>,
-        <span style=color:#a6e22e>variant</span><span style=color:#f92672>:</span> <span style=color:#a6e22e>variant</span>,
-    });
-    <span style=color:#a6e22e>that</span>.<span style=color:#a6e22e>dispatchEvent</span>(<span style=color:#a6e22e>event</span>);
-}
+  <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>event</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> <span style=color:#a6e22e>ShowToastEvent</span>({
+    <span style=color:#a6e22e>title</span><span style=color:#f92672>:</span> <span style=color:#a6e22e>title</span>,
+    <span style=color:#a6e22e>message</span><span style=color:#f92672>:</span> <span style=color:#a6e22e>message</span>,
+    <span style=color:#a6e22e>variant</span><span style=color:#f92672>:</span> <span style=color:#a6e22e>variant</span>,
+  });
+  <span style=color:#a6e22e>that</span>.<span style=color:#a6e22e>dispatchEvent</span>(<span style=color:#a6e22e>event</span>);
+};
 
 <span style=color:#75715e>/**
 </span><span style=color:#75715e> * デートフォマート
@@ -752,33 +818,36 @@ LWCでAWS S3と連携する方法
 </span><span style=color:#75715e> * @param {string} fmt format
 </span><span style=color:#75715e> * @returns {string} StringDate
 </span><span style=color:#75715e> */</span>
-<span style=color:#66d9ef>export</span> <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>dateFormat</span> <span style=color:#f92672>=</span> (<span style=color:#a6e22e>date</span>, <span style=color:#a6e22e>fmt</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#39;YYYY/mm/dd&#39;</span>) =&gt; {
-    <span style=color:#66d9ef>let</span> <span style=color:#a6e22e>ret</span>;
-    <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>opt</span> <span style=color:#f92672>=</span> {
-        <span style=color:#e6db74>&#39;Y+&#39;</span><span style=color:#f92672>:</span> <span style=color:#a6e22e>date</span>.<span style=color:#a6e22e>getFullYear</span>().<span style=color:#a6e22e>toString</span>(), <span style=color:#75715e>// 年
-</span><span style=color:#75715e></span>        <span style=color:#e6db74>&#39;m+&#39;</span><span style=color:#f92672>:</span> (<span style=color:#a6e22e>date</span>.<span style=color:#a6e22e>getMonth</span>() <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span>).<span style=color:#a6e22e>toString</span>(), <span style=color:#75715e>// 月
-</span><span style=color:#75715e></span>        <span style=color:#e6db74>&#39;d+&#39;</span><span style=color:#f92672>:</span> <span style=color:#a6e22e>date</span>.<span style=color:#a6e22e>getDate</span>().<span style=color:#a6e22e>toString</span>(), <span style=color:#75715e>// 日
-</span><span style=color:#75715e></span>        <span style=color:#e6db74>&#39;H+&#39;</span><span style=color:#f92672>:</span> <span style=color:#a6e22e>date</span>.<span style=color:#a6e22e>getHours</span>().<span style=color:#a6e22e>toString</span>(), <span style=color:#75715e>// 時
-</span><span style=color:#75715e></span>        <span style=color:#e6db74>&#39;M+&#39;</span><span style=color:#f92672>:</span> <span style=color:#a6e22e>date</span>.<span style=color:#a6e22e>getMinutes</span>().<span style=color:#a6e22e>toString</span>(), <span style=color:#75715e>// 分
-</span><span style=color:#75715e></span>        <span style=color:#e6db74>&#39;S+&#39;</span><span style=color:#f92672>:</span> <span style=color:#a6e22e>date</span>.<span style=color:#a6e22e>getSeconds</span>().<span style=color:#a6e22e>toString</span>() <span style=color:#75715e>// 秒
-</span><span style=color:#75715e></span>    };
-    <span style=color:#66d9ef>for</span> (<span style=color:#66d9ef>let</span> <span style=color:#a6e22e>k</span> <span style=color:#66d9ef>in</span> <span style=color:#a6e22e>opt</span>) {
-        <span style=color:#a6e22e>ret</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> RegExp(<span style=color:#e6db74>&#39;(&#39;</span> <span style=color:#f92672>+</span> <span style=color:#a6e22e>k</span> <span style=color:#f92672>+</span> <span style=color:#e6db74>&#39;)&#39;</span>).<span style=color:#a6e22e>exec</span>(<span style=color:#a6e22e>fmt</span>);
-        <span style=color:#66d9ef>if</span> (<span style=color:#a6e22e>ret</span>) {
-            <span style=color:#a6e22e>fmt</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>fmt</span>.<span style=color:#a6e22e>replace</span>(<span style=color:#a6e22e>ret</span>[<span style=color:#ae81ff>1</span>], (<span style=color:#a6e22e>ret</span>[<span style=color:#ae81ff>1</span>].<span style=color:#a6e22e>length</span> <span style=color:#f92672>==</span> <span style=color:#ae81ff>1</span>) <span style=color:#f92672>?</span> (<span style=color:#a6e22e>opt</span>[<span style=color:#a6e22e>k</span>]) <span style=color:#f92672>:</span> (<span style=color:#a6e22e>opt</span>[<span style=color:#a6e22e>k</span>].<span style=color:#a6e22e>padStart</span>(<span style=color:#a6e22e>ret</span>[<span style=color:#ae81ff>1</span>].<span style=color:#a6e22e>length</span>, <span style=color:#e6db74>&#39;0&#39;</span>)))
-        };
-    };
-    <span style=color:#66d9ef>return</span> <span style=color:#a6e22e>fmt</span>;
-}
+<span style=color:#66d9ef>export</span> <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>dateFormat</span> <span style=color:#f92672>=</span> (<span style=color:#a6e22e>date</span>, <span style=color:#a6e22e>fmt</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;YYYY/mm/dd&#34;</span>) =&gt; {
+  <span style=color:#66d9ef>let</span> <span style=color:#a6e22e>ret</span>;
+  <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>opt</span> <span style=color:#f92672>=</span> {
+    <span style=color:#e6db74>&#34;Y+&#34;</span><span style=color:#f92672>:</span> <span style=color:#a6e22e>date</span>.<span style=color:#a6e22e>getFullYear</span>().<span style=color:#a6e22e>toString</span>(), <span style=color:#75715e>// 年
+</span><span style=color:#75715e></span>    <span style=color:#e6db74>&#34;m+&#34;</span><span style=color:#f92672>:</span> (<span style=color:#a6e22e>date</span>.<span style=color:#a6e22e>getMonth</span>() <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span>).<span style=color:#a6e22e>toString</span>(), <span style=color:#75715e>// 月
+</span><span style=color:#75715e></span>    <span style=color:#e6db74>&#34;d+&#34;</span><span style=color:#f92672>:</span> <span style=color:#a6e22e>date</span>.<span style=color:#a6e22e>getDate</span>().<span style=color:#a6e22e>toString</span>(), <span style=color:#75715e>// 日
+</span><span style=color:#75715e></span>    <span style=color:#e6db74>&#34;H+&#34;</span><span style=color:#f92672>:</span> <span style=color:#a6e22e>date</span>.<span style=color:#a6e22e>getHours</span>().<span style=color:#a6e22e>toString</span>(), <span style=color:#75715e>// 時
+</span><span style=color:#75715e></span>    <span style=color:#e6db74>&#34;M+&#34;</span><span style=color:#f92672>:</span> <span style=color:#a6e22e>date</span>.<span style=color:#a6e22e>getMinutes</span>().<span style=color:#a6e22e>toString</span>(), <span style=color:#75715e>// 分
+</span><span style=color:#75715e></span>    <span style=color:#e6db74>&#34;S+&#34;</span><span style=color:#f92672>:</span> <span style=color:#a6e22e>date</span>.<span style=color:#a6e22e>getSeconds</span>().<span style=color:#a6e22e>toString</span>(), <span style=color:#75715e>// 秒
+</span><span style=color:#75715e></span>  };
+  <span style=color:#66d9ef>for</span> (<span style=color:#66d9ef>let</span> <span style=color:#a6e22e>k</span> <span style=color:#66d9ef>in</span> <span style=color:#a6e22e>opt</span>) {
+    <span style=color:#a6e22e>ret</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> RegExp(<span style=color:#e6db74>&#34;(&#34;</span> <span style=color:#f92672>+</span> <span style=color:#a6e22e>k</span> <span style=color:#f92672>+</span> <span style=color:#e6db74>&#34;)&#34;</span>).<span style=color:#a6e22e>exec</span>(<span style=color:#a6e22e>fmt</span>);
+    <span style=color:#66d9ef>if</span> (<span style=color:#a6e22e>ret</span>) {
+      <span style=color:#a6e22e>fmt</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>fmt</span>.<span style=color:#a6e22e>replace</span>(
+        <span style=color:#a6e22e>ret</span>[<span style=color:#ae81ff>1</span>],
+        <span style=color:#a6e22e>ret</span>[<span style=color:#ae81ff>1</span>].<span style=color:#a6e22e>length</span> <span style=color:#f92672>==</span> <span style=color:#ae81ff>1</span> <span style=color:#f92672>?</span> <span style=color:#a6e22e>opt</span>[<span style=color:#a6e22e>k</span>] <span style=color:#f92672>:</span> <span style=color:#a6e22e>opt</span>[<span style=color:#a6e22e>k</span>].<span style=color:#a6e22e>padStart</span>(<span style=color:#a6e22e>ret</span>[<span style=color:#ae81ff>1</span>].<span style=color:#a6e22e>length</span>, <span style=color:#e6db74>&#34;0&#34;</span>)
+      );
+    }
+  }
+  <span style=color:#66d9ef>return</span> <span style=color:#a6e22e>fmt</span>;
+};
 
 <span style=color:#75715e>/**
-</span><span style=color:#75715e> * YYYY/MM/DD⇒Mon Nov 27 2017 20:30:00 GMT+0900 (JST)に変換
+</span><span style=color:#75715e> * YYYY/MM/DD ⇒ Mon Nov 27 2017 20:30:00 GMT+0900 (JST)に変換
 </span><span style=color:#75715e> * @param {string} dataStr stringDate
 </span><span style=color:#75715e> * @returns {Date} Date
 </span><span style=color:#75715e> */</span>
 <span style=color:#66d9ef>export</span> <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>datePrase</span> <span style=color:#f92672>=</span> (<span style=color:#a6e22e>dataStr</span>) =&gt; {
-    <span style=color:#66d9ef>return</span> <span style=color:#66d9ef>new</span> Date(<span style=color:#a6e22e>dataStr</span>);
-}
+  <span style=color:#66d9ef>return</span> <span style=color:#66d9ef>new</span> Date(<span style=color:#a6e22e>dataStr</span>);
+};
 
 <span style=color:#75715e>/**
 </span><span style=color:#75715e> * デートフォマート
@@ -786,9 +855,9 @@ LWCでAWS S3と連携する方法
 </span><span style=color:#75715e> * @param {string} fmt format
 </span><span style=color:#75715e> * @returns {string} StringDate
 </span><span style=color:#75715e> */</span>
-<span style=color:#66d9ef>export</span> <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>strDateFormat</span> <span style=color:#f92672>=</span> (<span style=color:#a6e22e>strData</span>, <span style=color:#a6e22e>fmt</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#39;YYYY/mm/dd HH:MM:SS&#39;</span>) =&gt; {
-    <span style=color:#66d9ef>return</span> <span style=color:#a6e22e>dateFormat</span>(<span style=color:#a6e22e>datePrase</span>(<span style=color:#a6e22e>strData</span>), <span style=color:#a6e22e>fmt</span>);
-}
+<span style=color:#66d9ef>export</span> <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>strDateFormat</span> <span style=color:#f92672>=</span> (<span style=color:#a6e22e>strData</span>, <span style=color:#a6e22e>fmt</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;YYYY/mm/dd HH:MM:SS&#34;</span>) =&gt; {
+  <span style=color:#66d9ef>return</span> <span style=color:#a6e22e>dateFormat</span>(<span style=color:#a6e22e>datePrase</span>(<span style=color:#a6e22e>strData</span>), <span style=color:#a6e22e>fmt</span>);
+};
 
 <span style=color:#75715e>/**
 </span><span style=color:#75715e> * ファイルサイズ変換
@@ -796,30 +865,30 @@ LWCでAWS S3と連携する方法
 </span><span style=color:#75715e> * @returns 変換後のサイズ
 </span><span style=color:#75715e> */</span>
 <span style=color:#66d9ef>export</span> <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>fileSizeUnit</span> <span style=color:#f92672>=</span> (<span style=color:#a6e22e>size</span>) =&gt; {
-    <span style=color:#75715e>// 1 KB = 1024 Byte
-</span><span style=color:#75715e></span>    <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>kb</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>1024</span>
-    <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>mb</span> <span style=color:#f92672>=</span> Math.<span style=color:#a6e22e>pow</span>(<span style=color:#a6e22e>kb</span>, <span style=color:#ae81ff>2</span>)
-    <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>gb</span> <span style=color:#f92672>=</span> Math.<span style=color:#a6e22e>pow</span>(<span style=color:#a6e22e>kb</span>, <span style=color:#ae81ff>3</span>)
-    <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>tb</span> <span style=color:#f92672>=</span> Math.<span style=color:#a6e22e>pow</span>(<span style=color:#a6e22e>kb</span>, <span style=color:#ae81ff>4</span>)
-    <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>pb</span> <span style=color:#f92672>=</span> Math.<span style=color:#a6e22e>pow</span>(<span style=color:#a6e22e>kb</span>, <span style=color:#ae81ff>5</span>)
-    <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>round</span> <span style=color:#f92672>=</span> (<span style=color:#a6e22e>size</span>, <span style=color:#a6e22e>unit</span>) =&gt; {
-        <span style=color:#66d9ef>return</span> Math.<span style=color:#a6e22e>round</span>(<span style=color:#a6e22e>size</span> <span style=color:#f92672>/</span> <span style=color:#a6e22e>unit</span> <span style=color:#f92672>*</span> <span style=color:#ae81ff>100.0</span>) <span style=color:#f92672>/</span> <span style=color:#ae81ff>100.0</span>
-    }
+  <span style=color:#75715e>// 1 KB = 1024 Byte
+</span><span style=color:#75715e></span>  <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>kb</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>1024</span>;
+  <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>mb</span> <span style=color:#f92672>=</span> Math.<span style=color:#a6e22e>pow</span>(<span style=color:#a6e22e>kb</span>, <span style=color:#ae81ff>2</span>);
+  <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>gb</span> <span style=color:#f92672>=</span> Math.<span style=color:#a6e22e>pow</span>(<span style=color:#a6e22e>kb</span>, <span style=color:#ae81ff>3</span>);
+  <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>tb</span> <span style=color:#f92672>=</span> Math.<span style=color:#a6e22e>pow</span>(<span style=color:#a6e22e>kb</span>, <span style=color:#ae81ff>4</span>);
+  <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>pb</span> <span style=color:#f92672>=</span> Math.<span style=color:#a6e22e>pow</span>(<span style=color:#a6e22e>kb</span>, <span style=color:#ae81ff>5</span>);
+  <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>round</span> <span style=color:#f92672>=</span> (<span style=color:#a6e22e>size</span>, <span style=color:#a6e22e>unit</span>) =&gt; {
+    <span style=color:#66d9ef>return</span> Math.<span style=color:#a6e22e>round</span>((<span style=color:#a6e22e>size</span> <span style=color:#f92672>/</span> <span style=color:#a6e22e>unit</span>) <span style=color:#f92672>*</span> <span style=color:#ae81ff>100.0</span>) <span style=color:#f92672>/</span> <span style=color:#ae81ff>100.0</span>;
+  };
 
-    <span style=color:#66d9ef>if</span> (<span style=color:#a6e22e>size</span> <span style=color:#f92672>&gt;=</span> <span style=color:#a6e22e>pb</span>) {
-        <span style=color:#66d9ef>return</span> <span style=color:#a6e22e>round</span>(<span style=color:#a6e22e>size</span>, <span style=color:#a6e22e>pb</span>) <span style=color:#f92672>+</span> <span style=color:#e6db74>&#39;PB&#39;</span>
-    } <span style=color:#66d9ef>else</span> <span style=color:#66d9ef>if</span> (<span style=color:#a6e22e>size</span> <span style=color:#f92672>&gt;=</span> <span style=color:#a6e22e>tb</span>) {
-        <span style=color:#66d9ef>return</span> <span style=color:#a6e22e>round</span>(<span style=color:#a6e22e>size</span>, <span style=color:#a6e22e>tb</span>) <span style=color:#f92672>+</span> <span style=color:#e6db74>&#39;TB&#39;</span>
-    } <span style=color:#66d9ef>else</span> <span style=color:#66d9ef>if</span> (<span style=color:#a6e22e>size</span> <span style=color:#f92672>&gt;=</span> <span style=color:#a6e22e>gb</span>) {
-        <span style=color:#66d9ef>return</span> <span style=color:#a6e22e>round</span>(<span style=color:#a6e22e>size</span>, <span style=color:#a6e22e>gb</span>) <span style=color:#f92672>+</span> <span style=color:#e6db74>&#39;GB&#39;</span>
-    } <span style=color:#66d9ef>else</span> <span style=color:#66d9ef>if</span> (<span style=color:#a6e22e>size</span> <span style=color:#f92672>&gt;=</span> <span style=color:#a6e22e>mb</span>) {
-        <span style=color:#66d9ef>return</span> <span style=color:#a6e22e>round</span>(<span style=color:#a6e22e>size</span>, <span style=color:#a6e22e>mb</span>) <span style=color:#f92672>+</span> <span style=color:#e6db74>&#39;MB&#39;</span>
-    } <span style=color:#66d9ef>else</span> <span style=color:#66d9ef>if</span> (<span style=color:#a6e22e>size</span> <span style=color:#f92672>&gt;=</span> <span style=color:#a6e22e>kb</span>) {
-        <span style=color:#66d9ef>return</span> <span style=color:#a6e22e>round</span>(<span style=color:#a6e22e>size</span>, <span style=color:#a6e22e>kb</span>) <span style=color:#f92672>+</span> <span style=color:#e6db74>&#39;KB&#39;</span>
-    }
-    <span style=color:#66d9ef>return</span> <span style=color:#a6e22e>size</span> <span style=color:#f92672>+</span> <span style=color:#e6db74>&#39;バイト&#39;</span>
-}
-</code></pre></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-utils.js-meta.xml data-lang=utils.js-meta.xml><span style=color:#75715e>&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
+  <span style=color:#66d9ef>if</span> (<span style=color:#a6e22e>size</span> <span style=color:#f92672>&gt;=</span> <span style=color:#a6e22e>pb</span>) {
+    <span style=color:#66d9ef>return</span> <span style=color:#a6e22e>round</span>(<span style=color:#a6e22e>size</span>, <span style=color:#a6e22e>pb</span>) <span style=color:#f92672>+</span> <span style=color:#e6db74>&#34;PB&#34;</span>;
+  } <span style=color:#66d9ef>else</span> <span style=color:#66d9ef>if</span> (<span style=color:#a6e22e>size</span> <span style=color:#f92672>&gt;=</span> <span style=color:#a6e22e>tb</span>) {
+    <span style=color:#66d9ef>return</span> <span style=color:#a6e22e>round</span>(<span style=color:#a6e22e>size</span>, <span style=color:#a6e22e>tb</span>) <span style=color:#f92672>+</span> <span style=color:#e6db74>&#34;TB&#34;</span>;
+  } <span style=color:#66d9ef>else</span> <span style=color:#66d9ef>if</span> (<span style=color:#a6e22e>size</span> <span style=color:#f92672>&gt;=</span> <span style=color:#a6e22e>gb</span>) {
+    <span style=color:#66d9ef>return</span> <span style=color:#a6e22e>round</span>(<span style=color:#a6e22e>size</span>, <span style=color:#a6e22e>gb</span>) <span style=color:#f92672>+</span> <span style=color:#e6db74>&#34;GB&#34;</span>;
+  } <span style=color:#66d9ef>else</span> <span style=color:#66d9ef>if</span> (<span style=color:#a6e22e>size</span> <span style=color:#f92672>&gt;=</span> <span style=color:#a6e22e>mb</span>) {
+    <span style=color:#66d9ef>return</span> <span style=color:#a6e22e>round</span>(<span style=color:#a6e22e>size</span>, <span style=color:#a6e22e>mb</span>) <span style=color:#f92672>+</span> <span style=color:#e6db74>&#34;MB&#34;</span>;
+  } <span style=color:#66d9ef>else</span> <span style=color:#66d9ef>if</span> (<span style=color:#a6e22e>size</span> <span style=color:#f92672>&gt;=</span> <span style=color:#a6e22e>kb</span>) {
+    <span style=color:#66d9ef>return</span> <span style=color:#a6e22e>round</span>(<span style=color:#a6e22e>size</span>, <span style=color:#a6e22e>kb</span>) <span style=color:#f92672>+</span> <span style=color:#e6db74>&#34;KB&#34;</span>;
+  }
+  <span style=color:#66d9ef>return</span> <span style=color:#a6e22e>size</span> <span style=color:#f92672>+</span> <span style=color:#e6db74>&#34;バイト&#34;</span>;
+};
+</code></pre></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-xml data-lang=xml><span style=color:#75715e>&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
 <span style=color:#f92672>&lt;LightningComponentBundle</span> <span style=color:#a6e22e>xmlns=</span><span style=color:#e6db74>&#34;http://soap.sforce.com/2006/04/metadata&#34;</span><span style=color:#f92672>&gt;</span>
     <span style=color:#f92672>&lt;apiVersion&gt;</span>52.0<span style=color:#f92672>&lt;/apiVersion&gt;</span>
     <span style=color:#f92672>&lt;isExposed&gt;</span>false<span style=color:#f92672>&lt;/isExposed&gt;</span>
@@ -828,27 +897,27 @@ LWCでAWS S3と連携する方法
 <ul>
 <li>
 <p>4.1.Salesforce 側 Lightning コンポーネントタブを作成<br>
-<img loading=lazy src=https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/1767576/ec207822-8224-406c-1df1-cd1d344d9fde.png alt=image.png>
+<img loading=lazy src=/images/ec207822-8224-406c-1df1-cd1d344d9fde.png alt=image.png>
 </p>
 </li>
 <li>
 <p>4.2.タブを開く<br>
-<img loading=lazy src=https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/1767576/f32fb168-fe71-8a0d-8df4-0391d2d28323.png alt=image.png>
+<img loading=lazy src=/images/f32fb168-fe71-8a0d-8df4-0391d2d28323.png alt=image.png>
 </p>
 </li>
 <li>
 <p>4.3.ファイル追加<br>
-<img loading=lazy src=https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/1767576/428267bc-e713-b027-fad2-de0ff54bfde2.png alt="スクリーンショット 2021-07-28 121057.png">
+<img loading=lazy src=/images/428267bc-e713-b027-fad2-de0ff54bfde2.png alt=image.png>
 </p>
 </li>
 <li>
 <p>4.4.ファイルダウンロード<br>
-<img loading=lazy src=https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/1767576/6e2fa66f-feab-3c69-dc62-905fa6aacfa4.png alt="スクリーンショット 2021-07-28 121134.png">
+<img loading=lazy src=/images/6e2fa66f-feab-3c69-dc62-905fa6aacfa4.png alt=image.png>
 </p>
 </li>
 <li>
 <p>4.5.ファイル削除<br>
-<img loading=lazy src=https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/1767576/e04c73af-8878-3389-d241-efe61efef9a9.png alt=image.png>
+<img loading=lazy src=/images/e04c73af-8878-3389-d241-efe61efef9a9.png alt=image.png>
 </p>
 </li>
 </ul>
