@@ -103,7 +103,7 @@
       <pubDate>Fri, 24 Dec 2021 15:04:24 +0900</pubDate>
       
       <guid>https://seiri.blog/posts/js-file-size-convert/</guid>
-      <description>実装 /** * ファイルサイズ変換 * @param {*} size バイト * @returns 変換後のサイズ */ export const fileSizeUnit = (size) =&amp;gt; { // 1 KB = 1024 Byte const kb = 1024 const mb = Math.pow(kb, 2) const gb = Math.pow(kb, 3) const tb = Math.pow(kb, 4) const pb = Math.pow(kb, 5) const round =</description>
+      <description>JavaScript でファイルサイズを変換する関数を作成するには、以下のようなコードを使用できます。 /** * ファイルサイズ変換 * @param {*} sizeInBytes バイト * @returns 変換後のサイズ */ function</description>
     </item>
     
     <item>
