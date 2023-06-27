@@ -6,7 +6,25 @@
     <description>Recent content on Seiri&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>2023 Seiri All rights reserved</copyright>
-    <lastBuildDate>Fri, 23 Jun 2023 19:04:08 +0900</lastBuildDate><atom:link href="https://seiri.blog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 27 Jun 2023 11:16:42 +0900</lastBuildDate><atom:link href="https://seiri.blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>【Salesforce】LWC の Lightning Confirm</title>
+      <link>https://seiri.blog/posts/lwc-lightning-confirm/</link>
+      <pubDate>Tue, 27 Jun 2023 11:16:42 +0900</pubDate>
+      
+      <guid>https://seiri.blog/posts/lwc-lightning-confirm/</guid>
+      <description>lightning/confirm モジュール lightning/confirm モジュールを使用すると、コンポーネントに確認モードを作成できます。コンポーネントで LightningConfirm を使用して、続行する前にユーザーが応答する</description>
+    </item>
+    
+    <item>
+      <title>【Salesforce】LWC のLightning Alert</title>
+      <link>https://seiri.blog/posts/lwc-lightning-alert/</link>
+      <pubDate>Tue, 27 Jun 2023 10:58:55 +0900</pubDate>
+      
+      <guid>https://seiri.blog/posts/lwc-lightning-alert/</guid>
+      <description>lightning/alert モジュール lightning/alert モジュールを使用すると、コンポーネントに警報モードを作成できます。機能やページだけでなく、コンポーネント上で LightningAlert を使用してシステ</description>
+    </item>
+    
     <item>
       <title>Javascriptで二分探索木</title>
       <link>https://seiri.blog/posts/javascript-binary-search-tree/</link>
