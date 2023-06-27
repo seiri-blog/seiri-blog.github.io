@@ -25,14 +25,5 @@
       <description>目的 今回 Classic モードで Visualforce に LWC のでファイル一括ダウンロードする方法を共有します。 前提 jszip.js を静的リソースにアップロードする ソース構成図 force-app └─main └</description>
     </item>
     
-    <item>
-      <title>VFPageにLWCでのファイルUP方法</title>
-      <link>https://seiri.blog/posts/vfpage-lwc-on-file-up/</link>
-      <pubDate>Thu, 29 Jul 2021 16:30:01 +0900</pubDate>
-      
-      <guid>https://seiri.blog/posts/vfpage-lwc-on-file-up/</guid>
-      <description>1.目的 Salesforce Lightning モード下に LWC でのファイルをアップロードするには&amp;lt;lightning-file-upload&amp;gt;コンポネントを使って、フ</description>
-    </item>
-    
   </channel>
 </rss>

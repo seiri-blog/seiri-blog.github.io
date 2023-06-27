@@ -108,10 +108,10 @@
     
     <item>
       <title>【Salesforce】LWC環境構築</title>
-      <link>https://seiri.blog/posts/salesforce_lwc_setup_environment/</link>
+      <link>https://seiri.blog/posts/salesforce-lwc-setup-environment/</link>
       <pubDate>Thu, 29 Dec 2022 19:36:52 +0900</pubDate>
       
-      <guid>https://seiri.blog/posts/salesforce_lwc_setup_environment/</guid>
+      <guid>https://seiri.blog/posts/salesforce-lwc-setup-environment/</guid>
       <description>LWC の環境構築方法 LWC の環境構築の詳しい方法は以下のようになります。 Salesforce の Developer Edition アカウントを取得します。 Developer Edition アカウントは、開発者向けのアカウントで、</description>
     </item>
     

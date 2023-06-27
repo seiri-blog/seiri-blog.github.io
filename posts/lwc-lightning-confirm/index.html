@@ -143,7 +143,7 @@ B!
 </div>
 </details>
 </div>
-<div class=post-content><img alt=【Salesforce】LWCでのファイルダウンロード src=/images/Salesforce.png>
+<div class=post-content><img alt="【Salesforce】LWC の Lightning Confirm" src=/images/Salesforce.png>
 <h2 id=lightningconfirm-モジュール>lightning/confirm モジュール<a hidden class=anchor aria-hidden=true href=#lightningconfirm-モジュール>#</a></h2>
 <p><code>lightning/confirm </code>モジュールを使用すると、コンポーネントに確認モードを作成できます。コンポーネントで <code>LightningConfirm</code> を使用して、続行する前にユーザーが応答するようにします。</p>
 <p><del>window.confirm()</del> ではなく、<code>LightningConfirm.open()</code>を使用すると、より一貫したユーザーエクスペリエンスが得られます。同様の機能がありますが、<code>LightningConfirm.open()</code>はクロスソース iframe で動作し、<strong>Chrome</strong> と <strong>Safari</strong> は <code>confrm()</code>メソッドをサポートしていません。<code>window.confrm()</code>と異なり、<code>LightningConfirm.open()</code>はページ上の実行を停止せず、<code>Promise</code> に戻ります。閉じた後に実行するコードを確認するには、<code>async/await</code> または<code>.then()</code>を使用します。</p>

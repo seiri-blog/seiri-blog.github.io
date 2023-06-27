@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>JavaScript on Seiri&#39;s Blog</title>
+    <title>javascript on Seiri&#39;s Blog</title>
     <link>https://seiri.blog/categories/javascript/</link>
-    <description>Recent content in JavaScript on Seiri&#39;s Blog</description>
+    <description>Recent content in javascript on Seiri&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>2023 Seiri All rights reserved</copyright>
     <lastBuildDate>Fri, 23 Jun 2023 19:04:08 +0900</lastBuildDate><atom:link href="https://seiri.blog/categories/javascript/index.xml" rel="self" type="application/rss+xml" />
@@ -45,10 +45,10 @@
     
     <item>
       <title>【Salesforce】LWC環境構築</title>
-      <link>https://seiri.blog/posts/salesforce_lwc_setup_environment/</link>
+      <link>https://seiri.blog/posts/salesforce-lwc-setup-environment/</link>
       <pubDate>Thu, 29 Dec 2022 19:36:52 +0900</pubDate>
       
-      <guid>https://seiri.blog/posts/salesforce_lwc_setup_environment/</guid>
+      <guid>https://seiri.blog/posts/salesforce-lwc-setup-environment/</guid>
       <description>LWC の環境構築方法 LWC の環境構築の詳しい方法は以下のようになります。 Salesforce の Developer Edition アカウントを取得します。 Developer Edition アカウントは、開発者向けのアカウントで、</description>
     </item>
     
@@ -121,7 +121,7 @@
       <pubDate>Fri, 24 Dec 2021 15:04:24 +0900</pubDate>
       
       <guid>https://seiri.blog/posts/js-file-size-convert/</guid>
-      <description>JavaScript でファイルサイズを変換する関数を作成するには、以下のようなコードを使用できます。 /** * ファイルサイズ変換 * @param {*} sizeInBytes バイト * @returns 変換後のサイズ */ function</description>
+      <description>javascript でファイルサイズを変換する関数を作成するには、以下のようなコードを使用できます。 /** * ファイルサイズ変換 * @param {*} sizeInBytes バイト * @returns 変換後のサイズ */ function</description>
     </item>
     
     <item>

@@ -26,7 +26,7 @@
     </item>
     
     <item>
-      <title>JavaScript</title>
+      <title>javascript</title>
       <link>https://seiri.blog/categories/javascript/</link>
       <pubDate>Fri, 23 Jun 2023 19:04:08 +0900</pubDate>
       
@@ -85,15 +85,6 @@
       <pubDate>Fri, 09 Jun 2023 18:01:10 +0900</pubDate>
       
       <guid>https://seiri.blog/categories/%E3%83%86%E3%82%B9%E3%83%88%E3%82%AF%E3%83%A9%E3%82%B9/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Lightningコンポーネント</title>
-      <link>https://seiri.blog/categories/lightning%E3%82%B3%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%8D%E3%83%B3%E3%83%88/</link>
-      <pubDate>Wed, 31 May 2023 19:17:41 +0900</pubDate>
-      
-      <guid>https://seiri.blog/categories/lightning%E3%82%B3%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%8D%E3%83%B3%E3%83%88/</guid>
       <description></description>
     </item>
     
@@ -184,15 +175,6 @@
       <pubDate>Sat, 25 Mar 2023 16:46:55 +0900</pubDate>
       
       <guid>https://seiri.blog/categories/git/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>GitHub Profile</title>
-      <link>https://seiri.blog/categories/github-profile/</link>
-      <pubDate>Sat, 25 Mar 2023 16:46:55 +0900</pubDate>
-      
-      <guid>https://seiri.blog/categories/github-profile/</guid>
       <description></description>
     </item>
     
@@ -292,15 +274,6 @@
       <pubDate>Thu, 29 Dec 2022 19:36:52 +0900</pubDate>
       
       <guid>https://seiri.blog/categories/command/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>LightningWebComponents</title>
-      <link>https://seiri.blog/categories/lightningwebcomponents/</link>
-      <pubDate>Thu, 29 Dec 2022 19:36:52 +0900</pubDate>
-      
-      <guid>https://seiri.blog/categories/lightningwebcomponents/</guid>
       <description></description>
     </item>
     
@@ -440,15 +413,6 @@
     </item>
     
     <item>
-      <title>AmazonWebServices</title>
-      <link>https://seiri.blog/categories/amazonwebservices/</link>
-      <pubDate>Fri, 22 Jul 2022 16:42:09 +0900</pubDate>
-      
-      <guid>https://seiri.blog/categories/amazonwebservices/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>API</title>
       <link>https://seiri.blog/categories/api/</link>
       <pubDate>Fri, 22 Jul 2022 16:42:09 +0900</pubDate>
@@ -481,24 +445,6 @@
       <pubDate>Fri, 22 Jul 2022 12:03:11 +0900</pubDate>
       
       <guid>https://seiri.blog/categories/lambda-layers/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>amazons3</title>
-      <link>https://seiri.blog/categories/amazons3/</link>
-      <pubDate>Fri, 22 Jul 2022 11:54:52 +0900</pubDate>
-      
-      <guid>https://seiri.blog/categories/amazons3/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>awsS3</title>
-      <link>https://seiri.blog/categories/awss3/</link>
-      <pubDate>Fri, 22 Jul 2022 11:54:52 +0900</pubDate>
-      
-      <guid>https://seiri.blog/categories/awss3/</guid>
       <description></description>
     </item>
     
@@ -701,29 +647,11 @@
     </item>
     
     <item>
-      <title>DateFormatter</title>
-      <link>https://seiri.blog/categories/dateformatter/</link>
-      <pubDate>Fri, 24 Dec 2021 15:08:50 +0900</pubDate>
-      
-      <guid>https://seiri.blog/categories/dateformatter/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>datetime</title>
       <link>https://seiri.blog/categories/datetime/</link>
       <pubDate>Fri, 24 Dec 2021 15:08:50 +0900</pubDate>
       
       <guid>https://seiri.blog/categories/datetime/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>datetimeformatter</title>
-      <link>https://seiri.blog/categories/datetimeformatter/</link>
-      <pubDate>Fri, 24 Dec 2021 15:08:50 +0900</pubDate>
-      
-      <guid>https://seiri.blog/categories/datetimeformatter/</guid>
       <description></description>
     </item>
     
@@ -791,27 +719,9 @@
     </item>
     
     <item>
-      <title>fileupload</title>
-      <link>https://seiri.blog/categories/fileupload/</link>
-      <pubDate>Thu, 29 Jul 2021 16:30:01 +0900</pubDate>
-      
-      <guid>https://seiri.blog/categories/fileupload/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>forcetk.js</title>
-      <link>https://seiri.blog/categories/forcetk.js/</link>
-      <pubDate>Thu, 29 Jul 2021 16:30:01 +0900</pubDate>
-      
-      <guid>https://seiri.blog/categories/forcetk.js/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>VFページ</title>
       <link>https://seiri.blog/categories/vf%E3%83%9A%E3%83%BC%E3%82%B8/</link>
-      <pubDate>Thu, 29 Jul 2021 16:30:01 +0900</pubDate>
+      <pubDate>Wed, 28 Jul 2021 14:42:39 +0900</pubDate>
       
       <guid>https://seiri.blog/categories/vf%E3%83%9A%E3%83%BC%E3%82%B8/</guid>
       <description></description>
@@ -868,15 +778,6 @@
       <pubDate>Wed, 21 Jul 2021 19:17:39 +0900</pubDate>
       
       <guid>https://seiri.blog/categories/styling/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>再帰</title>
-      <link>https://seiri.blog/categories/%E5%86%8D%E5%B8%B0/</link>
-      <pubDate>Wed, 21 Jul 2021 18:36:08 +0900</pubDate>
-      
-      <guid>https://seiri.blog/categories/%E5%86%8D%E5%B8%B0/</guid>
       <description></description>
     </item>
     
