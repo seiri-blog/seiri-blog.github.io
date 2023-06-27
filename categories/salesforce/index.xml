@@ -6,7 +6,16 @@
     <description>Recent content in Salesforce on Seiri&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>2023 Seiri All rights reserved</copyright>
-    <lastBuildDate>Tue, 27 Jun 2023 12:24:02 +0900</lastBuildDate><atom:link href="https://seiri.blog/categories/salesforce/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 27 Jun 2023 15:09:13 +0900</lastBuildDate><atom:link href="https://seiri.blog/categories/salesforce/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>【Salesforce】LWCで日付選択コンポーネントを作る</title>
+      <link>https://seiri.blog/posts/lwc-how-to-make-a-custom-date-picker/</link>
+      <pubDate>Tue, 27 Jun 2023 15:09:13 +0900</pubDate>
+      
+      <guid>https://seiri.blog/posts/lwc-how-to-make-a-custom-date-picker/</guid>
+      <description>LWC 標準の日付選択コンポーネントは&amp;lt;lightning-input type=&amp;quot;date&amp;quot;&amp;gt;となりますが、カスタ</description>
+    </item>
+    
     <item>
       <title>【Salesforce】LWC の Lightning モーダル</title>
       <link>https://seiri.blog/posts/lwc-lightning-modal/</link>

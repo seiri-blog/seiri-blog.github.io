@@ -6,16 +6,7 @@
     <description>Recent content in LightningWebComponents on Seiri&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>2023 Seiri All rights reserved</copyright>
-    <lastBuildDate>Wed, 31 May 2023 19:17:41 +0900</lastBuildDate><atom:link href="https://seiri.blog/tags/lightningwebcomponents/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>【Salesforce】ExperienceCloudサイト画面遷移Utilを自分で作る</title>
-      <link>https://seiri.blog/posts/salesforce-lwc-navagation-common-util/</link>
-      <pubDate>Wed, 31 May 2023 19:17:41 +0900</pubDate>
-      
-      <guid>https://seiri.blog/posts/salesforce-lwc-navagation-common-util/</guid>
-      <description>LWC での画面遷移 LWC の中にNavigationMixinを提供しています、それを利用して、画面を遷移することができます、今回はNavigatio</description>
-    </item>
-    
+    <lastBuildDate>Thu, 29 Dec 2022 19:36:52 +0900</lastBuildDate><atom:link href="https://seiri.blog/tags/lightningwebcomponents/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>【Salesforce】LWCライフサイクルフック</title>
       <link>https://seiri.blog/posts/lwc-life-cycle-hook/</link>
@@ -53,15 +44,6 @@
     </item>
     
     <item>
-      <title>【Salesforce】LWC CSV出力方法</title>
-      <link>https://seiri.blog/posts/salesforce-lwc-csv-output-method/</link>
-      <pubDate>Tue, 29 Mar 2022 16:38:42 +0900</pubDate>
-      
-      <guid>https://seiri.blog/posts/salesforce-lwc-csv-output-method/</guid>
-      <description>LWC で CSV 出力方法説明 LWC で CSV ファイルを出力する考え方は主に下記の流れとなります。 1.LWC のコンポーネントにデータを持たせます。 2.CSV を作成するため、各行の</description>
-    </item>
-    
-    <item>
       <title>JSでのレスポンスクラスハンドラーの作成</title>
       <link>https://seiri.blog/posts/response-class-handler-creating-on-js/</link>
       <pubDate>Tue, 21 Dec 2021 18:30:15 +0900</pubDate>
@@ -89,39 +71,12 @@
     </item>
     
     <item>
-      <title>LWCでのファイル一括ダウンロード方法</title>
-      <link>https://seiri.blog/posts/lwc-file-bulk-download/</link>
-      <pubDate>Mon, 02 Aug 2021 10:57:14 +0900</pubDate>
-      
-      <guid>https://seiri.blog/posts/lwc-file-bulk-download/</guid>
-      <description>目的 今回 Classic モードで Visualforce に LWC のでファイル一括ダウンロードする方法を共有します。 前提 jszip.js を静的リソースにアップロードする ソース構成図 force-app └─main └</description>
-    </item>
-    
-    <item>
-      <title>【Salesforce】VFページにLWCを表示する方法</title>
-      <link>https://seiri.blog/posts/salesforce-vfpage-display-lwc/</link>
-      <pubDate>Wed, 28 Jul 2021 14:42:39 +0900</pubDate>
-      
-      <guid>https://seiri.blog/posts/salesforce-vfpage-display-lwc/</guid>
-      <description>VF ページに LWC を表示する方法説明 基本的な考え方は VF ページに LightningOut という仕組みを利用して、LWC を表示すると思います。 LightningOut の仕組み VF ⇒ Aura ⇒ LWCという</description>
-    </item>
-    
-    <item>
       <title>LWCでの共通Util自分で作る</title>
       <link>https://seiri.blog/posts/lwc-on-common-util-myself-with-make/</link>
       <pubDate>Mon, 26 Jul 2021 10:52:54 +0900</pubDate>
       
       <guid>https://seiri.blog/posts/lwc-on-common-util-myself-with-make/</guid>
       <description>1.目的 今回 LWC での共通 Util の作成方法を共有します。 2.ソース構成図 lwc ├─commonUtil └─commonUtilChild commonUtil /** * デートフォ</description>
-    </item>
-    
-    <item>
-      <title>【Salesforce】LWCでの共通CSS</title>
-      <link>https://seiri.blog/posts/lwc-common-css/</link>
-      <pubDate>Mon, 26 Jul 2021 10:30:25 +0900</pubDate>
-      
-      <guid>https://seiri.blog/posts/lwc-common-css/</guid>
-      <description>LWC 共通 CSS 方法説明 スタイルシートを使用して共通の CSS を定義し、それを複数のコンポーネントでインポートします。 CSS をグローバルに定義し、それをすべて</description>
     </item>
     
     <item>
