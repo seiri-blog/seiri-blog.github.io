@@ -8,11 +8,11 @@
     <copyright>2023 Seiri All rights reserved</copyright>
     <lastBuildDate>Tue, 27 Jun 2023 15:09:13 +0900</lastBuildDate><atom:link href="https://seiri.blog/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>LightningOut</title>
-      <link>https://seiri.blog/categories/lightningout/</link>
+      <title>lwc</title>
+      <link>https://seiri.blog/categories/lwc/</link>
       <pubDate>Tue, 27 Jun 2023 15:09:13 +0900</pubDate>
       
-      <guid>https://seiri.blog/categories/lightningout/</guid>
+      <guid>https://seiri.blog/categories/lwc/</guid>
       <description></description>
     </item>
     
@@ -22,15 +22,6 @@
       <pubDate>Tue, 27 Jun 2023 15:09:13 +0900</pubDate>
       
       <guid>https://seiri.blog/categories/salesforce/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>lwc</title>
-      <link>https://seiri.blog/categories/lwc/</link>
-      <pubDate>Tue, 27 Jun 2023 12:24:02 +0900</pubDate>
-      
-      <guid>https://seiri.blog/categories/lwc/</guid>
       <description></description>
     </item>
     
@@ -337,6 +328,15 @@
       <pubDate>Thu, 29 Dec 2022 16:30:01 +0900</pubDate>
       
       <guid>https://seiri.blog/categories/jszip/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>LightningOut</title>
+      <link>https://seiri.blog/categories/lightningout/</link>
+      <pubDate>Thu, 29 Dec 2022 16:30:01 +0900</pubDate>
+      
+      <guid>https://seiri.blog/categories/lightningout/</guid>
       <description></description>
     </item>
     

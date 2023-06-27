@@ -5,10 +5,10 @@
     <loc>https://seiri.blog/categories/</loc>
     <lastmod>2023-06-27T15:09:13+09:00</lastmod>
   </url><url>
-    <loc>https://seiri.blog/tags/lightningout/</loc>
+    <loc>https://seiri.blog/tags/lwc/</loc>
     <lastmod>2023-06-27T15:09:13+09:00</lastmod>
   </url><url>
-    <loc>https://seiri.blog/categories/lightningout/</loc>
+    <loc>https://seiri.blog/categories/lwc/</loc>
     <lastmod>2023-06-27T15:09:13+09:00</lastmod>
   </url><url>
     <loc>https://seiri.blog/posts/</loc>
@@ -28,12 +28,6 @@
   </url><url>
     <loc>https://seiri.blog/posts/lwc-how-to-make-a-custom-date-picker/</loc>
     <lastmod>2023-06-27T15:09:13+09:00</lastmod>
-  </url><url>
-    <loc>https://seiri.blog/tags/lwc/</loc>
-    <lastmod>2023-06-27T12:24:02+09:00</lastmod>
-  </url><url>
-    <loc>https://seiri.blog/categories/lwc/</loc>
-    <lastmod>2023-06-27T12:24:02+09:00</lastmod>
   </url><url>
     <loc>https://seiri.blog/posts/lwc-lightning-modal/</loc>
     <lastmod>2023-06-27T12:24:02+09:00</lastmod>
@@ -318,6 +312,12 @@
     <lastmod>2022-12-29T16:30:01+09:00</lastmod>
   </url><url>
     <loc>https://seiri.blog/categories/jszip/</loc>
+    <lastmod>2022-12-29T16:30:01+09:00</lastmod>
+  </url><url>
+    <loc>https://seiri.blog/tags/lightningout/</loc>
+    <lastmod>2022-12-29T16:30:01+09:00</lastmod>
+  </url><url>
+    <loc>https://seiri.blog/categories/lightningout/</loc>
     <lastmod>2022-12-29T16:30:01+09:00</lastmod>
   </url><url>
     <loc>https://seiri.blog/posts/lwc-download-file/</loc>
