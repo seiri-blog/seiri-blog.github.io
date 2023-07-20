@@ -3,7 +3,40 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://seiri.blog/categories/</loc>
-    <lastmod>2023-06-27T15:09:13+09:00</lastmod>
+    <lastmod>2023-07-20T09:24:07+09:00</lastmod>
+  </url><url>
+    <loc>https://seiri.blog/posts/</loc>
+    <lastmod>2023-07-20T09:24:07+09:00</lastmod>
+  </url><url>
+    <loc>https://seiri.blog/</loc>
+    <lastmod>2023-07-20T09:24:07+09:00</lastmod>
+  </url><url>
+    <loc>https://seiri.blog/tags/sql/</loc>
+    <lastmod>2023-07-20T09:24:07+09:00</lastmod>
+  </url><url>
+    <loc>https://seiri.blog/categories/sql/</loc>
+    <lastmod>2023-07-20T09:24:07+09:00</lastmod>
+  </url><url>
+    <loc>https://seiri.blog/posts/sql-with/</loc>
+    <lastmod>2023-07-20T09:24:07+09:00</lastmod>
+  </url><url>
+    <loc>https://seiri.blog/tags/</loc>
+    <lastmod>2023-07-20T09:24:07+09:00</lastmod>
+  </url><url>
+    <loc>https://seiri.blog/tags/with/</loc>
+    <lastmod>2023-07-20T09:24:07+09:00</lastmod>
+  </url><url>
+    <loc>https://seiri.blog/categories/with/</loc>
+    <lastmod>2023-07-20T09:24:07+09:00</lastmod>
+  </url><url>
+    <loc>https://seiri.blog/posts/sql-union/</loc>
+    <lastmod>2023-07-20T09:05:32+09:00</lastmod>
+  </url><url>
+    <loc>https://seiri.blog/tags/union/</loc>
+    <lastmod>2023-07-20T09:05:32+09:00</lastmod>
+  </url><url>
+    <loc>https://seiri.blog/categories/union/</loc>
+    <lastmod>2023-07-20T09:05:32+09:00</lastmod>
   </url><url>
     <loc>https://seiri.blog/tags/lwc/</loc>
     <lastmod>2023-06-27T15:09:13+09:00</lastmod>
@@ -11,19 +44,10 @@
     <loc>https://seiri.blog/categories/lwc/</loc>
     <lastmod>2023-06-27T15:09:13+09:00</lastmod>
   </url><url>
-    <loc>https://seiri.blog/posts/</loc>
-    <lastmod>2023-06-27T15:09:13+09:00</lastmod>
-  </url><url>
     <loc>https://seiri.blog/tags/salesforce/</loc>
     <lastmod>2023-06-27T15:09:13+09:00</lastmod>
   </url><url>
     <loc>https://seiri.blog/categories/salesforce/</loc>
-    <lastmod>2023-06-27T15:09:13+09:00</lastmod>
-  </url><url>
-    <loc>https://seiri.blog/</loc>
-    <lastmod>2023-06-27T15:09:13+09:00</lastmod>
-  </url><url>
-    <loc>https://seiri.blog/tags/</loc>
     <lastmod>2023-06-27T15:09:13+09:00</lastmod>
   </url><url>
     <loc>https://seiri.blog/posts/lwc-how-to-make-a-custom-date-picker/</loc>
