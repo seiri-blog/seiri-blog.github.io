@@ -6,7 +6,16 @@
     <description>Recent content in Posts on Seiri&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>2023 Seiri All rights reserved</copyright>
-    <lastBuildDate>Thu, 20 Jul 2023 09:24:07 +0900</lastBuildDate><atom:link href="https://seiri.blog/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 31 Jul 2023 09:19:46 +0900</lastBuildDate><atom:link href="https://seiri.blog/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>intra-martの説明</title>
+      <link>https://seiri.blog/posts/what-is-intra-mart/</link>
+      <pubDate>Mon, 31 Jul 2023 09:19:46 +0900</pubDate>
+      
+      <guid>https://seiri.blog/posts/what-is-intra-mart/</guid>
+      <description>intra-martとは Intra-mart（イントラマート）は、日本のサイボウズ株式会社が提供しているエンタープライズポータルおよび業務ア</description>
+    </item>
+    
     <item>
       <title>SQL WITHの使い方</title>
       <link>https://seiri.blog/posts/sql-with/</link>
