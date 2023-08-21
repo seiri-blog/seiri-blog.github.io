@@ -6,7 +6,16 @@
     <description>Recent content on Seiri&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>2023 Seiri All rights reserved</copyright>
-    <lastBuildDate>Mon, 31 Jul 2023 09:19:46 +0900</lastBuildDate><atom:link href="https://seiri.blog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 21 Aug 2023 11:28:04 +0900</lastBuildDate><atom:link href="https://seiri.blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Chrome拡張機能開発の入門</title>
+      <link>https://seiri.blog/posts/chrome-extension-developer/</link>
+      <pubDate>Mon, 21 Aug 2023 11:28:04 +0900</pubDate>
+      
+      <guid>https://seiri.blog/posts/chrome-extension-developer/</guid>
+      <description>mainfest の定義(必須) manifest.json は、Chrome 拡張機能を定義するためのファイルです。 このファイルは、拡張機能の基本的な情報、設定、権限、リソースなどを指</description>
+    </item>
+    
     <item>
       <title>intra-martの説明</title>
       <link>https://seiri.blog/posts/what-is-intra-mart/</link>
