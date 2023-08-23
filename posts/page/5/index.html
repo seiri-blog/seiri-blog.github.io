@@ -101,6 +101,17 @@ Posts
 </header>
 <article class=post-entry>
 <header class=entry-header>
+<h2>JavaScriptでオブジェクトをコピーする方法
+</h2>
+</header>
+<div class=entry-content>
+<p>実行例 /** * オブジェクトをコピー * @param obj 対象オブジェクト * @return 新しいオブジェクト */ export const deepCopy = (obj) => { if (Object(obj) !== obj) { return obj; } if (obj instanceof Set) { return new Set(obj); } if (obj instanceof Date) { return new Date(obj);...</p>
+</div>
+<footer class=entry-footer><span title="2021-11-22 17:05:15 +0900 +0900">2021年11月22日</span>&nbsp;·&nbsp;1 分&nbsp;·&nbsp;148 文字&nbsp;·&nbsp;Seiri</footer>
+<a class=entry-link aria-label="post link to JavaScriptでオブジェクトをコピーする方法" href=https://seiri.blog/posts/js-object-copy/></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
 <h2>JavaSrcriptでパッケージを使わずにUUIDを生成する方法
 </h2>
 </header>

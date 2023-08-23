@@ -6,7 +6,16 @@
     <description>Recent content on Seiri&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>2023 Seiri All rights reserved</copyright>
-    <lastBuildDate>Mon, 21 Aug 2023 11:28:04 +0900</lastBuildDate><atom:link href="https://seiri.blog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 23 Aug 2023 09:19:08 +0900</lastBuildDate><atom:link href="https://seiri.blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ダークモードの開発</title>
+      <link>https://seiri.blog/posts/night-moden-developer/</link>
+      <pubDate>Wed, 23 Aug 2023 09:19:08 +0900</pubDate>
+      
+      <guid>https://seiri.blog/posts/night-moden-developer/</guid>
+      <description>ダークモード作成の流れ ダークモードを実装する一般的な流れは以下の通りです。この流れは、HTML、CSS、JavaScriptを使用してウェブ</description>
+    </item>
+    
     <item>
       <title>Chrome拡張機能開発の入門</title>
       <link>https://seiri.blog/posts/chrome-extension-developer/</link>
