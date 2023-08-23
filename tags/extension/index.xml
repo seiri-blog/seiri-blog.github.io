@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>extension on Seiri&#39;s Blog</title>
+    <link>https://seiri.blog/tags/extension/</link>
+    <description>Recent content in extension on Seiri&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>2023 Seiri All rights reserved</copyright>
+    <lastBuildDate>Mon, 21 Aug 2023 11:28:04 +0900</lastBuildDate><atom:link href="https://seiri.blog/tags/extension/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Chrome拡張機能開発の入門</title>
+      <link>https://seiri.blog/posts/chrome-extension-developer/</link>
+      <pubDate>Mon, 21 Aug 2023 11:28:04 +0900</pubDate>
+      
+      <guid>https://seiri.blog/posts/chrome-extension-developer/</guid>
+      <description>mainfest の定義(必須) manifest.json は、Chrome 拡張機能を定義するためのファイルです。 このファイルは、拡張機能の基本的な情報、設定、権限、リソースなどを指</description>
+    </item>
+    
+  </channel>
+</rss>

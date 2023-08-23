@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>LightningOut on Seiri&#39;s Blog</title>
+    <link>https://seiri.blog/tags/lightningout/</link>
+    <description>Recent content in LightningOut on Seiri&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>2023 Seiri All rights reserved</copyright>
+    <lastBuildDate>Thu, 29 Dec 2022 16:30:01 +0900</lastBuildDate><atom:link href="https://seiri.blog/tags/lightningout/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>【Salesforce】LWCでのファイル一括ダウンロード方法</title>
+      <link>https://seiri.blog/posts/lwc-mass-file-download/</link>
+      <pubDate>Thu, 29 Dec 2022 16:30:01 +0900</pubDate>
+      
+      <guid>https://seiri.blog/posts/lwc-mass-file-download/</guid>
+      <description>目的 今回 Classic モードで Visualforce に LWC のでファイル一括ダウンロードする方法を共有します。 前提 jszip.js を静的リソースにアップロードする ソース構成図 force-app └─main └</description>
+    </item>
+    
+    <item>
+      <title>LWCでのファイル一括ダウンロード方法</title>
+      <link>https://seiri.blog/posts/lwc-file-bulk-download/</link>
+      <pubDate>Mon, 02 Aug 2021 10:57:14 +0900</pubDate>
+      
+      <guid>https://seiri.blog/posts/lwc-file-bulk-download/</guid>
+      <description>目的 今回 Classic モードで Visualforce に LWC のでファイル一括ダウンロードする方法を共有します。 前提 jszip.js を静的リソースにアップロードする ソース構成図 force-app └─main └</description>
+    </item>
+    
+    <item>
+      <title>【Salesforce】VFページにLWCを表示する方法</title>
+      <link>https://seiri.blog/posts/salesforce-vfpage-display-lwc/</link>
+      <pubDate>Wed, 28 Jul 2021 14:42:39 +0900</pubDate>
+      
+      <guid>https://seiri.blog/posts/salesforce-vfpage-display-lwc/</guid>
+      <description>VF ページに LWC を表示する方法説明 基本的な考え方は VF ページに LightningOut という仕組みを利用して、LWC を表示すると思います。 LightningOut の仕組み VF ⇒ Aura ⇒ LWCという</description>
+    </item>
+    
+  </channel>
+</rss>

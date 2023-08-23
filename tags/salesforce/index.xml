@@ -1,0 +1,380 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Salesforce on Seiri&#39;s Blog</title>
+    <link>https://seiri.blog/tags/salesforce/</link>
+    <description>Recent content in Salesforce on Seiri&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>2023 Seiri All rights reserved</copyright>
+    <lastBuildDate>Tue, 27 Jun 2023 15:09:13 +0900</lastBuildDate><atom:link href="https://seiri.blog/tags/salesforce/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>【Salesforce】LWCで日付選択コンポーネントを作る</title>
+      <link>https://seiri.blog/posts/lwc-how-to-make-a-custom-date-picker/</link>
+      <pubDate>Tue, 27 Jun 2023 15:09:13 +0900</pubDate>
+      
+      <guid>https://seiri.blog/posts/lwc-how-to-make-a-custom-date-picker/</guid>
+      <description>LWC 標準の日付選択コンポーネントは&amp;lt;lightning-input type=&amp;quot;date&amp;quot;&amp;gt;となりますが、カスタ</description>
+    </item>
+    
+    <item>
+      <title>【Salesforce】LWC の Lightning モーダル</title>
+      <link>https://seiri.blog/posts/lwc-lightning-modal/</link>
+      <pubDate>Tue, 27 Jun 2023 12:24:02 +0900</pubDate>
+      
+      <guid>https://seiri.blog/posts/lwc-lightning-modal/</guid>
+      <description>lightning/modal モジュール lightningModal コンポーネントは、現在のアプリケーションウィンドウの上部にメッセージモダリティを上書きします。モダリティは、ユーザーのワークフ</description>
+    </item>
+    
+    <item>
+      <title>【Salesforce】LWC の Lightning Confirm</title>
+      <link>https://seiri.blog/posts/lwc-lightning-confirm/</link>
+      <pubDate>Tue, 27 Jun 2023 11:16:42 +0900</pubDate>
+      
+      <guid>https://seiri.blog/posts/lwc-lightning-confirm/</guid>
+      <description>lightning/confirm モジュール lightning/confirm モジュールを使用すると、コンポーネントに確認モードを作成できます。コンポーネントで LightningConfirm を使用して、続行する前にユーザーが応答する</description>
+    </item>
+    
+    <item>
+      <title>【Salesforce】LWC のLightning Alert</title>
+      <link>https://seiri.blog/posts/lwc-lightning-alert/</link>
+      <pubDate>Tue, 27 Jun 2023 10:58:55 +0900</pubDate>
+      
+      <guid>https://seiri.blog/posts/lwc-lightning-alert/</guid>
+      <description>lightning/alert モジュール lightning/alert モジュールを使用すると、コンポーネントに警報モードを作成できます。機能やページだけでなく、コンポーネント上で LightningAlert を使用してシステ</description>
+    </item>
+    
+    <item>
+      <title>【Salesforce】Apexデバッグ方法</title>
+      <link>https://seiri.blog/posts/salesforce-apex-debug/</link>
+      <pubDate>Fri, 09 Jun 2023 18:05:01 +0900</pubDate>
+      
+      <guid>https://seiri.blog/posts/salesforce-apex-debug/</guid>
+      <description>Salesforce のデバッグ方法 デバッグログの有効化: Salesforce のセットアップで、デバッグログを有効にすることができます。デバッグログは、Apex コードやトリガーの</description>
+    </item>
+    
+    <item>
+      <title>【Salesforce】Apexテストクラス作成する方法</title>
+      <link>https://seiri.blog/posts/salesforce-apex-test-class/</link>
+      <pubDate>Fri, 09 Jun 2023 18:01:10 +0900</pubDate>
+      
+      <guid>https://seiri.blog/posts/salesforce-apex-test-class/</guid>
+      <description>Salesforce テストクラスは、Apex コードのユニットテストを実行するために使用されます。 以下は、Salesforce テストクラスの作成手順の概要です。</description>
+    </item>
+    
+    <item>
+      <title>【Salesforce】LWCでExperience Cloudログアウトする方法</title>
+      <link>https://seiri.blog/posts/lwc-and-aura-experience-cloud-logout/</link>
+      <pubDate>Fri, 09 Jun 2023 17:13:05 +0900</pubDate>
+      
+      <guid>https://seiri.blog/posts/lwc-and-aura-experience-cloud-logout/</guid>
+      <description>ログアウト方法 1 &amp;lt;site_name&amp;gt;/secur/logout.jspへ遷移し、ログアウトする方法 lwc:logout &amp;lt;template&amp;gt; &amp;lt;lightning-button label=&amp;#34;</description>
+    </item>
+    
+    <item>
+      <title>【Salesforce】ExperienceCloudサイト画面遷移Utilを自分で作る</title>
+      <link>https://seiri.blog/posts/salesforce-lwc-navagation-common-util/</link>
+      <pubDate>Wed, 31 May 2023 19:17:41 +0900</pubDate>
+      
+      <guid>https://seiri.blog/posts/salesforce-lwc-navagation-common-util/</guid>
+      <description>LWC での画面遷移 LWC の中にNavigationMixinを提供しています、それを利用して、画面を遷移することができます、今回はNavigatio</description>
+    </item>
+    
+    <item>
+      <title>VSCodeでSalesforceのコードフォーマットする方法</title>
+      <link>https://seiri.blog/posts/salesforce-source-code-format/</link>
+      <pubDate>Tue, 04 Apr 2023 18:23:36 +0900</pubDate>
+      
+      <guid>https://seiri.blog/posts/salesforce-source-code-format/</guid>
+      <description>VSCode の環境構築 今回に関しては設定は詳しく説明しません、やり方のみ詳しく説明させていただきます。 下記リンクを開いて、自分の PC にダウンロードする https://github.com/RyuSeiri/Salesforce-Source-Format</description>
+    </item>
+    
+    <item>
+      <title>【Salesforce】LWCライフサイクルフック</title>
+      <link>https://seiri.blog/posts/lwc-life-cycle-hook/</link>
+      <pubDate>Thu, 29 Dec 2022 19:36:52 +0900</pubDate>
+      
+      <guid>https://seiri.blog/posts/lwc-life-cycle-hook/</guid>
+      <description>LWCライフサイクルフックの説明 LWC のライフサイクルフックには、インスタンス化、接続、更新、破棄の 4 つのフェーズがあります。それぞれのフェーズ</description>
+    </item>
+    
+    <item>
+      <title>【Salesforce】LWC入門</title>
+      <link>https://seiri.blog/posts/lwc-introduction/</link>
+      <pubDate>Thu, 29 Dec 2022 19:36:52 +0900</pubDate>
+      
+      <guid>https://seiri.blog/posts/lwc-introduction/</guid>
+      <description>LWC の説明 LWC (Lightning Web Components) の基礎となる概念は以下のとおりです。 Web Components: LWC は Web Components と呼ばれる技術を使用しています。Web Components は、ブラウザの API を使用して、カスタム</description>
+    </item>
+    
+    <item>
+      <title>【Salesforce】LWC環境構築</title>
+      <link>https://seiri.blog/posts/salesforce-lwc-setup-environment/</link>
+      <pubDate>Thu, 29 Dec 2022 19:36:52 +0900</pubDate>
+      
+      <guid>https://seiri.blog/posts/salesforce-lwc-setup-environment/</guid>
+      <description>LWC の環境構築方法 LWC の環境構築の詳しい方法は以下のようになります。 Salesforce の Developer Edition アカウントを取得します。 Developer Edition アカウントは、開発者向けのアカウントで、</description>
+    </item>
+    
+    <item>
+      <title>【Salesforce】LWCでのファイルダウンロード</title>
+      <link>https://seiri.blog/posts/lwc-download-file/</link>
+      <pubDate>Thu, 29 Dec 2022 16:30:01 +0900</pubDate>
+      
+      <guid>https://seiri.blog/posts/lwc-download-file/</guid>
+      <description>目的 LWC でのファイルダウンロード方法を共有します。 ソース構成図 force-app └─main └─default ├─classes │ ├─GetFileDemoC</description>
+    </item>
+    
+    <item>
+      <title>【Salesforce】LWCでのファイル一括ダウンロード方法</title>
+      <link>https://seiri.blog/posts/lwc-mass-file-download/</link>
+      <pubDate>Thu, 29 Dec 2022 16:30:01 +0900</pubDate>
+      
+      <guid>https://seiri.blog/posts/lwc-mass-file-download/</guid>
+      <description>目的 今回 Classic モードで Visualforce に LWC のでファイル一括ダウンロードする方法を共有します。 前提 jszip.js を静的リソースにアップロードする ソース構成図 force-app └─main └</description>
+    </item>
+    
+    <item>
+      <title>【Salesforce】Apexで選択リスト取得方法</title>
+      <link>https://seiri.blog/posts/selection-list-acquisition-method-at-salesforce-apex/</link>
+      <pubDate>Tue, 12 Jul 2022 16:24:40 +0900</pubDate>
+      
+      <guid>https://seiri.blog/posts/selection-list-acquisition-method-at-salesforce-apex/</guid>
+      <description>Apex 選択リスト取得方法説明 Apex を使用して Salesforce 内の選択リストから値を取得する方法は以下の通りです。 最初に、選択リストが定義されているオブジェクトのフ</description>
+    </item>
+    
+    <item>
+      <title>【Salesforce】アクションボタン</title>
+      <link>https://seiri.blog/posts/salesforce-action-button/</link>
+      <pubDate>Tue, 12 Jul 2022 16:09:43 +0900</pubDate>
+      
+      <guid>https://seiri.blog/posts/salesforce-action-button/</guid>
+      <description>目的 LWC のlightning-quick-action-panelモーダル画面の幅を調整できないため、 今回 Aura と LWC でのアクションボタンが表示した</description>
+    </item>
+    
+    <item>
+      <title>【Salesforce】FLS権限チェック</title>
+      <link>https://seiri.blog/posts/salesforce-fls-authority-check/</link>
+      <pubDate>Mon, 11 Jul 2022 20:02:42 +0900</pubDate>
+      
+      <guid>https://seiri.blog/posts/salesforce-fls-authority-check/</guid>
+      <description>目的 CRUD および項目レベルセキュリティ (FLS) 権限チェック Util を作成方法を共有します ソース public with sharing class FLSUtil { //環境の接頭辞 private static final String ENV_PREFIX = getPrefix(); //アンダーバーC private</description>
+    </item>
+    
+    <item>
+      <title>【Salesforce】プラットフォームイベント説明と利用方法</title>
+      <link>https://seiri.blog/posts/salesforce-platform-event-description-and-usage/</link>
+      <pubDate>Mon, 11 Jul 2022 16:45:24 +0900</pubDate>
+      
+      <guid>https://seiri.blog/posts/salesforce-platform-event-description-and-usage/</guid>
+      <description>プラットフォームイベントの役割 プラットフォームイベントを使用し、リアルタイムイベントデータのやり取りによって、Salesforce のビジネス</description>
+    </item>
+    
+    <item>
+      <title>【Salesforce】データローダバッチ（エクスポート編）</title>
+      <link>https://seiri.blog/posts/salesforce-data-loader-batch-export-edition/</link>
+      <pubDate>Mon, 30 May 2022 19:45:23 +0900</pubDate>
+      
+      <guid>https://seiri.blog/posts/salesforce-data-loader-batch-export-edition/</guid>
+      <description>データローダとは データローダは、データを一括でインポートまたはエクスポートするためのクライアントアプリケーションです。Salesforce レ</description>
+    </item>
+    
+    <item>
+      <title>【Salesforce】データローダバッチ（インポート編）</title>
+      <link>https://seiri.blog/posts/salesforce-data-loader-batch-import-edition/</link>
+      <pubDate>Mon, 30 May 2022 19:05:22 +0900</pubDate>
+      
+      <guid>https://seiri.blog/posts/salesforce-data-loader-batch-import-edition/</guid>
+      <description>データローダとは データローダは、データを一括でインポートまたはエクスポートするためのクライアントアプリケーションです。Salesforce レ</description>
+    </item>
+    
+    <item>
+      <title>【Salesforce】LWCでのPath共通コンポーネント</title>
+      <link>https://seiri.blog/posts/lwc-path-common-component/</link>
+      <pubDate>Mon, 16 May 2022 14:11:39 +0900</pubDate>
+      
+      <guid>https://seiri.blog/posts/lwc-path-common-component/</guid>
+      <description>目的 LWC での Path 共通コンポーネントを共有します。 実装例 path path.html &amp;lt;template&amp;gt; &amp;lt;div class=&amp;#34;slds-path&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;slds-grid slds-path__track&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;slds-grid slds-path__scroller-container&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;slds-path__scroller&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;slds-path__scroller_inner&amp;#34;&amp;gt; &amp;lt;ul class=&amp;#34;slds-path__nav&amp;#34; role=&amp;#34;listbox&amp;#34; aria-orientation=&amp;#34;horizontal&amp;#34; &amp;gt; &amp;lt;template for:each=&amp;#34;{pathItemList}&amp;#34; for:item=&amp;#34;pathItem&amp;#34; for:index=&amp;#34;index&amp;#34; &amp;gt; {getIndex} &amp;lt;template if:true=&amp;#34;{pathIndexGeCurrentIndex}&amp;#34;&amp;gt; &amp;lt;li key=&amp;#34;{pathItem}&amp;#34; if:true=&amp;#34;{pathIndexEqCurrentIndex}&amp;#34; class=&amp;#34;slds-path__item slds-is-current slds-is-active&amp;#34; role=&amp;#34;presentation&amp;#34; &amp;gt; &amp;lt;a aria-selected=&amp;#34;true&amp;#34; class=&amp;#34;slds-path__link&amp;#34; href=&amp;#34;javasctipt:void();&amp;#34; role=&amp;#34;option&amp;#34; tabindex=&amp;#34;-1&amp;#34; &amp;gt; &amp;lt;span class=&amp;#34;slds-path__stage&amp;#34;&amp;gt;</description>
+    </item>
+    
+    <item>
+      <title>【Salesforce】LWC CSV出力方法</title>
+      <link>https://seiri.blog/posts/salesforce-lwc-csv-output-method/</link>
+      <pubDate>Tue, 29 Mar 2022 16:38:42 +0900</pubDate>
+      
+      <guid>https://seiri.blog/posts/salesforce-lwc-csv-output-method/</guid>
+      <description>LWC で CSV 出力方法説明 LWC で CSV ファイルを出力する考え方は主に下記の流れとなります。 1.LWC のコンポーネントにデータを持たせます。 2.CSV を作成するため、各行の</description>
+    </item>
+    
+    <item>
+      <title>【Salesforce】LWC 共通 Toast Util</title>
+      <link>https://seiri.blog/posts/salesforce-lwc-toast-message-common-util/</link>
+      <pubDate>Tue, 21 Dec 2021 18:27:36 +0900</pubDate>
+      
+      <guid>https://seiri.blog/posts/salesforce-lwc-toast-message-common-util/</guid>
+      <description>LWC での Toast メッセージ LWC で Toast メッセージを表示するために、共通の Util クラスを作成することができます。 Toast メッセージのタイトル、メッセージ、種類(suc</description>
+    </item>
+    
+    <item>
+      <title>【Salesforce】LWCでの共通モーダル画面</title>
+      <link>https://seiri.blog/posts/creation-salesforce-lwc-common-modal-screen/</link>
+      <pubDate>Mon, 29 Nov 2021 19:36:52 +0900</pubDate>
+      
+      <guid>https://seiri.blog/posts/creation-salesforce-lwc-common-modal-screen/</guid>
+      <description>共通モーダル画面作成方法説明 共通モーダルはモーダルを開くための API を持ち、他のコンポーネントから呼び出すことができます。 他のコンポーネントで、</description>
+    </item>
+    
+    <item>
+      <title>【Salesforce】Apex共通レスポンス基底クラス</title>
+      <link>https://seiri.blog/posts/salesforce-apex-common-response-superclass/</link>
+      <pubDate>Mon, 22 Nov 2021 17:18:13 +0900</pubDate>
+      
+      <guid>https://seiri.blog/posts/salesforce-apex-common-response-superclass/</guid>
+      <description>Apex共通レスポンス基底クラス作成方法 LWC で Apex クラスを呼出す基底クラスを作成する方法を共有します。 LWC で Apex クラスを呼出すときの返却値は主に正常</description>
+    </item>
+    
+    <item>
+      <title>ApexでAWS S3署名付きURL発行</title>
+      <link>https://seiri.blog/posts/apex-create-aws-s3-sign-with-url/</link>
+      <pubDate>Mon, 22 Nov 2021 16:48:56 +0900</pubDate>
+      
+      <guid>https://seiri.blog/posts/apex-create-aws-s3-sign-with-url/</guid>
+      <description>署名付き URL の説明 署名付き URL は、AWS S3（Simple Storage Service）のリソースに対して一時的なアクセス許可を付与するための URL です。通常、</description>
+    </item>
+    
+    <item>
+      <title>Apex REST API コールアウトユーティリティ</title>
+      <link>https://seiri.blog/posts/apex-rest-api-callouts-util-creation/</link>
+      <pubDate>Mon, 22 Nov 2021 16:41:02 +0900</pubDate>
+      
+      <guid>https://seiri.blog/posts/apex-rest-api-callouts-util-creation/</guid>
+      <description>作成方法 Apex REST API コールアウトユーティリティ（Apex REST API Callouts Utility）を作成するには、以下の手順を参考にしてください。 Apex クラスの作成: 新し</description>
+    </item>
+    
+    <item>
+      <title>LWCでのファイルダウンロード</title>
+      <link>https://seiri.blog/posts/file-download-in-lwc/</link>
+      <pubDate>Mon, 02 Aug 2021 18:36:58 +0900</pubDate>
+      
+      <guid>https://seiri.blog/posts/file-download-in-lwc/</guid>
+      <description>目的 LWC でのファイルダウンロード方法を共有します。 ソース構成図 force-app └─main └─default ├─classes │ ├─GetFileDemoC</description>
+    </item>
+    
+    <item>
+      <title>LWCでのファイル一括ダウンロード方法</title>
+      <link>https://seiri.blog/posts/lwc-file-bulk-download/</link>
+      <pubDate>Mon, 02 Aug 2021 10:57:14 +0900</pubDate>
+      
+      <guid>https://seiri.blog/posts/lwc-file-bulk-download/</guid>
+      <description>目的 今回 Classic モードで Visualforce に LWC のでファイル一括ダウンロードする方法を共有します。 前提 jszip.js を静的リソースにアップロードする ソース構成図 force-app └─main └</description>
+    </item>
+    
+    <item>
+      <title>VFPageにLWCでのファイルUP方法</title>
+      <link>https://seiri.blog/posts/vfpage-lwc-on-file-up/</link>
+      <pubDate>Thu, 29 Jul 2021 16:30:01 +0900</pubDate>
+      
+      <guid>https://seiri.blog/posts/vfpage-lwc-on-file-up/</guid>
+      <description>1.目的 Salesforce Lightning モード下に LWC でのファイルをアップロードするには&amp;lt;lightning-file-upload&amp;gt;コンポネントを使って、フ</description>
+    </item>
+    
+    <item>
+      <title>【Salesforce】VFページにLWCを表示する方法</title>
+      <link>https://seiri.blog/posts/salesforce-vfpage-display-lwc/</link>
+      <pubDate>Wed, 28 Jul 2021 14:42:39 +0900</pubDate>
+      
+      <guid>https://seiri.blog/posts/salesforce-vfpage-display-lwc/</guid>
+      <description>VF ページに LWC を表示する方法説明 基本的な考え方は VF ページに LightningOut という仕組みを利用して、LWC を表示すると思います。 LightningOut の仕組み VF ⇒ Aura ⇒ LWCという</description>
+    </item>
+    
+    <item>
+      <title>LWCでAWS S3と連携する方法</title>
+      <link>https://seiri.blog/posts/lwc-by-aws-3-and-operation/</link>
+      <pubDate>Wed, 28 Jul 2021 13:02:56 +0900</pubDate>
+      
+      <guid>https://seiri.blog/posts/lwc-by-aws-3-and-operation/</guid>
+      <description>1.目的 今回 LWC 中に AWS の SDK for javascript で S3 と連携する方法を共有します。 2.前提 2.1.AWS S3 バケット Cross-Origin Resource Sharing (CORS)の設定 [ { &amp;#34;AllowedHeaders&amp;#34;: [&amp;#34;*&amp;#34;], &amp;#34;AllowedMethods&amp;#34;: [&amp;#34;HEAD&amp;#34;, &amp;#34;GET&amp;#34;, &amp;#34;PUT&amp;#34;, &amp;#34;POST&amp;#34;, &amp;#34;DELETE&amp;#34;], &amp;#34;AllowedOrigins&amp;#34;: [&amp;#34;*&amp;#34;], &amp;#34;ExposeHeaders&amp;#34;: [&amp;#34;ETag&amp;#34;] } ] 2.2.Salesforce 側</description>
+    </item>
+    
+    <item>
+      <title>LWCでのDatePicker自分で作る</title>
+      <link>https://seiri.blog/posts/lwc-on-datepicker-myself-with-make/</link>
+      <pubDate>Mon, 26 Jul 2021 14:49:28 +0900</pubDate>
+      
+      <guid>https://seiri.blog/posts/lwc-on-datepicker-myself-with-make/</guid>
+      <description>1.目的 LWC での DatePicker の作成方法を共有します。 2.ソース構成図 lwc ├─datePicker └─datePickerContainer datePicker .select-box { background-color: rgb(255, 255, 255); border:</description>
+    </item>
+    
+    <item>
+      <title>LWCでの共通Util自分で作る</title>
+      <link>https://seiri.blog/posts/lwc-on-common-util-myself-with-make/</link>
+      <pubDate>Mon, 26 Jul 2021 10:52:54 +0900</pubDate>
+      
+      <guid>https://seiri.blog/posts/lwc-on-common-util-myself-with-make/</guid>
+      <description>1.目的 今回 LWC での共通 Util の作成方法を共有します。 2.ソース構成図 lwc ├─commonUtil └─commonUtilChild commonUtil /** * デートフォ</description>
+    </item>
+    
+    <item>
+      <title>【Salesforce】LWCでの共通CSS</title>
+      <link>https://seiri.blog/posts/lwc-common-css/</link>
+      <pubDate>Mon, 26 Jul 2021 10:30:25 +0900</pubDate>
+      
+      <guid>https://seiri.blog/posts/lwc-common-css/</guid>
+      <description>LWC 共通 CSS 方法説明 スタイルシートを使用して共通の CSS を定義し、それを複数のコンポーネントでインポートします。 CSS をグローバルに定義し、それをすべて</description>
+    </item>
+    
+    <item>
+      <title>LWCでのStyling Hooks</title>
+      <link>https://seiri.blog/posts/lwc-styling-hooks/</link>
+      <pubDate>Wed, 21 Jul 2021 19:17:39 +0900</pubDate>
+      
+      <guid>https://seiri.blog/posts/lwc-styling-hooks/</guid>
+      <description>1.目的 今回Lighting Desigin Systemで提供された標準デザインを変えようと思います。 基本的にはスタイルフックを使って、標準のデザインを変</description>
+    </item>
+    
+    <item>
+      <title>LWCでの再帰的なコンポーネント自分で作る</title>
+      <link>https://seiri.blog/posts/lwc-on-recursive-component-myself-with-make/</link>
+      <pubDate>Wed, 21 Jul 2021 18:36:08 +0900</pubDate>
+      
+      <guid>https://seiri.blog/posts/lwc-on-recursive-component-myself-with-make/</guid>
+      <description>1.目的 React や Vue でのコンポネント必要に応じて、時々共通処理のため、再帰的なコンポネントを実装したことがありますが、今回 LWC での再帰的なコンポネン</description>
+    </item>
+    
+    <item>
+      <title>LWC GroupButtonコンポーネント自分で作る</title>
+      <link>https://seiri.blog/posts/create-lwc-groupbutton-component-self/</link>
+      <pubDate>Mon, 19 Jul 2021 19:28:25 +0900</pubDate>
+      
+      <guid>https://seiri.blog/posts/create-lwc-groupbutton-component-self/</guid>
+      <description>1.目的 LWC でのループ回す方法は&amp;lt;template for:eatch={items} for:item=&amp;quot;item&amp;quot; for:index=&amp;quot;idx&amp;quot;&amp;gt;ですが、但しタグ中には&amp;</description>
+    </item>
+    
+    <item>
+      <title>LWC Calendarコンポーネント自分で作る</title>
+      <link>https://seiri.blog/posts/create-lwc-calendar-component-self/</link>
+      <pubDate>Mon, 19 Jul 2021 17:29:18 +0900</pubDate>
+      
+      <guid>https://seiri.blog/posts/create-lwc-calendar-component-self/</guid>
+      <description>目的 LWC に既存のカレンダーコンポーネントでは&amp;lt;lighting-input type=&amp;quot;date&amp;quot;&amp;gt;&amp;lt;/l</description>
+    </item>
+    
+    <item>
+      <title>LWC ContextMenuコンポーネント自分で作る</title>
+      <link>https://seiri.blog/posts/create-lwc-contextmenu-component-self/</link>
+      <pubDate>Mon, 19 Jul 2021 11:26:55 +0900</pubDate>
+      
+      <guid>https://seiri.blog/posts/create-lwc-contextmenu-component-self/</guid>
+      <description>1.目的 今回 LWC で ContextMenu コンポーネントを作成しようと思います、 基本的な考え方は右クリックをすると、カーソルの座標を取得し、 その座標を使って、Con</description>
+    </item>
+    
+    <item>
+      <title>【Salesforce】LWC Router</title>
+      <link>https://seiri.blog/posts/salesforce-lwc-router/</link>
+      <pubDate>Fri, 16 Jul 2021 17:30:12 +0900</pubDate>
+      
+      <guid>https://seiri.blog/posts/salesforce-lwc-router/</guid>
+      <description>目的 今回自分で開発した Salesforce 側使える LWC での画面遷移方法を紹介します。 構成図 lwc ├─router ├─myRouterContainer ├─pageA</description>
+    </item>
+    
+  </channel>
+</rss>
