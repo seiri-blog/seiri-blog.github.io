@@ -26,6 +26,15 @@
     </item>
     
     <item>
+      <title>VFページにファイルアップロード方法</title>
+      <link>https://seiri.blog/posts/vfpage-lwc-file-upload/</link>
+      <pubDate>Thu, 29 Jul 2021 16:30:01 +0900</pubDate>
+      
+      <guid>https://seiri.blog/posts/vfpage-lwc-file-upload/</guid>
+      <description>ClassモードでVFページにLWCを使う方法 Lightning Outの使用 提供されたコードはLightning Outを使用していますが、Classicモー</description>
+    </item>
+    
+    <item>
       <title>【Salesforce】VFページにLWCを表示する方法</title>
       <link>https://seiri.blog/posts/salesforce-vfpage-display-lwc/</link>
       <pubDate>Wed, 28 Jul 2021 14:42:39 +0900</pubDate>

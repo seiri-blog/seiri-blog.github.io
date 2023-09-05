@@ -67,7 +67,7 @@
       <pubDate>Tue, 27 Jun 2023 12:24:02 +0900</pubDate>
       
       <guid>https://seiri.blog/posts/lwc-lightning-modal/</guid>
-      <description>lightning/modal モジュール lightningModal コンポーネントは、現在のアプリケーションウィンドウの上部にメッセージモダリティを上書きします。モダリティは、ユーザーのワークフ</description>
+      <description>lightning/modal モジュール 「lightning/modal」はSalesforceのLightningコンポーネントフレームワークにおけるモーダルダイアロ</description>
     </item>
     
     <item>
@@ -800,12 +800,12 @@
     </item>
     
     <item>
-      <title>VFPageにLWCでのファイルUP方法</title>
-      <link>https://seiri.blog/posts/vfpage-lwc-on-file-up/</link>
+      <title>VFページにファイルアップロード方法</title>
+      <link>https://seiri.blog/posts/vfpage-lwc-file-upload/</link>
       <pubDate>Thu, 29 Jul 2021 16:30:01 +0900</pubDate>
       
-      <guid>https://seiri.blog/posts/vfpage-lwc-on-file-up/</guid>
-      <description>1.目的 Salesforce Lightning モード下に LWC でのファイルをアップロードするには&amp;lt;lightning-file-upload&amp;gt;コンポネントを使って、フ</description>
+      <guid>https://seiri.blog/posts/vfpage-lwc-file-upload/</guid>
+      <description>ClassモードでVFページにLWCを使う方法 Lightning Outの使用 提供されたコードはLightning Outを使用していますが、Classicモー</description>
     </item>
     
     <item>
@@ -828,19 +828,19 @@
     
     <item>
       <title>LWCでのDatePicker自分で作る</title>
-      <link>https://seiri.blog/posts/lwc-on-datepicker-myself-with-make/</link>
+      <link>https://seiri.blog/posts/lwc-custom-datepicker/</link>
       <pubDate>Mon, 26 Jul 2021 14:49:28 +0900</pubDate>
       
-      <guid>https://seiri.blog/posts/lwc-on-datepicker-myself-with-make/</guid>
+      <guid>https://seiri.blog/posts/lwc-custom-datepicker/</guid>
       <description>1.目的 LWC での DatePicker の作成方法を共有します。 2.ソース構成図 lwc ├─datePicker └─datePickerContainer datePicker .select-box { background-color: rgb(255, 255, 255); border:</description>
     </item>
     
     <item>
       <title>LWCでの共通Util自分で作る</title>
-      <link>https://seiri.blog/posts/lwc-on-common-util-myself-with-make/</link>
+      <link>https://seiri.blog/posts/lwc-common-util/</link>
       <pubDate>Mon, 26 Jul 2021 10:52:54 +0900</pubDate>
       
-      <guid>https://seiri.blog/posts/lwc-on-common-util-myself-with-make/</guid>
+      <guid>https://seiri.blog/posts/lwc-common-util/</guid>
       <description>1.目的 今回 LWC での共通 Util の作成方法を共有します。 2.ソース構成図 lwc ├─commonUtil └─commonUtilChild commonUtil /** * デートフォ</description>
     </item>
     
@@ -863,12 +863,12 @@
     </item>
     
     <item>
-      <title>LWCでの再帰的なコンポーネント自分で作る</title>
-      <link>https://seiri.blog/posts/lwc-on-recursive-component-myself-with-make/</link>
+      <title>LWCの再帰的なコンポーネントを作成する方法</title>
+      <link>https://seiri.blog/posts/lwc-recursive-component/</link>
       <pubDate>Wed, 21 Jul 2021 18:36:08 +0900</pubDate>
       
-      <guid>https://seiri.blog/posts/lwc-on-recursive-component-myself-with-make/</guid>
-      <description>1.目的 React や Vue でのコンポネント必要に応じて、時々共通処理のため、再帰的なコンポネントを実装したことがありますが、今回 LWC での再帰的なコンポネン</description>
+      <guid>https://seiri.blog/posts/lwc-recursive-component/</guid>
+      <description>再帰的なコンポーネント LWC（Lightning Web Components）で再帰的なコンポーネントを作成するには、コンポーネントが自身を呼び出</description>
     </item>
     
     <item>
@@ -890,12 +890,12 @@
     </item>
     
     <item>
-      <title>LWC Calendarコンポーネント自分で作る</title>
-      <link>https://seiri.blog/posts/create-lwc-calendar-component-self/</link>
+      <title>LWCでカスタムCalendarコンポーネントを作る</title>
+      <link>https://seiri.blog/posts/create-lwc-calendar-component/</link>
       <pubDate>Mon, 19 Jul 2021 17:29:18 +0900</pubDate>
       
-      <guid>https://seiri.blog/posts/create-lwc-calendar-component-self/</guid>
-      <description>目的 LWC に既存のカレンダーコンポーネントでは&amp;lt;lighting-input type=&amp;quot;date&amp;quot;&amp;gt;&amp;lt;/l</description>
+      <guid>https://seiri.blog/posts/create-lwc-calendar-component/</guid>
+      <description>SalesforceのLWCでカスタムCalendarコンポーネントを作る方法を紹介します。 https://www.lightningdesignsystem.com/components/datepickers/ 上記公式サイトのUIを基づいて、LWCでカスタ</description>
     </item>
     
     <item>
