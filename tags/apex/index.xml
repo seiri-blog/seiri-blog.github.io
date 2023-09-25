@@ -2,53 +2,53 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Apex on Seiri&#39;s Blog</title>
-    <link>https://seiri.blog/tags/apex/</link>
+    <link>https://seiri-blog.github.io/tags/apex/</link>
     <description>Recent content in Apex on Seiri&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>2023 Seiri All rights reserved</copyright>
-    <lastBuildDate>Tue, 04 Apr 2023 18:23:36 +0900</lastBuildDate><atom:link href="https://seiri.blog/tags/apex/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 04 Apr 2023 18:23:36 +0900</lastBuildDate><atom:link href="https://seiri-blog.github.io/tags/apex/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>VSCodeでSalesforceのコードフォーマットする方法</title>
-      <link>https://seiri.blog/posts/salesforce-source-code-format/</link>
+      <link>https://seiri-blog.github.io/posts/salesforce-source-code-format/</link>
       <pubDate>Tue, 04 Apr 2023 18:23:36 +0900</pubDate>
       
-      <guid>https://seiri.blog/posts/salesforce-source-code-format/</guid>
+      <guid>https://seiri-blog.github.io/posts/salesforce-source-code-format/</guid>
       <description>VSCode の環境構築 今回に関しては設定は詳しく説明しません、やり方のみ詳しく説明させていただきます。 下記リンクを開いて、自分の PC にダウンロードする https://github.com/RyuSeiri/Salesforce-Source-Format</description>
     </item>
     
     <item>
       <title>【Salesforce】Apexで選択リスト取得方法</title>
-      <link>https://seiri.blog/posts/selection-list-acquisition-method-at-salesforce-apex/</link>
+      <link>https://seiri-blog.github.io/posts/selection-list-acquisition-method-at-salesforce-apex/</link>
       <pubDate>Tue, 12 Jul 2022 16:24:40 +0900</pubDate>
       
-      <guid>https://seiri.blog/posts/selection-list-acquisition-method-at-salesforce-apex/</guid>
+      <guid>https://seiri-blog.github.io/posts/selection-list-acquisition-method-at-salesforce-apex/</guid>
       <description>Apex 選択リスト取得方法説明 Apex を使用して Salesforce 内の選択リストから値を取得する方法は以下の通りです。 最初に、選択リストが定義されているオブジェクトのフ</description>
     </item>
     
     <item>
       <title>【Salesforce】Apex共通レスポンス基底クラス</title>
-      <link>https://seiri.blog/posts/salesforce-apex-common-response-superclass/</link>
+      <link>https://seiri-blog.github.io/posts/salesforce-apex-common-response-superclass/</link>
       <pubDate>Mon, 22 Nov 2021 17:18:13 +0900</pubDate>
       
-      <guid>https://seiri.blog/posts/salesforce-apex-common-response-superclass/</guid>
+      <guid>https://seiri-blog.github.io/posts/salesforce-apex-common-response-superclass/</guid>
       <description>Apex共通レスポンス基底クラス作成方法 LWC で Apex クラスを呼出す基底クラスを作成する方法を共有します。 LWC で Apex クラスを呼出すときの返却値は主に正常</description>
     </item>
     
     <item>
       <title>ApexでAWS S3署名付きURL発行</title>
-      <link>https://seiri.blog/posts/apex-create-aws-s3-sign-with-url/</link>
+      <link>https://seiri-blog.github.io/posts/apex-create-aws-s3-sign-with-url/</link>
       <pubDate>Mon, 22 Nov 2021 16:48:56 +0900</pubDate>
       
-      <guid>https://seiri.blog/posts/apex-create-aws-s3-sign-with-url/</guid>
+      <guid>https://seiri-blog.github.io/posts/apex-create-aws-s3-sign-with-url/</guid>
       <description>署名付き URL の説明 署名付き URL は、AWS S3（Simple Storage Service）のリソースに対して一時的なアクセス許可を付与するための URL です。通常、</description>
     </item>
     
     <item>
       <title>Apex REST API コールアウトユーティリティ</title>
-      <link>https://seiri.blog/posts/apex-rest-api-callouts-util-creation/</link>
+      <link>https://seiri-blog.github.io/posts/apex-rest-api-callouts-util-creation/</link>
       <pubDate>Mon, 22 Nov 2021 16:41:02 +0900</pubDate>
       
-      <guid>https://seiri.blog/posts/apex-rest-api-callouts-util-creation/</guid>
+      <guid>https://seiri-blog.github.io/posts/apex-rest-api-callouts-util-creation/</guid>
       <description>作成方法 Apex REST API コールアウトユーティリティ（Apex REST API Callouts Utility）を作成するには、以下の手順を参考にしてください。 Apex クラスの作成: 新し</description>
     </item>
     

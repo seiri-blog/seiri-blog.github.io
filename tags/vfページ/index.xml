@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>VFページ on Seiri&#39;s Blog</title>
-    <link>https://seiri.blog/tags/vf%E3%83%9A%E3%83%BC%E3%82%B8/</link>
+    <link>https://seiri-blog.github.io/tags/vf%E3%83%9A%E3%83%BC%E3%82%B8/</link>
     <description>Recent content in VFページ on Seiri&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>2023 Seiri All rights reserved</copyright>
-    <lastBuildDate>Wed, 28 Jul 2021 14:42:39 +0900</lastBuildDate><atom:link href="https://seiri.blog/tags/vf%E3%83%9A%E3%83%BC%E3%82%B8/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 28 Jul 2021 14:42:39 +0900</lastBuildDate><atom:link href="https://seiri-blog.github.io/tags/vf%E3%83%9A%E3%83%BC%E3%82%B8/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>【Salesforce】VFページにLWCを表示する方法</title>
-      <link>https://seiri.blog/posts/salesforce-vfpage-display-lwc/</link>
+      <link>https://seiri-blog.github.io/posts/salesforce-vfpage-display-lwc/</link>
       <pubDate>Wed, 28 Jul 2021 14:42:39 +0900</pubDate>
       
-      <guid>https://seiri.blog/posts/salesforce-vfpage-display-lwc/</guid>
+      <guid>https://seiri-blog.github.io/posts/salesforce-vfpage-display-lwc/</guid>
       <description>VF ページに LWC を表示する方法説明 基本的な考え方は VF ページに LightningOut という仕組みを利用して、LWC を表示すると思います。 LightningOut の仕組み VF ⇒ Aura ⇒ LWCという</description>
     </item>
     

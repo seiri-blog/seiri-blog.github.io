@@ -7,13 +7,13 @@
 <meta name=keywords content="Salesforce,PlatformEvents">
 <meta name=description content="プラットフォームイベントの役割 プラットフォームイベントを使用し、リアルタイムイベントデータのやり取りによって、Salesforce のビジネス">
 <meta name=author content="Seiri">
-<link rel=canonical href=https://seiri.blog/posts/salesforce-platform-event-description-and-usage/>
+<link rel=canonical href=https://seiri-blog.github.io/posts/salesforce-platform-event-description-and-usage/>
 <meta name=yandex-verification content="6b79e4a21fa2921c">
 <link crossorigin=anonymous href=/assets/css/stylesheet.css rel="preload stylesheet" as=style>
 <script defer crossorigin=anonymous src=/assets/js/highlight.js onload=hljs.initHighlightingOnLoad()></script>
-<link rel=icon href=https://seiri.blog/favicon.ico>
-<link rel=apple-touch-icon href=https://seiri.blog/apple-touch-icon.png>
-<link rel=mask-icon href=https://seiri.blog/safari-pinned-tab.svg>
+<link rel=icon href=https://seiri-blog.github.io/favicon.ico>
+<link rel=apple-touch-icon href=https://seiri-blog.github.io/apple-touch-icon.png>
+<link rel=mask-icon href=https://seiri-blog.github.io/safari-pinned-tab.svg>
 <meta name=theme-color content="#2e2e33">
 <meta name=msapplication-TileColor content="#2e2e33">
 <noscript>
@@ -24,22 +24,22 @@
 <meta property="og:title" content="【Salesforce】プラットフォームイベント説明と利用方法">
 <meta property="og:description" content="プラットフォームイベントの役割 プラットフォームイベントを使用し、リアルタイムイベントデータのやり取りによって、Salesforce のビジネス">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://seiri.blog/posts/salesforce-platform-event-description-and-usage/"><meta property="article:section" content="posts">
+<meta property="og:url" content="https://seiri-blog.github.io/posts/salesforce-platform-event-description-and-usage/"><meta property="article:section" content="posts">
 <meta property="article:published_time" content="2022-07-11T16:45:24+09:00">
 <meta property="article:modified_time" content="2022-07-11T16:45:24+09:00"><meta property="og:site_name" content="Seiri's Blog">
 <meta name=twitter:card content="summary">
 <meta name=twitter:title content="【Salesforce】プラットフォームイベント説明と利用方法">
 <meta name=twitter:description content="プラットフォームイベントの役割 プラットフォームイベントを使用し、リアルタイムイベントデータのやり取りによって、Salesforce のビジネス">
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://seiri.blog/posts/"},{"@type":"ListItem","position":2,"name":"【Salesforce】プラットフォームイベント説明と利用方法","item":"https://seiri.blog/posts/salesforce-platform-event-description-and-usage/"}]}</script>
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"【Salesforce】プラットフォームイベント説明と利用方法","name":"【Salesforce】プラットフォームイベント説明と利用方法","description":"プラットフォームイベントの役割 プラットフォームイベントを使用し、リアルタイムイベントデータのやり取りによって、Salesforce のビジネス","keywords":["Salesforce","PlatformEvents"],"articleBody":"プラットフォームイベントの役割  プラットフォームイベントを使用し、リアルタイムイベントデータのやり取りによって、Salesforce のビジネスプロセスと外部アプリケーションを接続します。プラットフォームイベントは、データを含む安全で拡張性があるメッセージです。パブリッシャーは、サブスクライバーがリアルタイムで受信するイベントメッセージを公開します。公開されたデータをカスタマイズするには、プラットフォームイベント項目を定義します。\n 一般的なプラットフォームイベントの割り当て\n    説明 Performance Edition および Unlimited Edition Enterprise Edition Developer Edition Professional Edition (API アドオンあり)     1 つの組織で作成できるプラットフォームイベント定義の最大数 100 50 5 5   すべてのチャネルおよびすべてのイベント種別での、同時 CometD クライアント (サブスクライバー) の最大数 2,000 1,000 20 20   プラットフォームイベントを登録できるプロセスの最大数 4,000 4,000 4,000 5   プラットフォームイベントを登録できる有効なプロセスの最大数 2,000 2,000 2,000 5   作成可能なカスタムチャネルの最大数 100 100 100 100   チャネルにチャネルメンバーとして追加できる個別のプラットフォームイベントの最大数同じプラットフォームイベントを複数のチャネルに追加する場合、割り当てごとに 1 回カウントされます。 50 50 5 5     プラットフォームイベントの作成 \n\nプラットフォームイベントの公開  フローによるイベントメッセージの公開\nフローを使用して、ユーザ操作、自動化プロセス、Apex、またはワークフローアクションの一環としてイベントメッセージを Salesforce アプリケーションから公開します。\n\n\n  Apex によるイベントメッセージの公開  Apex を使用して、イベントメッセージを Salesforce アプリケーションから公開します。\nイベントメッセージを公開するには、EventBus.publish メソッドをコールします。  ListTest__e listTest = new ListTest__e(); listTest.add(new Test__e(test__c='メッセージ'); // プラットフォームイベント公開 ListDatabase.SaveResult results = EventBus.publish(listTest); // 公開結果取得 for (Database.SaveResult sr : results) { if (sr.isSuccess()) { System.debug('Successfully published event.'); } else { for(Database.Error err : sr.getErrors()) { System.debug('Error returned: ' + err.getStatusCode() + ' - ' + err.getMessage()); } } } バッチサイズ設定方法   PlatformEventSubscriberConfig\n   項目名 項目の型 説明     batchSize int プラットフォームイベント Apex トリガのカスタムバッチサイズ (1 ～ 2,000)。バッチサイズは 1 回の実行でトリガに送信できるイベントメッセージの最大数に対応します。デフォルトのバッチサイズはプラントイベントトリガで 2,000 です。一度に 1 つのイベントを処理するために、バッチサイズを 1 に設定することはお勧めしません。バッチサイズが小さいと、イベントメッセージの処理速度が遅くなることがあります。   isProtected boolean (継承された項目)。このコンポーネントが保護されるか (true)、否か (false) を示します。保護コンポーネントは、登録者の組織で作成されたコンポーネントからリンク付けしたり参照したりすることはできません。開発者は、今後のリリースで、インストールの失敗を心配することなく保護コンポーネントを削除できます。ただし、コンポーネントが非保護に設定され、グローバルにリリースされると、開発者は削除できなくなります。   masterLabel string 必須。PlatformEventSubscriberConfig コンポーネントの表示ラベル。   platformEventConsumer string 必須。設定するプラットフォームイベント Apex トリガの完全名。   user string プラットフォームイベント Apex トリガを実行するユーザのユーザ名。デフォルトでは、プラットフォームイベントトリガは自動化プロセスエンティティとして実行されます。実行ユーザを特定のユーザに設定することには、次のような利点があります。・レコードがこのユーザとして作成または変更される。・OwnerId 項目があるレコードが作成または変更されたときに、OwnerId 項目にこのユーザが入力される。・このユーザによってトリガ実行のデバッグログが作成される。・デフォルトの自動化プロセスユーザではサポートされないメールをトリガから送信できる。      PlatformEventSubscriberConfigs フォルダにバッチサイズの設定ファイルを追加\n  フォルダ階層\n├─force-app │ └─main │ └─default │ └─PlatformEventSubscriberConfigs │ トリガConfig.platformEventSubscriberConfig-meta.xml　⇐　設定ファイル \n設定ファイルの中身\n\n参考 プラットフォームイベント開発者ガイド\nプラットフォームイベントの公開\nプラットフォームイベントの登録\nPlatformEventSubscriberConfig\n最後 プラットフォームイベントバッチサイズの設定は有効まで時間がかかります（約３時間かかります）\n\n","wordCount":"1841","inLanguage":"ja","datePublished":"2022-07-11T16:45:24+09:00","dateModified":"2022-07-11T16:45:24+09:00","author":{"@type":"Person","name":"Seiri"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://seiri.blog/posts/salesforce-platform-event-description-and-usage/"},"publisher":{"@type":"Organization","name":"Seiri's Blog","logo":{"@type":"ImageObject","url":"https://seiri.blog/favicon.ico"}}}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://seiri-blog.github.io/posts/"},{"@type":"ListItem","position":2,"name":"【Salesforce】プラットフォームイベント説明と利用方法","item":"https://seiri-blog.github.io/posts/salesforce-platform-event-description-and-usage/"}]}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"【Salesforce】プラットフォームイベント説明と利用方法","name":"【Salesforce】プラットフォームイベント説明と利用方法","description":"プラットフォームイベントの役割 プラットフォームイベントを使用し、リアルタイムイベントデータのやり取りによって、Salesforce のビジネス","keywords":["Salesforce","PlatformEvents"],"articleBody":"プラットフォームイベントの役割  プラットフォームイベントを使用し、リアルタイムイベントデータのやり取りによって、Salesforce のビジネスプロセスと外部アプリケーションを接続します。プラットフォームイベントは、データを含む安全で拡張性があるメッセージです。パブリッシャーは、サブスクライバーがリアルタイムで受信するイベントメッセージを公開します。公開されたデータをカスタマイズするには、プラットフォームイベント項目を定義します。\n 一般的なプラットフォームイベントの割り当て\n    説明 Performance Edition および Unlimited Edition Enterprise Edition Developer Edition Professional Edition (API アドオンあり)     1 つの組織で作成できるプラットフォームイベント定義の最大数 100 50 5 5   すべてのチャネルおよびすべてのイベント種別での、同時 CometD クライアント (サブスクライバー) の最大数 2,000 1,000 20 20   プラットフォームイベントを登録できるプロセスの最大数 4,000 4,000 4,000 5   プラットフォームイベントを登録できる有効なプロセスの最大数 2,000 2,000 2,000 5   作成可能なカスタムチャネルの最大数 100 100 100 100   チャネルにチャネルメンバーとして追加できる個別のプラットフォームイベントの最大数同じプラットフォームイベントを複数のチャネルに追加する場合、割り当てごとに 1 回カウントされます。 50 50 5 5     プラットフォームイベントの作成 \n\nプラットフォームイベントの公開  フローによるイベントメッセージの公開\nフローを使用して、ユーザ操作、自動化プロセス、Apex、またはワークフローアクションの一環としてイベントメッセージを Salesforce アプリケーションから公開します。\n\n\n  Apex によるイベントメッセージの公開  Apex を使用して、イベントメッセージを Salesforce アプリケーションから公開します。\nイベントメッセージを公開するには、EventBus.publish メソッドをコールします。  ListTest__e listTest = new ListTest__e(); listTest.add(new Test__e(test__c='メッセージ'); // プラットフォームイベント公開 ListDatabase.SaveResult results = EventBus.publish(listTest); // 公開結果取得 for (Database.SaveResult sr : results) { if (sr.isSuccess()) { System.debug('Successfully published event.'); } else { for(Database.Error err : sr.getErrors()) { System.debug('Error returned: ' + err.getStatusCode() + ' - ' + err.getMessage()); } } } バッチサイズ設定方法   PlatformEventSubscriberConfig\n   項目名 項目の型 説明     batchSize int プラットフォームイベント Apex トリガのカスタムバッチサイズ (1 ～ 2,000)。バッチサイズは 1 回の実行でトリガに送信できるイベントメッセージの最大数に対応します。デフォルトのバッチサイズはプラントイベントトリガで 2,000 です。一度に 1 つのイベントを処理するために、バッチサイズを 1 に設定することはお勧めしません。バッチサイズが小さいと、イベントメッセージの処理速度が遅くなることがあります。   isProtected boolean (継承された項目)。このコンポーネントが保護されるか (true)、否か (false) を示します。保護コンポーネントは、登録者の組織で作成されたコンポーネントからリンク付けしたり参照したりすることはできません。開発者は、今後のリリースで、インストールの失敗を心配することなく保護コンポーネントを削除できます。ただし、コンポーネントが非保護に設定され、グローバルにリリースされると、開発者は削除できなくなります。   masterLabel string 必須。PlatformEventSubscriberConfig コンポーネントの表示ラベル。   platformEventConsumer string 必須。設定するプラットフォームイベント Apex トリガの完全名。   user string プラットフォームイベント Apex トリガを実行するユーザのユーザ名。デフォルトでは、プラットフォームイベントトリガは自動化プロセスエンティティとして実行されます。実行ユーザを特定のユーザに設定することには、次のような利点があります。・レコードがこのユーザとして作成または変更される。・OwnerId 項目があるレコードが作成または変更されたときに、OwnerId 項目にこのユーザが入力される。・このユーザによってトリガ実行のデバッグログが作成される。・デフォルトの自動化プロセスユーザではサポートされないメールをトリガから送信できる。      PlatformEventSubscriberConfigs フォルダにバッチサイズの設定ファイルを追加\n  フォルダ階層\n├─force-app │ └─main │ └─default │ └─PlatformEventSubscriberConfigs │ トリガConfig.platformEventSubscriberConfig-meta.xml　⇐　設定ファイル \n設定ファイルの中身\n\n参考 プラットフォームイベント開発者ガイド\nプラットフォームイベントの公開\nプラットフォームイベントの登録\nPlatformEventSubscriberConfig\n最後 プラットフォームイベントバッチサイズの設定は有効まで時間がかかります（約３時間かかります）\n\n","wordCount":"1841","inLanguage":"ja","datePublished":"2022-07-11T16:45:24+09:00","dateModified":"2022-07-11T16:45:24+09:00","author":{"@type":"Person","name":"Seiri"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://seiri-blog.github.io/posts/salesforce-platform-event-description-and-usage/"},"publisher":{"@type":"Organization","name":"Seiri's Blog","logo":{"@type":"ImageObject","url":"https://seiri-blog.github.io/favicon.ico"}}}</script>
 </head>
 <body id=top>
 <script>localStorage.getItem("pref-theme")==="dark"&&document.body.classList.add('dark')</script>
 <header class=header>
 <nav class=nav>
 <div class=logo>
-<a href=https://seiri.blog/ accesskey=h title="ホーム (Alt + H)">
-<img src=https://seiri.blog/images/technology.svg alt aria-label=logo height=35 width=35>ホーム</a>
+<a href=https://seiri-blog.github.io/ accesskey=h title="ホーム (Alt + H)">
+<img src=https://seiri-blog.github.io/images/technology.svg alt aria-label=logo height=35 width=35>ホーム</a>
 <div class=logo-switches>
 <button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
 </button>
@@ -47,42 +47,42 @@
 </div>
 <ul id=menu>
 <li>
-<a href=https://seiri.blog/search/ title="🔍 (Alt + /)" accesskey=/>
+<a href=https://seiri-blog.github.io/search/ title="🔍 (Alt + /)" accesskey=/>
 <span>🔍</span>
 </a>
 </li>
 <li>
-<a href=https://seiri.blog/posts/ title=記事一覧>
+<a href=https://seiri-blog.github.io/posts/ title=記事一覧>
 <span>記事一覧</span>
 </a>
 </li>
 <li>
-<a href=https://seiri.blog/archives/ title=アーカイブ>
+<a href=https://seiri-blog.github.io/archives/ title=アーカイブ>
 <span>アーカイブ</span>
 </a>
 </li>
 <li>
-<a href=https://seiri.blog/tags/ title=タグ>
+<a href=https://seiri-blog.github.io/tags/ title=タグ>
 <span>タグ</span>
 </a>
 </li>
 <li>
-<a href=https://seiri.blog/policy/ title=ポリシー>
+<a href=https://seiri-blog.github.io/policy/ title=ポリシー>
 <span>ポリシー</span>
 </a>
 </li>
 <li>
-<a href=https://seiri.blog/profile/ title=プロファイル>
+<a href=https://seiri-blog.github.io/profile/ title=プロファイル>
 <span>プロファイル</span>
 </a>
 </li>
 <li>
-<a href=https://seiri.blog/index.xml title=RRS>
+<a href=https://seiri-blog.github.io/index.xml title=RRS>
 <span>RRS</span>
 </a>
 </li>
 <li>
-<a href=https://seiri.blog/wiki/ title=Wiki>
+<a href=https://seiri-blog.github.io/wiki/ title=Wiki>
 <span>Wiki</span>&nbsp;<svg fill="none" shape-rendering="geometricPrecision" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24" height="12" width="12"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg>
 </a>
 </li>
@@ -97,7 +97,7 @@
 <main class=main>
 <article class=post-single>
 <header class=post-header>
-<div class=breadcrumbs><a href=https://seiri.blog/>ホーム</a>&nbsp;»&nbsp;<a href=https://seiri.blog/posts/>Posts</a></div>
+<div class=breadcrumbs><a href=https://seiri-blog.github.io/>ホーム</a>&nbsp;»&nbsp;<a href=https://seiri-blog.github.io/posts/>Posts</a></div>
 <h1 class=post-title>
 【Salesforce】プラットフォームイベント説明と利用方法
 </h1>
@@ -107,20 +107,20 @@
 <div class=share-area>
 <ul>
 <li class=facebook>
-<a target=_blank rel="noopener noreferrer" aria-label="share 【Salesforce】プラットフォームイベント説明と利用方法 on facebook" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fseiri.blog%2fposts%2fsalesforce-platform-event-description-and-usage%2f" title="Facebook で共有する"><svg viewBox="0 0 512 512" height="20" width="20" fill="currentcolor"><path d="M449.446.0C483.971.0 512 28.03 512 62.554v386.892C512 483.97 483.97 512 449.446 512H342.978V319.085h66.6l12.672-82.621h-79.272v-53.617c0-22.603 11.073-44.636 46.58-44.636H425.6v-70.34s-32.71-5.582-63.982-5.582c-65.288.0-107.96 39.569-107.96 111.204v62.971h-72.573v82.621h72.573V512h-191.104c-34.524.0-62.554-28.03-62.554-62.554V62.554c0-34.524 28.029-62.554 62.554-62.554h386.892z"/></svg>
+<a target=_blank rel="noopener noreferrer" aria-label="share 【Salesforce】プラットフォームイベント説明と利用方法 on facebook" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fseiri-blog.github.io%2fposts%2fsalesforce-platform-event-description-and-usage%2f" title="Facebook で共有する"><svg viewBox="0 0 512 512" height="20" width="20" fill="currentcolor"><path d="M449.446.0C483.971.0 512 28.03 512 62.554v386.892C512 483.97 483.97 512 449.446 512H342.978V319.085h66.6l12.672-82.621h-79.272v-53.617c0-22.603 11.073-44.636 46.58-44.636H425.6v-70.34s-32.71-5.582-63.982-5.582c-65.288.0-107.96 39.569-107.96 111.204v62.971h-72.573v82.621h72.573V512h-191.104c-34.524.0-62.554-28.03-62.554-62.554V62.554c0-34.524 28.029-62.554 62.554-62.554h386.892z"/></svg>
 </a>
 </li>
 <li class=twitter>
-<a target=_blank rel="noopener noreferrer" aria-label="share 【Salesforce】プラットフォームイベント説明と利用方法 on twitter" href="https://twitter.com/intent/tweet/?text=%e3%80%90Salesforce%e3%80%91%e3%83%97%e3%83%a9%e3%83%83%e3%83%88%e3%83%95%e3%82%a9%e3%83%bc%e3%83%a0%e3%82%a4%e3%83%99%e3%83%b3%e3%83%88%e8%aa%ac%e6%98%8e%e3%81%a8%e5%88%a9%e7%94%a8%e6%96%b9%e6%b3%95&url=https%3a%2f%2fseiri.blog%2fposts%2fsalesforce-platform-event-description-and-usage%2f&hashtags=Salesforce%2cPlatformEvents" title="Twitter で共有する"><svg viewBox="0 0 512 512" height="20" width="20" fill="currentcolor"><path d="M449.446.0C483.971.0 512 28.03 512 62.554v386.892C512 483.97 483.97 512 449.446 512H62.554c-34.524.0-62.554-28.03-62.554-62.554V62.554c0-34.524 28.029-62.554 62.554-62.554h386.892zM195.519 424.544c135.939.0 210.268-112.643 210.268-210.268.0-3.218.0-6.437-.153-9.502 14.406-10.421 26.973-23.448 36.935-38.314-13.18 5.824-27.433 9.809-42.452 11.648 15.326-9.196 26.973-23.602 32.49-40.92-14.252 8.429-30.038 14.56-46.896 17.931-13.487-14.406-32.644-23.295-53.946-23.295-40.767.0-73.87 33.104-73.87 73.87.0 5.824.613 11.494 1.992 16.858-61.456-3.065-115.862-32.49-152.337-77.241-6.284 10.881-9.962 23.601-9.962 37.088.0 25.594 13.027 48.276 32.95 61.456-12.107-.307-23.448-3.678-33.41-9.196v.92c0 35.862 25.441 65.594 59.311 72.49-6.13 1.686-12.72 2.606-19.464 2.606-4.751.0-9.348-.46-13.946-1.38 9.349 29.426 36.628 50.728 68.965 51.341-25.287 19.771-57.164 31.571-91.8 31.571-5.977.0-11.801-.306-17.625-1.073 32.337 21.15 71.264 33.41 112.95 33.41z"/></svg>
+<a target=_blank rel="noopener noreferrer" aria-label="share 【Salesforce】プラットフォームイベント説明と利用方法 on twitter" href="https://twitter.com/intent/tweet/?text=%e3%80%90Salesforce%e3%80%91%e3%83%97%e3%83%a9%e3%83%83%e3%83%88%e3%83%95%e3%82%a9%e3%83%bc%e3%83%a0%e3%82%a4%e3%83%99%e3%83%b3%e3%83%88%e8%aa%ac%e6%98%8e%e3%81%a8%e5%88%a9%e7%94%a8%e6%96%b9%e6%b3%95&url=https%3a%2f%2fseiri-blog.github.io%2fposts%2fsalesforce-platform-event-description-and-usage%2f&hashtags=Salesforce%2cPlatformEvents" title="Twitter で共有する"><svg viewBox="0 0 512 512" height="20" width="20" fill="currentcolor"><path d="M449.446.0C483.971.0 512 28.03 512 62.554v386.892C512 483.97 483.97 512 449.446 512H62.554c-34.524.0-62.554-28.03-62.554-62.554V62.554c0-34.524 28.029-62.554 62.554-62.554h386.892zM195.519 424.544c135.939.0 210.268-112.643 210.268-210.268.0-3.218.0-6.437-.153-9.502 14.406-10.421 26.973-23.448 36.935-38.314-13.18 5.824-27.433 9.809-42.452 11.648 15.326-9.196 26.973-23.602 32.49-40.92-14.252 8.429-30.038 14.56-46.896 17.931-13.487-14.406-32.644-23.295-53.946-23.295-40.767.0-73.87 33.104-73.87 73.87.0 5.824.613 11.494 1.992 16.858-61.456-3.065-115.862-32.49-152.337-77.241-6.284 10.881-9.962 23.601-9.962 37.088.0 25.594 13.027 48.276 32.95 61.456-12.107-.307-23.448-3.678-33.41-9.196v.92c0 35.862 25.441 65.594 59.311 72.49-6.13 1.686-12.72 2.606-19.464 2.606-4.751.0-9.348-.46-13.946-1.38 9.349 29.426 36.628 50.728 68.965 51.341-25.287 19.771-57.164 31.571-91.8 31.571-5.977.0-11.801-.306-17.625-1.073 32.337 21.15 71.264 33.41 112.95 33.41z"/></svg>
 </a>
 </li>
 <li class=hatena>
-<a target=_blank rel="noopener noreferrer" aria-label="share 【Salesforce】プラットフォームイベント説明と利用方法 on Hatena" href="http://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fseiri.blog%2fposts%2fsalesforce-platform-event-description-and-usage%2f&title=%e3%80%90Salesforce%e3%80%91%e3%83%97%e3%83%a9%e3%83%83%e3%83%88%e3%83%95%e3%82%a9%e3%83%bc%e3%83%a0%e3%82%a4%e3%83%99%e3%83%b3%e3%83%88%e8%aa%ac%e6%98%8e%e3%81%a8%e5%88%a9%e7%94%a8%e6%96%b9%e6%b3%95" title="Hatena で共有する">
+<a target=_blank rel="noopener noreferrer" aria-label="share 【Salesforce】プラットフォームイベント説明と利用方法 on Hatena" href="http://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fseiri-blog.github.io%2fposts%2fsalesforce-platform-event-description-and-usage%2f&title=%e3%80%90Salesforce%e3%80%91%e3%83%97%e3%83%a9%e3%83%83%e3%83%88%e3%83%95%e3%82%a9%e3%83%bc%e3%83%a0%e3%82%a4%e3%83%99%e3%83%b3%e3%83%88%e8%aa%ac%e6%98%8e%e3%81%a8%e5%88%a9%e7%94%a8%e6%96%b9%e6%b3%95" title="Hatena で共有する">
 B!
 </a>
 </li>
 <li class=line>
-<a target=_blank rel="noopener noreferrer" aria-label="share 【Salesforce】プラットフォームイベント説明と利用方法 on Line" href=http://line.me/R/msg/text/?https%3a%2f%2fseiri.blog%2fposts%2fsalesforce-platform-event-description-and-usage%2f%0a%e3%80%90Salesforce%e3%80%91%e3%83%97%e3%83%a9%e3%83%83%e3%83%88%e3%83%95%e3%82%a9%e3%83%bc%e3%83%a0%e3%82%a4%e3%83%99%e3%83%b3%e3%83%88%e8%aa%ac%e6%98%8e%e3%81%a8%e5%88%a9%e7%94%a8%e6%96%b9%e6%b3%95 title="LINE で共有する"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="35" height="50"><path fill="currentcolor" d="M37.113 22.417c0-5.865-5.88-10.637-13.107-10.637s-13.108 4.772-13.108 10.637c0 5.258 4.663 9.662 10.962 10.495.427.092 1.008.282 1.155.646.132.331.086.85.042 1.185.0.0-.153.925-.187 1.122-.057.331-.263 1.296 1.135.707 1.399-.589 7.548-4.445 10.298-7.611h-.001C36.203 26.879 37.113 24.764 37.113 22.417zm-18.238 3.49h-2.604c-.379.0-.687-.308-.687-.688V20.01c0-.379.308-.687.687-.687.379.0.687.308.687.687v4.521h1.917c.379.0.687.308.687.687C19.562 25.598 19.254 25.907 18.875 25.907zM21.568 25.219c0 .379-.308.688-.687.688s-.687-.308-.687-.688V20.01c0-.379.308-.687.687-.687s.687.308.687.687v5.209zm6.27.0c0 .297-.188.559-.47.652-.071.024-.145.036-.218.036-.215.0-.42-.103-.549-.275l-2.669-3.635v3.222c0 .379-.308.688-.688.688-.379.0-.688-.308-.688-.688V20.01c0-.296.189-.558.47-.652.071-.024.144-.035.218-.035.214.0.42.103.549.275l2.67 3.635V20.01c0-.379.309-.687.688-.687.379.0.687.308.687.687v5.209zm4.214-3.292c.379.0.688.308.688.688.0.379-.308.687-.688.687h-1.917v1.23h1.917c.379.0.688.308.688.687s-.309.688-.688.688h-2.604c-.378.0-.687-.308-.687-.688v-2.603-.001s0-.001.0-.001v-2.601c0-.001.0-.001.0-.002.0-.379.308-.687.687-.687h2.604c.379.0.688.308.688.687s-.308.687-.688.687h-1.917v1.23h1.917z"/></svg>
+<a target=_blank rel="noopener noreferrer" aria-label="share 【Salesforce】プラットフォームイベント説明と利用方法 on Line" href=http://line.me/R/msg/text/?https%3a%2f%2fseiri-blog.github.io%2fposts%2fsalesforce-platform-event-description-and-usage%2f%0a%e3%80%90Salesforce%e3%80%91%e3%83%97%e3%83%a9%e3%83%83%e3%83%88%e3%83%95%e3%82%a9%e3%83%bc%e3%83%a0%e3%82%a4%e3%83%99%e3%83%b3%e3%83%88%e8%aa%ac%e6%98%8e%e3%81%a8%e5%88%a9%e7%94%a8%e6%96%b9%e6%b3%95 title="LINE で共有する"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="35" height="50"><path fill="currentcolor" d="M37.113 22.417c0-5.865-5.88-10.637-13.107-10.637s-13.108 4.772-13.108 10.637c0 5.258 4.663 9.662 10.962 10.495.427.092 1.008.282 1.155.646.132.331.086.85.042 1.185.0.0-.153.925-.187 1.122-.057.331-.263 1.296 1.135.707 1.399-.589 7.548-4.445 10.298-7.611h-.001C36.203 26.879 37.113 24.764 37.113 22.417zm-18.238 3.49h-2.604c-.379.0-.687-.308-.687-.688V20.01c0-.379.308-.687.687-.687.379.0.687.308.687.687v4.521h1.917c.379.0.687.308.687.687C19.562 25.598 19.254 25.907 18.875 25.907zM21.568 25.219c0 .379-.308.688-.687.688s-.687-.308-.687-.688V20.01c0-.379.308-.687.687-.687s.687.308.687.687v5.209zm6.27.0c0 .297-.188.559-.47.652-.071.024-.145.036-.218.036-.215.0-.42-.103-.549-.275l-2.669-3.635v3.222c0 .379-.308.688-.688.688-.379.0-.688-.308-.688-.688V20.01c0-.296.189-.558.47-.652.071-.024.144-.035.218-.035.214.0.42.103.549.275l2.67 3.635V20.01c0-.379.309-.687.688-.687.379.0.687.308.687.687v5.209zm4.214-3.292c.379.0.688.308.688.688.0.379-.308.687-.688.687h-1.917v1.23h1.917c.379.0.688.308.688.687s-.309.688-.688.688h-2.604c-.378.0-.687-.308-.687-.688v-2.603-.001s0-.001.0-.001v-2.601c0-.001.0-.001.0-.002.0-.379.308-.687.687-.687h2.604c.379.0.688.308.688.687s-.308.687-.688.687h-1.917v1.23h1.917z"/></svg>
 </a>
 </li>
 </ul>
@@ -313,36 +313,36 @@ listTest<span style=color:#f92672>.</span><span style=color:#a6e22e>add</span><s
 <div class=share-area>
 <ul>
 <li class=facebook>
-<a target=_blank rel="noopener noreferrer" aria-label="share 【Salesforce】プラットフォームイベント説明と利用方法 on facebook" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fseiri.blog%2fposts%2fsalesforce-platform-event-description-and-usage%2f" title="Facebook で共有する"><svg viewBox="0 0 512 512" height="20" width="20" fill="currentcolor"><path d="M449.446.0C483.971.0 512 28.03 512 62.554v386.892C512 483.97 483.97 512 449.446 512H342.978V319.085h66.6l12.672-82.621h-79.272v-53.617c0-22.603 11.073-44.636 46.58-44.636H425.6v-70.34s-32.71-5.582-63.982-5.582c-65.288.0-107.96 39.569-107.96 111.204v62.971h-72.573v82.621h72.573V512h-191.104c-34.524.0-62.554-28.03-62.554-62.554V62.554c0-34.524 28.029-62.554 62.554-62.554h386.892z"/></svg>
+<a target=_blank rel="noopener noreferrer" aria-label="share 【Salesforce】プラットフォームイベント説明と利用方法 on facebook" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fseiri-blog.github.io%2fposts%2fsalesforce-platform-event-description-and-usage%2f" title="Facebook で共有する"><svg viewBox="0 0 512 512" height="20" width="20" fill="currentcolor"><path d="M449.446.0C483.971.0 512 28.03 512 62.554v386.892C512 483.97 483.97 512 449.446 512H342.978V319.085h66.6l12.672-82.621h-79.272v-53.617c0-22.603 11.073-44.636 46.58-44.636H425.6v-70.34s-32.71-5.582-63.982-5.582c-65.288.0-107.96 39.569-107.96 111.204v62.971h-72.573v82.621h72.573V512h-191.104c-34.524.0-62.554-28.03-62.554-62.554V62.554c0-34.524 28.029-62.554 62.554-62.554h386.892z"/></svg>
 </a>
 </li>
 <li class=twitter>
-<a target=_blank rel="noopener noreferrer" aria-label="share 【Salesforce】プラットフォームイベント説明と利用方法 on twitter" href="https://twitter.com/intent/tweet/?text=%e3%80%90Salesforce%e3%80%91%e3%83%97%e3%83%a9%e3%83%83%e3%83%88%e3%83%95%e3%82%a9%e3%83%bc%e3%83%a0%e3%82%a4%e3%83%99%e3%83%b3%e3%83%88%e8%aa%ac%e6%98%8e%e3%81%a8%e5%88%a9%e7%94%a8%e6%96%b9%e6%b3%95&url=https%3a%2f%2fseiri.blog%2fposts%2fsalesforce-platform-event-description-and-usage%2f&hashtags=Salesforce%2cPlatformEvents" title="Twitter で共有する"><svg viewBox="0 0 512 512" height="20" width="20" fill="currentcolor"><path d="M449.446.0C483.971.0 512 28.03 512 62.554v386.892C512 483.97 483.97 512 449.446 512H62.554c-34.524.0-62.554-28.03-62.554-62.554V62.554c0-34.524 28.029-62.554 62.554-62.554h386.892zM195.519 424.544c135.939.0 210.268-112.643 210.268-210.268.0-3.218.0-6.437-.153-9.502 14.406-10.421 26.973-23.448 36.935-38.314-13.18 5.824-27.433 9.809-42.452 11.648 15.326-9.196 26.973-23.602 32.49-40.92-14.252 8.429-30.038 14.56-46.896 17.931-13.487-14.406-32.644-23.295-53.946-23.295-40.767.0-73.87 33.104-73.87 73.87.0 5.824.613 11.494 1.992 16.858-61.456-3.065-115.862-32.49-152.337-77.241-6.284 10.881-9.962 23.601-9.962 37.088.0 25.594 13.027 48.276 32.95 61.456-12.107-.307-23.448-3.678-33.41-9.196v.92c0 35.862 25.441 65.594 59.311 72.49-6.13 1.686-12.72 2.606-19.464 2.606-4.751.0-9.348-.46-13.946-1.38 9.349 29.426 36.628 50.728 68.965 51.341-25.287 19.771-57.164 31.571-91.8 31.571-5.977.0-11.801-.306-17.625-1.073 32.337 21.15 71.264 33.41 112.95 33.41z"/></svg>
+<a target=_blank rel="noopener noreferrer" aria-label="share 【Salesforce】プラットフォームイベント説明と利用方法 on twitter" href="https://twitter.com/intent/tweet/?text=%e3%80%90Salesforce%e3%80%91%e3%83%97%e3%83%a9%e3%83%83%e3%83%88%e3%83%95%e3%82%a9%e3%83%bc%e3%83%a0%e3%82%a4%e3%83%99%e3%83%b3%e3%83%88%e8%aa%ac%e6%98%8e%e3%81%a8%e5%88%a9%e7%94%a8%e6%96%b9%e6%b3%95&url=https%3a%2f%2fseiri-blog.github.io%2fposts%2fsalesforce-platform-event-description-and-usage%2f&hashtags=Salesforce%2cPlatformEvents" title="Twitter で共有する"><svg viewBox="0 0 512 512" height="20" width="20" fill="currentcolor"><path d="M449.446.0C483.971.0 512 28.03 512 62.554v386.892C512 483.97 483.97 512 449.446 512H62.554c-34.524.0-62.554-28.03-62.554-62.554V62.554c0-34.524 28.029-62.554 62.554-62.554h386.892zM195.519 424.544c135.939.0 210.268-112.643 210.268-210.268.0-3.218.0-6.437-.153-9.502 14.406-10.421 26.973-23.448 36.935-38.314-13.18 5.824-27.433 9.809-42.452 11.648 15.326-9.196 26.973-23.602 32.49-40.92-14.252 8.429-30.038 14.56-46.896 17.931-13.487-14.406-32.644-23.295-53.946-23.295-40.767.0-73.87 33.104-73.87 73.87.0 5.824.613 11.494 1.992 16.858-61.456-3.065-115.862-32.49-152.337-77.241-6.284 10.881-9.962 23.601-9.962 37.088.0 25.594 13.027 48.276 32.95 61.456-12.107-.307-23.448-3.678-33.41-9.196v.92c0 35.862 25.441 65.594 59.311 72.49-6.13 1.686-12.72 2.606-19.464 2.606-4.751.0-9.348-.46-13.946-1.38 9.349 29.426 36.628 50.728 68.965 51.341-25.287 19.771-57.164 31.571-91.8 31.571-5.977.0-11.801-.306-17.625-1.073 32.337 21.15 71.264 33.41 112.95 33.41z"/></svg>
 </a>
 </li>
 <li class=hatena>
-<a target=_blank rel="noopener noreferrer" aria-label="share 【Salesforce】プラットフォームイベント説明と利用方法 on Hatena" href="http://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fseiri.blog%2fposts%2fsalesforce-platform-event-description-and-usage%2f&title=%e3%80%90Salesforce%e3%80%91%e3%83%97%e3%83%a9%e3%83%83%e3%83%88%e3%83%95%e3%82%a9%e3%83%bc%e3%83%a0%e3%82%a4%e3%83%99%e3%83%b3%e3%83%88%e8%aa%ac%e6%98%8e%e3%81%a8%e5%88%a9%e7%94%a8%e6%96%b9%e6%b3%95" title="Hatena で共有する">
+<a target=_blank rel="noopener noreferrer" aria-label="share 【Salesforce】プラットフォームイベント説明と利用方法 on Hatena" href="http://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fseiri-blog.github.io%2fposts%2fsalesforce-platform-event-description-and-usage%2f&title=%e3%80%90Salesforce%e3%80%91%e3%83%97%e3%83%a9%e3%83%83%e3%83%88%e3%83%95%e3%82%a9%e3%83%bc%e3%83%a0%e3%82%a4%e3%83%99%e3%83%b3%e3%83%88%e8%aa%ac%e6%98%8e%e3%81%a8%e5%88%a9%e7%94%a8%e6%96%b9%e6%b3%95" title="Hatena で共有する">
 B!
 </a>
 </li>
 <li class=line>
-<a target=_blank rel="noopener noreferrer" aria-label="share 【Salesforce】プラットフォームイベント説明と利用方法 on Line" href=http://line.me/R/msg/text/?https%3a%2f%2fseiri.blog%2fposts%2fsalesforce-platform-event-description-and-usage%2f%0a%e3%80%90Salesforce%e3%80%91%e3%83%97%e3%83%a9%e3%83%83%e3%83%88%e3%83%95%e3%82%a9%e3%83%bc%e3%83%a0%e3%82%a4%e3%83%99%e3%83%b3%e3%83%88%e8%aa%ac%e6%98%8e%e3%81%a8%e5%88%a9%e7%94%a8%e6%96%b9%e6%b3%95 title="LINE で共有する"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="35" height="50"><path fill="currentcolor" d="M37.113 22.417c0-5.865-5.88-10.637-13.107-10.637s-13.108 4.772-13.108 10.637c0 5.258 4.663 9.662 10.962 10.495.427.092 1.008.282 1.155.646.132.331.086.85.042 1.185.0.0-.153.925-.187 1.122-.057.331-.263 1.296 1.135.707 1.399-.589 7.548-4.445 10.298-7.611h-.001C36.203 26.879 37.113 24.764 37.113 22.417zm-18.238 3.49h-2.604c-.379.0-.687-.308-.687-.688V20.01c0-.379.308-.687.687-.687.379.0.687.308.687.687v4.521h1.917c.379.0.687.308.687.687C19.562 25.598 19.254 25.907 18.875 25.907zM21.568 25.219c0 .379-.308.688-.687.688s-.687-.308-.687-.688V20.01c0-.379.308-.687.687-.687s.687.308.687.687v5.209zm6.27.0c0 .297-.188.559-.47.652-.071.024-.145.036-.218.036-.215.0-.42-.103-.549-.275l-2.669-3.635v3.222c0 .379-.308.688-.688.688-.379.0-.688-.308-.688-.688V20.01c0-.296.189-.558.47-.652.071-.024.144-.035.218-.035.214.0.42.103.549.275l2.67 3.635V20.01c0-.379.309-.687.688-.687.379.0.687.308.687.687v5.209zm4.214-3.292c.379.0.688.308.688.688.0.379-.308.687-.688.687h-1.917v1.23h1.917c.379.0.688.308.688.687s-.309.688-.688.688h-2.604c-.378.0-.687-.308-.687-.688v-2.603-.001s0-.001.0-.001v-2.601c0-.001.0-.001.0-.002.0-.379.308-.687.687-.687h2.604c.379.0.688.308.688.687s-.308.687-.688.687h-1.917v1.23h1.917z"/></svg>
+<a target=_blank rel="noopener noreferrer" aria-label="share 【Salesforce】プラットフォームイベント説明と利用方法 on Line" href=http://line.me/R/msg/text/?https%3a%2f%2fseiri-blog.github.io%2fposts%2fsalesforce-platform-event-description-and-usage%2f%0a%e3%80%90Salesforce%e3%80%91%e3%83%97%e3%83%a9%e3%83%83%e3%83%88%e3%83%95%e3%82%a9%e3%83%bc%e3%83%a0%e3%82%a4%e3%83%99%e3%83%b3%e3%83%88%e8%aa%ac%e6%98%8e%e3%81%a8%e5%88%a9%e7%94%a8%e6%96%b9%e6%b3%95 title="LINE で共有する"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="35" height="50"><path fill="currentcolor" d="M37.113 22.417c0-5.865-5.88-10.637-13.107-10.637s-13.108 4.772-13.108 10.637c0 5.258 4.663 9.662 10.962 10.495.427.092 1.008.282 1.155.646.132.331.086.85.042 1.185.0.0-.153.925-.187 1.122-.057.331-.263 1.296 1.135.707 1.399-.589 7.548-4.445 10.298-7.611h-.001C36.203 26.879 37.113 24.764 37.113 22.417zm-18.238 3.49h-2.604c-.379.0-.687-.308-.687-.688V20.01c0-.379.308-.687.687-.687.379.0.687.308.687.687v4.521h1.917c.379.0.687.308.687.687C19.562 25.598 19.254 25.907 18.875 25.907zM21.568 25.219c0 .379-.308.688-.687.688s-.687-.308-.687-.688V20.01c0-.379.308-.687.687-.687s.687.308.687.687v5.209zm6.27.0c0 .297-.188.559-.47.652-.071.024-.145.036-.218.036-.215.0-.42-.103-.549-.275l-2.669-3.635v3.222c0 .379-.308.688-.688.688-.379.0-.688-.308-.688-.688V20.01c0-.296.189-.558.47-.652.071-.024.144-.035.218-.035.214.0.42.103.549.275l2.67 3.635V20.01c0-.379.309-.687.688-.687.379.0.687.308.687.687v5.209zm4.214-3.292c.379.0.688.308.688.688.0.379-.308.687-.688.687h-1.917v1.23h1.917c.379.0.688.308.688.687s-.309.688-.688.688h-2.604c-.378.0-.687-.308-.687-.688v-2.603-.001s0-.001.0-.001v-2.601c0-.001.0-.001.0-.002.0-.379.308-.687.687-.687h2.604c.379.0.688.308.688.687s-.308.687-.688.687h-1.917v1.23h1.917z"/></svg>
 </a>
 </li>
 </ul>
 </div>
 <footer class=post-footer>
 <ul class=post-tags>
-<li><a href=https://seiri.blog/tags/salesforce/>Salesforce</a></li>
-<li><a href=https://seiri.blog/tags/platformevents/>PlatformEvents</a></li>
+<li><a href=https://seiri-blog.github.io/tags/salesforce/>Salesforce</a></li>
+<li><a href=https://seiri-blog.github.io/tags/platformevents/>PlatformEvents</a></li>
 </ul>
 <nav class=paginav>
-<a class=prev href=https://seiri.blog/posts/salesforce-fls-authority-check/>
+<a class=prev href=https://seiri-blog.github.io/posts/salesforce-fls-authority-check/>
 <span class=title>« 前へ</span>
 <br>
 <span>【Salesforce】FLS権限チェック</span>
 </a>
-<a class=next href=https://seiri.blog/posts/salesforce-data-loader-batch-export-edition/>
+<a class=next href=https://seiri-blog.github.io/posts/salesforce-data-loader-batch-export-edition/>
 <span class=title>次へ »</span>
 <br>
 <span>【Salesforce】データローダバッチ（エクスポート編）</span>

@@ -2,98 +2,98 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>AWSLambda on Seiri&#39;s Blog</title>
-    <link>https://seiri.blog/tags/awslambda/</link>
+    <link>https://seiri-blog.github.io/tags/awslambda/</link>
     <description>Recent content in AWSLambda on Seiri&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>2023 Seiri All rights reserved</copyright>
-    <lastBuildDate>Mon, 27 Dec 2021 17:53:32 +0900</lastBuildDate><atom:link href="https://seiri.blog/tags/awslambda/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 27 Dec 2021 17:53:32 +0900</lastBuildDate><atom:link href="https://seiri-blog.github.io/tags/awslambda/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>PythonでのAWS Lambda環境変数の取得</title>
-      <link>https://seiri.blog/posts/aws-lambda-environment-variable-acquisition-on-python/</link>
+      <link>https://seiri-blog.github.io/posts/aws-lambda-environment-variable-acquisition-on-python/</link>
       <pubDate>Mon, 27 Dec 2021 17:53:32 +0900</pubDate>
       
-      <guid>https://seiri.blog/posts/aws-lambda-environment-variable-acquisition-on-python/</guid>
+      <guid>https://seiri-blog.github.io/posts/aws-lambda-environment-variable-acquisition-on-python/</guid>
       <description>準備 環境変数の設定 環境変数は、関数の未公開バージョンで定義します。バージョンを公開するとき、他のバージョン固有の設定とともに、そのバージョン</description>
     </item>
     
     <item>
       <title>PythonでのAWS Lambda共通DynamoDB操作Util</title>
-      <link>https://seiri.blog/posts/aws-lambda-common-dynamodb-operation-util-in-python/</link>
+      <link>https://seiri-blog.github.io/posts/aws-lambda-common-dynamodb-operation-util-in-python/</link>
       <pubDate>Mon, 27 Dec 2021 17:33:59 +0900</pubDate>
       
-      <guid>https://seiri.blog/posts/aws-lambda-common-dynamodb-operation-util-in-python/</guid>
+      <guid>https://seiri-blog.github.io/posts/aws-lambda-common-dynamodb-operation-util-in-python/</guid>
       <description>python での DBUtil の作成方法 以下に、Python で AWS Lambda 内で共通的に使用される DynamoDB 操作のためのユーティリティクラスの例を示します。このクラスを使用すると、</description>
     </item>
     
     <item>
       <title>AWS Lambda クォータ</title>
-      <link>https://seiri.blog/posts/aws-lambda-quota/</link>
+      <link>https://seiri-blog.github.io/posts/aws-lambda-quota/</link>
       <pubDate>Mon, 27 Dec 2021 16:29:51 +0900</pubDate>
       
-      <guid>https://seiri.blog/posts/aws-lambda-quota/</guid>
+      <guid>https://seiri-blog.github.io/posts/aws-lambda-quota/</guid>
       <description>コンピューティングとストレージ Lambda では、関数の実行と保存に使用できるコンピューティングおよびストレージリソースの量に対してクォータを設定します</description>
     </item>
     
     <item>
       <title>【AWS】LambdaでS3ファイルをtmpディレクトリに保存</title>
-      <link>https://seiri.blog/posts/aws-lambda-by-s3-file-tmp-directory-save/</link>
+      <link>https://seiri-blog.github.io/posts/aws-lambda-by-s3-file-tmp-directory-save/</link>
       <pubDate>Mon, 27 Dec 2021 16:14:46 +0900</pubDate>
       
-      <guid>https://seiri.blog/posts/aws-lambda-by-s3-file-tmp-directory-save/</guid>
+      <guid>https://seiri-blog.github.io/posts/aws-lambda-by-s3-file-tmp-directory-save/</guid>
       <description>tmp ディレクトリ説明 各実行環境は、/tmp ディレクトリ内の 512 MB~ 10240 MB のディスク領域を提供します。ディレクトリのコンテンツは、実行環境が停止された</description>
     </item>
     
     <item>
       <title>PythonでのAWS Lambda共通ユーザ操作Util</title>
-      <link>https://seiri.blog/posts/aws-lambda-common-user-operation-util-in-python/</link>
+      <link>https://seiri-blog.github.io/posts/aws-lambda-common-user-operation-util-in-python/</link>
       <pubDate>Mon, 27 Dec 2021 12:38:54 +0900</pubDate>
       
-      <guid>https://seiri.blog/posts/aws-lambda-common-user-operation-util-in-python/</guid>
+      <guid>https://seiri-blog.github.io/posts/aws-lambda-common-user-operation-util-in-python/</guid>
       <description>目的 boto3 ラブライブを利用して、AWS Coginit での操作 Utitl 作成方法を共有します。 実装 # -*- coding: utf-8 -*- import secrets import string import boto3 USERPOOL_ID = &amp;#39;USERPOOL_ID&amp;#39; client = boto3.client(&amp;#39;cognito-idp&amp;#39;) def show_user_list(): &amp;#34;&amp;#34;&amp;#34;</description>
     </item>
     
     <item>
       <title>PythonでStepFunctionを実行する方法(boto3)</title>
-      <link>https://seiri.blog/posts/python-execute-stepfunction/</link>
+      <link>https://seiri-blog.github.io/posts/python-execute-stepfunction/</link>
       <pubDate>Mon, 27 Dec 2021 12:18:23 +0900</pubDate>
       
-      <guid>https://seiri.blog/posts/python-execute-stepfunction/</guid>
+      <guid>https://seiri-blog.github.io/posts/python-execute-stepfunction/</guid>
       <description>実装方法 Python の boto3 ライブラリを使用して AWS Step Functions を実行するには、以下の手順に従います。 boto3 モジュールをインポートします。 import boto3 Step Functions クライアントを作成しま</description>
     </item>
     
     <item>
       <title>PythonでのAWS Lambdaキュー送信</title>
-      <link>https://seiri.blog/posts/aws-lambda-queue-send-in-python/</link>
+      <link>https://seiri-blog.github.io/posts/aws-lambda-queue-send-in-python/</link>
       <pubDate>Mon, 27 Dec 2021 12:15:01 +0900</pubDate>
       
-      <guid>https://seiri.blog/posts/aws-lambda-queue-send-in-python/</guid>
+      <guid>https://seiri-blog.github.io/posts/aws-lambda-queue-send-in-python/</guid>
       <description>実装方法 Python で AWS Lambda からキューにメッセージを送信するには、以下の手順に従います。 boto3モジュールをインポートします。 import boto3 SQS (Simple Queue Service) クライアント</description>
     </item>
     
     <item>
       <title>PythonでのAWS Lambda共通ログ出力Util</title>
-      <link>https://seiri.blog/posts/aws-lambda-common-logging-util-in-python/</link>
+      <link>https://seiri-blog.github.io/posts/aws-lambda-common-logging-util-in-python/</link>
       <pubDate>Mon, 27 Dec 2021 12:06:59 +0900</pubDate>
       
-      <guid>https://seiri.blog/posts/aws-lambda-common-logging-util-in-python/</guid>
+      <guid>https://seiri-blog.github.io/posts/aws-lambda-common-logging-util-in-python/</guid>
       <description>実装方法 以下に、Python で AWS Lambda 内で共通的に使用されるログ出力のためのユーティリティクラスの例を示します。このクラスを使用すると、Lamb</description>
     </item>
     
     <item>
       <title>PythonでのAWS Lambda 共通認証Util</title>
-      <link>https://seiri.blog/posts/aws-lambda-common-authorization-util-in-python/</link>
+      <link>https://seiri-blog.github.io/posts/aws-lambda-common-authorization-util-in-python/</link>
       <pubDate>Mon, 27 Dec 2021 11:54:25 +0900</pubDate>
       
-      <guid>https://seiri.blog/posts/aws-lambda-common-authorization-util-in-python/</guid>
+      <guid>https://seiri-blog.github.io/posts/aws-lambda-common-authorization-util-in-python/</guid>
       <description>実装方法 Cognito User Pool を使用するためのユーティリティクラスの例を示します。このクラスは、AWS SDK の boto3 を使用して Cognito User Pool とのインタラクションを簡素化しま</description>
     </item>
     
     <item>
       <title>PythonでのAWS Lambda共通レスポンスUtil</title>
-      <link>https://seiri.blog/posts/aws-lambda-common-response-util-in-python/</link>
+      <link>https://seiri-blog.github.io/posts/aws-lambda-common-response-util-in-python/</link>
       <pubDate>Mon, 27 Dec 2021 11:22:36 +0900</pubDate>
       
-      <guid>https://seiri.blog/posts/aws-lambda-common-response-util-in-python/</guid>
+      <guid>https://seiri-blog.github.io/posts/aws-lambda-common-response-util-in-python/</guid>
       <description>共通レスポンス Util 以下に、Python で AWS Lambda 内で共通的に使用されるレスポンスのためのユーティリティクラスの例を示します。このクラスを使用すると</description>
     </item>
     

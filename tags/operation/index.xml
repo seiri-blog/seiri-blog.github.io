@@ -2,53 +2,53 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>operation on Seiri&#39;s Blog</title>
-    <link>https://seiri.blog/tags/operation/</link>
+    <link>https://seiri-blog.github.io/tags/operation/</link>
     <description>Recent content in operation on Seiri&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>2023 Seiri All rights reserved</copyright>
-    <lastBuildDate>Thu, 29 Dec 2022 19:36:52 +0900</lastBuildDate><atom:link href="https://seiri.blog/tags/operation/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 29 Dec 2022 19:36:52 +0900</lastBuildDate><atom:link href="https://seiri-blog.github.io/tags/operation/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>【Git】ファイル名大文字&amp;小文字を区別する方法</title>
-      <link>https://seiri.blog/posts/git-config-core-ignorecase/</link>
+      <link>https://seiri-blog.github.io/posts/git-config-core-ignorecase/</link>
       <pubDate>Thu, 29 Dec 2022 19:36:52 +0900</pubDate>
       
-      <guid>https://seiri.blog/posts/git-config-core-ignorecase/</guid>
+      <guid>https://seiri-blog.github.io/posts/git-config-core-ignorecase/</guid>
       <description>Git でのファイル名の大文字・小文字区別の説明 Git はファイル名の大文字・小文字を区別します。 例えば、「hello.txt」と「Hello.txt」</description>
     </item>
     
     <item>
       <title>【Git】上級操作方法(その１)</title>
-      <link>https://seiri.blog/posts/git-advanced-operation-part1/</link>
+      <link>https://seiri-blog.github.io/posts/git-advanced-operation-part1/</link>
       <pubDate>Thu, 29 Dec 2022 19:36:52 +0900</pubDate>
       
-      <guid>https://seiri.blog/posts/git-advanced-operation-part1/</guid>
+      <guid>https://seiri-blog.github.io/posts/git-advanced-operation-part1/</guid>
       <description>Git の上級操作方法 Git には様々な上級操作がありますが、今回は下記操作方法を説明したいと思います。 マージ: master ブランチで最新のソースをプルし、new</description>
     </item>
     
     <item>
       <title>【Git】上級操作方法(その２)</title>
-      <link>https://seiri.blog/posts/git-advanced-operation-part2/</link>
+      <link>https://seiri-blog.github.io/posts/git-advanced-operation-part2/</link>
       <pubDate>Thu, 29 Dec 2022 19:36:52 +0900</pubDate>
       
-      <guid>https://seiri.blog/posts/git-advanced-operation-part2/</guid>
+      <guid>https://seiri-blog.github.io/posts/git-advanced-operation-part2/</guid>
       <description>Git の上級操作方法 Git には様々な上級操作がありますが、今回は下記操作方法を説明したいと思います。 タグの操作: タグを作成、削除、移動する方法。 # タ</description>
     </item>
     
     <item>
       <title>【Git】上級操作方法(その３)</title>
-      <link>https://seiri.blog/posts/git-advanced-operation-part3/</link>
+      <link>https://seiri-blog.github.io/posts/git-advanced-operation-part3/</link>
       <pubDate>Thu, 29 Dec 2022 19:36:52 +0900</pubDate>
       
-      <guid>https://seiri.blog/posts/git-advanced-operation-part3/</guid>
+      <guid>https://seiri-blog.github.io/posts/git-advanced-operation-part3/</guid>
       <description>Git の上級操作方法 Git には様々な上級操作がありますが、今回は下記操作方法を説明したいと思います。 git cherry-pick: git cherry-pick コマンドは、特定のコミットを別のブランチ</description>
     </item>
     
     <item>
       <title>【Git】説明と基本操作方法</title>
-      <link>https://seiri.blog/posts/git-operation/</link>
+      <link>https://seiri-blog.github.io/posts/git-operation/</link>
       <pubDate>Thu, 29 Dec 2022 19:36:52 +0900</pubDate>
       
-      <guid>https://seiri.blog/posts/git-operation/</guid>
+      <guid>https://seiri-blog.github.io/posts/git-operation/</guid>
       <description>Git の用途と関連製品の紹介 Git はオープンソースの分散型バージョン管理システムです。 開発者が複数人で協力してソフトウェアを開発するために使用されま</description>
     </item>
     
