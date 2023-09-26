@@ -8,7 +8,7 @@
 <meta name=description content="実装例 export class EventEmitter { constructor() { this.registry = {}; } on(name, listener) { this.registry[name] = this.registry[name] || []; this.registry[name].push(listener); return this; } once(name, listener) { const doOnce = function () { listener.apply(null, arguments); this.removeListener(name, doOnce); }.bind(this); this.on(name, doOnce); return this; } emit(name) { const args = Array.prototype.slice.call(arguments, 1); const listeners = this.registry[name]; let count = 0; if (listeners) { listeners.forEach((listener) => { count += 1; listener.apply(null, args);">
 <meta name=author content="Seiri">
 <link rel=canonical href=https://seiri-blog.github.io/posts/js-event-util/>
-<meta name=yandex-verification content="6b79e4a21fa2921c">
+<meta name=yandex-verification content="017a61651e9c5c6d">
 <link crossorigin=anonymous href=/assets/css/stylesheet.css rel="preload stylesheet" as=style>
 <script defer crossorigin=anonymous src=/assets/js/highlight.js onload=hljs.initHighlightingOnLoad()></script>
 <link rel=icon href=https://seiri-blog.github.io/favicon.ico>
