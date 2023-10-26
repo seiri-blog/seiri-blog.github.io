@@ -6,7 +6,16 @@
     <description>Recent content in vue3 on Seiri&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>2023 Seiri All rights reserved</copyright>
-    <lastBuildDate>Thu, 26 Oct 2023 09:49:55 +0900</lastBuildDate><atom:link href="https://seiri-blog.github.io/tags/vue3/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 26 Oct 2023 10:40:19 +0900</lastBuildDate><atom:link href="https://seiri-blog.github.io/tags/vue3/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>vue/multi-word-component-namesエラーについて</title>
+      <link>https://seiri-blog.github.io/posts/vue-multi-word-component-names/</link>
+      <pubDate>Thu, 26 Oct 2023 10:40:19 +0900</pubDate>
+      
+      <guid>https://seiri-blog.github.io/posts/vue-multi-word-component-names/</guid>
+      <description>vue/multi-word-component-names エラーについて Vue.js の規約では、コンポーネント名は常に複数の単語で構成するべきで、それに従っていない場合、Linter（コードの品質を確認する</description>
+    </item>
+    
     <item>
       <title>Vue3入門</title>
       <link>https://seiri-blog.github.io/posts/vue3-quick-start/</link>
