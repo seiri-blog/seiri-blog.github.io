@@ -35,21 +35,21 @@
     </item>
     
     <item>
-      <title>【Salesforce】LWC入門</title>
-      <link>https://seiri-blog.github.io/posts/lwc-introduction/</link>
-      <pubDate>Thu, 29 Dec 2022 19:36:52 +0900</pubDate>
-      
-      <guid>https://seiri-blog.github.io/posts/lwc-introduction/</guid>
-      <description>LWC の説明 LWC (Lightning Web Components) の基礎となる概念は以下のとおりです。 Web Components: LWC は Web Components と呼ばれる技術を使用しています。Web Components は、ブラウザの API を使用して、カスタム</description>
-    </item>
-    
-    <item>
       <title>【Salesforce】LWC環境構築</title>
       <link>https://seiri-blog.github.io/posts/salesforce-lwc-setup-environment/</link>
       <pubDate>Thu, 29 Dec 2022 19:36:52 +0900</pubDate>
       
       <guid>https://seiri-blog.github.io/posts/salesforce-lwc-setup-environment/</guid>
       <description>LWC の環境構築方法 LWC の環境構築の詳しい方法は以下のようになります。 Salesforce の Developer Edition アカウントを取得します。 Developer Edition アカウントは、開発者向けのアカウントで、</description>
+    </item>
+    
+    <item>
+      <title>【Salesforce】LWC（Lightning Web Components）の紹介</title>
+      <link>https://seiri-blog.github.io/posts/lwc-introduction/</link>
+      <pubDate>Thu, 29 Dec 2022 19:36:52 +0900</pubDate>
+      
+      <guid>https://seiri-blog.github.io/posts/lwc-introduction/</guid>
+      <description>LWC とは LWC は、Web Componentsを使用して、Salesforceのプラットフォーム上でカスタムコンポーネントを構築するためのフレームワ</description>
     </item>
     
     <item>
