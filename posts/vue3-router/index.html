@@ -31,7 +31,7 @@
 <meta name=twitter:title content="Vue3 画面遷移">
 <meta name=twitter:description content="Vue Router は、Vue.js アプリケーションに対する公式のルーティングライブラリです。Vue Router を使用すると、シングルページアプリケーション（SPA）">
 <script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://seiri-blog.github.io/posts/"},{"@type":"ListItem","position":2,"name":"Vue3 画面遷移","item":"https://seiri-blog.github.io/posts/vue3-router/"}]}</script>
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"Vue3 画面遷移","name":"Vue3 画面遷移","description":"Vue Router は、Vue.js アプリケーションに対する公式のルーティングライブラリです。Vue Router を使用すると、シングルページアプリケーション（SPA）","keywords":["vue","vue3"],"articleBody":"Vue Router は、Vue.js アプリケーションに対する公式のルーティングライブラリです。Vue Router を使用すると、シングルページアプリケーション（SPA）内でページ間のナビゲーションを簡単に設定できます。以下では、Vue Router の基本的な使用法を説明します。\nVue Router の導入 Vue CLI を使用してプロジェクトを作成した場合、Vue Router は既にセットアップされているか、プロジェクトの作成時に選択肢として提供されることが一般的です。もしそうでない場合は、以下のコマンドで Vue Router をプロジェクトに追加できます：\nvue add router 基本的な Vue Router の設定 src/components ディレクトリ内に Home.vue と About.vue の 2 つのコンポーネントを作成します： src/components/Home.vue:\ntemplate div h1Home Pageh1 pWelcome to the Home Page!p div template src/components/About.vue:\ntemplate div h1About Pageh1 pThis is the About Page!p div template  ファイルを作成して Vue Router を設定する  src/router/index.js:\nimport { createRouter, createWebHistory } from \"vue-router\"; import Home from \"@/views/Home.vue\"; import About from \"@/views/About.vue\"; const routes = [ { path: \"/\", name: \"Home\", component: Home, }, { path: \"/about\", name: \"About\", component: About, }, ]; const router = createRouter({ mode: \"history\", history: createWebHistory(process.env.BASE_URL), routes, }); export default router; Vue Router を使って定義したルートは、 コンポーネントを使用して表示される\nまた、 コンポーネントを使用すると、ルート間をナビゲートするためのリンクを作成でる。  src/App.vue :\ntemplate router-link to=\"/\"Homerouter-link| router-link to=\"/about\"Aboutrouter-link router-viewrouter-view template これにより、ユーザーは「Home」および「About」リンクをクリックして、それぞれのルートに移動できます。\nリンクではなくボタンにしたい場合は、下記ように実装すればよいです。  src/App.vue :\ntemplate button @click=\"goHome\"Homebutton| button @click=\"goAbout\"Aboutbutton router-viewrouter-view template script export default { methods: { goHome() { this.$router.push(\"/\"); }, goAbout() { this.$router.push(\"/about\"); }, }, }; script 実際の動作  リンクで画面遷移：\n\nボタンで画面遷移：\n\n","wordCount":"620","inLanguage":"ja","datePublished":"2023-10-26T11:19:23+09:00","dateModified":"2023-10-26T11:19:23+09:00","author":{"@type":"Person","name":"Seiri"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://seiri-blog.github.io/posts/vue3-router/"},"publisher":{"@type":"Organization","name":"Seiri's Blog","logo":{"@type":"ImageObject","url":"https://seiri-blog.github.io/favicon.ico"}}}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"Vue3 画面遷移","name":"Vue3 画面遷移","description":"Vue Router は、Vue.js アプリケーションに対する公式のルーティングライブラリです。Vue Router を使用すると、シングルページアプリケーション（SPA）","keywords":["vue","vue3"],"articleBody":"Vue Router は、Vue.js アプリケーションに対する公式のルーティングライブラリです。Vue Router を使用すると、シングルページアプリケーション（SPA）内でページ間のナビゲーションを簡単に設定できます。以下では、Vue Router の基本的な使用法を説明します。\nVue Router の導入 Vue CLI を使用してプロジェクトを作成した場合、Vue Router は既にセットアップされているか、プロジェクトの作成時に選択肢として提供されることが一般的です。もしそうでない場合は、以下のコマンドで Vue Router をプロジェクトに追加できます：\nvue add router 基本的な Vue Router の設定  src/components ディレクトリ内に Home.vue と About.vue の 2 つのコンポーネントを作成します   src/components/Home.vue\n template div h1Home Pageh1 pWelcome to the Home Page!p div template  src/components/About.vue\n template div h1About Pageh1 pThis is the About Page!p div template ファイルを作成して Vue Router を設定する   src/router/index.js\n import { createRouter, createWebHistory } from \"vue-router\"; import Home from \"@/views/Home.vue\"; import About from \"@/views/About.vue\"; const routes = [ { path: \"/\", name: \"Home\", component: Home, }, { path: \"/about\", name: \"About\", component: About, }, ]; const router = createRouter({ mode: \"history\", history: createWebHistory(process.env.BASE_URL), routes, }); export default router; Vue Router を使って定義したルートは、 コンポーネントを使用して表示される\nまた、 コンポーネントを使用すると、ルート間をナビゲートするためのリンクを作成でる。   src/App.vue\n template router-link to=\"/\"Homerouter-link| router-link to=\"/about\"Aboutrouter-link router-viewrouter-view template これにより、ユーザーは「Home」および「About」リンクをクリックして、それぞれのルートに移動できます。\nリンクではなくボタンにしたい場合は、下記ように実装すればよいです。   src/App.vue\n template button @click=\"goHome\"Homebutton| button @click=\"goAbout\"Aboutbutton router-viewrouter-view template script export default { methods: { goHome() { this.$router.push(\"/\"); }, goAbout() { this.$router.push(\"/about\"); }, }, }; script 実際の動作  リンクで画面遷移：\n\nボタンで画面遷移：\n\n","wordCount":"617","inLanguage":"ja","datePublished":"2023-10-26T11:19:23+09:00","dateModified":"2023-10-26T11:19:23+09:00","author":{"@type":"Person","name":"Seiri"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://seiri-blog.github.io/posts/vue3-router/"},"publisher":{"@type":"Organization","name":"Seiri's Blog","logo":{"@type":"ImageObject","url":"https://seiri-blog.github.io/favicon.ico"}}}</script>
 </head>
 <body id=top>
 <script>localStorage.getItem("pref-theme")==="dark"&&document.body.classList.add('dark')</script>
@@ -87,8 +87,23 @@
 </a>
 </li>
 <li>
-<a href=https://fc-game.github.io title=ゲーム>
-<span>ゲーム</span>&nbsp;<svg fill="none" shape-rendering="geometricPrecision" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24" height="12" width="12"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg>
+<a href=https://fc-game.github.io title="FC Games">
+<span>FC Games</span>&nbsp;<svg fill="none" shape-rendering="geometricPrecision" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24" height="12" width="12"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg>
+</a>
+</li>
+<li>
+<a href=https://newsround.github.io/github-trends/ title="Github Trends">
+<span>Github Trends</span>&nbsp;<svg fill="none" shape-rendering="geometricPrecision" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24" height="12" width="12"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg>
+</a>
+</li>
+<li>
+<a href=https://f1-news.github.io/ title="F1 News">
+<span>F1 News</span>&nbsp;<svg fill="none" shape-rendering="geometricPrecision" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24" height="12" width="12"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg>
+</a>
+</li>
+<li>
+<a href=https://bilibili-tool.github.io/image-serenity/ title="Image Serenity">
+<span>Image Serenity</span>&nbsp;<svg fill="none" shape-rendering="geometricPrecision" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24" height="12" width="12"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg>
 </a>
 </li>
 </ul>
@@ -101,7 +116,7 @@
 <h1 class=post-title>
 Vue3 画面遷移
 </h1>
-<div class=post-meta><span title="2023-10-26 11:19:23 +0900 +0900">2023年10月26日</span>&nbsp;·&nbsp;2 分&nbsp;·&nbsp;620 文字&nbsp;·&nbsp;Seiri
+<div class=post-meta><span title="2023-10-26 11:19:23 +0900 +0900">2023年10月26日</span>&nbsp;·&nbsp;2 分&nbsp;·&nbsp;617 文字&nbsp;·&nbsp;Seiri
 </div>
 </header>
 <div class=share-area>
@@ -133,11 +148,7 @@ B!
 <li>
 <a href=#vue-router-%e3%81%ae%e5%b0%8e%e5%85%a5 aria-label="Vue Router の導入">Vue Router の導入</a></li>
 <li>
-<a href=#%e5%9f%ba%e6%9c%ac%e7%9a%84%e3%81%aa-vue-router-%e3%81%ae%e8%a8%ad%e5%ae%9a aria-label="基本的な Vue Router の設定">基本的な Vue Router の設定</a><ul>
-<li>
-<a href=#srccomponents-%e3%83%87%e3%82%a3%e3%83%ac%e3%82%af%e3%83%88%e3%83%aa%e5%86%85%e3%81%ab-homevue-%e3%81%a8-aboutvue-%e3%81%ae-2-%e3%81%a4%e3%81%ae%e3%82%b3%e3%83%b3%e3%83%9d%e3%83%bc%e3%83%8d%e3%83%b3%e3%83%88%e3%82%92%e4%bd%9c%e6%88%90%e3%81%97%e3%81%be%e3%81%99 aria-label="src/components ディレクトリ内に Home.vue と About.vue の 2 つのコンポーネントを作成します："><code>src/components</code> ディレクトリ内に <code>Home.vue</code> と <code>About.vue</code> の 2 つのコンポーネントを作成します：</a>
-</li>
-</ul>
+<a href=#%e5%9f%ba%e6%9c%ac%e7%9a%84%e3%81%aa-vue-router-%e3%81%ae%e8%a8%ad%e5%ae%9a aria-label="基本的な Vue Router の設定">基本的な Vue Router の設定</a>
 </li>
 </ul>
 </div>
@@ -153,25 +164,33 @@ B!
 <p>Vue CLI を使用してプロジェクトを作成した場合、Vue Router は既にセットアップされているか、プロジェクトの作成時に選択肢として提供されることが一般的です。もしそうでない場合は、以下のコマンドで Vue Router をプロジェクトに追加できます：</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>vue add router
 </code></pre></div><h2 id=基本的な-vue-router-の設定>基本的な Vue Router の設定<a hidden class=anchor aria-hidden=true href=#基本的な-vue-router-の設定>#</a></h2>
-<h3 id=srccomponents-ディレクトリ内に-homevue-と-aboutvue-の-2-つのコンポーネントを作成します><code>src/components</code> ディレクトリ内に <code>Home.vue</code> と <code>About.vue</code> の 2 つのコンポーネントを作成します：<a hidden class=anchor aria-hidden=true href=#srccomponents-ディレクトリ内に-homevue-と-aboutvue-の-2-つのコンポーネントを作成します>#</a></h3>
-<p><code>src/components/Home.vue</code>:</p>
+<ol>
+<li><code>src/components</code> ディレクトリ内に <code>Home.vue</code> と <code>About.vue</code> の 2 つのコンポーネントを作成します</li>
+</ol>
+<blockquote>
+<p><code>src/components/Home.vue</code></p>
+</blockquote>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html>&lt;<span style=color:#f92672>template</span>&gt;
   &lt;<span style=color:#f92672>div</span>&gt;
     &lt;<span style=color:#f92672>h1</span>&gt;Home Page&lt;/<span style=color:#f92672>h1</span>&gt;
     &lt;<span style=color:#f92672>p</span>&gt;Welcome to the Home Page!&lt;/<span style=color:#f92672>p</span>&gt;
   &lt;/<span style=color:#f92672>div</span>&gt;
 &lt;/<span style=color:#f92672>template</span>&gt;
-</code></pre></div><p><code>src/components/About.vue</code>:</p>
+</code></pre></div><blockquote>
+<p><code>src/components/About.vue</code></p>
+</blockquote>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html>&lt;<span style=color:#f92672>template</span>&gt;
   &lt;<span style=color:#f92672>div</span>&gt;
     &lt;<span style=color:#f92672>h1</span>&gt;About Page&lt;/<span style=color:#f92672>h1</span>&gt;
     &lt;<span style=color:#f92672>p</span>&gt;This is the About Page!&lt;/<span style=color:#f92672>p</span>&gt;
   &lt;/<span style=color:#f92672>div</span>&gt;
 &lt;/<span style=color:#f92672>template</span>&gt;
-</code></pre></div><ol>
+</code></pre></div><ol start=2>
 <li>ファイルを作成して Vue Router を設定する</li>
 </ol>
-<p><code>src/router/index.js</code>:</p>
+<blockquote>
+<p><code>src/router/index.js</code></p>
+</blockquote>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=color:#66d9ef>import</span> { <span style=color:#a6e22e>createRouter</span>, <span style=color:#a6e22e>createWebHistory</span> } <span style=color:#a6e22e>from</span> <span style=color:#e6db74>&#34;vue-router&#34;</span>;
 <span style=color:#66d9ef>import</span> <span style=color:#a6e22e>Home</span> <span style=color:#a6e22e>from</span> <span style=color:#e6db74>&#34;@/views/Home.vue&#34;</span>;
 <span style=color:#66d9ef>import</span> <span style=color:#a6e22e>About</span> <span style=color:#a6e22e>from</span> <span style=color:#e6db74>&#34;@/views/About.vue&#34;</span>;
@@ -196,21 +215,25 @@ B!
 });
 
 <span style=color:#66d9ef>export</span> <span style=color:#66d9ef>default</span> <span style=color:#a6e22e>router</span>;
-</code></pre></div><ol start=2>
+</code></pre></div><ol start=3>
 <li>Vue Router を使って定義したルートは、<code>&lt;router-view></code> コンポーネントを使用して表示される<br>
 また、<code>&lt;router-link></code> コンポーネントを使用すると、ルート間をナビゲートするためのリンクを作成でる。</li>
 </ol>
-<p><code>src/App.vue</code> :</p>
+<blockquote>
+<p><code>src/App.vue</code></p>
+</blockquote>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html>&lt;<span style=color:#f92672>template</span>&gt;
   &lt;<span style=color:#f92672>router-link</span> <span style=color:#a6e22e>to</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;/&#34;</span>&gt;Home&lt;/<span style=color:#f92672>router-link</span>&gt;|
   &lt;<span style=color:#f92672>router-link</span> <span style=color:#a6e22e>to</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;/about&#34;</span>&gt;About&lt;/<span style=color:#f92672>router-link</span>&gt;
   &lt;<span style=color:#f92672>router-view</span>&gt;&lt;/<span style=color:#f92672>router-view</span>&gt;
 &lt;/<span style=color:#f92672>template</span>&gt;
 </code></pre></div><p>これにより、ユーザーは「Home」および「About」リンクをクリックして、それぞれのルートに移動できます。</p>
-<ol start=3>
+<ol start=4>
 <li>リンクではなくボタンにしたい場合は、下記ように実装すればよいです。</li>
 </ol>
-<p><code>src/App.vue</code> :</p>
+<blockquote>
+<p><code>src/App.vue</code></p>
+</blockquote>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html>&lt;<span style=color:#f92672>template</span>&gt;
   &lt;<span style=color:#f92672>button</span> <span style=color:#960050;background-color:#1e0010>@</span><span style=color:#a6e22e>click</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;goHome&#34;</span>&gt;Home&lt;/<span style=color:#f92672>button</span>&gt;|
   &lt;<span style=color:#f92672>button</span> <span style=color:#960050;background-color:#1e0010>@</span><span style=color:#a6e22e>click</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;goAbout&#34;</span>&gt;About&lt;/<span style=color:#f92672>button</span>&gt;
