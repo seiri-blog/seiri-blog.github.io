@@ -355,7 +355,7 @@
       <pubDate>Thu, 29 Dec 2022 19:36:52 +0900</pubDate>
       
       <guid>https://seiri-blog.github.io/posts/lwc-introduction/</guid>
-      <description>LWC（Lightning Web Components） とは LWC（Lightning Web Components） は、Web Componentsを使用</description>
+      <description>LWC（Lightning Web Component） とは LWC（Lightning Web Component） は、Web Componentsを使用して</description>
     </item>
     
     <item>
@@ -755,11 +755,11 @@
     </item>
     
     <item>
-      <title>【Salesforce】LWCでの共通モーダル画面</title>
-      <link>https://seiri-blog.github.io/posts/creation-salesforce-lwc-common-modal-screen/</link>
+      <title>【Salesforce】LWCモーダル画面自分で作る</title>
+      <link>https://seiri-blog.github.io/posts/lwc-common-modal/</link>
       <pubDate>Mon, 29 Nov 2021 19:36:52 +0900</pubDate>
       
-      <guid>https://seiri-blog.github.io/posts/creation-salesforce-lwc-common-modal-screen/</guid>
+      <guid>https://seiri-blog.github.io/posts/lwc-common-modal/</guid>
       <description>共通モーダル画面作成方法説明 共通モーダルはモーダルを開くための API を持ち、他のコンポーネントから呼び出すことができます。 他のコンポーネントで、</description>
     </item>
     
@@ -913,7 +913,7 @@
       <pubDate>Wed, 21 Jul 2021 18:36:08 +0900</pubDate>
       
       <guid>https://seiri-blog.github.io/posts/lwc-recursive-component/</guid>
-      <description>再帰的なコンポーネント LWC（Lightning Web Components）で再帰的なコンポーネントを作成するには、コンポーネントが自身を呼び出</description>
+      <description>再帰的なコンポーネント LWC（Lightning Web Component）で再帰的なコンポーネントを作成するには、コンポーネントが自身を呼び出す</description>
     </item>
     
     <item>

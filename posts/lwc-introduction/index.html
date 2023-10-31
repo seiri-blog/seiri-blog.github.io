@@ -4,8 +4,8 @@
 <meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
 <meta name=robots content="index, follow">
 <title>【Salesforce】LWC入門 | Seiri's Blog</title>
-<meta name=keywords content="javascript,Salesforce,lwc,Lightning Web Components">
-<meta name=description content="LWC（Lightning Web Components） とは LWC（Lightning Web Components） は、Web Componentsを使用">
+<meta name=keywords content="javascript,Salesforce,lwc,Lightning Web Component">
+<meta name=description content="LWC（Lightning Web Component） とは LWC（Lightning Web Component） は、Web Componentsを使用して">
 <meta name=author content="Seiri">
 <link rel=canonical href=https://seiri-blog.github.io/posts/lwc-introduction/>
 <meta name=yandex-verification content="017a61651e9c5c6d">
@@ -22,16 +22,16 @@
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-PLYEQ297HF"></script>
 <script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-PLYEQ297HF',{anonymize_ip:!1})}</script>
 <meta property="og:title" content="【Salesforce】LWC入門">
-<meta property="og:description" content="LWC（Lightning Web Components） とは LWC（Lightning Web Components） は、Web Componentsを使用">
+<meta property="og:description" content="LWC（Lightning Web Component） とは LWC（Lightning Web Component） は、Web Componentsを使用して">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://seiri-blog.github.io/posts/lwc-introduction/"><meta property="article:section" content="posts">
 <meta property="article:published_time" content="2022-12-29T19:36:52+09:00">
 <meta property="article:modified_time" content="2022-12-29T19:36:52+09:00"><meta property="og:site_name" content="Seiri's Blog">
 <meta name=twitter:card content="summary">
 <meta name=twitter:title content="【Salesforce】LWC入門">
-<meta name=twitter:description content="LWC（Lightning Web Components） とは LWC（Lightning Web Components） は、Web Componentsを使用">
+<meta name=twitter:description content="LWC（Lightning Web Component） とは LWC（Lightning Web Component） は、Web Componentsを使用して">
 <script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://seiri-blog.github.io/posts/"},{"@type":"ListItem","position":2,"name":"【Salesforce】LWC入門","item":"https://seiri-blog.github.io/posts/lwc-introduction/"}]}</script>
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"【Salesforce】LWC入門","name":"【Salesforce】LWC入門","description":"LWC（Lightning Web Components） とは LWC（Lightning Web Components） は、Web Componentsを使用","keywords":["javascript","Salesforce","lwc","Lightning Web Components"],"articleBody":"LWC（Lightning Web Components） とは LWC（Lightning Web Components） は、Web Componentsを使用して、Salesforceのプラットフォーム上でカスタムコンポーネントを構築するためのフレームワークです。 LWC は、Web Componentsに加え、以下の機能を提供しています。\n 強力なデータバインディング: Salesforce のデータモデルとの統合。 Apex のインテグレーション: Apex のメソッドを JavaScript から呼び出すことができます。 イベントシステム: コンポーネント間のデータのやり取りを行うためのイベントシステムが提供されています。 セキュリティ: セキュリティ機能が強化されています。 スケーラビリティ: 大量のデータを扱うことができるようになっています。  纏めると、LWC は Salesforce のプラットフォーム上でWeb Componentsを使用してカスタムコンポーネントを構築するためのフレームワークです。\nLWC（Lightning Web Components） の特徴 LWC (Lightning Web Components) の基礎となる概念は以下となる。\n Web Components: LWC は Web Components と呼ばれる技術を使用しています。Web Components は、ブラウザの API を使用して、カスタム HTML タグを作成するための仕組みです。 Shadow DOM: Shadow DOM は、Web Components の一部で、カスタム HTML タグのスタイルや構造を隠蔽するために使用されます。Shadow DOM を使用することで、カスタムコンポーネントのスタイルや構造を外部の要素から隔離することができます。 Template: LWC のコンポーネントは、HTML テンプレートによって構築されます。テンプレートは、HTML のマークアップと JavaScript のロジックを組み合わせたものです。 Decorators: LWC では、デコレータと呼ばれる構文を使用して、コンポーネントのプロパティやメソッドを定義します。デコレータは、JavaScript のアノテーションのような役割を持ちます。 Event Handling: LWC では、カスタムイベントを使用して、コンポーネント間のデータのやり取りを行います。イベントハンドラを使用することで、コンポーネント間のコミュニケーションを実現することができます。  次は上記の説明をそれぞれもっと詳しい説明します。\nWeb Components Web Components は、ブラウザの API を使用して、カスタム HTML タグを作成するための仕組みです。Web Components は、以下の 4 つの技術によって構成されます。\n Custom Elements: カスタム HTML タグを作成するための技術。 Shadow DOM: カスタム HTML タグのスタイルや構造を隠蔽するための技術。 HTML Templates: カスタム HTML タグのテンプレートを定義するための技術。 HTML Imports: カスタム HTML タグを外部から読み込むための技術。  Shadow DOM Shadow DOM は、Web Components の 1 つの機能で、カスタム HTML タグのスタイルや構造を隠蔽するための技術です。 Shadow DOM を使用することで、カスタム HTML タグ内部のスタイルや構造が外部の HTML に影響を与えなくなり、カスタム HTML タグを再利用することができるようになります。\nLWC (Lightning Web Components)では、Shadow DOMを使用して、カスタムコンポーネントのスタイルや構造を隠蔽することができます。 LWC のコンポーネントは、Shadow DOMを使用して、スタイルや構造を隠蔽するため、外部の HTML に影響を与えなくなり、再利用性が向上します。\nまた、LWC では、スタイルのスコープを限定することができるようになり、スタイルの上書きを防ぐことができます。\nLWC では、標準 HTML タグと同じように Shadow DOM を使用することができます。\nLWC Template LWC (Lightning Web Components)では、HTML Templates と呼ばれる機能を使用して、カスタムコンポーネントのテンプレートを定義することができます。 HTML Templates は、HTML のテンプレートを定義するためのテンプレートリテラルと呼ばれる記法を使用します。\nLWC の HTML Templates は、JavaScript のテンプレートリテラルを使用して記述します。テンプレートリテラルは、バッククォート (`) で囲むことで定義されます。\n例:\ntemplate divHello World!div template LWC の HTML Templates は、カスタムコンポーネントの見た目を定義するために使用します。また、JavaScript のテンプレートリテラルを使用することで、変数の埋め込みや条件分岐などを行うことができます。\nLWC では、標準 HTML タグと同じように HTML Templates を使用することができます。\nLWC Decorators LWC (Lightning Web Components)では、デコレーターと呼ばれる機能を使用して、カスタムコンポーネントのプロパティやメソッドを拡張することができます。\nLWC のデコレーターは、JavaScript のアノテーションのように、プロパティやメソッドに対して追加されます。\nLWC では、次のようなデコレーターが提供されています。\n @api: コンポーネントの外部からアクセスできるプロパティを定義します。 @track: コンポーネントのテンプレートに反映されるプロパティを定義します。 @wire: Apex のメソッドを呼び出して、プロパティにデータをバインドします。  デコレーターを使用することで、コンポーネントの設計が簡潔になり、開発者がより素早くカスタムコンポーネントを構築することができるようになります。\n例:\nimport { LightningElement, api } from \"lwc\"; export default class MyComponent extends LightningElement { @api name; } 上記の例では、@apiデコレーターを使用して、nameというプロパティを定義し、外部からアクセスできるようにしています。\nデコレーターは、LWC では必須ではありませんが、開発効率を上げるために役立ちます。また、デコレーターを使用することで、コンポーネントをより明確に定義することができます。\nLWC Event Handling LWC (Lightning Web Components)では、イベントハンドリングと呼ばれる機能を使用して、カスタムコンポーネント間でのイベントの通信を行うことができます。イベントを定義するには、customEventのような自分自身のカスタムイベントを定義し、dispatchEventメソッドを使用して、イベントを発火させます。\n例:\nimport { LightningElement } from \"lwc\"; export default class MyComponent extends LightningElement { handleClick() { const event = new CustomEvent(\"myevent\", { detail: { message: \"Hello World!\" }, }); // イベントを発火  this.dispatchEvent(event); } } 上記の例では、handleClickメソッド内でカスタムイベントmyeventを作成し、dispatchEventメソッドで発火しています。イベントオブジェクトには、detailプロパティを使用して、イベントに渡すデータを設定することができます。イベントを受け取るには、addEventListenerメソッドを使用して、イベントを受け取れるようにします。\n例:\nimport { LightningElement } from \"lwc\"; export default class OtherComponent extends LightningElement { connectedCallback() { this.addEventListener(\"myevent\", this.handleEvent); } handleEvent(event) { console.log(event.detail.message); // 'Hello World!'  } } 上記の例では、OtherComponent で myevent イベントを受け取るように、addEventListenerメソッドを使用して設定しています。イベントが発生したら、handleEventメソッドが呼び出され、event.detail.messageからイベントに渡されたデータを取得することができます。\nイベントハンドリングは、LWC 開発で重要な機能の一つであり、コンポーネント間のデータの通信や、親子関係のコンポーネント間でのイベントの通信を行うために使用されます。\n","wordCount":"2800","inLanguage":"ja","datePublished":"2022-12-29T19:36:52+09:00","dateModified":"2022-12-29T19:36:52+09:00","author":{"@type":"Person","name":"Seiri"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://seiri-blog.github.io/posts/lwc-introduction/"},"publisher":{"@type":"Organization","name":"Seiri's Blog","logo":{"@type":"ImageObject","url":"https://seiri-blog.github.io/favicon.ico"}}}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"【Salesforce】LWC入門","name":"【Salesforce】LWC入門","description":"LWC（Lightning Web Component） とは LWC（Lightning Web Component） は、Web Componentsを使用して","keywords":["javascript","Salesforce","lwc","Lightning Web Component"],"articleBody":"LWC（Lightning Web Component） とは LWC（Lightning Web Component） は、Web Componentsを使用して、Salesforceのプラットフォーム上でカスタムコンポーネントを構築するためのフレームワークです。 LWC は、Web Componentsに加え、以下の機能を提供しています。\n 強力なデータバインディング: Salesforce のデータモデルとの統合。 Apex のインテグレーション: Apex のメソッドを JavaScript から呼び出すことができます。 イベントシステム: コンポーネント間のデータのやり取りを行うためのイベントシステムが提供されています。 セキュリティ: セキュリティ機能が強化されています。 スケーラビリティ: 大量のデータを扱うことができるようになっています。  纏めると、LWC は Salesforce のプラットフォーム上でWeb Componentsを使用してカスタムコンポーネントを構築するためのフレームワークです。\nLWC（Lightning Web Component） の特徴 LWC (Lightning Web Component) の基礎となる概念は以下となる。\n Web Components: LWC は Web Components と呼ばれる技術を使用しています。Web Components は、ブラウザの API を使用して、カスタム HTML タグを作成するための仕組みです。 Shadow DOM: Shadow DOM は、Web Components の一部で、カスタム HTML タグのスタイルや構造を隠蔽するために使用されます。Shadow DOM を使用することで、カスタムコンポーネントのスタイルや構造を外部の要素から隔離することができます。 Template: LWC のコンポーネントは、HTML テンプレートによって構築されます。テンプレートは、HTML のマークアップと JavaScript のロジックを組み合わせたものです。 Decorators: LWC では、デコレータと呼ばれる構文を使用して、コンポーネントのプロパティやメソッドを定義します。デコレータは、JavaScript のアノテーションのような役割を持ちます。 Event Handling: LWC では、カスタムイベントを使用して、コンポーネント間のデータのやり取りを行います。イベントハンドラを使用することで、コンポーネント間のコミュニケーションを実現することができます。  次は上記の説明をそれぞれもっと詳しい説明します。\nWeb Components Web Components は、ブラウザの API を使用して、カスタム HTML タグを作成するための仕組みです。Web Components は、以下の 4 つの技術によって構成されます。\n Custom Elements: カスタム HTML タグを作成するための技術。 Shadow DOM: カスタム HTML タグのスタイルや構造を隠蔽するための技術。 HTML Templates: カスタム HTML タグのテンプレートを定義するための技術。 HTML Imports: カスタム HTML タグを外部から読み込むための技術。  Shadow DOM Shadow DOM は、Web Components の 1 つの機能で、カスタム HTML タグのスタイルや構造を隠蔽するための技術です。 Shadow DOM を使用することで、カスタム HTML タグ内部のスタイルや構造が外部の HTML に影響を与えなくなり、カスタム HTML タグを再利用することができるようになります。\nLWC (Lightning Web Component)では、Shadow DOMを使用して、カスタムコンポーネントのスタイルや構造を隠蔽することができます。 LWC のコンポーネントは、Shadow DOMを使用して、スタイルや構造を隠蔽するため、外部の HTML に影響を与えなくなり、再利用性が向上します。\nまた、LWC では、スタイルのスコープを限定することができるようになり、スタイルの上書きを防ぐことができます。\nLWC では、標準 HTML タグと同じように Shadow DOM を使用することができます。\nLWC Template LWC (Lightning Web Component)では、HTML Templates と呼ばれる機能を使用して、カスタムコンポーネントのテンプレートを定義することができます。 HTML Templates は、HTML のテンプレートを定義するためのテンプレートリテラルと呼ばれる記法を使用します。\nLWC の HTML Templates は、JavaScript のテンプレートリテラルを使用して記述します。テンプレートリテラルは、バッククォート (`) で囲むことで定義されます。\n例:\ntemplate divHello World!div template LWC の HTML Templates は、カスタムコンポーネントの見た目を定義するために使用します。また、JavaScript のテンプレートリテラルを使用することで、変数の埋め込みや条件分岐などを行うことができます。\nLWC では、標準 HTML タグと同じように HTML Templates を使用することができます。\nLWC Decorators LWC (Lightning Web Component)では、デコレーターと呼ばれる機能を使用して、カスタムコンポーネントのプロパティやメソッドを拡張することができます。\nLWC のデコレーターは、JavaScript のアノテーションのように、プロパティやメソッドに対して追加されます。\nLWC では、次のようなデコレーターが提供されています。\n @api: コンポーネントの外部からアクセスできるプロパティを定義します。 @track: コンポーネントのテンプレートに反映されるプロパティを定義します。 @wire: Apex のメソッドを呼び出して、プロパティにデータをバインドします。  デコレーターを使用することで、コンポーネントの設計が簡潔になり、開発者がより素早くカスタムコンポーネントを構築することができるようになります。\n例:\nimport { LightningElement, api } from \"lwc\"; export default class MyComponent extends LightningElement { @api name; } 上記の例では、@apiデコレーターを使用して、nameというプロパティを定義し、外部からアクセスできるようにしています。\nデコレーターは、LWC では必須ではありませんが、開発効率を上げるために役立ちます。また、デコレーターを使用することで、コンポーネントをより明確に定義することができます。\nLWC Event Handling LWC (Lightning Web Component)では、イベントハンドリングと呼ばれる機能を使用して、カスタムコンポーネント間でのイベントの通信を行うことができます。イベントを定義するには、customEventのような自分自身のカスタムイベントを定義し、dispatchEventメソッドを使用して、イベントを発火させます。\n例:\nimport { LightningElement } from \"lwc\"; export default class MyComponent extends LightningElement { handleClick() { const event = new CustomEvent(\"myevent\", { detail: { message: \"Hello World!\" }, }); // イベントを発火  this.dispatchEvent(event); } } 上記の例では、handleClickメソッド内でカスタムイベントmyeventを作成し、dispatchEventメソッドで発火しています。イベントオブジェクトには、detailプロパティを使用して、イベントに渡すデータを設定することができます。イベントを受け取るには、addEventListenerメソッドを使用して、イベントを受け取れるようにします。\n例:\nimport { LightningElement } from \"lwc\"; export default class OtherComponent extends LightningElement { connectedCallback() { this.addEventListener(\"myevent\", this.handleEvent); } handleEvent(event) { console.log(event.detail.message); // 'Hello World!'  } } 上記の例では、OtherComponent で myevent イベントを受け取るように、addEventListenerメソッドを使用して設定しています。イベントが発生したら、handleEventメソッドが呼び出され、event.detail.messageからイベントに渡されたデータを取得することができます。\nイベントハンドリングは、LWC 開発で重要な機能の一つであり、コンポーネント間のデータの通信や、親子関係のコンポーネント間でのイベントの通信を行うために使用されます。\n","wordCount":"2793","inLanguage":"ja","datePublished":"2022-12-29T19:36:52+09:00","dateModified":"2022-12-29T19:36:52+09:00","author":{"@type":"Person","name":"Seiri"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://seiri-blog.github.io/posts/lwc-introduction/"},"publisher":{"@type":"Organization","name":"Seiri's Blog","logo":{"@type":"ImageObject","url":"https://seiri-blog.github.io/favicon.ico"}}}</script>
 </head>
 <body id=top>
 <script>localStorage.getItem("pref-theme")==="dark"&&document.body.classList.add('dark')</script>
@@ -116,7 +116,7 @@
 <h1 class=post-title>
 【Salesforce】LWC入門
 </h1>
-<div class=post-meta><span title="2022-12-29 19:36:52 +0900 +0900">2022年12月29日</span>&nbsp;·&nbsp;6 分&nbsp;·&nbsp;2800 文字&nbsp;·&nbsp;Seiri
+<div class=post-meta><span title="2022-12-29 19:36:52 +0900 +0900">2022年12月29日</span>&nbsp;·&nbsp;6 分&nbsp;·&nbsp;2793 文字&nbsp;·&nbsp;Seiri
 </div>
 </header>
 <div class=share-area>
@@ -126,7 +126,7 @@
 </a>
 </li>
 <li class=twitter>
-<a target=_blank rel="noopener noreferrer" aria-label="share 【Salesforce】LWC入門 on twitter" href="https://twitter.com/intent/tweet/?text=%e3%80%90Salesforce%e3%80%91LWC%e5%85%a5%e9%96%80&url=https%3a%2f%2fseiri-blog.github.io%2fposts%2flwc-introduction%2f&hashtags=javascript%2cSalesforce%2clwc%2cLightningWebComponents" title="Twitter で共有する"><svg viewBox="0 0 512 512" height="20" width="20" fill="currentcolor"><path d="M449.446.0C483.971.0 512 28.03 512 62.554v386.892C512 483.97 483.97 512 449.446 512H62.554c-34.524.0-62.554-28.03-62.554-62.554V62.554c0-34.524 28.029-62.554 62.554-62.554h386.892zM195.519 424.544c135.939.0 210.268-112.643 210.268-210.268.0-3.218.0-6.437-.153-9.502 14.406-10.421 26.973-23.448 36.935-38.314-13.18 5.824-27.433 9.809-42.452 11.648 15.326-9.196 26.973-23.602 32.49-40.92-14.252 8.429-30.038 14.56-46.896 17.931-13.487-14.406-32.644-23.295-53.946-23.295-40.767.0-73.87 33.104-73.87 73.87.0 5.824.613 11.494 1.992 16.858-61.456-3.065-115.862-32.49-152.337-77.241-6.284 10.881-9.962 23.601-9.962 37.088.0 25.594 13.027 48.276 32.95 61.456-12.107-.307-23.448-3.678-33.41-9.196v.92c0 35.862 25.441 65.594 59.311 72.49-6.13 1.686-12.72 2.606-19.464 2.606-4.751.0-9.348-.46-13.946-1.38 9.349 29.426 36.628 50.728 68.965 51.341-25.287 19.771-57.164 31.571-91.8 31.571-5.977.0-11.801-.306-17.625-1.073 32.337 21.15 71.264 33.41 112.95 33.41z"/></svg>
+<a target=_blank rel="noopener noreferrer" aria-label="share 【Salesforce】LWC入門 on twitter" href="https://twitter.com/intent/tweet/?text=%e3%80%90Salesforce%e3%80%91LWC%e5%85%a5%e9%96%80&url=https%3a%2f%2fseiri-blog.github.io%2fposts%2flwc-introduction%2f&hashtags=javascript%2cSalesforce%2clwc%2cLightningWebComponent" title="Twitter で共有する"><svg viewBox="0 0 512 512" height="20" width="20" fill="currentcolor"><path d="M449.446.0C483.971.0 512 28.03 512 62.554v386.892C512 483.97 483.97 512 449.446 512H62.554c-34.524.0-62.554-28.03-62.554-62.554V62.554c0-34.524 28.029-62.554 62.554-62.554h386.892zM195.519 424.544c135.939.0 210.268-112.643 210.268-210.268.0-3.218.0-6.437-.153-9.502 14.406-10.421 26.973-23.448 36.935-38.314-13.18 5.824-27.433 9.809-42.452 11.648 15.326-9.196 26.973-23.602 32.49-40.92-14.252 8.429-30.038 14.56-46.896 17.931-13.487-14.406-32.644-23.295-53.946-23.295-40.767.0-73.87 33.104-73.87 73.87.0 5.824.613 11.494 1.992 16.858-61.456-3.065-115.862-32.49-152.337-77.241-6.284 10.881-9.962 23.601-9.962 37.088.0 25.594 13.027 48.276 32.95 61.456-12.107-.307-23.448-3.678-33.41-9.196v.92c0 35.862 25.441 65.594 59.311 72.49-6.13 1.686-12.72 2.606-19.464 2.606-4.751.0-9.348-.46-13.946-1.38 9.349 29.426 36.628 50.728 68.965 51.341-25.287 19.771-57.164 31.571-91.8 31.571-5.977.0-11.801-.306-17.625-1.073 32.337 21.15 71.264 33.41 112.95 33.41z"/></svg>
 </a>
 </li>
 <li class=hatena>
@@ -146,9 +146,9 @@ B!
 </summary>
 <div class=inner><ul>
 <li>
-<a href=#lwclightning-web-components-%e3%81%a8%e3%81%af aria-label="LWC（Lightning Web Components） とは">LWC（Lightning Web Components） とは</a></li>
+<a href=#lwclightning-web-component-%e3%81%a8%e3%81%af aria-label="LWC（Lightning Web Component） とは">LWC（Lightning Web Component） とは</a></li>
 <li>
-<a href=#lwclightning-web-components-%e3%81%ae%e7%89%b9%e5%be%b4 aria-label="LWC（Lightning Web Components） の特徴">LWC（Lightning Web Components） の特徴</a><ul>
+<a href=#lwclightning-web-component-%e3%81%ae%e7%89%b9%e5%be%b4 aria-label="LWC（Lightning Web Component） の特徴">LWC（Lightning Web Component） の特徴</a><ul>
 <li>
 <a href=#web-components aria-label="Web Components">Web Components</a></li>
 <li>
@@ -171,8 +171,8 @@ B!
 <script>(adsbygoogle=window.adsbygoogle||[]).push({})</script>
 </div>
 <div class=post-content><img alt=【Salesforce】LWC紹介 src=/images/Salesforce.png>
-<h2 id=lwclightning-web-components-とは>LWC（Lightning Web Components） とは<a hidden class=anchor aria-hidden=true href=#lwclightning-web-components-とは>#</a></h2>
-<p>LWC（Lightning Web Components） は、<code>Web Components</code>を使用して、<code>Salesforce</code>のプラットフォーム上でカスタムコンポーネントを構築するためのフレームワークです。 LWC は、<code>Web Components</code>に加え、以下の機能を提供しています。</p>
+<h2 id=lwclightning-web-component-とは>LWC（Lightning Web Component） とは<a hidden class=anchor aria-hidden=true href=#lwclightning-web-component-とは>#</a></h2>
+<p>LWC（Lightning Web Component） は、<code>Web Components</code>を使用して、<code>Salesforce</code>のプラットフォーム上でカスタムコンポーネントを構築するためのフレームワークです。 LWC は、<code>Web Components</code>に加え、以下の機能を提供しています。</p>
 <ul>
 <li>強力なデータバインディング: Salesforce のデータモデルとの統合。</li>
 <li>Apex のインテグレーション: Apex のメソッドを JavaScript から呼び出すことができます。</li>
@@ -181,8 +181,8 @@ B!
 <li>スケーラビリティ: 大量のデータを扱うことができるようになっています。</li>
 </ul>
 <p>纏めると、LWC は Salesforce のプラットフォーム上で<code>Web Components</code>を使用してカスタムコンポーネントを構築するためのフレームワークです。</p>
-<h2 id=lwclightning-web-components-の特徴>LWC（Lightning Web Components） の特徴<a hidden class=anchor aria-hidden=true href=#lwclightning-web-components-の特徴>#</a></h2>
-<p>LWC (Lightning Web Components) の基礎となる概念は以下となる。</p>
+<h2 id=lwclightning-web-component-の特徴>LWC（Lightning Web Component） の特徴<a hidden class=anchor aria-hidden=true href=#lwclightning-web-component-の特徴>#</a></h2>
+<p>LWC (Lightning Web Component) の基礎となる概念は以下となる。</p>
 <ul>
 <li><code>Web Components</code>: LWC は Web Components と呼ばれる技術を使用しています。Web Components は、ブラウザの API を使用して、カスタム HTML タグを作成するための仕組みです。</li>
 <li><code>Shadow DOM</code>: Shadow DOM は、Web Components の一部で、カスタム HTML タグのスタイルや構造を隠蔽するために使用されます。Shadow DOM を使用することで、カスタムコンポーネントのスタイルや構造を外部の要素から隔離することができます。</li>
@@ -201,11 +201,11 @@ B!
 </ul>
 <h3 id=shadow-dom>Shadow DOM<a hidden class=anchor aria-hidden=true href=#shadow-dom>#</a></h3>
 <p>Shadow DOM は、Web Components の 1 つの機能で、カスタム HTML タグのスタイルや構造を隠蔽するための技術です。 Shadow DOM を使用することで、カスタム HTML タグ内部のスタイルや構造が外部の HTML に影響を与えなくなり、カスタム HTML タグを再利用することができるようになります。</p>
-<p>LWC (Lightning Web Components)では、<code>Shadow DOMを</code>使用して、カスタムコンポーネントのスタイルや構造を隠蔽することができます。 LWC のコンポーネントは、<code>Shadow DOM</code>を使用して、スタイルや構造を隠蔽するため、外部の HTML に影響を与えなくなり、再利用性が向上します。</p>
+<p>LWC (Lightning Web Component)では、<code>Shadow DOMを</code>使用して、カスタムコンポーネントのスタイルや構造を隠蔽することができます。 LWC のコンポーネントは、<code>Shadow DOM</code>を使用して、スタイルや構造を隠蔽するため、外部の HTML に影響を与えなくなり、再利用性が向上します。</p>
 <p>また、LWC では、スタイルのスコープを限定することができるようになり、スタイルの上書きを防ぐことができます。</p>
 <p>LWC では、標準 HTML タグと同じように Shadow DOM を使用することができます。</p>
 <h3 id=lwc-template>LWC Template<a hidden class=anchor aria-hidden=true href=#lwc-template>#</a></h3>
-<p>LWC (Lightning Web Components)では、HTML Templates と呼ばれる機能を使用して、カスタムコンポーネントのテンプレートを定義することができます。 HTML Templates は、HTML のテンプレートを定義するためのテンプレートリテラルと呼ばれる記法を使用します。</p>
+<p>LWC (Lightning Web Component)では、HTML Templates と呼ばれる機能を使用して、カスタムコンポーネントのテンプレートを定義することができます。 HTML Templates は、HTML のテンプレートを定義するためのテンプレートリテラルと呼ばれる記法を使用します。</p>
 <p>LWC の HTML Templates は、JavaScript のテンプレートリテラルを使用して記述します。テンプレートリテラルは、バッククォート (`) で囲むことで定義されます。</p>
 <p>例:</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html>&lt;<span style=color:#f92672>template</span>&gt;
@@ -214,7 +214,7 @@ B!
 </code></pre></div><p>LWC の HTML Templates は、カスタムコンポーネントの見た目を定義するために使用します。また、JavaScript のテンプレートリテラルを使用することで、変数の埋め込みや条件分岐などを行うことができます。</p>
 <p>LWC では、標準 HTML タグと同じように HTML Templates を使用することができます。</p>
 <h3 id=lwc-decorators>LWC Decorators<a hidden class=anchor aria-hidden=true href=#lwc-decorators>#</a></h3>
-<p>LWC (Lightning Web Components)では、デコレーターと呼ばれる機能を使用して、カスタムコンポーネントのプロパティやメソッドを拡張することができます。</p>
+<p>LWC (Lightning Web Component)では、デコレーターと呼ばれる機能を使用して、カスタムコンポーネントのプロパティやメソッドを拡張することができます。</p>
 <p>LWC のデコレーターは、JavaScript のアノテーションのように、プロパティやメソッドに対して追加されます。</p>
 <p>LWC では、次のようなデコレーターが提供されています。</p>
 <ul>
@@ -232,7 +232,7 @@ B!
 </code></pre></div><p>上記の例では、<code>@api</code>デコレーターを使用して、<code>name</code>というプロパティを定義し、外部からアクセスできるようにしています。</p>
 <p>デコレーターは、LWC では必須ではありませんが、開発効率を上げるために役立ちます。また、デコレーターを使用することで、コンポーネントをより明確に定義することができます。</p>
 <h3 id=lwc-event-handling>LWC Event Handling<a hidden class=anchor aria-hidden=true href=#lwc-event-handling>#</a></h3>
-<p>LWC (Lightning Web Components)では、イベントハンドリングと呼ばれる機能を使用して、カスタムコンポーネント間でのイベントの通信を行うことができます。イベントを定義するには、<code>customEvent</code>のような自分自身のカスタムイベントを定義し、<code>dispatchEvent</code>メソッドを使用して、イベントを発火させます。</p>
+<p>LWC (Lightning Web Component)では、イベントハンドリングと呼ばれる機能を使用して、カスタムコンポーネント間でのイベントの通信を行うことができます。イベントを定義するには、<code>customEvent</code>のような自分自身のカスタムイベントを定義し、<code>dispatchEvent</code>メソッドを使用して、イベントを発火させます。</p>
 <p>例:</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=color:#66d9ef>import</span> { <span style=color:#a6e22e>LightningElement</span> } <span style=color:#a6e22e>from</span> <span style=color:#e6db74>&#34;lwc&#34;</span>;
 
@@ -267,7 +267,7 @@ B!
 </a>
 </li>
 <li class=twitter>
-<a target=_blank rel="noopener noreferrer" aria-label="share 【Salesforce】LWC入門 on twitter" href="https://twitter.com/intent/tweet/?text=%e3%80%90Salesforce%e3%80%91LWC%e5%85%a5%e9%96%80&url=https%3a%2f%2fseiri-blog.github.io%2fposts%2flwc-introduction%2f&hashtags=javascript%2cSalesforce%2clwc%2cLightningWebComponents" title="Twitter で共有する"><svg viewBox="0 0 512 512" height="20" width="20" fill="currentcolor"><path d="M449.446.0C483.971.0 512 28.03 512 62.554v386.892C512 483.97 483.97 512 449.446 512H62.554c-34.524.0-62.554-28.03-62.554-62.554V62.554c0-34.524 28.029-62.554 62.554-62.554h386.892zM195.519 424.544c135.939.0 210.268-112.643 210.268-210.268.0-3.218.0-6.437-.153-9.502 14.406-10.421 26.973-23.448 36.935-38.314-13.18 5.824-27.433 9.809-42.452 11.648 15.326-9.196 26.973-23.602 32.49-40.92-14.252 8.429-30.038 14.56-46.896 17.931-13.487-14.406-32.644-23.295-53.946-23.295-40.767.0-73.87 33.104-73.87 73.87.0 5.824.613 11.494 1.992 16.858-61.456-3.065-115.862-32.49-152.337-77.241-6.284 10.881-9.962 23.601-9.962 37.088.0 25.594 13.027 48.276 32.95 61.456-12.107-.307-23.448-3.678-33.41-9.196v.92c0 35.862 25.441 65.594 59.311 72.49-6.13 1.686-12.72 2.606-19.464 2.606-4.751.0-9.348-.46-13.946-1.38 9.349 29.426 36.628 50.728 68.965 51.341-25.287 19.771-57.164 31.571-91.8 31.571-5.977.0-11.801-.306-17.625-1.073 32.337 21.15 71.264 33.41 112.95 33.41z"/></svg>
+<a target=_blank rel="noopener noreferrer" aria-label="share 【Salesforce】LWC入門 on twitter" href="https://twitter.com/intent/tweet/?text=%e3%80%90Salesforce%e3%80%91LWC%e5%85%a5%e9%96%80&url=https%3a%2f%2fseiri-blog.github.io%2fposts%2flwc-introduction%2f&hashtags=javascript%2cSalesforce%2clwc%2cLightningWebComponent" title="Twitter で共有する"><svg viewBox="0 0 512 512" height="20" width="20" fill="currentcolor"><path d="M449.446.0C483.971.0 512 28.03 512 62.554v386.892C512 483.97 483.97 512 449.446 512H62.554c-34.524.0-62.554-28.03-62.554-62.554V62.554c0-34.524 28.029-62.554 62.554-62.554h386.892zM195.519 424.544c135.939.0 210.268-112.643 210.268-210.268.0-3.218.0-6.437-.153-9.502 14.406-10.421 26.973-23.448 36.935-38.314-13.18 5.824-27.433 9.809-42.452 11.648 15.326-9.196 26.973-23.602 32.49-40.92-14.252 8.429-30.038 14.56-46.896 17.931-13.487-14.406-32.644-23.295-53.946-23.295-40.767.0-73.87 33.104-73.87 73.87.0 5.824.613 11.494 1.992 16.858-61.456-3.065-115.862-32.49-152.337-77.241-6.284 10.881-9.962 23.601-9.962 37.088.0 25.594 13.027 48.276 32.95 61.456-12.107-.307-23.448-3.678-33.41-9.196v.92c0 35.862 25.441 65.594 59.311 72.49-6.13 1.686-12.72 2.606-19.464 2.606-4.751.0-9.348-.46-13.946-1.38 9.349 29.426 36.628 50.728 68.965 51.341-25.287 19.771-57.164 31.571-91.8 31.571-5.977.0-11.801-.306-17.625-1.073 32.337 21.15 71.264 33.41 112.95 33.41z"/></svg>
 </a>
 </li>
 <li class=hatena>
@@ -290,7 +290,7 @@ B!
 <li><a href=https://seiri-blog.github.io/tags/javascript/>javascript</a></li>
 <li><a href=https://seiri-blog.github.io/tags/salesforce/>Salesforce</a></li>
 <li><a href=https://seiri-blog.github.io/tags/lwc/>lwc</a></li>
-<li><a href=https://seiri-blog.github.io/tags/lightning-web-components/>Lightning Web Components</a></li>
+<li><a href=https://seiri-blog.github.io/tags/lightning-web-component/>Lightning Web Component</a></li>
 </ul>
 <nav class=paginav>
 <a class=prev href=https://seiri-blog.github.io/posts/lwc-life-cycle-hook/>
