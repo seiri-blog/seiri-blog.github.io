@@ -31,7 +31,7 @@
 <meta name=twitter:title content="【Salesforce】LWCライフサイクルフック">
 <meta name=twitter:description content="LWCライフサイクルフックの説明 LWC のライフサイクルフックには、インスタンス化、接続、更新、破棄の 4 つのフェーズがあります。それぞれのフェーズ">
 <script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://seiri-blog.github.io/posts/"},{"@type":"ListItem","position":2,"name":"【Salesforce】LWCライフサイクルフック","item":"https://seiri-blog.github.io/posts/lwc-life-cycle-hook/"}]}</script>
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"【Salesforce】LWCライフサイクルフック","name":"【Salesforce】LWCライフサイクルフック","description":"LWCライフサイクルフックの説明 LWC のライフサイクルフックには、インスタンス化、接続、更新、破棄の 4 つのフェーズがあります。それぞれのフェーズ","keywords":["javascript","Salesforce","lwc","Lightning Web Components"],"articleBody":"LWCライフサイクルフックの説明   LWC のライフサイクルフックには、インスタンス化、接続、更新、破棄の 4 つのフェーズがあります。それぞれのフェーズで使用することができるライフサイクルメソッドを紹介します。\n  constructor: コンポーネントのインスタンスが作成される時に呼び出されます。このメソッドでは、コンポーネントの初期設定を行います。\n  connectedCallback: コンポーネントが DOM に挿入されると呼び出されます。このメソッドでは、コンポーネントが他のコンポーネントや外部システムと連携するための設定を行います。\n  disconnectedCallback: コンポーネントが DOM から削除されると呼び出されます。このメソッドでは、コンポーネントが使用しているリソースを解放する処理を行います。\n  renderedCallback: コンポーネントがレンダリングされるたびに呼び出されます。このメソッドでは、コンポーネントの表示を更新する処理を行います。\n  errorCallback: コンポーネントでエラーが発生した場合に呼び出されます。このメソッドでは、エラーを処理する処理を行います。\n  これらのメソッドを使用することで、コンポーネントのライフサイクルに対応する処理を実装することができます。\nまた、LWC には、データバインディングの仕組みもあり、コンポーネントのプロパティと HTML 要素の値を双方向にバインドすることができます。\nこれにより、プロパティの値が変更されると、対応する HTML 要素も自動的に更新されます。\n具体的な例は下記を参照してください。\n1.インスタンス化: constructorメソッド\nインスタンスが生成された時に実行されるメソッドです。このメソッドでは、コンポーネントの初期設定を行います。\nconstructor() { super(); console.log('constructor called.'); // コンポーネントの初期設定 } 2.接続: connectedCallbackメソッド\nコンポーネントが DOM に挿入された時に実行されるメソッドです。このメソッドでは、コンポーネントが他のコンポーネントや外部システムと連携するための設定を行います。\nconnectedCallback() { console.log('connectedCallback called.'); // コンポーネントが他のコンポーネントや外部システムと連携するための設定 } 3.更新: renderedCallbackメソッド\nコンポーネントが更新された時に実行されるメソッドです。このメソッドでは、コンポーネントの表示を更新する処理を行います。\nrenderedCallback() { console.log('renderedCallback called.'); // コンポーネントの表示を更新する処理 } 4.破棄: disconnectedCallbackメソッド\nコンポーネントが DOM から削除された時に実行されるメソッドです。このメソッドでは、コンポーネントが使用しているリソースを解放する処理を行います。\ndisconnectedCallback() { console.log('disconnectedCallback called.'); // コンポーネントが使用しているリソースを解放する処理 } 5.エラー: errorCallbackメソッド\nコンポーネントでエラーが発生した場合に呼び出されます。このメソッドでは、エラーを処理する処理を行います。\nerrorCallback メソッドの第 1 引数には、発生したエラーオブジェクトが渡され、第 2 引数には、エラーが発生したコールスタックが渡されます。\nこのメソッドを使用することで、コンポーネント内で発生したエラーを検知し、適切な処理を行うことができます。例えば、エラー発生時にエラーメッセージを表示したり、エラーを発生させないように対処する処理を行ったりすることができます\nerrorCallback(error, stack) { console.error(error); console.error(stack); // エラーを処理する処理 } 上記の例は、それぞれのライフサイクルフェーズのタイミングで、コンソールにログを出力するだけの処理になります。実際の開発では、これらのメソッドを使って、コンポーネントの表示や動作をカスタマイズします。\n例えば、インスタンス化フェーズでは、プロパティの初期値を設定し、接続フェーズでは、外部の API との通信処理を行ったり、更新フェーズでは、プロパティの値に応じて表示を更新する処理を行ったり、破棄フェーズでは、終了時の処理を行ったりすることができます。\n","wordCount":"1548","inLanguage":"ja","datePublished":"2022-12-29T19:36:52+09:00","dateModified":"2022-12-29T19:36:52+09:00","author":{"@type":"Person","name":"Seiri"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://seiri-blog.github.io/posts/lwc-life-cycle-hook/"},"publisher":{"@type":"Organization","name":"Seiri's Blog","logo":{"@type":"ImageObject","url":"https://seiri-blog.github.io/favicon.ico"}}}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"【Salesforce】LWCライフサイクルフック","name":"【Salesforce】LWCライフサイクルフック","description":"LWCライフサイクルフックの説明 LWC のライフサイクルフックには、インスタンス化、接続、更新、破棄の 4 つのフェーズがあります。それぞれのフェーズ","keywords":["javascript","Salesforce","lwc","Lightning Web Components"],"articleBody":"LWCライフサイクルフックの説明   LWC のライフサイクルフックには、インスタンス化、接続、更新、破棄の 4 つのフェーズがあります。それぞれのフェーズで使用することができるライフサイクルメソッドを紹介します。\n  constructor: コンポーネントのインスタンスが作成される時に呼び出されます。このメソッドでは、コンポーネントの初期設定を行います。\n  connectedCallback: コンポーネントが DOM に挿入されると呼び出されます。このメソッドでは、コンポーネントが他のコンポーネントや外部システムと連携するための設定を行います。\n  disconnectedCallback: コンポーネントが DOM から削除されると呼び出されます。このメソッドでは、コンポーネントが使用しているリソースを解放する処理を行います。\n  renderedCallback: コンポーネントがレンダリングされるたびに呼び出されます。このメソッドでは、コンポーネントの表示を更新する処理を行います。\n  errorCallback: コンポーネントでエラーが発生した場合に呼び出されます。このメソッドでは、エラーを処理する処理を行います。\n  これらのメソッドを使用することで、コンポーネントのライフサイクルに対応する処理を実装することができます。\nまた、LWC には、データバインディングの仕組みもあり、コンポーネントのプロパティと HTML 要素の値を双方向にバインドすることができます。\nこれにより、プロパティの値が変更されると、対応する HTML 要素も自動的に更新されます。\n具体的な例は下記を参照してください。\n インスタンス化: constructorメソッド\nインスタンスが生成された時に実行されるメソッドです。このメソッドでは、コンポーネントの初期設定を行います。  constructor() { super(); console.log('constructor called.'); // コンポーネントの初期設定 } 接続: connectedCallbackメソッド\nコンポーネントが DOM に挿入された時に実行されるメソッドです。このメソッドでは、コンポーネントが他のコンポーネントや外部システムと連携するための設定を行います。  connectedCallback() { console.log('connectedCallback called.'); // コンポーネントが他のコンポーネントや外部システムと連携するための設定 } 更新: renderedCallbackメソッド\nコンポーネントが更新された時に実行されるメソッドです。このメソッドでは、コンポーネントの表示を更新する処理を行います。  renderedCallback() { console.log('renderedCallback called.'); // コンポーネントの表示を更新する処理 } 破棄: disconnectedCallbackメソッド\nコンポーネントが DOM から削除された時に実行されるメソッドです。このメソッドでは、コンポーネントが使用しているリソースを解放する処理を行います。  disconnectedCallback() { console.log('disconnectedCallback called.'); // コンポーネントが使用しているリソースを解放する処理 } エラー: errorCallbackメソッド\nコンポーネントでエラーが発生した場合に呼び出されます。このメソッドでは、エラーを処理する処理を行います。\nerrorCallback メソッドの第 1 引数には、発生したエラーオブジェクトが渡され、第 2 引数には、エラーが発生したコールスタックが渡されます。\nこのメソッドを使用することで、コンポーネント内で発生したエラーを検知し、適切な処理を行うことができます。例えば、エラー発生時にエラーメッセージを表示したり、エラーを発生させないように対処する処理を行ったりすることができます  errorCallback(error, stack) { console.error(error); console.error(stack); // エラーを処理する処理 } 上記の例は、それぞれのライフサイクルフェーズのタイミングで、コンソールにログを出力するだけの処理になります。実際の開発では、これらのメソッドを使って、コンポーネントの表示や動作をカスタマイズします。\n例えば、インスタンス化フェーズでは、プロパティの初期値を設定し、接続フェーズでは、外部の API との通信処理を行ったり、更新フェーズでは、プロパティの値に応じて表示を更新する処理を行ったり、破棄フェーズでは、終了時の処理を行ったりすることができます。\n","wordCount":"1538","inLanguage":"ja","datePublished":"2022-12-29T19:36:52+09:00","dateModified":"2022-12-29T19:36:52+09:00","author":{"@type":"Person","name":"Seiri"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://seiri-blog.github.io/posts/lwc-life-cycle-hook/"},"publisher":{"@type":"Organization","name":"Seiri's Blog","logo":{"@type":"ImageObject","url":"https://seiri-blog.github.io/favicon.ico"}}}</script>
 </head>
 <body id=top>
 <script>localStorage.getItem("pref-theme")==="dark"&&document.body.classList.add('dark')</script>
@@ -116,7 +116,7 @@
 <h1 class=post-title>
 【Salesforce】LWCライフサイクルフック
 </h1>
-<div class=post-meta><span title="2022-12-29 19:36:52 +0900 +0900">2022年12月29日</span>&nbsp;·&nbsp;4 分&nbsp;·&nbsp;1548 文字&nbsp;·&nbsp;Seiri
+<div class=post-meta><span title="2022-12-29 19:36:52 +0900 +0900">2022年12月29日</span>&nbsp;·&nbsp;4 分&nbsp;·&nbsp;1538 文字&nbsp;·&nbsp;Seiri
 </div>
 </header>
 <div class=share-area>
@@ -182,39 +182,49 @@ B!
 <p>また、LWC には、データバインディングの仕組みもあり、コンポーネントのプロパティと HTML 要素の値を双方向にバインドすることができます。<br>
 これにより、プロパティの値が変更されると、対応する HTML 要素も自動的に更新されます。</p>
 <p>具体的な例は下記を参照してください。</p>
-<p>1.インスタンス化: <code>constructor</code>メソッド<br>
-インスタンスが生成された時に実行されるメソッドです。このメソッドでは、コンポーネントの初期設定を行います。</p>
+<ol>
+<li>インスタンス化: <code>constructor</code>メソッド<br>
+インスタンスが生成された時に実行されるメソッドです。このメソッドでは、コンポーネントの初期設定を行います。</li>
+</ol>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=color:#a6e22e>constructor</span>() {
     <span style=color:#66d9ef>super</span>();
     <span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#e6db74>&#39;constructor called.&#39;</span>);
     <span style=color:#75715e>// コンポーネントの初期設定
 </span><span style=color:#75715e></span>}
 
-</code></pre></div><p>2.接続: <code>connectedCallback</code>メソッド<br>
-コンポーネントが DOM に挿入された時に実行されるメソッドです。このメソッドでは、コンポーネントが他のコンポーネントや外部システムと連携するための設定を行います。</p>
+</code></pre></div><ol start=2>
+<li>接続: <code>connectedCallback</code>メソッド<br>
+コンポーネントが DOM に挿入された時に実行されるメソッドです。このメソッドでは、コンポーネントが他のコンポーネントや外部システムと連携するための設定を行います。</li>
+</ol>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=color:#a6e22e>connectedCallback</span>() {
     <span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#e6db74>&#39;connectedCallback called.&#39;</span>);
     <span style=color:#75715e>// コンポーネントが他のコンポーネントや外部システムと連携するための設定
 </span><span style=color:#75715e></span>}
 
-</code></pre></div><p>3.更新: <code>renderedCallback</code>メソッド<br>
-コンポーネントが更新された時に実行されるメソッドです。このメソッドでは、コンポーネントの表示を更新する処理を行います。</p>
+</code></pre></div><ol start=3>
+<li>更新: <code>renderedCallback</code>メソッド<br>
+コンポーネントが更新された時に実行されるメソッドです。このメソッドでは、コンポーネントの表示を更新する処理を行います。</li>
+</ol>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=color:#a6e22e>renderedCallback</span>() {
     <span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#e6db74>&#39;renderedCallback called.&#39;</span>);
     <span style=color:#75715e>// コンポーネントの表示を更新する処理
 </span><span style=color:#75715e></span>}
 
-</code></pre></div><p>4.破棄: <code>disconnectedCallback</code>メソッド<br>
-コンポーネントが DOM から削除された時に実行されるメソッドです。このメソッドでは、コンポーネントが使用しているリソースを解放する処理を行います。</p>
+</code></pre></div><ol start=4>
+<li>破棄: <code>disconnectedCallback</code>メソッド<br>
+コンポーネントが DOM から削除された時に実行されるメソッドです。このメソッドでは、コンポーネントが使用しているリソースを解放する処理を行います。</li>
+</ol>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=color:#a6e22e>disconnectedCallback</span>() {
     <span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#e6db74>&#39;disconnectedCallback called.&#39;</span>);
     <span style=color:#75715e>// コンポーネントが使用しているリソースを解放する処理
 </span><span style=color:#75715e></span>}
 
-</code></pre></div><p>5.エラー: <code>errorCallback</code>メソッド<br>
+</code></pre></div><ol start=5>
+<li>エラー: <code>errorCallback</code>メソッド<br>
 コンポーネントでエラーが発生した場合に呼び出されます。このメソッドでは、エラーを処理する処理を行います。<br>
 errorCallback メソッドの第 1 引数には、発生したエラーオブジェクトが渡され、第 2 引数には、エラーが発生したコールスタックが渡されます。<br>
-このメソッドを使用することで、コンポーネント内で発生したエラーを検知し、適切な処理を行うことができます。例えば、エラー発生時にエラーメッセージを表示したり、エラーを発生させないように対処する処理を行ったりすることができます</p>
+このメソッドを使用することで、コンポーネント内で発生したエラーを検知し、適切な処理を行うことができます。例えば、エラー発生時にエラーメッセージを表示したり、エラーを発生させないように対処する処理を行ったりすることができます</li>
+</ol>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=color:#a6e22e>errorCallback</span>(<span style=color:#a6e22e>error</span>, <span style=color:#a6e22e>stack</span>) {
     <span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>error</span>(<span style=color:#a6e22e>error</span>);
     <span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>error</span>(<span style=color:#a6e22e>stack</span>);
