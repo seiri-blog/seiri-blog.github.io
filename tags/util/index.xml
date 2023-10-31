@@ -16,5 +16,14 @@
       <description>LWC での画面遷移 LWC の中にNavigationMixinを提供しています、それを利用して、画面を遷移することができます、今回はNavigatio</description>
     </item>
     
+    <item>
+      <title>【Salesforce】LWC 共通 Toast Util</title>
+      <link>https://seiri-blog.github.io/posts/salesforce-lwc-toast-message-common-util/</link>
+      <pubDate>Tue, 21 Dec 2021 18:27:36 +0900</pubDate>
+      
+      <guid>https://seiri-blog.github.io/posts/salesforce-lwc-toast-message-common-util/</guid>
+      <description>LWC での Toast メッセージ LWC で Toast メッセージを表示するために、共通の Util クラスを作成することができます。 Toast メッセージのタイトル、メッセージ、種類(suc</description>
+    </item>
+    
   </channel>
 </rss>

@@ -98,21 +98,21 @@
     </item>
     
     <item>
+      <title>【Salesforce】LWC入門</title>
+      <link>https://seiri-blog.github.io/posts/lwc-introduction/</link>
+      <pubDate>Thu, 29 Dec 2022 19:36:52 +0900</pubDate>
+      
+      <guid>https://seiri-blog.github.io/posts/lwc-introduction/</guid>
+      <description>LWC（Lightning Web Components） とは LWC（Lightning Web Components） は、Web Componentsを使用</description>
+    </item>
+    
+    <item>
       <title>【Salesforce】LWC環境構築</title>
       <link>https://seiri-blog.github.io/posts/salesforce-lwc-setup-environment/</link>
       <pubDate>Thu, 29 Dec 2022 19:36:52 +0900</pubDate>
       
       <guid>https://seiri-blog.github.io/posts/salesforce-lwc-setup-environment/</guid>
       <description>LWC の環境構築方法 LWC の環境構築の詳しい方法は以下のようになります。 Salesforce の Developer Edition アカウントを取得します。 Developer Edition アカウントは、開発者向けのアカウントで、</description>
-    </item>
-    
-    <item>
-      <title>【Salesforce】LWC（Lightning Web Components）の紹介</title>
-      <link>https://seiri-blog.github.io/posts/lwc-introduction/</link>
-      <pubDate>Thu, 29 Dec 2022 19:36:52 +0900</pubDate>
-      
-      <guid>https://seiri-blog.github.io/posts/lwc-introduction/</guid>
-      <description>LWC とは LWC は、Web Componentsを使用して、Salesforceのプラットフォーム上でカスタムコンポーネントを構築するためのフレームワ</description>
     </item>
     
     <item>
@@ -149,15 +149,6 @@
       
       <guid>https://seiri-blog.github.io/posts/lwc-path-common-component/</guid>
       <description>目的 LWC での Path 共通コンポーネントを共有します。 実装例 path path.html &amp;lt;template&amp;gt; &amp;lt;div class=&amp;#34;slds-path&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;slds-grid slds-path__track&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;slds-grid slds-path__scroller-container&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;slds-path__scroller&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;slds-path__scroller_inner&amp;#34;&amp;gt; &amp;lt;ul class=&amp;#34;slds-path__nav&amp;#34; role=&amp;#34;listbox&amp;#34; aria-orientation=&amp;#34;horizontal&amp;#34; &amp;gt; &amp;lt;template for:each=&amp;#34;{pathItemList}&amp;#34; for:item=&amp;#34;pathItem&amp;#34; for:index=&amp;#34;index&amp;#34; &amp;gt; {getIndex} &amp;lt;template if:true=&amp;#34;{pathIndexGeCurrentIndex}&amp;#34;&amp;gt; &amp;lt;li key=&amp;#34;{pathItem}&amp;#34; if:true=&amp;#34;{pathIndexEqCurrentIndex}&amp;#34; class=&amp;#34;slds-path__item slds-is-current slds-is-active&amp;#34; role=&amp;#34;presentation&amp;#34; &amp;gt; &amp;lt;a aria-selected=&amp;#34;true&amp;#34; class=&amp;#34;slds-path__link&amp;#34; href=&amp;#34;javasctipt:void();&amp;#34; role=&amp;#34;option&amp;#34; tabindex=&amp;#34;-1&amp;#34; &amp;gt; &amp;lt;span class=&amp;#34;slds-path__stage&amp;#34;&amp;gt;</description>
-    </item>
-    
-    <item>
-      <title>【Salesforce】LWC CSV出力方法</title>
-      <link>https://seiri-blog.github.io/posts/salesforce-lwc-csv-output-method/</link>
-      <pubDate>Tue, 29 Mar 2022 16:38:42 +0900</pubDate>
-      
-      <guid>https://seiri-blog.github.io/posts/salesforce-lwc-csv-output-method/</guid>
-      <description>LWC で CSV 出力方法説明 LWC で CSV ファイルを出力する考え方は主に下記の流れとなります。 1.LWC のコンポーネントにデータを持たせます。 2.CSV を作成するため、各行の</description>
     </item>
     
     <item>
