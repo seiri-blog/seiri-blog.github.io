@@ -6,7 +6,16 @@
     <description>Recent content in Posts on Seiri&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>2023 Seiri All rights reserved</copyright>
-    <lastBuildDate>Thu, 26 Oct 2023 11:19:23 +0900</lastBuildDate><atom:link href="https://seiri-blog.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 28 Nov 2023 09:48:53 +0900</lastBuildDate><atom:link href="https://seiri-blog.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Apexバッチの中に他のバッチを呼び出す方法</title>
+      <link>https://seiri-blog.github.io/posts/apex-batch-call-another-batch/</link>
+      <pubDate>Tue, 28 Nov 2023 09:48:53 +0900</pubDate>
+      
+      <guid>https://seiri-blog.github.io/posts/apex-batch-call-another-batch/</guid>
+      <description>Apexバッチとは Apexバッチは、Salesforce プラットフォーム上で大量のデータを効率的に処理するための仕組みです。バッチ処理は非同</description>
+    </item>
+    
     <item>
       <title>Vue3 画面遷移</title>
       <link>https://seiri-blog.github.io/posts/vue3-router/</link>
