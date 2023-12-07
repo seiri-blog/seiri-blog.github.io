@@ -6,7 +6,25 @@
     <description>Recent content in Posts on Seiri&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>2023 Seiri All rights reserved</copyright>
-    <lastBuildDate>Tue, 28 Nov 2023 09:48:53 +0900</lastBuildDate><atom:link href="https://seiri-blog.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 07 Dec 2023 19:33:43 +0900</lastBuildDate><atom:link href="https://seiri-blog.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>【Salesforce】SOQL入門</title>
+      <link>https://seiri-blog.github.io/posts/salesforce-soql-introduction/</link>
+      <pubDate>Thu, 07 Dec 2023 19:33:43 +0900</pubDate>
+      
+      <guid>https://seiri-blog.github.io/posts/salesforce-soql-introduction/</guid>
+      <description>SOQL とは SOQL（Salesforce Object Query Language）は、Salesforce のデータをクエリするために特別に設計されたクエリ言語です。</description>
+    </item>
+    
+    <item>
+      <title>【Salesforce】SOQLのサブクエリ</title>
+      <link>https://seiri-blog.github.io/posts/salesforce-soql-sub-query/</link>
+      <pubDate>Thu, 07 Dec 2023 19:24:51 +0900</pubDate>
+      
+      <guid>https://seiri-blog.github.io/posts/salesforce-soql-sub-query/</guid>
+      <description>SOQL のサブクエリ SOQL では、条件中にサブクエリを使用して親オブジェクトと子オブジェクトの関連を確認することができます。以下は、条件中でのサブクエリ</description>
+    </item>
+    
     <item>
       <title>Apexバッチの中に他のバッチを呼び出す方法</title>
       <link>https://seiri-blog.github.io/posts/apex-batch-call-another-batch/</link>
@@ -450,10 +468,10 @@
     
     <item>
       <title>【Salesforce】Apexで選択リスト取得方法</title>
-      <link>https://seiri-blog.github.io/posts/selection-list-acquisition-method-at-salesforce-apex/</link>
+      <link>https://seiri-blog.github.io/posts/salesforce-apex-get-picklist-value/</link>
       <pubDate>Tue, 12 Jul 2022 16:24:40 +0900</pubDate>
       
-      <guid>https://seiri-blog.github.io/posts/selection-list-acquisition-method-at-salesforce-apex/</guid>
+      <guid>https://seiri-blog.github.io/posts/salesforce-apex-get-picklist-value/</guid>
       <description>Apex 選択リスト取得方法説明 Apex を使用して Salesforce 内の選択リストから値を取得する方法は以下の通りです。 最初に、選択リストが定義されているオブジェクトのフ</description>
     </item>
     
