@@ -2,22 +2,34 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://seiri-blog.github.io/tags/except/</loc>
-    <lastmod>2023-12-08T23:40:22+09:00</lastmod>
-  </url><url>
     <loc>https://seiri-blog.github.io/posts/</loc>
-    <lastmod>2023-12-08T23:40:22+09:00</lastmod>
+    <lastmod>2023-12-26T12:04:33+09:00</lastmod>
+  </url><url>
+    <loc>https://seiri-blog.github.io/tags/python/</loc>
+    <lastmod>2023-12-26T12:04:33+09:00</lastmod>
+  </url><url>
+    <loc>https://seiri-blog.github.io/tags/python3/</loc>
+    <lastmod>2023-12-26T12:04:33+09:00</lastmod>
+  </url><url>
+    <loc>https://seiri-blog.github.io/posts/python_retry_request/</loc>
+    <lastmod>2023-12-26T12:04:33+09:00</lastmod>
+  </url><url>
+    <loc>https://seiri-blog.github.io/tags/request/</loc>
+    <lastmod>2023-12-26T12:04:33+09:00</lastmod>
   </url><url>
     <loc>https://seiri-blog.github.io/</loc>
+    <lastmod>2023-12-26T12:04:33+09:00</lastmod>
+  </url><url>
+    <loc>https://seiri-blog.github.io/tags/</loc>
+    <lastmod>2023-12-26T12:04:33+09:00</lastmod>
+  </url><url>
+    <loc>https://seiri-blog.github.io/tags/except/</loc>
     <lastmod>2023-12-08T23:40:22+09:00</lastmod>
   </url><url>
     <loc>https://seiri-blog.github.io/tags/sql/</loc>
     <lastmod>2023-12-08T23:40:22+09:00</lastmod>
   </url><url>
     <loc>https://seiri-blog.github.io/posts/sql-excepct/</loc>
-    <lastmod>2023-12-08T23:40:22+09:00</lastmod>
-  </url><url>
-    <loc>https://seiri-blog.github.io/tags/</loc>
     <lastmod>2023-12-08T23:40:22+09:00</lastmod>
   </url><url>
     <loc>https://seiri-blog.github.io/tags/salesforce/</loc>
@@ -147,9 +159,6 @@
     <lastmod>2023-06-23T13:53:59+09:00</lastmod>
   </url><url>
     <loc>https://seiri-blog.github.io/tags/pip/</loc>
-    <lastmod>2023-06-12T17:37:23+09:00</lastmod>
-  </url><url>
-    <loc>https://seiri-blog.github.io/tags/python/</loc>
     <lastmod>2023-06-12T17:37:23+09:00</lastmod>
   </url><url>
     <loc>https://seiri-blog.github.io/posts/python-pip-upgrade/</loc>
@@ -457,9 +466,6 @@
   </url><url>
     <loc>https://seiri-blog.github.io/posts/create-authutil-on-amplify/</loc>
     <lastmod>2022-01-20T16:31:14+09:00</lastmod>
-  </url><url>
-    <loc>https://seiri-blog.github.io/tags/python3/</loc>
-    <lastmod>2022-01-18T19:21:37+09:00</lastmod>
   </url><url>
     <loc>https://seiri-blog.github.io/posts/python-corona-patient-info-in-japanese/</loc>
     <lastmod>2022-01-18T19:21:37+09:00</lastmod>
