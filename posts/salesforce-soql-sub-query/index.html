@@ -24,14 +24,16 @@
 <meta property="og:title" content="【Salesforce】SOQLのサブクエリ">
 <meta property="og:description" content="SOQL のサブクエリ SOQL では、条件中にサブクエリを使用して親オブジェクトと子オブジェクトの関連を確認することができます。以下は、条件中でのサブクエリ">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://seiri-blog.github.io/posts/salesforce-soql-sub-query/"><meta property="article:section" content="posts">
+<meta property="og:url" content="https://seiri-blog.github.io/posts/salesforce-soql-sub-query/">
+<meta property="og:image" content="https://seiri-blog.github.io/images/Salesforce.png"><meta property="article:section" content="posts">
 <meta property="article:published_time" content="2023-12-07T19:24:51+09:00">
 <meta property="article:modified_time" content="2023-12-07T19:24:51+09:00"><meta property="og:site_name" content="Seiri's Blog">
-<meta name=twitter:card content="summary">
+<meta name=twitter:card content="summary_large_image">
+<meta name=twitter:image content="https://seiri-blog.github.io/images/Salesforce.png">
 <meta name=twitter:title content="【Salesforce】SOQLのサブクエリ">
 <meta name=twitter:description content="SOQL のサブクエリ SOQL では、条件中にサブクエリを使用して親オブジェクトと子オブジェクトの関連を確認することができます。以下は、条件中でのサブクエリ">
 <script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://seiri-blog.github.io/posts/"},{"@type":"ListItem","position":2,"name":"【Salesforce】SOQLのサブクエリ","item":"https://seiri-blog.github.io/posts/salesforce-soql-sub-query/"}]}</script>
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"【Salesforce】SOQLのサブクエリ","name":"【Salesforce】SOQLのサブクエリ","description":"SOQL のサブクエリ SOQL では、条件中にサブクエリを使用して親オブジェクトと子オブジェクトの関連を確認することができます。以下は、条件中でのサブクエリ","keywords":["Salesforce","SOQL"],"articleBody":"SOQL のサブクエリ SOQL では、条件中にサブクエリを使用して親オブジェクトと子オブジェクトの関連を確認することができます。以下は、条件中でのサブクエリの例です。\n例えば、取引先責任者（Contact）オブジェクトの中で、関連するアカウント（Account）が「Gold」プランに属するものを取得する場合：\nSELECT Id, FirstName, LastName FROM Contact WHERE Account.Plan__c = 'Gold' この例では、Account.Plan__c がサブクエリとなり、条件中で関連するアカウントのプランが “Gold” である取引先責任者を取得しています。\nもう一つの例として、アカウント（Account）オブジェクトの中で、関連する取引先責任者（Contact）が「主要な連絡先」にマークされているものを取得する場合：\nSELECT Id, Name FROM Account WHERE Id IN (SELECT AccountId FROM Contact WHERE IsPrimaryContact = true) この例では、アカウントの条件中で Id IN (SELECT AccountId FROM Contact WHERE IsPrimaryContact = true) を使用して、関連する取引先責任者が主要な連絡先になっているアカウントを取得しています。\nこれらは基本的な例であり、実際のデータモデルや関連によっては、より複雑なクエリを構築する必要があります。サブクエリを使用する際は、データモデルとクエリのパフォーマンスに留意することが重要です。\nカスタムオブジェクトのサブクエリ カスタムオブジェクトでも、標準オブジェクトと同様に SOQL サブクエリを使用して関連するデータをクエリすることができます。以下は、カスタムオブジェクトに対するサブクエリの例です。\n例えば、カスタムオブジェクト “CustomObjectc” とその子オブジェクト “ChildObjectc” の関連データを取得する場合：\nSELECT Id, Name, (SELECT Id, ChildField__c FROM ChildObjects__r) FROM CustomObject__c このクエリでは、CustomObject__c の各レコードに関連する ChildObject__c オブジェクトのサブクエリが含まれています。ChildObjects__r は関連名であり、実際の関連名はデータモデルに基づいて決まります。\nまた、条件を追加してカスタムオブジェクトの特定のデータを絞り込むことも可能です。例えば、特定の条件を持つ子オブジェクトを持つカスタムオブジェクトのデータを取得する場合：\nSELECT Id, Name, (SELECT Id, ChildField__c FROM ChildObjects__r WHERE ChildField__c = 'SomeValue') FROM CustomObject__c このクエリでは、ChildField__c フィールドが ‘SomeValue’ である子オブジェクトを持つ CustomObject__c レコードを取得しています。\nSOQL サブクエリは、標準オブジェクトとカスタムオブジェクトの双方で同様に使用できます。\n","wordCount":"934","inLanguage":"ja","datePublished":"2023-12-07T19:24:51+09:00","dateModified":"2023-12-07T19:24:51+09:00","author":{"@type":"Person","name":"Seiri"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://seiri-blog.github.io/posts/salesforce-soql-sub-query/"},"publisher":{"@type":"Organization","name":"Seiri's Blog","logo":{"@type":"ImageObject","url":"https://seiri-blog.github.io/favicon.ico"}}}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"【Salesforce】SOQLのサブクエリ","name":"【Salesforce】SOQLのサブクエリ","description":"SOQL のサブクエリ SOQL では、条件中にサブクエリを使用して親オブジェクトと子オブジェクトの関連を確認することができます。以下は、条件中でのサブクエリ","keywords":["Salesforce","SOQL"],"articleBody":"SOQL のサブクエリ SOQL では、条件中にサブクエリを使用して親オブジェクトと子オブジェクトの関連を確認することができます。以下は、条件中でのサブクエリの例です。\n例えば、取引先責任者（Contact）オブジェクトの中で、関連するアカウント（Account）が「Gold」プランに属するものを取得する場合：\nSELECT Id, FirstName, LastName FROM Contact WHERE Account.Plan__c = 'Gold' この例では、Account.Plan__c がサブクエリとなり、条件中で関連するアカウントのプランが “Gold” である取引先責任者を取得しています。\nもう一つの例として、アカウント（Account）オブジェクトの中で、関連する取引先責任者（Contact）が「主要な連絡先」にマークされているものを取得する場合：\nSELECT Id, Name FROM Account WHERE Id IN (SELECT AccountId FROM Contact WHERE IsPrimaryContact = true) この例では、アカウントの条件中で Id IN (SELECT AccountId FROM Contact WHERE IsPrimaryContact = true) を使用して、関連する取引先責任者が主要な連絡先になっているアカウントを取得しています。\nこれらは基本的な例であり、実際のデータモデルや関連によっては、より複雑なクエリを構築する必要があります。サブクエリを使用する際は、データモデルとクエリのパフォーマンスに留意することが重要です。\nカスタムオブジェクトのサブクエリ カスタムオブジェクトでも、標準オブジェクトと同様に SOQL サブクエリを使用して関連するデータをクエリすることができます。以下は、カスタムオブジェクトに対するサブクエリの例です。\n例えば、カスタムオブジェクト “CustomObjectc” とその子オブジェクト “ChildObjectc” の関連データを取得する場合：\nSELECT Id, Name, (SELECT Id, ChildField__c FROM ChildObjects__r) FROM CustomObject__c このクエリでは、CustomObject__c の各レコードに関連する ChildObject__c オブジェクトのサブクエリが含まれています。ChildObjects__r は関連名であり、実際の関連名はデータモデルに基づいて決まります。\nまた、条件を追加してカスタムオブジェクトの特定のデータを絞り込むことも可能です。例えば、特定の条件を持つ子オブジェクトを持つカスタムオブジェクトのデータを取得する場合：\nSELECT Id, Name, (SELECT Id, ChildField__c FROM ChildObjects__r WHERE ChildField__c = 'SomeValue') FROM CustomObject__c このクエリでは、ChildField__c フィールドが ‘SomeValue’ である子オブジェクトを持つ CustomObject__c レコードを取得しています。\nSOQL サブクエリは、標準オブジェクトとカスタムオブジェクトの双方で同様に使用できます。\n","wordCount":"934","inLanguage":"ja","image":"https://seiri-blog.github.io/images/Salesforce.png","datePublished":"2023-12-07T19:24:51+09:00","dateModified":"2023-12-07T19:24:51+09:00","author":{"@type":"Person","name":"Seiri"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://seiri-blog.github.io/posts/salesforce-soql-sub-query/"},"publisher":{"@type":"Organization","name":"Seiri's Blog","logo":{"@type":"ImageObject","url":"https://seiri-blog.github.io/favicon.ico"}}}</script>
 </head>
 <body id=top>
 <script>localStorage.getItem("pref-theme")==="dark"&&document.body.classList.add('dark')</script>
@@ -81,11 +83,6 @@
 <span>Trailhead Superbadge</span>&nbsp;<svg fill="none" shape-rendering="geometricPrecision" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24" height="12" width="12"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg>
 </a>
 </li>
-<li>
-<a href=https://fc-game.github.io title="FC Games">
-<span>FC Games</span>&nbsp;<svg fill="none" shape-rendering="geometricPrecision" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24" height="12" width="12"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg>
-</a>
-</li>
 </ul>
 </nav>
 </header>
@@ -103,6 +100,8 @@
 <div class=post-meta><span title="2023-12-07 19:24:51 +0900 +0900">2023年12月7日</span>&nbsp;·&nbsp;2 分&nbsp;·&nbsp;934 文字&nbsp;·&nbsp;Seiri
 </div>
 </header>
+<figure class=entry-cover><img loading=lazy src=https://seiri-blog.github.io/images/Salesforce.png alt=【Salesforce】SOQLのサブクエリ>
+</figure>
 <div class=share-area>
 <ul>
 <li class=facebook>
@@ -142,8 +141,7 @@ B!
 <ins class=adsbygoogle style=display:inline-block;width:728px;height:90px data-ad-client=ca-pub-4988552421895566 data-ad-slot=7460187386></ins>
 <script>(adsbygoogle=window.adsbygoogle||[]).push({})</script>
 </div>
-<div class=post-content><img alt=【Salesforce】SOQLのサブクエリ src=/images/Salesforce.png>
-<h2 id=soql-のサブクエリ>SOQL のサブクエリ<a hidden class=anchor aria-hidden=true href=#soql-のサブクエリ>#</a></h2>
+<div class=post-content><h2 id=soql-のサブクエリ>SOQL のサブクエリ<a hidden class=anchor aria-hidden=true href=#soql-のサブクエリ>#</a></h2>
 <p>SOQL では、条件中にサブクエリを使用して親オブジェクトと子オブジェクトの関連を確認することができます。以下は、条件中でのサブクエリの例です。</p>
 <p>例えば、取引先責任者（Contact）オブジェクトの中で、関連するアカウント（Account）が「Gold」プランに属するものを取得する場合：</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sql data-lang=sql><span style=color:#66d9ef>SELECT</span> Id, FirstName, LastName <span style=color:#66d9ef>FROM</span> Contact <span style=color:#66d9ef>WHERE</span> Account.Plan__c <span style=color:#f92672>=</span> <span style=color:#e6db74>&#39;Gold&#39;</span>

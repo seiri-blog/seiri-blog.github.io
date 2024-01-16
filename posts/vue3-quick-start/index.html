@@ -24,14 +24,16 @@
 <meta property="og:title" content="Vue3入門">
 <meta property="og:description" content="Vue3 での環境構築 Vue.js 3 プロジェクトを開始するための環境を構築する方法はいくつかありますが、最も一般的な方法は Vue CLI（Command Line Inter">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://seiri-blog.github.io/posts/vue3-quick-start/"><meta property="article:section" content="posts">
+<meta property="og:url" content="https://seiri-blog.github.io/posts/vue3-quick-start/">
+<meta property="og:image" content="https://seiri-blog.github.io/images/vue3-quick-start.png"><meta property="article:section" content="posts">
 <meta property="article:published_time" content="2023-10-26T09:49:55+09:00">
 <meta property="article:modified_time" content="2023-10-26T09:49:55+09:00"><meta property="og:site_name" content="Seiri's Blog">
-<meta name=twitter:card content="summary">
+<meta name=twitter:card content="summary_large_image">
+<meta name=twitter:image content="https://seiri-blog.github.io/images/vue3-quick-start.png">
 <meta name=twitter:title content="Vue3入門">
 <meta name=twitter:description content="Vue3 での環境構築 Vue.js 3 プロジェクトを開始するための環境を構築する方法はいくつかありますが、最も一般的な方法は Vue CLI（Command Line Inter">
 <script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://seiri-blog.github.io/posts/"},{"@type":"ListItem","position":2,"name":"Vue3入門","item":"https://seiri-blog.github.io/posts/vue3-quick-start/"}]}</script>
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"Vue3入門","name":"Vue3入門","description":"Vue3 での環境構築 Vue.js 3 プロジェクトを開始するための環境を構築する方法はいくつかありますが、最も一般的な方法は Vue CLI（Command Line Inter","keywords":["vue","vue3"],"articleBody":"Vue3 での環境構築 Vue.js 3 プロジェクトを開始するための環境を構築する方法はいくつかありますが、最も一般的な方法は Vue CLI（Command Line Interface）を使用することです。Vue CLI は、Vue.js アプリケーションを迅速に設定し、開発を効率化するための公式ツールです。以下に、Vue CLI を使用した Vue.js 3 プロジェクトの環境構築手順を示します。\n1. Node.js のインストール: Vue CLI は Node.js と npm（または Yarn）に依存しています。まず、Node.js の公式ウェブサイトから Node.js をダウンロードしてインストールしてください。インストールが完了したら、ターミナルまたはコマンドプロンプトで以下のコマンドを入力して、Node.js と npm のバージョンを確認します。\nnode -v npm -v 2. Vue CLI のインストール: Node.js と npm がインストールされたら、Vue CLI をグローバルにインストールします。以下のコマンドを実行します。\nnpm install -g @vue/cli これにより、システム全体で Vue CLI が利用できるようになります。\n3. Vue.js 3 プロジェクトの作成: Vue CLI がインストールされたら、新しい Vue.js 3 プロジェクトを作成できます。適当なディレクトリで以下のコマンドを実行します。\nvue create my-vue-app 上記のコマンドは、“my-vue-app\"という名前の新しい Vue.js プロジェクトを作成します。Vue CLI はプロジェクトのセットアップに必要な依存関係を解決し、必要なファイルとフォルダを生成します。\n4. プロジェクトのディレクトリに移動してサーバーを起動: プロジェクトが作成されたら、プロジェクトのディレクトリに移動します。\ncd my-vue-app その後、開発サーバーを起動して Vue.js アプリケーションをローカルで実行できます。\nnpm run serve 上記のコマンドを実行すると、開発用のサーバーが起動し、デフォルトではhttp://localhost:8080でアプリケーションにアクセスできるようになります。\n以上で、Vue.js 3 プロジェクトの基本的な環境が構築されました。必要に応じて、プロジェクトの設定やコードを編集して、Vue.js アプリケーションの開発を開始できます。\nVue3 プロジェクトの例 Vue.js のコンポーネントを定義します。src/components ディレクトリ内に CounterVue.vue という名前のファイルを作成します：\ntemplate div h1Vue.js Counter Demoh1 pCount: {{ count }}p button @click=\"increment\"Incrementbutton button @click=\"decrement\"Decrementbutton div template script export default { data() { return { count: 0, }; }, methods: { increment() { this.count++; }, decrement() { this.count--; }, }, }; script style scoped /* スタイルはここに */ style 上記のコードは、Vue.jsのコンポーネントを定義しています。このコンポーネントはカウンターの値を保持し、increment メソッドと decrement メソッドを使用して値を増減させます。\n次に、src/App.vue ファイルを編集して、先ほど作成したカウンターコンポーネントを表示します：\ntemplate div id=\"app\" CounterVue / div template script import CounterVue from \"./components/CounterVue.vue\"; export default { components: { CounterVue, }, }; script style /* スタイルはここに */ style サーバを起動し、画面を確認する\nnpm run serve \nこれで、簡単なVue.jsのデモアプリケーションが完成しました。カウンターアプリケーションは非常にシンプルですが、Vue.jsの基本的な構文やコンポーネントの作成方法を学ぶのに適しています。必要に応じて、このデモを拡張したり、他のVue.jsの機能を追加してみることで、より複雑なアプリケーションを作成できます。\n","wordCount":"1316","inLanguage":"ja","datePublished":"2023-10-26T09:49:55+09:00","dateModified":"2023-10-26T09:49:55+09:00","author":{"@type":"Person","name":"Seiri"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://seiri-blog.github.io/posts/vue3-quick-start/"},"publisher":{"@type":"Organization","name":"Seiri's Blog","logo":{"@type":"ImageObject","url":"https://seiri-blog.github.io/favicon.ico"}}}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"Vue3入門","name":"Vue3入門","description":"Vue3 での環境構築 Vue.js 3 プロジェクトを開始するための環境を構築する方法はいくつかありますが、最も一般的な方法は Vue CLI（Command Line Inter","keywords":["vue","vue3"],"articleBody":"Vue3 での環境構築 Vue.js 3 プロジェクトを開始するための環境を構築する方法はいくつかありますが、最も一般的な方法は Vue CLI（Command Line Interface）を使用することです。Vue CLI は、Vue.js アプリケーションを迅速に設定し、開発を効率化するための公式ツールです。以下に、Vue CLI を使用した Vue.js 3 プロジェクトの環境構築手順を示します。\n1. Node.js のインストール: Vue CLI は Node.js と npm（または Yarn）に依存しています。まず、Node.js の公式ウェブサイトから Node.js をダウンロードしてインストールしてください。インストールが完了したら、ターミナルまたはコマンドプロンプトで以下のコマンドを入力して、Node.js と npm のバージョンを確認します。\nnode -v npm -v 2. Vue CLI のインストール: Node.js と npm がインストールされたら、Vue CLI をグローバルにインストールします。以下のコマンドを実行します。\nnpm install -g @vue/cli これにより、システム全体で Vue CLI が利用できるようになります。\n3. Vue.js 3 プロジェクトの作成: Vue CLI がインストールされたら、新しい Vue.js 3 プロジェクトを作成できます。適当なディレクトリで以下のコマンドを実行します。\nvue create my-vue-app 上記のコマンドは、“my-vue-app\"という名前の新しい Vue.js プロジェクトを作成します。Vue CLI はプロジェクトのセットアップに必要な依存関係を解決し、必要なファイルとフォルダを生成します。\n4. プロジェクトのディレクトリに移動してサーバーを起動: プロジェクトが作成されたら、プロジェクトのディレクトリに移動します。\ncd my-vue-app その後、開発サーバーを起動して Vue.js アプリケーションをローカルで実行できます。\nnpm run serve 上記のコマンドを実行すると、開発用のサーバーが起動し、デフォルトではhttp://localhost:8080でアプリケーションにアクセスできるようになります。\n以上で、Vue.js 3 プロジェクトの基本的な環境が構築されました。必要に応じて、プロジェクトの設定やコードを編集して、Vue.js アプリケーションの開発を開始できます。\nVue3 プロジェクトの例 Vue.js のコンポーネントを定義します。src/components ディレクトリ内に CounterVue.vue という名前のファイルを作成します：\ntemplate div h1Vue.js Counter Demoh1 pCount: {{ count }}p button @click=\"increment\"Incrementbutton button @click=\"decrement\"Decrementbutton div template script export default { data() { return { count: 0, }; }, methods: { increment() { this.count++; }, decrement() { this.count--; }, }, }; script style scoped /* スタイルはここに */ style 上記のコードは、Vue.jsのコンポーネントを定義しています。このコンポーネントはカウンターの値を保持し、increment メソッドと decrement メソッドを使用して値を増減させます。\n次に、src/App.vue ファイルを編集して、先ほど作成したカウンターコンポーネントを表示します：\ntemplate div id=\"app\" CounterVue / div template script import CounterVue from \"./components/CounterVue.vue\"; export default { components: { CounterVue, }, }; script style /* スタイルはここに */ style サーバを起動し、画面を確認する\nnpm run serve \nこれで、簡単なVue.jsのデモアプリケーションが完成しました。カウンターアプリケーションは非常にシンプルですが、Vue.jsの基本的な構文やコンポーネントの作成方法を学ぶのに適しています。必要に応じて、このデモを拡張したり、他のVue.jsの機能を追加してみることで、より複雑なアプリケーションを作成できます。\n","wordCount":"1316","inLanguage":"ja","image":"https://seiri-blog.github.io/images/vue3-quick-start.png","datePublished":"2023-10-26T09:49:55+09:00","dateModified":"2023-10-26T09:49:55+09:00","author":{"@type":"Person","name":"Seiri"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://seiri-blog.github.io/posts/vue3-quick-start/"},"publisher":{"@type":"Organization","name":"Seiri's Blog","logo":{"@type":"ImageObject","url":"https://seiri-blog.github.io/favicon.ico"}}}</script>
 </head>
 <body id=top>
 <script>localStorage.getItem("pref-theme")==="dark"&&document.body.classList.add('dark')</script>
@@ -81,11 +83,6 @@
 <span>Trailhead Superbadge</span>&nbsp;<svg fill="none" shape-rendering="geometricPrecision" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24" height="12" width="12"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg>
 </a>
 </li>
-<li>
-<a href=https://fc-game.github.io title="FC Games">
-<span>FC Games</span>&nbsp;<svg fill="none" shape-rendering="geometricPrecision" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24" height="12" width="12"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg>
-</a>
-</li>
 </ul>
 </nav>
 </header>
@@ -103,6 +100,8 @@ Vue3入門
 <div class=post-meta><span title="2023-10-26 09:49:55 +0900 +0900">2023年10月26日</span>&nbsp;·&nbsp;3 分&nbsp;·&nbsp;1316 文字&nbsp;·&nbsp;Seiri
 </div>
 </header>
+<figure class=entry-cover><img loading=lazy src=https://seiri-blog.github.io/images/vue3-quick-start.png alt=Vue3入門>
+</figure>
 <div class=share-area>
 <ul>
 <li class=facebook>
@@ -151,8 +150,7 @@ B!
 <ins class=adsbygoogle style=display:inline-block;width:728px;height:90px data-ad-client=ca-pub-4988552421895566 data-ad-slot=7460187386></ins>
 <script>(adsbygoogle=window.adsbygoogle||[]).push({})</script>
 </div>
-<div class=post-content><img alt=Vue3入門 src=/images/vue3-quick-start.png>
-<h2 id=vue3-での環境構築>Vue3 での環境構築<a hidden class=anchor aria-hidden=true href=#vue3-での環境構築>#</a></h2>
+<div class=post-content><h2 id=vue3-での環境構築>Vue3 での環境構築<a hidden class=anchor aria-hidden=true href=#vue3-での環境構築>#</a></h2>
 <p><code>Vue.js 3</code> プロジェクトを開始するための環境を構築する方法はいくつかありますが、最も一般的な方法は Vue CLI（Command Line Interface）を使用することです。Vue CLI は、<code>Vue.js</code> アプリケーションを迅速に設定し、開発を効率化するための公式ツールです。以下に、Vue CLI を使用した <code>Vue.js 3</code> プロジェクトの環境構築手順を示します。</p>
 <h3 id=1-nodejs-のインストール>1. Node.js のインストール:<a hidden class=anchor aria-hidden=true href=#1-nodejs-のインストール>#</a></h3>
 <p>Vue CLI は <code>Node.js</code> と npm（または Yarn）に依存しています。まず、<a href=https://nodejs.org/>Node.js の公式ウェブサイト</a>から Node.js をダウンロードしてインストールしてください。インストールが完了したら、ターミナルまたはコマンドプロンプトで以下のコマンドを入力して、<code>Node.js</code> と <code>npm</code> のバージョンを確認します。</p>

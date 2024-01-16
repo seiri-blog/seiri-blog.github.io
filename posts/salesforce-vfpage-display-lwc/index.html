@@ -24,14 +24,16 @@
 <meta property="og:title" content="【Salesforce】VFページにLWCを表示する方法">
 <meta property="og:description" content="VF ページに LWC を表示する方法説明 基本的な考え方は VF ページに LightningOut という仕組みを利用して、LWC を表示すると思います。 LightningOut の仕組み VF ⇒ Aura ⇒ LWCという">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://seiri-blog.github.io/posts/salesforce-vfpage-display-lwc/"><meta property="article:section" content="posts">
+<meta property="og:url" content="https://seiri-blog.github.io/posts/salesforce-vfpage-display-lwc/">
+<meta property="og:image" content="https://seiri-blog.github.io/images/Salesforce.png"><meta property="article:section" content="posts">
 <meta property="article:published_time" content="2021-07-28T14:42:39+09:00">
 <meta property="article:modified_time" content="2021-07-28T14:42:39+09:00"><meta property="og:site_name" content="Seiri's Blog">
-<meta name=twitter:card content="summary">
+<meta name=twitter:card content="summary_large_image">
+<meta name=twitter:image content="https://seiri-blog.github.io/images/Salesforce.png">
 <meta name=twitter:title content="【Salesforce】VFページにLWCを表示する方法">
 <meta name=twitter:description content="VF ページに LWC を表示する方法説明 基本的な考え方は VF ページに LightningOut という仕組みを利用して、LWC を表示すると思います。 LightningOut の仕組み VF ⇒ Aura ⇒ LWCという">
 <script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://seiri-blog.github.io/posts/"},{"@type":"ListItem","position":2,"name":"【Salesforce】VFページにLWCを表示する方法","item":"https://seiri-blog.github.io/posts/salesforce-vfpage-display-lwc/"}]}</script>
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"【Salesforce】VFページにLWCを表示する方法","name":"【Salesforce】VFページにLWCを表示する方法","description":"VF ページに LWC を表示する方法説明 基本的な考え方は VF ページに LightningOut という仕組みを利用して、LWC を表示すると思います。 LightningOut の仕組み VF ⇒ Aura ⇒ LWCという","keywords":["Salesforce","VFPage","lwc","LightningOut","Lightning Web Component"],"articleBody":"VF ページに LWC を表示する方法説明 基本的な考え方は VF ページに LightningOut という仕組みを利用して、LWC を表示すると思います。\nLightningOut の仕組み VF ⇒ Aura ⇒ LWCというルートで LWC の内容を表示でます。\nVF ページに$Lightning.use()と$Lightning.createComponent()を利用して、Aura コンテナを経由して、LWC コンポーネントを動的に VF ページの DOM に追加するイメージで LWC の内容を表示する。\n実装例  ソース構成図  force-app └─main └─default ├─aura │ └─LWCContainer ├─lwc │ └─lightningOutDemoComponent └─pages ├─LightningOutDemo.page └─LightningOutDemo.page-meta.xml  Aura:LWCContainer(コンテナ)  \nLWCContainer.app\naura:application access=\"GLOBAL\" extends=\"ltng:outApp\" aura:application LWCContainer.app-meta.xml\n  xmlns=\"http://soap.sforce.com/2006/04/metadata\" 50.0 A Lightning Application Bundle   LWC:lightningOutDemoComponent  \nlightningOutDemoComponent.html\ntemplate div class=\"slds-box\" pここはLightning Web Componentです。p div template lightningOutDemoComponent.js\nimport { LightningElement } from \"lwc\"; export default class LightningOutDemoComponent extends LightningElement {} lightningOutDemoComponent.js-meta.xml\n  xmlns=\"http://soap.sforce.com/2006/04/metadata\" 52.0 false   pages:LightningOutDemo  \nLightningOutDemo.page\napex:page standardStylesheets=\"false\" sidebar=\"false\" applyBodyTag=\"false\" docType=\"html-5.0\"   apex:includeLightning / div id=\"lwc-container\"div script $Lightning.use(\"c:LWCContainer\", function () { //AuraAppContainer  $Lightning.createComponent( \"c:lightningOutDemoComponent\", //LWCコンポネント  {}, //lwcコンポネントに渡すパラメータ  \"lwc-container\", //divのid  function (cmp) { //コールバック関数  console.log(\"Load Success:\" + cmp); } ); }); script apex:page LightningOutDemo.page-meta.xml\n  xmlns=\"http://soap.sforce.com/2006/04/metadata\" 52.0 LightningOutDemo  Salesforce 側動作確認  Salesforce 側 Visualforce タブを作成  \n タブを開く  \n Classic モードで確認  \n","wordCount":"572","inLanguage":"ja","datePublished":"2021-07-28T14:42:39+09:00","dateModified":"2021-07-28T14:42:39+09:00","author":{"@type":"Person","name":"Seiri"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://seiri-blog.github.io/posts/salesforce-vfpage-display-lwc/"},"publisher":{"@type":"Organization","name":"Seiri's Blog","logo":{"@type":"ImageObject","url":"https://seiri-blog.github.io/favicon.ico"}}}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"【Salesforce】VFページにLWCを表示する方法","name":"【Salesforce】VFページにLWCを表示する方法","description":"VF ページに LWC を表示する方法説明 基本的な考え方は VF ページに LightningOut という仕組みを利用して、LWC を表示すると思います。 LightningOut の仕組み VF ⇒ Aura ⇒ LWCという","keywords":["Salesforce","VFPage","lwc","LightningOut","Lightning Web Component"],"articleBody":"VF ページに LWC を表示する方法説明 基本的な考え方は VF ページに LightningOut という仕組みを利用して、LWC を表示すると思います。\nLightningOut の仕組み VF ⇒ Aura ⇒ LWCというルートで LWC の内容を表示でます。\nVF ページに$Lightning.use()と$Lightning.createComponent()を利用して、Aura コンテナを経由して、LWC コンポーネントを動的に VF ページの DOM に追加するイメージで LWC の内容を表示する。\n実装例  ソース構成図  force-app └─main └─default ├─aura │ └─LWCContainer ├─lwc │ └─lightningOutDemoComponent └─pages ├─LightningOutDemo.page └─LightningOutDemo.page-meta.xml  Aura:LWCContainer(コンテナ)  \nLWCContainer.app\naura:application access=\"GLOBAL\" extends=\"ltng:outApp\" aura:application LWCContainer.app-meta.xml\n  xmlns=\"http://soap.sforce.com/2006/04/metadata\" 50.0 A Lightning Application Bundle   LWC:lightningOutDemoComponent  \nlightningOutDemoComponent.html\ntemplate div class=\"slds-box\" pここはLightning Web Componentです。p div template lightningOutDemoComponent.js\nimport { LightningElement } from \"lwc\"; export default class LightningOutDemoComponent extends LightningElement {} lightningOutDemoComponent.js-meta.xml\n  xmlns=\"http://soap.sforce.com/2006/04/metadata\" 52.0 false   pages:LightningOutDemo  \nLightningOutDemo.page\napex:page standardStylesheets=\"false\" sidebar=\"false\" applyBodyTag=\"false\" docType=\"html-5.0\"   apex:includeLightning / div id=\"lwc-container\"div script $Lightning.use(\"c:LWCContainer\", function () { //AuraAppContainer  $Lightning.createComponent( \"c:lightningOutDemoComponent\", //LWCコンポネント  {}, //lwcコンポネントに渡すパラメータ  \"lwc-container\", //divのid  function (cmp) { //コールバック関数  console.log(\"Load Success:\" + cmp); } ); }); script apex:page LightningOutDemo.page-meta.xml\n  xmlns=\"http://soap.sforce.com/2006/04/metadata\" 52.0 LightningOutDemo  Salesforce 側動作確認  Salesforce 側 Visualforce タブを作成  \n タブを開く  \n Classic モードで確認  \n","wordCount":"572","inLanguage":"ja","image":"https://seiri-blog.github.io/images/Salesforce.png","datePublished":"2021-07-28T14:42:39+09:00","dateModified":"2021-07-28T14:42:39+09:00","author":{"@type":"Person","name":"Seiri"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://seiri-blog.github.io/posts/salesforce-vfpage-display-lwc/"},"publisher":{"@type":"Organization","name":"Seiri's Blog","logo":{"@type":"ImageObject","url":"https://seiri-blog.github.io/favicon.ico"}}}</script>
 </head>
 <body id=top>
 <script>localStorage.getItem("pref-theme")==="dark"&&document.body.classList.add('dark')</script>
@@ -81,11 +83,6 @@
 <span>Trailhead Superbadge</span>&nbsp;<svg fill="none" shape-rendering="geometricPrecision" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24" height="12" width="12"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg>
 </a>
 </li>
-<li>
-<a href=https://fc-game.github.io title="FC Games">
-<span>FC Games</span>&nbsp;<svg fill="none" shape-rendering="geometricPrecision" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24" height="12" width="12"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg>
-</a>
-</li>
 </ul>
 </nav>
 </header>
@@ -106,6 +103,8 @@
 <div class=post-meta><span title="2021-07-28 14:42:39 +0900 +0900">2021年7月28日</span>&nbsp;·&nbsp;2 分&nbsp;·&nbsp;572 文字&nbsp;·&nbsp;Seiri
 </div>
 </header>
+<figure class=entry-cover><img loading=lazy src=https://seiri-blog.github.io/images/Salesforce.png alt=【Salesforce】VFページにLWCを表示する方法>
+</figure>
 <div class=share-area>
 <ul>
 <li class=facebook>
@@ -149,8 +148,7 @@ B!
 <ins class=adsbygoogle style=display:inline-block;width:728px;height:90px data-ad-client=ca-pub-4988552421895566 data-ad-slot=7460187386></ins>
 <script>(adsbygoogle=window.adsbygoogle||[]).push({})</script>
 </div>
-<div class=post-content><img alt=【Salesforce】VFページにLWCを表示する方法 src=/images/Salesforce.png>
-<h2 id=vf-ページに-lwc-を表示する方法説明>VF ページに LWC を表示する方法説明<a hidden class=anchor aria-hidden=true href=#vf-ページに-lwc-を表示する方法説明>#</a></h2>
+<div class=post-content><h2 id=vf-ページに-lwc-を表示する方法説明>VF ページに LWC を表示する方法説明<a hidden class=anchor aria-hidden=true href=#vf-ページに-lwc-を表示する方法説明>#</a></h2>
 <p>基本的な考え方は VF ページに LightningOut という仕組みを利用して、LWC を表示すると思います。</p>
 <h2 id=lightningout-の仕組み>LightningOut の仕組み<a hidden class=anchor aria-hidden=true href=#lightningout-の仕組み>#</a></h2>
 <p><code>VF ⇒ Aura ⇒ LWC</code>というルートで LWC の内容を表示でます。<br>

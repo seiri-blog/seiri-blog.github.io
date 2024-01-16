@@ -24,14 +24,16 @@
 <meta property="og:title" content="Apexバッチの中に他のバッチを呼び出す方法">
 <meta property="og:description" content="Apexバッチとは Apexバッチは、Salesforce プラットフォーム上で大量のデータを効率的に処理するための仕組みです。バッチ処理は非同">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://seiri-blog.github.io/posts/apex-batch-call-another-batch/"><meta property="article:section" content="posts">
+<meta property="og:url" content="https://seiri-blog.github.io/posts/apex-batch-call-another-batch/">
+<meta property="og:image" content="https://seiri-blog.github.io/images/Salesforce.png"><meta property="article:section" content="posts">
 <meta property="article:published_time" content="2023-11-28T09:48:53+09:00">
 <meta property="article:modified_time" content="2023-11-28T09:48:53+09:00"><meta property="og:site_name" content="Seiri's Blog">
-<meta name=twitter:card content="summary">
+<meta name=twitter:card content="summary_large_image">
+<meta name=twitter:image content="https://seiri-blog.github.io/images/Salesforce.png">
 <meta name=twitter:title content="Apexバッチの中に他のバッチを呼び出す方法">
 <meta name=twitter:description content="Apexバッチとは Apexバッチは、Salesforce プラットフォーム上で大量のデータを効率的に処理するための仕組みです。バッチ処理は非同">
 <script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://seiri-blog.github.io/posts/"},{"@type":"ListItem","position":2,"name":"Apexバッチの中に他のバッチを呼び出す方法","item":"https://seiri-blog.github.io/posts/apex-batch-call-another-batch/"}]}</script>
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"Apexバッチの中に他のバッチを呼び出す方法","name":"Apexバッチの中に他のバッチを呼び出す方法","description":"Apexバッチとは Apexバッチは、Salesforce プラットフォーム上で大量のデータを効率的に処理するための仕組みです。バッチ処理は非同","keywords":["Salesforce","ApexBatch"],"articleBody":"Apexバッチとは Apexバッチは、Salesforce プラットフォーム上で大量のデータを効率的に処理するための仕組みです。バッチ処理は非同期で実行され、大規模なデータセットに対して操作を行うことができます。Apexバッチは Database.Batchable インターフェースを実装することで定義されます。\n以下は、Apexバッチの主な構成要素や特徴です：\n  Database.Batchable インターフェース:\n Apexバッチは、Database.Batchable インターフェースを実装します。このインターフェースには、start、execute、finish の 3 つのメソッドが含まれています。  global class MyBatchClass implements Database.BatchablesObject { global Database.QueryLocator start(Database.BatchableContext BC) { // バッチ処理の開始前に実行される処理  // ...  } global void execute(Database.BatchableContext BC, ListsObject scope) { // バッチ処理のメインロジック  // ...  } global void finish(Database.BatchableContext BC) { // バッチ処理の終了時に実行される処理  // ...  } }   start メソッド:\n バッチ処理の最初に一度だけ呼び出され、処理の準備などを行います。このメソッドは Database.QueryLocator を返す必要があります。 Database.QueryLocatorで取得可能なレコード数の上限が5000万件にまで拡張されます。    execute メソッド:\n バッチ処理のメインロジックを記述するメソッドです。データセットを受け取り、それに対して処理を行います。このメソッドが実行されるごとに新しいトランザクションが開始されます。    finish メソッド:\n バッチ処理が完了した際に一度だけ呼び出され、後処理などを行います。通常、ログの出力やレポートの生成などがここで行われます。    Apexバッチの中に他のバッチを呼び出す方法 Apexバッチから別のバッチを呼び出すには、finish メソッド内しか呼び出すことができませんので、\nfinish メソッド内で Database.executeBatch を使用して、別のバッチを実行できます。\nglobal class MyBatchClass implements Database.BatchablesObject { global Database.QueryLocator start(Database.BatchableContext BC) { // バッチ処理の開始  // ...  } global void execute(Database.BatchableContext BC, ListsObject scope) { // バッチ処理の実行  // ...  } global void finish(Database.BatchableContext BC) { // バッチ処理の終了  // ...  // 別のバッチを非同期に実行  AnotherBatchClass anotherBatch = new AnotherBatchClass(); Database.executeBatch(anotherBatch); } } ","wordCount":"790","inLanguage":"ja","datePublished":"2023-11-28T09:48:53+09:00","dateModified":"2023-11-28T09:48:53+09:00","author":{"@type":"Person","name":"Seiri"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://seiri-blog.github.io/posts/apex-batch-call-another-batch/"},"publisher":{"@type":"Organization","name":"Seiri's Blog","logo":{"@type":"ImageObject","url":"https://seiri-blog.github.io/favicon.ico"}}}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"Apexバッチの中に他のバッチを呼び出す方法","name":"Apexバッチの中に他のバッチを呼び出す方法","description":"Apexバッチとは Apexバッチは、Salesforce プラットフォーム上で大量のデータを効率的に処理するための仕組みです。バッチ処理は非同","keywords":["Salesforce","ApexBatch"],"articleBody":"Apexバッチとは Apexバッチは、Salesforce プラットフォーム上で大量のデータを効率的に処理するための仕組みです。バッチ処理は非同期で実行され、大規模なデータセットに対して操作を行うことができます。Apexバッチは Database.Batchable インターフェースを実装することで定義されます。\n以下は、Apexバッチの主な構成要素や特徴です：\n  Database.Batchable インターフェース:\n Apexバッチは、Database.Batchable インターフェースを実装します。このインターフェースには、start、execute、finish の 3 つのメソッドが含まれています。  global class MyBatchClass implements Database.BatchablesObject { global Database.QueryLocator start(Database.BatchableContext BC) { // バッチ処理の開始前に実行される処理  // ...  } global void execute(Database.BatchableContext BC, ListsObject scope) { // バッチ処理のメインロジック  // ...  } global void finish(Database.BatchableContext BC) { // バッチ処理の終了時に実行される処理  // ...  } }   start メソッド:\n バッチ処理の最初に一度だけ呼び出され、処理の準備などを行います。このメソッドは Database.QueryLocator を返す必要があります。 Database.QueryLocatorで取得可能なレコード数の上限が5000万件にまで拡張されます。    execute メソッド:\n バッチ処理のメインロジックを記述するメソッドです。データセットを受け取り、それに対して処理を行います。このメソッドが実行されるごとに新しいトランザクションが開始されます。    finish メソッド:\n バッチ処理が完了した際に一度だけ呼び出され、後処理などを行います。通常、ログの出力やレポートの生成などがここで行われます。    Apexバッチの中に他のバッチを呼び出す方法 Apexバッチから別のバッチを呼び出すには、finish メソッド内しか呼び出すことができませんので、\nfinish メソッド内で Database.executeBatch を使用して、別のバッチを実行できます。\nglobal class MyBatchClass implements Database.BatchablesObject { global Database.QueryLocator start(Database.BatchableContext BC) { // バッチ処理の開始  // ...  } global void execute(Database.BatchableContext BC, ListsObject scope) { // バッチ処理の実行  // ...  } global void finish(Database.BatchableContext BC) { // バッチ処理の終了  // ...  // 別のバッチを非同期に実行  AnotherBatchClass anotherBatch = new AnotherBatchClass(); Database.executeBatch(anotherBatch); } } ","wordCount":"790","inLanguage":"ja","image":"https://seiri-blog.github.io/images/Salesforce.png","datePublished":"2023-11-28T09:48:53+09:00","dateModified":"2023-11-28T09:48:53+09:00","author":{"@type":"Person","name":"Seiri"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://seiri-blog.github.io/posts/apex-batch-call-another-batch/"},"publisher":{"@type":"Organization","name":"Seiri's Blog","logo":{"@type":"ImageObject","url":"https://seiri-blog.github.io/favicon.ico"}}}</script>
 </head>
 <body id=top>
 <script>localStorage.getItem("pref-theme")==="dark"&&document.body.classList.add('dark')</script>
@@ -81,11 +83,6 @@
 <span>Trailhead Superbadge</span>&nbsp;<svg fill="none" shape-rendering="geometricPrecision" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24" height="12" width="12"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg>
 </a>
 </li>
-<li>
-<a href=https://fc-game.github.io title="FC Games">
-<span>FC Games</span>&nbsp;<svg fill="none" shape-rendering="geometricPrecision" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24" height="12" width="12"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg>
-</a>
-</li>
 </ul>
 </nav>
 </header>
@@ -103,6 +100,8 @@ Apexバッチの中に他のバッチを呼び出す方法
 <div class=post-meta><span title="2023-11-28 09:48:53 +0900 +0900">2023年11月28日</span>&nbsp;·&nbsp;2 分&nbsp;·&nbsp;790 文字&nbsp;·&nbsp;Seiri
 </div>
 </header>
+<figure class=entry-cover><img loading=lazy src=https://seiri-blog.github.io/images/Salesforce.png alt=Apexバッチの中に他のバッチを呼び出す方法>
+</figure>
 <div class=share-area>
 <ul>
 <li class=facebook>
@@ -142,8 +141,7 @@ B!
 <ins class=adsbygoogle style=display:inline-block;width:728px;height:90px data-ad-client=ca-pub-4988552421895566 data-ad-slot=7460187386></ins>
 <script>(adsbygoogle=window.adsbygoogle||[]).push({})</script>
 </div>
-<div class=post-content><img alt=Apexバッチの中に他のバッチを呼び出す方法 src=/images/Salesforce.png>
-<h2 id=apexバッチとは>Apexバッチとは<a hidden class=anchor aria-hidden=true href=#apexバッチとは>#</a></h2>
+<div class=post-content><h2 id=apexバッチとは>Apexバッチとは<a hidden class=anchor aria-hidden=true href=#apexバッチとは>#</a></h2>
 <p>Apexバッチは、Salesforce プラットフォーム上で大量のデータを効率的に処理するための仕組みです。バッチ処理は非同期で実行され、大規模なデータセットに対して操作を行うことができます。Apexバッチは <code>Database.Batchable</code> インターフェースを実装することで定義されます。</p>
 <p>以下は、Apexバッチの主な構成要素や特徴です：</p>
 <ol>

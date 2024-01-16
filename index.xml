@@ -9,10 +9,10 @@
     <lastBuildDate>Tue, 26 Dec 2023 12:04:33 +0900</lastBuildDate><atom:link href="https://seiri-blog.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>PythonでRetry Request Utilityを作成する方法</title>
-      <link>https://seiri-blog.github.io/posts/python_retry_request/</link>
+      <link>https://seiri-blog.github.io/posts/python-retry-request/</link>
       <pubDate>Tue, 26 Dec 2023 12:04:33 +0900</pubDate>
       
-      <guid>https://seiri-blog.github.io/posts/python_retry_request/</guid>
+      <guid>https://seiri-blog.github.io/posts/python-retry-request/</guid>
       <description>はじめに Python を使用して API リクエストを行う際、アプリケーションの信頼性はネットワークの問題やサーバーエラーによって挑戦されることがあります。本記</description>
     </item>
     
