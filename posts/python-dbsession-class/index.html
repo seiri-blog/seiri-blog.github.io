@@ -31,7 +31,7 @@
 <meta name=twitter:title content="PythonでのDBSessionクラス">
 <meta name=twitter:description content="SQLAlchemy とは SQLAlchemy とは、python の中では最もよく利用されている ORM の一つです。 ORM 以外にも以下の機能を持ちます。 1.データベースへの接続、SQL の実行">
 <script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://seiri-blog.github.io/posts/"},{"@type":"ListItem","position":2,"name":"PythonでのDBSessionクラス","item":"https://seiri-blog.github.io/posts/python-dbsession-class/"}]}</script>
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"PythonでのDBSessionクラス","name":"PythonでのDBSessionクラス","description":"SQLAlchemy とは SQLAlchemy とは、python の中では最もよく利用されている ORM の一つです。 ORM 以外にも以下の機能を持ちます。 1.データベースへの接続、SQL の実行","keywords":["python","sqlalchemy","python3"],"articleBody":"SQLAlchemy とは SQLAlchemy とは、python の中では最もよく利用されている ORM の一つです。\nORM 以外にも以下の機能を持ちます。\n 1.データベースへの接続、SQL の実行 2.メタデータ\n3.SQL Expression Language\n4.ORM\n SQLAlchemy は様々なデータベースに対して接続して SQL を実行することができます。\nサポートする DBMS は以下のとおりです。有名どころは大抵利用可能です。\n 1.Firebird\n2.Microsoft SQL Server\n3.MySQL\n4.Oracle\n5.PostgreSQL\n6.SQLite\n7.Sybase\n 環境 Windows 10\npython 3.8.10\nSQLAlchemy のインストール pip install sqlalchemy\n実装 from sqlalchemy import create_engine, event as sqlalchemy_event from sqlalchemy.orm import sessionmaker, make_transient def db_engine(): \"\"\"DBセッション生成するクラスを取得する(非公開) データベースエンジンの設定情報を取得する Returns: データベースエンジンの設定情報 \"\"\" # データベース名はSecretsManagerから取得前提 return create_engine( f'postgresql://{username}:{password}@{host}:{port}/{dbname}', encoding='utf-8', echo=LOG_LEVEL == 'DEBUG', # ログレベルがDEBUGの場合、発行するSQLをログ出力する ) def _session_cls(): \"\"\"DBセッション生成するクラスを取得する(非公開) データベースエンジンの設定情報を取得する Returns: データベースエンジンの設定情報 \"\"\" return sessionmaker( autocommit=False, autoflush=True, bind=db_engine(), ) class DBSession: \"\"\"DB接続クラス 使い方)正常終了時はCommit,例外発生時はRollbackを実施する with DBSession() as new_session: new_session.query().... 使い方)Modelを定義する場合(検索) with DBSession() as new_session: for model_object in new_session.query(ModelName).order_by(ModelName.field_name): xxxx(model_object) 使い方)生のSQLを利用する場合(検索) from sqlalchemy import text stmt = text('SELECT * FROM TableName WHERE xxxx = :name ORDER BY field_name').columns(yyyy, zzzz) with DBSession() as new_session: for model_object in new_session.query(ModelName).from_statement(stmt).params(name='hoge').all(): xxxx(model_object) Args: for_update: 検索したオブジェクトに対して更新（削除）を実施するかどうかのフラグ（デフォルト：False） Attributes: session:DBセッション \"\"\" def __init__(self, for_update=False): self.session = _session_cls()() if not for_update: # セッションにオブジェクトロード時（検索）のイベント処理を追加 @sqlalchemy_event.listens_for(self.session, 'loaded_as_persistent') def _object_make_transient(session, obj): # オブジェクトの永続性を初期化する make_transient(obj) def __enter__(self): return self.session def __exit__(self, exc_type, exc_val, exc_tb): if exc_type is None and exc_val is None and exc_tb is None: self.commit() else: self.rollback() def commit(self): self.session.commit() def rollback(self): self.session.rollback() 参考文献 https://knowstechnic.blogspot.com/2022/12/sqlalchemydbsession.html\nhttps://docs.sqlalchemy.org/en/14/orm/events.html\n","wordCount":"720","inLanguage":"ja","datePublished":"2021-12-23T12:38:42+09:00","dateModified":"2021-12-23T12:38:42+09:00","author":{"@type":"Person","name":"Seiri"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://seiri-blog.github.io/posts/python-dbsession-class/"},"publisher":{"@type":"Organization","name":"Seiri's Blog","logo":{"@type":"ImageObject","url":"https://seiri-blog.github.io/favicon.ico"}}}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"PythonでのDBSessionクラス","name":"PythonでのDBSessionクラス","description":"SQLAlchemy とは SQLAlchemy とは、python の中では最もよく利用されている ORM の一つです。 ORM 以外にも以下の機能を持ちます。 1.データベースへの接続、SQL の実行","keywords":["python","sqlalchemy","python3"],"articleBody":"SQLAlchemy とは SQLAlchemy とは、python の中では最もよく利用されている ORM の一つです。\nORM 以外にも以下の機能を持ちます。\n 1.データベースへの接続、SQL の実行 2.メタデータ\n3.SQL Expression Language\n4.ORM\n SQLAlchemy は様々なデータベースに対して接続して SQL を実行することができます。\nサポートする DBMS は以下のとおりです。有名どころは大抵利用可能です。\n 1.Firebird\n2.Microsoft SQL Server\n3.MySQL\n4.Oracle\n5.PostgreSQL\n6.SQLite\n7.Sybase\n 環境 Windows 10\npython 3.8.10\nSQLAlchemy のインストール pip install sqlalchemy\n実装 from sqlalchemy import create_engine, event as sqlalchemy_event from sqlalchemy.orm import sessionmaker, make_transient def db_engine(): \"\"\"DBセッション生成するクラスを取得する(非公開) データベースエンジンの設定情報を取得する Returns: データベースエンジンの設定情報 \"\"\" # データベース名はSecretsManagerから取得前提 return create_engine( f'postgresql://{username}:{password}@{host}:{port}/{dbname}', encoding='utf-8', echo=LOG_LEVEL == 'DEBUG', # ログレベルがDEBUGの場合、発行するSQLをログ出力する ) def _session_cls(): \"\"\"DBセッション生成するクラスを取得する(非公開) データベースエンジンの設定情報を取得する Returns: データベースエンジンの設定情報 \"\"\" return sessionmaker( autocommit=False, autoflush=True, bind=db_engine(), ) class DBSession: \"\"\"DB接続クラス 使い方)正常終了時はCommit,例外発生時はRollbackを実施する with DBSession() as new_session: new_session.query().... 使い方)Modelを定義する場合(検索) with DBSession() as new_session: for model_object in new_session.query(ModelName).order_by(ModelName.field_name): xxxx(model_object) 使い方)生のSQLを利用する場合(検索) from sqlalchemy import text stmt = text('SELECT * FROM TableName WHERE xxxx = :name ORDER BY field_name').columns(yyyy, zzzz) with DBSession() as new_session: for model_object in new_session.query(ModelName).from_statement(stmt).params(name='hoge').all(): xxxx(model_object) Args: for_update: 検索したオブジェクトに対して更新（削除）を実施するかどうかのフラグ（デフォルト：False） Attributes: session:DBセッション \"\"\" def __init__(self, for_update=False): self.session = _session_cls()() if not for_update: # セッションにオブジェクトロード時（検索）のイベント処理を追加 @sqlalchemy_event.listens_for(self.session, 'loaded_as_persistent') def _object_make_transient(session, obj): # オブジェクトの永続性を初期化する make_transient(obj) def __enter__(self): return self.session def __exit__(self, exc_type, exc_val, exc_tb): if exc_type is None and exc_val is None and exc_tb is None: self.commit() else: self.rollback() def commit(self): self.session.commit() def rollback(self): self.session.rollback() 参考文献  knowstechnic.blogspot.com    ORM Events — SQLAlchemy 1.4 Documentation   docs.sqlalchemy.org    ","wordCount":"726","inLanguage":"ja","datePublished":"2021-12-23T12:38:42+09:00","dateModified":"2021-12-23T12:38:42+09:00","author":{"@type":"Person","name":"Seiri"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://seiri-blog.github.io/posts/python-dbsession-class/"},"publisher":{"@type":"Organization","name":"Seiri's Blog","logo":{"@type":"ImageObject","url":"https://seiri-blog.github.io/favicon.ico"}}}</script>
 </head>
 <body id=top>
 <script>localStorage.getItem("pref-theme")==="dark"&&document.body.classList.add('dark')</script>
@@ -96,7 +96,7 @@ PythonでのDBSessionクラス
 <li><a href=https://seiri-blog.github.io/tags/sqlalchemy/>sqlalchemy</a></li>
 <li><a href=https://seiri-blog.github.io/tags/python3/>python3</a></li>
 </ul>
-<div class=post-meta><span title="2021-12-23 12:38:42 +0900 +0900">2021年12月23日</span>&nbsp;·&nbsp;2 分&nbsp;·&nbsp;720 文字&nbsp;·&nbsp;Seiri
+<div class=post-meta><span title="2021-12-23 12:38:42 +0900 +0900">2021年12月23日</span>&nbsp;·&nbsp;2 分&nbsp;·&nbsp;726 文字&nbsp;·&nbsp;Seiri
 </div>
 </header>
 <div class=share-area>
@@ -246,8 +246,29 @@ ORM 以外にも以下の機能を持ちます。</p>
     <span style=color:#66d9ef>def</span> <span style=color:#a6e22e>rollback</span>(self):
         self<span style=color:#f92672>.</span>session<span style=color:#f92672>.</span>rollback()
 </code></pre></div><h2 id=参考文献>参考文献<a hidden class=anchor aria-hidden=true href=#参考文献>#</a></h2>
-<p><a href=https://knowstechnic.blogspot.com/2022/12/sqlalchemydbsession.html>https://knowstechnic.blogspot.com/2022/12/sqlalchemydbsession.html</a></p>
-<p><a href=https://docs.sqlalchemy.org/en/14/orm/events.html>https://docs.sqlalchemy.org/en/14/orm/events.html</a></p>
+<a href=https://knowstechnic.blogspot.com/2022/12/sqlalchemydbsession.html target=_blank>
+<div class=link-card>
+<div class=link-card-title></div>
+<div class=link-card-hostname>
+<span>knowstechnic.blogspot.com</span>
+</div>
+</div>
+</a>
+<a href=https://docs.sqlalchemy.org/en/14/orm/events.html target=_blank>
+<div class=link-card>
+<div class=link-card-title>
+ORM Events
+—
+SQLAlchemy 1.4 Documentation
+</div>
+<div class=link-card-hostname>
+<div class=link-card-hostname-img>
+<img alt=icon src=https://docs.sqlalchemy.org//www.sqlalchemy.org/favicon.ico>
+</div>
+<span>docs.sqlalchemy.org</span>
+</div>
+</div>
+</a>
 </div>
 <div class=share-area>
 <ul>

@@ -90,6 +90,17 @@
 </div>
 <article class=post-entry>
 <header class=entry-header>
+<h2>JSでのURLパラメータ取得
+</h2>
+</header>
+<div class=entry-content>
+<p>実装例 /** * パラーメタの取得 * @param {string} name パラメータ名 * @param {string} url URL * @returns {string} 取得パラメータ */ export const getParam = (name, url) => { if (!url) url = window.location.href; name = name.replace(/[\[\]]/g, '\\$&'); let regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'), results = regex.exec(url); if (!results)...</p>
+</div>
+<footer class=entry-footer><span title="2021-12-24 15:06:16 +0900 +0900">2021年12月24日</span>&nbsp;·&nbsp;1 分&nbsp;·&nbsp;114 文字&nbsp;·&nbsp;Seiri</footer>
+<a class=entry-link aria-label="post link to JSでのURLパラメータ取得" href=https://seiri-blog.github.io/posts/js-get-url-parameter/></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
 <h2>JSでのファイルサイズ変換関数
 </h2>
 </header>
@@ -107,7 +118,7 @@
 <div class=entry-content>
 <p>実装例 def padding_formatter(item, padding, data_type): """ 引数で指定された桁数までデータを埋める 埋める内容は以下の通り ・データ型[numeric: 数字] 先頭0埋め ・データ型[half...</p>
 </div>
-<footer class=entry-footer><span title="2021-12-23 12:51:07 +0900 +0900">2021年12月23日</span>&nbsp;·&nbsp;1 分&nbsp;·&nbsp;223 文字&nbsp;·&nbsp;Seiri</footer>
+<footer class=entry-footer><span title="2021-12-23 12:51:07 +0900 +0900">2021年12月23日</span>&nbsp;·&nbsp;1 分&nbsp;·&nbsp;277 文字&nbsp;·&nbsp;Seiri</footer>
 <a class=entry-link aria-label="post link to Pythonでのデータ埋める方法" href=https://seiri-blog.github.io/posts/python-fill-data/></a>
 </article>
 <article class=post-entry>
@@ -118,7 +129,7 @@
 <div class=entry-content>
 <p>SQLAlchemy とは SQLAlchemy とは、python の中では最もよく利用されている ORM の一つです。 ORM 以外にも以下の機能を持ちます。 1.データベースへの接続、SQL の実行...</p>
 </div>
-<footer class=entry-footer><span title="2021-12-23 12:38:42 +0900 +0900">2021年12月23日</span>&nbsp;·&nbsp;2 分&nbsp;·&nbsp;720 文字&nbsp;·&nbsp;Seiri</footer>
+<footer class=entry-footer><span title="2021-12-23 12:38:42 +0900 +0900">2021年12月23日</span>&nbsp;·&nbsp;2 分&nbsp;·&nbsp;726 文字&nbsp;·&nbsp;Seiri</footer>
 <a class=entry-link aria-label="post link to PythonでのDBSessionクラス" href=https://seiri-blog.github.io/posts/python-dbsession-class/></a>
 </article>
 <article class=post-entry>
@@ -140,7 +151,7 @@
 <div class=entry-content>
 <p>1.説明 セッションストレージとロカールストレージ Util の作成方法を共有します。 2.ソース /** * セッション */ export const session = { /** * セッションストレージ設定 *...</p>
 </div>
-<footer class=entry-footer><span title="2021-12-21 18:33:46 +0900 +0900">2021年12月21日</span>&nbsp;·&nbsp;2 分&nbsp;·&nbsp;551 文字&nbsp;·&nbsp;Seiri</footer>
+<footer class=entry-footer><span title="2021-12-21 18:33:46 +0900 +0900">2021年12月21日</span>&nbsp;·&nbsp;2 分&nbsp;·&nbsp;575 文字&nbsp;·&nbsp;Seiri</footer>
 <a class=entry-link aria-label="post link to JSでのストレージUtil作成" href=https://seiri-blog.github.io/posts/js-storage-util/></a>
 </article>
 <article class=post-entry>
@@ -245,7 +256,7 @@
 <div class=entry-content>
 <p>署名付き URL の説明 署名付き URL は、AWS S3（Simple Storage Service）のリソースに対して一時的なアクセス許可を付与するための URL です。通常、...</p>
 </div>
-<footer class=entry-footer><span title="2021-11-22 16:48:56 +0900 +0900">2021年11月22日</span>&nbsp;·&nbsp;5 分&nbsp;·&nbsp;2125 文字&nbsp;·&nbsp;Seiri</footer>
+<footer class=entry-footer><span title="2021-11-22 16:48:56 +0900 +0900">2021年11月22日</span>&nbsp;·&nbsp;5 分&nbsp;·&nbsp;2164 文字&nbsp;·&nbsp;Seiri</footer>
 <a class=entry-link aria-label="post link to ApexでAWS S3署名付きURL発行" href=https://seiri-blog.github.io/posts/apex-create-aws-s3-sign-with-url/></a>
 </article>
 <article class=post-entry>
@@ -256,7 +267,7 @@
 <div class=entry-content>
 <p>作成方法 Apex REST API コールアウトユーティリティ（Apex REST API Callouts Utility）を作成するには、以下の手順を参考にしてください。 Apex クラスの作成: 新し...</p>
 </div>
-<footer class=entry-footer><span title="2021-11-22 16:41:02 +0900 +0900">2021年11月22日</span>&nbsp;·&nbsp;3 分&nbsp;·&nbsp;1040 文字&nbsp;·&nbsp;Seiri</footer>
+<footer class=entry-footer><span title="2021-11-22 16:41:02 +0900 +0900">2021年11月22日</span>&nbsp;·&nbsp;3 分&nbsp;·&nbsp;1057 文字&nbsp;·&nbsp;Seiri</footer>
 <a class=entry-link aria-label="post link to Apex REST API コールアウトユーティリティ" href=https://seiri-blog.github.io/posts/apex-rest-api-callouts-util-creation/></a>
 </article>
 <article class=post-entry>
@@ -269,7 +280,7 @@
 <div class=entry-content>
 <p>目的 LWC でのファイルダウンロード方法を共有します。 ソース構成図 force-app └─main └─default ├─classes │ ├─GetFileDemoC...</p>
 </div>
-<footer class=entry-footer><span title="2021-08-02 18:36:58 +0900 +0900">2021年8月2日</span>&nbsp;·&nbsp;2 分&nbsp;·&nbsp;844 文字&nbsp;·&nbsp;Seiri</footer>
+<footer class=entry-footer><span title="2021-08-02 18:36:58 +0900 +0900">2021年8月2日</span>&nbsp;·&nbsp;2 分&nbsp;·&nbsp;863 文字&nbsp;·&nbsp;Seiri</footer>
 <a class=entry-link aria-label="post link to LWCでのファイルダウンロード" href=https://seiri-blog.github.io/posts/file-download-in-lwc/></a>
 </article>
 <article class=post-entry>
@@ -282,7 +293,7 @@
 <div class=entry-content>
 <p>目的 今回 Classic モードで Visualforce に LWC のでファイル一括ダウンロードする方法を共有します。 前提 jszip.js を静的リソースにアップロードする ソース構成図 force-app └─main └...</p>
 </div>
-<footer class=entry-footer><span title="2021-08-02 10:57:14 +0900 +0900">2021年8月2日</span>&nbsp;·&nbsp;4 分&nbsp;·&nbsp;1789 文字&nbsp;·&nbsp;Seiri</footer>
+<footer class=entry-footer><span title="2021-08-02 10:57:14 +0900 +0900">2021年8月2日</span>&nbsp;·&nbsp;4 分&nbsp;·&nbsp;1814 文字&nbsp;·&nbsp;Seiri</footer>
 <a class=entry-link aria-label="post link to LWCでのファイル一括ダウンロード方法" href=https://seiri-blog.github.io/posts/lwc-file-bulk-download/></a>
 </article>
 <article class=post-entry>
@@ -310,19 +321,6 @@
 </div>
 <footer class=entry-footer><span title="2021-07-28 14:42:39 +0900 +0900">2021年7月28日</span>&nbsp;·&nbsp;2 分&nbsp;·&nbsp;572 文字&nbsp;·&nbsp;Seiri</footer>
 <a class=entry-link aria-label="post link to 【Salesforce】VFページにLWCを表示する方法" href=https://seiri-blog.github.io/posts/salesforce-vfpage-display-lwc/></a>
-</article>
-<article class=post-entry>
-<figure class=entry-cover><img loading=lazy src=https://seiri-blog.github.io/images/Salesforce.png alt="LWCでAWS S3と連携する方法">
-</figure>
-<header class=entry-header>
-<h2>LWCでAWS S3と連携する方法
-</h2>
-</header>
-<div class=entry-content>
-<p>1.目的 今回 LWC 中に AWS の SDK for javascript で S3 と連携する方法を共有します。 2.前提 2.1.AWS S3 バケット Cross-Origin Resource Sharing (CORS)の設定 [ { "AllowedHeaders": ["*"], "AllowedMethods": ["HEAD", "GET", "PUT", "POST", "DELETE"], "AllowedOrigins": ["*"], "ExposeHeaders": ["ETag"] } ] 2.2.Salesforce 側...</p>
-</div>
-<footer class=entry-footer><span title="2021-07-28 13:02:56 +0900 +0900">2021年7月28日</span>&nbsp;·&nbsp;6 分&nbsp;·&nbsp;2592 文字&nbsp;·&nbsp;Seiri</footer>
-<a class=entry-link aria-label="post link to LWCでAWS S3と連携する方法" href=https://seiri-blog.github.io/posts/lwc-by-aws-3-and-operation/></a>
 </article>
 <div style="display:flex;justify-content:center;margin:.5em auto">
 <ins class=adsbygoogle style=display:inline-block;width:728px;height:90px data-ad-client=ca-pub-4988552421895566 data-ad-slot=8581697363></ins>

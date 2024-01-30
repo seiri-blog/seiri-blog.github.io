@@ -31,7 +31,7 @@
 <meta name=twitter:title content="JSでのURLパラメータ取得">
 <meta name=twitter:description content="実装例 /** * パラーメタの取得 * @param {string} name パラメータ名 * @param {string} url URL * @returns {string} 取得パラメータ */ export const getParam = (name, url) => { if (!url) url = window.location.href; name = name.replace(/[\[\]]/g, '\\$&'); let regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'), results = regex.exec(url); if (!results)">
 <script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://seiri-blog.github.io/posts/"},{"@type":"ListItem","position":2,"name":"JSでのURLパラメータ取得","item":"https://seiri-blog.github.io/posts/js-get-url-parameter/"}]}</script>
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"JSでのURLパラメータ取得","name":"JSでのURLパラメータ取得","description":"実装例 /** * パラーメタの取得 * @param {string} name パラメータ名 * @param {string} url URL * @returns {string} 取得パラメータ */ export const getParam = (name, url) =\u0026gt; { if (!url) url = window.location.href; name = name.replace(/[\\[\\]]/g, \u0026#39;\\\\$\u0026amp;\u0026#39;); let regex = new RegExp(\u0026#39;[?\u0026amp;]\u0026#39; + name + \u0026#39;(=([^\u0026amp;#]*)|\u0026amp;|#|$)\u0026#39;), results = regex.exec(url); if (!results)","keywords":["javascript"],"articleBody":"実装例 /** * パラーメタの取得 * @param {string} name パラメータ名 * @param {string} url URL * @returns {string} 取得パラメータ */ export const getParam = (name, url) = { if (!url) url = window.location.href; name = name.replace(/[\\[\\]]/g, '\\\\$\u0026'); let regex = new RegExp('[?\u0026]' + name + '(=([^\u0026#]*)|\u0026|#|$)'), results = regex.exec(url); if (!results) return null; if (!results[2]) return ''; return decodeURIComponent(results[2].replace(/\\+/g, ' ')); } #　参考文献\nhttps://www-creators.com/archives/4463\n","wordCount":"87","inLanguage":"ja","datePublished":"2021-12-24T15:06:16+09:00","dateModified":"2021-12-24T15:06:16+09:00","author":{"@type":"Person","name":"Seiri"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://seiri-blog.github.io/posts/js-get-url-parameter/"},"publisher":{"@type":"Organization","name":"Seiri's Blog","logo":{"@type":"ImageObject","url":"https://seiri-blog.github.io/favicon.ico"}}}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"JSでのURLパラメータ取得","name":"JSでのURLパラメータ取得","description":"実装例 /** * パラーメタの取得 * @param {string} name パラメータ名 * @param {string} url URL * @returns {string} 取得パラメータ */ export const getParam = (name, url) =\u0026gt; { if (!url) url = window.location.href; name = name.replace(/[\\[\\]]/g, \u0026#39;\\\\$\u0026amp;\u0026#39;); let regex = new RegExp(\u0026#39;[?\u0026amp;]\u0026#39; + name + \u0026#39;(=([^\u0026amp;#]*)|\u0026amp;|#|$)\u0026#39;), results = regex.exec(url); if (!results)","keywords":["javascript"],"articleBody":"実装例 /** * パラーメタの取得 * @param {string} name パラメータ名 * @param {string} url URL * @returns {string} 取得パラメータ */ export const getParam = (name, url) = { if (!url) url = window.location.href; name = name.replace(/[\\[\\]]/g, '\\\\$\u0026'); let regex = new RegExp('[?\u0026]' + name + '(=([^\u0026#]*)|\u0026|#|$)'), results = regex.exec(url); if (!results) return null; if (!results[2]) return ''; return decodeURIComponent(results[2].replace(/\\+/g, ' ')); } #　参考\nJavascript でURLのパラメータを取得する方法 | WWWクリエイターズ  www-creators.com    ","wordCount":"114","inLanguage":"ja","datePublished":"2021-12-24T15:06:16+09:00","dateModified":"2021-12-24T15:06:16+09:00","author":{"@type":"Person","name":"Seiri"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://seiri-blog.github.io/posts/js-get-url-parameter/"},"publisher":{"@type":"Organization","name":"Seiri's Blog","logo":{"@type":"ImageObject","url":"https://seiri-blog.github.io/favicon.ico"}}}</script>
 </head>
 <body id=top>
 <script>localStorage.getItem("pref-theme")==="dark"&&document.body.classList.add('dark')</script>
@@ -94,7 +94,7 @@ JSでのURLパラメータ取得
 <ul class=post-tags>
 <li><a href=https://seiri-blog.github.io/tags/javascript/>javascript</a></li>
 </ul>
-<div class=post-meta><span title="2021-12-24 15:06:16 +0900 +0900">2021年12月24日</span>&nbsp;·&nbsp;1 分&nbsp;·&nbsp;87 文字&nbsp;·&nbsp;Seiri
+<div class=post-meta><span title="2021-12-24 15:06:16 +0900 +0900">2021年12月24日</span>&nbsp;·&nbsp;1 分&nbsp;·&nbsp;114 文字&nbsp;·&nbsp;Seiri
 </div>
 </header>
 <div class=share-area>
@@ -151,8 +151,18 @@ B!
     <span style=color:#66d9ef>return</span> decodeURIComponent(<span style=color:#a6e22e>results</span>[<span style=color:#ae81ff>2</span>].<span style=color:#a6e22e>replace</span>(<span style=color:#e6db74>/\+/g</span>, <span style=color:#e6db74>&#39; &#39;</span>));
 }
 
-</code></pre></div><p>#　参考文献<br>
-<a href=https://www-creators.com/archives/4463>https://www-creators.com/archives/4463</a></p>
+</code></pre></div><p>#　参考</p>
+<a href=https://www-creators.com/archives/4463 target=_blank>
+<div class=link-card>
+<div class=link-card-title>Javascript でURLのパラメータを取得する方法 | WWWクリエイターズ</div>
+<div class=link-card-hostname>
+<div class=link-card-hostname-img>
+<img alt=icon src="https://www-creators.com/wp-content/themes/www-creators/img/favicon.png?ver=3">
+</div>
+<span>www-creators.com</span>
+</div>
+</div>
+</a>
 </div>
 <div class=share-area>
 <ul>

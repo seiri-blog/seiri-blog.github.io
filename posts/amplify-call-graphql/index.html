@@ -33,7 +33,7 @@
 <meta name=twitter:title content="AmplifyでGraphQLを呼出す方法">
 <meta name=twitter:description content="準備 1.amplify add apiコマンドで、GraphQL API を追加する amplify add api ? Please select from one of the below mentioned services: > GraphQL ? Here is the GraphQL API that we will create. Select a setting to edit or continue: > Continue ? Choose a schema template: > Single object with fields">
 <script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://seiri-blog.github.io/posts/"},{"@type":"ListItem","position":2,"name":"AmplifyでGraphQLを呼出す方法","item":"https://seiri-blog.github.io/posts/amplify-call-graphql/"}]}</script>
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"AmplifyでGraphQLを呼出す方法","name":"AmplifyでGraphQLを呼出す方法","description":"準備 1.amplify add apiコマンドで、GraphQL API を追加する amplify add api ? Please select from one of the below mentioned services: \u0026gt; GraphQL ? Here is the GraphQL API that we will create. Select a setting to edit or continue: \u0026gt; Continue ? Choose a schema template: \u0026gt; Single object with fields","keywords":["javascript","AWS","React","GraphQL","amplify"],"articleBody":"準備 1.amplify add apiコマンドで、GraphQL API を追加する\namplify add api ? Please select from one of the below mentioned services:  GraphQL ? Here is the GraphQL API that we will create. Select a setting to edit or continue:  Continue ? Choose a schema template:  Single object with fields (e.g., “Todo” with ID, name, description) ? Do you want to edit the schema now?  Yes 2.amplify/backend/api/myapi/schema.graphqlを編集する\ntype Todo @model { id: ID! name: String! description: String } 3.amplify pushコマンドで作成した Rest API を AWS にデプロイし、\nAWS のAppSyncサービスへ反映する\namplify push ? Are you sure you want to continue? Y ? Do you want to generate code for your newly created GraphQL API? Y ? Choose the code generation language target: javascript (or your preferred language target) ? Enter the file name pattern of graphql queries, mutations and subscriptions src/graphql/**/*.js ? Do you want to generate/update all possible GraphQL operations - queries, mutations and subscriptions? Y ? Enter maximum statement depth [increase from default if your schema is deeply nested]: 2 4.amplify consoleコマンドでデプロイしたサービスを確認する\namplify console 実装 import Amplify, { API } from 'aws-amplify'; import config from \"./aws-exports\"; Amplify.configure(config); /** * GraphQL実行 * @param {string} query 作成、更新、削除、検索のGraphQL * @param {object} input 項目(設定無し可) * @returns 結果 */ export async function graphql(query, input = null) { try { if (!!input) return await API.graphql({ query, variables: { input } }); else return await API.graphql({ query }); } catch (err) { console.error('error:', err); } } 参考 https://docs.amplify.aws/lib/restapi/getting-started/q/platform/js/\nhttps://docs.amplify.aws/cli-legacy/graphql-transformer/overview/\nhttps://aws-amplify.github.io/amplify-js/api/classes/apiclass.html\n","wordCount":"411","inLanguage":"ja","image":"https://seiri-blog.github.io/images/AWS.png","datePublished":"2022-01-20T19:58:17+09:00","dateModified":"2022-01-20T19:58:17+09:00","author":{"@type":"Person","name":"Seiri"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://seiri-blog.github.io/posts/amplify-call-graphql/"},"publisher":{"@type":"Organization","name":"Seiri's Blog","logo":{"@type":"ImageObject","url":"https://seiri-blog.github.io/favicon.ico"}}}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"AmplifyでGraphQLを呼出す方法","name":"AmplifyでGraphQLを呼出す方法","description":"準備 1.amplify add apiコマンドで、GraphQL API を追加する amplify add api ? Please select from one of the below mentioned services: \u0026gt; GraphQL ? Here is the GraphQL API that we will create. Select a setting to edit or continue: \u0026gt; Continue ? Choose a schema template: \u0026gt; Single object with fields","keywords":["javascript","AWS","React","GraphQL","amplify"],"articleBody":"準備 1.amplify add apiコマンドで、GraphQL API を追加する\namplify add api ? Please select from one of the below mentioned services:  GraphQL ? Here is the GraphQL API that we will create. Select a setting to edit or continue:  Continue ? Choose a schema template:  Single object with fields (e.g., “Todo” with ID, name, description) ? Do you want to edit the schema now?  Yes 2.amplify/backend/api/myapi/schema.graphqlを編集する\ntype Todo @model { id: ID! name: String! description: String } 3.amplify pushコマンドで作成した Rest API を AWS にデプロイし、\nAWS のAppSyncサービスへ反映する\namplify push ? Are you sure you want to continue? Y ? Do you want to generate code for your newly created GraphQL API? Y ? Choose the code generation language target: javascript (or your preferred language target) ? Enter the file name pattern of graphql queries, mutations and subscriptions src/graphql/**/*.js ? Do you want to generate/update all possible GraphQL operations - queries, mutations and subscriptions? Y ? Enter maximum statement depth [increase from default if your schema is deeply nested]: 2 4.amplify consoleコマンドでデプロイしたサービスを確認する\namplify console 実装 import Amplify, { API } from 'aws-amplify'; import config from \"./aws-exports\"; Amplify.configure(config); /** * GraphQL実行 * @param {string} query 作成、更新、削除、検索のGraphQL * @param {object} input 項目(設定無し可) * @returns 結果 */ export async function graphql(query, input = null) { try { if (!!input) return await API.graphql({ query, variables: { input } }); else return await API.graphql({ query }); } catch (err) { console.error('error:', err); } } 参考 Set up Amplify REST API - JavaScript - AWS Amplify Documentation  docs.amplify.aws    Overview - JavaScript - AWS Amplify Documentation  docs.amplify.aws     aws-amplify.github.io    ","wordCount":"429","inLanguage":"ja","image":"https://seiri-blog.github.io/images/AWS.png","datePublished":"2022-01-20T19:58:17+09:00","dateModified":"2022-01-20T19:58:17+09:00","author":{"@type":"Person","name":"Seiri"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://seiri-blog.github.io/posts/amplify-call-graphql/"},"publisher":{"@type":"Organization","name":"Seiri's Blog","logo":{"@type":"ImageObject","url":"https://seiri-blog.github.io/favicon.ico"}}}</script>
 </head>
 <body id=top>
 <script>localStorage.getItem("pref-theme")==="dark"&&document.body.classList.add('dark')</script>
@@ -100,7 +100,7 @@ AmplifyでGraphQLを呼出す方法
 <li><a href=https://seiri-blog.github.io/tags/graphql/>GraphQL</a></li>
 <li><a href=https://seiri-blog.github.io/tags/amplify/>amplify</a></li>
 </ul>
-<div class=post-meta><span title="2022-01-20 19:58:17 +0900 +0900">2022年1月20日</span>&nbsp;·&nbsp;1 分&nbsp;·&nbsp;411 文字&nbsp;·&nbsp;Seiri
+<div class=post-meta><span title="2022-01-20 19:58:17 +0900 +0900">2022年1月20日</span>&nbsp;·&nbsp;1 分&nbsp;·&nbsp;429 文字&nbsp;·&nbsp;Seiri
 </div>
 </header>
 <figure class=entry-cover><img loading=lazy src=https://seiri-blog.github.io/images/AWS.png alt=AmplifyでGraphQLを呼出す方法>
@@ -201,9 +201,36 @@ B!
 
 }
 </code></pre></div><h2 id=参考>参考<a hidden class=anchor aria-hidden=true href=#参考>#</a></h2>
-<p><a href=https://docs.amplify.aws/lib/restapi/getting-started/q/platform/js/>https://docs.amplify.aws/lib/restapi/getting-started/q/platform/js/</a></p>
-<p><a href=https://docs.amplify.aws/cli-legacy/graphql-transformer/overview/>https://docs.amplify.aws/cli-legacy/graphql-transformer/overview/</a></p>
-<p><a href=https://aws-amplify.github.io/amplify-js/api/classes/apiclass.html>https://aws-amplify.github.io/amplify-js/api/classes/apiclass.html</a></p>
+<a href=https://docs.amplify.aws/lib/restapi/getting-started/q/platform/js/ target=_blank>
+<div class=link-card>
+<div class=link-card-title>Set up Amplify REST API - JavaScript - AWS Amplify Documentation</div>
+<div class=link-card-hostname>
+<div class=link-card-hostname-img>
+<img alt=icon src=https://docs.amplify.aws/assets/icon/android-icon-192x192.png>
+</div>
+<span>docs.amplify.aws</span>
+</div>
+</div>
+</a>
+<a href=https://docs.amplify.aws/cli-legacy/graphql-transformer/overview/ target=_blank>
+<div class=link-card>
+<div class=link-card-title>Overview - JavaScript - AWS Amplify Documentation</div>
+<div class=link-card-hostname>
+<div class=link-card-hostname-img>
+<img alt=icon src=https://docs.amplify.aws/assets/icon/android-icon-192x192.png>
+</div>
+<span>docs.amplify.aws</span>
+</div>
+</div>
+</a>
+<a href=https://aws-amplify.github.io/amplify-js/api/classes/apiclass.html target=_blank>
+<div class=link-card>
+<div class=link-card-title></div>
+<div class=link-card-hostname>
+<span>aws-amplify.github.io</span>
+</div>
+</div>
+</a>
 </div>
 <div class=share-area>
 <ul>

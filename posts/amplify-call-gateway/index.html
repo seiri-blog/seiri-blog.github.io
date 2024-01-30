@@ -33,7 +33,7 @@
 <meta name=twitter:title content="AmplifyでAPI Gatewayを呼出す方法">
 <meta name=twitter:description content="準備 1.amplify add apiコマンドで、Rest API を追加する amplify add api ? Please select from one of the below mentioned services GraphQL ❯ REST 2.amplify pushコマンドで作成した Rest API を AWS にデプロイし、 AWS のAPI G">
 <script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://seiri-blog.github.io/posts/"},{"@type":"ListItem","position":2,"name":"AmplifyでAPI Gatewayを呼出す方法","item":"https://seiri-blog.github.io/posts/amplify-call-gateway/"}]}</script>
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"AmplifyでAPI Gatewayを呼出す方法","name":"AmplifyでAPI Gatewayを呼出す方法","description":"準備 1.amplify add apiコマンドで、Rest API を追加する amplify add api ? Please select from one of the below mentioned services GraphQL ❯ REST 2.amplify pushコマンドで作成した Rest API を AWS にデプロイし、 AWS のAPI G","keywords":["javascript","AWS","React","amplify"],"articleBody":"準備 1.amplify add apiコマンドで、Rest API を追加する\namplify add api ? Please select from one of the below mentioned services GraphQL ❯ REST 2.amplify pushコマンドで作成した Rest API を AWS にデプロイし、\nAWS のAPI Gatewayサービスへ反映する\namplify push 3.amplify consoleコマンドでデプロイしたサービスを確認する\namplify console 実装 import Amplify, { API } from 'aws-amplify'; import config from \"./aws-exports\"; Amplify.configure(config); /** * DELETEメソッド * @param {string} apiName api名 * @param {string} path パス * @param {object} init init * @returns 結果 */ export async function del(apiName, path, init) { try { return await API.del(apiName, path, init); } catch (err) { console.error('error:', err); return err; } } /** * GETメソッド * @param {string} apiName api名 * @param {string} path パス * @param {object} init init * @returns 結果 */ export async function get(apiName, path, init) { try { return await API.get(apiName, path, init); } catch (err) { console.error('error:', err); return err; } } /** * POSTメソッド * @param {string} apiName api名 * @param {string} path パス * @param {object} init init * @returns 結果 */ export async function post(apiName, path, init) { try { return await API.post(apiName, path, init); } catch (err) { console.error('error:', err); return err; } } /** * PUTメソッド * @param {string} apiName api名 * @param {string} path パス * @param {object} init init * @returns 結果 */ export async function put(apiName, path, init) { try { return await API.put(apiName, path, init); } catch (err) { console.error('error:', err); return err; } } /** * HEADメソッド * @param {string} apiName api名 * @param {string} path パス * @param {object} init init * @returns 結果 */ export async function head(apiName, path, init) { try { return await API.head(apiName, path, init); } catch (err) { console.error('error:', err); return err; } } /** * PATCHメソッド * @param {string} apiName api名 * @param {string} path パス * @param {object} init init * @returns 結果 */ export async function patch(apiName, path, init) { try { return await API.patch(apiName, path, init); } catch (err) { console.error('error:', err); return err; } } 参考 https://docs.amplify.aws/lib/restapi/getting-started/q/platform/js/\nhttps://aws-amplify.github.io/amplify-js/api/classes/apiclass.html\n","wordCount":"484","inLanguage":"ja","image":"https://seiri-blog.github.io/images/AWS.png","datePublished":"2022-01-20T19:05:44+09:00","dateModified":"2022-01-20T19:05:44+09:00","author":{"@type":"Person","name":"Seiri"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://seiri-blog.github.io/posts/amplify-call-gateway/"},"publisher":{"@type":"Organization","name":"Seiri's Blog","logo":{"@type":"ImageObject","url":"https://seiri-blog.github.io/favicon.ico"}}}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"AmplifyでAPI Gatewayを呼出す方法","name":"AmplifyでAPI Gatewayを呼出す方法","description":"準備 1.amplify add apiコマンドで、Rest API を追加する amplify add api ? Please select from one of the below mentioned services GraphQL ❯ REST 2.amplify pushコマンドで作成した Rest API を AWS にデプロイし、 AWS のAPI G","keywords":["javascript","AWS","React","amplify"],"articleBody":"準備 1.amplify add apiコマンドで、Rest API を追加する\namplify add api ? Please select from one of the below mentioned services GraphQL ❯ REST 2.amplify pushコマンドで作成した Rest API を AWS にデプロイし、\nAWS のAPI Gatewayサービスへ反映する\namplify push 3.amplify consoleコマンドでデプロイしたサービスを確認する\namplify console 実装 import Amplify, { API } from 'aws-amplify'; import config from \"./aws-exports\"; Amplify.configure(config); /** * DELETEメソッド * @param {string} apiName api名 * @param {string} path パス * @param {object} init init * @returns 結果 */ export async function del(apiName, path, init) { try { return await API.del(apiName, path, init); } catch (err) { console.error('error:', err); return err; } } /** * GETメソッド * @param {string} apiName api名 * @param {string} path パス * @param {object} init init * @returns 結果 */ export async function get(apiName, path, init) { try { return await API.get(apiName, path, init); } catch (err) { console.error('error:', err); return err; } } /** * POSTメソッド * @param {string} apiName api名 * @param {string} path パス * @param {object} init init * @returns 結果 */ export async function post(apiName, path, init) { try { return await API.post(apiName, path, init); } catch (err) { console.error('error:', err); return err; } } /** * PUTメソッド * @param {string} apiName api名 * @param {string} path パス * @param {object} init init * @returns 結果 */ export async function put(apiName, path, init) { try { return await API.put(apiName, path, init); } catch (err) { console.error('error:', err); return err; } } /** * HEADメソッド * @param {string} apiName api名 * @param {string} path パス * @param {object} init init * @returns 結果 */ export async function head(apiName, path, init) { try { return await API.head(apiName, path, init); } catch (err) { console.error('error:', err); return err; } } /** * PATCHメソッド * @param {string} apiName api名 * @param {string} path パス * @param {object} init init * @returns 結果 */ export async function patch(apiName, path, init) { try { return await API.patch(apiName, path, init); } catch (err) { console.error('error:', err); return err; } } 参考 Set up Amplify REST API - JavaScript - AWS Amplify Documentation  docs.amplify.aws     aws-amplify.github.io    ","wordCount":"495","inLanguage":"ja","image":"https://seiri-blog.github.io/images/AWS.png","datePublished":"2022-01-20T19:05:44+09:00","dateModified":"2022-01-20T19:05:44+09:00","author":{"@type":"Person","name":"Seiri"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://seiri-blog.github.io/posts/amplify-call-gateway/"},"publisher":{"@type":"Organization","name":"Seiri's Blog","logo":{"@type":"ImageObject","url":"https://seiri-blog.github.io/favicon.ico"}}}</script>
 </head>
 <body id=top>
 <script>localStorage.getItem("pref-theme")==="dark"&&document.body.classList.add('dark')</script>
@@ -99,7 +99,7 @@ AmplifyでAPI Gatewayを呼出す方法
 <li><a href=https://seiri-blog.github.io/tags/react/>React</a></li>
 <li><a href=https://seiri-blog.github.io/tags/amplify/>amplify</a></li>
 </ul>
-<div class=post-meta><span title="2022-01-20 19:05:44 +0900 +0900">2022年1月20日</span>&nbsp;·&nbsp;1 分&nbsp;·&nbsp;484 文字&nbsp;·&nbsp;Seiri
+<div class=post-meta><span title="2022-01-20 19:05:44 +0900 +0900">2022年1月20日</span>&nbsp;·&nbsp;1 分&nbsp;·&nbsp;495 文字&nbsp;·&nbsp;Seiri
 </div>
 </header>
 <figure class=entry-cover><img loading=lazy src=https://seiri-blog.github.io/images/AWS.png alt="AmplifyでAPI Gatewayを呼出す方法">
@@ -260,8 +260,25 @@ B!
     }
 }
 </code></pre></div><h2 id=参考>参考<a hidden class=anchor aria-hidden=true href=#参考>#</a></h2>
-<p><a href=https://docs.amplify.aws/lib/restapi/getting-started/q/platform/js/>https://docs.amplify.aws/lib/restapi/getting-started/q/platform/js/</a></p>
-<p><a href=https://aws-amplify.github.io/amplify-js/api/classes/apiclass.html>https://aws-amplify.github.io/amplify-js/api/classes/apiclass.html</a></p>
+<a href=https://docs.amplify.aws/lib/restapi/getting-started/q/platform/js/ target=_blank>
+<div class=link-card>
+<div class=link-card-title>Set up Amplify REST API - JavaScript - AWS Amplify Documentation</div>
+<div class=link-card-hostname>
+<div class=link-card-hostname-img>
+<img alt=icon src=https://docs.amplify.aws/assets/icon/android-icon-192x192.png>
+</div>
+<span>docs.amplify.aws</span>
+</div>
+</div>
+</a>
+<a href=https://aws-amplify.github.io/amplify-js/api/classes/apiclass.html target=_blank>
+<div class=link-card>
+<div class=link-card-title></div>
+<div class=link-card-hostname>
+<span>aws-amplify.github.io</span>
+</div>
+</div>
+</a>
 </div>
 <div class=share-area>
 <ul>

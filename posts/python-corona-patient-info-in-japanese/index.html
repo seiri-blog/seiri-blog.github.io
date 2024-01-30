@@ -31,7 +31,7 @@
 <meta name=twitter:title content="Pythonで日本の新型コロナ患者情報取得">
 <meta name=twitter:description content="環境 Win10 python 3.8.10 ・requests==2.25.1 ・pandas==1.3.1 実装 import requests as rq import pandas as pd url = 'https://covid19-japan-web-api.vercel.app/api/v1/positives?prefecture={0}' prefectures = ['北海道',&#39">
 <script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://seiri-blog.github.io/posts/"},{"@type":"ListItem","position":2,"name":"Pythonで日本の新型コロナ患者情報取得","item":"https://seiri-blog.github.io/posts/python-corona-patient-info-in-japanese/"}]}</script>
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"Pythonで日本の新型コロナ患者情報取得","name":"Pythonで日本の新型コロナ患者情報取得","description":"環境 Win10 python 3.8.10 ・requests==2.25.1 ・pandas==1.3.1 実装 import requests as rq import pandas as pd url = \u0026#39;https://covid19-japan-web-api.vercel.app/api/v1/positives?prefecture={0}\u0026#39; prefectures = [\u0026#39;北海道\u0026#39;,\u0026#39","keywords":["python","python3"],"articleBody":"環境 Win10\npython 3.8.10\n・requests==2.25.1\n・pandas==1.3.1\n実装 import requests as rq import pandas as pd url = 'https://covid19-japan-web-api.vercel.app/api/v1/positives?prefecture={0}' prefectures = ['北海道','青森県','岩手県','宮城県','秋田県','山形県','福島県','茨城県','栃木県','群馬県','埼玉県','千葉県','東京都','神奈川県','新潟県','富山県','石川県','福井県','山梨県','長野県','岐阜県','静岡県','愛知県','三重県','滋賀県','京都府','大阪府','兵庫県','奈良県','和歌山県','鳥取県','島根県','岡山県','広島県','山口県','徳島県','香川県','愛媛県','高知県','福岡県','佐賀県','長崎県','熊本県','大分県','宮崎県','鹿児島県','沖縄県'] out_dataframe = pd.DataFrame() for p in prefectures: tmp_url = url.format(p) response = rq.get(tmp_url) if response.status_code == 200: dataframe_body = pd.DataFrame(response.json()) out_dataframe = out_dataframe.append(dataframe_body, ignore_index=True) out_dataframe.to_csv('result.csv', mode='w', encoding='utf-8') 参考 https://requests-docs-ja.readthedocs.io/en/latest/\n","wordCount":"743","inLanguage":"ja","datePublished":"2022-01-18T19:21:37+09:00","dateModified":"2022-01-18T19:21:37+09:00","author":{"@type":"Person","name":"Seiri"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://seiri-blog.github.io/posts/python-corona-patient-info-in-japanese/"},"publisher":{"@type":"Organization","name":"Seiri's Blog","logo":{"@type":"ImageObject","url":"https://seiri-blog.github.io/favicon.ico"}}}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"Pythonで日本の新型コロナ患者情報取得","name":"Pythonで日本の新型コロナ患者情報取得","description":"環境 Win10 python 3.8.10 ・requests==2.25.1 ・pandas==1.3.1 実装 import requests as rq import pandas as pd url = \u0026#39;https://covid19-japan-web-api.vercel.app/api/v1/positives?prefecture={0}\u0026#39; prefectures = [\u0026#39;北海道\u0026#39;,\u0026#39","keywords":["python","python3"],"articleBody":"環境 Win10\npython 3.8.10\n・requests==2.25.1\n・pandas==1.3.1\n実装 import requests as rq import pandas as pd url = 'https://covid19-japan-web-api.vercel.app/api/v1/positives?prefecture={0}' prefectures = ['北海道','青森県','岩手県','宮城県','秋田県','山形県','福島県','茨城県','栃木県','群馬県','埼玉県','千葉県','東京都','神奈川県','新潟県','富山県','石川県','福井県','山梨県','長野県','岐阜県','静岡県','愛知県','三重県','滋賀県','京都府','大阪府','兵庫県','奈良県','和歌山県','鳥取県','島根県','岡山県','広島県','山口県','徳島県','香川県','愛媛県','高知県','福岡県','佐賀県','長崎県','熊本県','大分県','宮崎県','鹿児島県','沖縄県'] out_dataframe = pd.DataFrame() for p in prefectures: tmp_url = url.format(p) response = rq.get(tmp_url) if response.status_code == 200: dataframe_body = pd.DataFrame(response.json()) out_dataframe = out_dataframe.append(dataframe_body, ignore_index=True) out_dataframe.to_csv('result.csv', mode='w', encoding='utf-8') 参考 Requests: 人間のためのHTTP — requests-docs-ja 1.0.4 documentation  requests-docs-ja.readthedocs.io    ","wordCount":"758","inLanguage":"ja","datePublished":"2022-01-18T19:21:37+09:00","dateModified":"2022-01-18T19:21:37+09:00","author":{"@type":"Person","name":"Seiri"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://seiri-blog.github.io/posts/python-corona-patient-info-in-japanese/"},"publisher":{"@type":"Organization","name":"Seiri's Blog","logo":{"@type":"ImageObject","url":"https://seiri-blog.github.io/favicon.ico"}}}</script>
 </head>
 <body id=top>
 <script>localStorage.getItem("pref-theme")==="dark"&&document.body.classList.add('dark')</script>
@@ -95,7 +95,7 @@ Pythonで日本の新型コロナ患者情報取得
 <li><a href=https://seiri-blog.github.io/tags/python/>python</a></li>
 <li><a href=https://seiri-blog.github.io/tags/python3/>python3</a></li>
 </ul>
-<div class=post-meta><span title="2022-01-18 19:21:37 +0900 +0900">2022年1月18日</span>&nbsp;·&nbsp;2 分&nbsp;·&nbsp;743 文字&nbsp;·&nbsp;Seiri
+<div class=post-meta><span title="2022-01-18 19:21:37 +0900 +0900">2022年1月18日</span>&nbsp;·&nbsp;2 分&nbsp;·&nbsp;758 文字&nbsp;·&nbsp;Seiri
 </div>
 </header>
 <div class=share-area>
@@ -161,7 +161,17 @@ out_dataframe <span style=color:#f92672>=</span> pd<span style=color:#f92672>.</
         out_dataframe <span style=color:#f92672>=</span> out_dataframe<span style=color:#f92672>.</span>append(dataframe_body, ignore_index<span style=color:#f92672>=</span><span style=color:#66d9ef>True</span>)
 out_dataframe<span style=color:#f92672>.</span>to_csv(<span style=color:#e6db74>&#39;result.csv&#39;</span>, mode<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;w&#39;</span>, encoding<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;utf-8&#39;</span>)
 </code></pre></div><h2 id=参考>参考<a hidden class=anchor aria-hidden=true href=#参考>#</a></h2>
-<p><a href=https://requests-docs-ja.readthedocs.io/en/latest/>https://requests-docs-ja.readthedocs.io/en/latest/</a></p>
+<a href=https://requests-docs-ja.readthedocs.io/en/latest/ target=_blank>
+<div class=link-card>
+<div class=link-card-title>Requests: 人間のためのHTTP — requests-docs-ja 1.0.4 documentation</div>
+<div class=link-card-hostname>
+<div class=link-card-hostname-img>
+<img alt=icon src=https://requests-docs-ja.readthedocs.io/favicon.ico>
+</div>
+<span>requests-docs-ja.readthedocs.io</span>
+</div>
+</div>
+</a>
 </div>
 <div class=share-area>
 <ul>

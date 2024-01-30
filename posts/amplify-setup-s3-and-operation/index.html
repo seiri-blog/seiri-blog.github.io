@@ -33,7 +33,7 @@
 <meta name=twitter:title content="AmplifyでS3と連携する方法">
 <meta name=twitter:description content="準備 1.amplify add storageコマンドで、S3 を追加する amplify add storage ? Please select from one of the below mentioned services (Use arrow keys) ❯ Content (Images, audio, video, etc.) NoSQL Database 2.amplify pushコマンドで作成した S3 を AWS にデプロイ">
 <script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://seiri-blog.github.io/posts/"},{"@type":"ListItem","position":2,"name":"AmplifyでS3と連携する方法","item":"https://seiri-blog.github.io/posts/amplify-setup-s3-and-operation/"}]}</script>
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"AmplifyでS3と連携する方法","name":"AmplifyでS3と連携する方法","description":"準備 1.amplify add storageコマンドで、S3 を追加する amplify add storage ? Please select from one of the below mentioned services (Use arrow keys) ❯ Content (Images, audio, video, etc.) NoSQL Database 2.amplify pushコマンドで作成した S3 を AWS にデプロイ","keywords":["javascript","AWS","S3","React","amplify"],"articleBody":"準備 1.amplify add storageコマンドで、S3 を追加する\namplify add storage ? Please select from one of the below mentioned services (Use arrow keys) ❯ Content (Images, audio, video, etc.) NoSQL Database 2.amplify pushコマンドで作成した S3 を AWS にデプロイし、\nAWS のS3サービスへ反映する\namplify push 3.amplify consoleコマンドでデプロイしたサービスを確認する\namplify console 4.AWS S3のCORSを設定する\n[ { \"AllowedHeaders\": [ \"*\" ], \"AllowedMethods\": [ \"GET\", \"HEAD\", \"PUT\", \"POST\", \"DELETE\" ], \"AllowedOrigins\": [ \"*\" ], \"ExposeHeaders\": [ \"x-amz-server-side-encryption\", \"x-amz-request-id\", \"x-amz-id-2\", \"ETag\" ], \"MaxAgeSeconds\": 3000 } ] 実装 import Amplify, { Storage } from 'aws-amplify'; import config from \"./aws-exports\"; Amplify.configure(config); /** * ファイルを保存 * @param {string} key キー * @param {object} object オブジェクト * @param {object} config 設定（オプション） * @returns 結果 */ export async function put(key, object, config = null) { try { return await Storage.put(key, object, config); } catch (err) { console.error('error:', err); } } /** * ファイルを削除 * @param {string} key キー * @param {object} object オブジェクト * @param {object} config 設定（オプション） * @returns 結果 */ export async function remove(key, object, config = null) { try { return await Storage.remove(key, object, config); } catch (err) { console.error('error:', err); } } /** * ファイルを取得 * @param {string} key キー * @param {object} config 設定（オプション） * @returns 署名付きURLまたはファイル(Blob) */ export async function get(key, config = null) { try { return await Storage.get(key, config); } catch (err) { console.error('error:', err); } } /** * ファイル一覧を取得 * @param {string} path キー * @param {object} config 設定（オプション） * @returns 一覧情報 */ export async function list(path, config = null) { try { return await Storage.list(path, config); } catch (err) { console.error('error:', err); } } /** * ファイルダウンロード * @param {object} blob ファイルオブジェクト * @param {string} filename ファイル名 */ export function downloadBlob(blob, filename) { const url = URL.createObjectURL(blob); const a = document.createElement('a'); a.href = url; a.download = filename || 'download'; const clickHandler = () = { setTimeout(() = { URL.revokeObjectURL(url); a.removeEventListener('click', clickHandler); }, 150); }; a.addEventListener('click', clickHandler, false); a.click(); return a; } 参考 https://docs.amplify.aws/lib/storage/getting-started/q/platform/js/\nhttps://aws-amplify.github.io/amplify-js/api/classes/storageclass.html\n","wordCount":"522","inLanguage":"ja","image":"https://seiri-blog.github.io/images/AWS.png","datePublished":"2022-01-21T12:15:55+09:00","dateModified":"2022-01-21T12:15:55+09:00","author":{"@type":"Person","name":"Seiri"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://seiri-blog.github.io/posts/amplify-setup-s3-and-operation/"},"publisher":{"@type":"Organization","name":"Seiri's Blog","logo":{"@type":"ImageObject","url":"https://seiri-blog.github.io/favicon.ico"}}}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"AmplifyでS3と連携する方法","name":"AmplifyでS3と連携する方法","description":"準備 1.amplify add storageコマンドで、S3 を追加する amplify add storage ? Please select from one of the below mentioned services (Use arrow keys) ❯ Content (Images, audio, video, etc.) NoSQL Database 2.amplify pushコマンドで作成した S3 を AWS にデプロイ","keywords":["javascript","AWS","S3","React","amplify"],"articleBody":"準備 1.amplify add storageコマンドで、S3 を追加する\namplify add storage ? Please select from one of the below mentioned services (Use arrow keys) ❯ Content (Images, audio, video, etc.) NoSQL Database 2.amplify pushコマンドで作成した S3 を AWS にデプロイし、\nAWS のS3サービスへ反映する\namplify push 3.amplify consoleコマンドでデプロイしたサービスを確認する\namplify console 4.AWS S3のCORSを設定する\n[ { \"AllowedHeaders\": [ \"*\" ], \"AllowedMethods\": [ \"GET\", \"HEAD\", \"PUT\", \"POST\", \"DELETE\" ], \"AllowedOrigins\": [ \"*\" ], \"ExposeHeaders\": [ \"x-amz-server-side-encryption\", \"x-amz-request-id\", \"x-amz-id-2\", \"ETag\" ], \"MaxAgeSeconds\": 3000 } ] 実装 import Amplify, { Storage } from 'aws-amplify'; import config from \"./aws-exports\"; Amplify.configure(config); /** * ファイルを保存 * @param {string} key キー * @param {object} object オブジェクト * @param {object} config 設定（オプション） * @returns 結果 */ export async function put(key, object, config = null) { try { return await Storage.put(key, object, config); } catch (err) { console.error('error:', err); } } /** * ファイルを削除 * @param {string} key キー * @param {object} object オブジェクト * @param {object} config 設定（オプション） * @returns 結果 */ export async function remove(key, object, config = null) { try { return await Storage.remove(key, object, config); } catch (err) { console.error('error:', err); } } /** * ファイルを取得 * @param {string} key キー * @param {object} config 設定（オプション） * @returns 署名付きURLまたはファイル(Blob) */ export async function get(key, config = null) { try { return await Storage.get(key, config); } catch (err) { console.error('error:', err); } } /** * ファイル一覧を取得 * @param {string} path キー * @param {object} config 設定（オプション） * @returns 一覧情報 */ export async function list(path, config = null) { try { return await Storage.list(path, config); } catch (err) { console.error('error:', err); } } /** * ファイルダウンロード * @param {object} blob ファイルオブジェクト * @param {string} filename ファイル名 */ export function downloadBlob(blob, filename) { const url = URL.createObjectURL(blob); const a = document.createElement('a'); a.href = url; a.download = filename || 'download'; const clickHandler = () = { setTimeout(() = { URL.revokeObjectURL(url); a.removeEventListener('click', clickHandler); }, 150); }; a.addEventListener('click', clickHandler, false); a.click(); return a; } 参考 Set up Amplify Storage - JavaScript - AWS Amplify Documentation  docs.amplify.aws    StorageClass | amplify-js  aws-amplify.github.io    ","wordCount":"535","inLanguage":"ja","image":"https://seiri-blog.github.io/images/AWS.png","datePublished":"2022-01-21T12:15:55+09:00","dateModified":"2022-01-21T12:15:55+09:00","author":{"@type":"Person","name":"Seiri"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://seiri-blog.github.io/posts/amplify-setup-s3-and-operation/"},"publisher":{"@type":"Organization","name":"Seiri's Blog","logo":{"@type":"ImageObject","url":"https://seiri-blog.github.io/favicon.ico"}}}</script>
 </head>
 <body id=top>
 <script>localStorage.getItem("pref-theme")==="dark"&&document.body.classList.add('dark')</script>
@@ -100,7 +100,7 @@ AmplifyでS3と連携する方法
 <li><a href=https://seiri-blog.github.io/tags/react/>React</a></li>
 <li><a href=https://seiri-blog.github.io/tags/amplify/>amplify</a></li>
 </ul>
-<div class=post-meta><span title="2022-01-21 12:15:55 +0900 +0900">2022年1月21日</span>&nbsp;·&nbsp;2 分&nbsp;·&nbsp;522 文字&nbsp;·&nbsp;Seiri
+<div class=post-meta><span title="2022-01-21 12:15:55 +0900 +0900">2022年1月21日</span>&nbsp;·&nbsp;2 分&nbsp;·&nbsp;535 文字&nbsp;·&nbsp;Seiri
 </div>
 </header>
 <figure class=entry-cover><img loading=lazy src=https://seiri-blog.github.io/images/AWS.png alt=AmplifyでS3と連携する方法>
@@ -273,8 +273,28 @@ B!
   <span style=color:#66d9ef>return</span> <span style=color:#a6e22e>a</span>;
 }
 </code></pre></div><h2 id=参考>参考<a hidden class=anchor aria-hidden=true href=#参考>#</a></h2>
-<p><a href=https://docs.amplify.aws/lib/storage/getting-started/q/platform/js/>https://docs.amplify.aws/lib/storage/getting-started/q/platform/js/</a></p>
-<p><a href=https://aws-amplify.github.io/amplify-js/api/classes/storageclass.html>https://aws-amplify.github.io/amplify-js/api/classes/storageclass.html</a></p>
+<a href=https://docs.amplify.aws/lib/storage/getting-started/q/platform/js/ target=_blank>
+<div class=link-card>
+<div class=link-card-title>Set up Amplify Storage - JavaScript - AWS Amplify Documentation</div>
+<div class=link-card-hostname>
+<div class=link-card-hostname-img>
+<img alt=icon src=https://docs.amplify.aws/assets/icon/android-icon-192x192.png>
+</div>
+<span>docs.amplify.aws</span>
+</div>
+</div>
+</a>
+<a href=https://aws-amplify.github.io/amplify-js/api/classes/storageclass.html target=_blank>
+<div class=link-card>
+<div class=link-card-title>StorageClass | amplify-js</div>
+<div class=link-card-hostname>
+<div class=link-card-hostname-img>
+<img alt=icon src=https://aws-amplify.github.io/amplify-js/images/layout/favicon.ico>
+</div>
+<span>aws-amplify.github.io</span>
+</div>
+</div>
+</a>
 </div>
 <div class=share-area>
 <ul>

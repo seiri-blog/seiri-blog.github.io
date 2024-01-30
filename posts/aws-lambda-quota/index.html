@@ -31,7 +31,7 @@
 <meta name=twitter:title content="AWS Lambda クォータ">
 <meta name=twitter:description content="コンピューティングとストレージ Lambda では、関数の実行と保存に使用できるコンピューティングおよびストレージリソースの量に対してクォータを設定します">
 <script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://seiri-blog.github.io/posts/"},{"@type":"ListItem","position":2,"name":"AWS Lambda クォータ","item":"https://seiri-blog.github.io/posts/aws-lambda-quota/"}]}</script>
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"AWS Lambda クォータ","name":"AWS Lambda クォータ","description":"コンピューティングとストレージ Lambda では、関数の実行と保存に使用できるコンピューティングおよびストレージリソースの量に対してクォータを設定します","keywords":["AWS","AWSLambda"],"articleBody":"コンピューティングとストレージ Lambda では、関数の実行と保存に使用できるコンピューティングおよびストレージリソースの量に対してクォータを設定します。以下のクォータは、AWS リージョンごとに適用されており、引き上げることができます。詳細については、Service Quotas ユーザーガイドの「クォータの引き上げのリクエスト」を参照してください。\n   リソース デフォルトのクォータ 引き上げることができる最大     同時実行数 1,000 数万   アップロードされた関数 (.zip ファイルアーカイブ) とレイヤーのストレージ。各関数バージョンとレイヤーバージョンは、ストレージを消費します。コードストレージ管理のベストプラクティスについては、Lambda オペレータガイドの Lambda コードストレージのモニタリングを参照してください。 75 GB Terabytes   コンテナイメージとして定義された関数のストレージ。これらのイメージは Amazon ECR に保存されます。 「Amazon ECR サービスクォータ」を参照してください。    Virtual Private Cloud (VPC) ごとの Elastic Network Interfaces 250 数百    関数の設定、デプロイ、実行 関数の設定、デプロイ、実行には、次のクォータが適用されます。変更することはできません。\n Lambda のドキュメント、ログメッセージ、およびコンソールでは、1024 KB を示すのに (MiB ではなく) MB 使用します。\n    リソース クォータ     関数のメモリ割り当て 128 MB から 10,240 MB まで、1 MB 単位で増加できます。   関数タイムアウト 900 秒 (15 分)   関数の環境変数 4 KB (関数に関連付けられたすべての環境変数)   関数リソースベースのポリシー 20 KB   関数レイヤー 5 つのレイヤー   関数の同時実行数のバースト 500 ～ 3000 (リージョンによって異なります)   呼び出しペイロード (リクエストとレスポンス) 6 MB (同期)256 KB (非同期)   デプロイパッケージ (.zip ファイルアーカイブ) のサイズ 50 MB (zip 圧縮済み、直接アップロード)、250 MB (解凍後)このクォータは、レイヤーやカスタムランタイムなど、アップロードするすべてのファイルに適用されます。3 MB (コンソールエディタ)   コンテナイメージのコードパッケージサイズ 10 GB   テストイベント (コンソールエディタ) 10   /tmp ディレクトリのストレージ 512 MB   ファイルディスクリプタ 1,024   実行プロセス/スレッド 1,024    Lambda API リクエスト 次のクォータは Lambda API リクエストに関連付けられています。\n   リソース クォータ     リージョンあたりの呼び出しリクエスト頻度 (リクエスト数/秒) 10 x 同時実行クォータ (同期的、すべてのソース)、10 x 同時実行クォータ (非同期的、AWS 以外のソース)   非同期の AWS のサービスソースでの、リージョンあたりの呼び出しリクエスト数 (1 秒あたりのリクエスト数) 無制限のリクエストが可能です。実行レートは、その関数で利用可能な同時実行数に基づきます。「非同期呼び出し」を参照してください。   関数のバージョンまたはエイリアスあたりの呼び出しリクエスト頻度 (リクエスト数/秒) 10 x 割り当て済みのプロビジョニングされた同時実行数   GetFunction API リクエスト数 1 秒あたり 100 リクエスト   GetPolicy API リクエスト数 1 秒あたり 15 リクエスト   残りのコントロールプレーン API リクエスト数 (呼び出し、GetFunction、および GetPolicy リクエストを除く) 1 秒あたり 15 リクエスト    参考 https://docs.aws.amazon.com/ja_jp/lambda/latest/dg/gettingstarted-limits.html\n","wordCount":"1299","inLanguage":"ja","datePublished":"2021-12-27T16:29:51+09:00","dateModified":"2021-12-27T16:29:51+09:00","author":{"@type":"Person","name":"Seiri"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://seiri-blog.github.io/posts/aws-lambda-quota/"},"publisher":{"@type":"Organization","name":"Seiri's Blog","logo":{"@type":"ImageObject","url":"https://seiri-blog.github.io/favicon.ico"}}}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"AWS Lambda クォータ","name":"AWS Lambda クォータ","description":"コンピューティングとストレージ Lambda では、関数の実行と保存に使用できるコンピューティングおよびストレージリソースの量に対してクォータを設定します","keywords":["AWS","AWSLambda"],"articleBody":"コンピューティングとストレージ Lambda では、関数の実行と保存に使用できるコンピューティングおよびストレージリソースの量に対してクォータを設定します。以下のクォータは、AWS リージョンごとに適用されており、引き上げることができます。詳細については、Service Quotas ユーザーガイドの「クォータの引き上げのリクエスト」を参照してください。\n   リソース デフォルトのクォータ 引き上げることができる最大     同時実行数 1,000 数万   アップロードされた関数 (.zip ファイルアーカイブ) とレイヤーのストレージ。各関数バージョンとレイヤーバージョンは、ストレージを消費します。コードストレージ管理のベストプラクティスについては、Lambda オペレータガイドの Lambda コードストレージのモニタリングを参照してください。 75 GB Terabytes   コンテナイメージとして定義された関数のストレージ。これらのイメージは Amazon ECR に保存されます。 「Amazon ECR サービスクォータ」を参照してください。    Virtual Private Cloud (VPC) ごとの Elastic Network Interfaces 250 数百    関数の設定、デプロイ、実行 関数の設定、デプロイ、実行には、次のクォータが適用されます。変更することはできません。\n Lambda のドキュメント、ログメッセージ、およびコンソールでは、1024 KB を示すのに (MiB ではなく) MB 使用します。\n    リソース クォータ     関数のメモリ割り当て 128 MB から 10,240 MB まで、1 MB 単位で増加できます。   関数タイムアウト 900 秒 (15 分)   関数の環境変数 4 KB (関数に関連付けられたすべての環境変数)   関数リソースベースのポリシー 20 KB   関数レイヤー 5 つのレイヤー   関数の同時実行数のバースト 500 ～ 3000 (リージョンによって異なります)   呼び出しペイロード (リクエストとレスポンス) 6 MB (同期)256 KB (非同期)   デプロイパッケージ (.zip ファイルアーカイブ) のサイズ 50 MB (zip 圧縮済み、直接アップロード)、250 MB (解凍後)このクォータは、レイヤーやカスタムランタイムなど、アップロードするすべてのファイルに適用されます。3 MB (コンソールエディタ)   コンテナイメージのコードパッケージサイズ 10 GB   テストイベント (コンソールエディタ) 10   /tmp ディレクトリのストレージ 512 MB   ファイルディスクリプタ 1,024   実行プロセス/スレッド 1,024    Lambda API リクエスト 次のクォータは Lambda API リクエストに関連付けられています。\n   リソース クォータ     リージョンあたりの呼び出しリクエスト頻度 (リクエスト数/秒) 10 x 同時実行クォータ (同期的、すべてのソース)、10 x 同時実行クォータ (非同期的、AWS 以外のソース)   非同期の AWS のサービスソースでの、リージョンあたりの呼び出しリクエスト数 (1 秒あたりのリクエスト数) 無制限のリクエストが可能です。実行レートは、その関数で利用可能な同時実行数に基づきます。「非同期呼び出し」を参照してください。   関数のバージョンまたはエイリアスあたりの呼び出しリクエスト頻度 (リクエスト数/秒) 10 x 割り当て済みのプロビジョニングされた同時実行数   GetFunction API リクエスト数 1 秒あたり 100 リクエスト   GetPolicy API リクエスト数 1 秒あたり 15 リクエスト   残りのコントロールプレーン API リクエスト数 (呼び出し、GetFunction、および GetPolicy リクエストを除く) 1 秒あたり 15 リクエスト    参考 Lambda クォータ - AWS Lambda  docs.aws.amazon.com    ","wordCount":"1307","inLanguage":"ja","datePublished":"2021-12-27T16:29:51+09:00","dateModified":"2021-12-27T16:29:51+09:00","author":{"@type":"Person","name":"Seiri"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://seiri-blog.github.io/posts/aws-lambda-quota/"},"publisher":{"@type":"Organization","name":"Seiri's Blog","logo":{"@type":"ImageObject","url":"https://seiri-blog.github.io/favicon.ico"}}}</script>
 </head>
 <body id=top>
 <script>localStorage.getItem("pref-theme")==="dark"&&document.body.classList.add('dark')</script>
@@ -95,7 +95,7 @@ AWS Lambda クォータ
 <li><a href=https://seiri-blog.github.io/tags/aws/>AWS</a></li>
 <li><a href=https://seiri-blog.github.io/tags/awslambda/>AWSLambda</a></li>
 </ul>
-<div class=post-meta><span title="2021-12-27 16:29:51 +0900 +0900">2021年12月27日</span>&nbsp;·&nbsp;3 分&nbsp;·&nbsp;1299 文字&nbsp;·&nbsp;Seiri
+<div class=post-meta><span title="2021-12-27 16:29:51 +0900 +0900">2021年12月27日</span>&nbsp;·&nbsp;3 分&nbsp;·&nbsp;1307 文字&nbsp;·&nbsp;Seiri
 </div>
 </header>
 <div class=share-area>
@@ -278,7 +278,17 @@ B!
 </tbody>
 </table>
 <h2 id=参考>参考<a hidden class=anchor aria-hidden=true href=#参考>#</a></h2>
-<p><a href=https://docs.aws.amazon.com/ja_jp/lambda/latest/dg/gettingstarted-limits.html>https://docs.aws.amazon.com/ja_jp/lambda/latest/dg/gettingstarted-limits.html</a></p>
+<a href=https://docs.aws.amazon.com/ja_jp/lambda/latest/dg/gettingstarted-limits.html target=_blank>
+<div class=link-card>
+<div class=link-card-title>Lambda クォータ - AWS Lambda</div>
+<div class=link-card-hostname>
+<div class=link-card-hostname-img>
+<img alt=icon src=https://docs.aws.amazon.com/assets/images/favicon.ico>
+</div>
+<span>docs.aws.amazon.com</span>
+</div>
+</div>
+</a>
 </div>
 <div class=share-area>
 <ul>

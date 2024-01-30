@@ -31,7 +31,7 @@
 <meta name=twitter:title content="gitignoreの説明と作成方法">
 <meta name=twitter:description content=".gitignore 説明 .gitignoreファイルは、Git リポジトリ内で管理されないファイルやディレクトリを指定するための設定ファイルです。このファイルに">
 <script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://seiri-blog.github.io/posts/"},{"@type":"ListItem","position":2,"name":"gitignoreの説明と作成方法","item":"https://seiri-blog.github.io/posts/how-to-make-gitignore/"}]}</script>
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"gitignoreの説明と作成方法","name":"gitignoreの説明と作成方法","description":".gitignore 説明 .gitignoreファイルは、Git リポジトリ内で管理されないファイルやディレクトリを指定するための設定ファイルです。このファイルに","keywords":["github","git"],"articleBody":".gitignore 説明 .gitignoreファイルは、Git リポジトリ内で管理されないファイルやディレクトリを指定するための設定ファイルです。このファイルにリストされたファイルやディレクトリは、Git のバージョン管理から除外されます。.gitignoreファイルを使用することで、不要なファイルやディレクトリがリポジトリに含まれないようにすることができ、Git 操作をより効果的に管理できます。\n以下は.gitignoreファイルの主なポイントと説明です。\n  ファイルとディレクトリの無視: .gitignoreファイルでは、特定のファイルやディレクトリを無視するためのパターンを指定します。これらのパターンは、リポジトリ内のファイルパスに一致するものが無視対象となります。\n  コメント: #文字で始まる行はコメント行であり、説明を追加するために使用します。コメント行は無視されます。\n  パターンの書き方: .gitignoreファイルに指定するパターンは、次のように書きます。\n 単純な一致: ファイル名やディレクトリ名をそのまま記述します。例: myfile.txt ワイルドカード: ワイルドカード文字（*や?）を使用してパターンを指定できます。例: *.log（すべての.log ファイルを無視）、test?.txt（test1.txt や test2.txt を無視） ディレクトリ: ディレクトリを無視する場合、ディレクトリ名の末尾にスラッシュ(/)を付けます。例: /build/（build ディレクトリとその中身を無視）    優先順位: .gitignoreファイル内のパターンは、上から下に評価されます。より上位に記述されたパターンが優先されます。したがって、より具体的な無視ルールを上に配置し、一般的なルールを下に配置することが一般的です。\n  サブディレクトリへの適用: .gitignoreファイルは、そのファイルが存在するディレクトリ内およびそのサブディレクトリに適用されます。したがって、特定の無視ルールはサブディレクトリにも影響を与えます。\n  .gitignoreの共有: .gitignoreファイルは Git リポジトリ内に保存され、他の開発者と共有できます。共有することで、プロジェクト全体で同じ無視ルールが適用されます。\n  .gitignoreファイルの作成とカスタマイズは、プロジェクトの要件に合わせて行われるべきであり、不要なファイルやディレクトリをリポジトリに含めないための重要なツールです。\n.gitignore 作成方法 以下は、.gitignore ファイルを作成する方法のステップです。\n  テキストエディタを開く:\n.gitignore ファイルを作成するために、お好みのテキストエディタを開きます。コマンドライン上でテキストエディタを使うことも、グラフィカルなテキストエディタを使うこともできます。\n  .gitignore ファイルを作成する:\nテキストエディタを開いたら、新しいファイルを作成し、ファイル名を.gitignoreとします。このファイル名は、ドットで始まる名前であるため、隠しファイルとして扱われます。ファイル名に拡張子は不要です。\n  無視するファイルやディレクトリのパターンを追加:\n.gitignore ファイルに、無視したいファイルやディレクトリのパターンを追加します。以下は、一般的な.gitignore ファイルの例です。\n# ディレクトリを無視する例 /bin/ /obj/ # 特定のファイルを無視する例 debug.log secret.txt この例では、/bin/ディレクトリと/obj/ディレクトリを無視し、debug.log ファイルと secret.txt ファイルを無視します。ファイルやディレクトリのパスは、Git リポジトリのルートからの相対パスで指定します。\n  .gitignore ファイルを保存:\nパターンを追加したら、ファイルを保存します。\n  Git リポジトリにコミット:\n.gitignore ファイルを Git リポジトリにコミットします。これにより、他のチームメンバーやクローンしたリポジトリでも無視されるファイルやディレクトリの設定が共有されます。\n  .gitignore ファイルは、プロジェクトごとに異なるものにすることができ、特定のファイルやディレクトリを無視して、リポジトリ内の不要なデータを削減できます。プロジェクトのニーズに合わせてカスタマイズしてください。\n参考 下記は Github のテンプレートのコレクションとなります。\n https://github.com/github/gitignore  ","wordCount":"1710","inLanguage":"ja","datePublished":"2023-09-28T09:49:57+09:00","dateModified":"2023-09-28T09:49:57+09:00","author":{"@type":"Person","name":"Seiri"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://seiri-blog.github.io/posts/how-to-make-gitignore/"},"publisher":{"@type":"Organization","name":"Seiri's Blog","logo":{"@type":"ImageObject","url":"https://seiri-blog.github.io/favicon.ico"}}}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"gitignoreの説明と作成方法","name":"gitignoreの説明と作成方法","description":".gitignore 説明 .gitignoreファイルは、Git リポジトリ内で管理されないファイルやディレクトリを指定するための設定ファイルです。このファイルに","keywords":["github","git"],"articleBody":".gitignore 説明 .gitignoreファイルは、Git リポジトリ内で管理されないファイルやディレクトリを指定するための設定ファイルです。このファイルにリストされたファイルやディレクトリは、Git のバージョン管理から除外されます。.gitignoreファイルを使用することで、不要なファイルやディレクトリがリポジトリに含まれないようにすることができ、Git 操作をより効果的に管理できます。\n以下は.gitignoreファイルの主なポイントと説明です。\n  ファイルとディレクトリの無視: .gitignoreファイルでは、特定のファイルやディレクトリを無視するためのパターンを指定します。これらのパターンは、リポジトリ内のファイルパスに一致するものが無視対象となります。\n  コメント: #文字で始まる行はコメント行であり、説明を追加するために使用します。コメント行は無視されます。\n  パターンの書き方: .gitignoreファイルに指定するパターンは、次のように書きます。\n 単純な一致: ファイル名やディレクトリ名をそのまま記述します。例: myfile.txt ワイルドカード: ワイルドカード文字（*や?）を使用してパターンを指定できます。例: *.log（すべての.log ファイルを無視）、test?.txt（test1.txt や test2.txt を無視） ディレクトリ: ディレクトリを無視する場合、ディレクトリ名の末尾にスラッシュ(/)を付けます。例: /build/（build ディレクトリとその中身を無視）    優先順位: .gitignoreファイル内のパターンは、上から下に評価されます。より上位に記述されたパターンが優先されます。したがって、より具体的な無視ルールを上に配置し、一般的なルールを下に配置することが一般的です。\n  サブディレクトリへの適用: .gitignoreファイルは、そのファイルが存在するディレクトリ内およびそのサブディレクトリに適用されます。したがって、特定の無視ルールはサブディレクトリにも影響を与えます。\n  .gitignoreの共有: .gitignoreファイルは Git リポジトリ内に保存され、他の開発者と共有できます。共有することで、プロジェクト全体で同じ無視ルールが適用されます。\n  .gitignoreファイルの作成とカスタマイズは、プロジェクトの要件に合わせて行われるべきであり、不要なファイルやディレクトリをリポジトリに含めないための重要なツールです。\n.gitignore 作成方法 以下は、.gitignore ファイルを作成する方法のステップです。\n  テキストエディタを開く:\n.gitignore ファイルを作成するために、お好みのテキストエディタを開きます。コマンドライン上でテキストエディタを使うことも、グラフィカルなテキストエディタを使うこともできます。\n  .gitignore ファイルを作成する:\nテキストエディタを開いたら、新しいファイルを作成し、ファイル名を.gitignoreとします。このファイル名は、ドットで始まる名前であるため、隠しファイルとして扱われます。ファイル名に拡張子は不要です。\n  無視するファイルやディレクトリのパターンを追加:\n.gitignore ファイルに、無視したいファイルやディレクトリのパターンを追加します。以下は、一般的な.gitignore ファイルの例です。\n# ディレクトリを無視する例 /bin/ /obj/ # 特定のファイルを無視する例 debug.log secret.txt この例では、/bin/ディレクトリと/obj/ディレクトリを無視し、debug.log ファイルと secret.txt ファイルを無視します。ファイルやディレクトリのパスは、Git リポジトリのルートからの相対パスで指定します。\n  .gitignore ファイルを保存:\nパターンを追加したら、ファイルを保存します。\n  Git リポジトリにコミット:\n.gitignore ファイルを Git リポジトリにコミットします。これにより、他のチームメンバーやクローンしたリポジトリでも無視されるファイルやディレクトリの設定が共有されます。\n  .gitignore ファイルは、プロジェクトごとに異なるものにすることができ、特定のファイルやディレクトリを無視して、リポジトリ内の不要なデータを削減できます。プロジェクトのニーズに合わせてカスタマイズしてください。\n参考 下記は Github のテンプレートのコレクションとなります。\nGitHub - github/gitignore: A collection of useful .gitignore templates  github.com    ","wordCount":"1719","inLanguage":"ja","datePublished":"2023-09-28T09:49:57+09:00","dateModified":"2023-09-28T09:49:57+09:00","author":{"@type":"Person","name":"Seiri"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://seiri-blog.github.io/posts/how-to-make-gitignore/"},"publisher":{"@type":"Organization","name":"Seiri's Blog","logo":{"@type":"ImageObject","url":"https://seiri-blog.github.io/favicon.ico"}}}</script>
 </head>
 <body id=top>
 <script>localStorage.getItem("pref-theme")==="dark"&&document.body.classList.add('dark')</script>
@@ -95,7 +95,7 @@ gitignoreの説明と作成方法
 <li><a href=https://seiri-blog.github.io/tags/github/>github</a></li>
 <li><a href=https://seiri-blog.github.io/tags/git/>git</a></li>
 </ul>
-<div class=post-meta><span title="2023-09-28 09:49:57 +0900 +0900">2023年9月28日</span>&nbsp;·&nbsp;4 分&nbsp;·&nbsp;1710 文字&nbsp;·&nbsp;Seiri
+<div class=post-meta><span title="2023-09-28 09:49:57 +0900 +0900">2023年9月28日</span>&nbsp;·&nbsp;4 分&nbsp;·&nbsp;1719 文字&nbsp;·&nbsp;Seiri
 </div>
 </header>
 <div class=share-area>
@@ -203,9 +203,17 @@ secret.txt
 <p><code>.gitignore</code> ファイルは、プロジェクトごとに異なるものにすることができ、特定のファイルやディレクトリを無視して、リポジトリ内の不要なデータを削減できます。プロジェクトのニーズに合わせてカスタマイズしてください。</p>
 <h2 id=参考>参考<a hidden class=anchor aria-hidden=true href=#参考>#</a></h2>
 <p>下記は Github のテンプレートのコレクションとなります。</p>
-<ul>
-<li><a href=https://github.com/github/gitignore>https://github.com/github/gitignore</a></li>
-</ul>
+<a href=https://github.com/github/gitignore target=_blank>
+<div class=link-card>
+<div class=link-card-title>GitHub - github/gitignore: A collection of useful .gitignore templates</div>
+<div class=link-card-hostname>
+<div class=link-card-hostname-img>
+<img alt=icon src=https://github.githubassets.com/favicons/favicon.svg>
+</div>
+<span>github.com</span>
+</div>
+</div>
+</a>
 </div>
 <div class=share-area>
 <ul>
