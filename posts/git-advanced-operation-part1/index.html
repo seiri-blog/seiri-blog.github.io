@@ -5,7 +5,7 @@
 <meta name=robots content="index, follow">
 <title>【Git】上級操作方法(その１) | Seiri's Blog</title>
 <meta name=keywords content="git,advanced,operation,command">
-<meta name=description content="Git の上級操作方法 Git には様々な上級操作がありますが、今回は下記操作方法を説明したいと思います。 マージ: master ブランチで最新のソースをプルし、new">
+<meta name=description content="Git の上級操作方法 Git には様々な上級操作がありますが、今回は下記操作方法を説明したいと思います。 マージ: master ブランチから最新のソースを取得し、ne">
 <meta name=author content="Seiri">
 <link rel=canonical href=https://seiri-blog.github.io/posts/git-advanced-operation-part1/>
 <meta name=yandex-verification content="017a61651e9c5c6d">
@@ -22,7 +22,7 @@
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-PLYEQ297HF"></script>
 <script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-PLYEQ297HF',{anonymize_ip:!1})}</script>
 <meta property="og:title" content="【Git】上級操作方法(その１)">
-<meta property="og:description" content="Git の上級操作方法 Git には様々な上級操作がありますが、今回は下記操作方法を説明したいと思います。 マージ: master ブランチで最新のソースをプルし、new">
+<meta property="og:description" content="Git の上級操作方法 Git には様々な上級操作がありますが、今回は下記操作方法を説明したいと思います。 マージ: master ブランチから最新のソースを取得し、ne">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://seiri-blog.github.io/posts/git-advanced-operation-part1/">
 <meta property="og:image" content="https://seiri-blog.github.io/images/Git%E4%B8%8A%E7%B4%9A%E6%93%8D%E4%BD%9C.png"><meta property="article:section" content="posts">
@@ -31,9 +31,9 @@
 <meta name=twitter:card content="summary_large_image">
 <meta name=twitter:image content="https://seiri-blog.github.io/images/Git%E4%B8%8A%E7%B4%9A%E6%93%8D%E4%BD%9C.png">
 <meta name=twitter:title content="【Git】上級操作方法(その１)">
-<meta name=twitter:description content="Git の上級操作方法 Git には様々な上級操作がありますが、今回は下記操作方法を説明したいと思います。 マージ: master ブランチで最新のソースをプルし、new">
+<meta name=twitter:description content="Git の上級操作方法 Git には様々な上級操作がありますが、今回は下記操作方法を説明したいと思います。 マージ: master ブランチから最新のソースを取得し、ne">
 <script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://seiri-blog.github.io/posts/"},{"@type":"ListItem","position":2,"name":"【Git】上級操作方法(その１)","item":"https://seiri-blog.github.io/posts/git-advanced-operation-part1/"}]}</script>
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"【Git】上級操作方法(その１)","name":"【Git】上級操作方法(その１)","description":"Git の上級操作方法 Git には様々な上級操作がありますが、今回は下記操作方法を説明したいと思います。 マージ: master ブランチで最新のソースをプルし、new","keywords":["git","advanced","operation","command"],"articleBody":"Git の上級操作方法 Git には様々な上級操作がありますが、今回は下記操作方法を説明したいと思います。\nマージ:  master ブランチで最新のソースをプルし、new_feature に切り替えて、master ブランチのソースを master ブランチにマージ  # masterブランチから最新のソースから取得 $ git pull origin master # new_featureブランチに切り替え $ git checkout new_feature # new_featureブランチでの作業を行う # ... # masterブランチをnew_featureブランチにマージ $ git merge master リモートリポジトリの管理:  リモートリポジトリとのやり取りを行うことで、チームでの作業やバックアップを行うことができます。  # リモートリポジトリを追加 $ git remote add origin https://github.com/username/repo.git # リモートリポジトリにプッシュ $ git push origin master # リモートリポジトリからプル $ git pull origin master コミットの履歴の修正:  git rebase や git revert を使って、コミットの履歴を修正することができます。  # コミット履歴を編集 $ git rebase -i HEAD~3 #選択したコミットを取り消す $ git revert [commit hash] ファイルの差分の解析:  git diff を使って、ファイルの差分を解析することができます。  # ファイルの差分を確認 $ git diff path/to/file.txt # 2つのコミット間の差分を確認 $ git diff [commit hash1] [commit hash2] git stash:  作業中の変更を一時的に保存し、別のブランチに切り替えることができます。  #ステージングエリアからの変更を保存 $ git stash save \"my changes\" #スタッシュから変更を適用 $ git stash apply stash@{0} #スタッシュを削除 $ git stash drop stash@{0} 関連記事  【Git】ファイル名大文字\u0026小文字を区別する方法  ","wordCount":"615","inLanguage":"ja","image":"https://seiri-blog.github.io/images/Git%E4%B8%8A%E7%B4%9A%E6%93%8D%E4%BD%9C.png","datePublished":"2022-12-29T19:36:52+09:00","dateModified":"2022-12-29T19:36:52+09:00","author":{"@type":"Person","name":"Seiri"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://seiri-blog.github.io/posts/git-advanced-operation-part1/"},"publisher":{"@type":"Organization","name":"Seiri's Blog","logo":{"@type":"ImageObject","url":"https://seiri-blog.github.io/favicon.ico"}}}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"【Git】上級操作方法(その１)","name":"【Git】上級操作方法(その１)","description":"Git の上級操作方法 Git には様々な上級操作がありますが、今回は下記操作方法を説明したいと思います。 マージ: master ブランチから最新のソースを取得し、ne","keywords":["git","advanced","operation","command"],"articleBody":"Git の上級操作方法 Git には様々な上級操作がありますが、今回は下記操作方法を説明したいと思います。\nマージ:  master ブランチから最新のソースを取得し、new_feature ブランチに切り替えて、master ブランチのソースを new_feature ブランチにマージ  # masterブランチから最新のソースから取得 $ git pull origin master # new_featureブランチに切り替え $ git checkout new_feature # new_featureブランチでの作業を行う # ... # masterブランチをnew_featureブランチにマージ $ git merge master リモートリポジトリの管理:  リモートリポジトリとのやり取りを行うことで、チームでの作業やバックアップを行うことができます。  # リモートリポジトリを追加 $ git remote add origin https://github.com/username/repo.git # リモートリポジトリにプッシュ $ git push origin master # リモートリポジトリからプル $ git pull origin master コミットの履歴の修正:  git rebase や git revert を使って、コミットの履歴を修正することができます。  # コミット履歴を編集 $ git rebase -i HEAD~3 #選択したコミットを取り消す $ git revert [commit hash] ファイルの差分の解析:  git diff を使って、ファイルの差分を解析することができます。  # ファイルの差分を確認 $ git diff path/to/file.txt # 2つのコミット間の差分を確認 $ git diff [commit hash1] [commit hash2] git stash:  作業中の変更を一時的に保存し、別のブランチに切り替えることができます。  #ステージングエリアからの変更を保存 $ git stash save \"my changes\" #スタッシュから変更を適用 $ git stash apply stash@{0} #スタッシュを削除 $ git stash drop stash@{0} 関連記事  【Git】ファイル名大文字\u0026小文字を区別する方法  ","wordCount":"620","inLanguage":"ja","image":"https://seiri-blog.github.io/images/Git%E4%B8%8A%E7%B4%9A%E6%93%8D%E4%BD%9C.png","datePublished":"2022-12-29T19:36:52+09:00","dateModified":"2022-12-29T19:36:52+09:00","author":{"@type":"Person","name":"Seiri"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://seiri-blog.github.io/posts/git-advanced-operation-part1/"},"publisher":{"@type":"Organization","name":"Seiri's Blog","logo":{"@type":"ImageObject","url":"https://seiri-blog.github.io/favicon.ico"}}}</script>
 </head>
 <body id=top>
 <script>localStorage.getItem("pref-theme")==="dark"&&document.body.classList.add('dark')</script>
@@ -99,7 +99,7 @@
 <li><a href=https://seiri-blog.github.io/tags/operation/>operation</a></li>
 <li><a href=https://seiri-blog.github.io/tags/command/>command</a></li>
 </ul>
-<div class=post-meta><span title="2022-12-29 19:36:52 +0900 +0900">2022年12月29日</span>&nbsp;·&nbsp;2 分&nbsp;·&nbsp;615 文字&nbsp;·&nbsp;Seiri
+<div class=post-meta><span title="2022-12-29 19:36:52 +0900 +0900">2022年12月29日</span>&nbsp;·&nbsp;2 分&nbsp;·&nbsp;620 文字&nbsp;·&nbsp;Seiri
 </div>
 </header>
 <figure class=entry-cover><img loading=lazy src=https://seiri-blog.github.io/images/Git%E4%B8%8A%E7%B4%9A%E6%93%8D%E4%BD%9C.png alt=【Git】上級操作方法(その１)>
@@ -158,7 +158,7 @@ B!
 <p>Git には様々な上級操作がありますが、今回は下記操作方法を説明したいと思います。</p>
 <h3 id=マージ>マージ:<a hidden class=anchor aria-hidden=true href=#マージ>#</a></h3>
 <ul>
-<li>master ブランチで最新のソースをプルし、new_feature に切り替えて、master ブランチのソースを master ブランチにマージ</li>
+<li>master ブランチから最新のソースを取得し、new_feature ブランチに切り替えて、master ブランチのソースを new_feature ブランチにマージ</li>
 </ul>
 <pre tabindex=0><code># masterブランチから最新のソースから取得
 $ git pull origin master
