@@ -2,6 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://seiri-blog.github.io/posts/</loc>
+    <lastmod>2024-04-26T10:15:30+09:00</lastmod>
+  </url><url>
+    <loc>https://seiri-blog.github.io/tags/script/</loc>
+    <lastmod>2024-04-26T10:15:30+09:00</lastmod>
+  </url><url>
+    <loc>https://seiri-blog.github.io/</loc>
+    <lastmod>2024-04-26T10:15:30+09:00</lastmod>
+  </url><url>
+    <loc>https://seiri-blog.github.io/tags/</loc>
+    <lastmod>2024-04-26T10:15:30+09:00</lastmod>
+  </url><url>
+    <loc>https://seiri-blog.github.io/tags/vbs/</loc>
+    <lastmod>2024-04-26T10:15:30+09:00</lastmod>
+  </url><url>
+    <loc>https://seiri-blog.github.io/tags/windows/</loc>
+    <lastmod>2024-04-26T10:15:30+09:00</lastmod>
+  </url><url>
+    <loc>https://seiri-blog.github.io/posts/unlock-screen-vbs-script/</loc>
+    <lastmod>2024-04-26T10:15:30+09:00</lastmod>
+  </url><url>
     <loc>https://seiri-blog.github.io/tags/7z/</loc>
     <lastmod>2024-04-26T09:55:48+09:00</lastmod>
   </url><url>
@@ -9,18 +30,6 @@
     <lastmod>2024-04-26T09:55:48+09:00</lastmod>
   </url><url>
     <loc>https://seiri-blog.github.io/tags/cmd/</loc>
-    <lastmod>2024-04-26T09:55:48+09:00</lastmod>
-  </url><url>
-    <loc>https://seiri-blog.github.io/posts/</loc>
-    <lastmod>2024-04-26T09:55:48+09:00</lastmod>
-  </url><url>
-    <loc>https://seiri-blog.github.io/</loc>
-    <lastmod>2024-04-26T09:55:48+09:00</lastmod>
-  </url><url>
-    <loc>https://seiri-blog.github.io/tags/</loc>
-    <lastmod>2024-04-26T09:55:48+09:00</lastmod>
-  </url><url>
-    <loc>https://seiri-blog.github.io/tags/windows/</loc>
     <lastmod>2024-04-26T09:55:48+09:00</lastmod>
   </url><url>
     <loc>https://seiri-blog.github.io/posts/folder-bulk-zip-by-cmd-batch/</loc>
