@@ -1,0 +1,335 @@
+<!doctype html><html lang=ja dir=auto>
+<head><meta charset=utf-8>
+<meta http-equiv=x-ua-compatible content="IE=edge">
+<meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
+<meta name=robots content="index, follow">
+<title>dmg2johnの使い方ガイド：John the Ripperと一緒に.dmgファイルのパスワードをクラックする方法 | Seiri's Blog</title>
+<meta name=keywords content="john,dmg2john,macOS,Linux,Windows">
+<meta name=description content="はじめに Macユーザーならおなじみのディスクイメージファイル、.dmg形式のファイルは、アプリケーションやその他のコンテンツを配布するために">
+<meta name=author content="Seiri">
+<link rel=canonical href=https://seiri-blog.github.io/posts/how-to-use-jhon-crack-dmg/>
+<meta name=yandex-verification content="017a61651e9c5c6d">
+<link href=https://seiri-blog.github.io/assets/css/stylesheet.css rel="preload stylesheet" as=style>
+<script defer crossorigin=anonymous src=/assets/js/highlight.js onload=hljs.initHighlightingOnLoad()></script>
+<link rel=icon href=https://seiri-blog.github.io/favicon.ico>
+<link rel=apple-touch-icon href=https://seiri-blog.github.io/apple-touch-icon.png>
+<link rel=mask-icon href=https://seiri-blog.github.io/safari-pinned-tab.svg>
+<meta name=theme-color content="#2e2e33">
+<meta name=msapplication-TileColor content="#2e2e33">
+<noscript>
+<style>#theme-toggle,.top-link{display:none}</style>
+</noscript><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4988552421895566" crossorigin=anonymous></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PLYEQ297HF"></script>
+<script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-PLYEQ297HF',{anonymize_ip:!1})}</script>
+<meta property="og:title" content="dmg2johnの使い方ガイド：John the Ripperと一緒に.dmgファイルのパスワードをクラックする方法">
+<meta property="og:description" content="はじめに Macユーザーならおなじみのディスクイメージファイル、.dmg形式のファイルは、アプリケーションやその他のコンテンツを配布するために">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://seiri-blog.github.io/posts/how-to-use-jhon-crack-dmg/"><meta property="article:section" content="posts">
+<meta property="article:published_time" content="2024-05-19T22:55:30+09:00">
+<meta property="article:modified_time" content="2024-05-19T22:55:30+09:00"><meta property="og:site_name" content="Seiri's Blog">
+<meta name=twitter:card content="summary">
+<meta name=twitter:title content="dmg2johnの使い方ガイド：John the Ripperと一緒に.dmgファイルのパスワードをクラックする方法">
+<meta name=twitter:description content="はじめに Macユーザーならおなじみのディスクイメージファイル、.dmg形式のファイルは、アプリケーションやその他のコンテンツを配布するために">
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://seiri-blog.github.io/posts/"},{"@type":"ListItem","position":2,"name":"dmg2johnの使い方ガイド：John the Ripperと一緒に.dmgファイルのパスワードをクラックする方法","item":"https://seiri-blog.github.io/posts/how-to-use-jhon-crack-dmg/"}]}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"dmg2johnの使い方ガイド：John the Ripperと一緒に.dmgファイルのパスワードをクラックする方法","name":"dmg2johnの使い方ガイド：John the Ripperと一緒に.dmgファイルのパスワードをクラックする方法","description":"はじめに Macユーザーならおなじみのディスクイメージファイル、.dmg形式のファイルは、アプリケーションやその他のコンテンツを配布するために","keywords":["john","dmg2john","macOS","Linux","Windows"],"articleBody":"はじめに Macユーザーならおなじみのディスクイメージファイル、.dmg形式のファイルは、アプリケーションやその他のコンテンツを配布するためによく使われます。これらのファイルにはパスワード保護がかけられていることがあり、パスワードを忘れてしまった場合、アクセスできなくなることがあります。そんなときに役立つのが、John the Ripper（JtR）とそのサブツールdmg2johnです。このブログでは、dmg2johnを使って.dmgファイルのパスワードをクラックする手順を詳しく説明します。\n事前準備 まずは、John the Ripperをインストールしましょう。John the Ripperは、さまざまなハッシュをクラックするための強力なツールで、dmg2johnもこのパッケージに含まれています。\nLinux（Debian系）の場合 sudo apt-get update sudo apt-get install john macOS（Homebrewを使用）の場合 brew install john Windows 10の場合 Windows 10では、まずWSL（Windows Subsystem for Linux）を有効にして、Linux環境でJohn the Ripperをインストールすることをお勧めします。以下の手順でWSLをセットアップし、John the Ripperをインストールします。\n  WSLを有効にする:\n管理者権限でPowerShellを開き、以下のコマンドを実行します。\nwsl --install このコマンドにより、WSLとUbuntuのインストールが開始されます。インストールが完了したら、再起動します。\n  Ubuntuのセットアップ:\n再起動後、Ubuntuを起動し、初期セットアップを完了します。\n  John the Ripperをインストールする:\nUbuntuターミナルで以下のコマンドを実行してJohn the Ripperをインストールします。\nsudo apt-get update sudo apt-get install john   dmg2johnの確認 インストールが完了したら、dmg2johnが正しくインストールされているか確認します。以下のコマンドでJohn the Ripperのテストを行い、dmg2johnが含まれているか確認します。\njohn --test | grep \"dmg2john\" dmg2johnの使用方法 それでは、具体的な手順に進みましょう。ここでは、実際の.dmgファイルを例にとって、パスワードクラックの方法を説明します。\nステップ1: .dmgファイルからハッシュを抽出する まず、dmg2johnを使って.dmgファイルからパスワードハッシュを抽出します。このハッシュをJohn the Ripperでクラックします。\ndmg2john /path/to/your/file.dmg  hash.txt このコマンドにより、指定した.dmgファイルからパスワードハッシュが抽出され、hash.txtというファイルに保存されます。\nステップ2: John the Ripperでハッシュをクラックする 次に、John the Ripperを使って抽出したハッシュをクラックします。\njohn hash.txt このコマンドを実行すると、John the Ripperはhash.txtに含まれるハッシュをクラックし始めます。\nステップ3: クラックの進行状況を確認する John the Ripperはクラックの進行状況を自動的に表示しますが、手動で確認したい場合は以下のコマンドを使います。\njohn --status このコマンドにより、現在の進行状況が表示されます。\nステップ4: クラックされたパスワードを確認する パスワードが見つかると、John the Ripperは結果を表示します。クラックされたパスワードを手動で確認するには、以下のコマンドを使います。\njohn --show hash.txt このコマンドにより、hash.txtに含まれるハッシュに対応するパスワードが表示されます。\nパスワードリストの生成方法 パスワードクラックを効率的に行うために、パスワードリスト（ワードリスト）を使用することが一般的です。ここでは、rockyou.txtなどの既存のワードリストを使用する方法と、カスタムワードリストを生成する方法を説明します。\n既存のワードリストを使用する 既存のワードリストとして有名なrockyou.txtがあります。これは多くのクラックツールで使用されています。John the Ripperと組み合わせて使用する方法は以下の通りです。\n  rockyou.txtのダウンロード:\n多くのLinuxディストリビューションでは、rockyou.txtがパッケージに含まれています。以下のコマンドでインストールできます。\nsudo apt-get install john-data また、/usr/share/john/rockyou.txt.gzのように圧縮されている場合もあります。この場合は解凍します。\ngzip -d /usr/share/john/rockyou.txt.gz   John the Ripperでワードリストを指定してクラック:\njohn --wordlist=/usr/share/john/rockyou.txt hash.txt   カスタムワードリストを生成する 自分でカスタムワードリストを生成する場合、以下のようなツールを使います。\n  Crunchを使う:\nCrunchは、指定したパターンに基づいてワードリストを生成するツールです。\nsudo apt-get install crunch   Crunchでワードリストを生成する:\n例えば、5文字から8文字までの全てのアルファベット小文字の組み合わせを生成するには、以下のコマンドを使用します。\ncrunch 5 8 abcdefghijklmnopqrstuvwxyz -o custom_wordlist.txt   パスワードの長さや複雑さを設定する John the Ripperでは、パスワードの長さや複雑さを制御するために様々なオプションを使用できます。\nパスワードの長さを設定する 例えば、最小6文字、最大8文字のパスワードを対象とするには、以下のように設定します。\njohn --min-length=6 --max-length=8 hash.txt 複雑さを設定する パスワードに特定のパターンや文字セットを使用する場合、以下のようなオプションを使用します。\n  単純なマスクを使用:\n例えば、数字4桁のパスワードのみを試す場合：\njohn --mask=?d?d?d?d hash.txt   複雑なマスクを使用:\n例えば、1文字目が大文字、2文字目が小文字、3文字目が数字、4文字目が特殊文字の場合：\njohn --mask=?u?l?d?s hash.txt   まとめ dmg2johnとJohn the Ripperを使えば、.dmgファイルのパスワードをクラックすることが可能です。既存のワードリストを使用したり、カスタムワードリストを生成したり、パスワードの長さや複雑さを設定することで、クラックの効率を上げることができます。しかし、パスワードクラックは倫理的・法的に問題となる場合があるため、必ず自身がアクセス権を持つファイルに対してのみ行うようにしてください。忘れてしまったパスワードを思い出すための正当な手段として、このツールを活用しましょう。\nこのブログが、dmg2johnとJohn the Ripperを使って.dmgファイルのパスワードをクラックする方法を理解するのに役立てば幸いです。技術的なスキルを活用して、データアクセスの問題を解決する一助となればと思います。\n","wordCount":"2634","inLanguage":"ja","datePublished":"2024-05-19T22:55:30+09:00","dateModified":"2024-05-19T22:55:30+09:00","author":{"@type":"Person","name":"Seiri"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://seiri-blog.github.io/posts/how-to-use-jhon-crack-dmg/"},"publisher":{"@type":"Organization","name":"Seiri's Blog","logo":{"@type":"ImageObject","url":"https://seiri-blog.github.io/favicon.ico"}}}</script>
+</head>
+<body id=top>
+<script>localStorage.getItem("pref-theme")==="dark"&&document.body.classList.add('dark')</script>
+<header class=header>
+<nav class=nav>
+<div class=logo>
+<a href=https://seiri-blog.github.io/ accesskey=h title="Seiri's Blog (Alt + H)">
+<img src=https://seiri-blog.github.io/images/logo.svg alt aria-label=logo height=35>Seiri's Blog</a>
+<div class=logo-switches>
+<button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+</button>
+</div>
+</div>
+<ul id=menu>
+<li>
+<a href=https://seiri-blog.github.io/search/ title="🔍 (Alt + /)" accesskey=/>
+<span>🔍</span>
+</a>
+</li>
+<li>
+<a href=https://seiri-blog.github.io/posts/ title=記事一覧>
+<span>記事一覧</span>
+</a>
+</li>
+<li>
+<a href=https://seiri-blog.github.io/archives/ title=アーカイブ>
+<span>アーカイブ</span>
+</a>
+</li>
+<li>
+<a href=https://seiri-blog.github.io/tags/ title=タグ>
+<span>タグ</span>
+</a>
+</li>
+<li>
+<a href=https://seiri-blog.github.io/policy/ title=ポリシー>
+<span>ポリシー</span>
+</a>
+</li>
+<li>
+<a href=https://seiri-blog.github.io/profile/ title=プロファイル>
+<span>プロファイル</span>
+</a>
+</li>
+<li>
+<a href=https://seiri-blog.github.io/trailhead-superbadge title="Trailhead Superbadge">
+<span>Trailhead Superbadge</span>&nbsp;<svg fill="none" shape-rendering="geometricPrecision" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24" height="12" width="12"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg>
+</a>
+</li>
+</ul>
+</nav>
+</header>
+<main class=main>
+<article class=post-single>
+<header class=post-header>
+<div class=breadcrumbs><a href=https://seiri-blog.github.io/>ホーム</a>&nbsp;»&nbsp;<a href=https://seiri-blog.github.io/posts/>Posts</a></div>
+<h1 class=post-title>
+dmg2johnの使い方ガイド：John the Ripperと一緒に.dmgファイルのパスワードをクラックする方法
+</h1>
+<ul class=post-tags>
+<li><a href=https://seiri-blog.github.io/tags/john/>john</a></li>
+<li><a href=https://seiri-blog.github.io/tags/dmg2john/>dmg2john</a></li>
+<li><a href=https://seiri-blog.github.io/tags/macos/>macOS</a></li>
+<li><a href=https://seiri-blog.github.io/tags/linux/>Linux</a></li>
+<li><a href=https://seiri-blog.github.io/tags/windows/>Windows</a></li>
+</ul>
+<div class=post-meta><span title="2024-05-19 22:55:30 +0900 +0900">2024年5月19日</span>&nbsp;·&nbsp;6 分&nbsp;·&nbsp;2634 文字&nbsp;·&nbsp;Seiri
+</div>
+</header>
+<div class=share-area>
+<ul>
+<li class=facebook>
+<a target=_blank rel="noopener noreferrer" aria-label="share dmg2johnの使い方ガイド：John the Ripperと一緒に.dmgファイルのパスワードをクラックする方法 on facebook" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fseiri-blog.github.io%2fposts%2fhow-to-use-jhon-crack-dmg%2f" title="Facebook で共有する"><svg viewBox="0 0 512 512" height="20" width="20" fill="currentcolor"><path d="M449.446.0C483.971.0 512 28.03 512 62.554v386.892C512 483.97 483.97 512 449.446 512H342.978V319.085h66.6l12.672-82.621h-79.272v-53.617c0-22.603 11.073-44.636 46.58-44.636H425.6v-70.34s-32.71-5.582-63.982-5.582c-65.288.0-107.96 39.569-107.96 111.204v62.971h-72.573v82.621h72.573V512h-191.104c-34.524.0-62.554-28.03-62.554-62.554V62.554c0-34.524 28.029-62.554 62.554-62.554h386.892z"/></svg>
+</a>
+</li>
+<li class=twitter>
+<a target=_blank rel="noopener noreferrer" aria-label="share dmg2johnの使い方ガイド：John the Ripperと一緒に.dmgファイルのパスワードをクラックする方法 on twitter" href="https://twitter.com/intent/tweet/?text=dmg2john%e3%81%ae%e4%bd%bf%e3%81%84%e6%96%b9%e3%82%ac%e3%82%a4%e3%83%89%ef%bc%9aJohn%20the%20Ripper%e3%81%a8%e4%b8%80%e7%b7%92%e3%81%ab.dmg%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e3%81%ae%e3%83%91%e3%82%b9%e3%83%af%e3%83%bc%e3%83%89%e3%82%92%e3%82%af%e3%83%a9%e3%83%83%e3%82%af%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95&url=https%3a%2f%2fseiri-blog.github.io%2fposts%2fhow-to-use-jhon-crack-dmg%2f&hashtags=john%2cdmg2john%2cmacOS%2cLinux%2cWindows" title="Twitter(X) で共有する"><svg id="svg5" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="30" width="30" viewBox="0 0 2e3 512"><g id="layer1" transform="translate(52.390088,-25.058597)"><path id="path1009" fill="#fff" d="M283.94 167.31l386.39 516.64L281.5 1104h87.51l340.42-367.76L984.48 1104h297.8L874.15 558.3l361.92-390.99h-87.51l-313.51 338.7-253.31-338.7H283.94zm128.69 64.46h136.81l604.13 807.76h-136.81L412.63 231.77z"/></g></svg>
+</a>
+</li>
+<li class=hatena>
+<a target=_blank rel="noopener noreferrer" aria-label="share dmg2johnの使い方ガイド：John the Ripperと一緒に.dmgファイルのパスワードをクラックする方法 on Hatena" href="http://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fseiri-blog.github.io%2fposts%2fhow-to-use-jhon-crack-dmg%2f&title=dmg2john%e3%81%ae%e4%bd%bf%e3%81%84%e6%96%b9%e3%82%ac%e3%82%a4%e3%83%89%ef%bc%9aJohn%20the%20Ripper%e3%81%a8%e4%b8%80%e7%b7%92%e3%81%ab.dmg%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e3%81%ae%e3%83%91%e3%82%b9%e3%83%af%e3%83%bc%e3%83%89%e3%82%92%e3%82%af%e3%83%a9%e3%83%83%e3%82%af%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95" title="Hatena で共有する">
+B!
+</a>
+</li>
+<li class=line>
+<a target=_blank rel="noopener noreferrer" aria-label="share dmg2johnの使い方ガイド：John the Ripperと一緒に.dmgファイルのパスワードをクラックする方法 on Line" href=http://line.me/R/msg/text/?https%3a%2f%2fseiri-blog.github.io%2fposts%2fhow-to-use-jhon-crack-dmg%2f%0admg2john%e3%81%ae%e4%bd%bf%e3%81%84%e6%96%b9%e3%82%ac%e3%82%a4%e3%83%89%ef%bc%9aJohn%20the%20Ripper%e3%81%a8%e4%b8%80%e7%b7%92%e3%81%ab.dmg%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e3%81%ae%e3%83%91%e3%82%b9%e3%83%af%e3%83%bc%e3%83%89%e3%82%92%e3%82%af%e3%83%a9%e3%83%83%e3%82%af%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95 title="LINE で共有する"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="35" height="50"><path fill="currentcolor" d="M37.113 22.417c0-5.865-5.88-10.637-13.107-10.637s-13.108 4.772-13.108 10.637c0 5.258 4.663 9.662 10.962 10.495.427.092 1.008.282 1.155.646.132.331.086.85.042 1.185.0.0-.153.925-.187 1.122-.057.331-.263 1.296 1.135.707 1.399-.589 7.548-4.445 10.298-7.611h-.001C36.203 26.879 37.113 24.764 37.113 22.417zm-18.238 3.49h-2.604c-.379.0-.687-.308-.687-.688V20.01c0-.379.308-.687.687-.687.379.0.687.308.687.687v4.521h1.917c.379.0.687.308.687.687C19.562 25.598 19.254 25.907 18.875 25.907zM21.568 25.219c0 .379-.308.688-.687.688s-.687-.308-.687-.688V20.01c0-.379.308-.687.687-.687s.687.308.687.687v5.209zm6.27.0c0 .297-.188.559-.47.652-.071.024-.145.036-.218.036-.215.0-.42-.103-.549-.275l-2.669-3.635v3.222c0 .379-.308.688-.688.688-.379.0-.688-.308-.688-.688V20.01c0-.296.189-.558.47-.652.071-.024.144-.035.218-.035.214.0.42.103.549.275l2.67 3.635V20.01c0-.379.309-.687.688-.687.379.0.687.308.687.687v5.209zm4.214-3.292c.379.0.688.308.688.688.0.379-.308.687-.688.687h-1.917v1.23h1.917c.379.0.688.308.688.687s-.309.688-.688.688h-2.604c-.378.0-.687-.308-.687-.688v-2.603-.001s0-.001.0-.001v-2.601c0-.001.0-.001.0-.002.0-.379.308-.687.687-.687h2.604c.379.0.688.308.688.687s-.308.687-.688.687h-1.917v1.23h1.917z"/></svg>
+</a>
+</li>
+</ul>
+</div><div class=toc>
+<details open>
+<summary accesskey=c title="(Alt + C)">
+<span class=details>目次</span>
+</summary>
+<div class=inner><ul>
+<li>
+<a href=#%e3%81%af%e3%81%98%e3%82%81%e3%81%ab aria-label=はじめに>はじめに</a></li>
+<li>
+<a href=#%e4%ba%8b%e5%89%8d%e6%ba%96%e5%82%99 aria-label=事前準備>事前準備</a><ul>
+<li>
+<a href=#linuxdebian%e7%b3%bb%e3%81%ae%e5%a0%b4%e5%90%88 aria-label=Linux（Debian系）の場合>Linux（Debian系）の場合</a></li>
+<li>
+<a href=#macoshomebrew%e3%82%92%e4%bd%bf%e7%94%a8%e3%81%ae%e5%a0%b4%e5%90%88 aria-label=macOS（Homebrewを使用）の場合>macOS（Homebrewを使用）の場合</a></li>
+<li>
+<a href=#windows-10%e3%81%ae%e5%a0%b4%e5%90%88 aria-label="Windows 10の場合">Windows 10の場合</a></li></ul>
+</li>
+<li>
+<a href=#dmg2john%e3%81%ae%e7%a2%ba%e8%aa%8d aria-label=dmg2johnの確認>dmg2johnの確認</a></li>
+<li>
+<a href=#dmg2john%e3%81%ae%e4%bd%bf%e7%94%a8%e6%96%b9%e6%b3%95 aria-label=dmg2johnの使用方法>dmg2johnの使用方法</a><ul>
+<li>
+<a href=#%e3%82%b9%e3%83%86%e3%83%83%e3%83%971-dmg%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e3%81%8b%e3%82%89%e3%83%8f%e3%83%83%e3%82%b7%e3%83%a5%e3%82%92%e6%8a%bd%e5%87%ba%e3%81%99%e3%82%8b aria-label="ステップ1: .dmgファイルからハッシュを抽出する">ステップ1: .dmgファイルからハッシュを抽出する</a></li>
+<li>
+<a href=#%e3%82%b9%e3%83%86%e3%83%83%e3%83%972-john-the-ripper%e3%81%a7%e3%83%8f%e3%83%83%e3%82%b7%e3%83%a5%e3%82%92%e3%82%af%e3%83%a9%e3%83%83%e3%82%af%e3%81%99%e3%82%8b aria-label="ステップ2: John the Ripperでハッシュをクラックする">ステップ2: John the Ripperでハッシュをクラックする</a></li>
+<li>
+<a href=#%e3%82%b9%e3%83%86%e3%83%83%e3%83%973-%e3%82%af%e3%83%a9%e3%83%83%e3%82%af%e3%81%ae%e9%80%b2%e8%a1%8c%e7%8a%b6%e6%b3%81%e3%82%92%e7%a2%ba%e8%aa%8d%e3%81%99%e3%82%8b aria-label="ステップ3: クラックの進行状況を確認する">ステップ3: クラックの進行状況を確認する</a></li>
+<li>
+<a href=#%e3%82%b9%e3%83%86%e3%83%83%e3%83%974-%e3%82%af%e3%83%a9%e3%83%83%e3%82%af%e3%81%95%e3%82%8c%e3%81%9f%e3%83%91%e3%82%b9%e3%83%af%e3%83%bc%e3%83%89%e3%82%92%e7%a2%ba%e8%aa%8d%e3%81%99%e3%82%8b aria-label="ステップ4: クラックされたパスワードを確認する">ステップ4: クラックされたパスワードを確認する</a></li></ul>
+</li>
+<li>
+<a href=#%e3%83%91%e3%82%b9%e3%83%af%e3%83%bc%e3%83%89%e3%83%aa%e3%82%b9%e3%83%88%e3%81%ae%e7%94%9f%e6%88%90%e6%96%b9%e6%b3%95 aria-label=パスワードリストの生成方法>パスワードリストの生成方法</a><ul>
+<li>
+<a href=#%e6%97%a2%e5%ad%98%e3%81%ae%e3%83%af%e3%83%bc%e3%83%89%e3%83%aa%e3%82%b9%e3%83%88%e3%82%92%e4%bd%bf%e7%94%a8%e3%81%99%e3%82%8b aria-label=既存のワードリストを使用する>既存のワードリストを使用する</a></li>
+<li>
+<a href=#%e3%82%ab%e3%82%b9%e3%82%bf%e3%83%a0%e3%83%af%e3%83%bc%e3%83%89%e3%83%aa%e3%82%b9%e3%83%88%e3%82%92%e7%94%9f%e6%88%90%e3%81%99%e3%82%8b aria-label=カスタムワードリストを生成する>カスタムワードリストを生成する</a></li></ul>
+</li>
+<li>
+<a href=#%e3%83%91%e3%82%b9%e3%83%af%e3%83%bc%e3%83%89%e3%81%ae%e9%95%b7%e3%81%95%e3%82%84%e8%a4%87%e9%9b%91%e3%81%95%e3%82%92%e8%a8%ad%e5%ae%9a%e3%81%99%e3%82%8b aria-label=パスワードの長さや複雑さを設定する>パスワードの長さや複雑さを設定する</a><ul>
+<li>
+<a href=#%e3%83%91%e3%82%b9%e3%83%af%e3%83%bc%e3%83%89%e3%81%ae%e9%95%b7%e3%81%95%e3%82%92%e8%a8%ad%e5%ae%9a%e3%81%99%e3%82%8b aria-label=パスワードの長さを設定する>パスワードの長さを設定する</a></li>
+<li>
+<a href=#%e8%a4%87%e9%9b%91%e3%81%95%e3%82%92%e8%a8%ad%e5%ae%9a%e3%81%99%e3%82%8b aria-label=複雑さを設定する>複雑さを設定する</a></li></ul>
+</li>
+<li>
+<a href=#%e3%81%be%e3%81%a8%e3%82%81 aria-label=まとめ>まとめ</a>
+</li>
+</ul>
+</div>
+</details>
+</div>
+<div style="display:flex;justify-content:cente;margin:.5em auto">
+<ins class=adsbygoogle style=display:inline-block;width:728px;height:90px data-ad-client=ca-pub-4988552421895566 data-ad-slot=7460187386></ins>
+<script>(adsbygoogle=window.adsbygoogle||[]).push({})</script>
+</div>
+<div class=post-content><h2 id=はじめに>はじめに<a hidden class=anchor aria-hidden=true href=#はじめに>#</a></h2>
+<p>Macユーザーならおなじみのディスクイメージファイル、.dmg形式のファイルは、アプリケーションやその他のコンテンツを配布するためによく使われます。これらのファイルにはパスワード保護がかけられていることがあり、パスワードを忘れてしまった場合、アクセスできなくなることがあります。そんなときに役立つのが、John the Ripper（JtR）とそのサブツール<code>dmg2john</code>です。このブログでは、<code>dmg2john</code>を使って.dmgファイルのパスワードをクラックする手順を詳しく説明します。</p>
+<h2 id=事前準備>事前準備<a hidden class=anchor aria-hidden=true href=#事前準備>#</a></h2>
+<p>まずは、John the Ripperをインストールしましょう。John the Ripperは、さまざまなハッシュをクラックするための強力なツールで、<code>dmg2john</code>もこのパッケージに含まれています。</p>
+<h3 id=linuxdebian系の場合>Linux（Debian系）の場合<a hidden class=anchor aria-hidden=true href=#linuxdebian系の場合>#</a></h3>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>sudo apt-get update
+sudo apt-get install john
+</code></pre></div><h3 id=macoshomebrewを使用の場合>macOS（Homebrewを使用）の場合<a hidden class=anchor aria-hidden=true href=#macoshomebrewを使用の場合>#</a></h3>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>brew install john
+</code></pre></div><h3 id=windows-10の場合>Windows 10の場合<a hidden class=anchor aria-hidden=true href=#windows-10の場合>#</a></h3>
+<p>Windows 10では、まずWSL（Windows Subsystem for Linux）を有効にして、Linux環境でJohn the Ripperをインストールすることをお勧めします。以下の手順でWSLをセットアップし、John the Ripperをインストールします。</p>
+<ol>
+<li>
+<p><strong>WSLを有効にする</strong>:<br>
+管理者権限でPowerShellを開き、以下のコマンドを実行します。</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-powershell data-lang=powershell>wsl --install
+</code></pre></div><p>このコマンドにより、WSLとUbuntuのインストールが開始されます。インストールが完了したら、再起動します。</p>
+</li>
+<li>
+<p><strong>Ubuntuのセットアップ</strong>:<br>
+再起動後、Ubuntuを起動し、初期セットアップを完了します。</p>
+</li>
+<li>
+<p><strong>John the Ripperをインストールする</strong>:<br>
+Ubuntuターミナルで以下のコマンドを実行してJohn the Ripperをインストールします。</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>sudo apt-get update
+sudo apt-get install john
+</code></pre></div></li>
+</ol>
+<h2 id=dmg2johnの確認>dmg2johnの確認<a hidden class=anchor aria-hidden=true href=#dmg2johnの確認>#</a></h2>
+<p>インストールが完了したら、<code>dmg2john</code>が正しくインストールされているか確認します。以下のコマンドでJohn the Ripperのテストを行い、<code>dmg2john</code>が含まれているか確認します。</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>john --test | grep <span style=color:#e6db74>&#34;dmg2john&#34;</span>
+</code></pre></div><h2 id=dmg2johnの使用方法>dmg2johnの使用方法<a hidden class=anchor aria-hidden=true href=#dmg2johnの使用方法>#</a></h2>
+<p>それでは、具体的な手順に進みましょう。ここでは、実際の.dmgファイルを例にとって、パスワードクラックの方法を説明します。</p>
+<h3 id=ステップ1-dmgファイルからハッシュを抽出する>ステップ1: .dmgファイルからハッシュを抽出する<a hidden class=anchor aria-hidden=true href=#ステップ1-dmgファイルからハッシュを抽出する>#</a></h3>
+<p>まず、<code>dmg2john</code>を使って.dmgファイルからパスワードハッシュを抽出します。このハッシュをJohn the Ripperでクラックします。</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>dmg2john /path/to/your/file.dmg &gt; hash.txt
+</code></pre></div><p>このコマンドにより、指定した.dmgファイルからパスワードハッシュが抽出され、<code>hash.txt</code>というファイルに保存されます。</p>
+<h3 id=ステップ2-john-the-ripperでハッシュをクラックする>ステップ2: John the Ripperでハッシュをクラックする<a hidden class=anchor aria-hidden=true href=#ステップ2-john-the-ripperでハッシュをクラックする>#</a></h3>
+<p>次に、John the Ripperを使って抽出したハッシュをクラックします。</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>john hash.txt
+</code></pre></div><p>このコマンドを実行すると、John the Ripperは<code>hash.txt</code>に含まれるハッシュをクラックし始めます。</p>
+<h3 id=ステップ3-クラックの進行状況を確認する>ステップ3: クラックの進行状況を確認する<a hidden class=anchor aria-hidden=true href=#ステップ3-クラックの進行状況を確認する>#</a></h3>
+<p>John the Ripperはクラックの進行状況を自動的に表示しますが、手動で確認したい場合は以下のコマンドを使います。</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>john --status
+</code></pre></div><p>このコマンドにより、現在の進行状況が表示されます。</p>
+<h3 id=ステップ4-クラックされたパスワードを確認する>ステップ4: クラックされたパスワードを確認する<a hidden class=anchor aria-hidden=true href=#ステップ4-クラックされたパスワードを確認する>#</a></h3>
+<p>パスワードが見つかると、John the Ripperは結果を表示します。クラックされたパスワードを手動で確認するには、以下のコマンドを使います。</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>john --show hash.txt
+</code></pre></div><p>このコマンドにより、<code>hash.txt</code>に含まれるハッシュに対応するパスワードが表示されます。</p>
+<h2 id=パスワードリストの生成方法>パスワードリストの生成方法<a hidden class=anchor aria-hidden=true href=#パスワードリストの生成方法>#</a></h2>
+<p>パスワードクラックを効率的に行うために、パスワードリスト（ワードリスト）を使用することが一般的です。ここでは、<code>rockyou.txt</code>などの既存のワードリストを使用する方法と、カスタムワードリストを生成する方法を説明します。</p>
+<h3 id=既存のワードリストを使用する>既存のワードリストを使用する<a hidden class=anchor aria-hidden=true href=#既存のワードリストを使用する>#</a></h3>
+<p>既存のワードリストとして有名な<code>rockyou.txt</code>があります。これは多くのクラックツールで使用されています。John the Ripperと組み合わせて使用する方法は以下の通りです。</p>
+<ol>
+<li>
+<p><strong>rockyou.txtのダウンロード</strong>:<br>
+多くのLinuxディストリビューションでは、<code>rockyou.txt</code>がパッケージに含まれています。以下のコマンドでインストールできます。</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>sudo apt-get install john-data
+</code></pre></div><p>また、<code>/usr/share/john/rockyou.txt.gz</code>のように圧縮されている場合もあります。この場合は解凍します。</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>gzip -d /usr/share/john/rockyou.txt.gz
+</code></pre></div></li>
+<li>
+<p><strong>John the Ripperでワードリストを指定してクラック</strong>:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>john --wordlist<span style=color:#f92672>=</span>/usr/share/john/rockyou.txt hash.txt
+</code></pre></div></li>
+</ol>
+<h3 id=カスタムワードリストを生成する>カスタムワードリストを生成する<a hidden class=anchor aria-hidden=true href=#カスタムワードリストを生成する>#</a></h3>
+<p>自分でカスタムワードリストを生成する場合、以下のようなツールを使います。</p>
+<ol>
+<li>
+<p><strong>Crunchを使う</strong>:<br>
+Crunchは、指定したパターンに基づいてワードリストを生成するツールです。</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>sudo apt-get install crunch
+</code></pre></div></li>
+<li>
+<p><strong>Crunchでワードリストを生成する</strong>:<br>
+例えば、5文字から8文字までの全てのアルファベット小文字の組み合わせを生成するには、以下のコマンドを使用します。</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>crunch <span style=color:#ae81ff>5</span> <span style=color:#ae81ff>8</span> abcdefghijklmnopqrstuvwxyz -o custom_wordlist.txt
+</code></pre></div></li>
+</ol>
+<h2 id=パスワードの長さや複雑さを設定する>パスワードの長さや複雑さを設定する<a hidden class=anchor aria-hidden=true href=#パスワードの長さや複雑さを設定する>#</a></h2>
+<p>John the Ripperでは、パスワードの長さや複雑さを制御するために様々なオプションを使用できます。</p>
+<h3 id=パスワードの長さを設定する>パスワードの長さを設定する<a hidden class=anchor aria-hidden=true href=#パスワードの長さを設定する>#</a></h3>
+<p>例えば、最小6文字、最大8文字のパスワードを対象とするには、以下のように設定します。</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>john --min-length<span style=color:#f92672>=</span><span style=color:#ae81ff>6</span> --max-length<span style=color:#f92672>=</span><span style=color:#ae81ff>8</span> hash.txt
+</code></pre></div><h3 id=複雑さを設定する>複雑さを設定する<a hidden class=anchor aria-hidden=true href=#複雑さを設定する>#</a></h3>
+<p>パスワードに特定のパターンや文字セットを使用する場合、以下のようなオプションを使用します。</p>
+<ul>
+<li>
+<p><strong>単純なマスクを使用</strong>:<br>
+例えば、数字4桁のパスワードのみを試す場合：</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>john --mask<span style=color:#f92672>=</span>?d?d?d?d hash.txt
+</code></pre></div></li>
+<li>
+<p><strong>複雑なマスクを使用</strong>:<br>
+例えば、1文字目が大文字、2文字目が小文字、3文字目が数字、4文字目が特殊文字の場合：</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>john --mask<span style=color:#f92672>=</span>?u?l?d?s hash.txt
+</code></pre></div></li>
+</ul>
+<h2 id=まとめ>まとめ<a hidden class=anchor aria-hidden=true href=#まとめ>#</a></h2>
+<p>dmg2johnとJohn the Ripperを使えば、.dmgファイルのパスワードをクラックすることが可能です。既存のワードリストを使用したり、カスタムワードリストを生成したり、パスワードの長さや複雑さを設定することで、クラックの効率を上げることができます。しかし、パスワードクラックは倫理的・法的に問題となる場合があるため、必ず自身がアクセス権を持つファイルに対してのみ行うようにしてください。忘れてしまったパスワードを思い出すための正当な手段として、このツールを活用しましょう。</p>
+<p>このブログが、dmg2johnとJohn the Ripperを使って.dmgファイルのパスワードをクラックする方法を理解するのに役立てば幸いです。技術的なスキルを活用して、データアクセスの問題を解決する一助となればと思います。</p>
+</div>
+<div class=share-area>
+<ul>
+<li class=facebook>
+<a target=_blank rel="noopener noreferrer" aria-label="share dmg2johnの使い方ガイド：John the Ripperと一緒に.dmgファイルのパスワードをクラックする方法 on facebook" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fseiri-blog.github.io%2fposts%2fhow-to-use-jhon-crack-dmg%2f" title="Facebook で共有する"><svg viewBox="0 0 512 512" height="20" width="20" fill="currentcolor"><path d="M449.446.0C483.971.0 512 28.03 512 62.554v386.892C512 483.97 483.97 512 449.446 512H342.978V319.085h66.6l12.672-82.621h-79.272v-53.617c0-22.603 11.073-44.636 46.58-44.636H425.6v-70.34s-32.71-5.582-63.982-5.582c-65.288.0-107.96 39.569-107.96 111.204v62.971h-72.573v82.621h72.573V512h-191.104c-34.524.0-62.554-28.03-62.554-62.554V62.554c0-34.524 28.029-62.554 62.554-62.554h386.892z"/></svg>
+</a>
+</li>
+<li class=twitter>
+<a target=_blank rel="noopener noreferrer" aria-label="share dmg2johnの使い方ガイド：John the Ripperと一緒に.dmgファイルのパスワードをクラックする方法 on twitter" href="https://twitter.com/intent/tweet/?text=dmg2john%e3%81%ae%e4%bd%bf%e3%81%84%e6%96%b9%e3%82%ac%e3%82%a4%e3%83%89%ef%bc%9aJohn%20the%20Ripper%e3%81%a8%e4%b8%80%e7%b7%92%e3%81%ab.dmg%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e3%81%ae%e3%83%91%e3%82%b9%e3%83%af%e3%83%bc%e3%83%89%e3%82%92%e3%82%af%e3%83%a9%e3%83%83%e3%82%af%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95&url=https%3a%2f%2fseiri-blog.github.io%2fposts%2fhow-to-use-jhon-crack-dmg%2f&hashtags=john%2cdmg2john%2cmacOS%2cLinux%2cWindows" title="Twitter(X) で共有する"><svg id="svg5" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="30" width="30" viewBox="0 0 2e3 512"><g id="layer1" transform="translate(52.390088,-25.058597)"><path id="path1009" fill="#fff" d="M283.94 167.31l386.39 516.64L281.5 1104h87.51l340.42-367.76L984.48 1104h297.8L874.15 558.3l361.92-390.99h-87.51l-313.51 338.7-253.31-338.7H283.94zm128.69 64.46h136.81l604.13 807.76h-136.81L412.63 231.77z"/></g></svg>
+</a>
+</li>
+<li class=hatena>
+<a target=_blank rel="noopener noreferrer" aria-label="share dmg2johnの使い方ガイド：John the Ripperと一緒に.dmgファイルのパスワードをクラックする方法 on Hatena" href="http://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fseiri-blog.github.io%2fposts%2fhow-to-use-jhon-crack-dmg%2f&title=dmg2john%e3%81%ae%e4%bd%bf%e3%81%84%e6%96%b9%e3%82%ac%e3%82%a4%e3%83%89%ef%bc%9aJohn%20the%20Ripper%e3%81%a8%e4%b8%80%e7%b7%92%e3%81%ab.dmg%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e3%81%ae%e3%83%91%e3%82%b9%e3%83%af%e3%83%bc%e3%83%89%e3%82%92%e3%82%af%e3%83%a9%e3%83%83%e3%82%af%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95" title="Hatena で共有する">
+B!
+</a>
+</li>
+<li class=line>
+<a target=_blank rel="noopener noreferrer" aria-label="share dmg2johnの使い方ガイド：John the Ripperと一緒に.dmgファイルのパスワードをクラックする方法 on Line" href=http://line.me/R/msg/text/?https%3a%2f%2fseiri-blog.github.io%2fposts%2fhow-to-use-jhon-crack-dmg%2f%0admg2john%e3%81%ae%e4%bd%bf%e3%81%84%e6%96%b9%e3%82%ac%e3%82%a4%e3%83%89%ef%bc%9aJohn%20the%20Ripper%e3%81%a8%e4%b8%80%e7%b7%92%e3%81%ab.dmg%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e3%81%ae%e3%83%91%e3%82%b9%e3%83%af%e3%83%bc%e3%83%89%e3%82%92%e3%82%af%e3%83%a9%e3%83%83%e3%82%af%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95 title="LINE で共有する"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="35" height="50"><path fill="currentcolor" d="M37.113 22.417c0-5.865-5.88-10.637-13.107-10.637s-13.108 4.772-13.108 10.637c0 5.258 4.663 9.662 10.962 10.495.427.092 1.008.282 1.155.646.132.331.086.85.042 1.185.0.0-.153.925-.187 1.122-.057.331-.263 1.296 1.135.707 1.399-.589 7.548-4.445 10.298-7.611h-.001C36.203 26.879 37.113 24.764 37.113 22.417zm-18.238 3.49h-2.604c-.379.0-.687-.308-.687-.688V20.01c0-.379.308-.687.687-.687.379.0.687.308.687.687v4.521h1.917c.379.0.687.308.687.687C19.562 25.598 19.254 25.907 18.875 25.907zM21.568 25.219c0 .379-.308.688-.687.688s-.687-.308-.687-.688V20.01c0-.379.308-.687.687-.687s.687.308.687.687v5.209zm6.27.0c0 .297-.188.559-.47.652-.071.024-.145.036-.218.036-.215.0-.42-.103-.549-.275l-2.669-3.635v3.222c0 .379-.308.688-.688.688-.379.0-.688-.308-.688-.688V20.01c0-.296.189-.558.47-.652.071-.024.144-.035.218-.035.214.0.42.103.549.275l2.67 3.635V20.01c0-.379.309-.687.688-.687.379.0.687.308.687.687v5.209zm4.214-3.292c.379.0.688.308.688.688.0.379-.308.687-.688.687h-1.917v1.23h1.917c.379.0.688.308.688.687s-.309.688-.688.688h-2.604c-.378.0-.687-.308-.687-.688v-2.603-.001s0-.001.0-.001v-2.601c0-.001.0-.001.0-.002.0-.379.308-.687.687-.687h2.604c.379.0.688.308.688.687s-.308.687-.688.687h-1.917v1.23h1.917z"/></svg>
+</a>
+</li>
+</ul>
+</div>
+<div style="display:flex;justify-content:center;margin:.5em auto">
+<ins class=adsbygoogle style=display:inline-block;width:728px;height:90px data-ad-client=ca-pub-4988552421895566 data-ad-slot=8581697363></ins>
+<script>(adsbygoogle=window.adsbygoogle||[]).push({})</script>
+</div>
+<footer class=post-footer>
+<nav class=paginav>
+<a class=next href=https://seiri-blog.github.io/posts/unlock-screen-vbs-script/>
+<span class=title>次へ »</span>
+<br>
+<span>スクリーンをロックしないVBSスクリプトを作成する方法</span>
+</a>
+</nav>
+</footer><script defer src=https://cdn.commento.io/js/commento.js></script>
+<div id=commento></div>
+</article>
+</main>
+<footer class=footer>
+<span>&copy; 2024 Seiri All rights reserved</span>
+<span>
+Powered by
+<a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
+        <a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a>
+</span>
+</footer>
+<a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg>
+</a>
+<script>let menu=document.getElementById('menu');menu&&(menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}),document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener("click",function(b){b.preventDefault();var a=this.getAttribute("href").substr(1);window.matchMedia('(prefers-reduced-motion: reduce)').matches?document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView({behavior:"smooth"}),a==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${a}`)})})</script>
+<script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script>
+<script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove('dark'),localStorage.setItem("pref-theme",'light')):(document.body.classList.add('dark'),localStorage.setItem("pref-theme",'dark'))})</script>
+<script>document.querySelectorAll('pre > code').forEach(b=>{const c=b.parentNode.parentNode,a=document.createElement('button');a.classList.add('copy-code'),a.innerHTML='コピー';function d(){a.innerHTML='コピーされました!',setTimeout(()=>{a.innerHTML='コピー'},2e3)}a.addEventListener('click',e=>{if('clipboard'in navigator){navigator.clipboard.writeText(b.textContent),d();return}const a=document.createRange();a.selectNodeContents(b);const c=window.getSelection();c.removeAllRanges(),c.addRange(a);try{document.execCommand('copy'),d()}catch(a){}c.removeRange(a)}),c.classList.contains("highlight")?c.appendChild(a):c.parentNode.firstChild==c||(b.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName=="TABLE"?b.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(a):b.parentNode.appendChild(a))})</script>
+</body>
+</html>
