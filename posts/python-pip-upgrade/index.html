@@ -24,14 +24,16 @@
 <meta property="og:title" content="Pythonのpipアップデータ方法">
 <meta property="og:description" content="pip アップデータ Python の pip パッケージマネージャを使用して、インストールされているパッケージを最新バージョンにアップデートする方法はいくつかあります">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://seiri-blog.github.io/posts/python-pip-upgrade/"><meta property="article:section" content="posts">
+<meta property="og:url" content="https://seiri-blog.github.io/posts/python-pip-upgrade/">
+<meta property="og:image" content="https://seiri-blog.github.io/images/python.png"><meta property="article:section" content="posts">
 <meta property="article:published_time" content="2023-06-12T17:37:23+09:00">
 <meta property="article:modified_time" content="2023-06-12T17:37:23+09:00"><meta property="og:site_name" content="Seiri's Blog">
-<meta name=twitter:card content="summary">
+<meta name=twitter:card content="summary_large_image">
+<meta name=twitter:image content="https://seiri-blog.github.io/images/python.png">
 <meta name=twitter:title content="Pythonのpipアップデータ方法">
 <meta name=twitter:description content="pip アップデータ Python の pip パッケージマネージャを使用して、インストールされているパッケージを最新バージョンにアップデートする方法はいくつかあります">
 <script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://seiri-blog.github.io/posts/"},{"@type":"ListItem","position":2,"name":"Pythonのpipアップデータ方法","item":"https://seiri-blog.github.io/posts/python-pip-upgrade/"}]}</script>
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"Pythonのpipアップデータ方法","name":"Pythonのpipアップデータ方法","description":"pip アップデータ Python の pip パッケージマネージャを使用して、インストールされているパッケージを最新バージョンにアップデートする方法はいくつかあります","keywords":["python","pip"],"articleBody":"pip アップデータ Python の pip パッケージマネージャを使用して、インストールされているパッケージを最新バージョンにアップデートする方法はいくつかあります。以下にいくつかの方法を説明します。\n コマンドラインからアップデート:\nターミナルやコマンドプロンプトを開き、次のコマンドを入力します。  pip install --upgrade パッケージ名 例えば、requests パッケージをアップデートするには、次のように入力します。\npip install --upgrade requests パッケージリストをアップデートしてからアップデート:\nターミナルやコマンドプロンプトを開き、まずパッケージリストを最新の状態にアップデートします。  pip install --upgrade pip その後、次のコマンドですべてのパッケージをアップデートできます。\npip freeze --local | grep -v '^-e' | cut -d = -f 1 | xargs -n1 pip install -U requirements.txt ファイルを使用してアップデート:\nプロジェクトのルートディレクトリにある requirements.txt ファイルには、必要なパッケージとそのバージョンが記述されている場合があります。このファイルを使用して、すべてのパッケージをアップデートすることもできます。以下のコマンドを使用します。  pip install --upgrade -r requirements.txt どの方法を選ぶかは、状況やプロジェクトの要件によって異なります。\n最も一般的な方法は、コマンドラインから直接パッケージをアップデートする方法です。\n","wordCount":"521","inLanguage":"ja","datePublished":"2023-06-12T17:37:23+09:00","dateModified":"2023-06-12T17:37:23+09:00","author":{"@type":"Person","name":"Seiri"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://seiri-blog.github.io/posts/python-pip-upgrade/"},"publisher":{"@type":"Organization","name":"Seiri's Blog","logo":{"@type":"ImageObject","url":"https://seiri-blog.github.io/favicon.ico"}}}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"Pythonのpipアップデータ方法","name":"Pythonのpipアップデータ方法","description":"pip アップデータ Python の pip パッケージマネージャを使用して、インストールされているパッケージを最新バージョンにアップデートする方法はいくつかあります","keywords":["python","pip"],"articleBody":"pip アップデータ Python の pip パッケージマネージャを使用して、インストールされているパッケージを最新バージョンにアップデートする方法はいくつかあります。以下にいくつかの方法を説明します。\n コマンドラインからアップデート:\nターミナルやコマンドプロンプトを開き、次のコマンドを入力します。  pip install --upgrade パッケージ名 例えば、requests パッケージをアップデートするには、次のように入力します。\npip install --upgrade requests パッケージリストをアップデートしてからアップデート:\nターミナルやコマンドプロンプトを開き、まずパッケージリストを最新の状態にアップデートします。  pip install --upgrade pip その後、次のコマンドですべてのパッケージをアップデートできます。\npip freeze --local | grep -v '^-e' | cut -d = -f 1 | xargs -n1 pip install -U requirements.txt ファイルを使用してアップデート:\nプロジェクトのルートディレクトリにある requirements.txt ファイルには、必要なパッケージとそのバージョンが記述されている場合があります。このファイルを使用して、すべてのパッケージをアップデートすることもできます。以下のコマンドを使用します。  pip install --upgrade -r requirements.txt どの方法を選ぶかは、状況やプロジェクトの要件によって異なります。\n最も一般的な方法は、コマンドラインから直接パッケージをアップデートする方法です。\n","wordCount":"521","inLanguage":"ja","image":"https://seiri-blog.github.io/images/python.png","datePublished":"2023-06-12T17:37:23+09:00","dateModified":"2023-06-12T17:37:23+09:00","author":{"@type":"Person","name":"Seiri"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://seiri-blog.github.io/posts/python-pip-upgrade/"},"publisher":{"@type":"Organization","name":"Seiri's Blog","logo":{"@type":"ImageObject","url":"https://seiri-blog.github.io/favicon.ico"}}}</script>
 </head>
 <body id=top>
 <script>localStorage.getItem("pref-theme")==="dark"&&document.body.classList.add('dark')</script>
@@ -98,6 +100,9 @@ Pythonのpipアップデータ方法
 <div class=post-meta><span title="2023-06-12 17:37:23 +0900 +0900">2023年6月12日</span>&nbsp;·&nbsp;2 分&nbsp;·&nbsp;521 文字&nbsp;·&nbsp;Seiri
 </div>
 </header>
+<figure class=entry-cover><img loading=lazy src=https://seiri-blog.github.io/images/python.png alt=Pythonのpipアップデータ方法>
+<p>Pythonのpipアップデータ方法</p>
+</figure>
 <div class=share-area>
 <ul>
 <li class=facebook>

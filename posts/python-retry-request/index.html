@@ -4,7 +4,7 @@
 <meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
 <meta name=robots content="index, follow">
 <title>PythonでRetry Request Utilityを作成する方法 | Seiri's Blog</title>
-<meta name=keywords content="python,python3,request">
+<meta name=keywords content="python,request">
 <meta name=description content="はじめに Python を使用して API リクエストを行う際、アプリケーションの信頼性はネットワークの問題やサーバーエラーによって挑戦されることがあります。本記">
 <meta name=author content="Seiri">
 <link rel=canonical href=https://seiri-blog.github.io/posts/python-retry-request/>
@@ -24,14 +24,16 @@
 <meta property="og:title" content="PythonでRetry Request Utilityを作成する方法">
 <meta property="og:description" content="はじめに Python を使用して API リクエストを行う際、アプリケーションの信頼性はネットワークの問題やサーバーエラーによって挑戦されることがあります。本記">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://seiri-blog.github.io/posts/python-retry-request/"><meta property="article:section" content="posts">
+<meta property="og:url" content="https://seiri-blog.github.io/posts/python-retry-request/">
+<meta property="og:image" content="https://seiri-blog.github.io/images/python.png"><meta property="article:section" content="posts">
 <meta property="article:published_time" content="2023-12-26T12:04:33+09:00">
 <meta property="article:modified_time" content="2023-12-26T12:04:33+09:00"><meta property="og:site_name" content="Seiri's Blog">
-<meta name=twitter:card content="summary">
+<meta name=twitter:card content="summary_large_image">
+<meta name=twitter:image content="https://seiri-blog.github.io/images/python.png">
 <meta name=twitter:title content="PythonでRetry Request Utilityを作成する方法">
 <meta name=twitter:description content="はじめに Python を使用して API リクエストを行う際、アプリケーションの信頼性はネットワークの問題やサーバーエラーによって挑戦されることがあります。本記">
 <script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://seiri-blog.github.io/posts/"},{"@type":"ListItem","position":2,"name":"PythonでRetry Request Utilityを作成する方法","item":"https://seiri-blog.github.io/posts/python-retry-request/"}]}</script>
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"PythonでRetry Request Utilityを作成する方法","name":"PythonでRetry Request Utilityを作成する方法","description":"はじめに Python を使用して API リクエストを行う際、アプリケーションの信頼性はネットワークの問題やサーバーエラーによって挑戦されることがあります。本記","keywords":["python","python3","request"],"articleBody":"はじめに Python を使用して API リクエストを行う際、アプリケーションの信頼性はネットワークの問題やサーバーエラーによって挑戦されることがあります。本記事では、urllib3 と requests ライブラリを組み合わせて、強力な Retry Request Util を作成する方法について掘り下げていきます。リトライメカニズムの重要性とその Python アプリケーションへのスムーズな統合に焦点を当てましょう。\nAPI リクエストにおけるリトライの必要性の理解 API 通信の一般的な問題 API 通信はさまざまな課題にさらされており、ネットワークのちぐはぐさからサーバーのダウンタイムまで様々です。これらの問題はデータのアプリケーションと外部サービスの間の流れを妨げ、トランザクションの不完全さや予期せぬエラーを引き起こす可能性があります。\nネットワークエラーがアプリケーション信頼性に与える影響 ユーザーがシームレスなエクスペリエンスを要求する現代において、ネットワークエラーはアプリケーションの信頼性に対して重大な脅威となります。一時的なネットワークの問題が原因で重要な API コールが失敗すると想像してみてください。堅牢なリトライメカニズムは、そのようなトラブルがアプリケーション全体の機能に悪影響を与えないようにします。\n適切なライブラリの選択: urllib3 と requests urllib3 と requests ライブラリの紹介 Retry Request Util を構築するためのツールについて探る前に、手元にあるツールについて知っておきましょう。urllib3は HTTP リクエストのための強力な接続プーリングとスレッドセーフを提供し、requestsは HTTP リクエストの送信とレスポンスの処理を簡素化します。\nライブラリのインストール Retry Request Util を作成する前に、必要なライブラリがインストールされていることを確認しましょう。以下のコマンドを実行して urllib3 と requests をインストールします。\npip install urllib3 pip install requests ライブラリのインポート import urllib3 from urllib3.util.retry import Retry from requests.adapters import HTTPAdapter retry_request.py の作成 import requests from requests.adapters import HTTPAdapter from urllib3.util.retry import Retry @contextlib.contextmanager def request_session(): max_retries = Retry(total=3, backoff_factor=1, status_forcelist=[k for k in range(400, 600)]) headers = { \"User-Agent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.111 Safari/537.36\" } s = requests.session() try: s.headers.update(headers) s.mount(\"http://\", HTTPAdapter(max_retries=max_retries)) s.mount(\"https://\", HTTPAdapter(max_retries=max_retries)) yield s finally: s.close() 使用例 from retry_request import request_session def main(): with request_session() as s: r = s.get(\"http://example.com\") print(r.status_code) print(r.text) if __name__ == \"__main__\": main() ","wordCount":"845","inLanguage":"ja","datePublished":"2023-12-26T12:04:33+09:00","dateModified":"2023-12-26T12:04:33+09:00","author":{"@type":"Person","name":"Seiri"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://seiri-blog.github.io/posts/python-retry-request/"},"publisher":{"@type":"Organization","name":"Seiri's Blog","logo":{"@type":"ImageObject","url":"https://seiri-blog.github.io/favicon.ico"}}}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"PythonでRetry Request Utilityを作成する方法","name":"PythonでRetry Request Utilityを作成する方法","description":"はじめに Python を使用して API リクエストを行う際、アプリケーションの信頼性はネットワークの問題やサーバーエラーによって挑戦されることがあります。本記","keywords":["python","request"],"articleBody":"はじめに Python を使用して API リクエストを行う際、アプリケーションの信頼性はネットワークの問題やサーバーエラーによって挑戦されることがあります。本記事では、urllib3 と requests ライブラリを組み合わせて、強力な Retry Request Util を作成する方法について掘り下げていきます。リトライメカニズムの重要性とその Python アプリケーションへのスムーズな統合に焦点を当てましょう。\nAPI リクエストにおけるリトライの必要性の理解 API 通信の一般的な問題 API 通信はさまざまな課題にさらされており、ネットワークのちぐはぐさからサーバーのダウンタイムまで様々です。これらの問題はデータのアプリケーションと外部サービスの間の流れを妨げ、トランザクションの不完全さや予期せぬエラーを引き起こす可能性があります。\nネットワークエラーがアプリケーション信頼性に与える影響 ユーザーがシームレスなエクスペリエンスを要求する現代において、ネットワークエラーはアプリケーションの信頼性に対して重大な脅威となります。一時的なネットワークの問題が原因で重要な API コールが失敗すると想像してみてください。堅牢なリトライメカニズムは、そのようなトラブルがアプリケーション全体の機能に悪影響を与えないようにします。\n適切なライブラリの選択: urllib3 と requests urllib3 と requests ライブラリの紹介 Retry Request Util を構築するためのツールについて探る前に、手元にあるツールについて知っておきましょう。urllib3は HTTP リクエストのための強力な接続プーリングとスレッドセーフを提供し、requestsは HTTP リクエストの送信とレスポンスの処理を簡素化します。\nライブラリのインストール Retry Request Util を作成する前に、必要なライブラリがインストールされていることを確認しましょう。以下のコマンドを実行して urllib3 と requests をインストールします。\npip install urllib3 pip install requests ライブラリのインポート import urllib3 from urllib3.util.retry import Retry from requests.adapters import HTTPAdapter retry_request.py の作成 import requests from requests.adapters import HTTPAdapter from urllib3.util.retry import Retry @contextlib.contextmanager def request_session(): max_retries = Retry(total=3, backoff_factor=1, status_forcelist=[k for k in range(400, 600)]) headers = { \"User-Agent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.111 Safari/537.36\" } s = requests.session() try: s.headers.update(headers) s.mount(\"http://\", HTTPAdapter(max_retries=max_retries)) s.mount(\"https://\", HTTPAdapter(max_retries=max_retries)) yield s finally: s.close() 使用例 from retry_request import request_session def main(): with request_session() as s: r = s.get(\"http://example.com\") print(r.status_code) print(r.text) if __name__ == \"__main__\": main() ","wordCount":"845","inLanguage":"ja","image":"https://seiri-blog.github.io/images/python.png","datePublished":"2023-12-26T12:04:33+09:00","dateModified":"2023-12-26T12:04:33+09:00","author":{"@type":"Person","name":"Seiri"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://seiri-blog.github.io/posts/python-retry-request/"},"publisher":{"@type":"Organization","name":"Seiri's Blog","logo":{"@type":"ImageObject","url":"https://seiri-blog.github.io/favicon.ico"}}}</script>
 </head>
 <body id=top>
 <script>localStorage.getItem("pref-theme")==="dark"&&document.body.classList.add('dark')</script>
@@ -93,12 +95,14 @@ PythonでRetry Request Utilityを作成する方法
 </h1>
 <ul class=post-tags>
 <li><a href=https://seiri-blog.github.io/tags/python/>python</a></li>
-<li><a href=https://seiri-blog.github.io/tags/python3/>python3</a></li>
 <li><a href=https://seiri-blog.github.io/tags/request/>request</a></li>
 </ul>
 <div class=post-meta><span title="2023-12-26 12:04:33 +0900 +0900">2023年12月26日</span>&nbsp;·&nbsp;2 分&nbsp;·&nbsp;845 文字&nbsp;·&nbsp;Seiri
 </div>
 </header>
+<figure class=entry-cover><img loading=lazy src=https://seiri-blog.github.io/images/python.png alt="PythonでRetry Request Utilityを作成する方法">
+<p>PythonでRetry Request Utilityを作成する方法</p>
+</figure>
 <div class=share-area>
 <ul>
 <li class=facebook>
@@ -106,7 +110,7 @@ PythonでRetry Request Utilityを作成する方法
 </a>
 </li>
 <li class=twitter>
-<a target=_blank rel="noopener noreferrer" aria-label="share PythonでRetry Request Utilityを作成する方法 on twitter" href="https://twitter.com/intent/tweet/?text=Python%e3%81%a7Retry%20Request%20Utility%e3%82%92%e4%bd%9c%e6%88%90%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95&url=https%3a%2f%2fseiri-blog.github.io%2fposts%2fpython-retry-request%2f&hashtags=python%2cpython3%2crequest" title="Twitter(X) で共有する"><svg id="svg5" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="30" width="30" viewBox="0 0 2e3 512"><g id="layer1" transform="translate(52.390088,-25.058597)"><path id="path1009" fill="#fff" d="M283.94 167.31l386.39 516.64L281.5 1104h87.51l340.42-367.76L984.48 1104h297.8L874.15 558.3l361.92-390.99h-87.51l-313.51 338.7-253.31-338.7H283.94zm128.69 64.46h136.81l604.13 807.76h-136.81L412.63 231.77z"/></g></svg>
+<a target=_blank rel="noopener noreferrer" aria-label="share PythonでRetry Request Utilityを作成する方法 on twitter" href="https://twitter.com/intent/tweet/?text=Python%e3%81%a7Retry%20Request%20Utility%e3%82%92%e4%bd%9c%e6%88%90%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95&url=https%3a%2f%2fseiri-blog.github.io%2fposts%2fpython-retry-request%2f&hashtags=python%2crequest" title="Twitter(X) で共有する"><svg id="svg5" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="30" width="30" viewBox="0 0 2e3 512"><g id="layer1" transform="translate(52.390088,-25.058597)"><path id="path1009" fill="#fff" d="M283.94 167.31l386.39 516.64L281.5 1104h87.51l340.42-367.76L984.48 1104h297.8L874.15 558.3l361.92-390.99h-87.51l-313.51 338.7-253.31-338.7H283.94zm128.69 64.46h136.81l604.13 807.76h-136.81L412.63 231.77z"/></g></svg>
 </a>
 </li>
 <li class=hatena>
@@ -217,7 +221,7 @@ pip install requests
 </a>
 </li>
 <li class=twitter>
-<a target=_blank rel="noopener noreferrer" aria-label="share PythonでRetry Request Utilityを作成する方法 on twitter" href="https://twitter.com/intent/tweet/?text=Python%e3%81%a7Retry%20Request%20Utility%e3%82%92%e4%bd%9c%e6%88%90%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95&url=https%3a%2f%2fseiri-blog.github.io%2fposts%2fpython-retry-request%2f&hashtags=python%2cpython3%2crequest" title="Twitter(X) で共有する"><svg id="svg5" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="30" width="30" viewBox="0 0 2e3 512"><g id="layer1" transform="translate(52.390088,-25.058597)"><path id="path1009" fill="#fff" d="M283.94 167.31l386.39 516.64L281.5 1104h87.51l340.42-367.76L984.48 1104h297.8L874.15 558.3l361.92-390.99h-87.51l-313.51 338.7-253.31-338.7H283.94zm128.69 64.46h136.81l604.13 807.76h-136.81L412.63 231.77z"/></g></svg>
+<a target=_blank rel="noopener noreferrer" aria-label="share PythonでRetry Request Utilityを作成する方法 on twitter" href="https://twitter.com/intent/tweet/?text=Python%e3%81%a7Retry%20Request%20Utility%e3%82%92%e4%bd%9c%e6%88%90%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95&url=https%3a%2f%2fseiri-blog.github.io%2fposts%2fpython-retry-request%2f&hashtags=python%2crequest" title="Twitter(X) で共有する"><svg id="svg5" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="30" width="30" viewBox="0 0 2e3 512"><g id="layer1" transform="translate(52.390088,-25.058597)"><path id="path1009" fill="#fff" d="M283.94 167.31l386.39 516.64L281.5 1104h87.51l340.42-367.76L984.48 1104h297.8L874.15 558.3l361.92-390.99h-87.51l-313.51 338.7-253.31-338.7H283.94zm128.69 64.46h136.81l604.13 807.76h-136.81L412.63 231.77z"/></g></svg>
 </a>
 </li>
 <li class=hatena>
