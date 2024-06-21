@@ -6,16 +6,7 @@
     <description>Recent content in python3 on Seiri&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>2024 Seiri All rights reserved</copyright>
-    <lastBuildDate>Tue, 18 Jan 2022 19:21:37 +0900</lastBuildDate><atom:link href="https://seiri-blog.github.io/tags/python3/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Pythonで日本の新型コロナ患者情報取得</title>
-      <link>https://seiri-blog.github.io/posts/python-corona-patient-info-in-japanese/</link>
-      <pubDate>Tue, 18 Jan 2022 19:21:37 +0900</pubDate>
-      
-      <guid>https://seiri-blog.github.io/posts/python-corona-patient-info-in-japanese/</guid>
-      <description>環境 Win10 python 3.8.10 ・requests==2.25.1 ・pandas==1.3.1 実装 import requests as rq import pandas as pd url = &amp;#39;https://covid19-japan-web-api.vercel.app/api/v1/positives?prefecture={0}&amp;#39; prefectures = [&amp;#39;北海道&amp;#39;,&amp;#39</description>
-    </item>
-    
+    <lastBuildDate>Mon, 27 Dec 2021 16:14:46 +0900</lastBuildDate><atom:link href="https://seiri-blog.github.io/tags/python3/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>【AWS】LambdaでS3ファイルをtmpディレクトリに保存</title>
       <link>https://seiri-blog.github.io/posts/aws-lambda-by-s3-file-tmp-directory-save/</link>
@@ -77,24 +68,6 @@
       
       <guid>https://seiri-blog.github.io/posts/aws-lambda-common-response-util-in-python/</guid>
       <description>共通レスポンス Util 以下に、Python で AWS Lambda 内で共通的に使用されるレスポンスのためのユーティリティクラスの例を示します。このクラスを使用すると</description>
-    </item>
-    
-    <item>
-      <title>Pythonでのデータ埋める方法</title>
-      <link>https://seiri-blog.github.io/posts/python-fill-data/</link>
-      <pubDate>Thu, 23 Dec 2021 12:51:07 +0900</pubDate>
-      
-      <guid>https://seiri-blog.github.io/posts/python-fill-data/</guid>
-      <description>実装例 def padding_formatter(item, padding, data_type): &amp;#34;&amp;#34;&amp;#34; 引数で指定された桁数までデータを埋める 埋める内容は以下の通り ・データ型[numeric: 数字] 先頭0埋め ・データ型[half</description>
-    </item>
-    
-    <item>
-      <title>PythonでのDBSessionクラス</title>
-      <link>https://seiri-blog.github.io/posts/python-dbsession-class/</link>
-      <pubDate>Thu, 23 Dec 2021 12:38:42 +0900</pubDate>
-      
-      <guid>https://seiri-blog.github.io/posts/python-dbsession-class/</guid>
-      <description>SQLAlchemy とは SQLAlchemy とは、python の中では最もよく利用されている ORM の一つです。 ORM 以外にも以下の機能を持ちます。 1.データベースへの接続、SQL の実行</description>
     </item>
     
   </channel>

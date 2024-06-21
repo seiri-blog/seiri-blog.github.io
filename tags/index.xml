@@ -6,7 +6,52 @@
     <description>Recent content in Tags on Seiri&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>2024 Seiri All rights reserved</copyright>
-    <lastBuildDate>Thu, 13 Jun 2024 20:15:39 +0900</lastBuildDate><atom:link href="https://seiri-blog.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 21 Jun 2024 18:34:05 +0900</lastBuildDate><atom:link href="https://seiri-blog.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>chatgpt</title>
+      <link>https://seiri-blog.github.io/tags/chatgpt/</link>
+      <pubDate>Fri, 21 Jun 2024 18:34:05 +0900</pubDate>
+      
+      <guid>https://seiri-blog.github.io/tags/chatgpt/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>prompt</title>
+      <link>https://seiri-blog.github.io/tags/prompt/</link>
+      <pubDate>Fri, 21 Jun 2024 18:34:05 +0900</pubDate>
+      
+      <guid>https://seiri-blog.github.io/tags/prompt/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>python</title>
+      <link>https://seiri-blog.github.io/tags/python/</link>
+      <pubDate>Fri, 21 Jun 2024 18:24:49 +0900</pubDate>
+      
+      <guid>https://seiri-blog.github.io/tags/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>requests</title>
+      <link>https://seiri-blog.github.io/tags/requests/</link>
+      <pubDate>Fri, 21 Jun 2024 18:24:49 +0900</pubDate>
+      
+      <guid>https://seiri-blog.github.io/tags/requests/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>urllib</title>
+      <link>https://seiri-blog.github.io/tags/urllib/</link>
+      <pubDate>Fri, 21 Jun 2024 18:24:49 +0900</pubDate>
+      
+      <guid>https://seiri-blog.github.io/tags/urllib/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>homebrew</title>
       <link>https://seiri-blog.github.io/tags/homebrew/</link>
@@ -49,15 +94,6 @@
       <pubDate>Thu, 13 Jun 2024 19:34:56 +0900</pubDate>
       
       <guid>https://seiri-blog.github.io/tags/dataframe/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>python</title>
-      <link>https://seiri-blog.github.io/tags/python/</link>
-      <pubDate>Thu, 13 Jun 2024 19:34:56 +0900</pubDate>
-      
-      <guid>https://seiri-blog.github.io/tags/python/</guid>
       <description></description>
     </item>
     
@@ -692,15 +728,6 @@
     </item>
     
     <item>
-      <title>ChatGPT</title>
-      <link>https://seiri-blog.github.io/tags/chatgpt/</link>
-      <pubDate>Mon, 12 Dec 2022 19:48:11 +0900</pubDate>
-      
-      <guid>https://seiri-blog.github.io/tags/chatgpt/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>gpt</title>
       <link>https://seiri-blog.github.io/tags/gpt/</link>
       <pubDate>Mon, 12 Dec 2022 19:48:11 +0900</pubDate>
@@ -899,20 +926,20 @@
     </item>
     
     <item>
-      <title>python3</title>
-      <link>https://seiri-blog.github.io/tags/python3/</link>
-      <pubDate>Tue, 18 Jan 2022 19:21:37 +0900</pubDate>
-      
-      <guid>https://seiri-blog.github.io/tags/python3/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>AWSLambda</title>
       <link>https://seiri-blog.github.io/tags/awslambda/</link>
       <pubDate>Mon, 27 Dec 2021 17:53:32 +0900</pubDate>
       
       <guid>https://seiri-blog.github.io/tags/awslambda/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>python3</title>
+      <link>https://seiri-blog.github.io/tags/python3/</link>
+      <pubDate>Mon, 27 Dec 2021 16:14:46 +0900</pubDate>
+      
+      <guid>https://seiri-blog.github.io/tags/python3/</guid>
       <description></description>
     </item>
     
