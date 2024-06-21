@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>環境構築 on Seiri&#39;s Blog</title>
+    <link>https://seiri-blog.github.io/tags/%E7%92%B0%E5%A2%83%E6%A7%8B%E7%AF%89/</link>
+    <description>Recent content in 環境構築 on Seiri&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>2024 Seiri All rights reserved</copyright>
+    <lastBuildDate>Mon, 24 Jan 2022 18:11:28 +0900</lastBuildDate><atom:link href="https://seiri-blog.github.io/tags/%E7%92%B0%E5%A2%83%E6%A7%8B%E7%AF%89/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Amplify &#43; Reactでアプリケーション作成</title>
+      <link>https://seiri-blog.github.io/posts/application-creating-at-amplify-react/</link>
+      <pubDate>Mon, 24 Jan 2022 18:11:28 +0900</pubDate>
+      
+      <guid>https://seiri-blog.github.io/posts/application-creating-at-amplify-react/</guid>
+      <description>準備 下記コマンドを順番に実行し、Amplify-React での環境を構築する 1.AmplifyCLI をインストール npm install -g @aws-amplify/cli 2.Amplify を設定する amplify configure Specify the AWS Region ? region: # Your preferred region Specify the</description>
+    </item>
+    
+  </channel>
+</rss>

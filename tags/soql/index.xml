@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>SOQL on Seiri&#39;s Blog</title>
+    <link>https://seiri-blog.github.io/tags/soql/</link>
+    <description>Recent content in SOQL on Seiri&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>2024 Seiri All rights reserved</copyright>
+    <lastBuildDate>Thu, 07 Dec 2023 19:33:43 +0900</lastBuildDate><atom:link href="https://seiri-blog.github.io/tags/soql/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>【Salesforce】SOQL入門</title>
+      <link>https://seiri-blog.github.io/posts/salesforce-soql-introduction/</link>
+      <pubDate>Thu, 07 Dec 2023 19:33:43 +0900</pubDate>
+      
+      <guid>https://seiri-blog.github.io/posts/salesforce-soql-introduction/</guid>
+      <description>SOQL とは SOQL（Salesforce Object Query Language）は、Salesforce のデータをクエリするために特別に設計されたクエリ言語です。</description>
+    </item>
+    
+    <item>
+      <title>【Salesforce】SOQLのサブクエリ</title>
+      <link>https://seiri-blog.github.io/posts/salesforce-soql-sub-query/</link>
+      <pubDate>Thu, 07 Dec 2023 19:24:51 +0900</pubDate>
+      
+      <guid>https://seiri-blog.github.io/posts/salesforce-soql-sub-query/</guid>
+      <description>SOQL のサブクエリ SOQL では、条件中にサブクエリを使用して親オブジェクトと子オブジェクトの関連を確認することができます。以下は、条件中でのサブクエリ</description>
+    </item>
+    
+  </channel>
+</rss>

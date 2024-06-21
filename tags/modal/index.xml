@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>modal on Seiri&#39;s Blog</title>
+    <link>https://seiri-blog.github.io/tags/modal/</link>
+    <description>Recent content in modal on Seiri&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>2024 Seiri All rights reserved</copyright>
+    <lastBuildDate>Tue, 27 Jun 2023 12:24:02 +0900</lastBuildDate><atom:link href="https://seiri-blog.github.io/tags/modal/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>【Salesforce】LWC の Lightning モーダル</title>
+      <link>https://seiri-blog.github.io/posts/lwc-lightning-modal/</link>
+      <pubDate>Tue, 27 Jun 2023 12:24:02 +0900</pubDate>
+      
+      <guid>https://seiri-blog.github.io/posts/lwc-lightning-modal/</guid>
+      <description>lightning/modal モジュール 「lightning/modal」はSalesforceのLightningコンポーネントフレームワークにおけるモーダルダイアロ</description>
+    </item>
+    
+    <item>
+      <title>【Salesforce】アクションボタン</title>
+      <link>https://seiri-blog.github.io/posts/salesforce-action-button/</link>
+      <pubDate>Tue, 12 Jul 2022 16:09:43 +0900</pubDate>
+      
+      <guid>https://seiri-blog.github.io/posts/salesforce-action-button/</guid>
+      <description>目的 LWC のlightning-quick-action-panelモーダル画面の幅を調整できないため、 今回 Aura と LWC でのアクションボタンが表示した</description>
+    </item>
+    
+    <item>
+      <title>【Salesforce】LWCモーダル画面自分で作る</title>
+      <link>https://seiri-blog.github.io/posts/lwc-common-modal/</link>
+      <pubDate>Mon, 29 Nov 2021 19:36:52 +0900</pubDate>
+      
+      <guid>https://seiri-blog.github.io/posts/lwc-common-modal/</guid>
+      <description>共通モーダル画面作成方法説明 共通モーダルはモーダルを開くための API を持ち、他のコンポーネントから呼び出すことができます。 他のコンポーネントで、</description>
+    </item>
+    
+  </channel>
+</rss>

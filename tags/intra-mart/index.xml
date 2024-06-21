@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>intra-mart on Seiri&#39;s Blog</title>
+    <link>https://seiri-blog.github.io/tags/intra-mart/</link>
+    <description>Recent content in intra-mart on Seiri&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>2024 Seiri All rights reserved</copyright>
+    <lastBuildDate>Mon, 31 Jul 2023 09:19:46 +0900</lastBuildDate><atom:link href="https://seiri-blog.github.io/tags/intra-mart/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>intra-martの説明</title>
+      <link>https://seiri-blog.github.io/posts/what-is-intra-mart/</link>
+      <pubDate>Mon, 31 Jul 2023 09:19:46 +0900</pubDate>
+      
+      <guid>https://seiri-blog.github.io/posts/what-is-intra-mart/</guid>
+      <description>intra-martとは Intra-mart（イントラマート）は、日本のサイボウズ株式会社が提供しているエンタープライズポータルおよび業務ア</description>
+    </item>
+    
+  </channel>
+</rss>

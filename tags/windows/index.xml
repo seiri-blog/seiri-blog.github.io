@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Windows on Seiri&#39;s Blog</title>
+    <link>https://seiri-blog.github.io/tags/windows/</link>
+    <description>Recent content in Windows on Seiri&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>2024 Seiri All rights reserved</copyright>
+    <lastBuildDate>Thu, 13 Jun 2024 20:00:54 +0900</lastBuildDate><atom:link href="https://seiri-blog.github.io/tags/windows/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>WindowsとMacのショートカットキーのマップピング</title>
+      <link>https://seiri-blog.github.io/posts/win-and-mac-short-cut-mapping/</link>
+      <pubDate>Thu, 13 Jun 2024 20:00:54 +0900</pubDate>
+      
+      <guid>https://seiri-blog.github.io/posts/win-and-mac-short-cut-mapping/</guid>
+      <description>Windows と Mac のショートカットキー：知っておくべき基本マッピング パソコンを効率よく使うためには、キーボードショートカットの活用が欠かせません。しかし</description>
+    </item>
+    
+    <item>
+      <title>dmg2johnの使い方ガイド：John the Ripperと一緒に.dmgファイルのパスワードをクラックする方法</title>
+      <link>https://seiri-blog.github.io/posts/how-to-use-jhon-crack-dmg/</link>
+      <pubDate>Sun, 19 May 2024 22:55:30 +0900</pubDate>
+      
+      <guid>https://seiri-blog.github.io/posts/how-to-use-jhon-crack-dmg/</guid>
+      <description>はじめに Macユーザーならおなじみのディスクイメージファイル、.dmg形式のファイルは、アプリケーションやその他のコンテンツを配布するために</description>
+    </item>
+    
+    <item>
+      <title>スクリーンをロックしないVBSスクリプトを作成する方法</title>
+      <link>https://seiri-blog.github.io/posts/unlock-screen-vbs-script/</link>
+      <pubDate>Fri, 26 Apr 2024 10:15:30 +0900</pubDate>
+      
+      <guid>https://seiri-blog.github.io/posts/unlock-screen-vbs-script/</guid>
+      <description>前提条件 Windows システム VBS スクリプトの実行権限があります 概要 Window システムスクリーンをロックしないには、Mouse イベントまたはキーボードを動作する必</description>
+    </item>
+    
+    <item>
+      <title>Windowsバッチで7zを使ってフォルダを一括Zipする方法</title>
+      <link>https://seiri-blog.github.io/posts/folder-bulk-zip-by-cmd-batch/</link>
+      <pubDate>Fri, 26 Apr 2024 09:55:48 +0900</pubDate>
+      
+      <guid>https://seiri-blog.github.io/posts/folder-bulk-zip-by-cmd-batch/</guid>
+      <description>前提 7z をインストールしている 7z をインストールしていない場合は こちら からインストールしてください やり方 7z のインストール場所を確認する 例: D:\7-Zip CMD バ</description>
+    </item>
+    
+  </channel>
+</rss>
