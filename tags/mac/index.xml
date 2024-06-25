@@ -6,7 +6,16 @@
     <description>Recent content in mac on Seiri&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>2024 Seiri All rights reserved</copyright>
-    <lastBuildDate>Thu, 13 Jun 2024 20:15:39 +0900</lastBuildDate><atom:link href="https://seiri-blog.github.io/tags/mac/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 25 Jun 2024 09:12:40 +0900</lastBuildDate><atom:link href="https://seiri-blog.github.io/tags/mac/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Mac で NTFS ディスクにファイルをコピーする方法（無料ソフトウェア編）</title>
+      <link>https://seiri-blog.github.io/posts/mac-copy-file-to-ntfs-disk/</link>
+      <pubDate>Tue, 25 Jun 2024 09:12:40 +0900</pubDate>
+      
+      <guid>https://seiri-blog.github.io/posts/mac-copy-file-to-ntfs-disk/</guid>
+      <description>目的 NTFS フォーマットのディスクにファイルを書き込む必要があるけれども、デフォルトでは Mac が NTFS ディスクを読み取り専用として Mac で NTFS ディスクにファイル</description>
+    </item>
+    
     <item>
       <title>MacにHomebrewをインストールする方法</title>
       <link>https://seiri-blog.github.io/posts/how-mac-to-install-home-brew/</link>

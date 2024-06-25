@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Mounty on Seiri&#39;s Blog</title>
+    <link>https://seiri-blog.github.io/tags/mounty/</link>
+    <description>Recent content in Mounty on Seiri&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>2024 Seiri All rights reserved</copyright>
+    <lastBuildDate>Tue, 25 Jun 2024 09:12:40 +0900</lastBuildDate><atom:link href="https://seiri-blog.github.io/tags/mounty/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Mac で NTFS ディスクにファイルをコピーする方法（無料ソフトウェア編）</title>
+      <link>https://seiri-blog.github.io/posts/mac-copy-file-to-ntfs-disk/</link>
+      <pubDate>Tue, 25 Jun 2024 09:12:40 +0900</pubDate>
+      
+      <guid>https://seiri-blog.github.io/posts/mac-copy-file-to-ntfs-disk/</guid>
+      <description>目的 NTFS フォーマットのディスクにファイルを書き込む必要があるけれども、デフォルトでは Mac が NTFS ディスクを読み取り専用として Mac で NTFS ディスクにファイル</description>
+    </item>
+    
+  </channel>
+</rss>
