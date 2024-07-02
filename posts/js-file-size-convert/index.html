@@ -4,7 +4,7 @@
 <meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
 <meta name=robots content="index, follow">
 <title>JSでのファイルサイズ変換関数 | Seiri's Blog</title>
-<meta name=keywords content="javascript">
+<meta name=keywords content="javascript,file-size,convert">
 <meta name=description content="javascript でファイルサイズを変換する関数を作成するには、以下のようなコードを使用できます。 /** * ファイルサイズ変換 * @param {*} sizeInBytes バイト * @returns 変換後のサイズ */ function">
 <meta name=author content="Seiri">
 <link rel=canonical href=https://seiri-blog.github.io/posts/js-file-size-convert/>
@@ -31,7 +31,7 @@
 <meta name=twitter:title content="JSでのファイルサイズ変換関数">
 <meta name=twitter:description content="javascript でファイルサイズを変換する関数を作成するには、以下のようなコードを使用できます。 /** * ファイルサイズ変換 * @param {*} sizeInBytes バイト * @returns 変換後のサイズ */ function">
 <script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://seiri-blog.github.io/posts/"},{"@type":"ListItem","position":2,"name":"JSでのファイルサイズ変換関数","item":"https://seiri-blog.github.io/posts/js-file-size-convert/"}]}</script>
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"JSでのファイルサイズ変換関数","name":"JSでのファイルサイズ変換関数","description":"javascript でファイルサイズを変換する関数を作成するには、以下のようなコードを使用できます。 /** * ファイルサイズ変換 * @param {*} sizeInBytes バイト * @returns 変換後のサイズ */ function","keywords":["javascript"],"articleBody":"javascript でファイルサイズを変換する関数を作成するには、以下のようなコードを使用できます。 /** * ファイルサイズ変換 * @param {*} sizeInBytes バイト * @returns 変換後のサイズ */ function convertFileSize(sizeInBytes) { const units = [\"bytes\", \"KB\", \"MB\", \"GB\", \"TB\"]; const base = 1024; const size = Math.abs(sizeInsizeInBytesBytes); const i = size === 0 ? 0 : Math.floor(Math.log(size) / Math.log(base)); const convertedSize = parseFloat((size / Math.pow(base, i)).toFixed(2)); return convertedSize + \" \" + units[i]; } この関数はバイト単位のファイルサイズを受け取り、適切な単位（バイト、キロバイト、メガバイト、ギガバイト、テラバイト）に変換して返します。例えば、convertFileSize(2048)を呼び出すと、2.00 KBが返されます。\n使用例:\nconst fileSize = 3456789; const convertedSize = convertFileSize(fileSize); console.log(convertedSize); // \"3.30 MB\" このコードでは、sizeInBytes が負の値の場合でも正の値として処理します。また、小数点以下第 2 位までの精度でファイルサイズを表します。必要に応じてこの関数を調整して、より適切なフォーマットや単位を返すようにカスタマイズできます。\n","wordCount":"361","inLanguage":"ja","datePublished":"2021-12-24T15:04:24+09:00","dateModified":"2021-12-24T15:04:24+09:00","author":{"@type":"Person","name":"Seiri"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://seiri-blog.github.io/posts/js-file-size-convert/"},"publisher":{"@type":"Organization","name":"Seiri's Blog","logo":{"@type":"ImageObject","url":"https://seiri-blog.github.io/favicon.ico"}}}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"JSでのファイルサイズ変換関数","name":"JSでのファイルサイズ変換関数","description":"javascript でファイルサイズを変換する関数を作成するには、以下のようなコードを使用できます。 /** * ファイルサイズ変換 * @param {*} sizeInBytes バイト * @returns 変換後のサイズ */ function","keywords":["javascript","file-size","convert"],"articleBody":"javascript でファイルサイズを変換する関数を作成するには、以下のようなコードを使用できます。 /** * ファイルサイズ変換 * @param {*} sizeInBytes バイト * @returns 変換後のサイズ */ function convertFileSize(sizeInBytes) { const units = [\"bytes\", \"KB\", \"MB\", \"GB\", \"TB\"]; const base = 1024; const size = Math.abs(sizeInsizeInBytesBytes); const i = size === 0 ? 0 : Math.floor(Math.log(size) / Math.log(base)); const convertedSize = parseFloat((size / Math.pow(base, i)).toFixed(2)); return convertedSize + \" \" + units[i]; } この関数はバイト単位のファイルサイズを受け取り、適切な単位（バイト、キロバイト、メガバイト、ギガバイト、テラバイト）に変換して返します。例えば、convertFileSize(2048)を呼び出すと、2.00 KBが返されます。\n使用例:\nconst fileSize = 3456789; const convertedSize = convertFileSize(fileSize); console.log(convertedSize); // \"3.30 MB\" このコードでは、sizeInBytes が負の値の場合でも正の値として処理します。また、小数点以下第 2 位までの精度でファイルサイズを表します。必要に応じてこの関数を調整して、より適切なフォーマットや単位を返すようにカスタマイズできます。\n","wordCount":"361","inLanguage":"ja","datePublished":"2021-12-24T15:04:24+09:00","dateModified":"2021-12-24T15:04:24+09:00","author":{"@type":"Person","name":"Seiri"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://seiri-blog.github.io/posts/js-file-size-convert/"},"publisher":{"@type":"Organization","name":"Seiri's Blog","logo":{"@type":"ImageObject","url":"https://seiri-blog.github.io/favicon.ico"}}}</script>
 </head>
 <body id=top>
 <script>localStorage.getItem("pref-theme")==="dark"&&document.body.classList.add('dark')</script>
@@ -93,6 +93,8 @@ JSでのファイルサイズ変換関数
 </h1>
 <ul class=post-tags>
 <li><a href=https://seiri-blog.github.io/tags/javascript/>javascript</a></li>
+<li><a href=https://seiri-blog.github.io/tags/file-size/>file-size</a></li>
+<li><a href=https://seiri-blog.github.io/tags/convert/>convert</a></li>
 </ul>
 <div class=post-meta><span title="2021-12-24 15:04:24 +0900 +0900">2021年12月24日</span>&nbsp;·&nbsp;1 分&nbsp;·&nbsp;361 文字&nbsp;·&nbsp;Seiri
 </div>
@@ -104,7 +106,7 @@ JSでのファイルサイズ変換関数
 </a>
 </li>
 <li class=twitter>
-<a target=_blank rel="noopener noreferrer" aria-label="share JSでのファイルサイズ変換関数 on twitter" href="https://twitter.com/intent/tweet/?text=JS%e3%81%a7%e3%81%ae%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e3%82%b5%e3%82%a4%e3%82%ba%e5%a4%89%e6%8f%9b%e9%96%a2%e6%95%b0&url=https%3a%2f%2fseiri-blog.github.io%2fposts%2fjs-file-size-convert%2f&hashtags=javascript" title="Twitter(X) で共有する"><svg id="svg5" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="30" width="30" viewBox="0 0 2e3 512"><g id="layer1" transform="translate(52.390088,-25.058597)"><path id="path1009" fill="#fff" d="M283.94 167.31l386.39 516.64L281.5 1104h87.51l340.42-367.76L984.48 1104h297.8L874.15 558.3l361.92-390.99h-87.51l-313.51 338.7-253.31-338.7H283.94zm128.69 64.46h136.81l604.13 807.76h-136.81L412.63 231.77z"/></g></svg>
+<a target=_blank rel="noopener noreferrer" aria-label="share JSでのファイルサイズ変換関数 on twitter" href="https://twitter.com/intent/tweet/?text=JS%e3%81%a7%e3%81%ae%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e3%82%b5%e3%82%a4%e3%82%ba%e5%a4%89%e6%8f%9b%e9%96%a2%e6%95%b0&url=https%3a%2f%2fseiri-blog.github.io%2fposts%2fjs-file-size-convert%2f&hashtags=javascript%2cfile-size%2cconvert" title="Twitter(X) で共有する"><svg id="svg5" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="30" width="30" viewBox="0 0 2e3 512"><g id="layer1" transform="translate(52.390088,-25.058597)"><path id="path1009" fill="#fff" d="M283.94 167.31l386.39 516.64L281.5 1104h87.51l340.42-367.76L984.48 1104h297.8L874.15 558.3l361.92-390.99h-87.51l-313.51 338.7-253.31-338.7H283.94zm128.69 64.46h136.81l604.13 807.76h-136.81L412.63 231.77z"/></g></svg>
 </a>
 </li>
 <li class=hatena>
@@ -162,7 +164,7 @@ B!
 </a>
 </li>
 <li class=twitter>
-<a target=_blank rel="noopener noreferrer" aria-label="share JSでのファイルサイズ変換関数 on twitter" href="https://twitter.com/intent/tweet/?text=JS%e3%81%a7%e3%81%ae%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e3%82%b5%e3%82%a4%e3%82%ba%e5%a4%89%e6%8f%9b%e9%96%a2%e6%95%b0&url=https%3a%2f%2fseiri-blog.github.io%2fposts%2fjs-file-size-convert%2f&hashtags=javascript" title="Twitter(X) で共有する"><svg id="svg5" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="30" width="30" viewBox="0 0 2e3 512"><g id="layer1" transform="translate(52.390088,-25.058597)"><path id="path1009" fill="#fff" d="M283.94 167.31l386.39 516.64L281.5 1104h87.51l340.42-367.76L984.48 1104h297.8L874.15 558.3l361.92-390.99h-87.51l-313.51 338.7-253.31-338.7H283.94zm128.69 64.46h136.81l604.13 807.76h-136.81L412.63 231.77z"/></g></svg>
+<a target=_blank rel="noopener noreferrer" aria-label="share JSでのファイルサイズ変換関数 on twitter" href="https://twitter.com/intent/tweet/?text=JS%e3%81%a7%e3%81%ae%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e3%82%b5%e3%82%a4%e3%82%ba%e5%a4%89%e6%8f%9b%e9%96%a2%e6%95%b0&url=https%3a%2f%2fseiri-blog.github.io%2fposts%2fjs-file-size-convert%2f&hashtags=javascript%2cfile-size%2cconvert" title="Twitter(X) で共有する"><svg id="svg5" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="30" width="30" viewBox="0 0 2e3 512"><g id="layer1" transform="translate(52.390088,-25.058597)"><path id="path1009" fill="#fff" d="M283.94 167.31l386.39 516.64L281.5 1104h87.51l340.42-367.76L984.48 1104h297.8L874.15 558.3l361.92-390.99h-87.51l-313.51 338.7-253.31-338.7H283.94zm128.69 64.46h136.81l604.13 807.76h-136.81L412.63 231.77z"/></g></svg>
 </a>
 </li>
 <li class=hatena>

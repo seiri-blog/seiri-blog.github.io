@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>calculate on Seiri&#39;s Blog</title>
+    <link>https://seiri-blog.github.io/tags/calculate/</link>
+    <description>Recent content in calculate on Seiri&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>2024 Seiri All rights reserved</copyright>
+    <lastBuildDate>Tue, 02 Jul 2024 14:45:20 +0900</lastBuildDate><atom:link href="https://seiri-blog.github.io/tags/calculate/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>JavaScriptでの小数点の計算誤差とその解決方法</title>
+      <link>https://seiri-blog.github.io/posts/js-float-calculate/</link>
+      <pubDate>Tue, 02 Jul 2024 14:45:20 +0900</pubDate>
+      
+      <guid>https://seiri-blog.github.io/posts/js-float-calculate/</guid>
+      <description>JavaScriptでプログラミングをしていると、数値計算における浮動小数点数の誤差に遭遇することがあります。この誤差は、特に金融アプリケー</description>
+    </item>
+    
+  </channel>
+</rss>

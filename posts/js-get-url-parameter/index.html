@@ -4,7 +4,7 @@
 <meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
 <meta name=robots content="index, follow">
 <title>JSでのURLパラメータ取得 | Seiri's Blog</title>
-<meta name=keywords content="javascript">
+<meta name=keywords content="javascript,parameter">
 <meta name=description content="実装例 /** * パラーメタの取得 * @param {string} name パラメータ名 * @param {string} url URL * @returns {string} 取得パラメータ */ export const getParam = (name, url) => { if (!url) url = window.location.href; name = name.replace(/[\[\]]/g, '\\$&'); let regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'), results = regex.exec(url); if (!results)">
 <meta name=author content="Seiri">
 <link rel=canonical href=https://seiri-blog.github.io/posts/js-get-url-parameter/>
@@ -31,7 +31,7 @@
 <meta name=twitter:title content="JSでのURLパラメータ取得">
 <meta name=twitter:description content="実装例 /** * パラーメタの取得 * @param {string} name パラメータ名 * @param {string} url URL * @returns {string} 取得パラメータ */ export const getParam = (name, url) => { if (!url) url = window.location.href; name = name.replace(/[\[\]]/g, '\\$&'); let regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'), results = regex.exec(url); if (!results)">
 <script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://seiri-blog.github.io/posts/"},{"@type":"ListItem","position":2,"name":"JSでのURLパラメータ取得","item":"https://seiri-blog.github.io/posts/js-get-url-parameter/"}]}</script>
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"JSでのURLパラメータ取得","name":"JSでのURLパラメータ取得","description":"実装例 /** * パラーメタの取得 * @param {string} name パラメータ名 * @param {string} url URL * @returns {string} 取得パラメータ */ export const getParam = (name, url) =\u0026gt; { if (!url) url = window.location.href; name = name.replace(/[\\[\\]]/g, \u0026#39;\\\\$\u0026amp;\u0026#39;); let regex = new RegExp(\u0026#39;[?\u0026amp;]\u0026#39; + name + \u0026#39;(=([^\u0026amp;#]*)|\u0026amp;|#|$)\u0026#39;), results = regex.exec(url); if (!results)","keywords":["javascript"],"articleBody":"実装例 /** * パラーメタの取得 * @param {string} name パラメータ名 * @param {string} url URL * @returns {string} 取得パラメータ */ export const getParam = (name, url) = { if (!url) url = window.location.href; name = name.replace(/[\\[\\]]/g, '\\\\$\u0026'); let regex = new RegExp('[?\u0026]' + name + '(=([^\u0026#]*)|\u0026|#|$)'), results = regex.exec(url); if (!results) return null; if (!results[2]) return ''; return decodeURIComponent(results[2].replace(/\\+/g, ' ')); } #　参考\nJavascript でURLのパラメータを取得する方法 | WWWクリエイターズ  www-creators.com    ","wordCount":"114","inLanguage":"ja","datePublished":"2021-12-24T15:06:16+09:00","dateModified":"2021-12-24T15:06:16+09:00","author":{"@type":"Person","name":"Seiri"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://seiri-blog.github.io/posts/js-get-url-parameter/"},"publisher":{"@type":"Organization","name":"Seiri's Blog","logo":{"@type":"ImageObject","url":"https://seiri-blog.github.io/favicon.ico"}}}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"JSでのURLパラメータ取得","name":"JSでのURLパラメータ取得","description":"実装例 /** * パラーメタの取得 * @param {string} name パラメータ名 * @param {string} url URL * @returns {string} 取得パラメータ */ export const getParam = (name, url) =\u0026gt; { if (!url) url = window.location.href; name = name.replace(/[\\[\\]]/g, \u0026#39;\\\\$\u0026amp;\u0026#39;); let regex = new RegExp(\u0026#39;[?\u0026amp;]\u0026#39; + name + \u0026#39;(=([^\u0026amp;#]*)|\u0026amp;|#|$)\u0026#39;), results = regex.exec(url); if (!results)","keywords":["javascript","parameter"],"articleBody":"実装例 /** * パラーメタの取得 * @param {string} name パラメータ名 * @param {string} url URL * @returns {string} 取得パラメータ */ export const getParam = (name, url) = { if (!url) url = window.location.href; name = name.replace(/[\\[\\]]/g, '\\\\$\u0026'); let regex = new RegExp('[?\u0026]' + name + '(=([^\u0026#]*)|\u0026|#|$)'), results = regex.exec(url); if (!results) return null; if (!results[2]) return ''; return decodeURIComponent(results[2].replace(/\\+/g, ' ')); } #　参考\nJavascript でURLのパラメータを取得する方法 | WWWクリエイターズ  www-creators.com    ","wordCount":"114","inLanguage":"ja","datePublished":"2021-12-24T15:06:16+09:00","dateModified":"2021-12-24T15:06:16+09:00","author":{"@type":"Person","name":"Seiri"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://seiri-blog.github.io/posts/js-get-url-parameter/"},"publisher":{"@type":"Organization","name":"Seiri's Blog","logo":{"@type":"ImageObject","url":"https://seiri-blog.github.io/favicon.ico"}}}</script>
 </head>
 <body id=top>
 <script>localStorage.getItem("pref-theme")==="dark"&&document.body.classList.add('dark')</script>
@@ -93,6 +93,7 @@ JSでのURLパラメータ取得
 </h1>
 <ul class=post-tags>
 <li><a href=https://seiri-blog.github.io/tags/javascript/>javascript</a></li>
+<li><a href=https://seiri-blog.github.io/tags/parameter/>parameter</a></li>
 </ul>
 <div class=post-meta><span title="2021-12-24 15:06:16 +0900 +0900">2021年12月24日</span>&nbsp;·&nbsp;1 分&nbsp;·&nbsp;114 文字&nbsp;·&nbsp;Seiri
 </div>
@@ -104,7 +105,7 @@ JSでのURLパラメータ取得
 </a>
 </li>
 <li class=twitter>
-<a target=_blank rel="noopener noreferrer" aria-label="share JSでのURLパラメータ取得 on twitter" href="https://twitter.com/intent/tweet/?text=JS%e3%81%a7%e3%81%aeURL%e3%83%91%e3%83%a9%e3%83%a1%e3%83%bc%e3%82%bf%e5%8f%96%e5%be%97&url=https%3a%2f%2fseiri-blog.github.io%2fposts%2fjs-get-url-parameter%2f&hashtags=javascript" title="Twitter(X) で共有する"><svg id="svg5" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="30" width="30" viewBox="0 0 2e3 512"><g id="layer1" transform="translate(52.390088,-25.058597)"><path id="path1009" fill="#fff" d="M283.94 167.31l386.39 516.64L281.5 1104h87.51l340.42-367.76L984.48 1104h297.8L874.15 558.3l361.92-390.99h-87.51l-313.51 338.7-253.31-338.7H283.94zm128.69 64.46h136.81l604.13 807.76h-136.81L412.63 231.77z"/></g></svg>
+<a target=_blank rel="noopener noreferrer" aria-label="share JSでのURLパラメータ取得 on twitter" href="https://twitter.com/intent/tweet/?text=JS%e3%81%a7%e3%81%aeURL%e3%83%91%e3%83%a9%e3%83%a1%e3%83%bc%e3%82%bf%e5%8f%96%e5%be%97&url=https%3a%2f%2fseiri-blog.github.io%2fposts%2fjs-get-url-parameter%2f&hashtags=javascript%2cparameter" title="Twitter(X) で共有する"><svg id="svg5" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="30" width="30" viewBox="0 0 2e3 512"><g id="layer1" transform="translate(52.390088,-25.058597)"><path id="path1009" fill="#fff" d="M283.94 167.31l386.39 516.64L281.5 1104h87.51l340.42-367.76L984.48 1104h297.8L874.15 558.3l361.92-390.99h-87.51l-313.51 338.7-253.31-338.7H283.94zm128.69 64.46h136.81l604.13 807.76h-136.81L412.63 231.77z"/></g></svg>
 </a>
 </li>
 <li class=hatena>
@@ -171,7 +172,7 @@ B!
 </a>
 </li>
 <li class=twitter>
-<a target=_blank rel="noopener noreferrer" aria-label="share JSでのURLパラメータ取得 on twitter" href="https://twitter.com/intent/tweet/?text=JS%e3%81%a7%e3%81%aeURL%e3%83%91%e3%83%a9%e3%83%a1%e3%83%bc%e3%82%bf%e5%8f%96%e5%be%97&url=https%3a%2f%2fseiri-blog.github.io%2fposts%2fjs-get-url-parameter%2f&hashtags=javascript" title="Twitter(X) で共有する"><svg id="svg5" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="30" width="30" viewBox="0 0 2e3 512"><g id="layer1" transform="translate(52.390088,-25.058597)"><path id="path1009" fill="#fff" d="M283.94 167.31l386.39 516.64L281.5 1104h87.51l340.42-367.76L984.48 1104h297.8L874.15 558.3l361.92-390.99h-87.51l-313.51 338.7-253.31-338.7H283.94zm128.69 64.46h136.81l604.13 807.76h-136.81L412.63 231.77z"/></g></svg>
+<a target=_blank rel="noopener noreferrer" aria-label="share JSでのURLパラメータ取得 on twitter" href="https://twitter.com/intent/tweet/?text=JS%e3%81%a7%e3%81%aeURL%e3%83%91%e3%83%a9%e3%83%a1%e3%83%bc%e3%82%bf%e5%8f%96%e5%be%97&url=https%3a%2f%2fseiri-blog.github.io%2fposts%2fjs-get-url-parameter%2f&hashtags=javascript%2cparameter" title="Twitter(X) で共有する"><svg id="svg5" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="30" width="30" viewBox="0 0 2e3 512"><g id="layer1" transform="translate(52.390088,-25.058597)"><path id="path1009" fill="#fff" d="M283.94 167.31l386.39 516.64L281.5 1104h87.51l340.42-367.76L984.48 1104h297.8L874.15 558.3l361.92-390.99h-87.51l-313.51 338.7-253.31-338.7H283.94zm128.69 64.46h136.81l604.13 807.76h-136.81L412.63 231.77z"/></g></svg>
 </a>
 </li>
 <li class=hatena>
