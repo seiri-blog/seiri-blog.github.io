@@ -8,11 +8,29 @@
     <copyright>2024 Seiri All rights reserved</copyright>
     <lastBuildDate>Thu, 04 Jul 2024 17:53:03 +0900</lastBuildDate><atom:link href="https://seiri-blog.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Pythonデータスパイダー（Webスクレイピング）入門</title>
-      <link>https://seiri-blog.github.io/posts/python-data-spider/</link>
+      <title>Pythonデータスパイダー（Webスクレイピング）上級ガイド</title>
+      <link>https://seiri-blog.github.io/posts/python-data-spider-advanced/</link>
       <pubDate>Thu, 04 Jul 2024 17:53:03 +0900</pubDate>
       
-      <guid>https://seiri-blog.github.io/posts/python-data-spider/</guid>
+      <guid>https://seiri-blog.github.io/posts/python-data-spider-advanced/</guid>
+      <description>ウェブスクレイピングは、基本的な技術を習得した後に、より高度な手法を学ぶことで、さらに強力で効率的なデータ収集が可能になります。このガイドで</description>
+    </item>
+    
+    <item>
+      <title>Pythonデータスパイダー（Webスクレイピング）中級ガイド</title>
+      <link>https://seiri-blog.github.io/posts/python-data-spider-intermediate/</link>
+      <pubDate>Thu, 04 Jul 2024 17:53:03 +0900</pubDate>
+      
+      <guid>https://seiri-blog.github.io/posts/python-data-spider-intermediate/</guid>
+      <description>ウェブスクレイピングは、データ収集の強力な手法として広く利用されています。初心者向けの基礎を押さえた後、より高度な技術を使って効率的にデータ</description>
+    </item>
+    
+    <item>
+      <title>Pythonデータスパイダー（Webスクレイピング）初級ガイド</title>
+      <link>https://seiri-blog.github.io/posts/python-data-spider-beginner/</link>
+      <pubDate>Thu, 04 Jul 2024 17:53:03 +0900</pubDate>
+      
+      <guid>https://seiri-blog.github.io/posts/python-data-spider-beginner/</guid>
       <description>ウェブスクレイピングは、ウェブサイトからデータを自動的に抽出する技術であり、データ分析、研究、マーケティング、競合分析など様々な分野で活用さ</description>
     </item>
     
