@@ -33,7 +33,7 @@
 <meta name=twitter:title content="VSCodeでSalesforceのコードフォーマットする方法">
 <meta name=twitter:description content="VSCode の環境構築 今回に関しては設定は詳しく説明しません、やり方のみ詳しく説明させていただきます。 下記リンクを開いて、自分の PC にダウンロードする GitHub">
 <script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://seiri-blog.github.io/posts/"},{"@type":"ListItem","position":2,"name":"VSCodeでSalesforceのコードフォーマットする方法","item":"https://seiri-blog.github.io/posts/salesforce-source-code-format/"}]}</script>
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"VSCodeでSalesforceのコードフォーマットする方法","name":"VSCodeでSalesforceのコードフォーマットする方法","description":"VSCode の環境構築 今回に関しては設定は詳しく説明しません、やり方のみ詳しく説明させていただきます。 下記リンクを開いて、自分の PC にダウンロードする GitHub","keywords":["Salesforce","lwc","Apex","Format"],"articleBody":"VSCode の環境構築 今回に関しては設定は詳しく説明しません、やり方のみ詳しく説明させていただきます。\n 下記リンクを開いて、自分の PC にダウンロードする  GitHub - RyuSeiri/Salesforce-Source-Format: Salesforceソースコードのフォーマット設定  github.com     VSCode を開いて、Crl + Shift + Pキー打つ、create Project with Manifestを選択し、新しいプロジェクトを作成  \n\n\n 最初ダウロードしたファイルを全部さっき作成したプロジェクトフォルダの下にコピーする  \n VSCode のターミナルでnpm install --saveを実行する  \n .vscode/extensions.json中の拡張機能を全部インストールする  \n VSCode を開いて、Crl + Shift + Pキー打つ、Reload Windowを選択、プロジェクトをリロードする  \n動作確認  保存する時自動的にソースをフォーマットする SOQL もフォーマットでできる  フォーマット前 - public with sharing class test { - @AuraEnabled - public static string methodName(){ - try { - Account acc = [select Id, - Name from Account]; - return acc[0].Name; - } catch (Exception e) { - throw new AuraHandledException(e.getMessage()); - } - } - }  フォーマット後 + public with sharing class test { + @AuraEnabled + public static string methodName() { + try { + Account acc = [ + SELECT Id, Name + FROM Account + ]; + return acc[0].Name; + } catch (Exception e) { + throw new AuraHandledException(e.getMessage()); + } + } + }  参考\nSalesforce Developers Japan | Prettier コードフォーマッタ developer.salesforce.com    ","wordCount":"465","inLanguage":"ja","image":"https://seiri-blog.github.io/images/Salesforce.png","datePublished":"2023-04-04T18:23:36+09:00","dateModified":"2023-04-04T18:23:36+09:00","author":{"@type":"Person","name":"Seiri"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://seiri-blog.github.io/posts/salesforce-source-code-format/"},"publisher":{"@type":"Organization","name":"Seiri's Blog","logo":{"@type":"ImageObject","url":"https://seiri-blog.github.io/favicon.ico"}}}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"VSCodeでSalesforceのコードフォーマットする方法","name":"VSCodeでSalesforceのコードフォーマットする方法","description":"VSCode の環境構築 今回に関しては設定は詳しく説明しません、やり方のみ詳しく説明させていただきます。 下記リンクを開いて、自分の PC にダウンロードする GitHub","keywords":["Salesforce","lwc","Apex","Format"],"articleBody":"VSCode の環境構築 今回に関しては設定は詳しく説明しません、やり方のみ詳しく説明させていただきます。\n 下記リンクを開いて、自分の PC にダウンロードする  GitHub - RyuSeiri/Salesforce-Source-Format: Salesforceソースコードのフォーマット設定  github.com     VSCode を開いて、Crl + Shift + Pキー打つ、create Project with Manifestを選択し、新しいプロジェクトを作成  \n\n\n 最初ダウロードしたファイルを全部さっき作成したプロジェクトフォルダの下にコピーする  \n VSCode のターミナルでnpm install --saveを実行する  \n .vscode/extensions.json中の拡張機能を全部インストールする  \n VSCode を開いて、Crl + Shift + Pキー打つ、Reload Windowを選択、プロジェクトをリロードする  \n動作確認  保存する時自動的にソースをフォーマットする SOQL もフォーマットでできる  フォーマット前 - public with sharing class test { - @AuraEnabled - public static string methodName(){ - try { - Account acc = [select Id, - Name from Account]; - return acc[0].Name; - } catch (Exception e) { - throw new AuraHandledException(e.getMessage()); - } - } - }  フォーマット後 + public with sharing class test { + @AuraEnabled + public static string methodName() { + try { + Account acc = [ + SELECT Id, Name + FROM Account + ]; + return acc[0].Name; + } catch (Exception e) { + throw new AuraHandledException(e.getMessage()); + } + } + }  参考\nSalesforce Extensions for Visual Studio Code | Salesforce Developers  developer.salesforce.com    ","wordCount":"460","inLanguage":"ja","image":"https://seiri-blog.github.io/images/Salesforce.png","datePublished":"2023-04-04T18:23:36+09:00","dateModified":"2023-04-04T18:23:36+09:00","author":{"@type":"Person","name":"Seiri"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://seiri-blog.github.io/posts/salesforce-source-code-format/"},"publisher":{"@type":"Organization","name":"Seiri's Blog","logo":{"@type":"ImageObject","url":"https://seiri-blog.github.io/favicon.ico"}}}</script>
 </head>
 <body id=top>
 <script>localStorage.getItem("pref-theme")==="dark"&&document.body.classList.add('dark')</script>
@@ -79,6 +79,11 @@
 </a>
 </li>
 <li>
+<a href=https://olympics-news.github.io/ title="Olympics News">
+<span>Olympics News</span>&nbsp;<svg fill="none" shape-rendering="geometricPrecision" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24" height="12" width="12"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg>
+</a>
+</li>
+<li>
 <a href=https://chrome-tool.github.io/ title=Chrome拡張機能>
 <span>Chrome拡張機能</span>&nbsp;<svg fill="none" shape-rendering="geometricPrecision" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24" height="12" width="12"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg>
 </a>
@@ -104,7 +109,7 @@ VSCodeでSalesforceのコードフォーマットする方法
 <li><a href=https://seiri-blog.github.io/tags/apex/>Apex</a></li>
 <li><a href=https://seiri-blog.github.io/tags/format/>Format</a></li>
 </ul>
-<div class=post-meta><span title="2023-04-04 18:23:36 +0900 +0900">2023年4月4日</span>&nbsp;·&nbsp;1 分&nbsp;·&nbsp;465 文字&nbsp;·&nbsp;Seiri
+<div class=post-meta><span title="2023-04-04 18:23:36 +0900 +0900">2023年4月4日</span>&nbsp;·&nbsp;1 分&nbsp;·&nbsp;460 文字&nbsp;·&nbsp;Seiri
 </div>
 </header>
 <figure class=entry-cover><img loading=lazy src=https://seiri-blog.github.io/images/Salesforce.png alt=VSCodeでSalesforceのコードフォーマットする方法>
@@ -224,8 +229,11 @@ B!
 </code></pre></div><p>参考</p>
 <a href=https://developer.salesforce.com/tools/vscode/ja/user-guide/prettier target=_blank>
 <div class=link-card>
-<div class=link-card-title>Salesforce Developers Japan | Prettier コードフォーマッタ</div>
+<div class=link-card-title>Salesforce Extensions for Visual Studio Code | Salesforce Developers</div>
 <div class=link-card-hostname>
+<div class=link-card-hostname-img>
+<img alt=icon src=https://a.sfdcstatic.com/developer-website/images/favicon.ico>
+</div>
 <span>developer.salesforce.com</span>
 </div>
 </div>
