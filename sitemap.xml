@@ -2,10 +2,28 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://seiri-blog.github.io/tags/data-spider/</loc>
-    <lastmod>2024-07-04T17:53:03+09:00</lastmod>
+    <loc>https://seiri-blog.github.io/tags/ffmpeg/</loc>
+    <lastmod>2024-10-22T09:28:23+09:00</lastmod>
+  </url><url>
+    <loc>https://seiri-blog.github.io/tags/macos/</loc>
+    <lastmod>2024-10-22T09:28:23+09:00</lastmod>
+  </url><url>
+    <loc>https://seiri-blog.github.io/posts/how-uninstall-ffmpeg/</loc>
+    <lastmod>2024-10-22T09:28:23+09:00</lastmod>
   </url><url>
     <loc>https://seiri-blog.github.io/posts/</loc>
+    <lastmod>2024-10-22T09:28:23+09:00</lastmod>
+  </url><url>
+    <loc>https://seiri-blog.github.io/</loc>
+    <lastmod>2024-10-22T09:28:23+09:00</lastmod>
+  </url><url>
+    <loc>https://seiri-blog.github.io/tags/</loc>
+    <lastmod>2024-10-22T09:28:23+09:00</lastmod>
+  </url><url>
+    <loc>https://seiri-blog.github.io/tags/uninstall/</loc>
+    <lastmod>2024-10-22T09:28:23+09:00</lastmod>
+  </url><url>
+    <loc>https://seiri-blog.github.io/tags/data-spider/</loc>
     <lastmod>2024-07-04T17:53:03+09:00</lastmod>
   </url><url>
     <loc>https://seiri-blog.github.io/tags/python/</loc>
@@ -18,12 +36,6 @@
     <lastmod>2024-07-04T17:53:03+09:00</lastmod>
   </url><url>
     <loc>https://seiri-blog.github.io/posts/python-data-spider-beginner/</loc>
-    <lastmod>2024-07-04T17:53:03+09:00</lastmod>
-  </url><url>
-    <loc>https://seiri-blog.github.io/</loc>
-    <lastmod>2024-07-04T17:53:03+09:00</lastmod>
-  </url><url>
-    <loc>https://seiri-blog.github.io/tags/</loc>
     <lastmod>2024-07-04T17:53:03+09:00</lastmod>
   </url><url>
     <loc>https://seiri-blog.github.io/tags/calculate/</loc>
@@ -111,9 +123,6 @@
     <lastmod>2024-05-19T22:55:30+09:00</lastmod>
   </url><url>
     <loc>https://seiri-blog.github.io/tags/linux/</loc>
-    <lastmod>2024-05-19T22:55:30+09:00</lastmod>
-  </url><url>
-    <loc>https://seiri-blog.github.io/tags/macos/</loc>
     <lastmod>2024-05-19T22:55:30+09:00</lastmod>
   </url><url>
     <loc>https://seiri-blog.github.io/tags/script/</loc>

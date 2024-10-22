@@ -6,7 +6,16 @@
     <description>Recent content in macOS on Seiri&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>2024 Seiri All rights reserved</copyright>
-    <lastBuildDate>Sun, 19 May 2024 22:55:30 +0900</lastBuildDate><atom:link href="https://seiri-blog.github.io/tags/macos/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 22 Oct 2024 09:28:23 +0900</lastBuildDate><atom:link href="https://seiri-blog.github.io/tags/macos/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>MacでFFmpegを完全にアンインストールする方法</title>
+      <link>https://seiri-blog.github.io/posts/how-uninstall-ffmpeg/</link>
+      <pubDate>Tue, 22 Oct 2024 09:28:23 +0900</pubDate>
+      
+      <guid>https://seiri-blog.github.io/posts/how-uninstall-ffmpeg/</guid>
+      <description>詳細ガイド FFmpeg は、音声や動画の変換・編集に非常に便利なオープンソースのツールですが、必要がなくなった場合や新しいバージョンをクリーンにインスト</description>
+    </item>
+    
     <item>
       <title>dmg2johnの使い方ガイド：John the Ripperと一緒に.dmgファイルのパスワードをクラックする方法</title>
       <link>https://seiri-blog.github.io/posts/how-to-use-jhon-crack-dmg/</link>
