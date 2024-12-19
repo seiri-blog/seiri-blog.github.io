@@ -6,7 +6,16 @@
     <description>Recent content on Seiri&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>2024 Seiri All rights reserved</copyright>
-    <lastBuildDate>Wed, 18 Dec 2024 18:10:10 +0900</lastBuildDate><atom:link href="https://seiri-blog.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 19 Dec 2024 11:04:22 +0900</lastBuildDate><atom:link href="https://seiri-blog.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>macOSの.DS_Store を一括削除する方法</title>
+      <link>https://seiri-blog.github.io/posts/mac-delete-dot-ds_store/</link>
+      <pubDate>Thu, 19 Dec 2024 11:04:22 +0900</pubDate>
+      
+      <guid>https://seiri-blog.github.io/posts/mac-delete-dot-ds_store/</guid>
+      <description>macOSの.DS_Store を一括削除する方法 macOS を使っていると、.DS_Store ファイルという隠しファイルが各フォルダに自動的に作成され</description>
+    </item>
+    
     <item>
       <title>MacでMicrosoft Officeソフトウェアをアンインストールする方法</title>
       <link>https://seiri-blog.github.io/posts/mac-uninstall-microsoft-office/</link>
