@@ -3,9 +3,9 @@
 <meta http-equiv=x-ua-compatible content="IE=edge">
 <meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
 <meta name=robots content="index, follow">
-<title>macOSの.DS_Store を一括削除する方法 | Seiri's Blog</title>
+<title>Macの.DS_Store を一括削除する方法 | Seiri's Blog</title>
 <meta name=keywords content="Mac,.DS_Store">
-<meta name=description content="macOSの.DS_Store を一括削除する方法 macOS を使っていると、.DS_Store ファイルという隠しファイルが各フォルダに自動的に作成され">
+<meta name=description content=".DS_Store ファイルとは？ macOS の Finder（ファイル管理アプリ）がフォルダ内の設定情報を保存するために作成する隠しファイルです。「DS」は「Deskt">
 <meta name=author content="Seiri">
 <link rel=canonical href=https://seiri-blog.github.io/posts/mac-delete-dot-ds_store/>
 <meta name=yandex-verification content="017a61651e9c5c6d">
@@ -21,17 +21,17 @@
 </noscript><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4988552421895566" crossorigin=anonymous></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-PLYEQ297HF"></script>
 <script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-PLYEQ297HF',{anonymize_ip:!1})}</script>
-<meta property="og:title" content="macOSの.DS_Store を一括削除する方法">
-<meta property="og:description" content="macOSの.DS_Store を一括削除する方法 macOS を使っていると、.DS_Store ファイルという隠しファイルが各フォルダに自動的に作成され">
+<meta property="og:title" content="Macの.DS_Store を一括削除する方法">
+<meta property="og:description" content=".DS_Store ファイルとは？ macOS の Finder（ファイル管理アプリ）がフォルダ内の設定情報を保存するために作成する隠しファイルです。「DS」は「Deskt">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://seiri-blog.github.io/posts/mac-delete-dot-ds_store/"><meta property="article:section" content="posts">
 <meta property="article:published_time" content="2024-12-19T11:04:22+09:00">
 <meta property="article:modified_time" content="2024-12-19T11:04:22+09:00"><meta property="og:site_name" content="Seiri's Blog">
 <meta name=twitter:card content="summary">
-<meta name=twitter:title content="macOSの.DS_Store を一括削除する方法">
-<meta name=twitter:description content="macOSの.DS_Store を一括削除する方法 macOS を使っていると、.DS_Store ファイルという隠しファイルが各フォルダに自動的に作成され">
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://seiri-blog.github.io/posts/"},{"@type":"ListItem","position":2,"name":"macOSの.DS_Store を一括削除する方法","item":"https://seiri-blog.github.io/posts/mac-delete-dot-ds_store/"}]}</script>
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"macOSの.DS_Store を一括削除する方法","name":"macOSの.DS_Store を一括削除する方法","description":"macOSの.DS_Store を一括削除する方法 macOS を使っていると、.DS_Store ファイルという隠しファイルが各フォルダに自動的に作成され","keywords":["Mac",".DS_Store"],"articleBody":"macOSの.DS_Store を一括削除する方法 macOS を使っていると、.DS_Store ファイルという隠しファイルが各フォルダに自動的に作成されているのに気づくことがあります。このファイルは Finder のメタデータ（アイコンの位置や表示モードなど）を保存するためのものですが、Windows や Linux とファイルを共有するときには不要で、時には煩わしい存在となることもあります。本記事では、この .DS_Store ファイルを一括削除する方法を詳しく説明します。\n.DS_Store ファイルの特徴  自動生成：Finder を使うと自動的に作成される。 隠しファイル：通常は Finder で表示されないが、ターミナルや一部の設定変更で表示可能。 他 OS との互換性問題：Windows や Linux に共有すると目障りになることが多い。  1. ターミナルを使った一括削除 手順:   ターミナルを開く\nFinder で Applications  Utilities  Terminal を選択。\n  削除コマンドを実行\n以下のコマンドを入力して、現在のディレクトリ以下の .DS_Store を削除します。\nfind . -name \".DS_Store\" -delete  find コマンド：指定したディレクトリ以下を検索。 -name \".DS_Store\"：.DS_Store ファイルを検索対象に。 -delete：検索結果を削除。    指定ディレクトリの削除\n特定のフォルダ内のみ削除したい場合は、ディレクトリを指定します。例えば、Downloads フォルダ内の .DS_Store を削除するには：\nfind ~/Downloads -name \".DS_Store\" -delete   注意:  必要でないフォルダに影響を与えないよう、コマンドを慎重に実行してください。 削除は元に戻せないため、バックアップを取ることをおすすめします。  2. 自動生成を防ぐ方法 Finder が .DS_Store を作成しないように設定することも可能です。\n手順:   ターミナルで設定を変更\n以下のコマンドを入力して、ネットワークディスク上で .DS_Store が作成されるのを防ぎます。\ndefaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true   ローカルディスクの設定（任意）\nローカルディスク上での .DS_Store 作成を防ぐには次のコマンドを使用します。\ndefaults write com.apple.desktopservices DSDontWriteUSBStores -bool true   Finder を再起動\n設定変更を反映させるために Finder を再起動します。\nkillall Finder   注意:  これらの設定は macOS の一部機能に影響を与える可能性があるため、慎重に適用してください。 必要に応じて設定を元に戻すには true を false に変更して再実行します。  3. スクリプトで一括自動化 何度も手動でコマンドを実行するのが面倒な場合、スクリプトを作成して自動化する方法があります。\nスクリプト例: 以下のような Bash スクリプトを作成し、必要に応じて実行できます。\n#!/bin/bash  # 削除対象のディレクトリを指定 TARGET_DIR=\"$1\" if [ -z \"$TARGET_DIR\" ]; then echo \"使用法: $0\" exit 1 fi # .DS_Store の一括削除 find \"$TARGET_DIR\" -name \".DS_Store\" -delete echo \"$TARGET_DIR以下の .DS_Store を削除しました。\" スクリプトの使用方法:  上記のコードを delete_dsstore.sh という名前で保存します。 ターミナルで実行権限を付与します。 chmod +x delete_dsstore.sh  スクリプトを実行します。 ./delete_dsstore.sh ~/Documents   まとめ macOS の .DS_Store ファイルは便利な場合もありますが、不要なケースでは一括削除や自動生成を防ぐ設定を行うことで快適な作業環境を保つことができます。今回紹介した方法を活用して、ストレスの少ないファイル管理を実現してください！\n","wordCount":"1252","inLanguage":"ja","datePublished":"2024-12-19T11:04:22+09:00","dateModified":"2024-12-19T11:04:22+09:00","author":{"@type":"Person","name":"Seiri"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://seiri-blog.github.io/posts/mac-delete-dot-ds_store/"},"publisher":{"@type":"Organization","name":"Seiri's Blog","logo":{"@type":"ImageObject","url":"https://seiri-blog.github.io/favicon.ico"}}}</script>
+<meta name=twitter:title content="Macの.DS_Store を一括削除する方法">
+<meta name=twitter:description content=".DS_Store ファイルとは？ macOS の Finder（ファイル管理アプリ）がフォルダ内の設定情報を保存するために作成する隠しファイルです。「DS」は「Deskt">
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://seiri-blog.github.io/posts/"},{"@type":"ListItem","position":2,"name":"Macの.DS_Store を一括削除する方法","item":"https://seiri-blog.github.io/posts/mac-delete-dot-ds_store/"}]}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"Macの.DS_Store を一括削除する方法","name":"Macの.DS_Store を一括削除する方法","description":".DS_Store ファイルとは？ macOS の Finder（ファイル管理アプリ）がフォルダ内の設定情報を保存するために作成する隠しファイルです。「DS」は「Deskt","keywords":["Mac",".DS_Store"],"articleBody":".DS_Store ファイルとは？ macOS の Finder（ファイル管理アプリ）がフォルダ内の設定情報を保存するために作成する隠しファイルです。「DS」は「Desktop Services」の略とされています。\nmacOS を使っていると、.DS_Store ファイルという隠しファイルが各フォルダに自動的に作成されているのに気づくことがあります。このファイルは Finder のメタデータ（アイコンの位置や表示モードなど）を保存するためのものですが、Windows や Linux とファイルを共有するときには不要で、時には煩わしい存在となることもあります。本記事では、この .DS_Store ファイルを一括削除する方法を詳しく説明します。\n1. ターミナルを使った一括削除 手順:   ターミナルを開く\nFinder で Applications  Utilities  Terminal を選択。\n  削除コマンドを実行\n以下のコマンドを入力して、現在のディレクトリ以下の .DS_Store を削除します。\nfind . -name \".DS_Store\" -delete  find コマンド：指定したディレクトリ以下を検索。 -name \".DS_Store\"：.DS_Store ファイルを検索対象に。 -delete：検索結果を削除。    指定ディレクトリの削除\n特定のフォルダ内のみ削除したい場合は、ディレクトリを指定します。例えば、Downloads フォルダ内の .DS_Store を削除するには：\nfind ~/Downloads -name \".DS_Store\" -delete   注意:  必要でないフォルダに影響を与えないよう、コマンドを慎重に実行してください。 削除は元に戻せないため、バックアップを取ることをおすすめします。  2. 自動生成を防ぐ方法 Finder が .DS_Store を作成しないように設定することも可能です。\n手順:   ターミナルで設定を変更\n以下のコマンドを入力して、ネットワークディスク上で .DS_Store が作成されるのを防ぎます。\ndefaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true   ローカルディスクの設定（任意）\nローカルディスク上での .DS_Store 作成を防ぐには次のコマンドを使用します。\ndefaults write com.apple.desktopservices DSDontWriteUSBStores -bool true   Finder を再起動\n設定変更を反映させるために Finder を再起動します。\nkillall Finder   注意:  これらの設定は macOS の一部機能に影響を与える可能性があるため、慎重に適用してください。 必要に応じて設定を元に戻すには true を false に変更して再実行します。  3. スクリプトで一括自動化 何度も手動でコマンドを実行するのが面倒な場合、スクリプトを作成して自動化する方法があります。\nスクリプト例: 以下のような Bash スクリプトを作成し、必要に応じて実行できます。\n#!/bin/bash  # 削除対象のディレクトリを指定 TARGET_DIR=\"$1\" if [ -z \"$TARGET_DIR\" ]; then echo \"使用法: $0\" exit 1 fi # .DS_Store の一括削除 find \"$TARGET_DIR\" -name \".DS_Store\" -delete echo \"$TARGET_DIR以下の .DS_Store を削除しました。\" スクリプトの使用方法:  上記のコードを delete_dsstore.sh という名前で保存します。 ターミナルで実行権限を付与します。 chmod +x delete_dsstore.sh  スクリプトを実行します。 ./delete_dsstore.sh ~/Documents   まとめ macOS の .DS_Store ファイルは便利な場合もありますが、不要なケースでは一括削除や自動生成を防ぐ設定を行うことで快適な作業環境を保つことができます。今回紹介した方法を活用して、ストレスの少ないファイル管理を実現してください！\n","wordCount":"1210","inLanguage":"ja","datePublished":"2024-12-19T11:04:22+09:00","dateModified":"2024-12-19T11:04:22+09:00","author":{"@type":"Person","name":"Seiri"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://seiri-blog.github.io/posts/mac-delete-dot-ds_store/"},"publisher":{"@type":"Organization","name":"Seiri's Blog","logo":{"@type":"ImageObject","url":"https://seiri-blog.github.io/favicon.ico"}}}</script>
 </head>
 <body id=top>
 <script>localStorage.getItem("pref-theme")==="dark"&&document.body.classList.add('dark')</script>
@@ -99,32 +99,32 @@
 <header class=post-header>
 <div class=breadcrumbs><a href=https://seiri-blog.github.io/>ホーム</a>&nbsp;»&nbsp;<a href=https://seiri-blog.github.io/posts/>Posts</a></div>
 <h1 class=post-title>
-macOSの.DS_Store を一括削除する方法
+Macの.DS_Store を一括削除する方法
 </h1>
 <ul class=post-tags>
 <li><a href=https://seiri-blog.github.io/tags/mac/>mac</a></li>
 <li><a href=https://seiri-blog.github.io/tags/.ds_store/>.DS_Store</a></li>
 </ul>
-<div class=post-meta><span title="2024-12-19 11:04:22 +0900 +0900">2024年12月19日</span>&nbsp;·&nbsp;3 分&nbsp;·&nbsp;1252 文字&nbsp;·&nbsp;Seiri
+<div class=post-meta><span title="2024-12-19 11:04:22 +0900 +0900">2024年12月19日</span>&nbsp;·&nbsp;3 分&nbsp;·&nbsp;1210 文字&nbsp;·&nbsp;Seiri
 </div>
 </header>
 <div class=share-area>
 <ul>
 <li class=facebook>
-<a target=_blank rel="noopener noreferrer" aria-label="share macOSの.DS_Store を一括削除する方法 on facebook" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fseiri-blog.github.io%2fposts%2fmac-delete-dot-ds_store%2f" title="Facebook で共有する"><svg viewBox="0 0 512 512" height="20" width="20" fill="currentcolor"><path d="M449.446.0C483.971.0 512 28.03 512 62.554v386.892C512 483.97 483.97 512 449.446 512H342.978V319.085h66.6l12.672-82.621h-79.272v-53.617c0-22.603 11.073-44.636 46.58-44.636H425.6v-70.34s-32.71-5.582-63.982-5.582c-65.288.0-107.96 39.569-107.96 111.204v62.971h-72.573v82.621h72.573V512h-191.104c-34.524.0-62.554-28.03-62.554-62.554V62.554c0-34.524 28.029-62.554 62.554-62.554h386.892z"/></svg>
+<a target=_blank rel="noopener noreferrer" aria-label="share Macの.DS_Store を一括削除する方法 on facebook" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fseiri-blog.github.io%2fposts%2fmac-delete-dot-ds_store%2f" title="Facebook で共有する"><svg viewBox="0 0 512 512" height="20" width="20" fill="currentcolor"><path d="M449.446.0C483.971.0 512 28.03 512 62.554v386.892C512 483.97 483.97 512 449.446 512H342.978V319.085h66.6l12.672-82.621h-79.272v-53.617c0-22.603 11.073-44.636 46.58-44.636H425.6v-70.34s-32.71-5.582-63.982-5.582c-65.288.0-107.96 39.569-107.96 111.204v62.971h-72.573v82.621h72.573V512h-191.104c-34.524.0-62.554-28.03-62.554-62.554V62.554c0-34.524 28.029-62.554 62.554-62.554h386.892z"/></svg>
 </a>
 </li>
 <li class=twitter>
-<a target=_blank rel="noopener noreferrer" aria-label="share macOSの.DS_Store を一括削除する方法 on twitter" href="https://twitter.com/intent/tweet/?text=macOS%e3%81%ae.DS_Store%20%e3%82%92%e4%b8%80%e6%8b%ac%e5%89%8a%e9%99%a4%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95&url=https%3a%2f%2fseiri-blog.github.io%2fposts%2fmac-delete-dot-ds_store%2f&hashtags=Mac%2c.DS_Store" title="Twitter(X) で共有する"><svg id="svg5" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="30" width="30" viewBox="0 0 2e3 512"><g id="layer1" transform="translate(52.390088,-25.058597)"><path id="path1009" fill="#fff" d="M283.94 167.31l386.39 516.64L281.5 1104h87.51l340.42-367.76L984.48 1104h297.8L874.15 558.3l361.92-390.99h-87.51l-313.51 338.7-253.31-338.7H283.94zm128.69 64.46h136.81l604.13 807.76h-136.81L412.63 231.77z"/></g></svg>
+<a target=_blank rel="noopener noreferrer" aria-label="share Macの.DS_Store を一括削除する方法 on twitter" href="https://twitter.com/intent/tweet/?text=Mac%e3%81%ae.DS_Store%20%e3%82%92%e4%b8%80%e6%8b%ac%e5%89%8a%e9%99%a4%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95&url=https%3a%2f%2fseiri-blog.github.io%2fposts%2fmac-delete-dot-ds_store%2f&hashtags=Mac%2c.DS_Store" title="Twitter(X) で共有する"><svg id="svg5" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="30" width="30" viewBox="0 0 2e3 512"><g id="layer1" transform="translate(52.390088,-25.058597)"><path id="path1009" fill="#fff" d="M283.94 167.31l386.39 516.64L281.5 1104h87.51l340.42-367.76L984.48 1104h297.8L874.15 558.3l361.92-390.99h-87.51l-313.51 338.7-253.31-338.7H283.94zm128.69 64.46h136.81l604.13 807.76h-136.81L412.63 231.77z"/></g></svg>
 </a>
 </li>
 <li class=hatena>
-<a target=_blank rel="noopener noreferrer" aria-label="share macOSの.DS_Store を一括削除する方法 on Hatena" href="http://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fseiri-blog.github.io%2fposts%2fmac-delete-dot-ds_store%2f&title=macOS%e3%81%ae.DS_Store%20%e3%82%92%e4%b8%80%e6%8b%ac%e5%89%8a%e9%99%a4%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95" title="Hatena で共有する">
+<a target=_blank rel="noopener noreferrer" aria-label="share Macの.DS_Store を一括削除する方法 on Hatena" href="http://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fseiri-blog.github.io%2fposts%2fmac-delete-dot-ds_store%2f&title=Mac%e3%81%ae.DS_Store%20%e3%82%92%e4%b8%80%e6%8b%ac%e5%89%8a%e9%99%a4%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95" title="Hatena で共有する">
 B!
 </a>
 </li>
 <li class=line>
-<a target=_blank rel="noopener noreferrer" aria-label="share macOSの.DS_Store を一括削除する方法 on Line" href=http://line.me/R/msg/text/?https%3a%2f%2fseiri-blog.github.io%2fposts%2fmac-delete-dot-ds_store%2f%0amacOS%e3%81%ae.DS_Store%20%e3%82%92%e4%b8%80%e6%8b%ac%e5%89%8a%e9%99%a4%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95 title="LINE で共有する"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="35" height="50"><path fill="currentcolor" d="M37.113 22.417c0-5.865-5.88-10.637-13.107-10.637s-13.108 4.772-13.108 10.637c0 5.258 4.663 9.662 10.962 10.495.427.092 1.008.282 1.155.646.132.331.086.85.042 1.185.0.0-.153.925-.187 1.122-.057.331-.263 1.296 1.135.707 1.399-.589 7.548-4.445 10.298-7.611h-.001C36.203 26.879 37.113 24.764 37.113 22.417zm-18.238 3.49h-2.604c-.379.0-.687-.308-.687-.688V20.01c0-.379.308-.687.687-.687.379.0.687.308.687.687v4.521h1.917c.379.0.687.308.687.687C19.562 25.598 19.254 25.907 18.875 25.907zM21.568 25.219c0 .379-.308.688-.687.688s-.687-.308-.687-.688V20.01c0-.379.308-.687.687-.687s.687.308.687.687v5.209zm6.27.0c0 .297-.188.559-.47.652-.071.024-.145.036-.218.036-.215.0-.42-.103-.549-.275l-2.669-3.635v3.222c0 .379-.308.688-.688.688-.379.0-.688-.308-.688-.688V20.01c0-.296.189-.558.47-.652.071-.024.144-.035.218-.035.214.0.42.103.549.275l2.67 3.635V20.01c0-.379.309-.687.688-.687.379.0.687.308.687.687v5.209zm4.214-3.292c.379.0.688.308.688.688.0.379-.308.687-.688.687h-1.917v1.23h1.917c.379.0.688.308.688.687s-.309.688-.688.688h-2.604c-.378.0-.687-.308-.687-.688v-2.603-.001s0-.001.0-.001v-2.601c0-.001.0-.001.0-.002.0-.379.308-.687.687-.687h2.604c.379.0.688.308.688.687s-.308.687-.688.687h-1.917v1.23h1.917z"/></svg>
+<a target=_blank rel="noopener noreferrer" aria-label="share Macの.DS_Store を一括削除する方法 on Line" href=http://line.me/R/msg/text/?https%3a%2f%2fseiri-blog.github.io%2fposts%2fmac-delete-dot-ds_store%2f%0aMac%e3%81%ae.DS_Store%20%e3%82%92%e4%b8%80%e6%8b%ac%e5%89%8a%e9%99%a4%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95 title="LINE で共有する"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="35" height="50"><path fill="currentcolor" d="M37.113 22.417c0-5.865-5.88-10.637-13.107-10.637s-13.108 4.772-13.108 10.637c0 5.258 4.663 9.662 10.962 10.495.427.092 1.008.282 1.155.646.132.331.086.85.042 1.185.0.0-.153.925-.187 1.122-.057.331-.263 1.296 1.135.707 1.399-.589 7.548-4.445 10.298-7.611h-.001C36.203 26.879 37.113 24.764 37.113 22.417zm-18.238 3.49h-2.604c-.379.0-.687-.308-.687-.688V20.01c0-.379.308-.687.687-.687.379.0.687.308.687.687v4.521h1.917c.379.0.687.308.687.687C19.562 25.598 19.254 25.907 18.875 25.907zM21.568 25.219c0 .379-.308.688-.687.688s-.687-.308-.687-.688V20.01c0-.379.308-.687.687-.687s.687.308.687.687v5.209zm6.27.0c0 .297-.188.559-.47.652-.071.024-.145.036-.218.036-.215.0-.42-.103-.549-.275l-2.669-3.635v3.222c0 .379-.308.688-.688.688-.379.0-.688-.308-.688-.688V20.01c0-.296.189-.558.47-.652.071-.024.144-.035.218-.035.214.0.42.103.549.275l2.67 3.635V20.01c0-.379.309-.687.688-.687.379.0.687.308.687.687v5.209zm4.214-3.292c.379.0.688.308.688.688.0.379-.308.687-.688.687h-1.917v1.23h1.917c.379.0.688.308.688.687s-.309.688-.688.688h-2.604c-.378.0-.687-.308-.687-.688v-2.603-.001s0-.001.0-.001v-2.601c0-.001.0-.001.0-.002.0-.379.308-.687.687-.687h2.604c.379.0.688.308.688.687s-.308.687-.688.687h-1.917v1.23h1.917z"/></svg>
 </a>
 </li>
 </ul>
@@ -135,10 +135,7 @@ B!
 </summary>
 <div class=inner><ul>
 <li>
-<a href=#macos%e3%81%aeds_store-%e3%82%92%e4%b8%80%e6%8b%ac%e5%89%8a%e9%99%a4%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95 aria-label="macOSの.DS_Store を一括削除する方法">macOSの.DS_Store を一括削除する方法</a><ul>
-<li>
-<a href=#ds_store-%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e3%81%ae%e7%89%b9%e5%be%b4 aria-label=".DS_Store ファイルの特徴"><strong>.DS_Store ファイルの特徴</strong></a></li></ul>
-</li>
+<a href=#ds_store-%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e3%81%a8%e3%81%af aria-label=".DS_Store ファイルとは？">.DS_Store ファイルとは？</a></li>
 <li>
 <a href=#1-%e3%82%bf%e3%83%bc%e3%83%9f%e3%83%8a%e3%83%ab%e3%82%92%e4%bd%bf%e3%81%a3%e3%81%9f%e4%b8%80%e6%8b%ac%e5%89%8a%e9%99%a4 aria-label="1. ターミナルを使った一括削除"><strong>1. ターミナルを使った一括削除</strong></a><ul>
 <li>
@@ -171,16 +168,9 @@ B!
 <ins class=adsbygoogle style=display:inline-block;width:728px;height:90px data-ad-client=ca-pub-4988552421895566 data-ad-slot=7460187386></ins>
 <script>(adsbygoogle=window.adsbygoogle||[]).push({})</script>
 </div>
-<div class=post-content><h2 id=macosのds_store-を一括削除する方法>macOSの.DS_Store を一括削除する方法<a hidden class=anchor aria-hidden=true href=#macosのds_store-を一括削除する方法>#</a></h2>
-<p>macOS を使っていると、.DS_Store ファイルという隠しファイルが各フォルダに自動的に作成されているのに気づくことがあります。このファイルは Finder のメタデータ（アイコンの位置や表示モードなど）を保存するためのものですが、Windows や Linux とファイルを共有するときには不要で、時には煩わしい存在となることもあります。本記事では、この .DS_Store ファイルを一括削除する方法を詳しく説明します。</p>
-<hr>
-<h3 id=ds_store-ファイルの特徴><strong>.DS_Store ファイルの特徴</strong><a hidden class=anchor aria-hidden=true href=#ds_store-ファイルの特徴>#</a></h3>
-<ul>
-<li><strong>自動生成</strong>：Finder を使うと自動的に作成される。</li>
-<li><strong>隠しファイル</strong>：通常は Finder で表示されないが、ターミナルや一部の設定変更で表示可能。</li>
-<li><strong>他 OS との互換性問題</strong>：Windows や Linux に共有すると目障りになることが多い。</li>
-</ul>
-<hr>
+<div class=post-content><h2 id=ds_store-ファイルとは>.DS_Store ファイルとは？<a hidden class=anchor aria-hidden=true href=#ds_store-ファイルとは>#</a></h2>
+<p>macOS の Finder（ファイル管理アプリ）がフォルダ内の設定情報を保存するために作成する隠しファイルです。「DS」は「Desktop Services」の略とされています。<br>
+macOS を使っていると、.DS_Store ファイルという隠しファイルが各フォルダに自動的に作成されているのに気づくことがあります。このファイルは Finder のメタデータ（アイコンの位置や表示モードなど）を保存するためのものですが、Windows や Linux とファイルを共有するときには不要で、時には煩わしい存在となることもあります。本記事では、この .DS_Store ファイルを一括削除する方法を詳しく説明します。</p>
 <h2 id=1-ターミナルを使った一括削除><strong>1. ターミナルを使った一括削除</strong><a hidden class=anchor aria-hidden=true href=#1-ターミナルを使った一括削除>#</a></h2>
 <h3 id=手順>手順:<a hidden class=anchor aria-hidden=true href=#手順>#</a></h3>
 <ol>
@@ -209,7 +199,6 @@ Finder で <code>Applications > Utilities > Terminal</code> を選択。</p>
 <li>必要でないフォルダに影響を与えないよう、コマンドを慎重に実行してください。</li>
 <li>削除は元に戻せないため、バックアップを取ることをおすすめします。</li>
 </ul>
-<hr>
 <h2 id=2-自動生成を防ぐ方法><strong>2. 自動生成を防ぐ方法</strong><a hidden class=anchor aria-hidden=true href=#2-自動生成を防ぐ方法>#</a></h2>
 <p>Finder が .DS_Store を作成しないように設定することも可能です。</p>
 <h3 id=手順-1>手順:<a hidden class=anchor aria-hidden=true href=#手順-1>#</a></h3>
@@ -235,7 +224,6 @@ Finder で <code>Applications > Utilities > Terminal</code> を選択。</p>
 <li>これらの設定は macOS の一部機能に影響を与える可能性があるため、慎重に適用してください。</li>
 <li>必要に応じて設定を元に戻すには <code>true</code> を <code>false</code> に変更して再実行します。</li>
 </ul>
-<hr>
 <h2 id=3-スクリプトで一括自動化><strong>3. スクリプトで一括自動化</strong><a hidden class=anchor aria-hidden=true href=#3-スクリプトで一括自動化>#</a></h2>
 <p>何度も手動でコマンドを実行するのが面倒な場合、スクリプトを作成して自動化する方法があります。</p>
 <h3 id=スクリプト例>スクリプト例:<a hidden class=anchor aria-hidden=true href=#スクリプト例>#</a></h3>
@@ -264,27 +252,26 @@ echo <span style=color:#e6db74>&#34;</span>$TARGET_DIR<span style=color:#e6db74>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>./delete_dsstore.sh ~/Documents
 </code></pre></div></li>
 </ol>
-<hr>
 <h2 id=まとめ><strong>まとめ</strong><a hidden class=anchor aria-hidden=true href=#まとめ>#</a></h2>
 <p>macOS の .DS_Store ファイルは便利な場合もありますが、不要なケースでは一括削除や自動生成を防ぐ設定を行うことで快適な作業環境を保つことができます。今回紹介した方法を活用して、ストレスの少ないファイル管理を実現してください！</p>
 </div>
 <div class=share-area>
 <ul>
 <li class=facebook>
-<a target=_blank rel="noopener noreferrer" aria-label="share macOSの.DS_Store を一括削除する方法 on facebook" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fseiri-blog.github.io%2fposts%2fmac-delete-dot-ds_store%2f" title="Facebook で共有する"><svg viewBox="0 0 512 512" height="20" width="20" fill="currentcolor"><path d="M449.446.0C483.971.0 512 28.03 512 62.554v386.892C512 483.97 483.97 512 449.446 512H342.978V319.085h66.6l12.672-82.621h-79.272v-53.617c0-22.603 11.073-44.636 46.58-44.636H425.6v-70.34s-32.71-5.582-63.982-5.582c-65.288.0-107.96 39.569-107.96 111.204v62.971h-72.573v82.621h72.573V512h-191.104c-34.524.0-62.554-28.03-62.554-62.554V62.554c0-34.524 28.029-62.554 62.554-62.554h386.892z"/></svg>
+<a target=_blank rel="noopener noreferrer" aria-label="share Macの.DS_Store を一括削除する方法 on facebook" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fseiri-blog.github.io%2fposts%2fmac-delete-dot-ds_store%2f" title="Facebook で共有する"><svg viewBox="0 0 512 512" height="20" width="20" fill="currentcolor"><path d="M449.446.0C483.971.0 512 28.03 512 62.554v386.892C512 483.97 483.97 512 449.446 512H342.978V319.085h66.6l12.672-82.621h-79.272v-53.617c0-22.603 11.073-44.636 46.58-44.636H425.6v-70.34s-32.71-5.582-63.982-5.582c-65.288.0-107.96 39.569-107.96 111.204v62.971h-72.573v82.621h72.573V512h-191.104c-34.524.0-62.554-28.03-62.554-62.554V62.554c0-34.524 28.029-62.554 62.554-62.554h386.892z"/></svg>
 </a>
 </li>
 <li class=twitter>
-<a target=_blank rel="noopener noreferrer" aria-label="share macOSの.DS_Store を一括削除する方法 on twitter" href="https://twitter.com/intent/tweet/?text=macOS%e3%81%ae.DS_Store%20%e3%82%92%e4%b8%80%e6%8b%ac%e5%89%8a%e9%99%a4%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95&url=https%3a%2f%2fseiri-blog.github.io%2fposts%2fmac-delete-dot-ds_store%2f&hashtags=Mac%2c.DS_Store" title="Twitter(X) で共有する"><svg id="svg5" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="30" width="30" viewBox="0 0 2e3 512"><g id="layer1" transform="translate(52.390088,-25.058597)"><path id="path1009" fill="#fff" d="M283.94 167.31l386.39 516.64L281.5 1104h87.51l340.42-367.76L984.48 1104h297.8L874.15 558.3l361.92-390.99h-87.51l-313.51 338.7-253.31-338.7H283.94zm128.69 64.46h136.81l604.13 807.76h-136.81L412.63 231.77z"/></g></svg>
+<a target=_blank rel="noopener noreferrer" aria-label="share Macの.DS_Store を一括削除する方法 on twitter" href="https://twitter.com/intent/tweet/?text=Mac%e3%81%ae.DS_Store%20%e3%82%92%e4%b8%80%e6%8b%ac%e5%89%8a%e9%99%a4%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95&url=https%3a%2f%2fseiri-blog.github.io%2fposts%2fmac-delete-dot-ds_store%2f&hashtags=Mac%2c.DS_Store" title="Twitter(X) で共有する"><svg id="svg5" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="30" width="30" viewBox="0 0 2e3 512"><g id="layer1" transform="translate(52.390088,-25.058597)"><path id="path1009" fill="#fff" d="M283.94 167.31l386.39 516.64L281.5 1104h87.51l340.42-367.76L984.48 1104h297.8L874.15 558.3l361.92-390.99h-87.51l-313.51 338.7-253.31-338.7H283.94zm128.69 64.46h136.81l604.13 807.76h-136.81L412.63 231.77z"/></g></svg>
 </a>
 </li>
 <li class=hatena>
-<a target=_blank rel="noopener noreferrer" aria-label="share macOSの.DS_Store を一括削除する方法 on Hatena" href="http://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fseiri-blog.github.io%2fposts%2fmac-delete-dot-ds_store%2f&title=macOS%e3%81%ae.DS_Store%20%e3%82%92%e4%b8%80%e6%8b%ac%e5%89%8a%e9%99%a4%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95" title="Hatena で共有する">
+<a target=_blank rel="noopener noreferrer" aria-label="share Macの.DS_Store を一括削除する方法 on Hatena" href="http://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fseiri-blog.github.io%2fposts%2fmac-delete-dot-ds_store%2f&title=Mac%e3%81%ae.DS_Store%20%e3%82%92%e4%b8%80%e6%8b%ac%e5%89%8a%e9%99%a4%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95" title="Hatena で共有する">
 B!
 </a>
 </li>
 <li class=line>
-<a target=_blank rel="noopener noreferrer" aria-label="share macOSの.DS_Store を一括削除する方法 on Line" href=http://line.me/R/msg/text/?https%3a%2f%2fseiri-blog.github.io%2fposts%2fmac-delete-dot-ds_store%2f%0amacOS%e3%81%ae.DS_Store%20%e3%82%92%e4%b8%80%e6%8b%ac%e5%89%8a%e9%99%a4%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95 title="LINE で共有する"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="35" height="50"><path fill="currentcolor" d="M37.113 22.417c0-5.865-5.88-10.637-13.107-10.637s-13.108 4.772-13.108 10.637c0 5.258 4.663 9.662 10.962 10.495.427.092 1.008.282 1.155.646.132.331.086.85.042 1.185.0.0-.153.925-.187 1.122-.057.331-.263 1.296 1.135.707 1.399-.589 7.548-4.445 10.298-7.611h-.001C36.203 26.879 37.113 24.764 37.113 22.417zm-18.238 3.49h-2.604c-.379.0-.687-.308-.687-.688V20.01c0-.379.308-.687.687-.687.379.0.687.308.687.687v4.521h1.917c.379.0.687.308.687.687C19.562 25.598 19.254 25.907 18.875 25.907zM21.568 25.219c0 .379-.308.688-.687.688s-.687-.308-.687-.688V20.01c0-.379.308-.687.687-.687s.687.308.687.687v5.209zm6.27.0c0 .297-.188.559-.47.652-.071.024-.145.036-.218.036-.215.0-.42-.103-.549-.275l-2.669-3.635v3.222c0 .379-.308.688-.688.688-.379.0-.688-.308-.688-.688V20.01c0-.296.189-.558.47-.652.071-.024.144-.035.218-.035.214.0.42.103.549.275l2.67 3.635V20.01c0-.379.309-.687.688-.687.379.0.687.308.687.687v5.209zm4.214-3.292c.379.0.688.308.688.688.0.379-.308.687-.688.687h-1.917v1.23h1.917c.379.0.688.308.688.687s-.309.688-.688.688h-2.604c-.378.0-.687-.308-.687-.688v-2.603-.001s0-.001.0-.001v-2.601c0-.001.0-.001.0-.002.0-.379.308-.687.687-.687h2.604c.379.0.688.308.688.687s-.308.687-.688.687h-1.917v1.23h1.917z"/></svg>
+<a target=_blank rel="noopener noreferrer" aria-label="share Macの.DS_Store を一括削除する方法 on Line" href=http://line.me/R/msg/text/?https%3a%2f%2fseiri-blog.github.io%2fposts%2fmac-delete-dot-ds_store%2f%0aMac%e3%81%ae.DS_Store%20%e3%82%92%e4%b8%80%e6%8b%ac%e5%89%8a%e9%99%a4%e3%81%99%e3%82%8b%e6%96%b9%e6%b3%95 title="LINE で共有する"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="35" height="50"><path fill="currentcolor" d="M37.113 22.417c0-5.865-5.88-10.637-13.107-10.637s-13.108 4.772-13.108 10.637c0 5.258 4.663 9.662 10.962 10.495.427.092 1.008.282 1.155.646.132.331.086.85.042 1.185.0.0-.153.925-.187 1.122-.057.331-.263 1.296 1.135.707 1.399-.589 7.548-4.445 10.298-7.611h-.001C36.203 26.879 37.113 24.764 37.113 22.417zm-18.238 3.49h-2.604c-.379.0-.687-.308-.687-.688V20.01c0-.379.308-.687.687-.687.379.0.687.308.687.687v4.521h1.917c.379.0.687.308.687.687C19.562 25.598 19.254 25.907 18.875 25.907zM21.568 25.219c0 .379-.308.688-.687.688s-.687-.308-.687-.688V20.01c0-.379.308-.687.687-.687s.687.308.687.687v5.209zm6.27.0c0 .297-.188.559-.47.652-.071.024-.145.036-.218.036-.215.0-.42-.103-.549-.275l-2.669-3.635v3.222c0 .379-.308.688-.688.688-.379.0-.688-.308-.688-.688V20.01c0-.296.189-.558.47-.652.071-.024.144-.035.218-.035.214.0.42.103.549.275l2.67 3.635V20.01c0-.379.309-.687.688-.687.379.0.687.308.687.687v5.209zm4.214-3.292c.379.0.688.308.688.688.0.379-.308.687-.688.687h-1.917v1.23h1.917c.379.0.688.308.688.687s-.309.688-.688.688h-2.604c-.378.0-.687-.308-.687-.688v-2.603-.001s0-.001.0-.001v-2.601c0-.001.0-.001.0-.002.0-.379.308-.687.687-.687h2.604c.379.0.688.308.688.687s-.308.687-.688.687h-1.917v1.23h1.917z"/></svg>
 </a>
 </li>
 </ul>
