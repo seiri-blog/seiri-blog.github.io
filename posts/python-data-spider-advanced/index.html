@@ -1,399 +1,133 @@
-<!doctype html><html lang=ja dir=auto>
-<head><meta charset=utf-8>
-<meta http-equiv=x-ua-compatible content="IE=edge">
-<meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
-<meta name=robots content="index, follow">
-<title>Pythonデータスパイダー（Webスクレイピング）上級ガイド | Seiri's Blog</title>
-<meta name=keywords content="python,data spider">
-<meta name=description content="ウェブスクレイピングは、基本的な技術を習得した後に、より高度な手法を学ぶことで、さらに強力で効率的なデータ収集が可能になります。このガイドで">
-<meta name=author content="Seiri">
-<link rel=canonical href=https://seiri-blog.github.io/posts/python-data-spider-advanced/>
-<meta name=yandex-verification content="017a61651e9c5c6d">
-<link href=https://seiri-blog.github.io/assets/css/stylesheet.css rel="preload stylesheet" as=style>
-<script defer crossorigin=anonymous src=/assets/js/highlight.js onload=hljs.initHighlightingOnLoad()></script>
-<link rel=icon href=https://seiri-blog.github.io/favicon.ico>
-<link rel=apple-touch-icon href=https://seiri-blog.github.io/apple-touch-icon.png>
-<link rel=mask-icon href=https://seiri-blog.github.io/safari-pinned-tab.svg>
-<meta name=theme-color content="#2e2e33">
-<meta name=msapplication-TileColor content="#2e2e33">
-<noscript>
-<style>#theme-toggle,.top-link{display:none}</style>
-</noscript><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4988552421895566" crossorigin=anonymous></script>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-PLYEQ297HF"></script>
-<script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-PLYEQ297HF',{anonymize_ip:!1})}</script>
-<meta property="og:title" content="Pythonデータスパイダー（Webスクレイピング）上級ガイド">
-<meta property="og:description" content="ウェブスクレイピングは、基本的な技術を習得した後に、より高度な手法を学ぶことで、さらに強力で効率的なデータ収集が可能になります。このガイドで">
-<meta property="og:type" content="article">
-<meta property="og:url" content="https://seiri-blog.github.io/posts/python-data-spider-advanced/">
-<meta property="og:image" content="https://seiri-blog.github.io/images/python.png"><meta property="article:section" content="posts">
-<meta property="article:published_time" content="2024-07-04T17:53:03+09:00">
-<meta property="article:modified_time" content="2024-07-04T17:53:03+09:00"><meta property="og:site_name" content="Seiri's Blog">
-<meta name=twitter:card content="summary_large_image">
-<meta name=twitter:image content="https://seiri-blog.github.io/images/python.png">
-<meta name=twitter:title content="Pythonデータスパイダー（Webスクレイピング）上級ガイド">
-<meta name=twitter:description content="ウェブスクレイピングは、基本的な技術を習得した後に、より高度な手法を学ぶことで、さらに強力で効率的なデータ収集が可能になります。このガイドで">
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://seiri-blog.github.io/posts/"},{"@type":"ListItem","position":2,"name":"Pythonデータスパイダー（Webスクレイピング）上級ガイド","item":"https://seiri-blog.github.io/posts/python-data-spider-advanced/"}]}</script>
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"Pythonデータスパイダー（Webスクレイピング）上級ガイド","name":"Pythonデータスパイダー（Webスクレイピング）上級ガイド","description":"ウェブスクレイピングは、基本的な技術を習得した後に、より高度な手法を学ぶことで、さらに強力で効率的なデータ収集が可能になります。このガイドで","keywords":["python","data spider"],"articleBody":"ウェブスクレイピングは、基本的な技術を習得した後に、より高度な手法を学ぶことで、さらに強力で効率的なデータ収集が可能になります。このガイドでは、Python を使った上級レベルのウェブスクレイピング技術について説明します。\n上級技術の概要 上級レベルのウェブスクレイピングには、次のような技術が含まれます：\n 分散スクレイピング：複数のマシンやプロセスを使って大規模なデータ収集を行う。 高度な JavaScript レンダリング：ヘッドレスブラウザや無頭ブラウザを使った動的コンテンツの完全なレンダリング。 機械学習との統合：スクレイピングしたデータを用いた機械学習モデルの構築。 API との連携：スクレイピングと API の併用。 データベースの利用：取得したデータの効率的な保存と管理。  分散スクレイピング 大規模なデータ収集を効率的に行うために、分散スクレイピングを活用します。分散スクレイピングには、複数のマシンやプロセスを使用して並列にデータを収集する手法が含まれます。\nApache Spark を使った分散スクレイピング Apache Spark は、分散処理を行うための強力なツールです。PySpark を使用して分散スクレイピングを行う例を示します。\nまず、PySpark をインストールします：\npip install pyspark 次に、PySpark を使ったスクレイピングコードを書きます：\nfrom pyspark import SparkContext, SparkConf import requests from bs4 import BeautifulSoup def fetch_content(url): response = requests.get(url) soup = BeautifulSoup(response.content, 'html.parser') return soup.title.string if __name__ == \"__main__\": conf = SparkConf().setAppName(\"WebScraping\").setMaster(\"local[*]\") sc = SparkContext(conf=conf) urls = [ 'https://example.com/page1', 'https://example.com/page2', 'https://example.com/page3' ] rdd = sc.parallelize(urls) titles = rdd.map(fetch_content).collect() for title in titles: print(title) 高度な JavaScript レンダリング 動的なコンテンツを完全にレンダリングするために、ヘッドレスブラウザを使用します。Playwright や Selenium を使った高度なレンダリングを行うことで、JavaScript によって生成されたコンテンツを取得します。\nPlaywright の使用例 Playwright をインストールします：\npip install playwright playwright install 次に、Playwright を使ったコードを書きます：\nfrom playwright.sync_api import sync_playwright def fetch_dynamic_content(url): with sync_playwright() as p: browser = p.chromium.launch() page = browser.new_page() page.goto(url) content = page.content() browser.close() return content url = 'https://example.com' content = fetch_dynamic_content(url) print(content) 機械学習との統合 スクレイピングしたデータを用いて機械学習モデルを構築することで、データの予測や分類を行います。例えば、スクレイピングしたニュース記事を分類するモデルを構築します。\nニュース記事の分類例 まず、scikit-learn をインストールします：\npip install scikit-learn 次に、ニュース記事をスクレイピングし、分類するコードを書きます：\nimport requests from bs4 import BeautifulSoup from sklearn.feature_extraction.text import TfidfVectorizer from sklearn.naive_bayes import MultinomialNB def fetch_article(url): response = requests.get(url) soup = BeautifulSoup(response.content, 'html.parser') return soup.get_text() urls = [ 'https://news.example.com/article1', 'https://news.example.com/article2', 'https://news.example.com/article3' ] articles = [fetch_article(url) for url in urls] # サンプルデータ categories = ['sports', 'politics', 'tech'] sample_texts = [ 'The team won the match.', 'The government passed a new law.', 'The latest smartphone was released.' ] vectorizer = TfidfVectorizer() X_train = vectorizer.fit_transform(sample_texts) y_train = categories model = MultinomialNB() model.fit(X_train, y_train) X_test = vectorizer.transform(articles) predictions = model.predict(X_test) for article, prediction in zip(articles, predictions): print(f'Article: {article[:60]}... \\nCategory: {prediction}') API との連携 スクレイピングと API を併用することで、効率的にデータを収集し、分析できます。例えば、ウェブサイトから基本情報をスクレイピングし、API から追加データを取得します。\nAPI との連携例 まず、requests ライブラリを使用して、API からデータを取得します：\nimport requests def fetch_additional_data(api_url, params): response = requests.get(api_url, params=params) return response.json() scraped_data = { 'name': 'Example Company', 'website': 'https://example.com' } api_url = 'https://api.example.com/details' params = {'domain': 'example.com'} additional_data = fetch_additional_data(api_url, params) combined_data = {**scraped_data, **additional_data} print(combined_data) データベースの利用 取得したデータを効率的に保存し、管理するためにデータベースを使用します。SQLAlchemy などの ORM を使用して、Python からデータベースを操作します。\nSQLAlchemy の使用例 まず、SQLAlchemy をインストールします：\npip install sqlalchemy 次に、データベースにデータを保存するコードを書きます：\nfrom sqlalchemy import create_engine, Column, String, Integer from sqlalchemy.ext.declarative import declarative_base from sqlalchemy.orm import sessionmaker # データベースの設定 DATABASE_URL = 'sqlite:///scraped_data.db' Base = declarative_base() class Article(Base): __tablename__ = 'articles' id = Column(Integer, primary_key=True) title = Column(String) content = Column(String) engine = create_engine(DATABASE_URL) Base.metadata.create_all(engine) Session = sessionmaker(bind=engine) session = Session() # データの保存 article = Article(title='Example Title', content='This is an example content.') session.add(article) session.commit() # データの取得 saved_articles = session.query(Article).all() for article in saved_articles: print(f'Title: {article.title}, Content: {article.content}') まとめ 上級レベルのウェブスクレイピングでは、分散スクレイピング、動的コンテンツの高度なレンダリング、機械学習との統合、API との連携、データベースの利用といった技術が重要です。これらの技術を駆使することで、さらに高度で効率的なデータ収集と分析が可能になります。実践を通じてこれらのスキルを習得し、プロジェクトに応用してみてください。\n","wordCount":"1606","inLanguage":"ja","image":"https://seiri-blog.github.io/images/python.png","datePublished":"2024-07-04T17:53:03+09:00","dateModified":"2024-07-04T17:53:03+09:00","author":{"@type":"Person","name":"Seiri"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://seiri-blog.github.io/posts/python-data-spider-advanced/"},"publisher":{"@type":"Organization","name":"Seiri's Blog","logo":{"@type":"ImageObject","url":"https://seiri-blog.github.io/favicon.ico"}}}</script>
-</head>
-<body id=top>
-<script>localStorage.getItem("pref-theme")==="dark"&&document.body.classList.add('dark')</script>
-<header class=header>
-<nav class=nav>
-<div class=logo>
-<a href=https://seiri-blog.github.io/ accesskey=h title="Seiri's Blog (Alt + H)">
-<img src=https://seiri-blog.github.io/images/logo.svg alt aria-label=logo height=35>Seiri's Blog</a>
-<div class=logo-switches>
-<button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
-</button>
-</div>
-</div>
-<ul id=menu>
-<li>
-<a href=https://seiri-blog.github.io/search/ title="🔍 (Alt + /)" accesskey=/>
-<span>🔍</span>
-</a>
-</li>
-<li>
-<a href=https://seiri-blog.github.io/posts/ title=記事一覧>
-<span>記事一覧</span>
-</a>
-</li>
-<li>
-<a href=https://seiri-blog.github.io/archives/ title=アーカイブ>
-<span>アーカイブ</span>
-</a>
-</li>
-<li>
-<a href=https://seiri-blog.github.io/tags/ title=タグ>
-<span>タグ</span>
-</a>
-</li>
-<li>
-<a href=https://seiri-blog.github.io/policy/ title=ポリシー>
-<span>ポリシー</span>
-</a>
-</li>
-<li>
-<a href=https://seiri-blog.github.io/trailhead-superbadge title="Trailhead Superbadge">
-<span>Trailhead Superbadge</span>&nbsp;<svg fill="none" shape-rendering="geometricPrecision" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24" height="12" width="12"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg>
-</a>
-</li>
-<li>
-<a href=https://chrome-tool.github.io/ title=Chrome拡張機能>
-<span>Chrome拡張機能</span>&nbsp;<svg fill="none" shape-rendering="geometricPrecision" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24" height="12" width="12"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg>
-</a>
-</li>
-<li>
-<a href=https://wallpapers-collection.github.io/bing-wallpaper/ title="Bing Wallpaper">
-<span>Bing Wallpaper</span>&nbsp;<svg fill="none" shape-rendering="geometricPrecision" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24" height="12" width="12"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg>
-</a>
-</li>
-<li>
-<a href=https://html-online-game.github.io/ title="Online Game">
-<span>Online Game</span>&nbsp;<svg fill="none" shape-rendering="geometricPrecision" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24" height="12" width="12"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg>
-</a>
-</li>
-</ul>
-</nav>
-</header>
-<main class=main>
-<article class=post-single>
-<header class=post-header>
-<div class=breadcrumbs><a href=https://seiri-blog.github.io/>ホーム</a>&nbsp;»&nbsp;<a href=https://seiri-blog.github.io/posts/>Posts</a></div>
-<h1 class=post-title>
-Pythonデータスパイダー（Webスクレイピング）上級ガイド
-</h1>
-<ul class=post-tags>
-<li><a href=https://seiri-blog.github.io/tags/python/>python</a></li>
-<li><a href=https://seiri-blog.github.io/tags/data-spider/>data spider</a></li>
-</ul>
-<div class=post-meta><span title="2024-07-04 17:53:03 +0900 +0900">2024年7月4日</span>&nbsp;·&nbsp;4 分&nbsp;·&nbsp;1606 文字&nbsp;·&nbsp;Seiri
-</div>
-</header>
-<figure class=entry-cover><img loading=lazy src=https://seiri-blog.github.io/images/python.png alt=Pythonデータスパイダー（Webスクレイピング）上級ガイド>
-</figure>
-<div class=share-area>
-<ul>
-<li class=facebook>
-<a target=_blank rel="noopener noreferrer" aria-label="share Pythonデータスパイダー（Webスクレイピング）上級ガイド on facebook" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fseiri-blog.github.io%2fposts%2fpython-data-spider-advanced%2f" title="Facebook で共有する"><svg viewBox="0 0 512 512" height="20" width="20" fill="currentcolor"><path d="M449.446.0C483.971.0 512 28.03 512 62.554v386.892C512 483.97 483.97 512 449.446 512H342.978V319.085h66.6l12.672-82.621h-79.272v-53.617c0-22.603 11.073-44.636 46.58-44.636H425.6v-70.34s-32.71-5.582-63.982-5.582c-65.288.0-107.96 39.569-107.96 111.204v62.971h-72.573v82.621h72.573V512h-191.104c-34.524.0-62.554-28.03-62.554-62.554V62.554c0-34.524 28.029-62.554 62.554-62.554h386.892z"/></svg>
-</a>
-</li>
-<li class=twitter>
-<a target=_blank rel="noopener noreferrer" aria-label="share Pythonデータスパイダー（Webスクレイピング）上級ガイド on twitter" href="https://twitter.com/intent/tweet/?text=Python%e3%83%87%e3%83%bc%e3%82%bf%e3%82%b9%e3%83%91%e3%82%a4%e3%83%80%e3%83%bc%ef%bc%88Web%e3%82%b9%e3%82%af%e3%83%ac%e3%82%a4%e3%83%94%e3%83%b3%e3%82%b0%ef%bc%89%e4%b8%8a%e7%b4%9a%e3%82%ac%e3%82%a4%e3%83%89&url=https%3a%2f%2fseiri-blog.github.io%2fposts%2fpython-data-spider-advanced%2f&hashtags=python%2cdataspider" title="Twitter(X) で共有する"><svg id="svg5" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="30" width="30" viewBox="0 0 2e3 512"><g id="layer1" transform="translate(52.390088,-25.058597)"><path id="path1009" fill="#fff" d="M283.94 167.31l386.39 516.64L281.5 1104h87.51l340.42-367.76L984.48 1104h297.8L874.15 558.3l361.92-390.99h-87.51l-313.51 338.7-253.31-338.7H283.94zm128.69 64.46h136.81l604.13 807.76h-136.81L412.63 231.77z"/></g></svg>
-</a>
-</li>
-<li class=hatena>
-<a target=_blank rel="noopener noreferrer" aria-label="share Pythonデータスパイダー（Webスクレイピング）上級ガイド on Hatena" href="http://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fseiri-blog.github.io%2fposts%2fpython-data-spider-advanced%2f&title=Python%e3%83%87%e3%83%bc%e3%82%bf%e3%82%b9%e3%83%91%e3%82%a4%e3%83%80%e3%83%bc%ef%bc%88Web%e3%82%b9%e3%82%af%e3%83%ac%e3%82%a4%e3%83%94%e3%83%b3%e3%82%b0%ef%bc%89%e4%b8%8a%e7%b4%9a%e3%82%ac%e3%82%a4%e3%83%89" title="Hatena で共有する">
-B!
-</a>
-</li>
-<li class=line>
-<a target=_blank rel="noopener noreferrer" aria-label="share Pythonデータスパイダー（Webスクレイピング）上級ガイド on Line" href=http://line.me/R/msg/text/?https%3a%2f%2fseiri-blog.github.io%2fposts%2fpython-data-spider-advanced%2f%0aPython%e3%83%87%e3%83%bc%e3%82%bf%e3%82%b9%e3%83%91%e3%82%a4%e3%83%80%e3%83%bc%ef%bc%88Web%e3%82%b9%e3%82%af%e3%83%ac%e3%82%a4%e3%83%94%e3%83%b3%e3%82%b0%ef%bc%89%e4%b8%8a%e7%b4%9a%e3%82%ac%e3%82%a4%e3%83%89 title="LINE で共有する"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="35" height="50"><path fill="currentcolor" d="M37.113 22.417c0-5.865-5.88-10.637-13.107-10.637s-13.108 4.772-13.108 10.637c0 5.258 4.663 9.662 10.962 10.495.427.092 1.008.282 1.155.646.132.331.086.85.042 1.185.0.0-.153.925-.187 1.122-.057.331-.263 1.296 1.135.707 1.399-.589 7.548-4.445 10.298-7.611h-.001C36.203 26.879 37.113 24.764 37.113 22.417zm-18.238 3.49h-2.604c-.379.0-.687-.308-.687-.688V20.01c0-.379.308-.687.687-.687.379.0.687.308.687.687v4.521h1.917c.379.0.687.308.687.687C19.562 25.598 19.254 25.907 18.875 25.907zM21.568 25.219c0 .379-.308.688-.687.688s-.687-.308-.687-.688V20.01c0-.379.308-.687.687-.687s.687.308.687.687v5.209zm6.27.0c0 .297-.188.559-.47.652-.071.024-.145.036-.218.036-.215.0-.42-.103-.549-.275l-2.669-3.635v3.222c0 .379-.308.688-.688.688-.379.0-.688-.308-.688-.688V20.01c0-.296.189-.558.47-.652.071-.024.144-.035.218-.035.214.0.42.103.549.275l2.67 3.635V20.01c0-.379.309-.687.688-.687.379.0.687.308.687.687v5.209zm4.214-3.292c.379.0.688.308.688.688.0.379-.308.687-.688.687h-1.917v1.23h1.917c.379.0.688.308.688.687s-.309.688-.688.688h-2.604c-.378.0-.687-.308-.687-.688v-2.603-.001s0-.001.0-.001v-2.601c0-.001.0-.001.0-.002.0-.379.308-.687.687-.687h2.604c.379.0.688.308.688.687s-.308.687-.688.687h-1.917v1.23h1.917z"/></svg>
-</a>
-</li>
-</ul>
-</div><div class=toc>
-<details open>
-<summary accesskey=c title="(Alt + C)">
-<span class=details>目次</span>
-</summary>
-<div class=inner><ul>
-<li>
-<a href=#%e4%b8%8a%e7%b4%9a%e6%8a%80%e8%a1%93%e3%81%ae%e6%a6%82%e8%a6%81 aria-label=上級技術の概要>上級技術の概要</a></li>
-<li>
-<a href=#%e5%88%86%e6%95%a3%e3%82%b9%e3%82%af%e3%83%ac%e3%82%a4%e3%83%94%e3%83%b3%e3%82%b0 aria-label=分散スクレイピング>分散スクレイピング</a><ul>
-<li>
-<a href=#apache-spark-%e3%82%92%e4%bd%bf%e3%81%a3%e3%81%9f%e5%88%86%e6%95%a3%e3%82%b9%e3%82%af%e3%83%ac%e3%82%a4%e3%83%94%e3%83%b3%e3%82%b0 aria-label="Apache Spark を使った分散スクレイピング">Apache Spark を使った分散スクレイピング</a></li></ul>
-</li>
-<li>
-<a href=#%e9%ab%98%e5%ba%a6%e3%81%aa-javascript-%e3%83%ac%e3%83%b3%e3%83%80%e3%83%aa%e3%83%b3%e3%82%b0 aria-label="高度な JavaScript レンダリング">高度な JavaScript レンダリング</a><ul>
-<li>
-<a href=#playwright-%e3%81%ae%e4%bd%bf%e7%94%a8%e4%be%8b aria-label="Playwright の使用例">Playwright の使用例</a></li></ul>
-</li>
-<li>
-<a href=#%e6%a9%9f%e6%a2%b0%e5%ad%a6%e7%bf%92%e3%81%a8%e3%81%ae%e7%b5%b1%e5%90%88 aria-label=機械学習との統合>機械学習との統合</a><ul>
-<li>
-<a href=#%e3%83%8b%e3%83%a5%e3%83%bc%e3%82%b9%e8%a8%98%e4%ba%8b%e3%81%ae%e5%88%86%e9%a1%9e%e4%be%8b aria-label=ニュース記事の分類例>ニュース記事の分類例</a></li></ul>
-</li>
-<li>
-<a href=#api-%e3%81%a8%e3%81%ae%e9%80%a3%e6%90%ba aria-label="API との連携">API との連携</a><ul>
-<li>
-<a href=#api-%e3%81%a8%e3%81%ae%e9%80%a3%e6%90%ba%e4%be%8b aria-label="API との連携例">API との連携例</a></li></ul>
-</li>
-<li>
-<a href=#%e3%83%87%e3%83%bc%e3%82%bf%e3%83%99%e3%83%bc%e3%82%b9%e3%81%ae%e5%88%a9%e7%94%a8 aria-label=データベースの利用>データベースの利用</a><ul>
-<li>
-<a href=#sqlalchemy-%e3%81%ae%e4%bd%bf%e7%94%a8%e4%be%8b aria-label="SQLAlchemy の使用例">SQLAlchemy の使用例</a></li></ul>
-</li>
-<li>
-<a href=#%e3%81%be%e3%81%a8%e3%82%81 aria-label=まとめ>まとめ</a>
-</li>
-</ul>
-</div>
-</details>
-</div>
-<div style="display:flex;justify-content:cente;margin:.5em auto">
-<ins class=adsbygoogle style=display:inline-block;width:728px;height:90px data-ad-client=ca-pub-4988552421895566 data-ad-slot=7460187386></ins>
-<script>(adsbygoogle=window.adsbygoogle||[]).push({})</script>
-</div>
-<div class=post-content><p>ウェブスクレイピングは、基本的な技術を習得した後に、より高度な手法を学ぶことで、さらに強力で効率的なデータ収集が可能になります。このガイドでは、Python を使った上級レベルのウェブスクレイピング技術について説明します。</p>
-<h2 id=上級技術の概要>上級技術の概要<a hidden class=anchor aria-hidden=true href=#上級技術の概要>#</a></h2>
-<p>上級レベルのウェブスクレイピングには、次のような技術が含まれます：</p>
-<ol>
-<li><strong>分散スクレイピング</strong>：複数のマシンやプロセスを使って大規模なデータ収集を行う。</li>
-<li><strong>高度な JavaScript レンダリング</strong>：ヘッドレスブラウザや無頭ブラウザを使った動的コンテンツの完全なレンダリング。</li>
-<li><strong>機械学習との統合</strong>：スクレイピングしたデータを用いた機械学習モデルの構築。</li>
-<li><strong>API との連携</strong>：スクレイピングと API の併用。</li>
-<li><strong>データベースの利用</strong>：取得したデータの効率的な保存と管理。</li>
-</ol>
-<h2 id=分散スクレイピング>分散スクレイピング<a hidden class=anchor aria-hidden=true href=#分散スクレイピング>#</a></h2>
-<p>大規模なデータ収集を効率的に行うために、分散スクレイピングを活用します。分散スクレイピングには、複数のマシンやプロセスを使用して並列にデータを収集する手法が含まれます。</p>
-<h3 id=apache-spark-を使った分散スクレイピング>Apache Spark を使った分散スクレイピング<a hidden class=anchor aria-hidden=true href=#apache-spark-を使った分散スクレイピング>#</a></h3>
-<p>Apache Spark は、分散処理を行うための強力なツールです。PySpark を使用して分散スクレイピングを行う例を示します。</p>
-<p>まず、PySpark をインストールします：</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>pip install pyspark
-</code></pre></div><p>次に、PySpark を使ったスクレイピングコードを書きます：</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#f92672>from</span> pyspark <span style=color:#f92672>import</span> SparkContext, SparkConf
-<span style=color:#f92672>import</span> requests
-<span style=color:#f92672>from</span> bs4 <span style=color:#f92672>import</span> BeautifulSoup
-
-<span style=color:#66d9ef>def</span> <span style=color:#a6e22e>fetch_content</span>(url):
-    response <span style=color:#f92672>=</span> requests<span style=color:#f92672>.</span>get(url)
-    soup <span style=color:#f92672>=</span> BeautifulSoup(response<span style=color:#f92672>.</span>content, <span style=color:#e6db74>&#39;html.parser&#39;</span>)
-    <span style=color:#66d9ef>return</span> soup<span style=color:#f92672>.</span>title<span style=color:#f92672>.</span>string
-
-<span style=color:#66d9ef>if</span> __name__ <span style=color:#f92672>==</span> <span style=color:#e6db74>&#34;__main__&#34;</span>:
-    conf <span style=color:#f92672>=</span> SparkConf()<span style=color:#f92672>.</span>setAppName(<span style=color:#e6db74>&#34;WebScraping&#34;</span>)<span style=color:#f92672>.</span>setMaster(<span style=color:#e6db74>&#34;local[*]&#34;</span>)
-    sc <span style=color:#f92672>=</span> SparkContext(conf<span style=color:#f92672>=</span>conf)
-
-    urls <span style=color:#f92672>=</span> [
-        <span style=color:#e6db74>&#39;https://example.com/page1&#39;</span>,
-        <span style=color:#e6db74>&#39;https://example.com/page2&#39;</span>,
-        <span style=color:#e6db74>&#39;https://example.com/page3&#39;</span>
-    ]
-
-    rdd <span style=color:#f92672>=</span> sc<span style=color:#f92672>.</span>parallelize(urls)
-    titles <span style=color:#f92672>=</span> rdd<span style=color:#f92672>.</span>map(fetch_content)<span style=color:#f92672>.</span>collect()
-    <span style=color:#66d9ef>for</span> title <span style=color:#f92672>in</span> titles:
-        print(title)
-</code></pre></div><h2 id=高度な-javascript-レンダリング>高度な JavaScript レンダリング<a hidden class=anchor aria-hidden=true href=#高度な-javascript-レンダリング>#</a></h2>
-<p>動的なコンテンツを完全にレンダリングするために、ヘッドレスブラウザを使用します。Playwright や Selenium を使った高度なレンダリングを行うことで、JavaScript によって生成されたコンテンツを取得します。</p>
-<h3 id=playwright-の使用例>Playwright の使用例<a hidden class=anchor aria-hidden=true href=#playwright-の使用例>#</a></h3>
-<p>Playwright をインストールします：</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>pip install playwright
-playwright install
-</code></pre></div><p>次に、Playwright を使ったコードを書きます：</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#f92672>from</span> playwright.sync_api <span style=color:#f92672>import</span> sync_playwright
-
-<span style=color:#66d9ef>def</span> <span style=color:#a6e22e>fetch_dynamic_content</span>(url):
-    <span style=color:#66d9ef>with</span> sync_playwright() <span style=color:#66d9ef>as</span> p:
-        browser <span style=color:#f92672>=</span> p<span style=color:#f92672>.</span>chromium<span style=color:#f92672>.</span>launch()
-        page <span style=color:#f92672>=</span> browser<span style=color:#f92672>.</span>new_page()
-        page<span style=color:#f92672>.</span>goto(url)
-        content <span style=color:#f92672>=</span> page<span style=color:#f92672>.</span>content()
-        browser<span style=color:#f92672>.</span>close()
-        <span style=color:#66d9ef>return</span> content
-
-url <span style=color:#f92672>=</span> <span style=color:#e6db74>&#39;https://example.com&#39;</span>
-content <span style=color:#f92672>=</span> fetch_dynamic_content(url)
-print(content)
-</code></pre></div><h2 id=機械学習との統合>機械学習との統合<a hidden class=anchor aria-hidden=true href=#機械学習との統合>#</a></h2>
-<p>スクレイピングしたデータを用いて機械学習モデルを構築することで、データの予測や分類を行います。例えば、スクレイピングしたニュース記事を分類するモデルを構築します。</p>
-<h3 id=ニュース記事の分類例>ニュース記事の分類例<a hidden class=anchor aria-hidden=true href=#ニュース記事の分類例>#</a></h3>
-<p>まず、scikit-learn をインストールします：</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>pip install scikit-learn
-</code></pre></div><p>次に、ニュース記事をスクレイピングし、分類するコードを書きます：</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#f92672>import</span> requests
-<span style=color:#f92672>from</span> bs4 <span style=color:#f92672>import</span> BeautifulSoup
-<span style=color:#f92672>from</span> sklearn.feature_extraction.text <span style=color:#f92672>import</span> TfidfVectorizer
-<span style=color:#f92672>from</span> sklearn.naive_bayes <span style=color:#f92672>import</span> MultinomialNB
-
-<span style=color:#66d9ef>def</span> <span style=color:#a6e22e>fetch_article</span>(url):
-    response <span style=color:#f92672>=</span> requests<span style=color:#f92672>.</span>get(url)
-    soup <span style=color:#f92672>=</span> BeautifulSoup(response<span style=color:#f92672>.</span>content, <span style=color:#e6db74>&#39;html.parser&#39;</span>)
-    <span style=color:#66d9ef>return</span> soup<span style=color:#f92672>.</span>get_text()
-
-urls <span style=color:#f92672>=</span> [
-    <span style=color:#e6db74>&#39;https://news.example.com/article1&#39;</span>,
-    <span style=color:#e6db74>&#39;https://news.example.com/article2&#39;</span>,
-    <span style=color:#e6db74>&#39;https://news.example.com/article3&#39;</span>
-]
-
-articles <span style=color:#f92672>=</span> [fetch_article(url) <span style=color:#66d9ef>for</span> url <span style=color:#f92672>in</span> urls]
-
-<span style=color:#75715e># サンプルデータ</span>
-categories <span style=color:#f92672>=</span> [<span style=color:#e6db74>&#39;sports&#39;</span>, <span style=color:#e6db74>&#39;politics&#39;</span>, <span style=color:#e6db74>&#39;tech&#39;</span>]
-sample_texts <span style=color:#f92672>=</span> [
-    <span style=color:#e6db74>&#39;The team won the match.&#39;</span>,
-    <span style=color:#e6db74>&#39;The government passed a new law.&#39;</span>,
-    <span style=color:#e6db74>&#39;The latest smartphone was released.&#39;</span>
-]
-
-vectorizer <span style=color:#f92672>=</span> TfidfVectorizer()
-X_train <span style=color:#f92672>=</span> vectorizer<span style=color:#f92672>.</span>fit_transform(sample_texts)
-y_train <span style=color:#f92672>=</span> categories
-
-model <span style=color:#f92672>=</span> MultinomialNB()
-model<span style=color:#f92672>.</span>fit(X_train, y_train)
-
-X_test <span style=color:#f92672>=</span> vectorizer<span style=color:#f92672>.</span>transform(articles)
-predictions <span style=color:#f92672>=</span> model<span style=color:#f92672>.</span>predict(X_test)
-
-<span style=color:#66d9ef>for</span> article, prediction <span style=color:#f92672>in</span> zip(articles, predictions):
-    print(<span style=color:#e6db74>f</span><span style=color:#e6db74>&#39;Article: </span><span style=color:#e6db74>{</span>article[:<span style=color:#ae81ff>60</span>]<span style=color:#e6db74>}</span><span style=color:#e6db74>... </span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>Category: </span><span style=color:#e6db74>{</span>prediction<span style=color:#e6db74>}</span><span style=color:#e6db74>&#39;</span>)
-</code></pre></div><h2 id=api-との連携>API との連携<a hidden class=anchor aria-hidden=true href=#api-との連携>#</a></h2>
-<p>スクレイピングと API を併用することで、効率的にデータを収集し、分析できます。例えば、ウェブサイトから基本情報をスクレイピングし、API から追加データを取得します。</p>
-<h3 id=api-との連携例>API との連携例<a hidden class=anchor aria-hidden=true href=#api-との連携例>#</a></h3>
-<p>まず、requests ライブラリを使用して、API からデータを取得します：</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#f92672>import</span> requests
-
-<span style=color:#66d9ef>def</span> <span style=color:#a6e22e>fetch_additional_data</span>(api_url, params):
-    response <span style=color:#f92672>=</span> requests<span style=color:#f92672>.</span>get(api_url, params<span style=color:#f92672>=</span>params)
-    <span style=color:#66d9ef>return</span> response<span style=color:#f92672>.</span>json()
-
-scraped_data <span style=color:#f92672>=</span> {
-    <span style=color:#e6db74>&#39;name&#39;</span>: <span style=color:#e6db74>&#39;Example Company&#39;</span>,
-    <span style=color:#e6db74>&#39;website&#39;</span>: <span style=color:#e6db74>&#39;https://example.com&#39;</span>
-}
-
-api_url <span style=color:#f92672>=</span> <span style=color:#e6db74>&#39;https://api.example.com/details&#39;</span>
-params <span style=color:#f92672>=</span> {<span style=color:#e6db74>&#39;domain&#39;</span>: <span style=color:#e6db74>&#39;example.com&#39;</span>}
-additional_data <span style=color:#f92672>=</span> fetch_additional_data(api_url, params)
-
-combined_data <span style=color:#f92672>=</span> {<span style=color:#f92672>**</span>scraped_data, <span style=color:#f92672>**</span>additional_data}
-print(combined_data)
-</code></pre></div><h2 id=データベースの利用>データベースの利用<a hidden class=anchor aria-hidden=true href=#データベースの利用>#</a></h2>
-<p>取得したデータを効率的に保存し、管理するためにデータベースを使用します。SQLAlchemy などの ORM を使用して、Python からデータベースを操作します。</p>
-<h3 id=sqlalchemy-の使用例>SQLAlchemy の使用例<a hidden class=anchor aria-hidden=true href=#sqlalchemy-の使用例>#</a></h3>
-<p>まず、SQLAlchemy をインストールします：</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>pip install sqlalchemy
-</code></pre></div><p>次に、データベースにデータを保存するコードを書きます：</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#f92672>from</span> sqlalchemy <span style=color:#f92672>import</span> create_engine, Column, String, Integer
-<span style=color:#f92672>from</span> sqlalchemy.ext.declarative <span style=color:#f92672>import</span> declarative_base
-<span style=color:#f92672>from</span> sqlalchemy.orm <span style=color:#f92672>import</span> sessionmaker
-
-<span style=color:#75715e># データベースの設定</span>
-DATABASE_URL <span style=color:#f92672>=</span> <span style=color:#e6db74>&#39;sqlite:///scraped_data.db&#39;</span>
-Base <span style=color:#f92672>=</span> declarative_base()
-
-<span style=color:#66d9ef>class</span> <span style=color:#a6e22e>Article</span>(Base):
-    __tablename__ <span style=color:#f92672>=</span> <span style=color:#e6db74>&#39;articles&#39;</span>
-    id <span style=color:#f92672>=</span> Column(Integer, primary_key<span style=color:#f92672>=</span><span style=color:#66d9ef>True</span>)
-    title <span style=color:#f92672>=</span> Column(String)
-    content <span style=color:#f92672>=</span> Column(String)
-
-engine <span style=color:#f92672>=</span> create_engine(DATABASE_URL)
-Base<span style=color:#f92672>.</span>metadata<span style=color:#f92672>.</span>create_all(engine)
-
-Session <span style=color:#f92672>=</span> sessionmaker(bind<span style=color:#f92672>=</span>engine)
-session <span style=color:#f92672>=</span> Session()
-
-<span style=color:#75715e># データの保存</span>
-article <span style=color:#f92672>=</span> Article(title<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;Example Title&#39;</span>, content<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;This is an example content.&#39;</span>)
-session<span style=color:#f92672>.</span>add(article)
-session<span style=color:#f92672>.</span>commit()
-
-<span style=color:#75715e># データの取得</span>
-saved_articles <span style=color:#f92672>=</span> session<span style=color:#f92672>.</span>query(Article)<span style=color:#f92672>.</span>all()
-<span style=color:#66d9ef>for</span> article <span style=color:#f92672>in</span> saved_articles:
-    print(<span style=color:#e6db74>f</span><span style=color:#e6db74>&#39;Title: </span><span style=color:#e6db74>{</span>article<span style=color:#f92672>.</span>title<span style=color:#e6db74>}</span><span style=color:#e6db74>, Content: </span><span style=color:#e6db74>{</span>article<span style=color:#f92672>.</span>content<span style=color:#e6db74>}</span><span style=color:#e6db74>&#39;</span>)
-</code></pre></div><h2 id=まとめ>まとめ<a hidden class=anchor aria-hidden=true href=#まとめ>#</a></h2>
-<p>上級レベルのウェブスクレイピングでは、分散スクレイピング、動的コンテンツの高度なレンダリング、機械学習との統合、API との連携、データベースの利用といった技術が重要です。これらの技術を駆使することで、さらに高度で効率的なデータ収集と分析が可能になります。実践を通じてこれらのスキルを習得し、プロジェクトに応用してみてください。</p>
-</div>
-<div class=share-area>
-<ul>
-<li class=facebook>
-<a target=_blank rel="noopener noreferrer" aria-label="share Pythonデータスパイダー（Webスクレイピング）上級ガイド on facebook" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fseiri-blog.github.io%2fposts%2fpython-data-spider-advanced%2f" title="Facebook で共有する"><svg viewBox="0 0 512 512" height="20" width="20" fill="currentcolor"><path d="M449.446.0C483.971.0 512 28.03 512 62.554v386.892C512 483.97 483.97 512 449.446 512H342.978V319.085h66.6l12.672-82.621h-79.272v-53.617c0-22.603 11.073-44.636 46.58-44.636H425.6v-70.34s-32.71-5.582-63.982-5.582c-65.288.0-107.96 39.569-107.96 111.204v62.971h-72.573v82.621h72.573V512h-191.104c-34.524.0-62.554-28.03-62.554-62.554V62.554c0-34.524 28.029-62.554 62.554-62.554h386.892z"/></svg>
-</a>
-</li>
-<li class=twitter>
-<a target=_blank rel="noopener noreferrer" aria-label="share Pythonデータスパイダー（Webスクレイピング）上級ガイド on twitter" href="https://twitter.com/intent/tweet/?text=Python%e3%83%87%e3%83%bc%e3%82%bf%e3%82%b9%e3%83%91%e3%82%a4%e3%83%80%e3%83%bc%ef%bc%88Web%e3%82%b9%e3%82%af%e3%83%ac%e3%82%a4%e3%83%94%e3%83%b3%e3%82%b0%ef%bc%89%e4%b8%8a%e7%b4%9a%e3%82%ac%e3%82%a4%e3%83%89&url=https%3a%2f%2fseiri-blog.github.io%2fposts%2fpython-data-spider-advanced%2f&hashtags=python%2cdataspider" title="Twitter(X) で共有する"><svg id="svg5" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="30" width="30" viewBox="0 0 2e3 512"><g id="layer1" transform="translate(52.390088,-25.058597)"><path id="path1009" fill="#fff" d="M283.94 167.31l386.39 516.64L281.5 1104h87.51l340.42-367.76L984.48 1104h297.8L874.15 558.3l361.92-390.99h-87.51l-313.51 338.7-253.31-338.7H283.94zm128.69 64.46h136.81l604.13 807.76h-136.81L412.63 231.77z"/></g></svg>
-</a>
-</li>
-<li class=hatena>
-<a target=_blank rel="noopener noreferrer" aria-label="share Pythonデータスパイダー（Webスクレイピング）上級ガイド on Hatena" href="http://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fseiri-blog.github.io%2fposts%2fpython-data-spider-advanced%2f&title=Python%e3%83%87%e3%83%bc%e3%82%bf%e3%82%b9%e3%83%91%e3%82%a4%e3%83%80%e3%83%bc%ef%bc%88Web%e3%82%b9%e3%82%af%e3%83%ac%e3%82%a4%e3%83%94%e3%83%b3%e3%82%b0%ef%bc%89%e4%b8%8a%e7%b4%9a%e3%82%ac%e3%82%a4%e3%83%89" title="Hatena で共有する">
-B!
-</a>
-</li>
-<li class=line>
-<a target=_blank rel="noopener noreferrer" aria-label="share Pythonデータスパイダー（Webスクレイピング）上級ガイド on Line" href=http://line.me/R/msg/text/?https%3a%2f%2fseiri-blog.github.io%2fposts%2fpython-data-spider-advanced%2f%0aPython%e3%83%87%e3%83%bc%e3%82%bf%e3%82%b9%e3%83%91%e3%82%a4%e3%83%80%e3%83%bc%ef%bc%88Web%e3%82%b9%e3%82%af%e3%83%ac%e3%82%a4%e3%83%94%e3%83%b3%e3%82%b0%ef%bc%89%e4%b8%8a%e7%b4%9a%e3%82%ac%e3%82%a4%e3%83%89 title="LINE で共有する"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="35" height="50"><path fill="currentcolor" d="M37.113 22.417c0-5.865-5.88-10.637-13.107-10.637s-13.108 4.772-13.108 10.637c0 5.258 4.663 9.662 10.962 10.495.427.092 1.008.282 1.155.646.132.331.086.85.042 1.185.0.0-.153.925-.187 1.122-.057.331-.263 1.296 1.135.707 1.399-.589 7.548-4.445 10.298-7.611h-.001C36.203 26.879 37.113 24.764 37.113 22.417zm-18.238 3.49h-2.604c-.379.0-.687-.308-.687-.688V20.01c0-.379.308-.687.687-.687.379.0.687.308.687.687v4.521h1.917c.379.0.687.308.687.687C19.562 25.598 19.254 25.907 18.875 25.907zM21.568 25.219c0 .379-.308.688-.687.688s-.687-.308-.687-.688V20.01c0-.379.308-.687.687-.687s.687.308.687.687v5.209zm6.27.0c0 .297-.188.559-.47.652-.071.024-.145.036-.218.036-.215.0-.42-.103-.549-.275l-2.669-3.635v3.222c0 .379-.308.688-.688.688-.379.0-.688-.308-.688-.688V20.01c0-.296.189-.558.47-.652.071-.024.144-.035.218-.035.214.0.42.103.549.275l2.67 3.635V20.01c0-.379.309-.687.688-.687.379.0.687.308.687.687v5.209zm4.214-3.292c.379.0.688.308.688.688.0.379-.308.687-.688.687h-1.917v1.23h1.917c.379.0.688.308.688.687s-.309.688-.688.688h-2.604c-.378.0-.687-.308-.687-.688v-2.603-.001s0-.001.0-.001v-2.601c0-.001.0-.001.0-.002.0-.379.308-.687.687-.687h2.604c.379.0.688.308.688.687s-.308.687-.688.687h-1.917v1.23h1.917z"/></svg>
-</a>
-</li>
-</ul>
-</div>
-<div style="display:flex;justify-content:center;margin:.5em auto">
-<ins class=adsbygoogle style=display:inline-block;width:728px;height:90px data-ad-client=ca-pub-4988552421895566 data-ad-slot=8581697363></ins>
-<script>(adsbygoogle=window.adsbygoogle||[]).push({})</script>
-</div>
-<footer class=post-footer>
-<nav class=paginav>
-<a class=prev href=https://seiri-blog.github.io/posts/how-uninstall-ffmpeg/>
-<span class=title>« 前へ</span>
-<br>
-<span>MacでFFmpegを完全にアンインストールする方法</span>
-</a>
-<a class=next href=https://seiri-blog.github.io/posts/python-data-spider-intermediate/>
-<span class=title>次へ »</span>
-<br>
-<span>Pythonデータスパイダー（Webスクレイピング）中級ガイド</span>
-</a>
-</nav>
-</footer><script src=https://giscus.app/client.js data-repo=seiri-blog/seiri-blog.github.io data-repo-id=R_kgDOJGyRgA data-category=General data-category-id=DIC_kwDOJGyRgM4CgDQM data-mapping=pathname data-strict=0 data-reactions-enabled=1 data-emit-metadata=0 data-input-position=bottom data-theme=preferred_color_scheme data-lang=ja crossorigin=anonymous async></script>
-</article>
-</main>
-<footer class=footer>
-<span>&copy; 2024 Seiri All rights reserved</span>
-<span>
-Powered by
+<!doctype html><html lang=ja dir=auto><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><title>Pythonデータスパイダー（Webスクレイピング）上級ガイド | Seiri's Blog</title>
+<meta name=keywords content="python,data spider"><meta name=description content="ウェブスクレイピングは、基本的な技術を習得した後に、より高度な手法を学ぶことで、さらに強力で効率的なデータ収集が可能になります。このガイドで"><meta name=author content="Seiri"><link rel=canonical href=https://seiri-blog.github.io/posts/python-data-spider-advanced/><meta name=yandex-verification content="017a61651e9c5c6d"><link href=https://seiri-blog.github.io/assets/css/stylesheet.css rel="preload stylesheet" as=style><script defer crossorigin=anonymous src=/assets/js/highlight.js onload=hljs.initHighlightingOnLoad()></script><link rel=icon href=https://seiri-blog.github.io/favicon.ico><link rel=apple-touch-icon href=https://seiri-blog.github.io/apple-touch-icon.png><link rel=mask-icon href=https://seiri-blog.github.io/safari-pinned-tab.svg><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><link rel=alternate hreflang=ja href=https://seiri-blog.github.io/posts/python-data-spider-advanced/><noscript><style>#theme-toggle,.top-link{display:none}</style></noscript><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4988552421895566" crossorigin=anonymous></script><script async src="https://www.googletagmanager.com/gtag/js?id=G-PLYEQ297HF"></script><script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-PLYEQ297HF",{anonymize_ip:!1})}</script><meta property="og:title" content="Pythonデータスパイダー（Webスクレイピング）上級ガイド"><meta property="og:description" content="ウェブスクレイピングは、基本的な技術を習得した後に、より高度な手法を学ぶことで、さらに強力で効率的なデータ収集が可能になります。このガイドで"><meta property="og:type" content="article"><meta property="og:url" content="https://seiri-blog.github.io/posts/python-data-spider-advanced/"><meta property="og:image" content="https://seiri-blog.github.io/images/python.png"><meta property="article:section" content="posts"><meta property="article:published_time" content="2024-07-04T17:53:03+09:00"><meta property="article:modified_time" content="2024-07-04T17:53:03+09:00"><meta property="og:site_name" content="Seiri's Blog"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="https://seiri-blog.github.io/images/python.png"><meta name=twitter:title content="Pythonデータスパイダー（Webスクレイピング）上級ガイド"><meta name=twitter:description content="ウェブスクレイピングは、基本的な技術を習得した後に、より高度な手法を学ぶことで、さらに強力で効率的なデータ収集が可能になります。このガイドで"><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://seiri-blog.github.io/posts/"},{"@type":"ListItem","position":2,"name":"Pythonデータスパイダー（Webスクレイピング）上級ガイド","item":"https://seiri-blog.github.io/posts/python-data-spider-advanced/"}]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"Pythonデータスパイダー（Webスクレイピング）上級ガイド","name":"Pythonデータスパイダー（Webスクレイピング）上級ガイド","description":"ウェブスクレイピングは、基本的な技術を習得した後に、より高度な手法を学ぶことで、さらに強力で効率的なデータ収集が可能になります。このガイドで","keywords":["python","data spider"],"articleBody":"ウェブスクレイピングは、基本的な技術を習得した後に、より高度な手法を学ぶことで、さらに強力で効率的なデータ収集が可能になります。このガイドでは、Python を使った上級レベルのウェブスクレイピング技術について説明します。\n上級技術の概要 上級レベルのウェブスクレイピングには、次のような技術が含まれます：\n分散スクレイピング：複数のマシンやプロセスを使って大規模なデータ収集を行う。 高度な JavaScript レンダリング：ヘッドレスブラウザや無頭ブラウザを使った動的コンテンツの完全なレンダリング。 機械学習との統合：スクレイピングしたデータを用いた機械学習モデルの構築。 API との連携：スクレイピングと API の併用。 データベースの利用：取得したデータの効率的な保存と管理。 分散スクレイピング 大規模なデータ収集を効率的に行うために、分散スクレイピングを活用します。分散スクレイピングには、複数のマシンやプロセスを使用して並列にデータを収集する手法が含まれます。\nApache Spark を使った分散スクレイピング Apache Spark は、分散処理を行うための強力なツールです。PySpark を使用して分散スクレイピングを行う例を示します。\nまず、PySpark をインストールします：\npip install pyspark 次に、PySpark を使ったスクレイピングコードを書きます：\nfrom pyspark import SparkContext, SparkConf import requests from bs4 import BeautifulSoup def fetch_content(url): response = requests.get(url) soup = BeautifulSoup(response.content, 'html.parser') return soup.title.string if __name__ == \"__main__\": conf = SparkConf().setAppName(\"WebScraping\").setMaster(\"local[*]\") sc = SparkContext(conf=conf) urls = [ 'https://example.com/page1', 'https://example.com/page2', 'https://example.com/page3' ] rdd = sc.parallelize(urls) titles = rdd.map(fetch_content).collect() for title in titles: print(title) 高度な JavaScript レンダリング 動的なコンテンツを完全にレンダリングするために、ヘッドレスブラウザを使用します。Playwright や Selenium を使った高度なレンダリングを行うことで、JavaScript によって生成されたコンテンツを取得します。\nPlaywright の使用例 Playwright をインストールします：\npip install playwright playwright install 次に、Playwright を使ったコードを書きます：\nfrom playwright.sync_api import sync_playwright def fetch_dynamic_content(url): with sync_playwright() as p: browser = p.chromium.launch() page = browser.new_page() page.goto(url) content = page.content() browser.close() return content url = 'https://example.com' content = fetch_dynamic_content(url) print(content) 機械学習との統合 スクレイピングしたデータを用いて機械学習モデルを構築することで、データの予測や分類を行います。例えば、スクレイピングしたニュース記事を分類するモデルを構築します。\nニュース記事の分類例 まず、scikit-learn をインストールします：\npip install scikit-learn 次に、ニュース記事をスクレイピングし、分類するコードを書きます：\nimport requests from bs4 import BeautifulSoup from sklearn.feature_extraction.text import TfidfVectorizer from sklearn.naive_bayes import MultinomialNB def fetch_article(url): response = requests.get(url) soup = BeautifulSoup(response.content, 'html.parser') return soup.get_text() urls = [ 'https://news.example.com/article1', 'https://news.example.com/article2', 'https://news.example.com/article3' ] articles = [fetch_article(url) for url in urls] # サンプルデータ categories = ['sports', 'politics', 'tech'] sample_texts = [ 'The team won the match.', 'The government passed a new law.', 'The latest smartphone was released.' ] vectorizer = TfidfVectorizer() X_train = vectorizer.fit_transform(sample_texts) y_train = categories model = MultinomialNB() model.fit(X_train, y_train) X_test = vectorizer.transform(articles) predictions = model.predict(X_test) for article, prediction in zip(articles, predictions): print(f'Article: {article[:60]}... \\nCategory: {prediction}') API との連携 スクレイピングと API を併用することで、効率的にデータを収集し、分析できます。例えば、ウェブサイトから基本情報をスクレイピングし、API から追加データを取得します。\nAPI との連携例 まず、requests ライブラリを使用して、API からデータを取得します：\nimport requests def fetch_additional_data(api_url, params): response = requests.get(api_url, params=params) return response.json() scraped_data = { 'name': 'Example Company', 'website': 'https://example.com' } api_url = 'https://api.example.com/details' params = {'domain': 'example.com'} additional_data = fetch_additional_data(api_url, params) combined_data = {**scraped_data, **additional_data} print(combined_data) データベースの利用 取得したデータを効率的に保存し、管理するためにデータベースを使用します。SQLAlchemy などの ORM を使用して、Python からデータベースを操作します。\nSQLAlchemy の使用例 まず、SQLAlchemy をインストールします：\npip install sqlalchemy 次に、データベースにデータを保存するコードを書きます：\nfrom sqlalchemy import create_engine, Column, String, Integer from sqlalchemy.ext.declarative import declarative_base from sqlalchemy.orm import sessionmaker # データベースの設定 DATABASE_URL = 'sqlite:///scraped_data.db' Base = declarative_base() class Article(Base): __tablename__ = 'articles' id = Column(Integer, primary_key=True) title = Column(String) content = Column(String) engine = create_engine(DATABASE_URL) Base.metadata.create_all(engine) Session = sessionmaker(bind=engine) session = Session() # データの保存 article = Article(title='Example Title', content='This is an example content.') session.add(article) session.commit() # データの取得 saved_articles = session.query(Article).all() for article in saved_articles: print(f'Title: {article.title}, Content: {article.content}') まとめ 上級レベルのウェブスクレイピングでは、分散スクレイピング、動的コンテンツの高度なレンダリング、機械学習との統合、API との連携、データベースの利用といった技術が重要です。これらの技術を駆使することで、さらに高度で効率的なデータ収集と分析が可能になります。実践を通じてこれらのスキルを習得し、プロジェクトに応用してみてください。\n","wordCount":"1606","inLanguage":"ja","image":"https://seiri-blog.github.io/images/python.png","datePublished":"2024-07-04T17:53:03+09:00","dateModified":"2024-07-04T17:53:03+09:00","author":{"@type":"Person","name":"Seiri"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://seiri-blog.github.io/posts/python-data-spider-advanced/"},"publisher":{"@type":"Organization","name":"Seiri's Blog","logo":{"@type":"ImageObject","url":"https://seiri-blog.github.io/favicon.ico"}}}</script></head><body id=top><script>localStorage.getItem("pref-theme")==="dark"&&document.body.classList.add("dark")</script><header class=header><nav class=nav><div class=logo><a href=https://seiri-blog.github.io/ accesskey=h title="Seiri's Blog (Alt + H)"><img src=https://seiri-blog.github.io/images/logo.svg alt aria-label=logo height=35>Seiri's Blog</a><div class=logo-switches><button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button><ul class=lang-switch><li>|</li></ul></div></div><ul id=menu><li><a href=https://seiri-blog.github.io/search/ title="🔍 (Alt + /)" accesskey=/><span>🔍</span></a></li><li><a href=https://seiri-blog.github.io/posts/ title=記事一覧><span>記事一覧</span></a></li><li><a href=https://seiri-blog.github.io/archives/ title=アーカイブ><span>アーカイブ</span></a></li><li><a href=https://seiri-blog.github.io/tags/ title=タグ><span>タグ</span></a></li><li><a href=https://seiri-blog.github.io/policy/ title=ポリシー><span>ポリシー</span></a></li><li><a href=https://seiri-blog.github.io/trailhead-superbadge title="Trailhead Superbadge"><span>Trailhead Superbadge</span>&nbsp;<svg fill="none" shape-rendering="geometricPrecision" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24" height="12" width="12"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg></a></li><li><a href=https://chrome-tool.github.io/ title=Chrome拡張機能><span>Chrome拡張機能</span>&nbsp;<svg fill="none" shape-rendering="geometricPrecision" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24" height="12" width="12"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg></a></li><li><a href=https://wallpapers-collection.github.io/bing-wallpaper/ title="Bing Wallpaper"><span>Bing Wallpaper</span>&nbsp;<svg fill="none" shape-rendering="geometricPrecision" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24" height="12" width="12"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg></a></li><li><a href=https://html-online-game.github.io/ title="Online Game"><span>Online Game</span>&nbsp;<svg fill="none" shape-rendering="geometricPrecision" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24" height="12" width="12"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg></a></li></ul></nav></header><main class=main><article class=post-single><header class=post-header><div class=breadcrumbs><a href=https://seiri-blog.github.io/>ホーム</a>&nbsp;»&nbsp;<a href=https://seiri-blog.github.io/posts/>Posts</a></div><h1 class=post-title>Pythonデータスパイダー（Webスクレイピング）上級ガイド</h1><ul class=post-tags><li><a href=https://seiri-blog.github.io/tags/python/>Python</a></li><li><a href=https://seiri-blog.github.io/tags/data-spider/>Data Spider</a></li></ul><div class=post-meta>&lt;span title='2024-07-04 17:53:03 +0900 +0900'>2024年7月4日&lt;/span>&amp;nbsp;·&amp;nbsp;4 分&amp;nbsp;·&amp;nbsp;1606 文字&amp;nbsp;·&amp;nbsp;Seiri</div></header><figure class=entry-cover><img loading=lazy src=https://seiri-blog.github.io/images/python.png alt=Pythonデータスパイダー（Webスクレイピング）上級ガイド></figure><div class=share-area><ul><li class=facebook><a target=_blank rel="noopener noreferrer" aria-label="share Pythonデータスパイダー（Webスクレイピング）上級ガイド on facebook" href='https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fseiri-blog.github.io%2fposts%2fpython-data-spider-advanced%2f' title='Facebook で共有する'><svg viewBox="0 0 512 512" height="20" width="20" fill="currentcolor"><path d="M449.446.0C483.971.0 512 28.03 512 62.554v386.892C512 483.97 483.97 512 449.446 512H342.978V319.085h66.6l12.672-82.621h-79.272v-53.617c0-22.603 11.073-44.636 46.58-44.636H425.6v-70.34s-32.71-5.582-63.982-5.582c-65.288.0-107.96 39.569-107.96 111.204v62.971h-72.573v82.621h72.573V512h-191.104c-34.524.0-62.554-28.03-62.554-62.554V62.554c0-34.524 28.029-62.554 62.554-62.554h386.892z"/></svg></a></li><li class=twitter><a target=_blank rel="noopener noreferrer" aria-label="share Pythonデータスパイダー（Webスクレイピング）上級ガイド on twitter" href='https://twitter.com/intent/tweet/?text=Python%e3%83%87%e3%83%bc%e3%82%bf%e3%82%b9%e3%83%91%e3%82%a4%e3%83%80%e3%83%bc%ef%bc%88Web%e3%82%b9%e3%82%af%e3%83%ac%e3%82%a4%e3%83%94%e3%83%b3%e3%82%b0%ef%bc%89%e4%b8%8a%e7%b4%9a%e3%82%ac%e3%82%a4%e3%83%89&amp;url=https%3a%2f%2fseiri-blog.github.io%2fposts%2fpython-data-spider-advanced%2f&amp;hashtags=python%2cdataspider' title='Twitter(X) で共有する'><svg id="svg5" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="30" width="30" viewBox="0 0 2e3 512"><g id="layer1" transform="translate(52.390088,-25.058597)"><path id="path1009" fill="#fff" d="M283.94 167.31l386.39 516.64L281.5 1104h87.51l340.42-367.76L984.48 1104h297.8L874.15 558.3l361.92-390.99h-87.51l-313.51 338.7-253.31-338.7H283.94zm128.69 64.46h136.81l604.13 807.76h-136.81L412.63 231.77z"/></g></svg></a></li><li class=hatena><a target=_blank rel="noopener noreferrer" aria-label="share Pythonデータスパイダー（Webスクレイピング）上級ガイド on Hatena" href='http://b.hatena.ne.jp/add?mode=confirm&amp;url=https%3a%2f%2fseiri-blog.github.io%2fposts%2fpython-data-spider-advanced%2f&amp;title=Python%e3%83%87%e3%83%bc%e3%82%bf%e3%82%b9%e3%83%91%e3%82%a4%e3%83%80%e3%83%bc%ef%bc%88Web%e3%82%b9%e3%82%af%e3%83%ac%e3%82%a4%e3%83%94%e3%83%b3%e3%82%b0%ef%bc%89%e4%b8%8a%e7%b4%9a%e3%82%ac%e3%82%a4%e3%83%89' title='Hatena で共有する'>B!</a></li><li class=line><a target=_blank rel="noopener noreferrer" aria-label="share Pythonデータスパイダー（Webスクレイピング）上級ガイド on Line" href=http://line.me/R/msg/text/?https%3a%2f%2fseiri-blog.github.io%2fposts%2fpython-data-spider-advanced%2f%0aPython%e3%83%87%e3%83%bc%e3%82%bf%e3%82%b9%e3%83%91%e3%82%a4%e3%83%80%e3%83%bc%ef%bc%88Web%e3%82%b9%e3%82%af%e3%83%ac%e3%82%a4%e3%83%94%e3%83%b3%e3%82%b0%ef%bc%89%e4%b8%8a%e7%b4%9a%e3%82%ac%e3%82%a4%e3%83%89 title='LINE で共有する'><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="35" height="50"><path fill="currentcolor" d="M37.113 22.417c0-5.865-5.88-10.637-13.107-10.637s-13.108 4.772-13.108 10.637c0 5.258 4.663 9.662 10.962 10.495.427.092 1.008.282 1.155.646.132.331.086.85.042 1.185.0.0-.153.925-.187 1.122-.057.331-.263 1.296 1.135.707 1.399-.589 7.548-4.445 10.298-7.611h-.001C36.203 26.879 37.113 24.764 37.113 22.417zm-18.238 3.49h-2.604c-.379.0-.687-.308-.687-.688V20.01c0-.379.308-.687.687-.687.379.0.687.308.687.687v4.521h1.917c.379.0.687.308.687.687C19.562 25.598 19.254 25.907 18.875 25.907zM21.568 25.219c0 .379-.308.688-.687.688s-.687-.308-.687-.688V20.01c0-.379.308-.687.687-.687s.687.308.687.687v5.209zm6.27.0c0 .297-.188.559-.47.652-.071.024-.145.036-.218.036-.215.0-.42-.103-.549-.275l-2.669-3.635v3.222c0 .379-.308.688-.688.688-.379.0-.688-.308-.688-.688V20.01c0-.296.189-.558.47-.652.071-.024.144-.035.218-.035.214.0.42.103.549.275l2.67 3.635V20.01c0-.379.309-.687.688-.687.379.0.687.308.687.687v5.209zm4.214-3.292c.379.0.688.308.688.688.0.379-.308.687-.688.687h-1.917v1.23h1.917c.379.0.688.308.688.687s-.309.688-.688.688h-2.604c-.378.0-.687-.308-.687-.688v-2.603-.001s0-.001.0-.001v-2.601c0-.001.0-.001.0-.002.0-.379.308-.687.687-.687h2.604c.379.0.688.308.688.687s-.308.687-.688.687h-1.917v1.23h1.917z"/></svg></a></li></ul></div><div class=toc><details open><summary accesskey=c title="(Alt + C)"><span class=details>目次</span></summary><div class=inner><ul><li><a href=#%e4%b8%8a%e7%b4%9a%e6%8a%80%e8%a1%93%e3%81%ae%e6%a6%82%e8%a6%81 aria-label=上級技術の概要>上級技術の概要</a></li><li><a href=#%e5%88%86%e6%95%a3%e3%82%b9%e3%82%af%e3%83%ac%e3%82%a4%e3%83%94%e3%83%b3%e3%82%b0 aria-label=分散スクレイピング>分散スクレイピング</a><ul><li><a href=#apache-spark-%e3%82%92%e4%bd%bf%e3%81%a3%e3%81%9f%e5%88%86%e6%95%a3%e3%82%b9%e3%82%af%e3%83%ac%e3%82%a4%e3%83%94%e3%83%b3%e3%82%b0 aria-label="Apache Spark を使った分散スクレイピング">Apache Spark を使った分散スクレイピング</a></li></ul></li><li><a href=#%e9%ab%98%e5%ba%a6%e3%81%aa-javascript-%e3%83%ac%e3%83%b3%e3%83%80%e3%83%aa%e3%83%b3%e3%82%b0 aria-label="高度な JavaScript レンダリング">高度な JavaScript レンダリング</a><ul><li><a href=#playwright-%e3%81%ae%e4%bd%bf%e7%94%a8%e4%be%8b aria-label="Playwright の使用例">Playwright の使用例</a></li></ul></li><li><a href=#%e6%a9%9f%e6%a2%b0%e5%ad%a6%e7%bf%92%e3%81%a8%e3%81%ae%e7%b5%b1%e5%90%88 aria-label=機械学習との統合>機械学習との統合</a><ul><li><a href=#%e3%83%8b%e3%83%a5%e3%83%bc%e3%82%b9%e8%a8%98%e4%ba%8b%e3%81%ae%e5%88%86%e9%a1%9e%e4%be%8b aria-label=ニュース記事の分類例>ニュース記事の分類例</a></li></ul></li><li><a href=#api-%e3%81%a8%e3%81%ae%e9%80%a3%e6%90%ba aria-label="API との連携">API との連携</a><ul><li><a href=#api-%e3%81%a8%e3%81%ae%e9%80%a3%e6%90%ba%e4%be%8b aria-label="API との連携例">API との連携例</a></li></ul></li><li><a href=#%e3%83%87%e3%83%bc%e3%82%bf%e3%83%99%e3%83%bc%e3%82%b9%e3%81%ae%e5%88%a9%e7%94%a8 aria-label=データベースの利用>データベースの利用</a><ul><li><a href=#sqlalchemy-%e3%81%ae%e4%bd%bf%e7%94%a8%e4%be%8b aria-label="SQLAlchemy の使用例">SQLAlchemy の使用例</a></li></ul></li><li><a href=#%e3%81%be%e3%81%a8%e3%82%81 aria-label=まとめ>まとめ</a></li></ul></div></details></div><div style="display:flex;justify-content:cente;margin:.5em auto"><ins class=adsbygoogle style=display:inline-block;width:728px;height:90px data-ad-client=ca-pub-4988552421895566 data-ad-slot=7460187386></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({})</script></div><div class=post-content><p>ウェブスクレイピングは、基本的な技術を習得した後に、より高度な手法を学ぶことで、さらに強力で効率的なデータ収集が可能になります。このガイドでは、Python を使った上級レベルのウェブスクレイピング技術について説明します。</p><h2 id=上級技術の概要>上級技術の概要<a hidden class=anchor aria-hidden=true href=#上級技術の概要>#</a></h2><p>上級レベルのウェブスクレイピングには、次のような技術が含まれます：</p><ol><li><strong>分散スクレイピング</strong>：複数のマシンやプロセスを使って大規模なデータ収集を行う。</li><li><strong>高度な JavaScript レンダリング</strong>：ヘッドレスブラウザや無頭ブラウザを使った動的コンテンツの完全なレンダリング。</li><li><strong>機械学習との統合</strong>：スクレイピングしたデータを用いた機械学習モデルの構築。</li><li><strong>API との連携</strong>：スクレイピングと API の併用。</li><li><strong>データベースの利用</strong>：取得したデータの効率的な保存と管理。</li></ol><h2 id=分散スクレイピング>分散スクレイピング<a hidden class=anchor aria-hidden=true href=#分散スクレイピング>#</a></h2><p>大規模なデータ収集を効率的に行うために、分散スクレイピングを活用します。分散スクレイピングには、複数のマシンやプロセスを使用して並列にデータを収集する手法が含まれます。</p><h3 id=apache-spark-を使った分散スクレイピング>Apache Spark を使った分散スクレイピング<a hidden class=anchor aria-hidden=true href=#apache-spark-を使った分散スクレイピング>#</a></h3><p>Apache Spark は、分散処理を行うための強力なツールです。PySpark を使用して分散スクレイピングを行う例を示します。</p><p>まず、PySpark をインストールします：</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>pip install pyspark
+</span></span></code></pre></div><p>次に、PySpark を使ったスクレイピングコードを書きます：</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#f92672>from</span> pyspark <span style=color:#f92672>import</span> SparkContext, SparkConf
+</span></span><span style=display:flex><span><span style=color:#f92672>import</span> requests
+</span></span><span style=display:flex><span><span style=color:#f92672>from</span> bs4 <span style=color:#f92672>import</span> BeautifulSoup
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>fetch_content</span>(url):
+</span></span><span style=display:flex><span>    response <span style=color:#f92672>=</span> requests<span style=color:#f92672>.</span>get(url)
+</span></span><span style=display:flex><span>    soup <span style=color:#f92672>=</span> BeautifulSoup(response<span style=color:#f92672>.</span>content, <span style=color:#e6db74>&#39;html.parser&#39;</span>)
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> soup<span style=color:#f92672>.</span>title<span style=color:#f92672>.</span>string
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>if</span> __name__ <span style=color:#f92672>==</span> <span style=color:#e6db74>&#34;__main__&#34;</span>:
+</span></span><span style=display:flex><span>    conf <span style=color:#f92672>=</span> SparkConf()<span style=color:#f92672>.</span>setAppName(<span style=color:#e6db74>&#34;WebScraping&#34;</span>)<span style=color:#f92672>.</span>setMaster(<span style=color:#e6db74>&#34;local[*]&#34;</span>)
+</span></span><span style=display:flex><span>    sc <span style=color:#f92672>=</span> SparkContext(conf<span style=color:#f92672>=</span>conf)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    urls <span style=color:#f92672>=</span> [
+</span></span><span style=display:flex><span>        <span style=color:#e6db74>&#39;https://example.com/page1&#39;</span>,
+</span></span><span style=display:flex><span>        <span style=color:#e6db74>&#39;https://example.com/page2&#39;</span>,
+</span></span><span style=display:flex><span>        <span style=color:#e6db74>&#39;https://example.com/page3&#39;</span>
+</span></span><span style=display:flex><span>    ]
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    rdd <span style=color:#f92672>=</span> sc<span style=color:#f92672>.</span>parallelize(urls)
+</span></span><span style=display:flex><span>    titles <span style=color:#f92672>=</span> rdd<span style=color:#f92672>.</span>map(fetch_content)<span style=color:#f92672>.</span>collect()
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>for</span> title <span style=color:#f92672>in</span> titles:
+</span></span><span style=display:flex><span>        print(title)
+</span></span></code></pre></div><h2 id=高度な-javascript-レンダリング>高度な JavaScript レンダリング<a hidden class=anchor aria-hidden=true href=#高度な-javascript-レンダリング>#</a></h2><p>動的なコンテンツを完全にレンダリングするために、ヘッドレスブラウザを使用します。Playwright や Selenium を使った高度なレンダリングを行うことで、JavaScript によって生成されたコンテンツを取得します。</p><h3 id=playwright-の使用例>Playwright の使用例<a hidden class=anchor aria-hidden=true href=#playwright-の使用例>#</a></h3><p>Playwright をインストールします：</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>pip install playwright
+</span></span><span style=display:flex><span>playwright install
+</span></span></code></pre></div><p>次に、Playwright を使ったコードを書きます：</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#f92672>from</span> playwright.sync_api <span style=color:#f92672>import</span> sync_playwright
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>fetch_dynamic_content</span>(url):
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>with</span> sync_playwright() <span style=color:#66d9ef>as</span> p:
+</span></span><span style=display:flex><span>        browser <span style=color:#f92672>=</span> p<span style=color:#f92672>.</span>chromium<span style=color:#f92672>.</span>launch()
+</span></span><span style=display:flex><span>        page <span style=color:#f92672>=</span> browser<span style=color:#f92672>.</span>new_page()
+</span></span><span style=display:flex><span>        page<span style=color:#f92672>.</span>goto(url)
+</span></span><span style=display:flex><span>        content <span style=color:#f92672>=</span> page<span style=color:#f92672>.</span>content()
+</span></span><span style=display:flex><span>        browser<span style=color:#f92672>.</span>close()
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> content
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>url <span style=color:#f92672>=</span> <span style=color:#e6db74>&#39;https://example.com&#39;</span>
+</span></span><span style=display:flex><span>content <span style=color:#f92672>=</span> fetch_dynamic_content(url)
+</span></span><span style=display:flex><span>print(content)
+</span></span></code></pre></div><h2 id=機械学習との統合>機械学習との統合<a hidden class=anchor aria-hidden=true href=#機械学習との統合>#</a></h2><p>スクレイピングしたデータを用いて機械学習モデルを構築することで、データの予測や分類を行います。例えば、スクレイピングしたニュース記事を分類するモデルを構築します。</p><h3 id=ニュース記事の分類例>ニュース記事の分類例<a hidden class=anchor aria-hidden=true href=#ニュース記事の分類例>#</a></h3><p>まず、scikit-learn をインストールします：</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>pip install scikit-learn
+</span></span></code></pre></div><p>次に、ニュース記事をスクレイピングし、分類するコードを書きます：</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#f92672>import</span> requests
+</span></span><span style=display:flex><span><span style=color:#f92672>from</span> bs4 <span style=color:#f92672>import</span> BeautifulSoup
+</span></span><span style=display:flex><span><span style=color:#f92672>from</span> sklearn.feature_extraction.text <span style=color:#f92672>import</span> TfidfVectorizer
+</span></span><span style=display:flex><span><span style=color:#f92672>from</span> sklearn.naive_bayes <span style=color:#f92672>import</span> MultinomialNB
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>fetch_article</span>(url):
+</span></span><span style=display:flex><span>    response <span style=color:#f92672>=</span> requests<span style=color:#f92672>.</span>get(url)
+</span></span><span style=display:flex><span>    soup <span style=color:#f92672>=</span> BeautifulSoup(response<span style=color:#f92672>.</span>content, <span style=color:#e6db74>&#39;html.parser&#39;</span>)
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> soup<span style=color:#f92672>.</span>get_text()
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>urls <span style=color:#f92672>=</span> [
+</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#39;https://news.example.com/article1&#39;</span>,
+</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#39;https://news.example.com/article2&#39;</span>,
+</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#39;https://news.example.com/article3&#39;</span>
+</span></span><span style=display:flex><span>]
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>articles <span style=color:#f92672>=</span> [fetch_article(url) <span style=color:#66d9ef>for</span> url <span style=color:#f92672>in</span> urls]
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># サンプルデータ</span>
+</span></span><span style=display:flex><span>categories <span style=color:#f92672>=</span> [<span style=color:#e6db74>&#39;sports&#39;</span>, <span style=color:#e6db74>&#39;politics&#39;</span>, <span style=color:#e6db74>&#39;tech&#39;</span>]
+</span></span><span style=display:flex><span>sample_texts <span style=color:#f92672>=</span> [
+</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#39;The team won the match.&#39;</span>,
+</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#39;The government passed a new law.&#39;</span>,
+</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#39;The latest smartphone was released.&#39;</span>
+</span></span><span style=display:flex><span>]
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>vectorizer <span style=color:#f92672>=</span> TfidfVectorizer()
+</span></span><span style=display:flex><span>X_train <span style=color:#f92672>=</span> vectorizer<span style=color:#f92672>.</span>fit_transform(sample_texts)
+</span></span><span style=display:flex><span>y_train <span style=color:#f92672>=</span> categories
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>model <span style=color:#f92672>=</span> MultinomialNB()
+</span></span><span style=display:flex><span>model<span style=color:#f92672>.</span>fit(X_train, y_train)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>X_test <span style=color:#f92672>=</span> vectorizer<span style=color:#f92672>.</span>transform(articles)
+</span></span><span style=display:flex><span>predictions <span style=color:#f92672>=</span> model<span style=color:#f92672>.</span>predict(X_test)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>for</span> article, prediction <span style=color:#f92672>in</span> zip(articles, predictions):
+</span></span><span style=display:flex><span>    print(<span style=color:#e6db74>f</span><span style=color:#e6db74>&#39;Article: </span><span style=color:#e6db74>{</span>article[:<span style=color:#ae81ff>60</span>]<span style=color:#e6db74>}</span><span style=color:#e6db74>... </span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>Category: </span><span style=color:#e6db74>{</span>prediction<span style=color:#e6db74>}</span><span style=color:#e6db74>&#39;</span>)
+</span></span></code></pre></div><h2 id=api-との連携>API との連携<a hidden class=anchor aria-hidden=true href=#api-との連携>#</a></h2><p>スクレイピングと API を併用することで、効率的にデータを収集し、分析できます。例えば、ウェブサイトから基本情報をスクレイピングし、API から追加データを取得します。</p><h3 id=api-との連携例>API との連携例<a hidden class=anchor aria-hidden=true href=#api-との連携例>#</a></h3><p>まず、requests ライブラリを使用して、API からデータを取得します：</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#f92672>import</span> requests
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>fetch_additional_data</span>(api_url, params):
+</span></span><span style=display:flex><span>    response <span style=color:#f92672>=</span> requests<span style=color:#f92672>.</span>get(api_url, params<span style=color:#f92672>=</span>params)
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> response<span style=color:#f92672>.</span>json()
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>scraped_data <span style=color:#f92672>=</span> {
+</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#39;name&#39;</span>: <span style=color:#e6db74>&#39;Example Company&#39;</span>,
+</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#39;website&#39;</span>: <span style=color:#e6db74>&#39;https://example.com&#39;</span>
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>api_url <span style=color:#f92672>=</span> <span style=color:#e6db74>&#39;https://api.example.com/details&#39;</span>
+</span></span><span style=display:flex><span>params <span style=color:#f92672>=</span> {<span style=color:#e6db74>&#39;domain&#39;</span>: <span style=color:#e6db74>&#39;example.com&#39;</span>}
+</span></span><span style=display:flex><span>additional_data <span style=color:#f92672>=</span> fetch_additional_data(api_url, params)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>combined_data <span style=color:#f92672>=</span> {<span style=color:#f92672>**</span>scraped_data, <span style=color:#f92672>**</span>additional_data}
+</span></span><span style=display:flex><span>print(combined_data)
+</span></span></code></pre></div><h2 id=データベースの利用>データベースの利用<a hidden class=anchor aria-hidden=true href=#データベースの利用>#</a></h2><p>取得したデータを効率的に保存し、管理するためにデータベースを使用します。SQLAlchemy などの ORM を使用して、Python からデータベースを操作します。</p><h3 id=sqlalchemy-の使用例>SQLAlchemy の使用例<a hidden class=anchor aria-hidden=true href=#sqlalchemy-の使用例>#</a></h3><p>まず、SQLAlchemy をインストールします：</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>pip install sqlalchemy
+</span></span></code></pre></div><p>次に、データベースにデータを保存するコードを書きます：</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#f92672>from</span> sqlalchemy <span style=color:#f92672>import</span> create_engine, Column, String, Integer
+</span></span><span style=display:flex><span><span style=color:#f92672>from</span> sqlalchemy.ext.declarative <span style=color:#f92672>import</span> declarative_base
+</span></span><span style=display:flex><span><span style=color:#f92672>from</span> sqlalchemy.orm <span style=color:#f92672>import</span> sessionmaker
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># データベースの設定</span>
+</span></span><span style=display:flex><span>DATABASE_URL <span style=color:#f92672>=</span> <span style=color:#e6db74>&#39;sqlite:///scraped_data.db&#39;</span>
+</span></span><span style=display:flex><span>Base <span style=color:#f92672>=</span> declarative_base()
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>Article</span>(Base):
+</span></span><span style=display:flex><span>    __tablename__ <span style=color:#f92672>=</span> <span style=color:#e6db74>&#39;articles&#39;</span>
+</span></span><span style=display:flex><span>    id <span style=color:#f92672>=</span> Column(Integer, primary_key<span style=color:#f92672>=</span><span style=color:#66d9ef>True</span>)
+</span></span><span style=display:flex><span>    title <span style=color:#f92672>=</span> Column(String)
+</span></span><span style=display:flex><span>    content <span style=color:#f92672>=</span> Column(String)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>engine <span style=color:#f92672>=</span> create_engine(DATABASE_URL)
+</span></span><span style=display:flex><span>Base<span style=color:#f92672>.</span>metadata<span style=color:#f92672>.</span>create_all(engine)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Session <span style=color:#f92672>=</span> sessionmaker(bind<span style=color:#f92672>=</span>engine)
+</span></span><span style=display:flex><span>session <span style=color:#f92672>=</span> Session()
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># データの保存</span>
+</span></span><span style=display:flex><span>article <span style=color:#f92672>=</span> Article(title<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;Example Title&#39;</span>, content<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;This is an example content.&#39;</span>)
+</span></span><span style=display:flex><span>session<span style=color:#f92672>.</span>add(article)
+</span></span><span style=display:flex><span>session<span style=color:#f92672>.</span>commit()
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># データの取得</span>
+</span></span><span style=display:flex><span>saved_articles <span style=color:#f92672>=</span> session<span style=color:#f92672>.</span>query(Article)<span style=color:#f92672>.</span>all()
+</span></span><span style=display:flex><span><span style=color:#66d9ef>for</span> article <span style=color:#f92672>in</span> saved_articles:
+</span></span><span style=display:flex><span>    print(<span style=color:#e6db74>f</span><span style=color:#e6db74>&#39;Title: </span><span style=color:#e6db74>{</span>article<span style=color:#f92672>.</span>title<span style=color:#e6db74>}</span><span style=color:#e6db74>, Content: </span><span style=color:#e6db74>{</span>article<span style=color:#f92672>.</span>content<span style=color:#e6db74>}</span><span style=color:#e6db74>&#39;</span>)
+</span></span></code></pre></div><h2 id=まとめ>まとめ<a hidden class=anchor aria-hidden=true href=#まとめ>#</a></h2><p>上級レベルのウェブスクレイピングでは、分散スクレイピング、動的コンテンツの高度なレンダリング、機械学習との統合、API との連携、データベースの利用といった技術が重要です。これらの技術を駆使することで、さらに高度で効率的なデータ収集と分析が可能になります。実践を通じてこれらのスキルを習得し、プロジェクトに応用してみてください。</p></div><div class=share-area><ul><li class=facebook><a target=_blank rel="noopener noreferrer" aria-label="share Pythonデータスパイダー（Webスクレイピング）上級ガイド on facebook" href='https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fseiri-blog.github.io%2fposts%2fpython-data-spider-advanced%2f' title='Facebook で共有する'><svg viewBox="0 0 512 512" height="20" width="20" fill="currentcolor"><path d="M449.446.0C483.971.0 512 28.03 512 62.554v386.892C512 483.97 483.97 512 449.446 512H342.978V319.085h66.6l12.672-82.621h-79.272v-53.617c0-22.603 11.073-44.636 46.58-44.636H425.6v-70.34s-32.71-5.582-63.982-5.582c-65.288.0-107.96 39.569-107.96 111.204v62.971h-72.573v82.621h72.573V512h-191.104c-34.524.0-62.554-28.03-62.554-62.554V62.554c0-34.524 28.029-62.554 62.554-62.554h386.892z"/></svg></a></li><li class=twitter><a target=_blank rel="noopener noreferrer" aria-label="share Pythonデータスパイダー（Webスクレイピング）上級ガイド on twitter" href='https://twitter.com/intent/tweet/?text=Python%e3%83%87%e3%83%bc%e3%82%bf%e3%82%b9%e3%83%91%e3%82%a4%e3%83%80%e3%83%bc%ef%bc%88Web%e3%82%b9%e3%82%af%e3%83%ac%e3%82%a4%e3%83%94%e3%83%b3%e3%82%b0%ef%bc%89%e4%b8%8a%e7%b4%9a%e3%82%ac%e3%82%a4%e3%83%89&amp;url=https%3a%2f%2fseiri-blog.github.io%2fposts%2fpython-data-spider-advanced%2f&amp;hashtags=python%2cdataspider' title='Twitter(X) で共有する'><svg id="svg5" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="30" width="30" viewBox="0 0 2e3 512"><g id="layer1" transform="translate(52.390088,-25.058597)"><path id="path1009" fill="#fff" d="M283.94 167.31l386.39 516.64L281.5 1104h87.51l340.42-367.76L984.48 1104h297.8L874.15 558.3l361.92-390.99h-87.51l-313.51 338.7-253.31-338.7H283.94zm128.69 64.46h136.81l604.13 807.76h-136.81L412.63 231.77z"/></g></svg></a></li><li class=hatena><a target=_blank rel="noopener noreferrer" aria-label="share Pythonデータスパイダー（Webスクレイピング）上級ガイド on Hatena" href='http://b.hatena.ne.jp/add?mode=confirm&amp;url=https%3a%2f%2fseiri-blog.github.io%2fposts%2fpython-data-spider-advanced%2f&amp;title=Python%e3%83%87%e3%83%bc%e3%82%bf%e3%82%b9%e3%83%91%e3%82%a4%e3%83%80%e3%83%bc%ef%bc%88Web%e3%82%b9%e3%82%af%e3%83%ac%e3%82%a4%e3%83%94%e3%83%b3%e3%82%b0%ef%bc%89%e4%b8%8a%e7%b4%9a%e3%82%ac%e3%82%a4%e3%83%89' title='Hatena で共有する'>B!</a></li><li class=line><a target=_blank rel="noopener noreferrer" aria-label="share Pythonデータスパイダー（Webスクレイピング）上級ガイド on Line" href=http://line.me/R/msg/text/?https%3a%2f%2fseiri-blog.github.io%2fposts%2fpython-data-spider-advanced%2f%0aPython%e3%83%87%e3%83%bc%e3%82%bf%e3%82%b9%e3%83%91%e3%82%a4%e3%83%80%e3%83%bc%ef%bc%88Web%e3%82%b9%e3%82%af%e3%83%ac%e3%82%a4%e3%83%94%e3%83%b3%e3%82%b0%ef%bc%89%e4%b8%8a%e7%b4%9a%e3%82%ac%e3%82%a4%e3%83%89 title='LINE で共有する'><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="35" height="50"><path fill="currentcolor" d="M37.113 22.417c0-5.865-5.88-10.637-13.107-10.637s-13.108 4.772-13.108 10.637c0 5.258 4.663 9.662 10.962 10.495.427.092 1.008.282 1.155.646.132.331.086.85.042 1.185.0.0-.153.925-.187 1.122-.057.331-.263 1.296 1.135.707 1.399-.589 7.548-4.445 10.298-7.611h-.001C36.203 26.879 37.113 24.764 37.113 22.417zm-18.238 3.49h-2.604c-.379.0-.687-.308-.687-.688V20.01c0-.379.308-.687.687-.687.379.0.687.308.687.687v4.521h1.917c.379.0.687.308.687.687C19.562 25.598 19.254 25.907 18.875 25.907zM21.568 25.219c0 .379-.308.688-.687.688s-.687-.308-.687-.688V20.01c0-.379.308-.687.687-.687s.687.308.687.687v5.209zm6.27.0c0 .297-.188.559-.47.652-.071.024-.145.036-.218.036-.215.0-.42-.103-.549-.275l-2.669-3.635v3.222c0 .379-.308.688-.688.688-.379.0-.688-.308-.688-.688V20.01c0-.296.189-.558.47-.652.071-.024.144-.035.218-.035.214.0.42.103.549.275l2.67 3.635V20.01c0-.379.309-.687.688-.687.379.0.687.308.687.687v5.209zm4.214-3.292c.379.0.688.308.688.688.0.379-.308.687-.688.687h-1.917v1.23h1.917c.379.0.688.308.688.687s-.309.688-.688.688h-2.604c-.378.0-.687-.308-.687-.688v-2.603-.001s0-.001.0-.001v-2.601c0-.001.0-.001.0-.002.0-.379.308-.687.687-.687h2.604c.379.0.688.308.688.687s-.308.687-.688.687h-1.917v1.23h1.917z"/></svg></a></li></ul></div><div style="display:flex;justify-content:center;margin:.5em auto"><ins class=adsbygoogle style=display:inline-block;width:728px;height:90px data-ad-client=ca-pub-4988552421895566 data-ad-slot=8581697363></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({})</script></div><footer class=post-footer><nav class=paginav><a class=prev href=https://seiri-blog.github.io/posts/python-data-spider-beginner/><span class=title>« 前へ</span><br><span>Pythonデータスパイダー（Webスクレイピング）初級ガイド</span>
+</a><a class=next href=https://seiri-blog.github.io/posts/python-data-spider-intermediate/><span class=title>次へ »</span><br><span>Pythonデータスパイダー（Webスクレイピング）中級ガイド</span></a></nav></footer><script src=https://giscus.app/client.js data-repo=seiri-blog/seiri-blog.github.io data-repo-id=R_kgDOJGyRgA data-category=General data-category-id=DIC_kwDOJGyRgM4CgDQM data-mapping=pathname data-strict=0 data-reactions-enabled=1 data-emit-metadata=0 data-input-position=bottom data-theme=preferred_color_scheme data-lang=ja crossorigin=anonymous async></script></article></main><footer class=footer><span>&copy; 2024 Seiri All rights reserved</span>
+<span>Powered by
 <a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
-        <a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a>
-</span>
-</footer>
-<a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg>
-</a>
-<script>let menu=document.getElementById('menu');menu&&(menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}),document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener("click",function(b){b.preventDefault();var a=this.getAttribute("href").substr(1);window.matchMedia('(prefers-reduced-motion: reduce)').matches?document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView({behavior:"smooth"}),a==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${a}`)})})</script>
-<script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script>
-<script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove('dark'),localStorage.setItem("pref-theme",'light')):(document.body.classList.add('dark'),localStorage.setItem("pref-theme",'dark'))})</script>
-<script>document.querySelectorAll('pre > code').forEach(b=>{const c=b.parentNode.parentNode,a=document.createElement('button');a.classList.add('copy-code'),a.innerHTML='コピー';function d(){a.innerHTML='コピーされました!',setTimeout(()=>{a.innerHTML='コピー'},2e3)}a.addEventListener('click',e=>{if('clipboard'in navigator){navigator.clipboard.writeText(b.textContent),d();return}const a=document.createRange();a.selectNodeContents(b);const c=window.getSelection();c.removeAllRanges(),c.addRange(a);try{document.execCommand('copy'),d()}catch(a){}c.removeRange(a)}),c.classList.contains("highlight")?c.appendChild(a):c.parentNode.firstChild==c||(b.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName=="TABLE"?b.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(a):b.parentNode.appendChild(a))})</script>
-</body>
-</html>
+        <a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a></span></footer><a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg>
+</a><script>let menu=document.getElementById("menu");menu&&(menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}),document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(e){e.preventDefault();var t=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView({behavior:"smooth"}),t==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${t}`)})})</script><script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script><script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove("dark"),localStorage.setItem("pref-theme","light")):(document.body.classList.add("dark"),localStorage.setItem("pref-theme","dark"))})</script><script>document.querySelectorAll("pre > code").forEach(e=>{const n=e.parentNode.parentNode,t=document.createElement("button");t.classList.add("copy-code"),t.innerHTML="コピー";function s(){t.innerHTML="コピーされました!",setTimeout(()=>{t.innerHTML="コピー"},2e3)}t.addEventListener("click",t=>{if("clipboard"in navigator){navigator.clipboard.writeText(e.textContent),s();return}const n=document.createRange();n.selectNodeContents(e);const o=window.getSelection();o.removeAllRanges(),o.addRange(n);try{document.execCommand("copy"),s()}catch{}o.removeRange(n)}),n.classList.contains("highlight")?n.appendChild(t):n.parentNode.firstChild==n||(e.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName=="TABLE"?e.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(t):e.parentNode.appendChild(t))})</script></body></html>

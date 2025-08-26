@@ -1,12 +1,22 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>python on Seiri&#39;s Blog</title>
+    <title>Python on Seiri&#39;s Blog</title>
     <link>https://seiri-blog.github.io/tags/python/</link>
-    <description>Recent content in python on Seiri&#39;s Blog</description>
+    <description>Recent content in Python on Seiri&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
     <copyright>2024 Seiri All rights reserved</copyright>
     <lastBuildDate>Thu, 04 Jul 2024 17:53:03 +0900</lastBuildDate><atom:link href="https://seiri-blog.github.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Pythonデータスパイダー（Webスクレイピング）初級ガイド</title>
+      <link>https://seiri-blog.github.io/posts/python-data-spider-beginner/</link>
+      <pubDate>Thu, 04 Jul 2024 17:53:03 +0900</pubDate>
+      
+      <guid>https://seiri-blog.github.io/posts/python-data-spider-beginner/</guid>
+      <description>ウェブスクレイピングは、ウェブサイトからデータを自動的に抽出する技術であり、データ分析、研究、マーケティング、競合分析など様々な分野で活用さ</description>
+    </item>
+    
     <item>
       <title>Pythonデータスパイダー（Webスクレイピング）上級ガイド</title>
       <link>https://seiri-blog.github.io/posts/python-data-spider-advanced/</link>
@@ -23,15 +33,6 @@
       
       <guid>https://seiri-blog.github.io/posts/python-data-spider-intermediate/</guid>
       <description>ウェブスクレイピングは、データ収集の強力な手法として広く利用されています。初心者向けの基礎を押さえた後、より高度な技術を使って効率的にデータ</description>
-    </item>
-    
-    <item>
-      <title>Pythonデータスパイダー（Webスクレイピング）初級ガイド</title>
-      <link>https://seiri-blog.github.io/posts/python-data-spider-beginner/</link>
-      <pubDate>Thu, 04 Jul 2024 17:53:03 +0900</pubDate>
-      
-      <guid>https://seiri-blog.github.io/posts/python-data-spider-beginner/</guid>
-      <description>ウェブスクレイピングは、ウェブサイトからデータを自動的に抽出する技術であり、データ分析、研究、マーケティング、競合分析など様々な分野で活用さ</description>
     </item>
     
     <item>
