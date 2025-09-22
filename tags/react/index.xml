@@ -5,9 +5,17 @@
     <link>https://seiri-blog.github.io/tags/react/</link>
     <description>Recent content in React on Seiri&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>ja</language>
     <copyright>2024 Seiri All rights reserved</copyright>
-    <lastBuildDate>Mon, 24 Jan 2022 18:11:28 +0900</lastBuildDate><atom:link href="https://seiri-blog.github.io/tags/react/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 22 Sep 2025 14:49:46 +0900</lastBuildDate><atom:link href="https://seiri-blog.github.io/tags/react/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>React入門</title>
+      <link>https://seiri-blog.github.io/posts/react-introduction/</link>
+      <pubDate>Mon, 22 Sep 2025 14:49:46 +0900</pubDate>
+      
+      <guid>https://seiri-blog.github.io/posts/react-introduction/</guid>
+      <description>React 紹介 Web アプリやサービスを開発する上で、いまや欠かせない存在となっているのが React です。React は Meta（旧 Facebook）が開発したフロ</description>
+    </item>
+    
     <item>
       <title>Amplify &#43; Reactでアプリケーション作成</title>
       <link>https://seiri-blog.github.io/posts/application-creating-at-amplify-react/</link>

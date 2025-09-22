@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>入門 on Seiri&#39;s Blog</title>
+    <link>https://seiri-blog.github.io/tags/%E5%85%A5%E9%96%80/</link>
+    <description>Recent content in 入門 on Seiri&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>2024 Seiri All rights reserved</copyright>
+    <lastBuildDate>Mon, 22 Sep 2025 14:49:46 +0900</lastBuildDate><atom:link href="https://seiri-blog.github.io/tags/%E5%85%A5%E9%96%80/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>React入門</title>
+      <link>https://seiri-blog.github.io/posts/react-introduction/</link>
+      <pubDate>Mon, 22 Sep 2025 14:49:46 +0900</pubDate>
+      
+      <guid>https://seiri-blog.github.io/posts/react-introduction/</guid>
+      <description>React 紹介 Web アプリやサービスを開発する上で、いまや欠かせない存在となっているのが React です。React は Meta（旧 Facebook）が開発したフロ</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Fls on Seiri&#39;s Blog</title>
+    <title>fls on Seiri&#39;s Blog</title>
     <link>https://seiri-blog.github.io/tags/fls/</link>
-    <description>Recent content in Fls on Seiri&#39;s Blog</description>
+    <description>Recent content in fls on Seiri&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>ja</language>
     <copyright>2024 Seiri All rights reserved</copyright>
     <lastBuildDate>Mon, 11 Jul 2022 20:02:42 +0900</lastBuildDate><atom:link href="https://seiri-blog.github.io/tags/fls/index.xml" rel="self" type="application/rss+xml" />
     <item>
