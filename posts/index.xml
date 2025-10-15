@@ -6,7 +6,16 @@
     <description>Recent content in Posts on Seiri&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>2024 Seiri All rights reserved</copyright>
-    <lastBuildDate>Mon, 22 Sep 2025 15:48:56 +0900</lastBuildDate><atom:link href="https://seiri-blog.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 15 Oct 2025 09:14:38 +0900</lastBuildDate><atom:link href="https://seiri-blog.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Linuxでスケジュールを設定する方法</title>
+      <link>https://seiri-blog.github.io/posts/linux-batch-schedule/</link>
+      <pubDate>Wed, 15 Oct 2025 09:14:38 +0900</pubDate>
+      
+      <guid>https://seiri-blog.github.io/posts/linux-batch-schedule/</guid>
+      <description>Linux で毎日自動的に Python スクリプトを実行し、Git にコミット・プッシュする方法 定期的に Python スクリプトを実行して、結果を Git に自動コミット・プッシュした</description>
+    </item>
+    
     <item>
       <title>React Routerによるページ遷移</title>
       <link>https://seiri-blog.github.io/posts/react-introduction-part11/</link>
@@ -14,6 +23,15 @@
       
       <guid>https://seiri-blog.github.io/posts/react-introduction-part11/</guid>
       <description>React 入門：React Routerによるページ遷移 React でシングルページアプリ（SPA）を作るとき、複数のページに分けて表示するには React Router がよく使われ</description>
+    </item>
+    
+    <item>
+      <title>React 入門で知っておくべき注意点</title>
+      <link>https://seiri-blog.github.io/posts/react-introduction-part12/</link>
+      <pubDate>Mon, 22 Sep 2025 15:48:56 +0900</pubDate>
+      
+      <guid>https://seiri-blog.github.io/posts/react-introduction-part12/</guid>
+      <description>React 入門で知っておくべき注意点まとめ React はシンプルな UI ライブラリですが、「HTML・CSS・JavaScript とは少し違う考え方」が必要になり</description>
     </item>
     
     <item>

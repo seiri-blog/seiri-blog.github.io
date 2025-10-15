@@ -6,7 +6,16 @@
     <description>Recent content in batch on Seiri&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>2024 Seiri All rights reserved</copyright>
-    <lastBuildDate>Fri, 26 Apr 2024 09:55:48 +0900</lastBuildDate><atom:link href="https://seiri-blog.github.io/tags/batch/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 15 Oct 2025 09:14:38 +0900</lastBuildDate><atom:link href="https://seiri-blog.github.io/tags/batch/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Linuxでスケジュールを設定する方法</title>
+      <link>https://seiri-blog.github.io/posts/linux-batch-schedule/</link>
+      <pubDate>Wed, 15 Oct 2025 09:14:38 +0900</pubDate>
+      
+      <guid>https://seiri-blog.github.io/posts/linux-batch-schedule/</guid>
+      <description>Linux で毎日自動的に Python スクリプトを実行し、Git にコミット・プッシュする方法 定期的に Python スクリプトを実行して、結果を Git に自動コミット・プッシュした</description>
+    </item>
+    
     <item>
       <title>Windowsバッチで7zを使ってフォルダを一括Zipする方法</title>
       <link>https://seiri-blog.github.io/posts/folder-bulk-zip-by-cmd-batch/</link>
