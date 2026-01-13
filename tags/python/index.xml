@@ -6,7 +6,25 @@
     <description>Recent content in python on Seiri&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>2024 Seiri All rights reserved</copyright>
-    <lastBuildDate>Thu, 04 Jul 2024 17:53:03 +0900</lastBuildDate><atom:link href="https://seiri-blog.github.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 13 Jan 2026 12:08:32 +0900</lastBuildDate><atom:link href="https://seiri-blog.github.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Pythonのlambdaの使い方</title>
+      <link>https://seiri-blog.github.io/posts/python-how-to-use-lambda/</link>
+      <pubDate>Tue, 13 Jan 2026 12:08:32 +0900</pubDate>
+      
+      <guid>https://seiri-blog.github.io/posts/python-how-to-use-lambda/</guid>
+      <description>Python の lambda（ラムダ）式の使い方を徹底解説【短く書いて賢く使う】 Python を使っていると、lambda という見慣れないキーワードに出会うことがあ</description>
+    </item>
+    
+    <item>
+      <title>Python Diff Dict Set</title>
+      <link>https://seiri-blog.github.io/posts/python-diff-dict-set/</link>
+      <pubDate>Tue, 13 Jan 2026 12:05:13 +0900</pubDate>
+      
+      <guid>https://seiri-blog.github.io/posts/python-diff-dict-set/</guid>
+      <description>Python の dict と set の違いを徹底解説【初心者でもわかる】 Python を学び始めると、必ず出てくるデータ構造が dict（辞書） と set（集合） です。どちらも「重複</description>
+    </item>
+    
     <item>
       <title>Pythonデータスパイダー（Webスクレイピング）上級ガイド</title>
       <link>https://seiri-blog.github.io/posts/python-data-spider-advanced/</link>

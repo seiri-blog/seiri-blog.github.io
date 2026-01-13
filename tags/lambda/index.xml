@@ -6,7 +6,16 @@
     <description>Recent content in lambda on Seiri&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>2024 Seiri All rights reserved</copyright>
-    <lastBuildDate>Fri, 22 Jul 2022 12:03:11 +0900</lastBuildDate><atom:link href="https://seiri-blog.github.io/tags/lambda/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 13 Jan 2026 12:08:32 +0900</lastBuildDate><atom:link href="https://seiri-blog.github.io/tags/lambda/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Pythonのlambdaの使い方</title>
+      <link>https://seiri-blog.github.io/posts/python-how-to-use-lambda/</link>
+      <pubDate>Tue, 13 Jan 2026 12:08:32 +0900</pubDate>
+      
+      <guid>https://seiri-blog.github.io/posts/python-how-to-use-lambda/</guid>
+      <description>Python の lambda（ラムダ）式の使い方を徹底解説【短く書いて賢く使う】 Python を使っていると、lambda という見慣れないキーワードに出会うことがあ</description>
+    </item>
+    
     <item>
       <title>AWS Lambda</title>
       <link>https://seiri-blog.github.io/posts/aws-lambda/</link>

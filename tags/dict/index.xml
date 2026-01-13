@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>dict on Seiri&#39;s Blog</title>
+    <link>https://seiri-blog.github.io/tags/dict/</link>
+    <description>Recent content in dict on Seiri&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>2024 Seiri All rights reserved</copyright>
+    <lastBuildDate>Tue, 13 Jan 2026 12:05:13 +0900</lastBuildDate><atom:link href="https://seiri-blog.github.io/tags/dict/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Python Diff Dict Set</title>
+      <link>https://seiri-blog.github.io/posts/python-diff-dict-set/</link>
+      <pubDate>Tue, 13 Jan 2026 12:05:13 +0900</pubDate>
+      
+      <guid>https://seiri-blog.github.io/posts/python-diff-dict-set/</guid>
+      <description>Python の dict と set の違いを徹底解説【初心者でもわかる】 Python を学び始めると、必ず出てくるデータ構造が dict（辞書） と set（集合） です。どちらも「重複</description>
+    </item>
+    
+  </channel>
+</rss>

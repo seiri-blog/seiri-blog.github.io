@@ -2,6 +2,39 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://seiri-blog.github.io/tags/lambda/</loc>
+    <lastmod>2026-01-13T12:08:32+09:00</lastmod>
+  </url><url>
+    <loc>https://seiri-blog.github.io/posts/</loc>
+    <lastmod>2026-01-13T12:08:32+09:00</lastmod>
+  </url><url>
+    <loc>https://seiri-blog.github.io/tags/python/</loc>
+    <lastmod>2026-01-13T12:08:32+09:00</lastmod>
+  </url><url>
+    <loc>https://seiri-blog.github.io/posts/python-how-to-use-lambda/</loc>
+    <lastmod>2026-01-13T12:08:32+09:00</lastmod>
+  </url><url>
+    <loc>https://seiri-blog.github.io/</loc>
+    <lastmod>2026-01-13T12:08:32+09:00</lastmod>
+  </url><url>
+    <loc>https://seiri-blog.github.io/tags/</loc>
+    <lastmod>2026-01-13T12:08:32+09:00</lastmod>
+  </url><url>
+    <loc>https://seiri-blog.github.io/tags/dict/</loc>
+    <lastmod>2026-01-13T12:05:13+09:00</lastmod>
+  </url><url>
+    <loc>https://seiri-blog.github.io/posts/python-diff-dict-set/</loc>
+    <lastmod>2026-01-13T12:05:13+09:00</lastmod>
+  </url><url>
+    <loc>https://seiri-blog.github.io/tags/set/</loc>
+    <lastmod>2026-01-13T12:05:13+09:00</lastmod>
+  </url><url>
+    <loc>https://seiri-blog.github.io/tags/giscus/</loc>
+    <lastmod>2026-01-13T11:51:59+09:00</lastmod>
+  </url><url>
+    <loc>https://seiri-blog.github.io/posts/how-to-use-giscus/</loc>
+    <lastmod>2026-01-13T11:51:59+09:00</lastmod>
+  </url><url>
     <loc>https://seiri-blog.github.io/tags/bash/</loc>
     <lastmod>2025-10-15T09:14:38+09:00</lastmod>
   </url><url>
@@ -14,16 +47,7 @@
     <loc>https://seiri-blog.github.io/posts/linux-batch-schedule/</loc>
     <lastmod>2025-10-15T09:14:38+09:00</lastmod>
   </url><url>
-    <loc>https://seiri-blog.github.io/posts/</loc>
-    <lastmod>2025-10-15T09:14:38+09:00</lastmod>
-  </url><url>
     <loc>https://seiri-blog.github.io/tags/schedule/</loc>
-    <lastmod>2025-10-15T09:14:38+09:00</lastmod>
-  </url><url>
-    <loc>https://seiri-blog.github.io/</loc>
-    <lastmod>2025-10-15T09:14:38+09:00</lastmod>
-  </url><url>
-    <loc>https://seiri-blog.github.io/tags/</loc>
     <lastmod>2025-10-15T09:14:38+09:00</lastmod>
   </url><url>
     <loc>https://seiri-blog.github.io/tags/react/</loc>
@@ -114,9 +138,6 @@
     <lastmod>2024-10-22T09:28:23+09:00</lastmod>
   </url><url>
     <loc>https://seiri-blog.github.io/tags/data-spider/</loc>
-    <lastmod>2024-07-04T17:53:03+09:00</lastmod>
-  </url><url>
-    <loc>https://seiri-blog.github.io/tags/python/</loc>
     <lastmod>2024-07-04T17:53:03+09:00</lastmod>
   </url><url>
     <loc>https://seiri-blog.github.io/posts/python-data-spider-advanced/</loc>
@@ -573,9 +594,6 @@
     <lastmod>2022-07-22T16:42:09+09:00</lastmod>
   </url><url>
     <loc>https://seiri-blog.github.io/posts/aws-lambda/</loc>
-    <lastmod>2022-07-22T12:03:11+09:00</lastmod>
-  </url><url>
-    <loc>https://seiri-blog.github.io/tags/lambda/</loc>
     <lastmod>2022-07-22T12:03:11+09:00</lastmod>
   </url><url>
     <loc>https://seiri-blog.github.io/tags/lambda-layers/</loc>
