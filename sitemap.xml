@@ -3,16 +3,25 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://seiri-blog.github.io/posts/</loc>
-    <lastmod>2026-04-01T16:57:25+09:00</lastmod>
-  </url><url>
-    <loc>https://seiri-blog.github.io/tags/salesforce/</loc>
-    <lastmod>2026-04-01T16:57:25+09:00</lastmod>
+    <lastmod>2026-04-01T17:11:40+09:00</lastmod>
   </url><url>
     <loc>https://seiri-blog.github.io/</loc>
-    <lastmod>2026-04-01T16:57:25+09:00</lastmod>
+    <lastmod>2026-04-01T17:11:40+09:00</lastmod>
+  </url><url>
+    <loc>https://seiri-blog.github.io/posts/salesforce-part5-choosing-between-flow-and-apex/</loc>
+    <lastmod>2026-04-01T17:11:40+09:00</lastmod>
+  </url><url>
+    <loc>https://seiri-blog.github.io/posts/salesforce-part4-sqol-optimisation-and-performance-tuning/</loc>
+    <lastmod>2026-04-01T17:09:35+09:00</lastmod>
+  </url><url>
+    <loc>https://seiri-blog.github.io/tags/salesforce/</loc>
+    <lastmod>2026-04-01T17:04:45+09:00</lastmod>
   </url><url>
     <loc>https://seiri-blog.github.io/tags/</loc>
-    <lastmod>2026-04-01T16:57:25+09:00</lastmod>
+    <lastmod>2026-04-01T17:04:45+09:00</lastmod>
+  </url><url>
+    <loc>https://seiri-blog.github.io/posts/salesforce-part3-the-essentials-of-apex-trigger-desgin-and-how-to-create-robust-code/</loc>
+    <lastmod>2026-04-01T17:04:45+09:00</lastmod>
   </url><url>
     <loc>https://seiri-blog.github.io/posts/salesforce-part2-best-practices-in-object-and-field-design/</loc>
     <lastmod>2026-04-01T16:57:25+09:00</lastmod>

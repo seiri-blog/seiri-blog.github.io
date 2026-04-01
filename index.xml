@@ -6,7 +6,34 @@
     <description>Recent content on Seiri Tech Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>2026 Seiri All rights reserved</copyright>
-    <lastBuildDate>Wed, 01 Apr 2026 16:57:25 +0900</lastBuildDate><atom:link href="https://seiri-blog.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 01 Apr 2026 17:11:40 +0900</lastBuildDate><atom:link href="https://seiri-blog.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>第5編：Flow vs Apexの使い分け（設計判断の核心）</title>
+      <link>https://seiri-blog.github.io/posts/salesforce-part5-choosing-between-flow-and-apex/</link>
+      <pubDate>Wed, 01 Apr 2026 17:11:40 +0900</pubDate>
+      
+      <guid>https://seiri-blog.github.io/posts/salesforce-part5-choosing-between-flow-and-apex/</guid>
+      <description>Salesforce Flow vs Apex これ、現場で毎回議論になるやつ。 結論から言う： 👉 FlowでできるならFlowでやれ。ただし無理するな。 Flowが向いているケース ・単</description>
+    </item>
+    
+    <item>
+      <title>第4編：SOQL最適化とパフォーマンスチューニング</title>
+      <link>https://seiri-blog.github.io/posts/salesforce-part4-sqol-optimisation-and-performance-tuning/</link>
+      <pubDate>Wed, 01 Apr 2026 17:09:35 +0900</pubDate>
+      
+      <guid>https://seiri-blog.github.io/posts/salesforce-part4-sqol-optimisation-and-performance-tuning/</guid>
+      <description>Salesforce のSOQL ここ理解してない人、めちゃくちゃ多い。 でも実務ではここが一番差になる。 SOQLの基本思想 SQLとの違い： ・JOINが制限される ・</description>
+    </item>
+    
+    <item>
+      <title>第3編：Apexトリガー設計の本質と“壊れないコード”の作り方</title>
+      <link>https://seiri-blog.github.io/posts/salesforce-part3-the-essentials-of-apex-trigger-desgin-and-how-to-create-robust-code/</link>
+      <pubDate>Wed, 01 Apr 2026 17:04:45 +0900</pubDate>
+      
+      <guid>https://seiri-blog.github.io/posts/salesforce-part3-the-essentials-of-apex-trigger-desgin-and-how-to-create-robust-code/</guid>
+      <description>Apexトリガー ApexトリガーはSalesforce開発の中核ですが、同時に最も事故が多い領域です。 理由はシンプルで、「適当に書いても一応</description>
+    </item>
+    
     <item>
       <title>第2編：オブジェクト設計と項目設計の実務ベストプラクティス</title>
       <link>https://seiri-blog.github.io/posts/salesforce-part2-best-practices-in-object-and-field-design/</link>
