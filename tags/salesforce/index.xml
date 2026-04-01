@@ -6,7 +6,25 @@
     <description>Recent content in Salesforce on Seiri Tech Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>2026 Seiri All rights reserved</copyright>
-    <lastBuildDate>Thu, 07 Dec 2023 19:33:43 +0900</lastBuildDate><atom:link href="https://seiri-blog.github.io/tags/salesforce/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 01 Apr 2026 16:57:25 +0900</lastBuildDate><atom:link href="https://seiri-blog.github.io/tags/salesforce/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>第2編：オブジェクト設計と項目設計の実務ベストプラクティス</title>
+      <link>https://seiri-blog.github.io/posts/salesforce-part2-best-practices-in-object-and-field-design/</link>
+      <pubDate>Wed, 01 Apr 2026 16:57:25 +0900</pubDate>
+      
+      <guid>https://seiri-blog.github.io/posts/salesforce-part2-best-practices-in-object-and-field-design/</guid>
+      <description>Salesforceの設計力 Salesforceで一番差が出るのは「設計力」です。 正直ここミスると、どんな優秀なエンジニアでも詰みます。 ステ</description>
+    </item>
+    
+    <item>
+      <title>第1編：Salesforceの全体像を「開発者視点」で理解する</title>
+      <link>https://seiri-blog.github.io/posts/salesforce-part1-understand-the-big-picture-of-salesforce-from-a-developers-perspective/</link>
+      <pubDate>Wed, 01 Apr 2026 16:49:50 +0900</pubDate>
+      
+      <guid>https://seiri-blog.github.io/posts/salesforce-part1-understand-the-big-picture-of-salesforce-from-a-developers-perspective/</guid>
+      <description>Salesforceの説明 Salesforceは単なるCRMではありません。本質は「業務アプリケーションを高速に構築・運用できるクラウドプラ</description>
+    </item>
+    
     <item>
       <title>【Salesforce】SOQL入門</title>
       <link>https://seiri-blog.github.io/posts/salesforce-soql-introduction/</link>
