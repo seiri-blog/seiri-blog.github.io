@@ -6,9 +6,81 @@
     <description>Recent content in Posts on Seiri Tech Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>2026 Seiri All rights reserved</copyright>
-    <lastBuildDate>Sat, 18 Apr 2026 18:54:51 +0900</lastBuildDate><atom:link href="https://seiri-blog.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 18 Apr 2026 19:16:47 +0900</lastBuildDate><atom:link href="https://seiri-blog.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Service Cloud解説</title>
+      <title>Salesforce SOSL グループ化（GROUP BY）完全ガイド</title>
+      <link>https://seiri-blog.github.io/posts/salesforce-osql-group-by-guide/</link>
+      <pubDate>Sat, 18 Apr 2026 19:16:47 +0900</pubDate>
+      
+      <guid>https://seiri-blog.github.io/posts/salesforce-osql-group-by-guide/</guid>
+      <description>Apexで学ぶSOQLグループ化（GROUP BY）完全ガイド Apex開発においてデータ集計は非常に重要です。特に「レコード一覧を取得する」の</description>
+    </item>
+    
+    <item>
+      <title>Salesforce SOSLの使い方：Apexで検索結果を取得・加工・操作する方法</title>
+      <link>https://seiri-blog.github.io/posts/salesforce-sosl-dev/</link>
+      <pubDate>Sat, 18 Apr 2026 19:16:47 +0900</pubDate>
+      
+      <guid>https://seiri-blog.github.io/posts/salesforce-sosl-dev/</guid>
+      <description>ApexでSOSLを使いこなす：取得・加工・操作の実践ガイド Salesforce開発において、SOSLは「キーワード検索」を実現するための非</description>
+    </item>
+    
+    <item>
+      <title>【Salesforce】SOQLとSOSL使い分け</title>
+      <link>https://seiri-blog.github.io/posts/salesforce-soql-vs-sosl/</link>
+      <pubDate>Sat, 18 Apr 2026 19:13:03 +0900</pubDate>
+      
+      <guid>https://seiri-blog.github.io/posts/salesforce-soql-vs-sosl/</guid>
+      <description>SOQL vs SOSLの使い分け完全ガイド：現場で迷わない検索設計 Salesforce開発において、必ずと言っていいほど悩むのが「SOQLとSOSL、</description>
+    </item>
+    
+    <item>
+      <title>【Salesforce】SOSL入門</title>
+      <link>https://seiri-blog.github.io/posts/salesforce-sosl-introduction/</link>
+      <pubDate>Sat, 18 Apr 2026 19:13:03 +0900</pubDate>
+      
+      <guid>https://seiri-blog.github.io/posts/salesforce-sosl-introduction/</guid>
+      <description>SOSL入門ガイド：Salesforce検索を最適化する第一歩 Salesforceでデータ検索を行う際、多くの開発者がまずSOQLを学びます</description>
+    </item>
+    
+    <item>
+      <title>Salesforce Service Cloud ナレッジ開発ガイド</title>
+      <link>https://seiri-blog.github.io/posts/salesforce-service-cloud-knowledge-dev-introduction/</link>
+      <pubDate>Sat, 18 Apr 2026 19:07:52 +0900</pubDate>
+      
+      <guid>https://seiri-blog.github.io/posts/salesforce-service-cloud-knowledge-dev-introduction/</guid>
+      <description>Service Cloud ナレッジ開発ガイド：SOQL検索からカスタマイズまで実践解説 Service Cloudのナレッジは、設定や運用だけでなく「開発」によってさらに強力な仕</description>
+    </item>
+    
+    <item>
+      <title>Salesforce Service Cloud ナレッジの概要</title>
+      <link>https://seiri-blog.github.io/posts/salesforce-service-cloud-knowledge-introduction/</link>
+      <pubDate>Sat, 18 Apr 2026 19:04:10 +0900</pubDate>
+      
+      <guid>https://seiri-blog.github.io/posts/salesforce-service-cloud-knowledge-introduction/</guid>
+      <description>Service Cloud ナレッジ管理完全ガイド：使われるナレッジを作る実践ノウハウ Service Cloudにおいて「ナレッジ（Knowledge）」は、サポート品質を安定さ</description>
+    </item>
+    
+    <item>
+      <title>Saleseforce Service Cloud オムニチャネル</title>
+      <link>https://seiri-blog.github.io/posts/salesforce-service-cloud-omni-chanel-introduction/</link>
+      <pubDate>Sat, 18 Apr 2026 19:01:37 +0900</pubDate>
+      
+      <guid>https://seiri-blog.github.io/posts/salesforce-service-cloud-omni-chanel-introduction/</guid>
+      <description>Service Cloud オムニチャネル対応完全ガイド：顧客体験を最大化する設計と運用 顧客との接点が多様化する現代において、メール、電話、チャット、SNSなど複数</description>
+    </item>
+    
+    <item>
+      <title>Saleseforce Service Cloud ケース</title>
+      <link>https://seiri-blog.github.io/posts/salesforce-service-cloud-case-introduction/</link>
+      <pubDate>Sat, 18 Apr 2026 18:59:05 +0900</pubDate>
+      
+      <guid>https://seiri-blog.github.io/posts/salesforce-service-cloud-case-introduction/</guid>
+      <description>Service Cloud ケース管理 完全ガイド：設定から運用まで徹底解説 Service Cloudの中核機能である「ケース管理」は、カスタマーサポートの品質と効率を大きく左右し</description>
+    </item>
+    
+    <item>
+      <title>Saleseforce Service Cloud解説</title>
       <link>https://seiri-blog.github.io/posts/salesforce-service-cloud-introduction/</link>
       <pubDate>Sat, 18 Apr 2026 18:54:51 +0900</pubDate>
       

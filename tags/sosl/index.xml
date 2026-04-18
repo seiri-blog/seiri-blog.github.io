@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>SOSL on Seiri Tech Blog</title>
+    <link>https://seiri-blog.github.io/tags/sosl/</link>
+    <description>Recent content in SOSL on Seiri Tech Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>2026 Seiri All rights reserved</copyright>
+    <lastBuildDate>Sat, 18 Apr 2026 19:16:47 +0900</lastBuildDate><atom:link href="https://seiri-blog.github.io/tags/sosl/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Salesforce SOSL グループ化（GROUP BY）完全ガイド</title>
+      <link>https://seiri-blog.github.io/posts/salesforce-osql-group-by-guide/</link>
+      <pubDate>Sat, 18 Apr 2026 19:16:47 +0900</pubDate>
+      
+      <guid>https://seiri-blog.github.io/posts/salesforce-osql-group-by-guide/</guid>
+      <description>Apexで学ぶSOQLグループ化（GROUP BY）完全ガイド Apex開発においてデータ集計は非常に重要です。特に「レコード一覧を取得する」の</description>
+    </item>
+    
+    <item>
+      <title>Salesforce SOSLの使い方：Apexで検索結果を取得・加工・操作する方法</title>
+      <link>https://seiri-blog.github.io/posts/salesforce-sosl-dev/</link>
+      <pubDate>Sat, 18 Apr 2026 19:16:47 +0900</pubDate>
+      
+      <guid>https://seiri-blog.github.io/posts/salesforce-sosl-dev/</guid>
+      <description>ApexでSOSLを使いこなす：取得・加工・操作の実践ガイド Salesforce開発において、SOSLは「キーワード検索」を実現するための非</description>
+    </item>
+    
+    <item>
+      <title>【Salesforce】SOQLとSOSL使い分け</title>
+      <link>https://seiri-blog.github.io/posts/salesforce-soql-vs-sosl/</link>
+      <pubDate>Sat, 18 Apr 2026 19:13:03 +0900</pubDate>
+      
+      <guid>https://seiri-blog.github.io/posts/salesforce-soql-vs-sosl/</guid>
+      <description>SOQL vs SOSLの使い分け完全ガイド：現場で迷わない検索設計 Salesforce開発において、必ずと言っていいほど悩むのが「SOQLとSOSL、</description>
+    </item>
+    
+    <item>
+      <title>【Salesforce】SOSL入門</title>
+      <link>https://seiri-blog.github.io/posts/salesforce-sosl-introduction/</link>
+      <pubDate>Sat, 18 Apr 2026 19:13:03 +0900</pubDate>
+      
+      <guid>https://seiri-blog.github.io/posts/salesforce-sosl-introduction/</guid>
+      <description>SOSL入門ガイド：Salesforce検索を最適化する第一歩 Salesforceでデータ検索を行う際、多くの開発者がまずSOQLを学びます</description>
+    </item>
+    
+  </channel>
+</rss>

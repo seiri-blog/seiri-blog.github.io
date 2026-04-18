@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Knowledge on Seiri Tech Blog</title>
+    <link>https://seiri-blog.github.io/tags/knowledge/</link>
+    <description>Recent content in Knowledge on Seiri Tech Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>2026 Seiri All rights reserved</copyright>
+    <lastBuildDate>Sat, 18 Apr 2026 19:07:52 +0900</lastBuildDate><atom:link href="https://seiri-blog.github.io/tags/knowledge/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Salesforce Service Cloud ナレッジ開発ガイド</title>
+      <link>https://seiri-blog.github.io/posts/salesforce-service-cloud-knowledge-dev-introduction/</link>
+      <pubDate>Sat, 18 Apr 2026 19:07:52 +0900</pubDate>
+      
+      <guid>https://seiri-blog.github.io/posts/salesforce-service-cloud-knowledge-dev-introduction/</guid>
+      <description>Service Cloud ナレッジ開発ガイド：SOQL検索からカスタマイズまで実践解説 Service Cloudのナレッジは、設定や運用だけでなく「開発」によってさらに強力な仕</description>
+    </item>
+    
+    <item>
+      <title>Salesforce Service Cloud ナレッジの概要</title>
+      <link>https://seiri-blog.github.io/posts/salesforce-service-cloud-knowledge-introduction/</link>
+      <pubDate>Sat, 18 Apr 2026 19:04:10 +0900</pubDate>
+      
+      <guid>https://seiri-blog.github.io/posts/salesforce-service-cloud-knowledge-introduction/</guid>
+      <description>Service Cloud ナレッジ管理完全ガイド：使われるナレッジを作る実践ノウハウ Service Cloudにおいて「ナレッジ（Knowledge）」は、サポート品質を安定さ</description>
+    </item>
+    
+  </channel>
+</rss>

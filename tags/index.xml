@@ -6,22 +6,67 @@
     <description>Recent content in Tags on Seiri Tech Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>2026 Seiri All rights reserved</copyright>
-    <lastBuildDate>Sat, 18 Apr 2026 18:54:51 +0900</lastBuildDate><atom:link href="https://seiri-blog.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 18 Apr 2026 19:16:47 +0900</lastBuildDate><atom:link href="https://seiri-blog.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Salesforce</title>
       <link>https://seiri-blog.github.io/tags/salesforce/</link>
-      <pubDate>Sat, 18 Apr 2026 18:54:51 +0900</pubDate>
+      <pubDate>Sat, 18 Apr 2026 19:16:47 +0900</pubDate>
       
       <guid>https://seiri-blog.github.io/tags/salesforce/</guid>
       <description></description>
     </item>
     
     <item>
+      <title>SOSL</title>
+      <link>https://seiri-blog.github.io/tags/sosl/</link>
+      <pubDate>Sat, 18 Apr 2026 19:16:47 +0900</pubDate>
+      
+      <guid>https://seiri-blog.github.io/tags/sosl/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>SOQL</title>
+      <link>https://seiri-blog.github.io/tags/soql/</link>
+      <pubDate>Sat, 18 Apr 2026 19:13:03 +0900</pubDate>
+      
+      <guid>https://seiri-blog.github.io/tags/soql/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Knowledge</title>
+      <link>https://seiri-blog.github.io/tags/knowledge/</link>
+      <pubDate>Sat, 18 Apr 2026 19:07:52 +0900</pubDate>
+      
+      <guid>https://seiri-blog.github.io/tags/knowledge/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Service Cloud</title>
       <link>https://seiri-blog.github.io/tags/service-cloud/</link>
-      <pubDate>Sat, 18 Apr 2026 18:54:51 +0900</pubDate>
+      <pubDate>Sat, 18 Apr 2026 19:07:52 +0900</pubDate>
       
       <guid>https://seiri-blog.github.io/tags/service-cloud/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Omni Chanel</title>
+      <link>https://seiri-blog.github.io/tags/omni-chanel/</link>
+      <pubDate>Sat, 18 Apr 2026 19:01:37 +0900</pubDate>
+      
+      <guid>https://seiri-blog.github.io/tags/omni-chanel/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Case</title>
+      <link>https://seiri-blog.github.io/tags/case/</link>
+      <pubDate>Sat, 18 Apr 2026 18:59:05 +0900</pubDate>
+      
+      <guid>https://seiri-blog.github.io/tags/case/</guid>
       <description></description>
     </item>
     
@@ -472,15 +517,6 @@
       <pubDate>Fri, 08 Dec 2023 23:40:22 +0900</pubDate>
       
       <guid>https://seiri-blog.github.io/tags/sql/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>SOQL</title>
-      <link>https://seiri-blog.github.io/tags/soql/</link>
-      <pubDate>Thu, 07 Dec 2023 19:33:43 +0900</pubDate>
-      
-      <guid>https://seiri-blog.github.io/tags/soql/</guid>
       <description></description>
     </item>
     

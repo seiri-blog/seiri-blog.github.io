@@ -6,9 +6,45 @@
     <description>Recent content in Service Cloud on Seiri Tech Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>2026 Seiri All rights reserved</copyright>
-    <lastBuildDate>Sat, 18 Apr 2026 18:54:51 +0900</lastBuildDate><atom:link href="https://seiri-blog.github.io/tags/service-cloud/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 18 Apr 2026 19:07:52 +0900</lastBuildDate><atom:link href="https://seiri-blog.github.io/tags/service-cloud/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Service Cloud解説</title>
+      <title>Salesforce Service Cloud ナレッジ開発ガイド</title>
+      <link>https://seiri-blog.github.io/posts/salesforce-service-cloud-knowledge-dev-introduction/</link>
+      <pubDate>Sat, 18 Apr 2026 19:07:52 +0900</pubDate>
+      
+      <guid>https://seiri-blog.github.io/posts/salesforce-service-cloud-knowledge-dev-introduction/</guid>
+      <description>Service Cloud ナレッジ開発ガイド：SOQL検索からカスタマイズまで実践解説 Service Cloudのナレッジは、設定や運用だけでなく「開発」によってさらに強力な仕</description>
+    </item>
+    
+    <item>
+      <title>Salesforce Service Cloud ナレッジの概要</title>
+      <link>https://seiri-blog.github.io/posts/salesforce-service-cloud-knowledge-introduction/</link>
+      <pubDate>Sat, 18 Apr 2026 19:04:10 +0900</pubDate>
+      
+      <guid>https://seiri-blog.github.io/posts/salesforce-service-cloud-knowledge-introduction/</guid>
+      <description>Service Cloud ナレッジ管理完全ガイド：使われるナレッジを作る実践ノウハウ Service Cloudにおいて「ナレッジ（Knowledge）」は、サポート品質を安定さ</description>
+    </item>
+    
+    <item>
+      <title>Saleseforce Service Cloud オムニチャネル</title>
+      <link>https://seiri-blog.github.io/posts/salesforce-service-cloud-omni-chanel-introduction/</link>
+      <pubDate>Sat, 18 Apr 2026 19:01:37 +0900</pubDate>
+      
+      <guid>https://seiri-blog.github.io/posts/salesforce-service-cloud-omni-chanel-introduction/</guid>
+      <description>Service Cloud オムニチャネル対応完全ガイド：顧客体験を最大化する設計と運用 顧客との接点が多様化する現代において、メール、電話、チャット、SNSなど複数</description>
+    </item>
+    
+    <item>
+      <title>Saleseforce Service Cloud ケース</title>
+      <link>https://seiri-blog.github.io/posts/salesforce-service-cloud-case-introduction/</link>
+      <pubDate>Sat, 18 Apr 2026 18:59:05 +0900</pubDate>
+      
+      <guid>https://seiri-blog.github.io/posts/salesforce-service-cloud-case-introduction/</guid>
+      <description>Service Cloud ケース管理 完全ガイド：設定から運用まで徹底解説 Service Cloudの中核機能である「ケース管理」は、カスタマーサポートの品質と効率を大きく左右し</description>
+    </item>
+    
+    <item>
+      <title>Saleseforce Service Cloud解説</title>
       <link>https://seiri-blog.github.io/posts/salesforce-service-cloud-introduction/</link>
       <pubDate>Sat, 18 Apr 2026 18:54:51 +0900</pubDate>
       
