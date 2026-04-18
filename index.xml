@@ -9,10 +9,10 @@
     <lastBuildDate>Sat, 18 Apr 2026 19:16:47 +0900</lastBuildDate><atom:link href="https://seiri-blog.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Salesforce SOSL グループ化（GROUP BY）完全ガイド</title>
-      <link>https://seiri-blog.github.io/posts/salesforce-osql-group-by-guide/</link>
+      <link>https://seiri-blog.github.io/posts/salesforce-soql-group-by-guide/</link>
       <pubDate>Sat, 18 Apr 2026 19:16:47 +0900</pubDate>
       
-      <guid>https://seiri-blog.github.io/posts/salesforce-osql-group-by-guide/</guid>
+      <guid>https://seiri-blog.github.io/posts/salesforce-soql-group-by-guide/</guid>
       <description>Apexで学ぶSOQLグループ化（GROUP BY）完全ガイド Apex開発においてデータ集計は非常に重要です。特に「レコード一覧を取得する」の</description>
     </item>
     
