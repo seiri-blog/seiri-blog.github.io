@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>taskscheduler on Seiri Tech Blog</title>
+    <link>https://seiri-blog.github.io/tags/taskscheduler/</link>
+    <description>Recent content in taskscheduler on Seiri Tech Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>2026 Seiri All rights reserved</copyright>
+    <lastBuildDate>Thu, 21 May 2026 19:13:46 +0900</lastBuildDate><atom:link href="https://seiri-blog.github.io/tags/taskscheduler/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>タスクスケジューラの操作（アクション）実行順序</title>
+      <link>https://seiri-blog.github.io/posts/window-task-scheduler-action-exceute-order/</link>
+      <pubDate>Thu, 21 May 2026 19:13:46 +0900</pubDate>
+      
+      <guid>https://seiri-blog.github.io/posts/window-task-scheduler-action-exceute-order/</guid>
+      <description>はじめに Windowsのタスクスケジューラを使っていて、こんな経験はないだろうか。 「バッチファイルAとBを順番に実行するよう設定したのに、A</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -6,7 +6,16 @@
     <description>Recent content on Seiri Tech Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>2026 Seiri All rights reserved</copyright>
-    <lastBuildDate>Tue, 21 Apr 2026 20:43:58 +0900</lastBuildDate><atom:link href="https://seiri-blog.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 21 May 2026 19:13:46 +0900</lastBuildDate><atom:link href="https://seiri-blog.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>タスクスケジューラの操作（アクション）実行順序</title>
+      <link>https://seiri-blog.github.io/posts/window-task-scheduler-action-exceute-order/</link>
+      <pubDate>Thu, 21 May 2026 19:13:46 +0900</pubDate>
+      
+      <guid>https://seiri-blog.github.io/posts/window-task-scheduler-action-exceute-order/</guid>
+      <description>はじめに Windowsのタスクスケジューラを使っていて、こんな経験はないだろうか。 「バッチファイルAとBを順番に実行するよう設定したのに、A</description>
+    </item>
+    
     <item>
       <title>GitHub Copilotで使うAgent作成入門</title>
       <link>https://seiri-blog.github.io/posts/github-copilot-how-to-make-and-use-agent-introduction/</link>
