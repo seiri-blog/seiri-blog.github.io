@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>github-action on Seiri Tech Blog</title>
+    <link>https://seiri-blog.github.io/tags/github-action/</link>
+    <description>Recent content in github-action on Seiri Tech Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>2026 Seiri All rights reserved</copyright>
+    <lastBuildDate>Mon, 29 Jun 2026 11:03:21 +0900</lastBuildDate><atom:link href="https://seiri-blog.github.io/tags/github-action/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>GitHub ActionsでPrivateリポジトリからPublicリポジトリへ自動同期する方法</title>
+      <link>https://seiri-blog.github.io/posts/github-action-private-repos-push-to-public-repos/</link>
+      <pubDate>Mon, 29 Jun 2026 11:03:21 +0900</pubDate>
+      
+      <guid>https://seiri-blog.github.io/posts/github-action-private-repos-push-to-public-repos/</guid>
+      <description>GitHub Actionを利用し、Privateリポジトリのものを、をPublicリポジトリへプッシュする方法を説明したいと思います。 リポジトリ構成 今</description>
+    </item>
+    
+  </channel>
+</rss>

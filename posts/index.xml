@@ -6,7 +6,16 @@
     <description>Recent content in Posts on Seiri Tech Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>2026 Seiri All rights reserved</copyright>
-    <lastBuildDate>Thu, 21 May 2026 19:13:46 +0900</lastBuildDate><atom:link href="https://seiri-blog.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 29 Jun 2026 11:03:21 +0900</lastBuildDate><atom:link href="https://seiri-blog.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>GitHub ActionsでPrivateリポジトリからPublicリポジトリへ自動同期する方法</title>
+      <link>https://seiri-blog.github.io/posts/github-action-private-repos-push-to-public-repos/</link>
+      <pubDate>Mon, 29 Jun 2026 11:03:21 +0900</pubDate>
+      
+      <guid>https://seiri-blog.github.io/posts/github-action-private-repos-push-to-public-repos/</guid>
+      <description>GitHub Actionを利用し、Privateリポジトリのものを、をPublicリポジトリへプッシュする方法を説明したいと思います。 リポジトリ構成 今</description>
+    </item>
+    
     <item>
       <title>タスクスケジューラの操作（アクション）実行順序</title>
       <link>https://seiri-blog.github.io/posts/window-task-scheduler-action-exceute-order/</link>
